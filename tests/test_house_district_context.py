@@ -8,6 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import build_house_district_context as context
 import build_house_field as candidates
+import build_house_poll_averages as polls
 import district_history as history
 from test_district_history import HistoryFixture, ROOT, write_csv
 
@@ -17,6 +18,9 @@ class ContextTests(HistoryFixture):
         super().setUp()
         self.candidate_path = self.root / "candidates.csv"
         self.output = self.root / "context"
+        self.polls_path = self.root / "polls.csv"
+        self.poll_output = self.root / "polls"
+        self.poll_rows = []
         self.candidate_rows = []
         for state, district, name, status in [("AK", "00", "Candidate A", "reviewed"),
                                                ("AK", "00", "Candidate B", "unmatched"),
@@ -34,11 +38,19 @@ class ContextTests(HistoryFixture):
     def save_candidates(self):
         write_csv(self.candidate_path, [candidates.FIELD_COLUMNS] +
                   [[row[c] for c in candidates.FIELD_COLUMNS] for row in self.candidate_rows])
+        self.save_polls()
+
+    def save_polls(self, rebuild=True):
+        write_csv(self.polls_path, [polls.REQUIRED_COLUMNS] +
+                  [[row.get(c, "") for c in polls.REQUIRED_COLUMNS] for row in self.poll_rows])
+        if rebuild:
+            polls.build(self.polls_path, self.candidate_path, self.poll_output)
 
     def build(self, strict=False):
         return context.build(self.candidate_path, self.manifest,
                              self.normalized / "presidential-results-normalized.csv",
-                             self.normalized / "cook-pvi-normalized.csv", self.output, strict, self.root)
+                             self.normalized / "cook-pvi-normalized.csv", self.output, strict, self.root,
+                             self.polls_path, self.poll_output / "house-poll-averages.csv")
 
     def output_bytes(self):
         return {p.name: p.read_bytes() for p in self.output.glob("*.csv")}
@@ -55,6 +67,8 @@ class ContextTests(HistoryFixture):
         self.assertEqual(districts[1]["cook_pvi_dem_lean_pp"], "0")
         self.assertTrue(all(row["pres_2024_status"] == "available" for row in districts))
         self.assertEqual(issues, [])
+        self.assertTrue(all(row["poll_avg_status"] == "no_dem_rep_field" for row in districts))
+        self.assertTrue(all(row["poll_avg_dem_margin_pp"] == "" for row in enriched))
         original = collections.Counter(tuple(r[c] for c in candidates.FIELD_COLUMNS) for r in self.candidate_rows)
         actual = collections.Counter(tuple(r[c] for c in candidates.FIELD_COLUMNS) for r in enriched)
         self.assertEqual(original, actual)
@@ -140,10 +154,49 @@ class ContextTests(HistoryFixture):
         before = self.output_bytes()
         result = subprocess.run([sys.executable, str(ROOT / "scripts/build_house_district_context.py"),
                                  "--candidates", str(self.candidate_path), "--output-dir", str(self.output),
+                                 "--polls", str(self.polls_path),
+                                 "--poll-averages", str(self.poll_output / "house-poll-averages.csv"),
                                  "--require-complete"], cwd=ROOT, capture_output=True, text=True)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("AL-99", result.stderr)
         self.assertIn("missing target metrics", result.stderr)
+        self.assertEqual(before, self.output_bytes())
+
+    def poll_answers(self, question, dem, rep, end_date="10/01/26"):
+        base = dict(poll_id=f"poll-{question}", question_id=question, pollster="Pollster", state="AK",
+                    end_date=end_date, sample_size="600", population="lv", partisan="", cycle="2026",
+                    stage="general", seat_number="1", ranked_choice_reallocated="FALSE")
+        return [dict(base, party="DEM", candidate_name="Candidate A", pct=str(dem)),
+                dict(base, party="REP", candidate_name="Candidate B", pct=str(rep))]
+
+    def test_polling_columns_join_and_stale_averages_fail(self):
+        self.candidate_rows[1]["party"] = "REP"
+        self.poll_rows = self.poll_answers("q1", 48, 44) + self.poll_answers("q2", 46, 46, "09/10/26")
+        self.save_candidates()
+        districts, enriched, issues = self.build(strict=True)
+        self.assertEqual(issues, [])
+        with (self.output / "house-district-context.csv").open(newline="") as stream:
+            header = next(csv.reader(stream))
+        self.assertEqual(header[:len(context.DISTRICT_COLUMNS) - len(polls.POLL_COLUMNS)], [
+            "state", "district", "district_id", "election_cycle", "candidate_count",
+            "unresolved_fec_candidate_count", "pres_2020_dem_margin_pp", "pres_2024_dem_margin_pp",
+            "cook_pvi_label", "cook_pvi_dem_lean_pp", "pres_2020_status", "pres_2024_status",
+            "cook_pvi_status", "pres_2020_source_id", "pres_2024_source_id", "cook_pvi_source_id"])
+        self.assertEqual(header[-len(polls.POLL_COLUMNS):], polls.POLL_COLUMNS)
+        ak, al = districts
+        self.assertEqual((ak["poll_avg_status"], ak["poll_count"], ak["poll_avg_dem_candidate"]),
+                         ("available", "2", "Candidate A"))
+        self.assertEqual(al["poll_avg_status"], "no_dem_rep_field")
+        self.assertEqual(al["poll_avg_dem_margin_pp"], "")
+        ak_rows = [r for r in enriched if r["district_id"] == "AK-AL"]
+        self.assertEqual(len(ak_rows), 2)
+        self.assertTrue(all(r[c] == ak[c] for r in ak_rows for c in polls.POLL_COLUMNS))
+        self.assertEqual(ak_rows[0]["party_raw"], "Democratic")
+        before = self.output_bytes()
+        self.poll_rows[0]["pct"] = "50"
+        self.save_polls(rebuild=False)
+        with self.assertRaisesRegex(ValueError, "stale polling averages"):
+            self.build()
         self.assertEqual(before, self.output_bytes())
 
     def test_current_snapshot_cardinality_and_candidate_preservation(self):
@@ -158,6 +211,10 @@ class ContextTests(HistoryFixture):
         ca13 = next(r for r in districts if r["district_id"] == "CA-13")
         self.assertEqual(ca13["cook_pvi_label"], "D+2")
         self.assertTrue(all(r["pres_2020_status"] == r["pres_2024_status"] == r["cook_pvi_status"] == "available" for r in districts))
+        statuses = collections.Counter(r["poll_avg_status"] for r in districts)
+        self.assertEqual(statuses["available"], 111)
+        me02 = next(r for r in districts if r["district_id"] == "ME-02")
+        self.assertEqual(me02["poll_avg_dem_margin_pp"], "3.31")
 
 
 if __name__ == "__main__":

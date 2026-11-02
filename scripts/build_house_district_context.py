@@ -1,27 +1,31 @@
 # /// script
 # requires-python = ">=3.11"
 # ///
-"""Join saved district margins and published PVI to the House field, offline."""
+"""Join saved district margins, published PVI, and polling averages to the House field, offline."""
 
 import argparse
 import sys
 from collections import defaultdict
 from pathlib import Path
 
+from build_house_poll_averages import (
+    AVERAGE_COLUMNS, DEFAULT_POLLS, OUTPUT_DIR as POLLS_DIR, POLL_COLUMNS, compute as compute_poll_averages,
+)
 from district_history import (
     DEFAULT_MANIFEST, ROOT, RESULTS_DIR, PRESIDENTIAL_COLUMNS, PVI_COLUMNS,
     district_key, normalized_sources, publish_csvs, read_records, require_unique,
 )
 
 DEFAULT_CANDIDATES = ROOT / "2026/candidates/house-general-field.csv"
+DEFAULT_POLL_AVERAGES = POLLS_DIR / "house-poll-averages.csv"
 OUTPUT_DIR = ROOT / "2026/districts"
 IDENTITY_COLUMNS = ["state", "district", "district_id", "election_cycle"]
 COUNT_COLUMNS = ["candidate_count", "unresolved_fec_candidate_count"]
 METRIC_COLUMNS = ["pres_2020_dem_margin_pp", "pres_2024_dem_margin_pp", "cook_pvi_label", "cook_pvi_dem_lean_pp"]
 STATUS_COLUMNS = ["pres_2020_status", "pres_2024_status", "cook_pvi_status"]
 SOURCE_COLUMNS = ["pres_2020_source_id", "pres_2024_source_id", "cook_pvi_source_id"]
-DISTRICT_COLUMNS = IDENTITY_COLUMNS + COUNT_COLUMNS + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS
-APPENDED_COLUMNS = ["district_id", "election_cycle"] + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS
+DISTRICT_COLUMNS = IDENTITY_COLUMNS + COUNT_COLUMNS + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS + POLL_COLUMNS
+APPENDED_COLUMNS = ["district_id", "election_cycle"] + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS + POLL_COLUMNS
 ISSUE_COLUMNS = ["state", "district", "district_id", "metric", "source_id", "issue", "detail"]
 UNRESOLVED_STATUSES = {"unmatched", "ambiguous", "reviewed_unmatched"}
 MATCH_STATUSES = UNRESOLVED_STATUSES | {"automatic", "reviewed"}
@@ -37,16 +41,26 @@ def verify_normalized(path, columns, expected, key_of):
     return rows
 
 
+def verify_poll_averages(path, polls_path, candidate_path):
+    expected, _ = compute_poll_averages(polls_path, candidate_path)
+    _, rows = read_records(path, AVERAGE_COLUMNS)
+    if sorted(tuple(r.values()) for r in rows) != sorted(tuple(r.values()) for r in expected):
+        raise ValueError(f"{path}: stale polling averages; run build_house_poll_averages.py")
+    return {(r["state"], r["district"]): r for r in rows}
+
+
 def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
           history_path=RESULTS_DIR / "presidential-results-normalized.csv",
           pvi_path=RESULTS_DIR / "cook-pvi-normalized.csv", output_dir=OUTPUT_DIR,
-          require_complete=False, project_root=ROOT):
+          require_complete=False, project_root=ROOT, polls_path=DEFAULT_POLLS,
+          poll_averages_path=DEFAULT_POLL_AVERAGES):
     sources, expected_history, expected_pvi = normalized_sources(manifest_path, project_root)
     history = verify_normalized(history_path, PRESIDENTIAL_COLUMNS, expected_history,
                                 lambda r: (r["state"], r["district"], r["election_year"]))
     pvi = verify_normalized(pvi_path, PVI_COLUMNS, expected_pvi,
                            lambda r: (r["state"], r["district"]))
     candidate_columns, candidates = read_records(candidate_path)
+    poll_averages = verify_poll_averages(poll_averages_path, polls_path, candidate_path)
     if not {"state", "district", "name", "fec_match_status"} <= set(candidate_columns):
         raise ValueError(f"{candidate_path}: missing required candidate columns")
     if set(candidate_columns) & set(APPENDED_COLUMNS):
@@ -88,6 +102,7 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
         if not label:
             add_issue(key, "cook_pvi", source_id, "missing_value" if record else "missing_district",
                       "Published 2026 PVI is blank" if record else "No Cook district row")
+        context.update({column: poll_averages[(state, district)][column] for column in POLL_COLUMNS})
         districts.append(context)
         for row in rows:
             enriched.append(dict(row, **{column: context[column] for column in APPENDED_COLUMNS}))
@@ -122,12 +137,15 @@ def main():
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--history", type=Path, default=RESULTS_DIR / "presidential-results-normalized.csv")
     parser.add_argument("--pvi", type=Path, default=RESULTS_DIR / "cook-pvi-normalized.csv")
+    parser.add_argument("--polls", type=Path, default=DEFAULT_POLLS)
+    parser.add_argument("--poll-averages", type=Path, default=DEFAULT_POLL_AVERAGES)
     parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
     parser.add_argument("--require-complete", action="store_true")
     args = parser.parse_args()
     try:
         districts, candidates, issues = build(args.candidates, args.manifest, args.history,
-                                             args.pvi, args.output_dir, args.require_complete)
+                                             args.pvi, args.output_dir, args.require_complete,
+                                             polls_path=args.polls, poll_averages_path=args.poll_averages)
     except (ValueError, KeyError, OSError) as exc:
         sys.exit(f"District build failed: {exc}")
     print(f"Wrote {len(districts)} districts, {len(candidates)} candidates, {len(issues)} issues", file=sys.stderr)
