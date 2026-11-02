@@ -1,6 +1,6 @@
 # House district context
 
-This workflow joins the supplied 2020/2024 presidential margins, Cook's published 2026 PVI, a weighted polling average of each district's Democratic and Republican nominees, and the election-night guide's House watch list to the existing 2026 House candidate field, using normalized district IDs. It provides one export for district analysis and another for candidate details. Districts without eligible polling keep blank polling columns.
+This workflow joins the supplied 2020/2024 presidential margins, Cook's published 2026 PVI, a weighted polling average of each district's Democratic and Republican nominees, and the House races from the election-night guide to the existing 2026 House candidate field, using normalized district IDs. It provides one export for district analysis and another for candidate details. Districts without eligible polling keep blank polling columns.
 
 ## Sources and refresh
 
@@ -55,7 +55,7 @@ The first command refreshes derived candidate data from its committed inputs; it
 | `2026/results/cook-pvi-normalized.csv` | One row per Cook district for published 2026 PVI |
 | `2026/polls/house-poll-averages.csv` | One row per candidate-field district with its weighted nominee polling average or status |
 | `2026/polls/house-poll-average-inputs.csv` | One row per poll question with its inclusion reason and weight factors |
-| `2026/guide/election-night-guide-house.csv` | One row per House district named in the election-night guide; hand-transcribed and validated |
+| `2026/guide/election-night-guide-races.csv` | One row per race named in the election-night guide (House, Senate, governor); hand-made and validated |
 | `2026/districts/house-district-context.csv` | One row per district represented in the candidate field |
 | `2026/districts/house-candidate-context.csv` | One row per input candidate, with district metrics appended |
 | `2026/districts/district-context-issues.csv` | One row per missing metric or source-only district/year |
@@ -94,7 +94,7 @@ The district context columns are:
 | `pres_2020_status`, `pres_2024_status`, `cook_pvi_status` | `available` when the source value exists, otherwise `missing` |
 | `pres_2020_source_id`, `pres_2024_source_id`, `cook_pvi_source_id` | Source attribution; configured source ID is retained even when the metric is missing |
 | `poll_avg_dem_candidate` through `poll_avg_source_id` | The ten polling-average columns, copied from `house-poll-averages.csv` and described under [House polling averages](#house-polling-averages); blank unless `poll_avg_status` is `available` |
-| `guide_watch_time_et` through `guide_note` | The thirteen guide columns after `district_id`, copied unchanged from the [election-night guide](#election-night-guide) CSV; blank for districts the guide does not name |
+| `guide_slot_et` through `guide_notes` | Seventeen columns copied unchanged from the House rows of the [election-night guide](#election-night-guide) races CSV, each prefixed with `guide_`; blank for districts the guide does not name |
 | `guide_name_check` | `matched`, `mismatch`, or `not_named` for guide districts; blank otherwise |
 | `guide_status` | `in_guide` or `not_in_guide` |
 | `guide_source_id` | `election-night-guide-2026-11-03` |
@@ -182,7 +182,7 @@ All values except status and source ID are blank unless the status is `available
 
 ## Election-night guide
 
-[`election-night-guide-house.csv`](../2026/guide/election-night-guide-house.csv) is a hand transcription of the House races in [`election-night-guide-november-3-2026.md`](../2026/guide/election-night-guide-november-3-2026.md) (current as of November 1, 2026). It has one row for each of the 44 House districts the guide names. The guide's Senate and governor races are not transcribed. Validate the CSV after any edit with:
+[`election-night-guide-races.csv`](../2026/guide/election-night-guide-races.csv) is a hand-made CSV of the races in [`election-night-guide-november-3-2026.md`](../2026/guide/election-night-guide-november-3-2026.md) (current as of November 1, 2026). It has one row per race: 44 House districts, 14 Senate races, and 4 governor races. Only the House rows join to the district data. Validate the CSV after any edit with:
 
 ```sh
 uv run scripts/election_guide.py
@@ -194,51 +194,39 @@ The validator uses only the standard library, writes nothing, and has the option
 
 | Column | Content |
 | --- | --- |
-| `district_id` | Canonical ID, e.g. `KY-06`; at-large seats use `STATE-AL` |
-| `guide_watch_time_et` | `6:00`, `7:00`, `7:30`, `8:00`, `9:00`, `10:00`, `11:00`, or `12:00+` |
-| `guide_section` | The guide heading the district appears under, e.g. `Virginia ladder` |
-| `guide_role` | One role from the vocabulary below |
-| `guide_dem_win_tier` | `We'll take it`, `Solid`, `2018-style`, `Holy shit`, or blank |
-| `guide_seat_signal` | Todd's seat count tied to the district (`230+`, `~235`, `~250`), else blank |
-| `guide_dem_name`, `guide_rep_name` | Candidate names as the guide writes them |
-| `guide_incumbent_note` | E.g. `open, R` or `Spartz, R` |
-| `guide_rating_note` | Ratings and partisanship cited, e.g. `Cook Lean D` or `Trump +15 in 2024; polls roughly tied` |
-| `guide_hell_yes`, `guide_ffs`, `guide_chill` | The guide's signal text for the district |
-| `guide_note` | Other district-specific context, including where the district sits on the seat ladder |
+| `slot_et` | The guide's watch slot: `6:00`, `7:00`, `7:30`, `8:00`, `9:00`, `10 to 11`, or `12:00+` |
+| `poll_close_et` | The race's own poll close in 24-hour ET, e.g. `19:00` for IN-1 inside the 6:00 slot; `24:00` is midnight |
+| `state`, `office` | Postal code; `House`, `Senate`, or `Governor` |
+| `district` | Two-digit district for House rows (`00` at large); blank for other offices |
+| `card` | The guide card the race appears on, e.g. `Florida · the fast-count state` |
+| `incumbent`, `incumbent_party` | Incumbent surname and `D`, `R`, or `I`, else blank |
+| `open_seat` | `True`, `False`, or blank |
+| `dem_candidate`, `rep_candidate`, `other_candidate` | Names as the guide writes them |
+| `rating` | Rating text cited, e.g. `Cook Lean D` or `Luria favored` |
+| `silver_avg_dem_margin` | Silver Bulletin polling margin cited for Senate races, else blank |
+| `trump_2024_margin` | Trump's 2024 margin in points as the guide cites it, positive for Trump |
+| `senate_path` | The race's place on the Senate path; blank for House rows |
+| `ladder_tier` | `We'll take it`, `Solid`, `2018-style`, `Holy shit`, or blank |
+| `hell_yes`, `ffs`, `chill` | The guide's signal text for the race |
+| `notes` | Other race-specific context |
 
-`guide_role` takes the first role in this precedence list that the guide gives the district:
+### Join to the House data
 
-| Role | Meaning in the guide | Count |
-| --- | --- | --- |
-| `bellwether` | Named the night's bellwether (KY-6) | 1 |
-| `wave_ladder` | A rung of Todd's small/medium/large Virginia ladder (VA-2, VA-1, VA-5) | 3 |
-| `majority_check` | Tied to House-majority odds (FL-14, FL-25, NC-1, NC-11, OH-7) | 5 |
-| `battleground` | A featured contested race | 20 |
-| `stretch` | Called a stretch seat | 3 |
-| `reach` | A reach seat outside usual turf | 3 |
-| `tsunami_tell` | A tsunami tell | 4 |
-| `hold_check` | A Democratic seat that should hold, or one at risk on new lines | 5 |
-
-### Transcription conventions
-
-- **Watch time.** Use the race's own marked time when there is one (IN-1 is in the 6:00 section but marked `7:00`), otherwise its section's time. In the "10 to 11" section, Nevada and Montana are `10:00`; California and Washington are `11:00`.
-- **Ladder tier.** `guide_dem_win_tier` is the lowest seat-ladder tier that lists a Democratic win or flip in the district. For example, "Dems win VA-2" appears under We'll take it, and "VA-1 flips" under 2018-style. "Iowa House sweep" gives all three Iowa seats `2018-style`. Other ladder mentions, such as "KY-6 stays R" or "VA-1 is close", go in `guide_note`.
-- **Signal text.** Signal bullets are copied as written, without the bold markers. A bullet that names several districts, such as FL-14 and FL-25, is copied to each of them, so every row stands alone. A statewide counting note is copied only when it is about the district's own race, such as the Arizona and California CHILL lines.
-- **Names.** Names go in the party column the guide indicates. A name the guide gives without a party letter, such as "FL-9 Soto", is placed by the party the context implies, and the name check confirms it. Fields the guide does not address stay blank. The CSV is plain ASCII with LF line endings.
+Each House row joins by `state` and `district` to the district context. Every column except `state`, `office`, `district`, and `senate_path` is appended with a `guide_` prefix (for example `guide_slot_et` and `guide_dem_candidate`), followed by `guide_name_check`, `guide_status`, and `guide_source_id`. Senate and governor rows are validated but not joined.
 
 ### Checks and their limits
 
 `load_guide` checks:
 
 - exact columns
-- the allowed watch times, roles, and tiers
-- canonical, unique district IDs
-- that every district is in the candidate field
-- that the CSV's districts are exactly the districts referenced in the markdown, as `XX-n`, normalized with at-large states mapped to `STATE-AL`
+- the allowed offices, states, slots, poll-close times, tiers, parties, and `open_seat` values, and that the two margin columns are numeric or blank
+- that `district` is set on House rows and only on House rows, and is the canonical two-digit form
+- unique House districts, each in the candidate field
+- that the House districts are exactly the districts referenced in the markdown, as `XX-n`, normalized with at-large states mapped to `STATE-AL`
 
-Adding or removing a district reference in the markdown therefore fails validation until the CSV matches. Rewording a district that is already listed is not detected. After editing the guide, re-transcribe the affected rows using the conventions above, then rerun the validator and the context build.
+Adding or removing a district reference in the markdown therefore fails validation until the CSV matches. Rewording a race that is already listed is not detected, and Senate and governor rows are not compared with the markdown. After editing the guide, update the affected rows, then rerun the validator and the context build.
 
-`guide_name_check` is computed at join time. Each nonblank guide name is matched against the district's same-party field candidates using the surname rule (refined by first initial) that `in_general_polls` uses. The result is `matched` when every name hits exactly once, `mismatch` otherwise, and `not_named` when the guide names nobody. In the current snapshot, 37 guide districts are `matched`, 7 are `not_named`, and none are `mismatch`.
+`guide_name_check` is computed at join time. Each nonblank `dem_candidate` and `rep_candidate` is matched against the district's same-party field candidates using the surname rule (refined by first initial) that `in_general_polls` uses. The result is `matched` when every name hits exactly once, `mismatch` otherwise, and `not_named` when the guide names nobody. In the current snapshot, 37 guide districts are `matched`, 7 are `not_named`, and none are `mismatch`.
 
 ## Examples and current snapshot
 
@@ -270,10 +258,9 @@ polled = [row for row in districts if row["poll_avg_status"] == "available"]
 for row in sorted(polled, key=lambda r: abs(float(r["poll_avg_dem_margin_pp"])))[:3]:
     print(row["district_id"], row["poll_avg_dem_margin_pp"], row["poll_count"],
           row["cook_pvi_label"], row["pres_2024_dem_margin_pp"])
-times = ["6:00", "7:00", "7:30", "8:00", "9:00", "10:00", "11:00", "12:00+"]
 watch = [row for row in districts if row["guide_status"] == "in_guide"]
-for row in sorted(watch, key=lambda r: (times.index(r["guide_watch_time_et"]), r["district_id"]))[:4]:
-    print(row["guide_watch_time_et"], row["district_id"], row["guide_role"],
+for row in sorted(watch, key=lambda r: (r["guide_poll_close_et"], r["district_id"]))[:4]:
+    print(row["guide_poll_close_et"], row["district_id"], row["guide_ladder_tier"] or "no tier",
           row["poll_avg_dem_margin_pp"] or "no poll avg", row["cook_pvi_label"])
 PY
 ```
@@ -282,7 +269,7 @@ In the November 2, 2026 snapshot, Alaska has source margins of -10.12 points (20
 
 The polling statuses are 111 `available`, 297 `no_polls`, 25 `no_dem_rep_field`, and 2 `no_eligible_polls`. The input log has 1,680 questions; 296 were selected. ME-02 averages eight polls from five pollsters to a D+3.31 margin (Matthew G. Dunlap 50.01, Paul R. LePage 46.70), with the latest poll ending October 14, 2026. CA-13 has `no_polls`, so its polling columns are blank.
 
-44 districts are `in_guide` and 391 are `not_in_guide`. Sorted by watch time and district ID, the example's first guide races are 6:00 ET IN-05 (battleground, poll average -2.41, R+8) and KY-06 (bellwether, 6.19, R+7), followed at 7:00 ET by FL-09 (stretch, 0.00, R+8) and FL-14 (majority check, 5.21, R+4).
+44 districts are `in_guide` and 391 are `not_in_guide`. Sorted by poll close and district ID, the example's first guide races close at 18:00 ET: IN-05 (Holy shit tier, poll average -2.41, R+8) and KY-06 (2018-style, 6.19, R+7). They are followed at 19:00 ET by FL-09 (no tier, 0.00, R+8) and FL-14 (Solid, 5.21, R+4).
 
 The build produces 870 presidential year rows, 435 normalized PVI rows, 435 district context rows, and 1,159 candidate context rows. All target metrics are available, the issue report has only its header, and `--require-complete` passes. Counts apply to these saved inputs; future refreshes can change candidate counts and source coverage. The existing 325 unresolved FEC identities remain unresolved in the enriched export.
 

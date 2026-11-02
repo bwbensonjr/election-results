@@ -25,10 +25,11 @@ class ContextTests(HistoryFixture):
         self.guide_path = self.root / "guide.csv"
         self.guide_markdown = self.root / "guide.md"
         self.guide_markdown.write_text("### AK-1 · Alaska at-large\nCandidate B (R) v Candidate A (D).\n")
-        guide_row = {column: "" for column in guide.GUIDE_COLUMNS}
-        guide_row.update(district_id="AK-AL", guide_watch_time_et="12:00+", guide_section="Alaska",
-                         guide_role="battleground", guide_dem_name="Candidate A", guide_chill="Counts slowly.")
-        self.guide_rows = [guide_row]
+        race = {column: "" for column in guide.RACE_COLUMNS}
+        race.update(slot_et="12:00+", poll_close_et="24:00", state="AK", office="House", district="00",
+                    card="Alaska", dem_candidate="Candidate A", chill="Counts slowly.")
+        senate = dict(race, office="Senate", district="", dem_candidate="", chill="")
+        self.guide_rows = [race, senate]
         self.save_guide()
         self.candidate_rows = []
         for state, district, name, status in [("AK", "00", "Candidate A", "reviewed"),
@@ -50,8 +51,8 @@ class ContextTests(HistoryFixture):
         self.save_polls()
 
     def save_guide(self):
-        write_csv(self.guide_path, [guide.GUIDE_COLUMNS] +
-                  [[row[c] for c in guide.GUIDE_COLUMNS] for row in self.guide_rows])
+        write_csv(self.guide_path, [guide.RACE_COLUMNS] +
+                  [[row[c] for c in guide.RACE_COLUMNS] for row in self.guide_rows])
 
     def save_polls(self, rebuild=True):
         write_csv(self.polls_path, [polls.REQUIRED_COLUMNS] +
@@ -219,18 +220,18 @@ class ContextTests(HistoryFixture):
         districts, enriched, issues = self.build(strict=True)
         self.assertEqual(issues, [])
         ak, al = districts
-        self.assertEqual((ak["guide_status"], ak["guide_role"], ak["guide_chill"], ak["guide_name_check"]),
-                         ("in_guide", "battleground", "Counts slowly.", "matched"))
+        self.assertEqual((ak["guide_status"], ak["guide_card"], ak["guide_chill"], ak["guide_name_check"]),
+                         ("in_guide", "Alaska", "Counts slowly.", "matched"))
         self.assertEqual(ak["guide_source_id"], guide.SOURCE_ID)
         self.assertEqual(al["guide_status"], "not_in_guide")
-        self.assertTrue(all(al[c] == "" for c in guide.GUIDE_COLUMNS[1:] + ["guide_name_check"]))
+        self.assertTrue(all(al[c] == "" for c in guide.GUIDE_COLUMNS + ["guide_name_check"]))
         ak_rows = [r for r in enriched if r["district_id"] == "AK-AL"]
         self.assertTrue(all(r[c] == ak[c] for r in ak_rows for c in context.GUIDE_CONTEXT_COLUMNS))
-        self.guide_rows[0]["guide_dem_name"] = "Someone Else"
+        self.guide_rows[0]["dem_candidate"] = "Someone Else"
         self.save_guide()
         districts, _, _ = self.build()
         self.assertEqual(districts[0]["guide_name_check"], "mismatch")
-        self.assertEqual(districts[0]["guide_dem_name"], "Someone Else")
+        self.assertEqual(districts[0]["guide_dem_candidate"], "Someone Else")
         before = self.output_bytes()
         self.guide_markdown.write_text("AK-1 and AL-1 tonight.\n")
         with self.assertRaisesRegex(ValueError, "missing from the CSV: AL-01"):
@@ -255,7 +256,7 @@ class ContextTests(HistoryFixture):
         self.assertEqual(me02["poll_avg_dem_margin_pp"], "3.31")
         guide_statuses = collections.Counter(r["guide_status"] for r in districts)
         self.assertEqual(guide_statuses, {"in_guide": 44, "not_in_guide": 391})
-        self.assertEqual(me02["guide_role"], "battleground")
+        self.assertEqual((me02["guide_slot_et"], me02["guide_rep_candidate"]), ("8:00", "LePage"))
         self.assertNotIn("mismatch", {r["guide_name_check"] for r in districts})
 
 

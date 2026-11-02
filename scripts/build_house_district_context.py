@@ -27,7 +27,7 @@ COUNT_COLUMNS = ["candidate_count", "unresolved_fec_candidate_count"]
 METRIC_COLUMNS = ["pres_2020_dem_margin_pp", "pres_2024_dem_margin_pp", "cook_pvi_label", "cook_pvi_dem_lean_pp"]
 STATUS_COLUMNS = ["pres_2020_status", "pres_2024_status", "cook_pvi_status"]
 SOURCE_COLUMNS = ["pres_2020_source_id", "pres_2024_source_id", "cook_pvi_source_id"]
-GUIDE_CONTEXT_COLUMNS = GUIDE_COLUMNS[1:] + ["guide_name_check", "guide_status", "guide_source_id"]
+GUIDE_CONTEXT_COLUMNS = GUIDE_COLUMNS + ["guide_name_check", "guide_status", "guide_source_id"]
 DISTRICT_COLUMNS = (IDENTITY_COLUMNS + COUNT_COLUMNS + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS
                     + POLL_COLUMNS + GUIDE_CONTEXT_COLUMNS)
 APPENDED_COLUMNS = (["district_id", "election_cycle"] + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS
@@ -112,7 +112,7 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
                       "Published 2026 PVI is blank" if record else "No Cook district row")
         context.update({column: poll_averages[(state, district)][column] for column in POLL_COLUMNS})
         guide_row = guide.get(key)
-        context.update({column: guide_row[column] if guide_row else "" for column in GUIDE_COLUMNS[1:]})
+        context.update({column: guide_row[column] if guide_row else "" for column in GUIDE_COLUMNS})
         context.update(guide_name_check=name_check(guide_row, rows) if guide_row else "",
                        guide_status="in_guide" if guide_row else "not_in_guide", guide_source_id=GUIDE_SOURCE_ID)
         districts.append(context)
