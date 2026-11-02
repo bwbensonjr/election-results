@@ -1,0 +1,1160 @@
+state,district,name,party,party_raw,fec_candidate_id,fec_name,incumbent,filed_12g,receipts,cash_on_hand_end_period,in_general_polls,source_url
+AK,00,Eric Hafner,DEM,Democratic,H4AK00164,"ERIC, HAFNER",False,False,0.0,0.00,True,https://theballotbrief.com/district/ak-al
+AK,00,"Bill Hill, James C. ""Jim"" McDermott",OTHER,Libertarian,H6AK01092,"HILL, BILL",False,True,2630792.87,117732.32,True,https://theballotbrief.com/district/ak-al
+AK,00,Nick Begich,REP,Republican,H2AK01083,"BEGICH, NICHOLAS III",True,True,6438903.51,1782866.69,True,https://theballotbrief.com/district/ak-al
+AL,01,Clyde Jones,DEM,Democratic,H6AL01094,"JONES, CLYDE W MR. JR",False,True,198017.74,6025.87,False,https://theballotbrief.com/district/al-1
+AL,01,Jerry Carl,REP,Republican,H0AL01055,"CARL, JERRY LEE, JR",False,True,1452253.91,168086.30,False,https://theballotbrief.com/district/al-1
+AL,02,Shomari C. Figures,DEM,Democratic,H4AL02170,"FIGURES, SHOMARI C.",True,True,2706098.03,1197689.31,True,https://theballotbrief.com/district/al-2
+AL,02,Rhett Marques,REP,Republican,H6AL01086,"MARQUES, RHETT",False,True,1716373.63,178056.95,True,https://theballotbrief.com/district/al-2
+AL,03,Lee McInnis,DEM,Democratic,H6AL03199,"MCINNIS, VICTOR LEE",False,True,62981.54,41130.49,False,https://theballotbrief.com/district/al-3
+AL,03,Mike Rogers,REP,Republican,H2AL03032,"ROGERS, MICHAEL",True,True,2521576.37,2707643.70,False,https://theballotbrief.com/district/al-3
+AL,04,Amanda N. Pusczek,DEM,Democratic,H6AL05228,"PUSCZEK, AMANDA NOELLE",False,True,22283.07,2371.34,False,https://theballotbrief.com/district/al-4
+AL,04,Robert B. Aderholt,REP,Republican,H6AL04098,"ADERHOLT, ROBERT B. REP.",True,True,1238586.19,719711.90,False,https://theballotbrief.com/district/al-4
+AL,05,Andrew Sneed,DEM,Democratic,H6AL05244,"SNEED, ANDREW RANKIN GUYTON",False,True,917289.53,247806.94,False,https://theballotbrief.com/district/al-5
+AL,05,Dale W. Strong,REP,Republican,H2AL05102,"STRONG, DALE WHITNEY",True,True,1775618.3,1054171.91,False,https://theballotbrief.com/district/al-5
+AL,06,Maurice Mercer,DEM,Democratic,H6AL06184,"MERCER, MAURICE",False,True,34751.45,14186.89,False,https://theballotbrief.com/district/al-6
+AL,06,Gary Palmer,REP,Republican,H4AL06098,"PALMER, GARY",True,True,1154752.83,74382.23,False,https://theballotbrief.com/district/al-6
+AL,07,Terri Sewell,DEM,Democratic,H0AL07086,"SEWELL, TERRI A.",True,True,2260893.78,3351033.95,False,https://theballotbrief.com/district/al-7
+AL,07,Ammie Akin,REP,Republican,H6AL07208,"AKIN, AMMIE",False,True,270462.09,33973.18,False,https://theballotbrief.com/district/al-7
+AR,01,Terri Yarbrough Green,DEM,D,H6AR01155,"GREEN, TERRI YARBROUGH DR.",False,True,124313.99,8996.17,False,https://theballotbrief.com/district/ar-1
+AR,01,Steve G. Parsons,OTHER,L,H4AR01085,"PARSONS, STEVE G.",False,False,0.0,0.00,False,https://theballotbrief.com/district/ar-1
+AR,01,Rick Crawford,REP,R,H0AR01083,"CRAWFORD, ERIC ALAN RICK",True,True,1135655.28,853000.58,False,https://theballotbrief.com/district/ar-1
+AR,02,Chris Jones,DEM,D,H6AR02286,"JONES, CHRIS",False,True,1959018.06,274178.71,True,https://theballotbrief.com/district/ar-2
+AR,02,French Hill,REP,R,H4AR02141,"HILL, JAMES FRENCH",True,True,5264024.47,1488431.20,True,https://theballotbrief.com/district/ar-2
+AR,03,Robb Ryerse,DEM,D,H6AR03128,"RYERSE, ROBB",False,True,160833.51,14699.55,False,https://theballotbrief.com/district/ar-3
+AR,03,Bobby Wilson,OTHER,L,H4AR03081,"WILSON, BOBBY",False,False,0.0,0.00,False,https://theballotbrief.com/district/ar-3
+AR,03,Steve Womack,REP,R,H0AR03055,"WOMACK, STEPHEN A THE HON",True,True,2363074.02,2410732.19,False,https://theballotbrief.com/district/ar-3
+AR,04,"James ""Rus"" Russell, III",DEM,D,H6AR04084,"RUSSELL, JAMES RICHARD MR III",False,True,21553.8,4545.60,False,https://theballotbrief.com/district/ar-4
+AR,04,Bruce Westerman,REP,R,H4AR04048,"WESTERMAN, BRUCE",True,True,2975232.54,4501822.51,False,https://theballotbrief.com/district/ar-4
+AZ,01,Amish Shah,DEM,Democratic,H4AZ01194,"SHAH, AMISH DR.",False,True,5654453.93,206045.34,True,https://theballotbrief.com/district/az-1
+AZ,01,Monica Alponte,OTHER,Libertarian,H6AZ01488,"ALPONTE, MONICA MARIA",False,True,9453.39,754.22,False,https://theballotbrief.com/district/az-1
+AZ,01,Thomas 'Jay' Feely IV,REP,Republican,H6AZ05190,"FEELY, THOMAS JAMES",False,True,3799654.13,182764.32,True,https://theballotbrief.com/district/az-1
+AZ,02,Jonathan Nez,DEM,Democratic,H4AZ02184,"NEZ, JONATHAN MICHAEL",False,True,5805340.75,506072.00,True,https://theballotbrief.com/district/az-2
+AZ,02,Curtis Goodwin,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/az-2
+AZ,02,Eli Crane,REP,Republican,H2AZ01354,"CRANE, ELI",True,True,11904946.44,1349062.98,True,https://theballotbrief.com/district/az-2
+AZ,03,Yassamin Ansari,DEM,Democratic,H4AZ03109,"ANSARI, YASSAMIN",True,True,1697729.13,410624.03,False,https://theballotbrief.com/district/az-3
+AZ,03,Alan Aversa,OTHER,No Labels,H4AZ03174,"AVERSA, ALAN",False,True,774.33,256.28,False,https://theballotbrief.com/district/az-3
+AZ,03,David Redkey,OTHER,Green,H6AZ01322,"REDKEY, DAVID WAYNE MR.",False,True,0.0,0.00,False,https://theballotbrief.com/district/az-3
+AZ,04,Greg Stanton,DEM,Democratic,H8AZ09040,"STANTON, GREG",True,True,2674366.81,1918706.62,False,https://theballotbrief.com/district/az-4
+AZ,04,Tisha Benoit,OTHER,No Labels,,,,,,,False,https://theballotbrief.com/district/az-4
+AZ,04,Zuhdi Jasser,REP,Republican,H4AZ04115,"JASSER, M. ZUHDI",False,True,744304.25,89556.00,False,https://theballotbrief.com/district/az-4
+AZ,05,Elizabeth Lee,DEM,Democratic,H6AZ05240,"LEE, ELIZABETH",False,True,375628.14,124136.06,False,https://theballotbrief.com/district/az-5
+AZ,05,Mark Lamb,REP,Republican,H6AZ05265,"LAMB, MARK",False,True,1771670.69,180750.56,False,https://theballotbrief.com/district/az-5
+AZ,06,JoAnna Mendoza,DEM,Democratic,H6AZ06099,"MENDOZA, JOANNA",False,True,11242473.21,807899.24,False,https://theballotbrief.com/district/az-6
+AZ,06,Gary Swing,OTHER,Green,H6AZ06164,"SWING, GARY",False,False,0.0,0.00,False,https://theballotbrief.com/district/az-6
+AZ,06,Jereme Lance Peters,OTHER,Libertarian,H6AZ06214,"PETERS, JEREME LANCE",False,False,10500.0,0.00,False,https://theballotbrief.com/district/az-6
+AZ,06,Juan Ciscomani,REP,Republican,H2AZ02360,"CISCOMANI, JUAN",True,True,7649793.85,618698.75,False,https://theballotbrief.com/district/az-6
+AZ,07,Adelita Grijalva,DEM,Democratic,H6AZ07121,"GRIJALVA, ADELITA",True,True,2559577.1,437547.14,False,https://theballotbrief.com/district/az-7
+AZ,07,Daniel Francis Butierez Sr.,REP,Republican,H4AZ07134,"BUTIEREZ, DANIEL",False,True,233882.4,11286.67,False,https://theballotbrief.com/district/az-7
+AZ,08,Bernadette Greene-Placentia,DEM,Democratic,H4AZ08082,"GREENE PLACENTIA, BERNADETTE",False,True,372825.77,152740.36,False,https://theballotbrief.com/district/az-8
+AZ,08,Abraham 'Abe' Hamadeh,REP,Republican,H4AZ08108,"HAMADEH, ABRAHAM",True,True,1434538.03,186540.96,False,https://theballotbrief.com/district/az-8
+AZ,09,Danielle 'Dani' Sterbinsky,DEM,Democratic,H6AZ09085,"STERBINSKY, DANIELLE",False,True,461874.78,33625.81,False,https://theballotbrief.com/district/az-9
+AZ,09,Paul Gosar,REP,Republican,H0AZ01259,"GOSAR, PAUL DR.",True,True,813541.57,250385.40,False,https://theballotbrief.com/district/az-9
+CA,01,Mike McGuire,DEM,Democratic,H6CA01269,"MCGUIRE, MIKE",False,True,2266830.12,153646.50,True,https://theballotbrief.com/district/ca-1
+CA,01,James Gallagher,REP,Republican,H6CA01285,"GALLAGHER, JAMES",False,True,1995260.11,327729.23,True,https://theballotbrief.com/district/ca-1
+CA,02,Jared Huffman,DEM,Democratic,H2CA06259,"HUFFMAN, JARED",True,True,1205633.57,1151201.29,False,https://theballotbrief.com/district/ca-2
+CA,02,Robin Littau,REP,Republican,H6CA02309,"LITTAU, ROBIN",False,False,0.0,0.00,False,https://theballotbrief.com/district/ca-2
+CA,03,Ami Bera,DEM,Democratic,H0CA03078,"BERA, AMERISH",True,True,1492834.21,1651288.78,False,https://theballotbrief.com/district/ca-3
+CA,03,Robb Tucker,REP,Republican,H6CA03174,"TUCKER, ROBB",False,True,304654.01,16451.46,False,https://theballotbrief.com/district/ca-3
+CA,04,Eric Jones,DEM,Democratic,H6CA04222,"JONES, ERIC",False,True,18058057.13,1541078.69,True,https://theballotbrief.com/district/ca-4
+CA,04,Mike Thompson,DEM,Democratic,H8CA01109,"THOMPSON, MIKE MR.",True,True,5482944.34,1401439.52,True,https://theballotbrief.com/district/ca-4
+CA,05,Michael Masuda,DEM,Democratic,H6CA05377,"MASUDA, MICHAEL",False,True,581621.44,59665.79,False,https://theballotbrief.com/district/ca-5
+CA,05,Tom McClintock,REP,Republican,H8CA04152,"MCCLINTOCK, THOMAS",True,True,1254441.78,314100.38,False,https://theballotbrief.com/district/ca-5
+CA,06,Richard Pan,DEM,Democratic,H6CA03158,"PAN, RICHARD DR.",False,True,2548242.27,207936.20,True,https://theballotbrief.com/district/ca-6
+CA,06,Kevin Kiley,OTHER,No Party Preference,H2CA03157,"KILEY, KEVIN",True,True,3723214.51,34648.00,True,https://theballotbrief.com/district/ca-6
+CA,07,Doris Matsui,DEM,Democratic,H6CA05195,"MATSUI, DORIS",True,True,7837818.8,1995780.29,False,https://theballotbrief.com/district/ca-7
+CA,07,Mai Vang,DEM,Democratic,H6CA07175,"VANG, MAI",False,True,1828417.71,388763.28,False,https://theballotbrief.com/district/ca-7
+CA,08,John Garamendi,DEM,Democratic,H0CA10149,"GARAMENDI, JOHN",True,True,582745.6,1231642.66,False,https://theballotbrief.com/district/ca-8
+CA,08,Rudy Recile,REP,Republican,H2CA00153,"RECILE, RUDY",False,False,20073.0,235.29,False,https://theballotbrief.com/district/ca-8
+CA,09,Josh Harder,DEM,Democratic,H8CA10126,"HARDER, JOSH",True,True,4490401.33,4782692.06,False,https://theballotbrief.com/district/ca-9
+CA,09,John McBride,REP,Republican,H4CA09101,"MCBRIDE, JOHN",False,True,77472.65,4547.04,False,https://theballotbrief.com/district/ca-9
+CA,10,Mark DeSaulnier,DEM,Democratic,H0CA10073,"DESAULNIER, MARK",True,True,721776.27,467219.62,False,https://theballotbrief.com/district/ca-10
+CA,10,Jeff Frese,REP,Republican,H6CA10187,"FRESE, JEFFREY",False,False,0.0,0.00,False,https://theballotbrief.com/district/ca-10
+CA,11,Connie Chan,DEM,Democratic,H6CA11268,"CHAN, CONNIE",False,True,2404664.18,581804.91,True,https://theballotbrief.com/district/ca-11
+CA,11,Scott Wiener,DEM,Democratic,H8CA11116,"WIENER, SCOTT",False,True,5808855.03,611039.24,True,https://theballotbrief.com/district/ca-11
+CA,12,Jamie Joyce,DEM,Democratic,H6CA12209,"JOYCE, JAMIE",False,True,69669.05,5258.28,False,https://theballotbrief.com/district/ca-12
+CA,12,Lateefah Simon,DEM,Democratic,H4CA12154,"SIMON, LATEEFAH",True,True,1703905.82,725756.55,False,https://theballotbrief.com/district/ca-12
+CA,13,Adam Gray,DEM,Democratic,H2CA13115,"GRAY, ADAM C.",True,True,5241028.11,848632.63,False,https://theballotbrief.com/district/ca-13
+CA,13,Kevin Lincoln,REP,Republican,H4CA09093,"LINCOLN, KEVIN J II",False,True,2971922.26,448388.44,False,https://theballotbrief.com/district/ca-13
+CA,14,Aisha Wahab,DEM,Democratic,H0CA15213,"WAHAB, AISHA",False,True,1214546.85,462322.33,False,https://theballotbrief.com/district/ca-14
+CA,14,Melissa Hernandez,DEM,Democratic,H6CA14163,"HERNANDEZ, MELISSA",False,True,2112673.52,108358.09,False,https://theballotbrief.com/district/ca-14
+CA,15,Kevin Mullin,DEM,Democratic,H2CA14162,"MULLIN, KEVIN",True,True,981645.13,191601.11,False,https://theballotbrief.com/district/ca-15
+CA,15,Charles Hoelter,REP,Republican,H6CA15194,"HOELTER, CHARLES",False,False,0.0,0.00,False,https://theballotbrief.com/district/ca-15
+CA,16,Sam Liccardo,DEM,Democratic,H4CA16197,"LICCARDO, SAM T.",True,True,3873149.95,2259659.30,False,https://theballotbrief.com/district/ca-16
+CA,16,Peter Sundin Soulé,REP,Republican,H6CA16176,"SOULE, PETER SUNDIN MR.",False,True,4272.0,4125.22,False,https://theballotbrief.com/district/ca-16
+CA,17,Ro Khanna,DEM,Democratic,H4CA12055,"KHANNA, ROHIT",True,True,15320812.81,16578402.31,False,https://theballotbrief.com/district/ca-17
+CA,17,Ritesh Tandon,REP,Republican,H0CA17193,"TANDON, RITESH",False,True,57011.48,5227.22,False,https://theballotbrief.com/district/ca-17
+CA,18,Zoe Lofgren,DEM,Democratic,H4CA16049,"LOFGREN, ZOE",True,True,1983394.32,602360.54,False,https://theballotbrief.com/district/ca-18
+CA,18,Shane Lewis,REP,Republican,H6CA18172,"LEWIS, SHANE",False,True,115468.87,4416.73,False,https://theballotbrief.com/district/ca-18
+CA,19,Jimmy Panetta,DEM,Democratic,H6CA20152,"PANETTA, JIMMY",True,True,3622736.66,5467202.48,False,https://theballotbrief.com/district/ca-19
+CA,19,Peter Coe Verbica,REP,Republican,H6CA19154,"VERBICA, PETER COE",False,True,85541.19,6821.14,False,https://theballotbrief.com/district/ca-19
+CA,20,Sandra Van Scotter,DEM,Democratic,H6CA20228,"VAN SCOTTER, SANDRA",False,True,47739.09,-1680.31,False,https://theballotbrief.com/district/ca-20
+CA,20,Vince Fong,REP,Republican,H4CA20181,"FONG, VINCE",True,True,2407333.59,667339.40,False,https://theballotbrief.com/district/ca-20
+CA,21,Jim Costa,DEM,Democratic,H4CA20082,"COSTA, JIM",True,True,1685248.73,500767.13,False,https://theballotbrief.com/district/ca-21
+CA,21,Kyle Kirkland,REP,Republican,H6CA13199,"KIRKLAND, KYLE",False,True,464700.09,13100.74,False,https://theballotbrief.com/district/ca-21
+CA,22,Randy Villegas,DEM,Democratic,H6CA22190,"VILLEGAS, RANDY",False,True,5942030.17,962351.77,True,https://theballotbrief.com/district/ca-22
+CA,22,David G. Valadao,REP,Republican,H2CA20094,"VALADAO, DAVID",True,True,6325324.07,1711651.27,True,https://theballotbrief.com/district/ca-22
+CA,23,Tessa Lynn Hodge,DEM,Democratic,H6CA23230,"HODGE, TESSA LYNN",False,True,126771.66,12434.33,False,https://theballotbrief.com/district/ca-23
+CA,23,Jay Obernolte,REP,Republican,H0CA08135,"OBERNOLTE, JAY",True,True,1854658.18,1378568.34,False,https://theballotbrief.com/district/ca-23
+CA,24,Salud Carbajal,DEM,Democratic,H6CA24303,"CARBAJAL, SALUD O.",True,True,1917271.26,3343462.75,False,https://theballotbrief.com/district/ca-24
+CA,24,Bob Smith,REP,Republican,H6CA24345,"SMITH, ROBERT BOB J",False,True,346742.15,57207.89,False,https://theballotbrief.com/district/ca-24
+CA,25,Raul Ruiz,DEM,Democratic,H2CA36439,"RUIZ, RAUL DR.",True,True,2455630.94,2466904.60,False,https://theballotbrief.com/district/ca-25
+CA,25,Joe Males,REP,Republican,H6CA25219,"MALES, JOE",False,True,1114056.44,57994.70,False,https://theballotbrief.com/district/ca-25
+CA,26,Jacqui Irwin,DEM,Democratic,H6CA26266,"IRWIN, JACQUI V",False,True,1170990.11,457811.33,False,https://theballotbrief.com/district/ca-26
+CA,26,Sam Gallucci,REP,Republican,H6CA26241,"GALLUCCI, SAMUEL",False,True,537530.39,18881.21,False,https://theballotbrief.com/district/ca-26
+CA,27,George Whitesides,DEM,Democratic,H4CA27111,"WHITESIDES, GEORGE",True,True,4512697.32,2173658.08,False,https://theballotbrief.com/district/ca-27
+CA,27,Jason Gibbs,REP,Republican,H6CA27306,"GIBBS, JASON",False,True,413837.88,60498.54,False,https://theballotbrief.com/district/ca-27
+CA,28,Judy Chu,DEM,Democratic,H0CA32101,"CHU, JUDY",True,True,1375778.13,3680652.82,False,https://theballotbrief.com/district/ca-28
+CA,28,April A. Verlato,REP,Republican,H4CA28127,"VERLATO, APRIL",False,True,700.0,655.19,False,https://theballotbrief.com/district/ca-28
+CA,29,Angélica María Dueñas,DEM,Democratic,H8CA29100,"DUENAS, ANGELICA MARIA",False,True,97450.42,16145.36,False,https://theballotbrief.com/district/ca-29
+CA,29,Luz Maria Rivas,DEM,Democratic,H4CA29141,"RIVAS, LUZ",True,True,1032475.21,296150.20,False,https://theballotbrief.com/district/ca-29
+CA,30,Laura Friedman,DEM,Democratic,H4CA30149,"FRIEDMAN, LAURA",True,True,994570.57,520548.06,False,https://theballotbrief.com/district/ca-30
+CA,30,Scott Alan Meyers,REP,Republican,H6CA30250,"MEYERS, SCOTT ALAN",False,True,122819.35,5241.60,False,https://theballotbrief.com/district/ca-30
+CA,31,Gil Cisneros,DEM,Democratic,H8CA39174,"CISNEROS, GILBERT",False,True,853124.16,212818.20,False,https://theballotbrief.com/district/ca-31
+CA,31,Eric Ching,REP,Republican,H2CA39151,"CHING, ERIC J",False,True,97169.8,10375.02,False,https://theballotbrief.com/district/ca-31
+CA,32,Brad Sherman,DEM,Democratic,H6CA24113,"SHERMAN, BRAD",True,True,2899860.15,2673243.15,False,https://theballotbrief.com/district/ca-32
+CA,32,Larry Thompson,REP,Republican,H4CA32137,"THOMPSON, LARRY",False,True,66331.34,7145.89,False,https://theballotbrief.com/district/ca-32
+CA,33,Pete Aguilar,DEM,Democratic,H2CA31125,"AGUILAR, PETE",True,True,5676010.87,2673714.42,False,https://theballotbrief.com/district/ca-33
+CA,33,Stephanie M. Vargas,REP,Republican,H6CA33114,"VARGAS, STEPHANIE M.",False,True,720.51,520.51,False,https://theballotbrief.com/district/ca-33
+CA,34,Angela Gonzales-Torres,DEM,Democratic,H6CA34286,"GONZALES-TORRES, ANGELA",False,True,509751.75,104818.32,True,https://theballotbrief.com/district/ca-34
+CA,34,Jimmy Gomez,DEM,Democratic,H8CA34266,"GOMEZ, JIMMY",True,True,1336235.14,628394.77,True,https://theballotbrief.com/district/ca-34
+CA,35,Norma J. Torres,DEM,Democratic,H4CA35031,"TORRES, NORMA",True,True,922924.14,244896.64,False,https://theballotbrief.com/district/ca-35
+CA,35,Mike Cargile,REP,Republican,H0CA35146,"CARGILE, MIKE",False,True,9799.0,447.81,False,https://theballotbrief.com/district/ca-35
+CA,36,Ted W. Lieu,DEM,Democratic,H4CA33119,"LIEU, TED",True,True,2218447.53,1181424.01,False,https://theballotbrief.com/district/ca-36
+CA,36,Houston Brignano,REP,Republican,H6CA36208,"BRIGNANO, HOUSTON",False,True,7020.37,1219.09,False,https://theballotbrief.com/district/ca-36
+CA,37,Samantha Mota,DEM,Democratic,H6CA37339,"MOTA, SAMANTHA",False,True,12578.93,328.29,False,https://theballotbrief.com/district/ca-37
+CA,37,Sydney Kamlager-Dove,DEM,Democratic,H2CA37304,"KAMLAGER-DOVE, SYDNEY",True,True,1644249.01,184759.92,False,https://theballotbrief.com/district/ca-37
+CA,38,Hilda Solis,DEM,Democratic,H6CA38139,"SOLIS, HILDA",False,True,1482148.13,284506.89,False,https://theballotbrief.com/district/ca-38
+CA,38,Pedro Antonio Casas,REP,Republican,H4CA31212,"CASAS, PEDRO ANTONIO",False,False,0.0,0.00,False,https://theballotbrief.com/district/ca-38
+CA,39,Mark Takano,DEM,Democratic,H2CA43245,"TAKANO, MARK",True,True,1133983.78,231215.39,False,https://theballotbrief.com/district/ca-39
+CA,39,Steve Manos,REP,Republican,H6CA39145,"MANOS, STEVE",False,True,11929.0,3987.50,False,https://theballotbrief.com/district/ca-39
+CA,40,Ken Calvert,REP,Republican,H2CA37023,"CALVERT, KEN",True,True,7050383.48,980390.51,True,https://theballotbrief.com/district/ca-40
+CA,40,Young Kim,REP,Republican,H8CA39240,"KIM, YOUNG",True,True,10148196.21,910972.96,True,https://theballotbrief.com/district/ca-40
+CA,41,Linda Sánchez,DEM,Democratic,H2CA39078,"SANCHEZ, LINDA",True,True,1898187.85,420799.23,False,https://theballotbrief.com/district/ca-41
+CA,41,Mitch Clemmons,REP,Republican,H2CA38260,"CLEMMONS, MITCHELL",False,False,6154.0,3073.48,False,https://theballotbrief.com/district/ca-41
+CA,42,Robert Garcia,DEM,Democratic,H2CA47188,"GARCIA, ROBERT",True,True,3394174.67,1572979.62,False,https://theballotbrief.com/district/ca-42
+CA,42,Brian Burley,REP,Republican,H0CA48172,"BURLEY, BRIAN J MR.",False,True,251136.54,1939.28,False,https://theballotbrief.com/district/ca-42
+CA,43,Maxine Waters,DEM,Democratic,H4CA23011,"WATERS, MAXINE MS",True,True,1107267.34,104671.36,False,https://theballotbrief.com/district/ca-43
+CA,43,Cristian Morales,REP,Republican,H6CA43188,"MORALES, CRISTIAN",False,True,14995.0,538.74,False,https://theballotbrief.com/district/ca-43
+CA,44,Nanette Diaz Barragan,DEM,Democratic,H6CA44103,"BARRAGAN, NANETTE",True,True,1021920.79,1083798.24,False,https://theballotbrief.com/district/ca-44
+CA,44,Genevieve Angel,REP,Republican,H6CA44210,"ANGEL, GENEVIEVE",False,True,21826.25,10944.02,False,https://theballotbrief.com/district/ca-44
+CA,45,Derek Tran,DEM,Democratic,H4CA45170,"TRAN, DEREK",True,True,5988192.12,2682392.26,False,https://theballotbrief.com/district/ca-45
+CA,45,Chuong V. Vo,REP,Republican,H6CA45191,"VO, CHUONG",False,True,937468.52,175455.65,False,https://theballotbrief.com/district/ca-45
+CA,46,Lou Correa,DEM,Democratic,H6CA46116,"CORREA, LOU",True,True,1493328.69,2323395.15,False,https://theballotbrief.com/district/ca-46
+CA,46,David Pan,REP,Republican,H4CA46137,"PAN, DAVID",False,True,104144.51,1856.37,False,https://theballotbrief.com/district/ca-46
+CA,47,Dave Min,DEM,Democratic,H4CA47085,"MIN, DAVE",True,True,3872174.88,1482645.90,False,https://theballotbrief.com/district/ca-47
+CA,47,Jenny Rae Le Roux,REP,Republican,H6CA47114,"LE ROUX, JENNY RAE",False,True,592041.22,135774.48,False,https://theballotbrief.com/district/ca-47
+CA,48,Marni von Wilpert,DEM,Democratic,H6CA48310,"VON WILPERT, MARNI",False,True,4966576.06,659136.04,True,https://theballotbrief.com/district/ca-48
+CA,48,Jim Desmond,REP,Republican,H6CA49128,"DESMOND, JIM",False,True,3177972.16,717518.45,True,https://theballotbrief.com/district/ca-48
+CA,49,Mike Levin,DEM,Democratic,H8CA49058,"LEVIN, MIKE",True,True,3564690.1,1360778.23,False,https://theballotbrief.com/district/ca-49
+CA,49,Armen Kurdian,REP,Republican,H6CA49169,"KURDIAN, ARMEN",False,True,189195.87,30426.87,False,https://theballotbrief.com/district/ca-49
+CA,50,Scott Peters,DEM,Democratic,H2CA52089,"PETERS, SCOTT",True,True,2191968.34,2567655.53,False,https://theballotbrief.com/district/ca-50
+CA,50,Steve Cohen,REP,Republican,H6CA50324,"COHEN, STEPHEN JAY MR",False,True,4092.0,2031.61,False,https://theballotbrief.com/district/ca-50
+CA,51,Sara Jacobs,DEM,Democratic,H8CA49074,"JACOBS, SARA",True,True,1864955.14,317430.40,False,https://theballotbrief.com/district/ca-51
+CA,51,Ricardo Cabrera,REP,Republican,H6CA51140,"CABRERA, RICARDO",False,False,0.0,0.00,False,https://theballotbrief.com/district/ca-51
+CA,52,Juan Vargas,DEM,Democratic,H2CA50026,"VARGAS, JUAN C.",True,True,836097.06,317661.81,False,https://theballotbrief.com/district/ca-52
+CA,52,Jeff Belle,REP,Republican,H6CA52163,"BELLE, JEFFERY MR",False,True,26538.06,81.71,False,https://theballotbrief.com/district/ca-52
+CO,01,Melat Kiros,DEM,Democratic,H6CO01273,"KIROS, MELAT",False,True,1308527.59,75724.40,False,https://theballotbrief.com/district/co-1
+CO,01,Chad Humphrey,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/co-1
+CO,01,Critter Milton,OTHER,Unity Party,H0CO03173,"MILTON, CHRISTOPHER",False,False,0.0,0.00,False,https://theballotbrief.com/district/co-1
+CO,01,Shimon Blau,OTHER,Unaffiliated,H6CO01356,"BLAU, SHIMON",False,True,204360.6,59760.12,False,https://theballotbrief.com/district/co-1
+CO,01,Christy Peterson,REP,Republican,H6CO01331,"PETERSON, CHRISTY",False,True,9446.32,7392.92,False,https://theballotbrief.com/district/co-1
+CO,02,Joe Neguse,DEM,Democratic,H8CO02160,"NEGUSE, JOSEPH",True,True,3342640.14,3239137.70,False,https://theballotbrief.com/district/co-2
+CO,02,Gaylon Kent,OTHER,Libertarian,H2CO03153,"KENT, GAYLON",False,False,0.0,0.00,False,https://theballotbrief.com/district/co-2
+CO,02,Kelley Anne Dennison,REP,Republican,H6CO02206,"DENNISON, KELLEY ANNE",False,True,12348.37,1087.21,False,https://theballotbrief.com/district/co-2
+CO,03,Dwayne L. Romero,DEM,Democratic,H6CO03253,"ROMERO, DWAYNE",False,True,1701091.41,196124.17,True,https://theballotbrief.com/district/co-3
+CO,03,Clifton Brown,OTHER,Unaffiliated,,,,,,,False,https://theballotbrief.com/district/co-3
+CO,03,Cory Robertson,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/co-3
+CO,03,Jeff Hurd,REP,Republican,H4CO03357,"HURD, JEFFREY",True,True,4168636.04,237767.58,True,https://theballotbrief.com/district/co-3
+CO,04,Eileen Laubacher,DEM,Democratic,H6CO04202,"LAUBACHER, EILEEN",False,True,13700426.19,1846288.39,True,https://theballotbrief.com/district/co-4
+CO,04,Douglas Mangeris,OTHER,Libertarian,H4CO04215,"MANGERIS, DOUGLAS",False,False,0.0,0.00,True,https://theballotbrief.com/district/co-4
+CO,04,Lauren Boebert,REP,Republican,H0CO03165,"BOEBERT, LAUREN",True,True,1226252.92,274161.88,True,https://theballotbrief.com/district/co-4
+CO,05,Jessica Killin,DEM,Democratic,H6CO05324,"KILLIN, JESSICA WILLOW",False,True,5593463.21,507728.23,True,https://theballotbrief.com/district/co-5
+CO,05,Christopher Mitchell,OTHER,American Constitution Party,H4CO05071,"MITCHELL, CHRISTOPHER DOUGLAS",False,True,210.0,201.27,True,https://theballotbrief.com/district/co-5
+CO,05,"Mark ""Marky Jr"" Elworth",OTHER,Libertarian,H4CO03340,"ELWORTH, MARK",False,False,0.0,0.00,True,https://theballotbrief.com/district/co-5
+CO,05,Jeff Crank,REP,Republican,H6CO05142,"CRANK, JEFF",True,True,2872434.39,542836.00,True,https://theballotbrief.com/district/co-5
+CO,06,Jason Crow,DEM,Democratic,H8CO06229,"CROW, JASON",True,True,4008282.35,2940182.68,False,https://theballotbrief.com/district/co-6
+CO,06,Meredith Ryan,OTHER,Unity Party,,,,,,,False,https://theballotbrief.com/district/co-6
+CO,06,Patty McMahon,OTHER,Libertarian,H6CO06173,"MCMAHON, PATTY M MS.",False,False,6027.35,566.23,False,https://theballotbrief.com/district/co-6
+CO,06,Samir Ezzeldin Witta,OTHER,Unaffiliated,H6CO06116,"WITTA, SAMIR EZZELDIN DR.",False,True,103438.45,-47148.76,False,https://theballotbrief.com/district/co-6
+CO,06,Jason Clark,REP,Republican,H6CO06165,"CLARK, JASON",False,False,0.0,0.00,False,https://theballotbrief.com/district/co-6
+CO,07,Brittany Pettersen,DEM,Democratic,H8CO07045,"PETTERSEN, BRITTANY LOUISE",True,True,2260248.55,1196445.37,False,https://theballotbrief.com/district/co-7
+CO,07,"Dan ""Kilo"" Sallis",OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/co-7
+CO,07,Joe Krzeczkowski,OTHER,Unaffiliated,H6CO07130,"KRZECZKOWSKI, JOE",False,True,3530.92,916.48,False,https://theballotbrief.com/district/co-7
+CO,07,Lawrence Kyle Clark,OTHER,American Constitution Party,,,,,,,False,https://theballotbrief.com/district/co-7
+CO,07,Susan Hall,OTHER,Unity Party,,,,,,,False,https://theballotbrief.com/district/co-7
+CO,07,Tim Bennett,REP,Republican,H6CO07122,"BENNETT, TIMOTHY",False,True,109339.34,4615.16,False,https://theballotbrief.com/district/co-7
+CO,08,Manny Rutinel,DEM,Democratic,H6CO08013,"RUTINEL, MANNY",False,True,9459070.43,1002642.35,True,https://theballotbrief.com/district/co-8
+CO,08,Dave Wood,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/co-8
+CO,08,Gabe Evans,REP,Republican,H4CO08034,"EVANS, TIMOTHY GABRIEL JOSEPH",True,True,7248105.93,1328189.23,True,https://theballotbrief.com/district/co-8
+CT,01,Luke Bronin,DEM,Democratic,H6CT01206,"BRONIN, LUKE",False,True,3865511.27,390818.29,False,https://theballotbrief.com/district/ct-1
+CT,01,Amy Chai,REP,Republican,H2CT03102,"CHAI, AMY FOGELSTROM DR",False,True,21972.16,690.00,False,https://theballotbrief.com/district/ct-1
+CT,02,Joe Courtney,DEM,Democratic,H2CT02112,"COURTNEY, JOSEPH",True,True,966513.57,385577.84,False,https://theballotbrief.com/district/ct-2
+CT,02,George Austin,REP,Republican,H6CT02196,"AUSTIN, GEORGE PATRICK",False,True,314977.26,96712.08,False,https://theballotbrief.com/district/ct-2
+CT,03,Rosa DeLauro,DEM,Democratic,H0CT03072,"DELAURO, ROSA L",True,True,1622998.67,83415.12,False,https://theballotbrief.com/district/ct-3
+CT,03,Christopher Lancia,REP,Republican,H6CT03178,"LANCIA, CHRISTOPHER JOHN MR.",False,True,17485.75,67.54,False,https://theballotbrief.com/district/ct-3
+CT,04,Jim Himes,DEM,Democratic,H8CT04172,"HIMES, JIM",True,True,1704622.29,2419413.69,False,https://theballotbrief.com/district/ct-4
+CT,04,Michael Ted Goldstein,REP,Republican,H6CT04143,"GOLDSTEIN, MICHAEL",False,True,59216.32,26664.73,False,https://theballotbrief.com/district/ct-4
+CT,05,Jahana Hayes,DEM,Democratic,H8CT05245,"HAYES, JAHANA",True,True,1716462.12,1136297.07,True,https://theballotbrief.com/district/ct-5
+CT,05,Chris Shea,REP,Republican,H6CT05231,"SHEA, CHRIS",False,True,465963.04,53768.43,True,https://theballotbrief.com/district/ct-5
+DE,00,Sarah McBride,DEM,D,H4DE00045,"MCBRIDE, SARAH ELIZABETH",True,True,5556755.49,2326039.16,False,https://theballotbrief.com/district/de-al
+DE,00,Joseph Arminio,REP,R,H6DE01121,"ARMINIO, JOSEPH DR. JOE PH.D.",False,False,12301.76,6943.76,False,https://theballotbrief.com/district/de-al
+FL,01,Gay Valimont,DEM,Democratic,H4FL01197,"VALIMONT, JENNIFER GAY",False,True,295713.87,34722.83,False,https://theballotbrief.com/district/fl-1
+FL,01,Tyler L. Davis,OTHER,No Party Affiliation,H6FL01549,"DAVIS, TYLER LEEANA MRS.",False,False,0.0,0.00,False,https://theballotbrief.com/district/fl-1
+FL,01,Jimmy Patronis,REP,Republican,H6FL01390,"PATRONIS, JIMMY JR.",False,True,4467312.53,939474.31,False,https://theballotbrief.com/district/fl-1
+FL,02,Amanda Marie Green,DEM,Democratic,H6FL02299,"GREEN, AMANDA MARIE",False,True,658316.41,28138.56,False,https://theballotbrief.com/district/fl-2
+FL,02,Austin Rogers,REP,Republican,H6FL02331,"ROGERS, AUSTIN",False,True,1359851.76,98295.26,False,https://theballotbrief.com/district/fl-2
+FL,03,Seth Harp,DEM,Democratic,H6FL03099,"HARP, SETH ALLAN",False,True,172434.58,44145.32,False,https://theballotbrief.com/district/fl-3
+FL,03,Mike Klein,OTHER,No Party Affiliation,H6FL03149,"KLEIN, MIKE",False,True,120556.13,12411.78,False,https://theballotbrief.com/district/fl-3
+FL,03,Kat Cammack,REP,Republican,H0FL03175,"CAMMACK, KAT",True,True,2437580.31,962289.35,False,https://theballotbrief.com/district/fl-3
+FL,04,"LaShonda ""L.J."" Holloway",DEM,Democratic,H6FL05193,"HOLLOWAY, LASHONDA J",False,True,58546.29,44105.44,False,https://theballotbrief.com/district/fl-4
+FL,04,Mike Sell,OTHER,Florida Forward,H6FL04246,"SELL, MIKE",False,True,24206.0,4857.00,False,https://theballotbrief.com/district/fl-4
+FL,04,Todd Schaefer,OTHER,No Party Affiliation,H4FL04068,"SCHAEFER, TODD",False,False,0.0,0.00,False,https://theballotbrief.com/district/fl-4
+FL,04,Aaron Bean,REP,Republican,H2FL04211,"BEAN, AARON P.",True,True,2682266.58,577963.71,False,https://theballotbrief.com/district/fl-4
+FL,05,Rachel Grage,DEM,Democratic,H6FL05250,"GRAGE, RACHEL",False,True,448142.58,65881.07,False,https://theballotbrief.com/district/fl-5
+FL,05,John H. Rutherford,REP,Republican,H6FL04105,"RUTHERFORD, JOHN",True,True,913650.12,240063.46,False,https://theballotbrief.com/district/fl-5
+FL,06,Eric Yonce,DEM,Democratic,H6FL06340,"YONCE, ERIC",False,True,619304.84,96905.40,False,https://theballotbrief.com/district/fl-6
+FL,06,Andrew Parrott,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/fl-6
+FL,06,Michael Gist,OTHER,No Party Affiliation,H6FL06423,"GIST, MICHAEL",False,False,7948.99,-152.57,False,https://theballotbrief.com/district/fl-6
+FL,06,Randy Fine,REP,Republican,H6FL06258,"FINE, RANDY",False,True,4645044.9,184588.47,False,https://theballotbrief.com/district/fl-6
+FL,07,Bale Dalton,DEM,Democratic,H6FL07215,"DALTON, BALE",False,True,2334663.82,202253.89,True,https://theballotbrief.com/district/fl-7
+FL,07,Christopher Dennison,OTHER,Libertarian,H6FL07249,"DENNISON, CHRISTOPHER ALLEN",False,False,10500.0,60.00,False,https://theballotbrief.com/district/fl-7
+FL,07,Ryan Elijah,REP,Republican,H6FL07231,"ELIJAH, RYAN",False,True,818460.2,173006.12,True,https://theballotbrief.com/district/fl-7
+FL,08,Jennifer Jenkins,DEM,Democratic,H6FL06399,"JENKINS, JENNIFER",False,True,960174.42,152722.05,False,https://theballotbrief.com/district/fl-8
+FL,08,Mike Haridopolos,REP,Republican,H4FL08168,"HARIDOPOLOS, MIKE",True,True,2049237.21,482350.21,False,https://theballotbrief.com/district/fl-8
+FL,09,Darren Soto,DEM,Democratic,H6FL09179,"SOTO, DARREN",True,True,3652279.81,249994.67,True,https://theballotbrief.com/district/fl-9
+FL,09,Dan Green,REP,Republican,H6FL09294,"GREEN, DAN",False,True,2692713.23,449959.75,True,https://theballotbrief.com/district/fl-9
+FL,10,Maxwell Alejandro Frost,DEM,Democratic,H2FL10259,"FROST, MAXWELL ALEJANDRO",True,True,3835169.08,1055862.43,False,https://theballotbrief.com/district/fl-10
+FL,11,James Pericola,DEM,Democratic,H6FL11357,"PERICOLA, JAMES",False,True,225867.92,35195.65,False,https://theballotbrief.com/district/fl-11
+FL,11,Ralph Groves,OTHER,Libertarian,H4FL11089,"GROVES, RALPH",False,False,0.0,0.00,False,https://theballotbrief.com/district/fl-11
+FL,11,Joe Strada,REP,Republican,H6FL11332,"STRADA, JOE",False,True,5512075.39,860067.70,False,https://theballotbrief.com/district/fl-11
+FL,12,Kimberly Overman,DEM,Democratic,H6FL15200,"OVERMAN, KIMBERLY",False,True,280117.97,29526.49,False,https://theballotbrief.com/district/fl-12
+FL,12,Branden Scrivener,OTHER,No Party Affiliation,H6FL12231,"SCRIVENER, BRANDEN",False,True,8195.29,27.53,False,https://theballotbrief.com/district/fl-12
+FL,12,Gus Michael Bilirakis,REP,Republican,H6FL09070,"BILIRAKIS, GUS M",True,True,2255341.81,254246.07,False,https://theballotbrief.com/district/fl-12
+FL,13,Leela Gray,DEM,Democratic,H6FL13312,"GRAY, LEELA J",False,True,2917664.89,656422.77,True,https://theballotbrief.com/district/fl-13
+FL,13,Tony D'Arrigo,OTHER,No Party Affiliation,H4FL13234,"D'ARRIGO, TONY C",False,False,28180.9,25680.90,False,https://theballotbrief.com/district/fl-13
+FL,13,Anna Paulina Luna,REP,Republican,H0FL13158,"PAULINA LUNA, ANNA",True,True,4351791.83,746955.17,True,https://theballotbrief.com/district/fl-13
+FL,14,Kathy Castor,DEM,Democratic,H6FL11126,"CASTOR, KATHY",True,True,4930537.26,577435.34,True,https://theballotbrief.com/district/fl-14
+FL,14,Brian Lambert,OTHER,Libertarian,H6FL14245,"LAMBERT, BRIAN KEITH",False,True,17091.52,2476.68,False,https://theballotbrief.com/district/fl-14
+FL,14,Mike Beltran,REP,Republican,H6FL14237,"BELTRAN, MIKE",False,True,2731427.99,1731517.72,True,https://theballotbrief.com/district/fl-14
+FL,15,Robert People,DEM,Democratic,H6FL15168,"PEOPLE, ROBERT",False,True,82518.46,26624.85,False,https://theballotbrief.com/district/fl-15
+FL,15,Laurel Lee,REP,Republican,H2FL15241,"LEE, LAUREL",True,True,2711189.14,1320456.25,False,https://theballotbrief.com/district/fl-15
+FL,16,Kelly Kirschner,DEM,Democratic,H6FL16158,"KIRSCHNER, KELLY",False,True,876363.29,261139.07,True,https://theballotbrief.com/district/fl-16
+FL,16,Mark Davis,OTHER,No Party Affiliation,H6FL06365,"DAVIS, MARK",False,True,66969.03,1699.42,False,https://theballotbrief.com/district/fl-16
+FL,16,Sydney Gruters,REP,Republican,H6FL16141,"GRUTERS, SYDNEY",False,True,1618888.17,252497.06,True,https://theballotbrief.com/district/fl-16
+FL,17,Matthew Montavon,DEM,Democratic,H4FL17060,"MONTAVON, MATTHEW",False,True,156274.33,25122.84,False,https://theballotbrief.com/district/fl-17
+FL,17,Michael J. Quirk,OTHER,No Party Affiliation,H6FL17081,"QUIRK, MICHAEL",False,True,32487.55,3140.66,False,https://theballotbrief.com/district/fl-17
+FL,17,Greg Steube,REP,Republican,H8FL17053,"STEUBE, GREG",True,True,1587826.76,2132055.34,False,https://theballotbrief.com/district/fl-17
+FL,18,Curtis Gibson,DEM,Democratic,H6FL18212,"GIBSON, CURTIS",False,False,13784.9,1576.67,False,https://theballotbrief.com/district/fl-18
+FL,18,Deva Simmons,OTHER,No Party Affiliation,H6FL18204,"SIMMONS, DEVA",False,True,29703.8,-1516.29,False,https://theballotbrief.com/district/fl-18
+FL,18,Scott Franklin,REP,Republican,H0FL15104,"FRANKLIN, SCOTT MR.",True,True,1026403.99,883230.77,False,https://theballotbrief.com/district/fl-18
+FL,19,Victor Arias,DEM,Democratic,H6FL19277,"ARIAS, VICTOR M.",False,True,69983.08,15417.15,False,https://theballotbrief.com/district/fl-19
+FL,19,Seth Haskin,OTHER,No Party Affiliation,H6FL19319,"HASKIN, SETH",False,True,8000.0,651.43,False,https://theballotbrief.com/district/fl-19
+FL,19,Jim Schwartzel,REP,Republican,H6FL19137,"SCHWARTZEL, JIM",False,True,2828902.86,506211.41,False,https://theballotbrief.com/district/fl-19
+FL,20,Debbie Wasserman Schultz,DEM,Democratic,H4FL20023,"WASSERMAN SCHULTZ, DEBBIE",True,True,3707925.05,784570.39,False,https://theballotbrief.com/district/fl-20
+FL,20,Kedner Maxime,OTHER,Independent,H6FL20119,"MAXIME, KEDNER",False,True,126572.76,59351.21,False,https://theballotbrief.com/district/fl-20
+FL,20,Brent Andersen,REP,Republican,H6FL20143,"ANDERSEN, BRENT",False,True,100349.66,16554.73,False,https://theballotbrief.com/district/fl-20
+FL,21,James T. Martin,DEM,Democratic,H6FL21075,"MARTIN, JAMES",False,True,821778.76,50898.38,True,https://theballotbrief.com/district/fl-21
+FL,21,Alexander Cooke,OTHER,No Party Affiliation,H6FL21109,"COOKE, ALEXANDER R",False,True,30244.18,1384.32,False,https://theballotbrief.com/district/fl-21
+FL,21,Brian Mast,REP,Republican,H6FL18097,"MAST, BRIAN",True,True,5097731.89,2378762.79,True,https://theballotbrief.com/district/fl-21
+FL,22,Pia Dandiya,DEM,Democratic,H6FL21059,"DANDIYA, PIA",False,True,4619822.46,735105.23,False,https://theballotbrief.com/district/fl-22
+FL,22,Casey Askar,REP,Republican,H6FL22248,"ASKAR, CASEY",False,True,7418254.75,1891161.94,False,https://theballotbrief.com/district/fl-22
+FL,23,Lois Frankel,DEM,Democratic,H2FL14053,"FRANKEL, LOIS J.",True,True,2631967.91,564089.62,False,https://theballotbrief.com/district/fl-23
+FL,23,Deborah Adeimy,REP,Republican,H2FL21132,"ADEIMY, DEBORAH",False,True,201144.96,32789.85,False,https://theballotbrief.com/district/fl-23
+FL,24,Oliver G. Gilbert III,DEM,Democratic,H6FL24095,"GILBERT, OLIVER G. III",False,True,1458355.31,427294.55,False,https://theballotbrief.com/district/fl-24
+FL,24,Andy Daro,OTHER,No Party Affiliation,H6FL24061,"DARO, ANDY",False,False,2205.0,9380.00,False,https://theballotbrief.com/district/fl-24
+FL,24,Te Mayonna Brown,REP,Republican,H6FL14203,"BROWN, TE",False,True,313459.03,169275.68,False,https://theballotbrief.com/district/fl-24
+FL,25,Jared Moskowitz,DEM,Democratic,H2FL22171,"MOSKOWITZ, JARED",True,True,5710776.47,1210073.13,True,https://theballotbrief.com/district/fl-25
+FL,25,Peter Jassenoff,OTHER,Libertarian,H6FL25068,"JASSENOFF, PETER",False,False,10500.0,60.00,False,https://theballotbrief.com/district/fl-25
+FL,25,Scott Singer,REP,Republican,H6FL23188,"SINGER, SCOTT M.",False,True,3255312.89,466624.52,True,https://theballotbrief.com/district/fl-25
+FL,26,Nicole Locklin,DEM,Democratic,H6FL26058,"LOCKLIN, NICOLE",False,True,599526.7,109989.78,False,https://theballotbrief.com/district/fl-26
+FL,26,Deborah Ann Meidinger Hosey,OTHER,No Party Affiliation,H6FL26074,"MEIDINGER HOSEY, DEBORAH ANN",False,False,10780.11,2375.40,False,https://theballotbrief.com/district/fl-26
+FL,26,Mario Diaz-Balart,REP,Republican,H2FL25018,"DIAZ-BALART, MARIO",True,True,2763195.61,1676212.67,False,https://theballotbrief.com/district/fl-26
+FL,27,Eliott Rodriguez,DEM,Democratic,H6FL27098,"RODRIGUEZ, ELIOTT",False,True,1567392.71,621791.08,True,https://theballotbrief.com/district/fl-27
+FL,27,Maria Elvira Salazar,REP,Republican,H8FL27185,"SALAZAR, MARIA ELVIRA",True,True,2519401.34,1680478.41,True,https://theballotbrief.com/district/fl-27
+FL,28,"Phil ""Felipe"" Ehr",DEM,Democratic,H4FL28042,"EHR, PHIL",False,False,508311.39,506962.57,False,https://theballotbrief.com/district/fl-28
+FL,28,Eddy Rojas,OTHER,No Party Affiliation,H6FL28021,"ROJAS, EDDY",False,False,0.0,0.00,False,https://theballotbrief.com/district/fl-28
+FL,28,Carlos A. Gimenez,REP,Republican,H0FL26036,"GIMENEZ, CARLOS",True,True,722290.55,540783.20,False,https://theballotbrief.com/district/fl-28
+GA,01,Amanda Hollowell,DEM,Democratic,H6GA01158,"HOLLOWELL, AMANDA",False,True,264753.46,50136.67,False,https://theballotbrief.com/district/ga-1
+GA,01,James 'Jim' Kingston,REP,Republican,H6GA01109,"KINGSTON, JAMES MORRIS",False,True,2357233.34,269955.36,False,https://theballotbrief.com/district/ga-1
+GA,02,Sanford Bishop,DEM,Democratic,H2GA02031,"BISHOP, SANFORD",True,True,1362149.48,431525.13,False,https://theballotbrief.com/district/ga-2
+GA,02,Matt Day,REP,Republican,H6GA01182,"DAY, MATT",False,True,217631.83,0.00,False,https://theballotbrief.com/district/ga-2
+GA,03,Maura Keller,DEM,Democratic,H4GA03100,"KELLER, MAURA",False,True,246621.17,93521.92,True,https://theballotbrief.com/district/ga-3
+GA,03,Brian Jack,REP,Republican,H4GA03126,"JACK, BRIAN",True,True,2431348.05,1105820.24,True,https://theballotbrief.com/district/ga-3
+GA,04,Henry 'Hank' Johnson Jr.,DEM,Democratic,H6GA04129,"JOHNSON, HENRY C. 'HANK'",True,True,514399.21,125434.86,False,https://theballotbrief.com/district/ga-4
+GA,04,Jim Duffie,REP,Republican,H6GA04194,"DUFFIE, JIM",False,False,0.0,0.00,False,https://theballotbrief.com/district/ga-4
+GA,05,Nikema Williams,DEM,Democratic,H0GA05301,"WILLIAMS, NIKEMA N.",True,True,772833.35,63107.32,False,https://theballotbrief.com/district/ga-5
+GA,05,John 'BONGO' Salvesen,REP,Republican,H4GA05063,"O SALVESEN, JOHN",False,False,0.0,0.00,False,https://theballotbrief.com/district/ga-5
+GA,06,Lucy McBath,DEM,Democratic,H8GA06393,"MCBATH, LUCIA KAY MS.",True,True,1189989.22,682335.67,False,https://theballotbrief.com/district/ga-6
+GA,06,Kevin E. Martin,REP,Republican,H6GA06181,"MARTIN, KEVIN EUGENE",False,False,10320.0,100.00,False,https://theballotbrief.com/district/ga-6
+GA,07,Tony Kozycki,DEM,Democratic,H6GA07221,"KOZYCKI, ANTHONY LAWRENCE",False,True,922117.45,492431.78,True,https://theballotbrief.com/district/ga-7
+GA,07,Rich McCormick,REP,Republican,H0GA07273,"MCCORMICK, RICHARD DEAN DR.",True,True,2250502.72,1335872.39,True,https://theballotbrief.com/district/ga-7
+GA,08,Kelly Esti,DEM,Democratic,H6GA08138,"ESTI, KELLY DR",False,False,27962.9,3709.27,False,https://theballotbrief.com/district/ga-8
+GA,08,Austin Scott,REP,Republican,H0GA08099,"SCOTT, JAMES AUSTIN",True,True,1416650.98,1316055.88,False,https://theballotbrief.com/district/ga-8
+GA,09,Caitlyn Gegen,DEM,Democratic,H6GA09284,"GEGEN, CAITLYN",False,True,101338.84,21136.79,False,https://theballotbrief.com/district/ga-9
+GA,09,Andrew Clyde,REP,Republican,H0GA09246,"CLYDE, ANDREW",True,True,738198.43,161468.58,False,https://theballotbrief.com/district/ga-9
+GA,10,Pamela 'Pam' Delancy,DEM,Democratic,H6GA10183,"DELANCY, PAMELA MRS",False,True,78669.71,24291.66,False,https://theballotbrief.com/district/ga-10
+GA,10,Houston Gaines,REP,Republican,H6GA10175,"GAINES, HOUSTON",False,True,2816583.39,1062078.81,False,https://theballotbrief.com/district/ga-10
+GA,11,Chris Harden,DEM,Democratic,H6GA11116,"HARDEN, CHRISTOPHER MATTHEW",False,True,139282.64,8708.93,True,https://theballotbrief.com/district/ga-11
+GA,11,John Cowan,REP,Republican,H0GA14048,"COWAN, JOHN",False,True,2824605.89,145818.15,True,https://theballotbrief.com/district/ga-11
+GA,12,Ceretta Smith,DEM,Democratic,H6GA12080,"SMITH, CERETTA",False,True,47692.67,12318.39,False,https://theballotbrief.com/district/ga-12
+GA,12,Rick W. Allen,REP,Republican,H2GA12121,"ALLEN, RICHARD W",True,True,1265488.08,1464864.66,False,https://theballotbrief.com/district/ga-12
+GA,13,Jasmine Clark,DEM,Democratic,H6GA13070,"CLARK, JASMINE",False,True,2386955.4,343732.06,False,https://theballotbrief.com/district/ga-13
+GA,13,Jonathan Chavez,REP,Republican,H2GA04201,"CHAVEZ, JONATHAN",False,False,0.0,0.00,False,https://theballotbrief.com/district/ga-13
+GA,14,Shawn Harris,DEM,Democratic,H4GA14057,"HARRIS, SHAWN",False,True,8418045.03,59312.51,False,https://theballotbrief.com/district/ga-14
+GA,14,Clay Fuller,REP,Republican,H0GA14030,"FULLER, CLAY",True,True,2160464.05,204313.96,False,https://theballotbrief.com/district/ga-14
+HI,01,Ed Case,DEM,Democratic,H2HI02128,"CASE, EDWARD",True,True,1339008.35,449674.45,False,https://theballotbrief.com/district/hi-1
+HI,01,Jordan S. Conley,OTHER,Green,H6HI01394,"CONLEY, JORDAN",False,False,0.0,0.00,False,https://theballotbrief.com/district/hi-1
+HI,01,Adriel C. Lam,REP,Republican,H6HI01360,"LAM, ADRIEL C",False,False,0.0,0.00,False,https://theballotbrief.com/district/hi-1
+HI,02,Jill N. Tokuda,DEM,Democratic,H2HI02581,"TOKUDA, JILL NAOMI",True,True,985930.33,486974.66,False,https://theballotbrief.com/district/hi-2
+HI,02,Brenton Awa,REP,Republican,H6HI02426,"AWA, BRENTON",False,True,131062.69,9142.64,False,https://theballotbrief.com/district/hi-2
+IA,01,Christina Bohannan,DEM,Democratic,H2IA02111,"BOHANNAN, CHRISTINA",False,True,9905570.29,2110846.44,False,https://theballotbrief.com/district/ia-1
+IA,01,Michael Bridgford,OTHER,No Party,H6IA01213,"BRIDGFORD, MICHAEL",False,True,338285.03,76729.96,False,https://theballotbrief.com/district/ia-1
+IA,01,Mariannette Miller-Meeks,REP,Republican,H8IA02043,"MILLER-MEEKS, MARIANNETTE JANE",True,True,9101897.68,1700717.48,False,https://theballotbrief.com/district/ia-1
+IA,02,Lindsay James,DEM,Democratic,H6IA02211,"JAMES, LINDSAY",False,True,3917994.43,265953.27,True,https://theballotbrief.com/district/ia-2
+IA,02,Dave Bushaw,OTHER,No Party,H6IA02260,"BUSHAW, DAVE",False,True,38292.01,11317.89,False,https://theballotbrief.com/district/ia-2
+IA,02,Rick Stewart,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/ia-2
+IA,02,Joe Mitchell,REP,Republican,H6IA02237,"MITCHELL, JOE",False,True,2916068.98,545533.67,True,https://theballotbrief.com/district/ia-2
+IA,03,Sarah Trone Garriott,DEM,Democratic,H6IA03268,"TRONE GARRIOTT, SARAH",False,True,8070401.51,1153589.50,False,https://theballotbrief.com/district/ia-3
+IA,03,Zach Nunn,REP,Republican,H2IA03119,"NUNN, ZACH",True,True,6123740.03,620758.90,False,https://theballotbrief.com/district/ia-3
+IA,04,Dave Dawson,DEM,Democratic,H6IA04217,"DAWSON, DAVE",False,True,259240.69,41976.25,False,https://theballotbrief.com/district/ia-4
+IA,04,Chris McGowan,REP,Republican,H6IA04167,"MCGOWAN, CHRIS",False,True,862815.88,443915.09,False,https://theballotbrief.com/district/ia-4
+ID,01,Kaylee Peterson,DEM,D,H2ID01192,"PETERSON, KAYLEE JADE",False,True,279403.54,24344.68,True,https://theballotbrief.com/district/id-1
+ID,01,Brendan Gomez,OTHER,Constitution,H4ID01149,"GOMEZ, BRENDAN JOSEPH",False,False,0.0,0.00,True,https://theballotbrief.com/district/id-1
+ID,01,Sarah Zabel,OTHER,Independent,H6ID01318,"ZABEL, SARAH",False,True,272259.88,62333.38,True,https://theballotbrief.com/district/id-1
+ID,01,Russ Fulcher,REP,R,H8ID01124,"FULCHER, RUSSELL",True,True,848383.86,209944.01,True,https://theballotbrief.com/district/id-1
+ID,02,Ellie Gilbreath,DEM,Democrat,H6ID02274,"GILBREATH, ELINOR",False,True,169226.46,36716.27,True,https://theballotbrief.com/district/id-2
+ID,02,Emre Houser,OTHER,Independent,H6ID02282,"HOUSER, EMRE",False,False,0.0,0.00,True,https://theballotbrief.com/district/id-2
+ID,02,Tripp Hutchinson,OTHER,Independent,H6ID02241,"HUTCHINSON, TRIPP CHARLES",False,False,7565.0,6963.48,True,https://theballotbrief.com/district/id-2
+ID,02,Will Johanson,OTHER,Libertarian,H6ID02290,"JOHANSON, WILL",False,False,0.0,0.00,True,https://theballotbrief.com/district/id-2
+ID,02,Mike Simpson,REP,Republican,H8ID02064,"SIMPSON, MICHAEL",True,True,1409211.99,300591.21,True,https://theballotbrief.com/district/id-2
+IL,01,Jonathan L. Jackson,DEM,Democratic,H2IL01349,"JACKSON, JONATHAN",True,True,539051.41,40069.83,False,https://theballotbrief.com/district/il-1
+IL,01,Christian Maxwell,REP,Republican,H6IL01191,"MAXWELL, CHRISTIAN",False,True,94709.38,62200.44,False,https://theballotbrief.com/district/il-1
+IL,02,Donna Miller,DEM,Democratic,H6IL02355,"MILLER, DONNA",False,True,2700312.85,92406.74,False,https://theballotbrief.com/district/il-2
+IL,02,Michael Scott Noack,REP,Republican,H6IL02389,"NOACK, MICHAEL SCOTT",False,False,0.0,0.00,False,https://theballotbrief.com/district/il-2
+IL,03,Delia Ramirez,DEM,Democratic,H2IL03162,"RAMIREZ, DELIA",True,True,1626337.17,913892.20,False,https://theballotbrief.com/district/il-3
+IL,03,Angel Oakley,REP,Republican,H6IL03163,"OAKLEY, ANGEL",False,True,18442.93,4060.72,False,https://theballotbrief.com/district/il-3
+IL,04,Patty Garcia,DEM,Democratic,H6IL04153,"GARCIA, PATTY",False,True,526691.49,156711.17,False,https://theballotbrief.com/district/il-4
+IL,04,Chris Getty,OTHER,Independent,H6IL04195,"GETTY, CHRISTOPHER ROMAN",False,True,412837.66,103170.35,False,https://theballotbrief.com/district/il-4
+IL,04,Ed Hershey,OTHER,Working Class Party,H2IL04178,"HERSHEY, EDWARD",False,False,0.0,0.00,False,https://theballotbrief.com/district/il-4
+IL,04,Lupe Castillo,REP,Republican,H4IL04117,"CASTILLO, LUPE",False,False,0.0,0.00,False,https://theballotbrief.com/district/il-4
+IL,05,Mike Quigley,DEM,Democratic,H0IL05096,"QUIGLEY, MIKE",True,True,998074.45,1102663.88,False,https://theballotbrief.com/district/il-5
+IL,05,Tommy Hanson,REP,Republican,H2IL05241,"HANSON, TOMMY",False,False,0.0,0.00,False,https://theballotbrief.com/district/il-5
+IL,06,Sean Casten,DEM,Democratic,H8IL06139,"CASTEN, SEAN",True,True,2516549.09,1022382.81,False,https://theballotbrief.com/district/il-6
+IL,06,Niki Conforti,REP,Republican,H2IL06090,"CONFORTI, NIKI",False,True,348452.74,7638.59,False,https://theballotbrief.com/district/il-6
+IL,07,La Shawn K. Ford,DEM,Democratic,H6IL07354,"FORD, LA SHAWN K",False,True,819320.56,93472.06,False,https://theballotbrief.com/district/il-7
+IL,07,Chad Koppie,REP,Republican,H2IL08203,"KOPPIE, CHAD",False,True,60408.81,42.20,False,https://theballotbrief.com/district/il-7
+IL,08,Melissa L. Bean,DEM,Democratic,H6IL08329,"BEAN, MELISSA LUBURICH",False,True,2457207.28,301713.53,False,https://theballotbrief.com/district/il-8
+IL,08,Jennifer Davis,REP,Republican,H6IL08311,"DAVIS, JENNIFER",False,True,1782174.57,279746.97,False,https://theballotbrief.com/district/il-8
+IL,09,Daniel Biss,DEM,Democratic,H6IL09228,"BISS, DANIEL",False,True,3446462.65,608882.79,False,https://theballotbrief.com/district/il-9
+IL,09,John Elleson,REP,Republican,H8IL09224,"ELLESON, JOHN",False,False,0.0,0.00,False,https://theballotbrief.com/district/il-9
+IL,10,Brad Schneider,DEM,Democratic,H2IL10068,"SCHNEIDER, BRADLEY S.",True,True,3657881.54,1707158.21,False,https://theballotbrief.com/district/il-10
+IL,10,Carl Lambrecht,REP,Republican,H6IL10176,"LAMBRECHT, CARL",False,False,0.0,0.00,False,https://theballotbrief.com/district/il-10
+IL,11,Bill Foster,DEM,Democratic,H8IL14067,"FOSTER, G. WILLIAM (BILL)",True,True,2588027.45,2629689.37,False,https://theballotbrief.com/district/il-11
+IL,11,Jeff Walter,REP,Republican,H6IL11166,"WALTER, JEFFREY D",False,True,431415.26,7779.82,False,https://theballotbrief.com/district/il-11
+IL,12,Julie Fortier,DEM,Democratic,H6IL12131,"FORTIER, JULIE DR.",False,True,161510.74,33644.35,False,https://theballotbrief.com/district/il-12
+IL,12,Mike Bost,REP,Republican,H4IL12060,"BOST, MICHAEL",True,True,1617352.95,844808.76,False,https://theballotbrief.com/district/il-12
+IL,13,Nikki Budzinski,DEM,Democratic,H2IL13153,"BUDZINSKI, NIKKI",True,True,3654995.97,2951806.45,False,https://theballotbrief.com/district/il-13
+IL,13,Jeff Wilson,REP,Republican,H6IL13154,"WILSON, JEFF",False,True,532329.74,48166.81,False,https://theballotbrief.com/district/il-13
+IL,14,Lauren Underwood,DEM,Democratic,H8IL14174,"UNDERWOOD, LAUREN",True,True,2848041.74,1155856.49,False,https://theballotbrief.com/district/il-14
+IL,14,James T. 'Jim' Marter,REP,Republican,H8IL16153,"MARTER, JAMES THOMAS",False,True,214272.03,37832.43,False,https://theballotbrief.com/district/il-14
+IL,15,Jennifer Todd,DEM,Democratic,H6IL15092,"TODD, JENNIFER ANN",False,True,210096.75,37185.60,False,https://theballotbrief.com/district/il-15
+IL,15,Mary E. Miller,REP,Republican,H0IL15129,"MILLER, MARY",True,True,1862237.52,910536.07,False,https://theballotbrief.com/district/il-15
+IL,16,Paul Nolley,DEM,Democratic,H6IL16108,"NOLLEY, PAUL",False,True,639225.21,59059.47,False,https://theballotbrief.com/district/il-16
+IL,16,Darin LaHood,REP,Republican,H6IL18088,"LAHOOD, DARIN MCKAY",True,True,4205602.32,5988458.85,False,https://theballotbrief.com/district/il-16
+IL,17,Eric Sorensen,DEM,Democratic,H2IL17147,"SORENSEN, ERIC",True,True,2657085.16,1289862.49,False,https://theballotbrief.com/district/il-17
+IL,17,Dillan S. Vancil,REP,Republican,H6IL17247,"VANCIL, DILLAN",False,True,406023.47,52481.85,False,https://theballotbrief.com/district/il-17
+IN,01,Frank J. Mrvan,DEM,Democratic,H0IN01150,"MRVAN, FRANK J.",True,True,3035422.42,772227.05,False,https://theballotbrief.com/district/in-1
+IN,01,Barb Regnitz,REP,Republican,H6IN01231,"REGNITZ, BARB",False,True,2755770.38,504235.07,False,https://theballotbrief.com/district/in-1
+IN,02,Jamee Decio,DEM,Democratic,H6IN02189,"DECIO, JAMEE MS.",False,True,1455232.1,454600.26,False,https://theballotbrief.com/district/in-2
+IN,02,William Eric Henry,OTHER,Libertarian,H4IN02200,"HENRY, WILLIAM",False,False,0.0,0.00,False,https://theballotbrief.com/district/in-2
+IN,02,Rudy Yakym,REP,Republican,H2IN02295,"YAKYM, RUDY C. III",True,True,6577079.31,421569.93,False,https://theballotbrief.com/district/in-2
+IN,03,Kelly Thompson,DEM,Democratic,H6IN03294,"THOMPSON, KELLY ELIZABETH",False,True,347103.35,53981.44,False,https://theballotbrief.com/district/in-3
+IN,03,Marlin A. Stutzman,REP,Republican,H0IN03198,"STUTZMAN, MARLIN A",False,True,967094.9,101047.75,False,https://theballotbrief.com/district/in-3
+IN,04,Drew Cox,DEM,Democratic,H6IN04193,"COX, DREW",False,True,60558.9,6820.03,False,https://theballotbrief.com/district/in-4
+IN,04,Jim Baird,REP,Republican,H8IN04199,"BAIRD, JAMES R DR.",True,True,604799.61,110354.75,False,https://theballotbrief.com/district/in-4
+IN,05,J.D. Ford,DEM,Democratic,H6IN05307,"FORD, JAMES (J.D.) DAVID",False,True,1410737.39,324528.66,True,https://theballotbrief.com/district/in-5
+IN,05,Victoria Spartz,REP,Republican,H0IN05326,"SPARTZ, VICTORIA",True,True,2192717.16,514921.94,True,https://theballotbrief.com/district/in-5
+IN,06,Cynthia (Cinde) Wirth,DEM,Democratic,H6IN06230,"WIRTH, CYNTHIA (CINDE)",False,True,91566.02,26537.98,False,https://theballotbrief.com/district/in-6
+IN,06,Jefferson Shreve,REP,Republican,H4IN06185,"SHREVE, JEFFERSON",True,True,2534240.42,1184692.85,False,https://theballotbrief.com/district/in-6
+IN,07,André Carson,DEM,Democratic,H8IN07184,"CARSON, ANDRE",True,True,1131715.0,558519.56,False,https://theballotbrief.com/district/in-7
+IN,07,James M Sceniak,OTHER,Libertarian,H4IN06219,"SCENIAK, JAMES MICHAEL",False,False,0.0,0.00,False,https://theballotbrief.com/district/in-7
+IN,07,Patrick McAuley,REP,Republican,H6IN07444,"MCAULEY, PATRICK",False,False,0.0,0.00,False,https://theballotbrief.com/district/in-7
+IN,08,Mary Allen,DEM,Democratic,H6IN08293,"ALLEN, MARY THERESA",False,True,493068.23,107507.05,False,https://theballotbrief.com/district/in-8
+IN,08,Mark Messmer,REP,Republican,H4IN08249,"MESSMER, MARK MR.",True,True,1424576.78,550906.09,False,https://theballotbrief.com/district/in-8
+IN,09,Brad A. Meyer,DEM,Democratic,H6IN09242,"MEYER, BRADLEY ALLEN MR.",False,True,203411.2,28806.83,False,https://theballotbrief.com/district/in-9
+IN,09,Tonya L. Hudson,OTHER,Libertarian,H6IN09317,"HUDSON, TONYA L",False,True,1822.38,-250.74,False,https://theballotbrief.com/district/in-9
+IN,09,Erin Houchin,REP,Republican,H6IN09143,"HOUCHIN, ERIN",True,True,2205947.56,928735.90,False,https://theballotbrief.com/district/in-9
+KS,01,Lauren Reinhold,DEM,Democratic,H6KS01203,"REINHOLD, LAUREN",False,True,136351.18,32985.04,False,https://theballotbrief.com/district/ks-1
+KS,01,Steven Jacob,OTHER,Libertarian,H6KS01229,"JACOB, STEVEN ROBERT",False,False,0.0,0.00,False,https://theballotbrief.com/district/ks-1
+KS,01,Tracey Mann,REP,Republican,H0KS01123,"MANN, TRACEY ROBERT",True,True,1793300.23,2914104.35,False,https://theballotbrief.com/district/ks-1
+KS,02,Don Coover,DEM,Democratic,H6KS02276,"COOVER, DON",False,True,1363193.3,231675.80,True,https://theballotbrief.com/district/ks-2
+KS,02,John Hauer,OTHER,Libertarian,H4KS02230,"HAUER, JOHN",False,False,0.0,0.00,False,https://theballotbrief.com/district/ks-2
+KS,02,Derek Schmidt,REP,Republican,H4KS02164,"SCHMIDT, DEREK",True,True,1772988.97,457585.77,True,https://theballotbrief.com/district/ks-2
+KS,03,Sharice L. Davids,DEM,Democratic,H8KS03155,"DAVIDS, SHARICE",True,True,4656759.22,1860025.74,False,https://theballotbrief.com/district/ks-3
+KS,03,Steven A Hohe,OTHER,Libertarian,H0KS03269,"HOHE, STEVEN ADAM MR.",False,False,0.0,0.00,False,https://theballotbrief.com/district/ks-3
+KS,03,Eric Jenkins,REP,Republican,H6KS03308,"JENKINS, ERIC",False,True,51735.28,18941.49,False,https://theballotbrief.com/district/ks-3
+KS,04,Katy Tyndell,DEM,Democratic,H6KS04272,"TYNDELL, KATY",False,True,633158.83,145996.06,False,https://theballotbrief.com/district/ks-4
+KS,04,Drew Cranmer,OTHER,Libertarian,H6KS04280,"CRANMER, ANDREW IRA",False,False,0.0,0.00,False,https://theballotbrief.com/district/ks-4
+KS,04,Ron Estes,REP,Republican,H8KS04112,"ESTES, RON",True,True,2203776.0,1325358.68,False,https://theballotbrief.com/district/ks-4
+KY,01,"John ""Drew"" Williams",DEM,Democratic,H6KY01169,"WILLIAMS, JOHN ANDREW",False,True,223179.9,7976.68,False,https://theballotbrief.com/district/ky-1
+KY,01,James R. Comer,REP,Republican,H6KY01110,"COMER, JAMES",True,True,2318360.81,1623432.27,False,https://theballotbrief.com/district/ky-1
+KY,02,Megan Wingfield,DEM,Democratic,H6KY02068,"WINGFIELD, MEGAN",False,True,9584.49,1270.59,False,https://theballotbrief.com/district/ky-2
+KY,02,Thomas A. Loecken,OTHER,Independent,H8KY02106,"LOECKEN, THOMAS A",False,False,0.0,0.00,False,https://theballotbrief.com/district/ky-2
+KY,02,S. Brett Guthrie,REP,Republican,H8KY02031,"GUTHRIE, S. BRETT BRETT HON.",True,True,5986647.25,1447295.54,False,https://theballotbrief.com/district/ky-2
+KY,03,Morgan McGarvey,DEM,Democratic,H2KY03206,"MCGARVEY, MORGAN",True,True,1998328.22,1933845.66,False,https://theballotbrief.com/district/ky-3
+KY,03,Maria Teresa Rodriguez,REP,Republican,H6KY03223,"RODRIGUEZ, MARIA TERESA",False,True,84148.7,40280.83,False,https://theballotbrief.com/district/ky-3
+KY,04,Melissa Claire Strange,DEM,Democratic,H6KY04189,"STRANGE, MELISSA CLAIRE",False,True,157330.4,40742.09,False,https://theballotbrief.com/district/ky-4
+KY,04,Jeremy Todd,OTHER,Libertarian,H6KY04205,"TODD, JEREMY RYAN",False,True,30837.92,3389.02,False,https://theballotbrief.com/district/ky-4
+KY,04,Mohammad Wael Ahmad,OTHER,Kentucky Party,,,,,,,False,https://theballotbrief.com/district/ky-4
+KY,04,Ed Gallrein,REP,Republican,H6KY04171,"GALLREIN, ED",False,True,4095784.14,433535.49,False,https://theballotbrief.com/district/ky-4
+KY,05,Ned Pillersdorf,DEM,Democratic,H6KY05152,"PILLERSDORF, NED",False,True,377088.72,106493.98,False,https://theballotbrief.com/district/ky-5
+KY,05,Gerardo Serrano,OTHER,Independent,H2KY05185,"SERRANO, GERARDO",False,False,0.0,0.00,False,https://theballotbrief.com/district/ky-5
+KY,05,Mikel Wein,OTHER,Independent,H6KY05202,"WEIN, MIKEL",False,True,4250.0,2911.78,False,https://theballotbrief.com/district/ky-5
+KY,05,Hal Rogers,REP,Republican,H0KY05015,"ROGERS, HAROLD DALLAS",True,True,1026113.99,701923.99,False,https://theballotbrief.com/district/ky-5
+KY,06,Zach Dembo,DEM,Democratic,H6KY06184,"DEMBO, ZACH",False,True,3205461.88,620329.56,True,https://theballotbrief.com/district/ky-6
+KY,06,Jay J Bowman,OTHER,Independent,H6KY06234,"JAY, BOWMAN J",False,True,18957.81,215.73,True,https://theballotbrief.com/district/ky-6
+KY,06,Pete Lynch,OTHER,Kentucky Party,H6KY06242,"LYNCH, PETER SHAW KELLER DR.",False,False,0.0,0.00,True,https://theballotbrief.com/district/ky-6
+KY,06,Ralph Alvarado,REP,Republican,H6KY06192,"ALVARADO, RALPH A",False,True,2307369.27,180811.50,True,https://theballotbrief.com/district/ky-6
+LA,01,Lauren Jewett,DEM,D,H6LA01258,"JEWETT, LAUREN",False,True,716339.22,156045.85,False,https://theballotbrief.com/district/la-1
+LA,01,"E. ""Liddy"" Glass",OTHER,I,,,,,,,False,https://theballotbrief.com/district/la-1
+LA,01,Randall Arrington,REP,R,H4LA01162,"ARRINGTON, RANDALL",False,False,0.0,0.00,False,https://theballotbrief.com/district/la-1
+LA,01,Steve Scalise,REP,R,H0LA01087,"SCALISE, STEVE MR",True,True,11172078.05,2912526.17,False,https://theballotbrief.com/district/la-1
+LA,02,Troy A. Carter Sr.,DEM,Democrat,H2LA02149,"CARTER, TROY A. SR.",True,True,1941169.25,630466.36,False,https://theballotbrief.com/district/la-2
+LA,02,Lisa Ballay,OTHER,Libertarian,H2LA02305,"BALLAY, LISA",False,True,1110.0,610.00,False,https://theballotbrief.com/district/la-2
+LA,02,"Renada ""Honey"" Collins",OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/la-2
+LA,02,"Walter ""Rocky"" Beach",OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/la-2
+LA,02,Peter Williams,REP,Republican,H4LA05171,"WILLIAMS, PETER",False,False,0.0,0.00,False,https://theballotbrief.com/district/la-2
+LA,03,"Caleb ""With a C"" Walker",DEM,Democrat,,,,,,,False,https://theballotbrief.com/district/la-3
+LA,03,John Day,DEM,Democrat,H6LA03205,"DAY, JOHN DAVID",False,True,222556.77,124738.15,False,https://theballotbrief.com/district/la-3
+LA,03,Priscilla Gonzalez,DEM,Democrat,H4LA03135,"GONZALEZ, PRISCILLA",False,False,0.0,0.00,False,https://theballotbrief.com/district/la-3
+LA,03,Tia LeBrun,OTHER,Independent,H2LA03105,"LEBRUN, TIA MARIE MRS.",False,False,7383.0,3880.01,False,https://theballotbrief.com/district/la-3
+LA,03,"""Clay"" Higgins",REP,Republican,H6LA03148,"HIGGINS, CLAY CAPTAIN",True,True,904294.13,566471.70,False,https://theballotbrief.com/district/la-3
+LA,03,"""Kate"" Cotten",REP,Republican,,,,,,,False,https://theballotbrief.com/district/la-3
+LA,04,"""Matt"" Gromlich",DEM,Democrat,H6LA04195,"GROMLICH, MATTHEW",False,True,452199.19,16845.61,False,https://theballotbrief.com/district/la-4
+LA,04,Conrad Cable,DEM,Democrat,H6LA04187,"CABLE, CONRAD ROBERTS",False,True,1842505.52,408807.78,False,https://theballotbrief.com/district/la-4
+LA,04,"""Mike"" Johnson",REP,Republican,H6LA04138,"JOHNSON, JAMES MICHAEL",True,True,24583416.13,6510748.41,False,https://theballotbrief.com/district/la-4
+LA,04,"""Mike"" Nichols",REP,Republican,H6LA04203,"NICHOLS, MICHAEL",False,True,71605.0,82.00,False,https://theballotbrief.com/district/la-4
+LA,04,Gordon Heslop,REP,Republican,H6LA04229,"HESLOP, GORDON BRIAN",False,False,128719.69,5977.95,False,https://theballotbrief.com/district/la-4
+LA,05,Antonio Wilson,DEM,Democrat,H6LA05325,"WILSON, ANTONIO",False,False,71047.15,31050.56,False,https://theballotbrief.com/district/la-5
+LA,05,Dan McKay,DEM,Democrat,H6LA05291,"MCKAY, DAN",False,True,121181.95,4998.31,False,https://theballotbrief.com/district/la-5
+LA,05,"Patricia ""Pat"" Moore",DEM,Democrat,H6LA05341,"MOORE, PATRICIA ANN",False,True,23053.55,4145.31,False,https://theballotbrief.com/district/la-5
+LA,05,"""Gabe"" Firment",REP,Republican,H6LA05317,"FIRMENT, MICHAEL GABRIEL",False,True,453882.18,63268.77,False,https://theballotbrief.com/district/la-5
+LA,05,Austin Magee,REP,Republican,H6LA05283,"MAGEE, AUSTIN",False,True,11430.87,180.11,False,https://theballotbrief.com/district/la-5
+LA,05,Michael Echols,REP,Republican,H6LA05242,"ECHOLS, MICHAEL CHARLES",False,True,3188839.56,888951.70,False,https://theballotbrief.com/district/la-5
+LA,05,Misti Cordell,REP,Republican,H6LA05200,"CORDELL, MISTI SMITH",False,True,658608.43,200178.37,False,https://theballotbrief.com/district/la-5
+LA,05,"Oscar ""Omar"" Dantzler",REP,Republican,H2LA05282,"DANTZLER, OSCAR ""OMAR""",False,False,0.0,0.00,False,https://theballotbrief.com/district/la-5
+LA,05,Stewart Cathey Jr.,REP,Republican,H6LA05184,"CATHEY, STEWART JR.",False,True,245550.0,97779.00,False,https://theballotbrief.com/district/la-5
+LA,06,Chauna Banks,DEM,Democrat,H6LA06174,"BANKS, CHAUNA MS.",False,False,0.0,0.00,False,https://theballotbrief.com/district/la-6
+LA,06,"Lindsay ""Rubia"" Garcia",DEM,Democrat,H6LA05309,"GARCIA, LINDSAY",False,True,97007.38,21654.33,False,https://theballotbrief.com/district/la-6
+LA,06,"Patrick ""Pat"" Forbes",DEM,Democrat,H6LA06190,"FORBES, PATRICK WAYNE",False,True,156333.69,97399.96,False,https://theballotbrief.com/district/la-6
+LA,06,Rufus Craig,OTHER,Libertarian,H4LA06047,"CRAIG, RUFUS H JR",False,False,0.0,0.00,False,https://theballotbrief.com/district/la-6
+LA,06,"""Rick"" Edmonds",REP,Republican,H6LA05226,"EDMONDS, RICK",False,True,697139.24,134634.87,False,https://theballotbrief.com/district/la-6
+LA,06,Blake Miguez,REP,Republican,H6LA05234,"MIGUEZ, BLAKE",False,True,7749606.17,1534513.37,False,https://theballotbrief.com/district/la-6
+LA,06,Larry Davis III,REP,Republican,H6LA05168,"DAVIS, LARRY MR. III",False,True,33216.2,809.04,False,https://theballotbrief.com/district/la-6
+LA,06,Michael Mebruer,REP,Republican,H6LA05259,"MEBRUER, MICHAEL EDWARD",False,True,70714.45,10986.86,False,https://theballotbrief.com/district/la-6
+LA,06,Monique Appeaning,REP,Republican,H6LA06158,"APPEANING, ANJANITA MONIQUE",False,True,109182.74,14709.14,False,https://theballotbrief.com/district/la-6
+LA,06,Stephen Wagley,REP,Republican,H6LA06182,"WAGLEY, STEPHEN",False,True,874343.55,195633.13,False,https://theballotbrief.com/district/la-6
+MA,01,Richard E. Neal,DEM,Democratic,H8MA02041,"NEAL, RICHARD E",True,True,3112617.01,1878102.25,False,https://theballotbrief.com/district/ma-1
+MA,02,James P. McGovern,DEM,Democratic,H4MA03022,"MCGOVERN, JAMES P",True,True,1013810.25,369456.63,False,https://theballotbrief.com/district/ma-2
+MA,03,Lori Loureiro Trahan,DEM,Democratic,H8MA03106,"TRAHAN, LORI",True,True,1878706.73,1791267.16,False,https://theballotbrief.com/district/ma-3
+MA,03,Gary J. Grossi,REP,Republican,H6MA03100,"GROSSI, GARY J.",False,True,9150.83,7377.82,False,https://theballotbrief.com/district/ma-3
+MA,04,Jake Auchincloss,DEM,Democratic,H0MA04192,"AUCHINCLOSS, JAKE",True,True,3935406.36,7476829.34,False,https://theballotbrief.com/district/ma-4
+MA,04,Thomas Stalcup,REP,Republican,H6MA04140,"STALCUP, THOMAS PHD",False,True,26619.26,147.26,False,https://theballotbrief.com/district/ma-4
+MA,05,Katherine M. Clark,DEM,Democratic,H4MA05084,"CLARK, KATHERINE",True,True,5026057.81,1229548.01,False,https://theballotbrief.com/district/ma-5
+MA,06,Dan Koh,DEM,Democratic,H8MA03072,"KOH, DANIEL ARRIGG",False,True,5383420.65,1081990.54,False,https://theballotbrief.com/district/ma-6
+MA,06,Micah Quinney Jones,REP,Republican,H6MA06202,"JONES, MICAH Q.",False,True,619903.76,169782.15,False,https://theballotbrief.com/district/ma-6
+MA,07,Ayanna S. Pressley,DEM,Democratic,H8MA07032,"PRESSLEY, AYANNA",True,True,1319248.35,86475.82,False,https://theballotbrief.com/district/ma-7
+MA,08,Stephen F. Lynch,DEM,Democratic,H2MA09072,"LYNCH, STEPHEN",True,True,1052702.73,493968.79,False,https://theballotbrief.com/district/ma-8
+MA,08,Robert Gerald Burke,REP,Republican,H2MA08090,"BURKE, ROBERT G.",False,False,1525.0,-16965.60,False,https://theballotbrief.com/district/ma-8
+MA,09,Bill Keating,DEM,Democratic,H0MA10082,"KEATING, WILLIAM R",True,True,553689.68,460620.04,False,https://theballotbrief.com/district/ma-9
+MA,09,R. Tyler MacAllister,REP,Republican,H6MA09206,"MACALLISTER, ROBERT TYLER",False,True,215467.33,53180.43,False,https://theballotbrief.com/district/ma-9
+MD,01,Dan Schwartz,DEM,Democratic,H6MD01320,"SCHWARTZ, DANIEL",False,True,1155585.2,-4473.09,False,https://theballotbrief.com/district/md-1
+MD,01,Edward Shlikas,OTHER,Unaffiliated,,,,,,,False,https://theballotbrief.com/district/md-1
+MD,01,Andy Harris,REP,Republican,H8MD01094,"HARRIS, ANDREW P",True,True,2703695.73,1219984.58,False,https://theballotbrief.com/district/md-1
+MD,02,"John ""Johnny O"" Olszewski, Jr.",DEM,Democratic,H4MD02232,"OLSZEWSKI, JOHN ANTHONY JR.",True,True,1290366.62,681817.08,False,https://theballotbrief.com/district/md-2
+MD,02,Dave Wallace,REP,Republican,H2MD06138,"WALLACE, DAVID DRAIN II",False,True,29269.45,4898.57,False,https://theballotbrief.com/district/md-2
+MD,03,Sarah Elfreth,DEM,Democratic,H4MD03156,"ELFRETH, SARAH KELLY",True,True,1429992.6,240886.52,False,https://theballotbrief.com/district/md-3
+MD,03,Berney Flowers,REP,Republican,H4MD03149,"FLOWERS, BERNARD",False,True,35461.92,9034.69,False,https://theballotbrief.com/district/md-3
+MD,04,Glenn F. Ivey,DEM,Democratic,H2MD04232,"IVEY, GLENN FREDERICK",False,True,886967.08,493566.36,False,https://theballotbrief.com/district/md-4
+MD,04,Sam Husseini,OTHER,Green,,,,,,,False,https://theballotbrief.com/district/md-4
+MD,04,George E. McDermott,REP,Republican,,,,,,,False,https://theballotbrief.com/district/md-4
+MD,05,Adrian Boafo,DEM,Democratic,H6MD05321,"BOAFO, ADRIAN",False,True,1906194.02,92102.44,False,https://theballotbrief.com/district/md-5
+MD,05,Mildred Marie Hall,OTHER,Other Candidates,H6MD05305,"HALL, MILDRED MARIE",False,False,0.0,0.00,False,https://theballotbrief.com/district/md-5
+MD,05,Chris Chaffee,REP,Republican,H4MD05169,"CHAFFEE, CHRISTOPHER PARRY",False,False,0.0,0.00,False,https://theballotbrief.com/district/md-5
+MD,06,April McClain Delaney,DEM,Democratic,H4MD06340,"DELANEY, APRIL MCCLAIN",True,True,12535127.56,121838.51,False,https://theballotbrief.com/district/md-6
+MD,06,Moshe Y. Landman,OTHER,Green,H4MD06423,"LANDMAN, MOSHE Y.",False,False,0.0,0.00,False,https://theballotbrief.com/district/md-6
+MD,06,Robin Ficker,REP,Republican,H6MD06287,"FICKER, ROBIN",False,True,1284599.36,4327.62,False,https://theballotbrief.com/district/md-6
+MD,07,Kweisi Mfume,DEM,Democratic,H6MD07020,"MFUME, KWEISI",True,True,489735.93,612318.39,False,https://theballotbrief.com/district/md-7
+MD,07,Scott M. Collier,REP,Republican,H0MD02255,"COLLIER, SCOTT M",False,False,0.0,0.00,False,https://theballotbrief.com/district/md-7
+MD,08,Jamie Raskin,DEM,Democratic,H6MD08457,"RASKIN, JAMIE",True,True,9316433.86,7912572.18,False,https://theballotbrief.com/district/md-8
+MD,08,Nancy Wallace,OTHER,Green,H6MD08598,"WALLACE, NANCY",False,False,0.0,0.00,False,https://theballotbrief.com/district/md-8
+MD,08,Cheryl Riley,REP,Republican,H4MD08213,"RILEY, CHERYL",False,True,22354.21,2691.08,False,https://theballotbrief.com/district/md-8
+ME,01,Chellie Pingree,DEM,D,H8ME01120,"PINGREE, CHELLIE M",True,True,551077.7,320049.11,True,https://theballotbrief.com/district/me-1
+ME,01,Ronald C. Russell,REP,R,H4ME01160,"RUSSELL, RONALD CHARLES MR.",False,True,214095.98,8363.57,True,https://theballotbrief.com/district/me-1
+ME,02,Matthew G. Dunlap,DEM,D,H6ME02171,"DUNLAP, MATT",False,True,2964963.53,443967.67,True,https://theballotbrief.com/district/me-2
+ME,02,Paul R. LePage,REP,R,H6ME02148,"LEPAGE, PAUL",False,True,3299130.03,848223.64,True,https://theballotbrief.com/district/me-2
+MI,01,Callie Barr,DEM,Democratic,H4MI01155,"BARR, CALLIE",False,True,1724591.9,383735.18,False,https://theballotbrief.com/district/mi-1
+MI,01,Arnett Satterla,OTHER,Libertarian,H6MI01283,"SATTERLA, ARNETT",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-1
+MI,01,Doc Kovaly,OTHER,U.S. Taxpayers,H6MI02257,"KOVALY, ROBERT",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-1
+MI,01,LaVeta Davenport,OTHER,Green,H6MI01309,"DAVENPORT, LAVETA",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-1
+MI,01,Liz Hakola,OTHER,Working Class,H2MI01167,"HAKOLA, LIZ",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-1
+MI,01,Zebulon Featherly,OTHER,No Party Affiliation,H6MI01275,"FEATHERLY, ZEBULON HART",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-1
+MI,01,Jack Bergman,REP,Republican,H6MI01226,"BERGMAN, JOHN",True,True,2417376.48,263088.55,False,https://theballotbrief.com/district/mi-1
+MI,02,Ben Ambrose,DEM,Democratic,H6MI02216,"AMBROSE, BENJAMIN",False,True,186503.84,32956.26,False,https://theballotbrief.com/district/mi-2
+MI,02,Charlotte Magoon,OTHER,Green,H6MI02265,"MAGOON, CHARLOTTE IRENE",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-2
+MI,02,Richard Sills,OTHER,Natural Law,H6MI02273,"SILLS, RICHARD",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-2
+MI,02,John Moolenaar,REP,Republican,H4MI04126,"MOOLENAAR, JOHN MR.",True,True,2068418.39,1213299.49,False,https://theballotbrief.com/district/mi-2
+MI,03,Hillary Scholten,DEM,Democratic,H0MI03316,"SCHOLTEN, HILLARY",True,True,3034438.11,1531771.98,False,https://theballotbrief.com/district/mi-3
+MI,03,Joe Jock,OTHER,Green,H6MI03214,"JOCK, JOE",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-3
+MI,03,Terri DeBoer,REP,Republican,H6MI03198,"DEBOER, TERRI",False,True,865481.34,70280.61,False,https://theballotbrief.com/district/mi-3
+MI,04,Sean McCann,DEM,Democratic,H6MI04204,"MCCANN, SEAN",False,True,4699153.23,1034442.24,True,https://theballotbrief.com/district/mi-4
+MI,04,Shafina Che Barnett,OTHER,Green,H6MI04220,"BARNETT, SHAFINA CHE",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-4
+MI,04,Bill Huizenga,REP,Republican,H0MI02094,"HUIZENGA, WILLIAM P",True,True,5562774.67,394221.52,True,https://theballotbrief.com/district/mi-4
+MI,05,Christian Vukasovich,DEM,Democratic,H6MI05227,"VUKASOVICH, CHRISTIAN A",False,True,151703.92,39516.94,False,https://theballotbrief.com/district/mi-5
+MI,05,Jim Bronke,OTHER,Green,H4MI05172,"BRONKE, JAMES",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-5
+MI,05,Ronald A Muszynski,OTHER,Libertarian,H6MI05235,"MUSZYNSKI, RONALD A",False,False,1130.34,572.31,False,https://theballotbrief.com/district/mi-5
+MI,05,Sharon Marie Renier,OTHER,U.S. Taxpayers,H4MI07137,"RENIER, SHARON MARIE",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-5
+MI,05,Tim Walberg,REP,Republican,H4MI07103,"WALBERG, TIMOTHY L REP",True,True,2220378.67,1179966.16,False,https://theballotbrief.com/district/mi-5
+MI,06,Debbie Dingell,DEM,Democratic,H4MI12079,"DINGELL, DEBBIE",True,True,1525722.57,455811.49,False,https://theballotbrief.com/district/mi-6
+MI,06,Clyde Shabazz,OTHER,Green,H8MI14084,"SHABAZZ, CLYDE K",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-6
+MI,06,Linda Rayburn,OTHER,Working Class,H6MI06266,"RAYBURN, LINDA",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-6
+MI,06,Mike Mickevicius,OTHER,U.S. Taxpayers,H6MI06241,"MICKEVICIUS, MICHAEL RAYMOND",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-6
+MI,06,Timothy A. Teagan,OTHER,Libertarian,H6MI06258,"TEAGAN, TIMOTHY A.",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-6
+MI,06,Heather Smiley,REP,Republican,H4MI06154,"SMILEY, HEATHER",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-6
+MI,07,William Lawrence,DEM,Democratic,H6MI07298,"LAWRENCE, WILLIAM",False,True,4160041.27,628965.99,True,https://theballotbrief.com/district/mi-7
+MI,07,Shane Dedrick,OTHER,Green,H6MI07306,"DEDRICK, SHANE",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-7
+MI,07,Tom Barrett,REP,Republican,H2MI07123,"BARRETT, THOMAS MORE",True,True,8238468.08,1039762.51,True,https://theballotbrief.com/district/mi-7
+MI,08,Kristen McDonald Rivet,DEM,Democratic,H4MI08218,"MCDONALD RIVET, KRISTEN",True,True,6922878.91,2674869.10,False,https://theballotbrief.com/district/mi-8
+MI,08,C. Mia Pettus,OTHER,Libertarian,H6MI08320,"PETTUS, C. MIA",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-8
+MI,08,Jim Casha,OTHER,Green,H4MI08176,"CASHA, JIM",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-8
+MI,08,Kathy Goodwin,OTHER,Working Class,H8MI05124,"GOODWIN, KATHY",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-8
+MI,08,Thomas J. Smith,REP,Republican,H6MI08312,"SMITH, THOMAS JAMES MR",False,True,561096.81,85065.96,False,https://theballotbrief.com/district/mi-8
+MI,09,Ray Pooley,DEM,Democratic,H6MI09245,"POOLEY, STEVEN RAYMOND",False,True,26386.57,14075.09,False,https://theballotbrief.com/district/mi-9
+MI,09,Destiny Clayton,OTHER,Green,H6MI09260,"CLAYTON, DESTINY",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-9
+MI,09,Jim Walkowicz,OTHER,Working Class,H2MI09178,"WALKOWICZ, JIM",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-9
+MI,09,John Vlahos,OTHER,U.S. Taxpayers,H6MI09278,"VLAHOS, JOHN",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-9
+MI,09,Kevin Vayko,OTHER,Libertarian,H4MI09133,"VAYKO, KEVIN",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-9
+MI,09,Lisa McClain,REP,Republican,H0MI10287,"MCCLAIN, LISA",True,True,6046475.44,1752710.48,False,https://theballotbrief.com/district/mi-9
+MI,10,Christina Bertrand Hines,DEM,Democratic,H6MI10276,"HINES, CHRISTINA",False,True,4159692.85,1007627.76,False,https://theballotbrief.com/district/mi-10
+MI,10,Andrea L. Kirby,OTHER,Working Class,H8MI09142,"KIRBY, ANDREA",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-10
+MI,10,Kwabena Nkromo,OTHER,Green,,,,,,,False,https://theballotbrief.com/district/mi-10
+MI,10,Mike Saliba,OTHER,Libertarian,H0MI09206,"SALIBA, MIKE",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-10
+MI,10,Michael Bouchard,REP,Republican,H6MI10359,"BOUCHARD, MICHAEL",False,True,2884259.39,1573469.64,False,https://theballotbrief.com/district/mi-10
+MI,11,Jeremy Moss,DEM,Democratic,H6MI11191,"MOSS, JEREMY",False,True,1874871.73,69999.65,False,https://theballotbrief.com/district/mi-11
+MI,11,Anil Kumar,OTHER,No Party Affiliation,H4MI10131,"KUMAR, ANIL DR.",False,True,724355.07,319467.09,False,https://theballotbrief.com/district/mi-11
+MI,11,Farid Ishac,OTHER,Libertarian,H6MI11316,"ISHAC, FARID",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-11
+MI,11,Ryan Teasdale,OTHER,Green,H6MI11308,"TEASDALE, RYAN",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-11
+MI,11,Ethan Baker,REP,Republican,H6MI11290,"BAKER, ETHAN D",False,True,204668.0,56620.74,False,https://theballotbrief.com/district/mi-11
+MI,12,Rashida Tlaib,DEM,Democratic,H8MI13250,"TLAIB, RASHIDA",True,True,3255577.41,3038173.48,False,https://theballotbrief.com/district/mi-12
+MI,12,Brenda K. Sanders,OTHER,Green,H4MI12145,"SANDERS, BRENDA K.",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-12
+MI,12,Gary Walkowicz,OTHER,Working Class,H8MI07039,"WALKOWICZ, GARY",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-12
+MI,12,Marc Joseph Sosnowski,OTHER,U.S. Taxpayers,H0MI14214,"SOSNOWSKI, MARC",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-12
+MI,12,James D. Hooper,REP,Republican,H2MI12198,"HOOPER, JAMES D",False,True,2002.05,7769.12,False,https://theballotbrief.com/district/mi-12
+MI,13,Donavan McKinney,DEM,Democratic,H6MI13254,"MCKINNEY, DONAVAN",False,True,1876779.88,129673.54,True,https://theballotbrief.com/district/mi-13
+MI,13,Chris Dardzinski,OTHER,U.S. Taxpayers,H2MI13337,"DARDZINSKI, CHRISTOPHER",False,False,0.0,0.00,True,https://theballotbrief.com/district/mi-13
+MI,13,Raelyn Light,OTHER,Green,H6MI13320,"LIGHT, RAELYN",False,False,0.0,0.00,False,https://theballotbrief.com/district/mi-13
+MI,13,Simone R. Coleman,OTHER,Working Class,,,,,,,True,https://theballotbrief.com/district/mi-13
+MI,13,T.P. Nykoriak,REP,Republican,H6MI13312,"NYKORIAK, T.P.",False,False,0.0,0.00,True,https://theballotbrief.com/district/mi-13
+MN,01,Jake Johnson,DEM,Democratic-Farmer-Labor,H6MN01190,"JOHNSON, JACOB",False,True,3507568.36,561093.51,True,https://theballotbrief.com/district/mn-1
+MN,01,Brad Finstad,REP,Republican,H2MN01223,"FINSTAD, BRAD",True,True,2765869.64,603622.36,True,https://theballotbrief.com/district/mn-1
+MN,02,Matt Little,DEM,Democratic-Farmer-Labor,H6MN02230,"LITTLE, MATT",False,True,1494553.8,205276.43,True,https://theballotbrief.com/district/mn-2
+MN,02,Eric Pratt,REP,Republican,H6MN02263,"PRATT, ERIC",False,True,768790.87,173429.73,True,https://theballotbrief.com/district/mn-2
+MN,03,Kelly Morrison,DEM,Democratic-Farmer-Labor,H4MN03118,"MORRISON, KELLY LOUISE",True,True,1867912.24,507864.91,False,https://theballotbrief.com/district/mn-3
+MN,03,Tyler Bass,REP,Republican,H6MN03170,"BASS, TYLER MICHAEL",False,False,0.0,0.00,False,https://theballotbrief.com/district/mn-3
+MN,04,Betty McCollum,DEM,Democratic-Farmer-Labor,H0MN04049,"MCCOLLUM, BETTY",True,True,1539014.07,526264.24,False,https://theballotbrief.com/district/mn-4
+MN,04,Paul Wikstrom,REP,Republican,H6MN04293,"WIKSTROM, PAUL",False,True,65015.98,18547.61,False,https://theballotbrief.com/district/mn-4
+MN,05,Ilhan Omar,DEM,Democratic-Farmer-Labor,H8MN05239,"OMAR, ILHAN",True,True,8247981.67,3003683.87,False,https://theballotbrief.com/district/mn-5
+MN,05,DeVelle L. Jackson,OTHER,Independent,H6MN05373,"JACKSON, DEVELLE LAVAUGHN MR.",False,False,0.0,0.00,False,https://theballotbrief.com/district/mn-5
+MN,05,John Nagel,REP,Republican,H6MN05357,"NAGEL, JOHN",False,True,1126114.57,102551.93,False,https://theballotbrief.com/district/mn-5
+MN,06,Doug Chapin,DEM,Democratic-Farmer-Labor,H6MN06215,"CHAPIN, DOUG",False,True,765076.15,118475.76,False,https://theballotbrief.com/district/mn-6
+MN,06,Tom Emmer,REP,Republican,H4MN06087,"EMMER, THOMAS EARL JR.",True,True,10861547.06,2971244.83,False,https://theballotbrief.com/district/mn-6
+MN,07,Erik Osberg,DEM,Democratic-Farmer-Labor,H6MN07312,"OSBERG, ERIK",False,True,577219.01,126748.20,False,https://theballotbrief.com/district/mn-7
+MN,07,Michelle Fischbach,REP,Republican,H0MN07091,"FISCHBACH, MICHELLE",True,True,1673105.11,866361.88,False,https://theballotbrief.com/district/mn-7
+MN,08,Trina Swanson,DEM,Democratic-Farmer-Labor,H6MN08179,"SWANSON, TRINA",False,True,727329.66,176815.90,True,https://theballotbrief.com/district/mn-8
+MN,08,Pete Stauber,REP,Republican,H8MN08043,"STAUBER, PETER ALLEN",True,True,2566760.29,1086286.90,True,https://theballotbrief.com/district/mn-8
+MO,01,Wesley Bell,DEM,Democratic,H4MO01134,"BELL, WESLEY",True,True,4024636.06,407001.06,False,https://theballotbrief.com/district/mo-1
+MO,01,Tom Schmitz,OTHER,Libertarian,H0MO08285,"SCHMITZ, TOM",False,False,0.0,0.00,False,https://theballotbrief.com/district/mo-1
+MO,01,Paul Berry III,REP,Republican,H2MO02219,"BERRY, PAUL",False,False,0.0,0.00,False,https://theballotbrief.com/district/mo-1
+MO,02,Fred Wellman,DEM,Democratic,H6MO02343,"WELLMAN, FREDERICK PAUL",False,True,2178964.91,240717.89,True,https://theballotbrief.com/district/mo-2
+MO,02,Brandon Coulter Daugherty,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/mo-2
+MO,02,Ann Wagner,REP,Republican,H2MO02102,"WAGNER, ANN L.",True,True,4189876.26,1631396.51,True,https://theballotbrief.com/district/mo-2
+MO,03,Bethany E Mann,DEM,Democratic,H2MO03167,"MANN, BETHANY",False,True,86553.55,5711.74,False,https://theballotbrief.com/district/mo-3
+MO,03,Jim Higgins,OTHER,Libertarian,H2MO02078,"HIGGINS, JAMES",False,False,0.0,0.00,False,https://theballotbrief.com/district/mo-3
+MO,03,Bob Onder,REP,Republican,H8MO09146,"ONDER JR, ROBERT FRANK",False,True,1146488.94,525827.92,False,https://theballotbrief.com/district/mo-3
+MO,04,Jordan Herrera,DEM,Democratic,H6MO05254,"HERRERA, JORDAN",False,False,41656.63,19365.61,False,https://theballotbrief.com/district/mo-4
+MO,04,Thomas Holbrook,OTHER,Libertarian,H2MO04108,"HOLBROOK, THOMAS",False,False,0.0,0.00,False,https://theballotbrief.com/district/mo-4
+MO,04,Mark Alford,REP,Republican,H2MO04207,"ALFORD, MARK",True,True,1599365.96,757046.88,False,https://theballotbrief.com/district/mo-4
+MO,05,"Emanuel Cleaver, II",DEM,Democratic,H4MO05234,"CLEAVER II, EMANUEL",True,True,1766864.4,882948.30,False,https://theballotbrief.com/district/mo-5
+MO,05,Randall (Randy) Langkraehr,OTHER,Libertarian,H6MO05197,"LANGKRAEHR, RANDALL DAVID (RANDY)",False,False,0.0,0.00,False,https://theballotbrief.com/district/mo-5
+MO,05,Rick Brattin,REP,Republican,H2MO04199,"BRATTIN, RICHARD",False,True,457467.1,359.33,False,https://theballotbrief.com/district/mo-5
+MO,06,Josh Smead,DEM,Democratic,H6MO06260,"SMEAD, JOSH",False,True,145752.57,35200.81,False,https://theballotbrief.com/district/mo-6
+MO,06,Andy Maidment,OTHER,Libertarian,H2MO06269,"MAIDMENT, EDWARD A. (ANDY)",False,False,0.0,0.00,False,https://theballotbrief.com/district/mo-6
+MO,06,Chris Stigall,REP,Republican,H6MO06310,"STIGALL, CHRIS",False,True,1045323.71,211004.93,False,https://theballotbrief.com/district/mo-6
+MO,07,Missi Hesketh,DEM,Democratic,H4MO07156,"HESKETH, MISSI",False,True,66639.85,45851.95,False,https://theballotbrief.com/district/mo-7
+MO,07,Kevin Craig,OTHER,Libertarian,H4MO07107,"CRAIG, KEVIN",False,False,0.0,0.00,False,https://theballotbrief.com/district/mo-7
+MO,07,Eric W. Burlison,REP,Republican,H2MO07143,"BURLISON, ERIC",True,True,1697441.77,962364.48,False,https://theballotbrief.com/district/mo-7
+MO,08,Chris Reichard,DEM,Democratic,H6MO08183,"REICHARD, CHRISTOPHER",False,True,27957.64,6651.76,False,https://theballotbrief.com/district/mo-8
+MO,08,Rebecca Sharpe Lombard,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/mo-8
+MO,08,Jason T. Smith,REP,Republican,H4MO08162,"SMITH, JASON T",True,True,6299171.08,5415076.95,False,https://theballotbrief.com/district/mo-8
+MS,01,Cliff Johnson,DEM,D,H6MS01313,"JOHNSON, CLIFF",False,True,848648.09,89247.55,False,https://theballotbrief.com/district/ms-1
+MS,01,Johnny Baucom,OTHER,L,,,,,,,False,https://theballotbrief.com/district/ms-1
+MS,01,Trent Kelly,REP,R,H6MS01131,"KELLY, JOHN TRENT",True,True,1314373.36,834172.64,False,https://theballotbrief.com/district/ms-1
+MS,02,Bennie G. Thompson,DEM,D,H4MS02068,"THOMPSON, BENNIE G.",True,True,928245.03,1282156.34,False,https://theballotbrief.com/district/ms-2
+MS,02,Bennie Foster,OTHER,I,H6MS02188,"FOSTER, BENNIE",False,False,0.0,9189.82,False,https://theballotbrief.com/district/ms-2
+MS,02,Ron Eller,REP,R,H2MS02203,"ELLER, RON",False,True,70824.97,42108.88,False,https://theballotbrief.com/district/ms-2
+MS,03,Michael A. Chiaradio,DEM,D,H6MS03228,"CHIARADIO, MICHAEL ALEXIS",False,True,224381.1,39338.89,False,https://theballotbrief.com/district/ms-3
+MS,03,Erik Kiehle,OTHER,L,H6MS03236,"KIEHLE, ERIK",False,False,0.0,0.00,False,https://theballotbrief.com/district/ms-3
+MS,03,Michael Guest,REP,R,H8MS03125,"GUEST, MICHAEL PATRICK",True,True,1089344.17,780057.84,False,https://theballotbrief.com/district/ms-3
+MS,04,Jeffrey Hulum III,DEM,D,H6MS04242,"HULUM, JEFFREY III",False,False,60172.68,10553.54,False,https://theballotbrief.com/district/ms-4
+MS,04,Carl Boyanton,OTHER,I,H0MS04161,"CARL, BOYANTON",False,False,0.0,0.00,False,https://theballotbrief.com/district/ms-4
+MS,04,Mike Ezell,REP,R,H2MS04258,"EZELL, WALTER MICHAEL",True,True,1149872.59,88879.72,False,https://theballotbrief.com/district/ms-4
+MT,01,Sam Forstag,DEM,D,H6MT01137,"FORSTAG, SAMUEL KELLEY",False,True,4312110.49,726125.80,True,https://theballotbrief.com/district/mt-1
+MT,01,Nick Sheedy,OTHER,L,,,,,,,True,https://theballotbrief.com/district/mt-1
+MT,01,Aaron Flint,REP,R,H6MT01152,"FLINT, AARON",False,True,2856138.55,408152.75,True,https://theballotbrief.com/district/mt-1
+MT,02,Brian J. Miller,DEM,D,H6MT02150,"MILLER, BRIAN JAMES",False,True,30958.49,668.84,True,https://theballotbrief.com/district/mt-2
+MT,02,Michael D. Eisenhauer,OTHER,I,H6MT02168,"EISENHAUER, MICHAEL D. DR.",False,True,354191.13,23304.16,True,https://theballotbrief.com/district/mt-2
+MT,02,Patrick McCracken,OTHER,L,H6MT02176,"MCCRACKEN, PATRICK NEAL MR.",False,False,0.0,0.00,True,https://theballotbrief.com/district/mt-2
+MT,02,Troy Downing,REP,R,H4MT02098,"DOWNING, TROY",True,True,2733160.34,746647.91,True,https://theballotbrief.com/district/mt-2
+NC,01,Don Davis,DEM,Democratic,H2NC02287,"DAVIS, DON",True,True,5805482.43,825817.73,True,https://theballotbrief.com/district/nc-1
+NC,01,Tom Bailey,OTHER,Libertarian,H8NC13075,"BAILEY, TOM",False,False,0.0,0.00,True,https://theballotbrief.com/district/nc-1
+NC,01,Laurie Buckhout,REP,Republican,H4NC01137,"BUCKHOUT, LAURIE",False,True,4787737.24,1437900.53,True,https://theballotbrief.com/district/nc-1
+NC,02,Deborah K. Ross,DEM,Democratic,H0NC02125,"ROSS, DEBORAH",True,True,2039910.71,1278165.09,False,https://theballotbrief.com/district/nc-2
+NC,02,Matthew Laszacs,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/nc-2
+NC,02,Eugene F. Douglass,REP,Republican,H4NC02135,"DOUGLASS, EUGENE FARLEY DR.",False,False,0.0,0.00,False,https://theballotbrief.com/district/nc-2
+NC,03,Raymond Smith,DEM,Democratic,H6NC03229,"SMITH, RAYMOND EDWARD DR. JR.",False,True,366580.83,44282.09,False,https://theballotbrief.com/district/nc-3
+NC,03,Daniel Cavender,OTHER,Libertarian,H6NC03237,"CAVENDER, DANIEL",False,False,0.0,0.00,False,https://theballotbrief.com/district/nc-3
+NC,03,Greg Murphy,REP,Republican,H0NC03172,"MURPHY, GREGORY FRANCIS DR.",True,True,2897749.02,2255691.00,False,https://theballotbrief.com/district/nc-3
+NC,04,Valerie P. Foushee,DEM,Democratic,H2NC06114,"FOUSHEE, VALERIE",True,True,1048542.77,49354.18,False,https://theballotbrief.com/district/nc-4
+NC,04,Guy Meilleur,OTHER,Libertarian,H4NC04149,"MEILLEUR, GUY",False,False,0.0,0.00,False,https://theballotbrief.com/district/nc-4
+NC,04,Mahesh 'Max' Ganorkar,REP,Republican,H2NC06106,"GANORKAR, MAHESH",False,False,18568.36,9001.14,False,https://theballotbrief.com/district/nc-4
+NC,05,Chuck Hubbard,DEM,Democratic,H4NC05294,"HUBBARD, CHUCK",False,True,863260.01,152010.20,False,https://theballotbrief.com/district/nc-5
+NC,05,Robert B. Luffman,OTHER,Libertarian,H6NC05174,"LUFFMAN, ROBERT B.",False,False,0.0,0.00,False,https://theballotbrief.com/district/nc-5
+NC,05,Virginia Foxx,REP,Republican,H4NC05146,"FOXX, VIRGINIA ANN",True,True,2189052.01,3490070.17,False,https://theballotbrief.com/district/nc-5
+NC,06,Cyril Jefferson,DEM,Democratic,H6NC06164,"JEFFERSON, CYRIL",False,True,232324.53,7859.07,False,https://theballotbrief.com/district/nc-6
+NC,06,Addison McDowell,REP,Republican,H4NC06177,"MCDOWELL, ADDISON",True,True,1456167.02,152972.51,False,https://theballotbrief.com/district/nc-6
+NC,07,Kimberly Hardy,DEM,Democratic,H6NC07196,"HARDY, KIMBERLY DR.",False,True,390475.48,20418.72,False,https://theballotbrief.com/district/nc-7
+NC,07,Maad Abu-Ghazalah,OTHER,Libertarian,H6NC07204,"ABU-GHAZALAH, MAAD",False,True,8899.41,278.64,False,https://theballotbrief.com/district/nc-7
+NC,07,David Rouzer,REP,Republican,H2NC07096,"ROUZER, DAVID",True,True,2534038.14,1699752.56,False,https://theballotbrief.com/district/nc-7
+NC,08,Colby Watson,DEM,Democratic,H6NC08202,"WATSON, COLBY",False,True,57590.37,4158.07,False,https://theballotbrief.com/district/nc-8
+NC,08,Bo Whitehead,OTHER,Green,H6NC08210,"WHITEHEAD, ROBERT W MR.",False,False,0.0,0.00,False,https://theballotbrief.com/district/nc-8
+NC,08,Mark Harris,REP,Republican,H4NC08066,"HARRIS, MARK E",True,False,1238724.33,411263.59,False,https://theballotbrief.com/district/nc-8
+NC,09,Richard N. Ojeda II,DEM,Democratic,H6NC09218,"OJEDA, RICHARD N.",False,True,2930069.22,45572.22,True,https://theballotbrief.com/district/nc-9
+NC,09,Richard Hudson,REP,Republican,H2NC08185,"HUDSON, RICHARD L. JR.",True,True,4173708.23,925975.68,True,https://theballotbrief.com/district/nc-9
+NC,10,Ashley Bell,DEM,Democratic,H6NC10174,"BELL, ASHLEY",False,True,147720.19,11774.20,False,https://theballotbrief.com/district/nc-10
+NC,10,Steven Feldman,OTHER,Libertarian,H4NC10146,"FELDMAN, STEVEN",False,True,48754.35,1294.84,False,https://theballotbrief.com/district/nc-10
+NC,10,Pat Harrigan,REP,Republican,H2NC13243,"HARRIGAN, PAT",True,True,1318233.19,462978.17,False,https://theballotbrief.com/district/nc-10
+NC,11,Jamie Ager,DEM,Democratic,H6NC11248,"AGER, JAMIE",False,True,5869452.65,620157.94,True,https://theballotbrief.com/district/nc-11
+NC,11,Travis Groo,OTHER,Libertarian,H6NC11313,"GROO, TRAVIS",False,False,0.0,0.00,False,https://theballotbrief.com/district/nc-11
+NC,11,Jennifer Capps Balkcom,REP,Republican,H6NC11321,"BALKCOM, JENNIFER",False,True,399491.7,294817.52,True,https://theballotbrief.com/district/nc-11
+NC,12,Alma S. Adams,DEM,Democratic,H4NC12100,"ADAMS, ALMA SHEALEY",True,True,483374.93,483996.68,False,https://theballotbrief.com/district/nc-12
+NC,12,Jack Codiga,REP,Republican,H6NC12113,"CODIGA, JOHN JACK",False,True,54619.62,3790.46,False,https://theballotbrief.com/district/nc-12
+NC,13,Paul Barringer,DEM,Democratic,H6NC13228,"BARRINGER, PAUL",False,True,1215150.98,409522.44,False,https://theballotbrief.com/district/nc-13
+NC,13,Steven Swinton,OTHER,Libertarian,H6NC13251,"SWINTON, STEVEN",False,False,0.0,0.00,False,https://theballotbrief.com/district/nc-13
+NC,13,Brad Knott,REP,Republican,H4NC13116,"KNOTT, BRAD",True,True,1697075.23,619470.98,False,https://theballotbrief.com/district/nc-13
+NC,14,Lakesha Womack,DEM,Democratic,H6NC14069,"WOMACK, LAKESHA",False,True,59183.28,4792.77,False,https://theballotbrief.com/district/nc-14
+NC,14,Tim Moore,REP,Republican,H4NC14015,"MOORE, TIM",True,True,2091454.5,1093140.95,False,https://theballotbrief.com/district/nc-14
+ND,00,Charles Tuttle,OTHER,Independent,H8ND00138,"TUTTLE, CHARLES",False,False,0.0,0.00,False,https://theballotbrief.com/district/nd-al
+ND,00,Helene Neville,OTHER,Independent,H6ND01056,"NEVILLE, HELENE",False,False,0.0,0.00,False,https://theballotbrief.com/district/nd-al
+ND,00,Trygve Hammer,OTHER,Democratic-NPL,H6ND01049,"HAMMER, TRYGVE",False,True,370969.0,42108.76,False,https://theballotbrief.com/district/nd-al
+ND,00,Julie Fedorchak,REP,R,H4ND00061,"FEDORCHAK, JULIE",True,True,2107166.08,774845.73,False,https://theballotbrief.com/district/nd-al
+NE,01,Chris Backemeyer,DEM,D,H6NE01143,"BACKEMEYER, CHRISTOPHER",False,True,1154612.7,355165.95,True,https://theballotbrief.com/district/ne-1
+NE,01,Dan Hartong,OTHER,America First,,,,,,,False,https://theballotbrief.com/district/ne-1
+NE,01,Nik Sandman,OTHER,L,,,,,,,False,https://theballotbrief.com/district/ne-1
+NE,01,Mike Flood,REP,R,H2NE01118,"FLOOD, MIKE",True,True,2770861.42,859905.11,True,https://theballotbrief.com/district/ne-1
+NE,02,Denise Powell,DEM,D,H6NE02174,"POWELL, DENISE",False,True,5093103.99,480473.26,True,https://theballotbrief.com/district/ne-2
+NE,02,Eric Michael Foreman,OTHER,L,H6NE02273,"FOREMAN, ERIC MICHAEL",False,False,0.0,0.00,True,https://theballotbrief.com/district/ne-2
+NE,02,Brinker Harding,REP,R,H6NE02208,"HARDING, BRINKER",False,True,2850577.02,313372.85,True,https://theballotbrief.com/district/ne-2
+NE,03,Becky Kelly Stille,DEM,Democrat,H6NE03180,"STILLE, BECKY LYNN",False,True,97390.36,-49.93,False,https://theballotbrief.com/district/ne-3
+NE,03,David J. Else,OTHER,Legal Marijuana NOW,H0NE03217,"ELSE, DAVID",False,False,0.0,0.00,False,https://theballotbrief.com/district/ne-3
+NE,03,Macey Budke,OTHER,Nebraska Working People,H6NE03206,"BUDKE, MACEY",False,True,6347.29,326.15,False,https://theballotbrief.com/district/ne-3
+NE,03,Mark Cohen,OTHER,Independent,H6NE03198,"COHEN, MARK",False,True,75900.5,15673.93,False,https://theballotbrief.com/district/ne-3
+NE,03,Adrian Smith,REP,Republican,H6NE03115,"SMITH, ADRIAN",True,True,2246593.11,1101567.09,False,https://theballotbrief.com/district/ne-3
+NH,01,Stefany Shaheen,DEM,Democratic,H6NH01321,"SHAHEEN, STEFANY",False,True,3247792.08,270732.50,True,https://theballotbrief.com/district/nh-1
+NH,01,Anthony DiLorenzo,REP,Republican,H6NH01420,"DILORENZO, ANTHONY",False,True,6762643.49,983793.86,True,https://theballotbrief.com/district/nh-1
+NH,02,Maggie Goodlander,DEM,Democratic,H4NH02399,"GOODLANDER, MAGGIE",True,True,5012908.51,1821562.69,True,https://theballotbrief.com/district/nh-2
+NH,02,Robbie Mahrou,OTHER,Independent,H6NH02303,"MAHROU, ROBBIE S",False,False,0.0,0.00,True,https://theballotbrief.com/district/nh-2
+NH,02,Lily Tang Williams,REP,Republican,H2NH02260,"WILLIAMS, LILY TANG",False,True,1443795.73,472229.95,True,https://theballotbrief.com/district/nh-2
+NJ,01,Donald Norcross,DEM,Democratic,H4NJ01084,"NORCROSS, DONALD W",True,True,1950972.75,2364759.02,False,https://theballotbrief.com/district/nj-1
+NJ,01,Damon Galdo,REP,Republican,H2NJ01187,"GALDO, DAMON",False,True,16219.73,772.28,False,https://theballotbrief.com/district/nj-1
+NJ,02,Zack Mullock,DEM,Democratic,H6NJ02251,"MULLOCK, ZACK",False,True,960948.05,105400.22,True,https://theballotbrief.com/district/nj-2
+NJ,02,Ramon Mora Jr.,OTHER,Independent,H6NJ02269,"MORA, RAMON JR",False,False,1139.34,84.59,False,https://theballotbrief.com/district/nj-2
+NJ,02,Jeff Van Drew,REP,Republican,H8NJ02166,"VAN DREW, JEFF MR",True,True,2414607.2,894792.03,True,https://theballotbrief.com/district/nj-2
+NJ,03,Herb Conaway,DEM,Democratic,H4NJ03080,"CONAWAY, HERB MD",True,True,1152632.36,436316.31,False,https://theballotbrief.com/district/nj-3
+NJ,03,Ryan Michael Kelly,OTHER,Independent,H6NJ03192,"KELLY, RYAN MICHAEL",False,True,5725.29,761.53,False,https://theballotbrief.com/district/nj-3
+NJ,03,Steven Welzer,OTHER,Green,H4NJ03247,"WELZER, STEVEN",False,False,0.0,0.00,False,https://theballotbrief.com/district/nj-3
+NJ,03,Michael P. McGuire,REP,Republican,H6NJ03184,"MCGUIRE, MICHAEL PATRICK",False,True,221324.29,16575.36,False,https://theballotbrief.com/district/nj-3
+NJ,04,Rachel Peace,DEM,Democratic,H6NJ04257,"PEACE, RACHEL",False,True,101425.72,14431.44,False,https://theballotbrief.com/district/nj-4
+NJ,04,Christopher H. Smith,REP,Republican,H8NJ04014,"SMITH, CHRISTOPHER H",True,True,797217.22,553017.29,False,https://theballotbrief.com/district/nj-4
+NJ,05,Josh Gottheimer,DEM,Democratic,H6NJ05171,"GOTTHEIMER, JOSH",True,True,5788812.15,13531046.78,False,https://theballotbrief.com/district/nj-5
+NJ,05,Adam Rueda,OTHER,Independent,H6NJ05247,"RUEDA, ADAM",False,False,0.0,0.00,False,https://theballotbrief.com/district/nj-5
+NJ,05,Sean Kirrane,REP,Republican,H6NJ05221,"KIRRANE, SEAN JOSEPH",False,True,103741.74,195.94,False,https://theballotbrief.com/district/nj-5
+NJ,06,Frank Pallone Jr.,DEM,Democratic,H8NJ03073,"PALLONE, FRANK JR",True,True,2844906.21,3069516.73,False,https://theballotbrief.com/district/nj-6
+NJ,06,Hillary Herzig,REP,Republican,H6NJ06278,"HERZIG, HILLARY",False,False,0.0,0.00,False,https://theballotbrief.com/district/nj-6
+NJ,07,Rebecca Bennett,DEM,Democratic,H6NJ07201,"BENNETT, REBECCA",False,True,8757003.38,1053454.45,True,https://theballotbrief.com/district/nj-7
+NJ,07,Seamus Patrick O'Toole,OTHER,Independent,,,,,,,True,https://theballotbrief.com/district/nj-7
+NJ,07,Thomas H. Kean Jr.,REP,Republican,H0NJ07261,"KEAN, THOMAS H. JR.",True,True,6128373.01,1365405.91,True,https://theballotbrief.com/district/nj-7
+NJ,08,Rob Menendez,DEM,Democratic,H2NJ13075,"MENENDEZ, ROBERT",False,True,2236501.68,722399.83,False,https://theballotbrief.com/district/nj-8
+NJ,08,Aristotle Eliopoulos,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/nj-8
+NJ,08,Craig Honts,OTHER,Socialist Workers Party,,,,,,,False,https://theballotbrief.com/district/nj-8
+NJ,08,Da'Shone Hughey,OTHER,Independent,H6NJ08217,"HUGHEY, DA'SHONE",False,False,0.0,0.00,False,https://theballotbrief.com/district/nj-8
+NJ,09,Nelida Pou,DEM,Democratic,H4NJ09194,"POU, NELIDA",True,True,3131321.73,1080499.99,False,https://theballotbrief.com/district/nj-9
+NJ,09,Terrisa Bukovinac,OTHER,Independent,H6NJ09306,"BUKOVINAC, TERRISA",False,False,0.0,0.00,False,https://theballotbrief.com/district/nj-9
+NJ,09,Rosie Pino,REP,Republican,H6NJ09264,"PINO, ROSEMARY",False,True,548325.95,13132.56,False,https://theballotbrief.com/district/nj-9
+NJ,10,LaMonica R. McIver,DEM,Democratic,H4NJ10176,"MCIVER, LAMONICA",True,True,2516563.31,897195.32,False,https://theballotbrief.com/district/nj-10
+NJ,10,Carmen Bucco,REP,Republican,H4NJ10135,"BUCCO, CARMEN",False,True,8931.33,2292.59,False,https://theballotbrief.com/district/nj-10
+NJ,11,Analilia Mejia,DEM,Democratic,H6NJ11286,"MEJIA, ANALILIA",True,True,2229339.31,115467.18,False,https://theballotbrief.com/district/nj-11
+NJ,11,Alan B. Bond,OTHER,Independent,H6NJ11328,"BOND, ALAN",False,False,0.0,0.00,False,https://theballotbrief.com/district/nj-11
+NJ,11,Joe Hathaway,REP,Republican,H6NJ11211,"HATHAWAY, JOE",False,True,837601.01,42173.47,False,https://theballotbrief.com/district/nj-11
+NJ,12,Adam Hamawy,DEM,Democratic,H6NJ12417,"HAMAWY, ADAM",False,True,1993156.58,239845.31,False,https://theballotbrief.com/district/nj-12
+NJ,12,Andres Jinete,OTHER,Green,H6NJ12441,"JINETE, ANDRES",False,True,0.0,0.00,False,https://theballotbrief.com/district/nj-12
+NJ,12,Winston Jordan,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/nj-12
+NJ,12,Gregg Mele,REP,Republican,H2NJ06210,"MELE, GREGG",False,True,101520.99,13565.94,False,https://theballotbrief.com/district/nj-12
+NM,01,Melanie Ann Stansbury,DEM,D,H2NM01144,"STANSBURY, MELANIE",True,True,1721315.41,310745.93,True,https://theballotbrief.com/district/nm-1
+NM,01,Ndidiamaka Ekwua Charlene Okpareke,REP,R,H6NM01129,"OKPAREKE, NDIDIAMAKA",False,True,174529.13,57544.79,True,https://theballotbrief.com/district/nm-1
+NM,02,Gabriel Vasquez,DEM,D,H2NM02191,"VASQUEZ, GABRIEL",True,True,5518618.26,496981.55,True,https://theballotbrief.com/district/nm-2
+NM,02,Gregory G. Cunningham,REP,R,H6NM02127,"CUNNINGHAM, GREG",False,True,2527072.03,343747.31,True,https://theballotbrief.com/district/nm-2
+NM,03,Teresa Leger Fernandez,DEM,D,H0NM03102,"LEGER FERNANDEZ, TERESA",True,True,1578389.15,517397.54,True,https://theballotbrief.com/district/nm-3
+NM,03,Martin Zamora,REP,R,H6NM03083,"ZAMORA, MARTIN R",False,True,605834.13,44752.20,True,https://theballotbrief.com/district/nm-3
+NV,01,Dina Titus,DEM,Democratic,H8NV03036,"TITUS, DINA",True,True,2055144.17,202234.80,False,https://theballotbrief.com/district/nv-1
+NV,01,"Afzal ""Bobby"" Khan",OTHER,Independent,H6NV01315,"KHAN, AFZAL",False,True,87343.95,350.07,False,https://theballotbrief.com/district/nv-1
+NV,01,Anthony Thomas Jr.,OTHER,Independent,H6NV01398,"THOMAS, ANTHONY MR JR.",False,False,0.0,0.00,False,https://theballotbrief.com/district/nv-1
+NV,01,"Steven ""Chap"" St John",OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/nv-1
+NV,01,Victor R. Willert,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/nv-1
+NV,01,Carrie Ann Buck,REP,Republican,H6NV01331,"BUCK, CARRIE",False,True,2632235.03,184262.87,False,https://theballotbrief.com/district/nv-1
+NV,02,Teresa F. Benitez-Thompson,DEM,Democratic,H6NV02362,"BENITEZ-THOMPSON, TERESA",False,True,1054466.93,181849.20,True,https://theballotbrief.com/district/nv-2
+NV,02,Lynn Chapman,OTHER,Independent American,H4NV02219,"CHAPMAN, LYNN",False,False,0.0,0.00,True,https://theballotbrief.com/district/nv-2
+NV,02,David Flippo,REP,Republican,H4NV04108,"FLIPPO, DAVID",False,True,2934107.53,161162.06,True,https://theballotbrief.com/district/nv-2
+NV,03,Susie Lee,DEM,Democratic,H6NV04020,"LEE, SUSIE",True,True,5942431.93,931293.70,False,https://theballotbrief.com/district/nv-3
+NV,03,David J. Anderson,OTHER,Independent,H6NV03220,"ANDERSON, TERA",False,False,335685.76,658.72,False,https://theballotbrief.com/district/nv-3
+NV,03,Jon Kamerath,OTHER,Independent American,H4NV03241,"KAMERATH, JON",False,False,0.0,0.00,False,https://theballotbrief.com/district/nv-3
+NV,03,P. Dean Johnson,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/nv-3
+NV,03,Marty O'Donnell,REP,Republican,H4NV03225,"O'DONNELL, MARTY",False,True,4835730.27,184548.99,False,https://theballotbrief.com/district/nv-3
+NV,04,Steven A. Horsford,DEM,Democratic,H2NV04011,"HORSFORD, STEVEN ALEXZANDER",True,True,4077555.45,821832.87,False,https://theballotbrief.com/district/nv-4
+NV,04,Gary Steele,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/nv-4
+NV,04,Russell Best,OTHER,Independent American,H0NV02167,"BEST, RUSSELL",False,False,0.0,0.00,False,https://theballotbrief.com/district/nv-4
+NV,04,William Johnson,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/nv-4
+NV,04,Cody K. Whipple,REP,Republican,H6NV04111,"WHIPPLE, CODY K",False,True,1217196.83,66379.39,False,https://theballotbrief.com/district/nv-4
+NY,01,Christopher J. Gallant,DEM,Democratic,H6NY01159,"GALLANT, CHRISTOPHER",False,True,1735637.7,425993.09,False,https://theballotbrief.com/district/ny-1
+NY,01,Nicholas J. LaLota,REP,Republican,H2NY01190,"NICK, LALOTA",True,True,4486088.77,2314992.60,False,https://theballotbrief.com/district/ny-1
+NY,02,Patrick Halpin,DEM,Democratic,H6NY02140,"HALPIN, PATRICK",False,True,586333.53,49442.36,False,https://theballotbrief.com/district/ny-2
+NY,02,Andrew R. Garbarino,REP,Republican,H0NY02234,"GARBARINO, ANDREW",True,True,4057667.29,2686930.30,False,https://theballotbrief.com/district/ny-2
+NY,03,Thomas R. Suozzi,DEM,Democratic,H6NY03247,"SUOZZI, THOMAS",True,True,7599603.36,3234341.64,False,https://theballotbrief.com/district/ny-3
+NY,03,Michael J. LiPetri Jr,REP,Republican,H0NY02267,"LIPETRI, MIKE",False,True,2584014.08,456872.81,False,https://theballotbrief.com/district/ny-3
+NY,04,Laura A. Gillen,DEM,Democratic,H2NY04244,"GILLEN, LAURA",False,True,6221631.04,3212650.31,False,https://theballotbrief.com/district/ny-4
+NY,04,Blay Tarnoff,OTHER,Libertarian,H6NY04237,"TARNOFF, BLAY",False,False,24572.0,66.00,False,https://theballotbrief.com/district/ny-4
+NY,04,Jeanine C. Driscoll,REP,Republican,H6NY04211,"DRISCOLL, JEANINE",False,True,684947.48,2553.08,False,https://theballotbrief.com/district/ny-4
+NY,05,Gregory W. Meeks,DEM,Democratic,H8NY06048,"MEEKS, GREGORY W.",True,True,2283140.15,2098240.98,False,https://theballotbrief.com/district/ny-5
+NY,05,George Marsh,REP,Republican,H6NY05127,"MARSH, GEORGE",False,False,0.0,0.00,False,https://theballotbrief.com/district/ny-5
+NY,06,Grace Meng,DEM,Democratic,H2NY06116,"MENG, GRACE",True,True,2199074.16,765124.94,False,https://theballotbrief.com/district/ny-6
+NY,06,Joseph Chou,REP,Republican,H4NY06047,"CHOU, JOSEPH",False,True,2578.08,4096.83,False,https://theballotbrief.com/district/ny-6
+NY,07,Claire Valdez,DEM,Democratic,H6NY07214,"VALDEZ, CLAIRE",False,True,1915867.24,110429.54,False,https://theballotbrief.com/district/ny-7
+NY,07,Priscilla Ghaznavi,OTHER,Our Future,H6NY07255,"GHAZNAVI, PRISCILLA MS.",False,True,40055.0,13178.58,False,https://theballotbrief.com/district/ny-7
+NY,07,Melvin Rivera,REP,Republican,H6NY07271,"RIVERA, MELVIN",False,False,0.0,0.00,False,https://theballotbrief.com/district/ny-7
+NY,08,Hakeem Jeffries,DEM,Democratic,H2NY10092,"JEFFRIES, HAKEEM",True,True,17893352.11,4234848.33,False,https://theballotbrief.com/district/ny-8
+NY,08,Lewis Mizrahi,REP,Republican,H6NY08188,"MIZRAHI, LEWIS",False,False,0.0,0.00,False,https://theballotbrief.com/district/ny-8
+NY,09,Yvette D. Clarke,DEM,Democratic,H4NY11138,"CLARKE, YVETTE D",True,True,1288233.88,66298.59,False,https://theballotbrief.com/district/ny-9
+NY,09,Joel Azumah,REP,Republican,H6NY09145,"ANABILAH-AZUMAH, JOEL",False,False,0.0,0.00,False,https://theballotbrief.com/district/ny-9
+NY,10,Brad Lander,DEM,Democratic,H6NY10176,"LANDER, BRAD MR.",False,True,2785966.92,80536.20,False,https://theballotbrief.com/district/ny-10
+NY,10,Jennifer E. Moore,REP,Republican,H6NY10218,"MOORE, JENNIFER E",False,False,2693.46,1525.67,False,https://theballotbrief.com/district/ny-10
+NY,11,Mike DeCillis,DEM,Democratic,H6NY11265,"DECILLIS, MICHAEL",False,True,183305.5,107888.45,False,https://theballotbrief.com/district/ny-11
+NY,11,Nicole Malliotakis,REP,Republican,H0NY11078,"MALLIOTAKIS, NICOLE",True,True,3315036.94,2788339.69,False,https://theballotbrief.com/district/ny-11
+NY,12,Micah C. Lasher,DEM,Democratic,H6NY12172,"LASHER, MICAH CHARLES",False,True,3493973.6,309209.29,False,https://theballotbrief.com/district/ny-12
+NY,12,Karen Ortiz,OTHER,Karen Ortiz,H6NY12297,"ORTIZ, KAREN",False,True,47330.11,13925.92,False,https://theballotbrief.com/district/ny-12
+NY,12,Wilneida Negron,OTHER,For All of Us,H6NY12313,"NEGRON, WILNEIDA",False,False,57807.2,6086.87,False,https://theballotbrief.com/district/ny-12
+NY,12,Caroline Shinkle,REP,Republican,H6NY12404,"SHINKLE, CAROLINE",False,True,272962.88,126423.53,False,https://theballotbrief.com/district/ny-12
+NY,13,Darializa Avila Chevalier,DEM,Democratic,H6NY13279,"AVILA CHEVALIER, DARIALIZA",False,True,1603708.74,154560.49,False,https://theballotbrief.com/district/ny-13
+NY,13,Jomo M. Williams,REP,Republican,H6NY13303,"WILLIAMS, JOMO",False,False,0.0,0.00,False,https://theballotbrief.com/district/ny-13
+NY,14,Alexandria Ocasio-Cortez,DEM,Democratic,H8NY15148,"OCASIO-CORTEZ, ALEXANDRIA",True,True,38029039.1,17575300.57,False,https://theballotbrief.com/district/ny-14
+NY,14,Diamant Hysenaj,REP,Republican,H6NY14251,"HYSENAJ, DIAMANT",False,True,446003.85,40670.79,False,https://theballotbrief.com/district/ny-14
+NY,15,Ritchie Torres,DEM,Democratic,H0NY15160,"TORRES, RITCHIE JOHN",True,True,7172392.64,13835641.98,False,https://theballotbrief.com/district/ny-15
+NY,15,Andre Easton,OTHER,Socialism PSL,H6NY15167,"EASTON, ANDRE CLEMENT MR.",False,True,93798.98,827.94,False,https://theballotbrief.com/district/ny-15
+NY,15,Gonzalo Duran,OTHER,Conservative,H4NY15154,"DURAN, GONZALO",False,False,0.0,0.00,False,https://theballotbrief.com/district/ny-15
+NY,15,Jose Vega,OTHER,Speak The Truth,H4NY15147,"VEGA, JOSE DAVID",False,True,344809.74,5641.78,False,https://theballotbrief.com/district/ny-15
+NY,15,Stylo Sapaskis,REP,Republican,H6NY16140,"SAPASKIS, STYLO ADONIS",False,False,0.0,0.00,False,https://theballotbrief.com/district/ny-15
+NY,16,George S. Latimer,DEM,Democratic,H4NY16087,"LATIMER, GEORGE",True,True,681937.92,133517.98,False,https://theballotbrief.com/district/ny-16
+NY,16,Joseph J. Cinquemani,REP,Republican,H4NY07052,"CINQUEMANI, JOSEPH",False,False,0.0,0.00,False,https://theballotbrief.com/district/ny-16
+NY,17,Cait Conley,DEM,Democratic,H6NY17171,"CONLEY, CAIT",False,True,10706692.07,948539.50,True,https://theballotbrief.com/district/ny-17
+NY,17,Mike Lawler,REP,Republican,H2NY17162,"LAWLER, MICHAEL VINCENT",True,True,10317627.15,1959524.06,True,https://theballotbrief.com/district/ny-17
+NY,18,Pat Ryan,DEM,Democratic,H8NY19223,"RYAN, PATRICK",True,True,5359733.43,2543836.96,True,https://theballotbrief.com/district/ny-18
+NY,18,Jackie Mary Auringer,REP,Republican,H6NY18252,"AURINGER, JACKIE MARY",False,True,158702.7,21703.01,True,https://theballotbrief.com/district/ny-18
+NY,19,Josh Riley,DEM,Democratic,H8NY22177,"RILEY, JOSH",True,True,5986868.69,1791678.67,False,https://theballotbrief.com/district/ny-19
+NY,19,Peter K. Oberacker,REP,Republican,H6NY19268,"OBERACKER, PETER KARL JR",False,True,1424570.72,23155.49,False,https://theballotbrief.com/district/ny-19
+NY,20,Paul D. Tonko,DEM,Democratic,H8NY21203,"TONKO, PAUL DAVID",True,True,1247202.32,490736.00,False,https://theballotbrief.com/district/ny-20
+NY,20,Ralph F. Ambrosio,REP,Republican,H6NY20225,"AMBROSIO, RALPH",False,True,61545.17,7342.65,False,https://theballotbrief.com/district/ny-20
+NY,21,Blake Gendebien,DEM,Democratic,H6NY21199,"GENDEBIEN, BLAKE",False,True,7655529.27,364011.80,True,https://theballotbrief.com/district/ny-21
+NY,21,Anthony Constantino,REP,Republican,H6NY21157,"CONSTANTINO, ANTHONY THOMAS",False,True,17064951.19,2298984.48,True,https://theballotbrief.com/district/ny-21
+NY,22,John W. Mannion,DEM,Democratic,H4NY22085,"MANNION, JOHN W",True,True,3240826.28,1016371.51,False,https://theballotbrief.com/district/ny-22
+NY,22,Kailee Marie Buller,REP,Republican,H6NY22213,"BULLER, KAILEE",False,True,464688.44,160138.09,False,https://theballotbrief.com/district/ny-22
+NY,23,Aaron Gies,DEM,Democratic,H6NY23559,"GIES, AARON DR.",False,True,678483.72,54077.18,True,https://theballotbrief.com/district/ny-23
+NY,23,Nicholas A. Langworthy,REP,Republican,H2NY23228,"LANGWORTHY, NICK",True,True,2675792.78,1994176.70,True,https://theballotbrief.com/district/ny-23
+NY,24,Alissa J. Ellman,DEM,Democratic,H6NY24219,"ELLMAN, ALISSA",False,True,452166.23,46242.36,False,https://theballotbrief.com/district/ny-24
+NY,24,Claudia Tenney,REP,Republican,H4NY22051,"TENNEY, CLAUDIA",True,True,3084890.79,835740.92,False,https://theballotbrief.com/district/ny-24
+NY,25,Joseph D. Morelle,DEM,Democratic,H8NY25105,"MORELLE, JOSEPH D",True,True,2247172.87,468122.33,False,https://theballotbrief.com/district/ny-25
+NY,25,Virginia E. McIntyre,REP,Republican,H6NY25208,"MCINTYRE, VIRGINIA",False,True,55458.88,-10855.17,False,https://theballotbrief.com/district/ny-25
+NY,26,Timothy M. Kennedy,DEM,Democratic,H4NY26078,"KENNEDY, TIMOTHY",True,True,2761024.83,1208991.19,False,https://theballotbrief.com/district/ny-26
+NY,26,Dennis E. Hannon,REP,Republican,H6NY26131,"HANNON, DENNIS",False,True,5525.0,4438.20,False,https://theballotbrief.com/district/ny-26
+OH,01,Greg Landsman,DEM,Democratic,H2OH01194,"LANDSMAN, GREG",True,True,5662206.21,502951.51,True,https://theballotbrief.com/district/oh-1
+OH,01,Nathan Weise,OTHER,Libertarian,H6OH01229,"WEISE, NATHAN",False,False,0.0,0.00,True,https://theballotbrief.com/district/oh-1
+OH,01,Eric Conroy,REP,Republican,H6OH01138,"CONROY, ERIC",False,True,2372636.84,293397.10,True,https://theballotbrief.com/district/oh-1
+OH,02,Jen Mazzuckelli,DEM,Democratic,H6OH02326,"MAZZUCKELLI, JEN",False,False,0.0,0.00,False,https://theballotbrief.com/district/oh-2
+OH,02,David J. Taylor,REP,Republican,H4OH02248,"TAYLOR, DAVID",True,True,1768914.66,707173.53,False,https://theballotbrief.com/district/oh-2
+OH,03,Joyce Beatty,DEM,Democratic,H2OH03125,"BEATTY, JOYCE",True,True,1454156.27,2731736.69,False,https://theballotbrief.com/district/oh-3
+OH,03,Cleophus Dulaney,REP,Republican,H0OH03137,"DULANEY, CLEOPHUS",False,False,0.0,0.00,False,https://theballotbrief.com/district/oh-3
+OH,04,Joshua D. Kolasinski,DEM,Democratic,H6OH04181,"KOLASINSKI, JOSHUA",False,True,26211.45,3849.91,False,https://theballotbrief.com/district/oh-4
+OH,04,Tracey L. Tackett,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/oh-4
+OH,04,Jim Jordan,REP,Republican,H6OH04082,"JORDAN, JAMES D.",True,True,5617701.79,3051862.98,False,https://theballotbrief.com/district/oh-4
+OH,05,Brian A. Shaver,DEM,Democratic,H6OH05154,"SHAVER, BRIAN ALAN MR.",False,True,59139.52,39322.55,False,https://theballotbrief.com/district/oh-5
+OH,05,Michael J. Veloff,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/oh-5
+OH,05,Bob Latta,REP,Republican,H8OH05036,"LATTA, ROBERT EDWARD",True,True,1772110.3,799134.37,False,https://theballotbrief.com/district/oh-5
+OH,06,Elizabeth Kirtley,DEM,Democratic,H6OH06244,"KIRTLEY, ELIZABETH ANN MRS.",False,True,11431.98,4373.21,False,https://theballotbrief.com/district/oh-6
+OH,06,Michael A. Rulli,REP,Republican,H4OH06165,"RULLI, MICHAEL",True,True,1419956.8,417633.29,False,https://theballotbrief.com/district/oh-6
+OH,07,Brian Poindexter,DEM,Democratic,H6OH07168,"POINDEXTER, BRIAN",False,True,3720341.61,793675.20,False,https://theballotbrief.com/district/oh-7
+OH,07,Max Miller,REP,Republican,H2OH16051,"MILLER, MAX",True,True,3324941.88,135628.83,False,https://theballotbrief.com/district/oh-7
+OH,08,Vanessa Enoch,DEM,Democratic,H8OH08097,"ENOCH, VANESSA L. DR.",False,True,3125.21,-727.22,False,https://theballotbrief.com/district/oh-8
+OH,08,Warren Davidson,REP,Republican,H6OH08315,"DAVIDSON, WARREN",True,True,757166.3,298274.28,False,https://theballotbrief.com/district/oh-8
+OH,09,Marcy Kaptur,DEM,Democratic,H2OH09031,"KAPTUR, MARCY HON. M.C.",True,True,5910480.74,697507.52,True,https://theballotbrief.com/district/oh-9
+OH,09,Derek Merrin,REP,Republican,H4OH09169,"MERRIN, DEREK",False,True,2217820.58,449466.16,True,https://theballotbrief.com/district/oh-9
+OH,10,Kristina Knickerbocker,DEM,Democratic,H6OH10121,"KNICKERBOCKER, KRISTINA",False,True,1015877.85,133444.92,True,https://theballotbrief.com/district/oh-10
+OH,10,Thomas F. McMasters,OTHER,Libertarian,H6OH10113,"MCMASTERS, THOMAS",False,False,0.0,0.00,True,https://theballotbrief.com/district/oh-10
+OH,10,Mike Turner,REP,Republican,H2OH03067,"TURNER, MICHAEL R REP.",True,True,1315093.78,325250.06,True,https://theballotbrief.com/district/oh-10
+OH,11,Shontel M. Brown,DEM,Democratic,H2OH11169,"BROWN, M SHONTEL",True,True,1566468.32,1244616.95,False,https://theballotbrief.com/district/oh-11
+OH,11,Mike Kirchner,REP,Republican,H6OH11210,"KIRCHNER, MIKE",False,False,0.0,0.00,False,https://theballotbrief.com/district/oh-11
+OH,12,Jerrad Christian,DEM,Democratic,H4OH12080,"CHRISTIAN, JERRAD SHANE",False,True,139968.16,24078.87,False,https://theballotbrief.com/district/oh-12
+OH,12,Troy Balderson,REP,Republican,H8OH12180,"BALDERSON, WILLIAM TROY",True,True,2187393.46,1062978.76,False,https://theballotbrief.com/district/oh-12
+OH,13,Emilia Sykes,DEM,Democratic,H2OH13264,"SYKES, EMILIA",True,True,3990518.8,941757.91,False,https://theballotbrief.com/district/oh-13
+OH,13,Sandeep Dixit,OTHER,Independent,H6OH13273,"DIXIT, SANDEEP S MR",False,True,92372.0,2044.25,False,https://theballotbrief.com/district/oh-13
+OH,13,Carey Coleman,REP,Republican,H6OH13307,"COLEMAN, CAREY",False,True,169537.46,62793.16,False,https://theballotbrief.com/district/oh-13
+OH,14,Maria Jukic,DEM,Democratic,H6OH14248,"JUKIC, MARIA",False,True,118360.32,38447.18,False,https://theballotbrief.com/district/oh-14
+OH,14,David P. Joyce,REP,Republican,H2OH14064,"JOYCE, DAVID P.",True,True,1763173.71,2201695.66,False,https://theballotbrief.com/district/oh-14
+OH,15,Don Leonard,DEM,Democratic,H6OH15112,"LEONARD, DON RALPH",False,True,1329843.67,97706.71,True,https://theballotbrief.com/district/oh-15
+OH,15,Brennan Barrington,OTHER,Libertarian,H6OH15138,"BARRINGTON, BRENNAN",False,False,0.0,0.00,False,https://theballotbrief.com/district/oh-15
+OH,15,Gary Josephson,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/oh-15
+OH,15,Mike Carey,REP,Republican,H2OH15228,"CAREY, MIKE",True,True,4184981.49,370343.07,True,https://theballotbrief.com/district/oh-15
+OK,01,John Croisant,DEM,Democratic,H6OK01201,"CROISANT, JOHN THOMAS",False,True,217468.86,38289.12,False,https://theballotbrief.com/district/ok-1
+OK,01,Mark Tedford,REP,Republican,H6OK01235,"TEDFORD, MARK",False,True,2490273.7,157345.07,False,https://theballotbrief.com/district/ok-1
+OK,02,Brandon Wade,DEM,Democratic,H4OK02196,"WADE, BRANDON",False,True,7983.28,-279.63,False,https://theballotbrief.com/district/ok-2
+OK,02,Ronnie Hopkins,OTHER,Independent,H4OK02204,"HOPKINS, RONNIE",False,False,0.0,0.00,False,https://theballotbrief.com/district/ok-2
+OK,02,Josh Brecheen,REP,Republican,H2OK02315,"BRECHEEN, JOSH",True,True,250175.81,71200.53,False,https://theballotbrief.com/district/ok-2
+OK,03,Suzie Byrd,DEM,Democratic,H6OK03272,"BYRD, SUZANNE",False,True,18188.03,9508.17,False,https://theballotbrief.com/district/ok-3
+OK,03,Frank D. Lucas,REP,Republican,H4OK06056,"LUCAS, FRANK D.",True,True,1055084.93,570473.65,False,https://theballotbrief.com/district/ok-3
+OK,04,Mitchell Jacob,DEM,Democratic,H6OK04155,"JACOB, MITCHELL LEIGH",False,True,121499.59,19450.64,False,https://theballotbrief.com/district/ok-4
+OK,04,Rocco Bonacci,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/ok-4
+OK,04,Tom Cole,REP,Republican,H2OK04055,"COLE, TOM",True,True,4281680.96,2370394.67,False,https://theballotbrief.com/district/ok-4
+OK,05,Jena Nelson,DEM,Democratic,H6OK05293,"NELSON, JENA",False,True,821988.98,108542.56,True,https://theballotbrief.com/district/ok-5
+OK,05,Austin Nieves,OTHER,Independent,H4OK04176,"NIEVES, AUSTIN",False,False,0.0,0.00,False,https://theballotbrief.com/district/ok-5
+OK,05,Robert P. Henri,OTHER,Independent,H6OK05301,"HENRI, ROBERT PATRICK",False,True,6361.0,1672.00,False,https://theballotbrief.com/district/ok-5
+OK,05,Stephanie Bice,REP,Republican,H0OK05205,"BICE, STEPHANIE",True,True,2476528.64,1123989.45,True,https://theballotbrief.com/district/ok-5
+OR,01,Suzanne Bonamici,DEM,D,H2OR01133,"BONAMICI, SUZANNE MS.",True,True,1025138.44,518633.90,False,https://theballotbrief.com/district/or-1
+OR,01,Barbara J Kahl,REP,R,H6OR01308,"KAHL, BARBARA J DR DVM",False,True,17728.49,5412.46,False,https://theballotbrief.com/district/or-1
+OR,02,Chris Beck,DEM,D,H6OR02322,"BECK, CHRIS",False,True,276514.73,112665.75,False,https://theballotbrief.com/district/or-2
+OR,02,Cliff Bentz,REP,R,H0OR02127,"BENTZ, CLIFF",True,True,1339191.81,1440096.37,False,https://theballotbrief.com/district/or-2
+OR,03,Maxine E Dexter,DEM,D,H4OR03192,"DEXTER, MAXINE",True,True,1297974.78,188640.20,False,https://theballotbrief.com/district/or-3
+OR,03,Loran Ayles,REP,R,H6OR03197,"AYLES, LORAN",False,False,0.0,0.00,False,https://theballotbrief.com/district/or-3
+OR,04,Val Hoyle,DEM,D,H2OR04095,"HOYLE, VALERIE",True,True,1652428.49,186655.55,False,https://theballotbrief.com/district/or-4
+OR,04,Justin Filip,OTHER,Pacific Green,H4OR04141,"FILIP, JUSTIN",False,False,4636.0,3616.45,False,https://theballotbrief.com/district/or-4
+OR,04,Monique DeSpain,REP,R,H6OR04260,"DESPAIN, MONIQUE",False,True,921875.97,153575.74,False,https://theballotbrief.com/district/or-4
+OR,05,Janelle S Bynum,DEM,D,H4OR05304,"BYNUM, JANELLE",True,True,4737331.62,2175981.11,False,https://theballotbrief.com/district/or-5
+OR,05,Andrea Townsend,OTHER,Pacific Green,H4OR05379,"TOWNSEND, ANDREA THOM",False,False,0.0,0.00,False,https://theballotbrief.com/district/or-5
+OR,05,Patti Adair,REP,R,H6OR05242,"ADAIR, PATTI",False,True,682238.95,122584.64,False,https://theballotbrief.com/district/or-5
+OR,06,Andrea Salinas,DEM,D,H2OR06066,"SALINAS, ANDREA",True,True,1984298.52,636057.38,False,https://theballotbrief.com/district/or-6
+OR,06,David Russ,REP,R,H2OR01240,"RUSS, DAVID HONORABLE",False,True,13165.84,-549.90,False,https://theballotbrief.com/district/or-6
+PA,01,Bob Harvie,DEM,Democratic,H6PA01181,"HARVIE, ROBERT J",False,True,3167942.07,409412.54,True,https://theballotbrief.com/district/pa-1
+PA,01,Brian Fitzpatrick,REP,Republican,H6PA08277,"FITZPATRICK, BRIAN",True,True,8021375.59,709096.90,True,https://theballotbrief.com/district/pa-1
+PA,02,Brendan F. Boyle,DEM,Democratic,H4PA13199,"BOYLE, BRENDAN F",True,True,2883854.83,5894246.92,False,https://theballotbrief.com/district/pa-2
+PA,02,Jessica Arriaga,REP,Republican,H6PA02205,"ARRIAGA, JESSICA",False,False,0.0,0.00,False,https://theballotbrief.com/district/pa-2
+PA,03,Chris Rabb,DEM,Democratic,H6PA03203,"RABB, CHRISTOPHER M.",False,True,1457911.98,90879.98,False,https://theballotbrief.com/district/pa-3
+PA,03,Dennis Mahoney,OTHER,The Independent Party,H6PA03369,"MAHONEY, DENNIS JOSEPH",False,False,37384.63,2564.91,False,https://theballotbrief.com/district/pa-3
+PA,04,Madeleine Dean,DEM,Democratic,H8PA04116,"DEAN, MADELEINE",True,True,1966147.94,1360165.01,False,https://theballotbrief.com/district/pa-4
+PA,04,Aurora Stuski,REP,Republican,H6PA04169,"STUSKI, AURORA",False,True,9750.0,2353.74,False,https://theballotbrief.com/district/pa-4
+PA,05,Mary Gay Scanlon,DEM,Democratic,H8PA07200,"SCANLON, MARY GAY",True,True,1340757.14,471706.20,False,https://theballotbrief.com/district/pa-5
+PA,05,Nick Manganaro,REP,Republican,H6PA05216,"MANGANARO, NICHOLAS WALN MORRIS",False,True,21318.18,9334.80,False,https://theballotbrief.com/district/pa-5
+PA,06,Chrissy Houlahan,DEM,Democratic,H8PA06087,"HOULAHAN, CHRISSY",True,True,2086891.23,4147728.28,False,https://theballotbrief.com/district/pa-6
+PA,06,Marty Young,REP,Republican,H6PA06156,"YOUNG, MARTIN",False,True,459245.16,101641.08,False,https://theballotbrief.com/district/pa-6
+PA,07,Bob Brooks,DEM,Democratic,H6PA07188,"BROOKS, BOB",False,True,5347353.38,741578.51,True,https://theballotbrief.com/district/pa-7
+PA,07,Ryan Mackenzie,REP,Republican,H8PA15195,"MACKENZIE, RYAN EDWARD",True,True,5296663.91,1069992.58,True,https://theballotbrief.com/district/pa-7
+PA,08,Paige Cognetti,DEM,Democratic,H6PA08293,"COGNETTI, PAIGE",False,True,7502359.43,243672.01,True,https://theballotbrief.com/district/pa-8
+PA,08,Rob Bresnahan Jr.,REP,Republican,H4PA08124,"BRESNAHAN, ROB",True,True,6519139.21,732723.63,True,https://theballotbrief.com/district/pa-8
+PA,09,Rachel Wallace,DEM,Democratic,H6PA09127,"WALLACE, RACHEL",False,True,1145383.4,250759.27,False,https://theballotbrief.com/district/pa-9
+PA,09,Dan Meuser,REP,Republican,H8PA10147,"MEUSER, DANIEL",True,True,2129641.48,29790.59,False,https://theballotbrief.com/district/pa-9
+PA,10,Janelle Stelson,DEM,Democratic,H4PA10104,"STELSON, JANELLE",False,True,9234259.74,2069306.31,True,https://theballotbrief.com/district/pa-10
+PA,10,Scott Perry,REP,Republican,H2PA04135,"PERRY, SCOTT",True,True,6791519.08,1023569.23,True,https://theballotbrief.com/district/pa-10
+PA,11,Nancy Mannion,DEM,Democratic,H6PA11099,"MANNION, NANCY",False,True,320443.98,39680.59,False,https://theballotbrief.com/district/pa-11
+PA,11,Lloyd K. Smucker,REP,Republican,H6PA16320,"SMUCKER, LLOYD K.",True,True,1854590.36,258808.23,False,https://theballotbrief.com/district/pa-11
+PA,12,Summer Lee,DEM,Democratic,H2PA18200,"LEE, SUMMER",True,True,1630367.66,1713225.12,False,https://theballotbrief.com/district/pa-12
+PA,12,James Hayes,REP,Republican,H4PA12068,"HAYES, JAMES DR.",False,True,80533.61,11273.53,False,https://theballotbrief.com/district/pa-12
+PA,13,Beth Farnham,DEM,Democratic,H4PA13298,"FARNHAM, ELIZABETH RHOADS",False,True,107708.27,25091.68,False,https://theballotbrief.com/district/pa-13
+PA,13,John Joyce,REP,Republican,H8PA13125,"JOYCE, JOHN",True,True,2755439.79,3587578.06,False,https://theballotbrief.com/district/pa-13
+PA,14,Alan Bradstock,DEM,Democratic,H6PA14200,"BRADSTOCK, DAVID ALAN",False,True,406025.96,72836.63,False,https://theballotbrief.com/district/pa-14
+PA,14,Guy Reschenthaler,REP,Republican,H8PA18199,"RESCHENTHALER, GUY MR.",True,True,5037694.9,713105.29,False,https://theballotbrief.com/district/pa-14
+PA,15,Ray Bilger,DEM,Democratic,H6PA15181,"BILGER, RAYMOND ALLEN",False,True,230753.32,88914.46,False,https://theballotbrief.com/district/pa-15
+PA,15,Glenn Thompson,REP,Republican,H8PA05071,"THOMPSON, GLENN MR.",True,True,2152943.64,703946.49,False,https://theballotbrief.com/district/pa-15
+PA,16,Justin Wagner,DEM,Democratic,H6PA16379,"WAGNER, JUSTIN",False,True,247119.36,62854.43,False,https://theballotbrief.com/district/pa-16
+PA,16,Mike Kelly,REP,Republican,H0PA03271,"KELLY, GEORGE J JR",True,True,1414934.57,1039192.40,False,https://theballotbrief.com/district/pa-16
+PA,17,Chris Deluzio,DEM,Democratic,H2PA17103,"DELUZIO, CHRISTOPHER",True,True,3815970.07,1223960.02,False,https://theballotbrief.com/district/pa-17
+PA,17,Tony Guy,REP,Republican,H6PA17203,"GUY, TONY",False,True,211631.91,26090.05,False,https://theballotbrief.com/district/pa-17
+RI,01,Gabe Amo,DEM,Democratic,H4RI01265,"AMO, GABRIEL F",True,True,1952763.16,1998865.12,True,https://theballotbrief.com/district/ri-1
+RI,01,Kellie Keenan,REP,Republican,H6RI01153,"KEENAN, KELLIE ELEANOR",False,True,15435.44,1465.44,True,https://theballotbrief.com/district/ri-1
+RI,02,Seth Magaziner,DEM,Democratic,H2RI02184,"MAGAZINER, SETH",True,True,1612494.98,1580193.79,True,https://theballotbrief.com/district/ri-2
+RI,02,Vic Mellor,REP,Republican,H6RI02318,"MELLOR, VICTOR G.",False,True,3885928.85,44352.63,True,https://theballotbrief.com/district/ri-2
+SC,01,Nancy Lacore,DEM,Democratic,H6SC01359,"LACORE, NANCY",False,True,4865629.69,175304.35,True,https://theballotbrief.com/district/sc-1
+SC,01,Bill Reeside,OTHER,Libertarian,H6SC01342,"REESIDE, WILLIAM OLIVER JR.",False,True,115492.05,3660.08,True,https://theballotbrief.com/district/sc-1
+SC,01,Jenny Costa Honeycutt,REP,Republican,H6SC01334,"HONEYCUTT, JENNY COSTA",False,True,1291995.81,308018.29,True,https://theballotbrief.com/district/sc-1
+SC,02,Zyon Khalifa,DEM,Democratic,H6SC02159,"KHALIFA, ZYON DESHON",False,False,29039.07,7148.35,False,https://theballotbrief.com/district/sc-2
+SC,02,Dayna Alane Smith,OTHER,Workers Party,,,,,,,False,https://theballotbrief.com/district/sc-2
+SC,02,Joe Wilson,REP,Republican,H2SC02059,"WILSON, JOE THE HON.",True,True,1017185.81,137248.89,False,https://theballotbrief.com/district/sc-2
+SC,03,Eunice Lehmacher,DEM,Democratic,H6SC03090,"LEHMACHER, EUNICE",False,True,98662.38,21975.76,False,https://theballotbrief.com/district/sc-3
+SC,03,Brian Corriea,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/sc-3
+SC,03,Sheri Biggs,REP,Republican,H4SC01313,"BIGGS, SHERI",True,True,706778.72,201218.00,False,https://theballotbrief.com/district/sc-3
+SC,04,Courtney McClain,DEM,Democratic,H6SC04171,"MCCLAIN, COURTNEY",False,True,130729.56,50464.65,False,https://theballotbrief.com/district/sc-4
+SC,04,Jessica Ethridge,OTHER,Libertarian,H6SC04197,"ETHRIDGE, JESSICA",False,False,963.04,480.03,False,https://theballotbrief.com/district/sc-4
+SC,04,William Timmons,REP,Republican,H8SC04250,"TIMMONS, WILLIAM R IV",True,True,1774179.99,85603.37,False,https://theballotbrief.com/district/sc-4
+SC,05,Mallory Dittmer,DEM,Democratic,H6SC05228,"DITTMER, MALLORY",False,True,226553.04,79564.17,False,https://theballotbrief.com/district/sc-5
+SC,05,Wes Climer,REP,Republican,H6SC05202,"CLIMER, WES",False,True,1132483.52,269169.46,False,https://theballotbrief.com/district/sc-5
+SC,06,James E Jim Clyburn,DEM,Democratic,H2SC02042,"CLYBURN, JAMES E",True,True,1687457.55,1827711.11,False,https://theballotbrief.com/district/sc-6
+SC,06,John Peterson,REP,Republican,H6SC06184,"PETERSON, JOHN",False,False,0.0,0.00,False,https://theballotbrief.com/district/sc-6
+SC,07,John Gregory Vincent,DEM,Democratic,H6SC07034,"VINCENT, JOHN GREGORY",False,True,640418.73,70347.29,False,https://theballotbrief.com/district/sc-7
+SC,07,Russell Fry,REP,Republican,H2SC07280,"FRY, RUSSELL",True,True,1985244.19,159187.48,False,https://theballotbrief.com/district/sc-7
+SD,00,"Nicole ""Nikki"" Gronli",DEM,D,H6SD01141,"GRONLI, NICOLE",False,True,421803.07,22490.73,True,https://theballotbrief.com/district/sd-al
+SD,00,Marty Jackley,REP,R,H6SD01109,"JACKLEY, MARTY",False,True,1737520.15,1050140.78,True,https://theballotbrief.com/district/sd-al
+TN,01,Kristi Burke,DEM,Democratic,H6TN01537,"BURKE, KRISTI",False,True,222584.71,27317.94,False,https://theballotbrief.com/district/tn-1
+TN,01,Billy Cody,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/tn-1
+TN,01,Chris Campbell,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/tn-1
+TN,01,Joshua Ray Ashburn,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/tn-1
+TN,01,Richard G. Baker,OTHER,Independent,H0TN01191,"BAKER, RICHARD",False,False,0.0,0.00,False,https://theballotbrief.com/district/tn-1
+TN,01,Tyler Brice Mitchell McClain,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/tn-1
+TN,01,Diana Harshbarger,REP,Republican,H0TN01118,"HARSHBARGER, DIANA",True,True,1536325.23,1898700.00,False,https://theballotbrief.com/district/tn-1
+TN,02,Michaela Barnett,DEM,Democratic,H6TN02170,"BARNETT, MICHAELA",False,True,717841.92,130250.53,False,https://theballotbrief.com/district/tn-2
+TN,02,Adam Heimerman,OTHER,Independent,H6TN02188,"HEIMERMAN, ADAM",False,False,0.0,0.00,False,https://theballotbrief.com/district/tn-2
+TN,02,Bruce Fine,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/tn-2
+TN,02,Tim Burchett,REP,Republican,H8TN02119,"BURCHETT, TIM",True,True,3131314.7,914110.98,False,https://theballotbrief.com/district/tn-2
+TN,03,Anna Golladay,DEM,Democratic,H6TN03228,"GOLLADAY, ANNA",False,True,164743.76,43309.43,False,https://theballotbrief.com/district/tn-3
+TN,03,Dean Arnold,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/tn-3
+TN,03,Donnie Lynn Ownby,OTHER,Independent,H6TN03210,"OWNBY, DONNIE LYNN",False,False,0.0,0.00,False,https://theballotbrief.com/district/tn-3
+TN,03,Edward John Roland,OTHER,Independent,H6TN03244,"ROLAND, EDWARD JOHN MR",False,False,0.0,0.00,False,https://theballotbrief.com/district/tn-3
+TN,03,Jean Howard-Hill,OTHER,Independent,H4TN03165,"HOWARD-HILL, JEAN",False,False,0.0,0.00,False,https://theballotbrief.com/district/tn-3
+TN,03,Rodney Joe King,OTHER,Independent,H6TN03251,"KING, RODNEY JOE MR",False,False,7810.0,5.00,False,https://theballotbrief.com/district/tn-3
+TN,03,Chuck Fleischmann,REP,Republican,H0TN03254,"FLEISCHMANN, CHARLES J",True,True,2728033.85,4895445.11,False,https://theballotbrief.com/district/tn-3
+TN,04,Victoria Broderick,DEM,Democratic,H4TN04270,"BRODERICK, VICTORIA",False,True,94216.96,11847.54,False,https://theballotbrief.com/district/tn-4
+TN,04,Clay Faircloth,OTHER,Independent,H2TN06188,"FAIRCLOTH, CLAY",False,False,0.0,0.00,False,https://theballotbrief.com/district/tn-4
+TN,04,Jacob Kristopher Anders,OTHER,Independent,H6TN04242,"ANDERS, JACOB KRISTOPHER",False,False,2267.06,805.40,False,https://theballotbrief.com/district/tn-4
+TN,04,Scott DesJarlais,REP,Republican,H0TN04195,"DESJARLAIS, SCOTT HON.",True,True,667181.2,525033.64,False,https://theballotbrief.com/district/tn-4
+TN,05,Chaz Molder,DEM,Democratic,H6TN05397,"MOLDER, CHAZ",False,True,3531777.7,560495.20,True,https://theballotbrief.com/district/tn-5
+TN,05,James A. Johnson,OTHER,Independent,H6TN05447,"JOHNSON, JAMES ANDREW MR",False,False,0.0,0.00,False,https://theballotbrief.com/district/tn-5
+TN,05,Micheál (Me-Haul) O'Leary,OTHER,Independent,H6TN05462,"O'LEARY, MICHEAL",False,True,0.0,0.00,False,https://theballotbrief.com/district/tn-5
+TN,05,Charlie Hatcher,REP,Republican,H6TN05405,"HATCHER, CHARLIE",False,True,1803850.94,474542.75,True,https://theballotbrief.com/district/tn-5
+TN,06,Mike Croley,DEM,Democratic,H6TN06171,"CROLEY, MIKE",False,True,117167.7,14341.64,False,https://theballotbrief.com/district/tn-6
+TN,06,Angus Purdy,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/tn-6
+TN,06,Christopher B. Monday,OTHER,Independent,H6TN06189,"MONDAY, CHRISTOPHER BRIAN",False,False,0.0,0.00,False,https://theballotbrief.com/district/tn-6
+TN,06,Johnny Garrett,REP,Republican,H6TN06213,"GARRETT, JOHNNY",False,True,3000586.11,343417.99,False,https://theballotbrief.com/district/tn-6
+TN,07,Darden Copeland,DEM,Democratic,H6TN07286,"COPELAND, DARDEN HUNTER",False,True,1257202.49,73685.88,False,https://theballotbrief.com/district/tn-7
+TN,07,Andrew J. Koontz,OTHER,Independent,H6TN06288,"KOONTZ, ANDREW",False,True,5100.0,4970.23,False,https://theballotbrief.com/district/tn-7
+TN,07,Lowell Reynolds,OTHER,Independent,H6TN05330,"REYNOLDS, LOWELL",False,False,0.0,0.00,False,https://theballotbrief.com/district/tn-7
+TN,07,Matt Van Epps,REP,Republican,H6TN07161,"VAN EPPS, MATTHEW ROBERT",True,True,2646914.76,358455.25,False,https://theballotbrief.com/district/tn-7
+TN,08,Heidi Kuhn,DEM,Democratic,H6TN08367,"KUHN, HEIDI",False,True,112308.98,6588.62,False,https://theballotbrief.com/district/tn-8
+TN,08,Adam D. Austill,OTHER,Independent,H6TN08383,"AUSTILL, ADAM D",False,False,0.0,0.00,False,https://theballotbrief.com/district/tn-8
+TN,08,Antonio Futch,OTHER,Independent,H6TN08391,"FUTCH, ANTONIO MR",False,False,0.0,0.00,False,https://theballotbrief.com/district/tn-8
+TN,08,"Henry J. Ward, III",OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/tn-8
+TN,08,Horace Taylor,OTHER,Independent,H6TN08342,"TAYLOR, HORACE",False,True,8119.0,145.00,False,https://theballotbrief.com/district/tn-8
+TN,08,Pamela Jeanine (P.) Moses,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/tn-8
+TN,08,Wendell (Wells) Blankenship,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/tn-8
+TN,08,David Kustoff,REP,Republican,H2TN07103,"KUSTOFF, DAVID",True,True,2585196.73,2719271.07,False,https://theballotbrief.com/district/tn-8
+TN,09,Justin J. Pearson,DEM,Democratic,H6TN09449,"PEARSON, JUSTIN J.",False,True,4009058.26,746128.25,True,https://theballotbrief.com/district/tn-9
+TN,09,Dennis Clark,OTHER,Independent,H0TN09111,"CLARK, DENNIS JEFFREY",False,False,0.0,0.00,False,https://theballotbrief.com/district/tn-9
+TN,09,Michelle Davis Head,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/tn-9
+TN,09,Brent Taylor,REP,Republican,H6TN09464,"TAYLOR, BRENT",False,True,2832273.18,524251.29,True,https://theballotbrief.com/district/tn-9
+TX,01,Yolanda R. Prince,DEM,Democratic,H6TX01352,"PRINCE, YOLANDA RENA",False,True,33181.85,8231.92,False,https://theballotbrief.com/district/tx-1
+TX,01,Nathaniel Moran,REP,Republican,H2TX01112,"MORAN, NATHANIEL QUENTIN",True,True,2380646.71,959562.96,False,https://theballotbrief.com/district/tx-1
+TX,02,Shaun Finnie,DEM,Democratic,H6TX02251,"FINNIE, SHAUN",False,True,3158587.64,261648.60,True,https://theballotbrief.com/district/tx-2
+TX,02,Steve Toth,REP,Republican,H6TX08175,"TOTH, STEVE",False,True,1035120.97,112380.10,True,https://theballotbrief.com/district/tx-2
+TX,03,Evan Hunt,DEM,Democratic,H6TX03234,"HUNT, EVAN",False,True,702785.91,56115.33,False,https://theballotbrief.com/district/tx-3
+TX,03,Keith Self,REP,Republican,H2TX00064,"SELF, KEITH ALAN",False,True,887245.18,292331.38,False,https://theballotbrief.com/district/tx-3
+TX,04,Jason Pearce,DEM,Democratic,H6TX04174,"PEARCE, JASON",False,True,27748.78,2711.98,False,https://theballotbrief.com/district/tx-4
+TX,04,Pat Fallon,REP,Republican,H0TX04219,"FALLON, PATRICK",True,True,1024466.07,1099394.54,False,https://theballotbrief.com/district/tx-4
+TX,05,Chelsey Hockett,DEM,Democratic,H6TX05189,"HOCKETT, CHELSEY ALEXANDRA",False,True,56907.83,27222.70,False,https://theballotbrief.com/district/tx-5
+TX,05,Lance Gooden,REP,Republican,H8TX05144,"GOODEN, LANCE",True,True,1526218.36,1343838.42,False,https://theballotbrief.com/district/tx-5
+TX,06,Danny Minton,DEM,Democratic,H6TX25203,"MINTON, DANNY",False,False,147189.2,39638.26,False,https://theballotbrief.com/district/tx-6
+TX,06,Jake Ellzey,REP,Republican,H8TX06266,"ELLZEY, JOHN KEVIN SR.",True,True,5518242.29,2604671.49,False,https://theballotbrief.com/district/tx-6
+TX,07,Lizzie Pannill Fletcher,DEM,Democratic,H8TX07140,"FLETCHER, ELIZABETH",True,True,1846897.72,1492809.82,False,https://theballotbrief.com/district/tx-7
+TX,07,Espoir Ngabo,OTHER,Green,H6TX07177,"NGABO, ESPOIR",False,False,3132.88,0.00,False,https://theballotbrief.com/district/tx-7
+TX,07,Alexander Hale,REP,Republican,H6TX07151,"HALE, ALEXANDER",False,True,115678.12,19119.02,False,https://theballotbrief.com/district/tx-7
+TX,08,Laura Jones,DEM,Democratic,H0TX08145,"JONES, LAURA",False,True,30781.89,4114.54,False,https://theballotbrief.com/district/tx-8
+TX,08,Jessica Hart Steinmann,REP,Republican,H6TX08209,"STEINMANN, JESSICA HART",False,True,2441284.26,79370.52,False,https://theballotbrief.com/district/tx-8
+TX,09,Leticia Gutierrez,DEM,Democratic,H6TX09231,"GUTIERREZ, LETICIA",False,True,215052.56,110891.73,True,https://theballotbrief.com/district/tx-9
+TX,09,Alex Mealer,REP,Republican,H6TX09140,"MEALER, ALEXANDRA",False,True,2782239.54,201271.60,True,https://theballotbrief.com/district/tx-9
+TX,10,Caitlin Rourk,DEM,Democratic,H6TX31102,"ROURK, CAITLIN MCCLAY",False,True,576475.06,79336.45,True,https://theballotbrief.com/district/tx-10
+TX,10,Chris Gober,REP,Republican,H6TX10221,"GOBER, CHRIS",False,True,3103392.03,165564.77,True,https://theballotbrief.com/district/tx-10
+TX,11,Claire Reynolds,DEM,Democratic,H6TX11112,"REYNOLDS, CLAIRE ANNE",False,True,128534.75,55769.16,False,https://theballotbrief.com/district/tx-11
+TX,11,August Pfluger,REP,Republican,H0TX11230,"PFLUGER, AUGUST LEE II",True,True,3609434.17,2029823.57,False,https://theballotbrief.com/district/tx-11
+TX,12,Angela “Heli” Rodriguez Prilliman,DEM,Democratic,H6TX12169,"RODRIGUEZ PRILLIMAN, ANGELA",False,False,0.0,0.00,False,https://theballotbrief.com/district/tx-12
+TX,12,Craig Goldman,REP,Republican,H4TX12065,"GOLDMAN, CRAIG",True,True,1932744.66,1512501.32,False,https://theballotbrief.com/district/tx-12
+TX,13,Mark Nair,DEM,Democratic,H6TX13159,"NAIR, MARK",False,True,137623.75,2823.67,False,https://theballotbrief.com/district/tx-13
+TX,13,Ronny Jackson,REP,Republican,H0TX13228,"JACKSON, RONNY LYNN",True,True,4806245.43,5396663.45,False,https://theballotbrief.com/district/tx-13
+TX,14,Thurman Bill Bartie,DEM,Democratic,H6TX14181,"BARTIE, THURMAN BILL MR",False,True,39403.19,4754.11,False,https://theballotbrief.com/district/tx-14
+TX,14,Randy Weber,REP,Republican,H2TX14149,"WEBER, RANDY",True,True,1132031.98,928845.02,False,https://theballotbrief.com/district/tx-14
+TX,15,Bobby Pulido,DEM,Democratic,H6TX15246,"PULIDO, BOBBY",False,True,6819246.79,1269454.45,True,https://theballotbrief.com/district/tx-15
+TX,15,Monica De La Cruz,REP,Republican,H0TX15124,"DE LA CRUZ, MONICA",True,True,6814266.73,393811.86,True,https://theballotbrief.com/district/tx-15
+TX,16,Veronica Escobar,DEM,Democratic,H8TX16109,"ESCOBAR, VERONICA",True,True,1068096.19,216768.02,False,https://theballotbrief.com/district/tx-16
+TX,16,Adam Bauman,REP,Republican,H6TX16152,"BAUMAN, ADAM",False,True,3293.0,2857.72,False,https://theballotbrief.com/district/tx-16
+TX,17,Casey Shepard,DEM,Democratic,H6TX17168,"SHEPARD, CASEY",False,True,93530.74,78197.57,False,https://theballotbrief.com/district/tx-17
+TX,17,Pete Sessions,REP,Republican,H2TX03126,"SESSIONS, PETE",True,True,1323419.64,1033567.44,False,https://theballotbrief.com/district/tx-17
+TX,18,Christian Dashaun Menefee,DEM,Democratic,H6TX18232,"MENEFEE, CHRISTIAN",False,True,3761777.28,77685.42,False,https://theballotbrief.com/district/tx-18
+TX,18,Ronald Dwayne Whitfield,REP,Republican,H6TX18497,"WHITFIELD, RONALD DWAYNE",False,False,0.0,0.00,False,https://theballotbrief.com/district/tx-18
+TX,19,Kyle Rable,DEM,Democratic,H6TX19198,"RABLE, KYLE",False,True,49029.91,6317.07,False,https://theballotbrief.com/district/tx-19
+TX,19,Tom Sell,REP,Republican,H6TX19206,"SELL, TOM",False,True,2502266.26,268006.81,False,https://theballotbrief.com/district/tx-19
+TX,20,Joaquin Castro,DEM,Democratic,H2TX35011,"CASTRO, JOAQUIN",True,True,592415.74,129316.59,False,https://theballotbrief.com/district/tx-20
+TX,20,Edgardo Rafael Baez,REP,Republican,H6TX20113,"BAEZ, EDGARDO RAFAEL DR",False,True,69063.4,8531.21,False,https://theballotbrief.com/district/tx-20
+TX,21,Kristin Hook,DEM,Democratic,H4TX21108,"HOOK, KRISTIN A DR.",False,True,388865.29,52250.44,False,https://theballotbrief.com/district/tx-21
+TX,21,Mark Teixeira,REP,Republican,H6TX21301,"TEIXEIRA, MARK CHARLES",False,True,4392605.96,440539.40,False,https://theballotbrief.com/district/tx-21
+TX,22,Marquette Greene-Scott,DEM,Democratic,H4TX22197,"GREENE-SCOTT, MARQUETTE",False,True,68294.77,2630.47,False,https://theballotbrief.com/district/tx-22
+TX,22,Trever Nehls,REP,Republican,H6TX22283,"NEHLS, TREVER",False,True,327410.4,74767.00,False,https://theballotbrief.com/district/tx-22
+TX,23,Katy Padilla Stout,DEM,Democratic,H6TX23273,"STOUT, KATY PADILLA",False,True,1117715.08,144423.65,True,https://theballotbrief.com/district/tx-23
+TX,23,Ben Mendoza,OTHER,Independent,H6TX16111,"MENDOZA, BEN",False,False,0.0,0.00,False,https://theballotbrief.com/district/tx-23
+TX,23,Brandon Herrera,REP,Republican,H4TX23120,"HERRERA, BRANDON",False,True,3115205.22,318811.95,True,https://theballotbrief.com/district/tx-23
+TX,24,Kevin Burge,DEM,Democratic,H6TX24172,"BURGE, KEVIN BERYL",False,True,334210.32,81346.02,False,https://theballotbrief.com/district/tx-24
+TX,24,Beth Van Duyne,REP,Republican,H0TX24209,"VAN DUYNE, ELIZABETH ANN",True,True,3049506.14,1683212.32,False,https://theballotbrief.com/district/tx-24
+TX,25,Dione Sims,DEM,Democratic,H6TX25237,"SIMS, DIONE MICHELLE MRS",False,True,546.48,-3003.52,False,https://theballotbrief.com/district/tx-25
+TX,25,Roger Williams,REP,Republican,H2TX33040,"WILLIAMS, ROGER",True,True,1654633.09,1205150.83,False,https://theballotbrief.com/district/tx-25
+TX,26,Steven Shook,DEM,Democratic,H6TX26144,"SHOOK, STEVEN JAMES",False,True,35820.67,5602.96,False,https://theballotbrief.com/district/tx-26
+TX,26,Phil Gray,OTHER,Libertarian,H6TX01261,"GRAY, PHIL",False,False,0.0,0.00,False,https://theballotbrief.com/district/tx-26
+TX,26,Brandon Gill,REP,Republican,H4TX26149,"GILL, BRANDON",True,True,7939470.36,2092335.31,False,https://theballotbrief.com/district/tx-26
+TX,27,Tanya Lloyd,DEM,Democratic,H4TX27089,"LLOYD, TANYA W",False,True,270814.09,19679.17,False,https://theballotbrief.com/district/tx-27
+TX,27,Michael Cloud,REP,Republican,H8TX27049,"CLOUD, MICHAEL",True,True,1219653.23,275804.47,False,https://theballotbrief.com/district/tx-27
+TX,28,Henry Cuellar,DEM,Democratic,H2TX23082,"CUELLAR, HENRY R.",True,True,3043039.01,657230.50,True,https://theballotbrief.com/district/tx-28
+TX,28,Marlón Durán,OTHER,Green,H6TX28108,"DURAN, MARLON GERARDO MX.",False,False,0.0,0.00,False,https://theballotbrief.com/district/tx-28
+TX,28,Tano E. Tijerina,REP,Republican,H6TX28124,"TIJERINA, TANO",False,True,1862406.86,113050.10,True,https://theballotbrief.com/district/tx-28
+TX,29,Sylvia Garcia,DEM,Democratic,H8TX29052,"GARCIA, SYLVIA R",True,True,1201321.76,235764.00,False,https://theballotbrief.com/district/tx-29
+TX,29,Martha Fierro,REP,Republican,H6TX29122,"FIERRO, MARTHA ELENA,",False,True,585.0,491.72,False,https://theballotbrief.com/district/tx-29
+TX,30,Frederick D. Haynes III,DEM,Democratic,H6TX30245,"HAYNES, FREDERICK III",False,True,694864.53,159035.65,False,https://theballotbrief.com/district/tx-30
+TX,30,Everett Jackson,REP,Republican,H6TX30211,"JACKSON, EVERETT HONORABLE",False,True,25348.99,2463.01,False,https://theballotbrief.com/district/tx-30
+TX,31,Justin Early,DEM,Democratic,H6TX31094,"EARLY, JUSTIN",False,True,291879.92,20847.52,False,https://theballotbrief.com/district/tx-31
+TX,31,Greg Stoker,OTHER,Green,H6TX31169,"STOKER, GREGORY JAMES",False,True,89121.25,9151.43,False,https://theballotbrief.com/district/tx-31
+TX,31,John Carter,REP,Republican,H2TX31044,"CARTER, JOHN R REP.",True,True,1522249.68,159170.95,False,https://theballotbrief.com/district/tx-31
+TX,32,Dan Barrios,DEM,Democratic,H6TX32217,"BARRIOS, DAN F.",False,True,160379.07,8745.17,False,https://theballotbrief.com/district/tx-32
+TX,32,Jace Yarbrough,REP,Republican,H6TX32225,"YARBROUGH, JACE",False,True,1261760.06,123093.72,False,https://theballotbrief.com/district/tx-32
+TX,33,Colin Allred,DEM,Democratic,H8TX32098,"ALLRED, COLIN",False,True,8134455.95,298428.19,False,https://theballotbrief.com/district/tx-33
+TX,33,Patrick David Gillespie,REP,Republican,H2TX33248,"GILLESPIE, PATRICK DAVID",False,False,0.0,0.00,False,https://theballotbrief.com/district/tx-33
+TX,34,Vicente Gonzalez,DEM,Democratic,H6TX15162,"GONZALEZ, VICENTE",True,True,5211344.04,1396949.28,True,https://theballotbrief.com/district/tx-34
+TX,34,Chris Royal,OTHER,Libertarian,H0TX34059,"ROYAL, CHRIS B.",False,False,0.0,0.00,True,https://theballotbrief.com/district/tx-34
+TX,34,Eddie Espinoza,OTHER,Green,H6TX34106,"ESPINOZA, EDDIE",False,False,0.0,0.00,True,https://theballotbrief.com/district/tx-34
+TX,34,Eric Flores,REP,Republican,H6TX34080,"FLORES, ERIC",False,True,4009073.67,246427.27,True,https://theballotbrief.com/district/tx-34
+TX,35,Johnny C. Garcia,DEM,Democratic,H6TX35095,"GARCIA, JOHNNY",False,True,2201578.83,149502.75,True,https://theballotbrief.com/district/tx-35
+TX,35,Carlos De La Cruz,REP,Republican,H6TX35087,"DE LA CRUZ, CARLOS JR.",False,True,2021117.55,312607.08,True,https://theballotbrief.com/district/tx-35
+TX,36,Rhonda Hart,DEM,Democratic,H4TX14111,"HART, RHONDA J",False,False,24315.62,5935.10,False,https://theballotbrief.com/district/tx-36
+TX,36,Brian Babin,REP,Republican,H6TX02079,"BABIN, BRIAN",True,True,1201013.89,928299.88,False,https://theballotbrief.com/district/tx-36
+TX,37,Greg Casar,DEM,Democratic,H2TX35144,"CASAR, GREG",False,True,1382791.38,544085.42,False,https://theballotbrief.com/district/tx-37
+TX,37,Lauren B. Peña,REP,Republican,H6TX35038,"PENA, LAUREN B.",False,True,132161.88,4453.73,False,https://theballotbrief.com/district/tx-37
+TX,38,Melissa McDonough,DEM,Democratic,H4TX38011,"MCDONOUGH, MELISSA A",False,True,124711.24,44441.67,False,https://theballotbrief.com/district/tx-38
+TX,38,Alex McMenemy,OTHER,Green,H6TX38123,"MCMENEMY, ALEX",False,True,9887.9,745.56,False,https://theballotbrief.com/district/tx-38
+TX,38,Jon Bonck,REP,Republican,H6TX02244,"BONCK, JON",False,True,2202298.38,248170.29,False,https://theballotbrief.com/district/tx-38
+UT,01,Ben McAdams,DEM,Democratic,H8UT04053,"MCADAMS, BEN",False,True,2813806.53,377817.48,True,https://theballotbrief.com/district/ut-1
+UT,01,Elias Henry Montgomery,OTHER,Unaffiliated,H6UT01244,"OWEN, RILEY MONTGOMERY",False,True,164069.93,9503.11,True,https://theballotbrief.com/district/ut-1
+UT,01,Jesse West,OTHER,Libertarian,H6UT01251,"WEST, JESSE KEEGAN",False,False,0.0,0.00,True,https://theballotbrief.com/district/ut-1
+UT,01,Riley Owen,REP,Republican,H6UT01244,"OWEN, RILEY MONTGOMERY",False,True,164069.93,9503.11,True,https://theballotbrief.com/district/ut-1
+UT,02,Peter Crosby,DEM,Democratic,H6UT01160,"CROSBY, PETER",False,True,153918.33,47879.29,True,https://theballotbrief.com/district/ut-2
+UT,02,Carlton E. Bowen,OTHER,Independent American Party,H6UT02259,"BOWEN, CARLTON E",False,False,6977.29,1079.43,True,https://theballotbrief.com/district/ut-2
+UT,02,Daniel Cottam,OTHER,Libertarian,H4UT01165,"COTTAM, DANIEL R.",False,False,0.0,0.00,True,https://theballotbrief.com/district/ut-2
+UT,02,Robert M. Moesinger,OTHER,Unaffiliated,H6UT02531,"MOESINGER, ROBERT MICHAEL",False,True,11605.75,-556.25,True,https://theballotbrief.com/district/ut-2
+UT,02,Blake D. Moore,REP,Republican,H0UT01205,"MOORE, BLAKE",True,True,2796221.05,1608084.04,True,https://theballotbrief.com/district/ut-2
+UT,03,Kent S. Udell,DEM,Democratic,H6UT03182,"UDELL, KENT DR.",False,True,99541.33,5715.89,True,https://theballotbrief.com/district/ut-3
+UT,03,Adonis Hooslyn,OTHER,Unaffiliated,H6UT03174,"HOOSLYN, ADONIS",False,True,761.77,-26.63,True,https://theballotbrief.com/district/ut-3
+UT,03,Ayden Scott,OTHER,Unaffiliated,H6UT03216,"SCOTT, AYDEN TATE",False,False,0.0,0.00,True,https://theballotbrief.com/district/ut-3
+UT,03,Cassie Easley,OTHER,Constitution Party,H2UT02506,"EASLEY, CASSIE",False,False,0.0,0.00,True,https://theballotbrief.com/district/ut-3
+UT,03,Michael R. Stoddard,OTHER,Libertarian,H2UT03355,"STODDARD, MICHAEL",False,False,0.0,0.00,True,https://theballotbrief.com/district/ut-3
+UT,03,Celeste Maloy,REP,Republican,H4UT02296,"MALOY, CELESTE",True,True,1652694.51,359561.43,True,https://theballotbrief.com/district/ut-3
+UT,04,Jonny Larsen,DEM,Democratic,H6UT02424,"LARSEN, JONNY",False,True,88136.41,4861.47,True,https://theballotbrief.com/district/ut-4
+UT,04,Steven Burt,OTHER,Unaffiliated,H6UT04024,"BURT, STEVEN",False,True,39743.5,1781.84,True,https://theballotbrief.com/district/ut-4
+UT,04,Taylor Wright,OTHER,Libertarian,H6UT04057,"WRIGHT, TAYLOR",False,False,0.0,0.00,True,https://theballotbrief.com/district/ut-4
+UT,04,Mike Kennedy,REP,Republican,H4UT03260,"KENNEDY, MIKE",True,True,1209378.05,448818.25,True,https://theballotbrief.com/district/ut-4
+VA,01,Shannon L. Taylor,DEM,Democratic,H6VA01299,"TAYLOR, SHANNON LEIGH",False,True,4607379.06,598734.27,True,https://theballotbrief.com/district/va-1
+VA,01,"Robert J. ""Rob"" Wittman",REP,Republican,H8VA01147,"WITTMAN, ROBERT J. MR.",True,True,5432689.32,797346.03,True,https://theballotbrief.com/district/va-1
+VA,02,Elaine G. Luria,DEM,Democratic,H6VA02198,"LURIA, ELAINE",False,True,8044063.94,478862.22,True,https://theballotbrief.com/district/va-2
+VA,02,"Geral D. ""Bishop"" Staten",OTHER,Independent,H6VA02222,"STATEN, GERAL DEFRANCE MR",False,False,0.0,0.00,False,https://theballotbrief.com/district/va-2
+VA,02,J. Matt Baker,OTHER,Independent,H6VA02263,"BAKER, MATTHEW",False,True,8349.26,6497.47,False,https://theballotbrief.com/district/va-2
+VA,02,Jen A. Kiggans,REP,Republican,H2VA02064,"KIGGANS, JENNIFER",True,True,7589812.06,1292408.37,True,https://theballotbrief.com/district/va-2
+VA,03,"Robert C. ""Bobby"" Scott",DEM,Democratic,H6VA01117,"SCOTT, ROBERT C",True,True,882179.43,162482.61,False,https://theballotbrief.com/district/va-3
+VA,03,Makiba A. Gaines,OTHER,Independent,H6VA02248,"GAINES, MAKIBA",False,False,0.0,0.00,False,https://theballotbrief.com/district/va-3
+VA,03,Stephen C. Woll,OTHER,Independent,H6VA03139,"WOLL, STEPHEN C.",False,True,67506.0,15194.14,False,https://theballotbrief.com/district/va-3
+VA,03,"Edwin Rivera, Jr.",REP,Republican,H6VA03121,"RIVERA, EDWIN MR. JR.",False,True,15390.56,4634.74,False,https://theballotbrief.com/district/va-3
+VA,04,Jennifer L. McClellan,DEM,Democratic,H4VA04066,"MCCLELLAN, JENNIFER",True,True,1546997.29,222829.62,False,https://theballotbrief.com/district/va-4
+VA,04,"Joan E. ""Andrews"" Bell",OTHER,Independent,H6VA04137,"BELL, JOAN E.",False,False,0.0,0.00,False,https://theballotbrief.com/district/va-4
+VA,04,"Robert P. ""Family Man"" Murray, Jr.",REP,Republican,H6VA04129,"MURRAY, ROBERT P.",False,True,1549.87,1508.86,False,https://theballotbrief.com/district/va-4
+VA,05,Tom S. P. Perriello,DEM,Democratic,H8VA05106,"PERRIELLO, THOMAS STUART PRICE",False,True,3762301.32,684166.03,True,https://theballotbrief.com/district/va-5
+VA,05,Cooke C. Harvey,OTHER,Independent,H6VA05241,"HARVEY, COOKE COSTA",False,False,0.0,0.00,True,https://theballotbrief.com/district/va-5
+VA,05,John J. McGuire III,REP,Republican,H0VA07133,"MCGUIRE, JOHN J. MR. III",False,True,2419702.34,382052.72,True,https://theballotbrief.com/district/va-5
+VA,06,Beth A. Macy,DEM,Democratic,H6VA06173,"MACY, BETH",False,True,2926193.48,362877.80,True,https://theballotbrief.com/district/va-6
+VA,06,Ben L. Cline,REP,Republican,H8VA06104,"CLINE, BENJAMIN LEE",True,True,1908289.13,527302.86,True,https://theballotbrief.com/district/va-6
+VA,07,Eugene S. Vindman,DEM,Democratic,H4VA07234,"VINDMAN, YEVGENY 'EUGENE'",True,True,16339249.68,5225595.46,False,https://theballotbrief.com/district/va-7
+VA,07,Alaha Ahrar,OTHER,Independent,H6VA07353,"AHRAR, ALAHA MS.",False,True,28923.1,3659.55,False,https://theballotbrief.com/district/va-7
+VA,07,Joshua E. Ertle,OTHER,Independent,H6VA07346,"ERTLE, JOSHUA",False,False,0.0,0.00,False,https://theballotbrief.com/district/va-7
+VA,07,Randall A. Terry,OTHER,Independent,H6VA07312,"TERRY, RANDALL",False,True,68912.0,10069.80,False,https://theballotbrief.com/district/va-7
+VA,07,Taner E. Demirci Lopez,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/va-7
+VA,07,Doug A. Ollivant,REP,Republican,H6VA07205,"OLLIVANT, DOUGLAS",False,True,389127.17,109216.15,False,https://theballotbrief.com/district/va-7
+VA,08,"Donald S. Beyer, Jr.",DEM,Democratic,H4VA08224,"BEYER, DONALD STERNOFF JR.",True,True,2529480.41,848726.77,False,https://theballotbrief.com/district/va-8
+VA,08,Shelly M. Arnoldi,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/va-8
+VA,08,Tim S. Sharman,OTHER,Independent,H6VA08336,"SHARMAN, TIM",False,True,45422.41,50.00,False,https://theballotbrief.com/district/va-8
+VA,08,Tony A. Sabio,REP,Republican,H6VA08252,"SABIO, TONY",False,True,44255.68,6204.79,False,https://theballotbrief.com/district/va-8
+VA,09,Joy A. Powers,DEM,Democratic,H6VA09136,"POWERS, JOY",False,True,256577.62,59671.26,False,https://theballotbrief.com/district/va-9
+VA,09,H. Morgan Griffith,REP,Republican,H0VA09055,"GRIFFITH, H MORGAN",True,True,2173784.73,879116.67,False,https://theballotbrief.com/district/va-9
+VA,10,Suhas Subramanyam,DEM,Democratic,H4VA10279,"SUBRAMANYAM, SUHAS",True,True,1707804.06,746033.06,False,https://theballotbrief.com/district/va-10
+VA,10,Ahsen Mujeeb Malik,OTHER,Independent,H6VA10274,"MALIK, AHSEN MUJEEB",False,False,0.0,0.00,False,https://theballotbrief.com/district/va-10
+VA,10,Dave T. Beckwith,REP,Republican,H2VA10273,"BECKWITH, DAVID",False,True,256489.11,31847.36,False,https://theballotbrief.com/district/va-10
+VA,11,James R. Walkinshaw,DEM,Democratic,H6VA11066,"WALKINSHAW, JAMES",True,True,3270621.28,1143115.48,False,https://theballotbrief.com/district/va-11
+VA,11,Dianne L. Blais,OTHER,Green,H4VA10154,"BLAIS, DIANNE L",False,False,0.0,0.00,False,https://theballotbrief.com/district/va-11
+VA,11,Arthur G. Purves,REP,Republican,H6VA11249,"PURVES, ARTHUR GRAHAME MR.",False,True,38664.61,19735.08,False,https://theballotbrief.com/district/va-11
+VT,00,Becca Balint,DEM,Democratic,H2VT01076,"BALINT, REBECCA 'BECCA'",True,True,1178502.59,612015.81,True,https://theballotbrief.com/district/vt-al
+VT,00,Adam Ortiz,OTHER,Independent,H2VT00177,"ORTIZ, ADAM",False,False,0.0,0.00,True,https://theballotbrief.com/district/vt-al
+VT,00,Phoenix K. Altair,OTHER,Independent,,,,,,,True,https://theballotbrief.com/district/vt-al
+VT,00,Ryan P. Walton,OTHER,Independent,H6VT01093,"WALTON, RYAN PATRICK",False,False,0.0,0.00,True,https://theballotbrief.com/district/vt-al
+VT,00,"Suzanne ""Suz"" Seymour",OTHER,Independent,H6VT00269,"SEYMOUR, SUZANNE",False,False,0.0,0.00,True,https://theballotbrief.com/district/vt-al
+VT,00,Gerald Malloy,REP,Republican,H6VT01085,"MALLOY, GERALD MR.",False,True,189568.02,34219.69,True,https://theballotbrief.com/district/vt-al
+WA,01,Suzan DelBene,DEM,Prefers Democratic Party,H0WA08046,"DELBENE, SUZAN K",True,True,4281272.38,1035589.14,False,https://theballotbrief.com/district/wa-1
+WA,01,Mary Silva,REP,Prefers Republican Party,H4WA01282,"SILVA, MARY",False,True,8478.7,1298.86,False,https://theballotbrief.com/district/wa-1
+WA,02,Rick Larsen,DEM,Prefers Democratic Party,H0WA02080,"LARSEN, RICK",True,True,2625476.25,537475.94,False,https://theballotbrief.com/district/wa-2
+WA,02,Edwin H. Feller,REP,Prefers Republican Party,H6WA02228,"FELLER, EDWIN HAROLD",False,True,11338.4,6843.32,False,https://theballotbrief.com/district/wa-2
+WA,03,Marie Gluesenkamp Perez,DEM,Prefers Democratic Party,H2WA03217,"GLUESENKAMP PEREZ, MARIE",True,True,9472266.66,234519.93,True,https://theballotbrief.com/district/wa-3
+WA,03,John Braun,REP,Prefers Republican Party,H6WA03275,"BRAUN, JOHN",False,True,3311756.42,671919.14,True,https://theballotbrief.com/district/wa-3
+WA,04,John Duresky,DEM,Prefers Democratic Party,H6WA04190,"DURESKY, JOHN",False,True,459019.84,83691.25,False,https://theballotbrief.com/district/wa-4
+WA,04,Amanda McKinney,REP,Prefers Republican Party,H6WA04216,"MCKINNEY, AMANDA",False,True,1448473.62,217375.85,False,https://theballotbrief.com/district/wa-4
+WA,05,Carmela Conroy,DEM,Prefers Democratic Party,H4WA05168,"CONROY, CARMELA",False,True,840422.66,90193.47,False,https://theballotbrief.com/district/wa-5
+WA,05,Michael Baumgartner,REP,Prefers Republican Party,H4WA05234,"BAUMGARTNER, MICHAEL JAMES",True,True,2208414.59,689914.65,False,https://theballotbrief.com/district/wa-5
+WA,06,Emily Randall,DEM,Prefers Democratic Party,H4WA06117,"RANDALL, EMILY",True,True,1422767.38,168665.31,False,https://theballotbrief.com/district/wa-6
+WA,06,Teresa Fox,REP,Prefers Republican Party,H6WA06286,"FOX, TERESA",False,True,70638.66,10879.74,False,https://theballotbrief.com/district/wa-6
+WA,07,Pramila Jayapal,DEM,Prefers Democratic Party,H6WA07458,"JAYAPAL, PRAMILA",True,True,2920966.88,1753240.92,False,https://theballotbrief.com/district/wa-7
+WA,07,Nirav Sheth,REP,Prefers Republican Party,H4WA08147,"SHETH, NIRAV",False,True,71544.33,4876.80,False,https://theballotbrief.com/district/wa-7
+WA,08,Kim Schrier,DEM,Prefers Democratic Party,H8WA08189,"SCHRIER, KIM DR.",True,True,3766607.24,3216892.25,False,https://theballotbrief.com/district/wa-8
+WA,08,Spencer Meline,REP,Prefers Republican Party,H6WA08167,"MELINE, SPENCER HARRISON",False,True,157773.63,72721.22,False,https://theballotbrief.com/district/wa-8
+WA,09,Adam Smith,DEM,Prefers Democratic Party,H6WA09025,"SMITH, D. ADAM",True,True,2202050.79,627352.11,False,https://theballotbrief.com/district/wa-9
+WA,09,Doug Basler,REP,Prefers Republican Party,H4WA09061,"BASLER, DOUGLAS MICHAEL",False,True,44410.66,9248.61,False,https://theballotbrief.com/district/wa-9
+WA,10,Marilyn Strickland,DEM,Prefers Democratic Party,H0WA10034,"STRICKLAND, MARILYN",True,True,1892575.68,608762.35,False,https://theballotbrief.com/district/wa-10
+WA,10,Chris D. Chung,REP,Prefers Republican Party,H6WA10031,"CHUNG, CHRIS D.",False,False,0.0,0.00,False,https://theballotbrief.com/district/wa-10
+WI,01,Mitchell Berman,DEM,Democratic,H6WI01283,"BERMAN, MITCHELL",False,True,1977099.04,351557.78,True,https://theballotbrief.com/district/wi-1
+WI,01,Bryan Steil,REP,Republican,H8WI01156,"STEIL, BRYAN GEORGE",True,True,6393553.46,2243604.54,True,https://theballotbrief.com/district/wi-1
+WI,02,Mark Pocan,DEM,Democratic,H2WI02124,"POCAN, MARK",True,True,1025262.83,881636.41,False,https://theballotbrief.com/district/wi-2
+WI,03,Rebecca Cooke,DEM,Democratic,H4WI03169,"COOKE, REBECCA",False,True,12675996.72,447387.26,False,https://theballotbrief.com/district/wi-3
+WI,03,Alexander Valiensi Kent,OTHER,Independent,H6WI03230,"KENT, ALEXANDER VALIENSI",False,False,0.0,0.00,False,https://theballotbrief.com/district/wi-3
+WI,03,Rustin Provance,OTHER,Independent,H2WI03163,"PROVANCE, RUSTIN LEVEM",False,False,0.0,0.00,False,https://theballotbrief.com/district/wi-3
+WI,03,Derrick Van Orden,REP,Republican,H0WI03175,"VAN ORDEN, DERRICK F. MR.",True,True,9101596.33,1165671.10,False,https://theballotbrief.com/district/wi-3
+WI,04,Gwen Moore,DEM,Democratic,H4WI04183,"MOORE, GWEN S",True,True,1319135.1,45066.80,False,https://theballotbrief.com/district/wi-4
+WI,04,Arthur Burks,OTHER,Independent,,,,,,,False,https://theballotbrief.com/district/wi-4
+WI,04,Tim Rogers,REP,Republican,H4WI04274,"ROGERS, TIM",False,False,0.0,0.00,False,https://theballotbrief.com/district/wi-4
+WI,05,Andrew Beck,DEM,Democratic,H6WI05136,"BECK, ANDREW",False,False,14612.26,3158.02,False,https://theballotbrief.com/district/wi-5
+WI,05,Scott Fitzgerald,REP,Republican,H0WI05113,"FITZGERALD, SCOTT",True,True,1729316.51,1206615.31,False,https://theballotbrief.com/district/wi-5
+WI,06,Brad Smith,DEM,Democratic,H6WI06191,"SMITH, BRADLEY",False,True,322260.9,91303.27,False,https://theballotbrief.com/district/wi-6
+WI,06,Elizabeth Anne Fitzgibbon,OTHER,Independent,H6WI06241,"FITZGIBBON, ELIZABETH",False,True,21161.09,3671.46,False,https://theballotbrief.com/district/wi-6
+WI,06,Matthew Arndt,OTHER,Wisconsin Green,H6WI06274,"ARNDT, MATTHEW JOHN",False,False,2210.0,1710.00,False,https://theballotbrief.com/district/wi-6
+WI,06,Mike Thurow,OTHER,Independent,H6WI06233,"THUROW, MICHAEL",False,True,195140.17,8274.16,False,https://theballotbrief.com/district/wi-6
+WI,06,Glenn Grothman,REP,Republican,H4WI06048,"GROTHMAN, GLENN S.",True,True,1209007.03,615524.89,False,https://theballotbrief.com/district/wi-6
+WI,07,Fred Clark,DEM,Democratic,H6WI07207,"CLARK, FREDERIC",False,True,863780.13,260843.87,False,https://theballotbrief.com/district/wi-7
+WI,07,Michael Alfonso,REP,Republican,H6WI07223,"ALFONSO, MICHAEL",False,True,1770041.24,426938.57,False,https://theballotbrief.com/district/wi-7
+WI,08,Rick Crosson,DEM,Democratic,H6WI08205,"CROSSON, RICK",False,True,168411.93,62027.49,False,https://theballotbrief.com/district/wi-8
+WI,08,Tony Wied,REP,Republican,H4WI08119,"WIED, TONY",True,True,1354324.32,242365.75,False,https://theballotbrief.com/district/wi-8
+WV,01,Vince George,DEM,D,H6WV01160,"GEORGE, VINCENT RAYMOND MR.",False,True,311586.29,3137.68,False,https://theballotbrief.com/district/wv-1
+WV,01,Belinda Fox-Spencer,OTHER,Constitution,H0WV03193,"FOX-SPENCER, BELINDA",False,False,0.0,0.00,False,https://theballotbrief.com/district/wv-1
+WV,01,Carol Miller,REP,R,H8WV03097,"MILLER, CAROL DEVINE",True,True,2036642.7,505035.21,False,https://theballotbrief.com/district/wv-1
+WV,02,Ace Parsi,DEM,D,H6WV02150,"PARSI, AHSAN",False,True,276740.66,88775.31,False,https://theballotbrief.com/district/wv-2
+WV,02,Riley Moore,REP,R,H4WV02205,"MOORE, RILEY",True,True,1617727.47,580624.92,False,https://theballotbrief.com/district/wv-2
+WY,00,Lisa Kinney,DEM,Democratic,H6WY01173,"KINNEY, LISA",False,True,99131.16,33080.98,False,https://theballotbrief.com/district/wy-al
+WY,00,Jeffrey Haggit,OTHER,Constitution,H0WY01051,"HAGGIT, JEFFREY",False,False,0.0,0.00,False,https://theballotbrief.com/district/wy-al
+WY,00,Shawn Johnson,OTHER,Libertarian,,,,,,,False,https://theballotbrief.com/district/wy-al
+WY,00,Chuck Gray,REP,Republican,H6WY00217,"GRAY, CHUCK",False,True,2011264.0,161174.58,False,https://theballotbrief.com/district/wy-al
