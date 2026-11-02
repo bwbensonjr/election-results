@@ -1,219 +1,206 @@
 # /// script
 # requires-python = ">=3.11"
 # ///
-"""Build the 2026 U.S. House general-election field from all sources.
+"""Build the House field and review reports from committed inputs, offline.
 
-Joins The Ballot Brief's certified candidate lists (who is on the ballot)
-with FEC data (incumbency, money, 12G filing) and the general-election polls
-(which candidates pollsters tested). Matching is by state, district, and
-normalized last name.
-
-Usage:
-    uv run scripts/build_house_field.py
-
-Inputs (in 2026/candidates unless noted):
-    ballotbrief-house-candidates.csv  from fetch_ballotbrief_house.py
-    fec-house-candidates-flagged.csv  from flag_general_candidates.py
-    2026/polls/us-house-polls.csv
-Outputs:
-    house-general-field.csv  one row per ballot candidate with FEC/poll data
-    field-discrepancies.csv  disagreements between the sources to check
+Run from the repository root: uv run scripts/build_house_field.py
+See docs/candidate-pipeline.md for schemas, decisions, and refresh instructions.
 """
 
 import csv
-import re
+import os
 import sys
-import unicodedata
+import tempfile
 from collections import defaultdict
 from datetime import date, datetime
 from pathlib import Path
 
+from candidate_identity import (
+    Resolution, load_decisions, name_parts, party_code, resolve,
+)
+
 DATA_DIR = Path("2026/candidates")
 POLLS_PATH = Path("2026/polls/us-house-polls.csv")
 POLLS_AFTER = date(2026, 9, 1)
-
-PARTY_MAP = {
-    "republican": "REP",
-    "r": "REP",
-    "prefers republican party": "REP",
-    "democratic": "DEM",
-    "democrat": "DEM",
-    "d": "DEM",
-    "prefers democratic party": "DEM",
-    "democratic-farmer-labor": "DEM",
-    "dfl": "DEM",
-}
-SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "mr", "mrs", "ms", "dr"}
-
 FIELD_COLUMNS = [
-    "state",
-    "district",
-    "name",
-    "party",
-    "party_raw",
-    "fec_candidate_id",
-    "fec_name",
-    "incumbent",
-    "filed_12g",
-    "receipts",
-    "cash_on_hand_end_period",
-    "in_general_polls",
-    "source_url",
+    "state", "district", "name", "party", "party_raw", "fec_candidate_id",
+    "fec_name", "incumbent", "filed_12g", "receipts", "cash_on_hand_end_period",
+    "in_general_polls", "source_url", "fec_match_status", "fec_match_reason",
+    "fec_alternate_ids",
+]
+REVIEW_COLUMNS = [
+    "state", "district", "ballot_name", "ballot_party", "fec_match_status",
+    "fec_match_reason", "fec_candidate_id", "fec_name", "fec_party", "incumbent",
+    "filed_12g", "receipts", "cash_on_hand_end_period", "coverage_end_date",
+    "decision_evidence",
 ]
 
 
 def normalize_party(party):
-    return PARTY_MAP.get(party.strip().lower(), "OTHER" if party.strip() else "")
-
-
-def fold(text):
-    """Lowercase and strip accents and punctuation."""
-    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
-    return re.sub(r"[^a-z ]", " ", text.lower())
-
-
-def last_name(name):
-    """Return the last name token, handling "LAST, FIRST" and suffixes."""
-    if "," in name:
-        name = name.split(",")[0]
-    tokens = [t for t in fold(name).split() if t not in SUFFIXES]
-    return tokens[-1] if tokens else ""
-
-
-def name_tokens(name):
-    return {t for t in fold(name.replace(",", " ")).split() if t not in SUFFIXES}
-
-
-def match(name, candidates, name_of):
-    """Find the candidate in a district whose name matches, or None."""
-    last = last_name(name)
-    hits = [c for c in candidates if last and last in name_tokens(name_of(c))]
-    if len(hits) > 1:
-        # Disambiguate on first-name overlap too.
-        tokens = name_tokens(name)
-        best = [c for c in hits if len(tokens & name_tokens(name_of(c))) > 1]
-        hits = best or hits
-    return hits[0] if hits else None
+    code = party_code(party)
+    return code if code in {"DEM", "REP"} else ("OTHER" if party.strip() else "")
 
 
 def read_csv(path):
-    with path.open(newline="") as f:
-        return list(csv.DictReader(f))
+    with path.open(newline="", encoding="utf-8") as stream:
+        return list(csv.DictReader(stream))
 
 
 def poll_district(row):
-    """Return the FEC-style district for a poll row, or None."""
     number = row["seat_number"].strip()
-    if not number:
-        return None
-    return "00" if number == "0" else number.zfill(2)
+    return number.zfill(2) if number else None
 
 
 def poll_end(row):
-    """Parse a poll end_date like "9/21/26" into a date."""
     return datetime.strptime(row["end_date"], "%m/%d/%y").date()
 
 
-def main():
-    ballot = read_csv(DATA_DIR / "ballotbrief-house-candidates.csv")
-    fec = read_csv(DATA_DIR / "fec-house-candidates-flagged.csv")
-    polls = read_csv(POLLS_PATH)
+def poll_candidates(name, ballot):
+    """Poll evidence can use a unique surname; it never selects FEC IDs."""
+    given, surname = name_parts(name)
+    hits = [b for b in ballot if surname and surname == name_parts(b["name"])[1]]
+    if len(hits) > 1:
+        stronger = [b for b in hits if given and name_parts(b["name"])[0]
+                    and given[0] == name_parts(b["name"])[0][0]]
+        if stronger:
+            hits = stronger
+    return sorted(hits, key=lambda b: (b["name"], b["party"]))
 
-    fec_by_district = defaultdict(list)
-    for c in fec:
-        fec_by_district[(c["state"], c["district"])].append(c)
 
-    # Candidates named in 2026 general-election polls, by district.
-    # Polls number at-large seats as 1; the other sources use 00.
-    at_large = {
-        s for s in {b["state"] for b in ballot}
-        if {b["district"] for b in ballot if b["state"] == s} == {"00"}
-    }
-    poll_names = defaultdict(set)
-    for p in polls:
-        district = poll_district(p)
-        if p["state"] in at_large:
-            district = "00"
-        # NONE/ALL rows are "Don't know", "Someone else", and similar.
-        # Earlier general-election polls test hypothetical pre-primary
-        # matchups, so only polls ending after the primaries count.
-        if (
-            p["cycle"] == "2026"
-            and p["stage"] == "general"
-            and district
-            and p["party"] not in {"NONE", "ALL"}
-            and not p["candidate_name"].startswith("Generic")
-            and poll_end(p) >= POLLS_AFTER
-        ):
-            poll_names[(p["state"], district)].add(p["candidate_name"])
+def publish_csvs(data_dir, outputs):
+    """Stage every CSV before replacement; validation happens before this call."""
+    staged = []
+    try:
+        for name, columns, rows in outputs:
+            with tempfile.NamedTemporaryFile(mode="w", newline="", encoding="utf-8",
+                                             dir=data_dir, delete=False) as stream:
+                staged.append((Path(stream.name), data_dir / name))
+                writer = csv.DictWriter(stream, fieldnames=columns, lineterminator="\n")
+                writer.writeheader()
+                writer.writerows(rows)
+        for temporary, destination in staged:
+            os.replace(temporary, destination)
+    finally:
+        for temporary, _ in staged:
+            temporary.unlink(missing_ok=True)
 
-    field = []
-    discrepancies = []
+
+def build(data_dir=DATA_DIR, polls_path=POLLS_PATH):
+    ballot = read_csv(data_dir / "ballotbrief-house-candidates.csv")
+    fec = read_csv(data_dir / "fec-house-candidates-flagged.csv")
+    polls = read_csv(polls_path)
+    decisions = load_decisions(data_dir / "candidate-identity-decisions.json", ballot, fec)
     ballot_by_district = defaultdict(list)
-    for b in ballot:
-        key = (b["state"], b["district"])
-        ballot_by_district[key].append(b)
-        f = match(b["name"], fec_by_district[key], lambda c: c["name"])
-        in_polls = match(b["name"], list(poll_names[key]), lambda n: n) is not None
-        party = normalize_party(b["party"])
-        field.append(
-            {
-                "state": b["state"],
-                "district": b["district"],
-                "name": b["name"],
-                "party": party,
-                "party_raw": b["party"],
-                "fec_candidate_id": f["candidate_id"] if f else "",
-                "fec_name": f["name"] if f else "",
-                "incumbent": f["incumbent_challenge"] == "I" if f else "",
-                "filed_12g": f["filed_12g"] if f else "",
-                "receipts": f["receipts"] if f else "",
-                "cash_on_hand_end_period": f["cash_on_hand_end_period"] if f else "",
-                "in_general_polls": in_polls,
-                "source_url": b["source_url"],
-            }
-        )
-        if party in {"DEM", "REP"} and not f:
-            discrepancies.append(
-                (key, b["name"], "major-party ballot candidate not found in FEC data")
-            )
+    fec_by_district = defaultdict(list)
+    for row in ballot:
+        ballot_by_district[(row["state"], row["district"])].append(row)
+    for row in fec:
+        fec_by_district[(row["state"], row["district"])].append(row)
+    at_large = {state for state in {b["state"] for b in ballot}
+                if {b["district"] for b in ballot if b["state"] == state} == {"00"}}
+    poll_names = defaultdict(set)
+    for poll in polls:
+        district = "00" if poll["state"] in at_large else poll_district(poll)
+        if (poll["cycle"] == "2026" and poll["stage"] == "general" and district
+                and poll["party"] not in {"NONE", "ALL"}
+                and not poll["candidate_name"].startswith("Generic")
+                and poll_end(poll) >= POLLS_AFTER):
+            poll_names[(poll["state"], district)].add(poll["candidate_name"])
 
-    # 12G filers who are not on the ballot list.
-    for key, cands in fec_by_district.items():
-        on_ballot = ballot_by_district.get(key, [])
-        for c in cands:
-            if c["filed_12g"] == "True" and not match(c["name"], on_ballot, lambda b: b["name"]):
-                discrepancies.append((key, c["name"], "filed 12G but not on ballot list"))
-
-    # Polled general-election candidates who are not on the ballot list.
-    for key, names in poll_names.items():
-        on_ballot = ballot_by_district.get(key, [])
-        for n in sorted(names):
-            if not match(n, on_ballot, lambda b: b["name"]):
-                discrepancies.append((key, n, "in general polls but not on ballot list"))
-
-    # Districts lacking either major party on the ballot.
-    for key, cands in sorted(ballot_by_district.items()):
-        parties = {normalize_party(c["party"]) for c in cands}
+    field, review, discrepancies = [], [], []
+    accepted_ids = set()
+    plausible_ids = set()
+    for key, rows in sorted(ballot_by_district.items()):
+        polled, ambiguous_polls = set(), set()
+        for name in sorted(poll_names[key]):
+            hits = poll_candidates(name, rows)
+            if len(hits) == 1:
+                polled.add(hits[0]["name"])
+            elif len(hits) > 1:
+                ambiguous_polls.update(b["name"] for b in hits)
+                discrepancies.append((*key, name, "ambiguous poll-to-ballot association"))
+            else:
+                discrepancies.append((*key, name, "in general polls but not on ballot list"))
+        resolutions = [(b, resolve(b, fec_by_district[key], decisions)) for b in rows]
+        owners = defaultdict(list)
+        for index, (_, resolution) in enumerate(resolutions):
+            for cid in resolution.member_ids:
+                owners[cid].append(index)
+        for cid, indices in owners.items():
+            if len(indices) > 1:
+                # A reviewed decision reserves its IDs; automatic competitors
+                # remain unresolved instead of duplicating the accepted identity.
+                for index in indices:
+                    b, result = resolutions[index]
+                    if result.status == "automatic":
+                        resolutions[index] = (b, Resolution(
+                            "ambiguous", f"FEC ID {cid} also fits another ballot identity; review required",
+                            result.candidates))
+        for b, result in resolutions:
+            f = result.canonical
+            accepted_ids.update(result.member_ids)
+            plausible_ids.update(c["candidate_id"] for c in result.candidates)
+            in_polls = True if b["name"] in polled else ("" if b["name"] in ambiguous_polls else False)
+            party = normalize_party(b["party"])
+            field.append(dict(
+                state=b["state"], district=b["district"], name=b["name"], party=party,
+                party_raw=b["party"], fec_candidate_id=f["candidate_id"] if f else "",
+                fec_name=f["name"] if f else "",
+                incumbent=f["incumbent_challenge"] == "I" if f else "",
+                filed_12g=result.filed_12g, receipts=f["receipts"] if f else "",
+                cash_on_hand_end_period=f["cash_on_hand_end_period"] if f else "",
+                in_general_polls=in_polls, source_url=b["source_url"],
+                fec_match_status=result.status, fec_match_reason=result.reason,
+                fec_alternate_ids=";".join(result.alternates),
+            ))
+            if result.status in {"unmatched", "ambiguous", "reviewed_unmatched"}:
+                for candidate in result.candidates or [{}]:
+                    review.append(dict(
+                        state=b["state"], district=b["district"], ballot_name=b["name"],
+                        ballot_party=b["party"], fec_match_status=result.status,
+                        fec_match_reason=result.reason,
+                        fec_candidate_id=candidate.get("candidate_id", ""),
+                        fec_name=candidate.get("name", ""), fec_party=candidate.get("party", ""),
+                        incumbent=(candidate["incumbent_challenge"] == "I") if candidate else "",
+                        filed_12g=candidate.get("filed_12g", ""),
+                        receipts=candidate.get("receipts", ""),
+                        cash_on_hand_end_period=candidate.get("cash_on_hand_end_period", ""),
+                        coverage_end_date=candidate.get("coverage_end_date", ""),
+                        decision_evidence=";".join(result.evidence),
+                    ))
+            if not f and party in {"DEM", "REP"}:
+                discrepancies.append((*key, b["name"], f"major-party FEC identity {result.status}"))
+        parties = {normalize_party(b["party"]) for b in rows}
         if not {"DEM", "REP"} <= parties:
             missing = ", ".join(sorted({"DEM", "REP"} - parties))
-            discrepancies.append((key, "", f"no {missing} candidate on ballot list"))
-
+            discrepancies.append((*key, "", f"no {missing} candidate on ballot list"))
+    for row in fec:
+        if row["filed_12g"] == "True" and row["candidate_id"] not in accepted_ids:
+            issue = ("filed 12G with unresolved ballot identity" if row["candidate_id"] in plausible_ids
+                     else "filed 12G but not on ballot list")
+            discrepancies.append((row["state"], row["district"], row["name"], issue))
+    for key in sorted(set(poll_names) - set(ballot_by_district)):
+        for name in sorted(poll_names[key]):
+            discrepancies.append((*key, name, "in general polls but not on ballot list"))
     field.sort(key=lambda r: (r["state"], r["district"], r["party"], r["name"]))
-    with (DATA_DIR / "house-general-field.csv").open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=FIELD_COLUMNS)
-        writer.writeheader()
-        writer.writerows(field)
+    review.sort(key=lambda r: (r["state"], r["district"], r["ballot_name"], r["fec_candidate_id"]))
+    discrepancy_columns = ["state", "district", "candidate", "issue"]
+    discrepancy_rows = [dict(zip(discrepancy_columns, row)) for row in sorted(discrepancies)]
+    publish_csvs(data_dir, [
+        ("house-general-field.csv", FIELD_COLUMNS, field),
+        ("field-discrepancies.csv", discrepancy_columns, discrepancy_rows),
+        ("candidate-match-review.csv", REVIEW_COLUMNS, review),
+    ])
+    return field, review, discrepancy_rows
 
-    discrepancies.sort()
-    with (DATA_DIR / "field-discrepancies.csv").open("w", newline="") as f:
-        writer = csv.writer(f)
-        writer.writerow(["state", "district", "candidate", "issue"])
-        for (state, district), name, issue in discrepancies:
-            writer.writerow([state, district, name, issue])
 
-    print(f"Wrote {len(field)} candidates to house-general-field.csv", file=sys.stderr)
-    print(f"Wrote {len(discrepancies)} rows to field-discrepancies.csv", file=sys.stderr)
+def main():
+    try:
+        field, review, discrepancies = build(DATA_DIR, POLLS_PATH)
+    except (ValueError, KeyError, OSError) as exc:
+        sys.exit(f"Build failed: {exc}")
+    print(f"Wrote {len(field)} candidates, {len(review)} review rows, "
+          f"{len(discrepancies)} discrepancies", file=sys.stderr)
 
 
 if __name__ == "__main__":

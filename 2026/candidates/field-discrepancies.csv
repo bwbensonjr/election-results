@@ -1,92 +1,415 @@
 state,district,candidate,issue
+AK,00,"BEGICH, NICHOLAS III",filed 12G with unresolved ballot identity
+AK,00,Bill Hill,in general polls but not on ballot list
+AK,00,Eric Hafner,major-party FEC identity unmatched
+AK,00,"HILL, BILL",filed 12G with unresolved ballot identity
+AK,00,Jim C. McDermott,in general polls but not on ballot list
+AK,00,Nick Begich,major-party FEC identity unmatched
+AL,03,Lee McInnis,major-party FEC identity unmatched
+AL,03,"MCINNIS, VICTOR LEE",filed 12G with unresolved ballot identity
+AL,03,Mike Rogers,major-party FEC identity unmatched
+AL,03,"ROGERS, MICHAEL",filed 12G with unresolved ballot identity
 AL,04,"COBB, LEE JEH",filed 12G but not on ballot list
+AR,01,"CRAWFORD, ERIC ALAN RICK",filed 12G with unresolved ballot identity
+AR,01,Rick Crawford,major-party FEC identity unmatched
+AR,02,French Hill,major-party FEC identity unmatched
+AR,02,"HILL, JAMES FRENCH",filed 12G with unresolved ballot identity
+AR,03,Steve Womack,major-party FEC identity unmatched
+AR,03,"WOMACK, STEPHEN A THE HON",filed 12G with unresolved ballot identity
 AS,00,"AMATA, AUMUA",filed 12G but not on ballot list
 AZ,02,"DESCHEENIE, ERIC",filed 12G but not on ballot list
 AZ,03,,no REP candidate on ballot list
+AZ,03,"AVERSA, ALAN",filed 12G with unresolved ballot identity
+AZ,03,"REDKEY, DAVID WAYNE MR.",filed 12G with unresolved ballot identity
+AZ,04,"JASSER, M. ZUHDI",filed 12G with unresolved ballot identity
+AZ,04,Zuhdi Jasser,major-party FEC identity unmatched
+AZ,05,Elizabeth Lee,major-party FEC identity ambiguous
+AZ,05,"LEE, ELIZABETH",filed 12G with unresolved ballot identity
+AZ,07,Adelita Grijalva,major-party FEC identity ambiguous
+AZ,07,"GRIJALVA, ADELITA",filed 12G with unresolved ballot identity
+CA,03,Ami Bera,major-party FEC identity unmatched
+CA,03,"BERA, AMERISH",filed 12G with unresolved ballot identity
 CA,04,,no REP candidate on ballot list
+CA,04,Eric Jones,major-party FEC identity ambiguous
+CA,04,"JONES, ERIC",filed 12G with unresolved ballot identity
 CA,04,"MACKENZIE, LAURIE JOHN",filed 12G but not on ballot list
+CA,05,"MCCLINTOCK, THOMAS",filed 12G with unresolved ballot identity
+CA,05,Tom McClintock,major-party FEC identity unmatched
 CA,06,,no REP candidate on ballot list
+CA,06,"KILEY, KEVIN",filed 12G with unresolved ballot identity
 CA,07,,no REP candidate on ballot list
 CA,10,"GRIFFITHS, ANGELA",filed 12G but not on ballot list
+CA,10,Jeff Frese,major-party FEC identity unmatched
 CA,11,,no REP candidate on ballot list
 CA,12,,no REP candidate on ballot list
 CA,14,,no REP candidate on ballot list
+CA,17,"KHANNA, ROHIT",filed 12G with unresolved ballot identity
+CA,17,Ro Khanna,major-party FEC identity unmatched
+CA,24,Bob Smith,major-party FEC identity unmatched
+CA,24,"SMITH, ROBERT BOB J",filed 12G with unresolved ballot identity
+CA,26,"GALLUCCI, SAMUEL",filed 12G with unresolved ballot identity
 CA,26,"SCOTT, WILLIAM",filed 12G but not on ballot list
+CA,26,Sam Gallucci,major-party FEC identity unmatched
 CA,29,,no REP candidate on ballot list
 CA,30,"FEITOSA, DENNIS F.",filed 12G but not on ballot list
+CA,31,"CISNEROS, GILBERT",filed 12G with unresolved ballot identity
+CA,31,Gil Cisneros,major-party FEC identity unmatched
 CA,34,,no REP candidate on ballot list
 CA,36,"SHAMMA, MARIANNE",filed 12G but not on ballot list
 CA,37,,no REP candidate on ballot list
 CA,40,,no DEM candidate on ballot list
+CA,40,"KIM, YOUNG",filed 12G with unresolved ballot identity
+CA,40,Young Kim,major-party FEC identity ambiguous
+CA,41,"CLEMMONS, MITCHELL LEE",filed 12G with unresolved ballot identity
+CA,41,Mitch Clemmons,major-party FEC identity ambiguous
+CA,45,Chuong V. Vo,major-party FEC identity ambiguous
 CA,45,"FORDE, BRIAN",filed 12G but not on ballot list
+CA,45,"VO, CHUONG",filed 12G with unresolved ballot identity
+CA,50,"COHEN, STEPHEN JAY MR",filed 12G with unresolved ballot identity
+CA,50,Steve Cohen,major-party FEC identity unmatched
+CA,52,"BELLE, JEFFERY MR",filed 12G with unresolved ballot identity
+CA,52,Jeff Belle,major-party FEC identity unmatched
 CA,52,"MOTIWALLA, FRANCES YASMEEN",filed 12G but not on ballot list
+CO,01,"BLAU, SHIMON",filed 12G with unresolved ballot identity
+CO,02,Joe Neguse,major-party FEC identity unmatched
+CO,02,"NEGUSE, JOSEPH",filed 12G with unresolved ballot identity
+CO,03,"HURD, JEFFREY",filed 12G with unresolved ballot identity
+CO,03,Jeff Hurd,major-party FEC identity unmatched
+CO,05,"MITCHELL, CHRISTOPHER DOUGLAS",filed 12G with unresolved ballot identity
+CO,06,"WITTA, SAMIR EZZELDIN DR.",filed 12G with unresolved ballot identity
+CO,07,"BENNETT, TIMOTHY",filed 12G with unresolved ballot identity
+CO,07,Tim Bennett,major-party FEC identity unmatched
+CO,08,"EVANS, TIMOTHY GABRIEL JOSEPH",filed 12G with unresolved ballot identity
+CO,08,Gabe Evans,major-party FEC identity unmatched
+CT,02,"COURTNEY, JOSEPH",filed 12G with unresolved ballot identity
+CT,02,Joe Courtney,major-party FEC identity unmatched
 DC,00,"WHITE, ROBERT C. JR.",filed 12G but not on ballot list
 DE,00,"HALL, DONYALE LONDON",filed 12G but not on ballot list
+FL,01,Gay Valimont,major-party FEC identity unmatched
+FL,01,"VALIMONT, JENNIFER GAY",filed 12G with unresolved ballot identity
+FL,03,"KLEIN, MIKE",filed 12G with unresolved ballot identity
+FL,04,"SELL, MIKE",filed 12G with unresolved ballot identity
 FL,06,"WALTZ, MICHAEL",filed 12G but not on ballot list
 FL,10,,no REP candidate on ballot list
+FL,12,"SCRIVENER, BRANDEN",filed 12G with unresolved ballot identity
 FL,16,"BUCHANAN, VERNON",filed 12G but not on ballot list
+FL,16,"DAVIS, MARK",filed 12G with unresolved ballot identity
+FL,17,"QUIRK, MICHAEL",filed 12G with unresolved ballot identity
+FL,18,"SIMMONS, DEVA",filed 12G with unresolved ballot identity
+FL,19,"HASKIN, SETH",filed 12G with unresolved ballot identity
 FL,19,"OBERWEIS, JAMES MR.",filed 12G but not on ballot list
 FL,20,"MANLEY, ELIJAH",filed 12G but not on ballot list
+FL,21,"COOKE, ALEXANDER R",filed 12G with unresolved ballot identity
+GA,05,John 'BONGO' Salvesen,major-party FEC identity unmatched
+GA,06,Lucy McBath,major-party FEC identity unmatched
+GA,06,"MCBATH, LUCIA KAY MS.",filed 12G with unresolved ballot identity
+GA,07,"KOZYCKI, ANTHONY LAWRENCE",filed 12G with unresolved ballot identity
+GA,07,"MCCORMICK, RICHARD DEAN DR.",filed 12G with unresolved ballot identity
+GA,07,Rich McCormick,major-party FEC identity unmatched
+GA,07,Tony Kozycki,major-party FEC identity unmatched
+GA,08,Austin Scott,major-party FEC identity unmatched
+GA,08,"SCOTT, JAMES AUSTIN",filed 12G with unresolved ballot identity
+GA,11,Chris Harden,major-party FEC identity unmatched
+GA,11,"HARDEN, CHRISTOPHER MATTHEW",filed 12G with unresolved ballot identity
+GA,12,"ALLEN, RICHARD W",filed 12G with unresolved ballot identity
+GA,12,Rick W. Allen,major-party FEC identity unmatched
 GA,14,"RUSZKOWSKI ( RUSH ), ROB",filed 12G but not on ballot list
 GU,00,"LIMTIACO, ALICIA ANNE GARRIDO",filed 12G but not on ballot list
 GU,00,"MOYLAN, JAMES C.",filed 12G but not on ballot list
+HI,01,"CASE, EDWARD",filed 12G with unresolved ballot identity
+HI,01,Ed Case,major-party FEC identity unmatched
+IA,01,"BRIDGFORD, MICHAEL",filed 12G with unresolved ballot identity
+IA,02,"BUSHAW, DAVE",filed 12G with unresolved ballot identity
+ID,01,"FULCHER, RUSSELL",filed 12G with unresolved ballot identity
+ID,01,Russ Fulcher,major-party FEC identity unmatched
+ID,02,Ellie Gilbreath,major-party FEC identity unmatched
+ID,02,"GILBREATH, ELINOR",filed 12G with unresolved ballot identity
+ID,02,Mike Simpson,major-party FEC identity unmatched
+ID,02,"SIMPSON, MICHAEL",filed 12G with unresolved ballot identity
 IL,02,"JACKSON, JESSE L. JR",filed 12G but not on ballot list
+IL,04,"GARCIA, JESUS",filed 12G with unresolved ballot identity
+IL,04,"GARCIA, PATTY",filed 12G with unresolved ballot identity
+IL,04,"GETTY, CHRISTOPHER ROMAN",filed 12G with unresolved ballot identity
+IL,04,Patty Garcia,major-party FEC identity ambiguous
+IL,05,Tommy Hanson,major-party FEC identity ambiguous
 IL,07,"DAVIS, DANNY K. MR.",filed 12G but not on ballot list
 IL,08,"AHMED, JUNAID",filed 12G but not on ballot list
 IL,09,"ABUGHAZALEH, KATHERINE M.",filed 12G but not on ballot list
+IL,09,John Elleson,major-party FEC identity ambiguous
 IL,09,"SCHAKOWSKY, JANICE D",filed 12G but not on ballot list
+IL,10,Brad Schneider,major-party FEC identity unmatched
 IL,10,"COGHILL, MORGAN",filed 12G but not on ballot list
+IL,10,"SCHNEIDER, BRADLEY S.",filed 12G with unresolved ballot identity
+IL,11,Bill Foster,major-party FEC identity unmatched
+IL,11,"FOSTER, G. WILLIAM (BILL)",filed 12G with unresolved ballot identity
+IL,11,Jeff Walter,major-party FEC identity unmatched
+IL,11,"WALTER, JEFFREY D",filed 12G with unresolved ballot identity
+IL,12,"BOST, MICHAEL",filed 12G with unresolved ballot identity
+IL,12,Mike Bost,major-party FEC identity unmatched
+IN,04,"BAIRD, JAMES R DR.",filed 12G with unresolved ballot identity
+IN,04,Jim Baird,major-party FEC identity unmatched
 IN,04,"MCPHERSON, PAUL BRYANT",filed 12G but not on ballot list
+IN,05,"FORD, JAMES (J.D.) DAVID",filed 12G with unresolved ballot identity
+IN,05,J.D. Ford,major-party FEC identity unmatched
+IN,09,Brad A. Meyer,major-party FEC identity unmatched
+IN,09,"MEYER, BRADLEY ALLEN MR.",filed 12G with unresolved ballot identity
 IN,09,"TAYLOR, FLOYD",filed 12G but not on ballot list
-LA,03,"""Kate"" Cotten",major-party ballot candidate not found in FEC data
-LA,03,"Caleb ""With a C"" Walker",major-party ballot candidate not found in FEC data
+KY,02,"GUTHRIE, S. BRETT BRETT HON.",filed 12G with unresolved ballot identity
+KY,02,S. Brett Guthrie,major-party FEC identity unmatched
+KY,04,"TODD, JEREMY RYAN",filed 12G with unresolved ballot identity
+KY,05,Hal Rogers,major-party FEC identity unmatched
+KY,05,"ROGERS, HAROLD DALLAS",filed 12G with unresolved ballot identity
+KY,06,"JAY, BOWMAN J",filed 12G with unresolved ballot identity
+LA,03,"""Kate"" Cotten",major-party FEC identity unmatched
+LA,03,"Caleb ""With a C"" Walker",major-party FEC identity unmatched
+LA,04,"""Matt"" Gromlich",major-party FEC identity unmatched
+LA,04,"""Mike"" Johnson",major-party FEC identity unmatched
+LA,04,"""Mike"" Nichols",major-party FEC identity unmatched
+LA,04,"GROMLICH, MATTHEW",filed 12G with unresolved ballot identity
+LA,04,"JOHNSON, JAMES MICHAEL",filed 12G with unresolved ballot identity
+LA,04,"NICHOLS, MICHAEL",filed 12G with unresolved ballot identity
+LA,05,"""Gabe"" Firment",major-party FEC identity unmatched
+LA,05,Antonio Wilson,major-party FEC identity ambiguous
+LA,05,"FIRMENT, MICHAEL GABRIEL",filed 12G with unresolved ballot identity
+LA,05,"WILSON, ANTONIO",filed 12G with unresolved ballot identity
+LA,06,"APPEANING, ANJANITA MONIQUE",filed 12G with unresolved ballot identity
 LA,06,"FIELDS, CLEO",filed 12G but not on ballot list
+LA,06,Monique Appeaning,major-party FEC identity unmatched
 MA,01,,no REP candidate on ballot list
 MA,01,"MILLERON, NADIA D",filed 12G but not on ballot list
 MA,02,,no REP candidate on ballot list
 MA,03,"SOLOMON, AL",filed 12G but not on ballot list
 MA,05,,no REP candidate on ballot list
 MA,05,"PAZ, JONATHAN",filed 12G but not on ballot list
+MA,06,Dan Koh,major-party FEC identity unmatched
+MA,06,"KOH, DANIEL ARRIGG",filed 12G with unresolved ballot identity
 MA,07,,no REP candidate on ballot list
-MD,04,George E. McDermott,major-party ballot candidate not found in FEC data
+MA,08,Robert Gerald Burke,major-party FEC identity unmatched
+MA,09,Bill Keating,major-party FEC identity unmatched
+MA,09,"KEATING, WILLIAM R",filed 12G with unresolved ballot identity
+MA,09,"MACALLISTER, ROBERT TYLER",filed 12G with unresolved ballot identity
+MA,09,R. Tyler MacAllister,major-party FEC identity unmatched
+MD,01,Andy Harris,major-party FEC identity unmatched
+MD,01,Dan Schwartz,major-party FEC identity unmatched
+MD,01,"HARRIS, ANDREW P",filed 12G with unresolved ballot identity
+MD,01,"SCHWARTZ, DANIEL",filed 12G with unresolved ballot identity
+MD,02,Dave Wallace,major-party FEC identity unmatched
+MD,02,"WALLACE, DAVID DRAIN II",filed 12G with unresolved ballot identity
+MD,03,Berney Flowers,major-party FEC identity unmatched
+MD,03,"FLOWERS, BERNARD",filed 12G with unresolved ballot identity
+MD,04,George E. McDermott,major-party FEC identity unmatched
 MD,04,"HENNESSY, SAMUEL FRANK",filed 12G but not on ballot list
+MD,05,Chris Chaffee,major-party FEC identity unmatched
+ME,02,"DUNLAP, MATT",filed 12G with unresolved ballot identity
 ME,02,"GOLDEN, JARED",filed 12G but not on ballot list
+ME,02,Matthew G. Dunlap,major-party FEC identity unmatched
+MI,01,"BERGMAN, JOHN",filed 12G with unresolved ballot identity
+MI,01,Jack Bergman,major-party FEC identity unmatched
+MI,02,"AMBROSE, BENJAMIN",filed 12G with unresolved ballot identity
+MI,02,Ben Ambrose,major-party FEC identity unmatched
+MI,04,Bill Huizenga,major-party FEC identity unmatched
+MI,04,"HUIZENGA, WILLIAM P",filed 12G with unresolved ballot identity
+MI,05,Tim Walberg,major-party FEC identity unmatched
+MI,05,"WALBERG, TIMOTHY L REP",filed 12G with unresolved ballot identity
+MI,07,"BARRETT, THOMAS MORE",filed 12G with unresolved ballot identity
+MI,07,Tom Barrett,major-party FEC identity unmatched
+MI,09,"POOLEY, STEVEN RAYMOND",filed 12G with unresolved ballot identity
+MI,09,Ray Pooley,major-party FEC identity unmatched
 MI,10,"JAYE, BRIAN STEVEN",filed 12G but not on ballot list
+MI,11,"BAKER, ETHAN D",filed 12G with unresolved ballot identity
+MI,11,Ethan Baker,major-party FEC identity ambiguous
+MI,11,"KUMAR, ANIL DR.",filed 12G with unresolved ballot identity
+MI,13,T.P. Nykoriak,major-party FEC identity unmatched
+MN,01,"JOHNSON, JACOB",filed 12G with unresolved ballot identity
+MN,01,Jake Johnson,major-party FEC identity unmatched
 MN,02,"WESTBY, JEREMY",filed 12G but not on ballot list
+MN,06,"EMMER, THOMAS EARL JR.",filed 12G with unresolved ballot identity
+MN,06,Tom Emmer,major-party FEC identity unmatched
 MN,07,"KEELER, HEATHER",filed 12G but not on ballot list
 MN,08,"MCKENNA, CHAD",filed 12G but not on ballot list
+MN,08,Pete Stauber,major-party FEC identity unmatched
+MN,08,"STAUBER, PETER ALLEN",filed 12G with unresolved ballot identity
+MO,01,Paul Berry III,major-party FEC identity ambiguous
+MO,02,Fred Wellman,major-party FEC identity unmatched
 MO,02,"VONDRAS, JOAN",filed 12G but not on ballot list
+MO,02,"WELLMAN, FREDERICK PAUL",filed 12G with unresolved ballot identity
+MO,03,"ONDER JR, ROBERT FRANK",filed 12G with unresolved ballot identity
+MO,05,"BRATTIN, RICHARD",filed 12G with unresolved ballot identity
+MO,05,Rick Brattin,major-party FEC identity unmatched
+MO,08,Chris Reichard,major-party FEC identity unmatched
+MO,08,"REICHARD, CHRISTOPHER",filed 12G with unresolved ballot identity
 MP,01,"DELEON GUERRERO, GALVIN SABLAN",filed 12G but not on ballot list
 MP,01,"KING-HINDS, KIMBERLYN KAY",filed 12G but not on ballot list
+MS,01,"KELLY, JOHN TRENT",filed 12G with unresolved ballot identity
+MS,01,Trent Kelly,major-party FEC identity unmatched
+MS,04,"CARL, BOYANTON LESTER",filed 12G with unresolved ballot identity
+MS,04,"EZELL, WALTER MICHAEL",filed 12G with unresolved ballot identity
+MS,04,Mike Ezell,major-party FEC identity unmatched
+MT,01,"FORSTAG, SAMUEL KELLEY",filed 12G with unresolved ballot identity
+MT,01,Sam Forstag,major-party FEC identity unmatched
+MT,02,"EISENHAUER, MICHAEL D. DR.",filed 12G with unresolved ballot identity
+NC,03,Greg Murphy,major-party FEC identity unmatched
+NC,03,"MURPHY, GREGORY FRANCIS DR.",filed 12G with unresolved ballot identity
+NC,04,"GANORKAR, MAHESH",filed 12G with unresolved ballot identity
+NC,04,Mahesh 'Max' Ganorkar,major-party FEC identity ambiguous
+NC,08,"HARRIS, MARK E",filed 12G with unresolved ballot identity
 NC,11,"EDWARDS, CHUCK",filed 12G but not on ballot list
+NC,12,"CODIGA, JOHN JACK",filed 12G with unresolved ballot identity
+NC,12,Jack Codiga,major-party FEC identity unmatched
 ND,00,,no DEM candidate on ballot list
+ND,00,"HAMMER, TRYGVE",filed 12G with unresolved ballot identity
 NE,01,"AHLMAN, AUSTIN LAWRENCE",filed 12G but not on ballot list
+NE,01,"BACKEMEYER, CHRISTOPHER",filed 12G with unresolved ballot identity
+NE,01,Chris Backemeyer,major-party FEC identity unmatched
+NE,03,"BUDKE, MACEY",filed 12G with unresolved ballot identity
+NE,03,"COHEN, MARK",filed 12G with unresolved ballot identity
+NJ,06,"HERZIG, HILLARY",filed 12G with unresolved ballot identity
+NJ,06,Hillary Herzig,major-party FEC identity ambiguous
 NJ,07,"LEGUIA, LANA",filed 12G but not on ballot list
 NJ,08,,no REP candidate on ballot list
+NJ,08,"MENENDEZ, ROBERT",filed 12G with unresolved ballot identity
+NJ,09,"PINO, ROSEMARY",filed 12G with unresolved ballot identity
+NJ,09,Rosie Pino,major-party FEC identity unmatched
+NJ,12,"JINETE, ANDRES",filed 12G with unresolved ballot identity
+NM,02,"CUNNINGHAM, GREG",filed 12G with unresolved ballot identity
+NM,02,Gregory G. Cunningham,major-party FEC identity unmatched
 NM,02,"OROZCO, JOSE",filed 12G but not on ballot list
-NY,01,"NICK, LALOTA",filed 12G but not on ballot list
+NV,03,Marty O'Donnell,major-party FEC identity ambiguous
+NV,03,"O'DONNELL, MARTY",filed 12G with unresolved ballot identity
+NV,03,"O'DONNELL, MARTY",filed 12G with unresolved ballot identity
+NY,01,"NICK, LALOTA",filed 12G with unresolved ballot identity
+NY,01,Nicholas J. LaLota,major-party FEC identity unmatched
 NY,01,"WILSON, CELINA MRS.",filed 12G but not on ballot list
+NY,03,"LIPETRI, MIKE",filed 12G with unresolved ballot identity
+NY,03,Michael J. LiPetri Jr,major-party FEC identity unmatched
+NY,07,"GHAZNAVI, PRISCILLA MS.",filed 12G with unresolved ballot identity
 NY,07,"VELAZQUEZ, NYDIA M.",filed 12G but not on ballot list
 NY,08,"BOSTIC, VANCE",filed 12G but not on ballot list
+NY,09,Joel Azumah,major-party FEC identity unmatched
+NY,11,"DECILLIS, MICHAEL",filed 12G with unresolved ballot identity
+NY,11,Mike DeCillis,major-party FEC identity unmatched
+NY,12,"ORTIZ, KAREN",filed 12G with unresolved ballot identity
 NY,13,"ROMERO, OSCAR",filed 12G but not on ballot list
+NY,15,"EASTON, ANDRE CLEMENT MR.",filed 12G with unresolved ballot identity
+NY,15,"VEGA, JOSE DAVID",filed 12G with unresolved ballot identity
 NY,17,"DAVIDSON, BETH",filed 12G but not on ballot list
+NY,17,"LAWLER, MICHAEL VINCENT",filed 12G with unresolved ballot identity
+NY,17,Mike Lawler,major-party FEC identity unmatched
+NY,18,Pat Ryan,major-party FEC identity unmatched
+NY,18,"RYAN, PATRICK",filed 12G with unresolved ballot identity
 NY,21,Chris Schmidt,in general polls but not on ballot list
+NY,23,"LANGWORTHY, NICK",filed 12G with unresolved ballot identity
+NY,23,Nicholas A. Langworthy,major-party FEC identity unmatched
+OH,04,"JORDAN, JAMES D.",filed 12G with unresolved ballot identity
+OH,04,Jim Jordan,major-party FEC identity unmatched
+OH,05,Bob Latta,major-party FEC identity unmatched
+OH,05,"LATTA, ROBERT EDWARD",filed 12G with unresolved ballot identity
+OH,10,Mike Turner,major-party FEC identity unmatched
+OH,10,"TURNER, MICHAEL R REP.",filed 12G with unresolved ballot identity
+OH,11,"BROWN, M SHONTEL",filed 12G with unresolved ballot identity
+OH,11,Shontel M. Brown,major-party FEC identity unmatched
+OH,12,"BALDERSON, WILLIAM TROY",filed 12G with unresolved ballot identity
+OH,12,Troy Balderson,major-party FEC identity unmatched
 OH,15,"RONAN, SAMUEL",filed 12G but not on ballot list
+OK,03,"BYRD, SUZANNE",filed 12G with unresolved ballot identity
+OK,03,Suzie Byrd,major-party FEC identity unmatched
+OR,04,"HOYLE, VALERIE",filed 12G with unresolved ballot identity
+OR,04,Val Hoyle,major-party FEC identity unmatched
+PA,01,Bob Harvie,major-party FEC identity unmatched
+PA,01,"HARVIE, ROBERT J",filed 12G with unresolved ballot identity
 PA,03,,no REP candidate on ballot list
+PA,03,Chris Rabb,major-party FEC identity unmatched
+PA,03,"RABB, CHRISTOPHER M.",filed 12G with unresolved ballot identity
+PA,05,"MANGANARO, NICHOLAS WALN MORRIS",filed 12G with unresolved ballot identity
+PA,05,Nick Manganaro,major-party FEC identity unmatched
+PA,06,Marty Young,major-party FEC identity unmatched
+PA,06,"YOUNG, MARTIN",filed 12G with unresolved ballot identity
 PA,09,"BROTHERS, JENNIFER M",filed 12G but not on ballot list
+PA,09,Dan Meuser,major-party FEC identity unmatched
+PA,09,"MEUSER, DANIEL",filed 12G with unresolved ballot identity
+PA,13,Beth Farnham,major-party FEC identity unmatched
+PA,13,"FARNHAM, ELIZABETH RHOADS",filed 12G with unresolved ballot identity
+PA,14,Alan Bradstock,major-party FEC identity unmatched
+PA,14,"BRADSTOCK, DAVID ALAN",filed 12G with unresolved ballot identity
+PA,15,"BILGER, RAYMOND ALLEN",filed 12G with unresolved ballot identity
+PA,15,Ray Bilger,major-party FEC identity unmatched
+PA,16,"KELLY, GEORGE J JR",filed 12G with unresolved ballot identity
+PA,16,Mike Kelly,major-party FEC identity unmatched
+PA,17,Chris Deluzio,major-party FEC identity unmatched
+PA,17,"DELUZIO, CHRISTOPHER",filed 12G with unresolved ballot identity
+RI,01,"AMO, GABRIEL F",filed 12G with unresolved ballot identity
 RI,01,"DESOUZA, PEDRO",filed 12G but not on ballot list
+RI,01,Gabe Amo,major-party FEC identity unmatched
 RI,01,Pedro DeSouza,in general polls but not on ballot list
+RI,02,"MELLOR, VICTOR G.",filed 12G with unresolved ballot identity
+RI,02,Vic Mellor,major-party FEC identity unmatched
 SC,01,"MACE, NANCY",filed 12G but not on ballot list
+SC,01,"REESIDE, WILLIAM OLIVER JR.",filed 12G with unresolved ballot identity
+SC,02,"KHALIFA, ZYON DESHON",filed 12G with unresolved ballot identity
+SC,02,Zyon Khalifa,major-party FEC identity ambiguous
 SD,00,"JOHNSON, DUSTY",filed 12G but not on ballot list
+TN,03,Chuck Fleischmann,major-party FEC identity unmatched
+TN,03,"FLEISCHMANN, CHARLES J",filed 12G with unresolved ballot identity
+TN,07,Matt Van Epps,major-party FEC identity unmatched
+TN,07,"VAN EPPS, MATTHEW ROBERT",filed 12G with unresolved ballot identity
+TX,04,"FALLON, PATRICK",filed 12G with unresolved ballot identity
+TX,04,Pat Fallon,major-party FEC identity unmatched
+TX,06,"ELLZEY, JOHN KEVIN SR.",filed 12G with unresolved ballot identity
+TX,06,Jake Ellzey,major-party FEC identity unmatched
+TX,07,"FLETCHER, ELIZABETH",filed 12G with unresolved ballot identity
+TX,07,Lizzie Pannill Fletcher,major-party FEC identity unmatched
+TX,09,Alex Mealer,major-party FEC identity unmatched
+TX,09,"MEALER, ALEXANDRA",filed 12G with unresolved ballot identity
+TX,22,"NEHLS, TREVER",filed 12G with unresolved ballot identity
+TX,22,Trever Nehls,major-party FEC identity ambiguous
 TX,23,"GONZALES, ERNEST ANTHONY TONY II",filed 12G but not on ballot list
+TX,24,Beth Van Duyne,major-party FEC identity unmatched
+TX,24,"VAN DUYNE, ELIZABETH ANN",filed 12G with unresolved ballot identity
 TX,26,"LINEBERGER, ERNEST ROBINSON III",filed 12G but not on ballot list
+TX,31,"STOKER, GREGORY JAMES",filed 12G with unresolved ballot identity
 TX,32,"HESLOP, GORDON",filed 12G but not on ballot list
+TX,34,Eric Flores,major-party FEC identity ambiguous
+TX,34,"FLORES, ERIC",filed 12G with unresolved ballot identity
+TX,38,"MCMENEMY, ALEX",filed 12G with unresolved ballot identity
 UT,01,"MOHAMED, LIBAN",filed 12G but not on ballot list
+UT,02,"BOWEN, CARLTON E.",filed 12G with unresolved ballot identity
 UT,02,"MERRILL, STEVEN",filed 12G but not on ballot list
+UT,03,"HOOSLYN, ADONIS",filed 12G with unresolved ballot identity
+UT,03,"STODDARD, MICHAEL RAY",filed 12G with unresolved ballot identity
+VA,02,"BAKER, MATTHEW",filed 12G with unresolved ballot identity
+VA,02,Jen A. Kiggans,major-party FEC identity unmatched
+VA,02,"KIGGANS, JENNIFER",filed 12G with unresolved ballot identity
+VA,05,"PERRIELLO, THOMAS STUART PRICE",filed 12G with unresolved ballot identity
+VA,05,Tom S. P. Perriello,major-party FEC identity unmatched
+VA,06,Ben L. Cline,major-party FEC identity unmatched
+VA,06,"CLINE, BENJAMIN LEE",filed 12G with unresolved ballot identity
 VA,07,"COONEY, JOSEPH PATRICK",filed 12G but not on ballot list
+VA,07,Doug A. Ollivant,major-party FEC identity unmatched
+VA,07,Eugene S. Vindman,major-party FEC identity unmatched
+VA,07,"OLLIVANT, DOUGLAS",filed 12G with unresolved ballot identity
+VA,07,"VINDMAN, YEVGENY 'EUGENE'",filed 12G with unresolved ballot identity
+VA,09,"GRIFFITH, H MORGAN",filed 12G with unresolved ballot identity
+VA,09,H. Morgan Griffith,major-party FEC identity unmatched
+VA,10,"BECKWITH, DAVID",filed 12G with unresolved ballot identity
+VA,10,Dave T. Beckwith,major-party FEC identity unmatched
 VA,11,"PEKARSKY, STELLA",filed 12G but not on ballot list
 VI,00,"PLASKETT, STACEY",filed 12G but not on ballot list
 VI,00,"SARAUW, JANELLE KAREN",filed 12G but not on ballot list
+VT,00,"BALINT, REBECCA 'BECCA'",filed 12G with unresolved ballot identity
+VT,00,Becca Balint,major-party FEC identity unmatched
+WA,09,Adam Smith,major-party FEC identity unmatched
+WA,09,"BASLER, DOUGLAS MICHAEL",filed 12G with unresolved ballot identity
+WA,09,Doug Basler,major-party FEC identity unmatched
+WA,09,"SMITH, D. ADAM",filed 12G with unresolved ballot identity
 WI,02,,no REP candidate on ballot list
+WI,06,Brad Smith,major-party FEC identity unmatched
+WI,06,"SMITH, BRADLEY",filed 12G with unresolved ballot identity
+WI,06,"THUROW, MICHAEL",filed 12G with unresolved ballot identity
+WI,07,"CLARK, FREDERIC",filed 12G with unresolved ballot identity
+WI,07,Fred Clark,major-party FEC identity unmatched
 WI,07,"TIFFANY, TOM",filed 12G but not on ballot list
+WV,01,"GEORGE, VINCENT RAYMOND MR.",filed 12G with unresolved ballot identity
+WV,01,Vince George,major-party FEC identity unmatched
+WV,02,Ace Parsi,major-party FEC identity unmatched
+WV,02,"PARSI, AHSAN",filed 12G with unresolved ballot identity
 WY,00,"BITEMAN, DENNIS BO DEAN II",filed 12G but not on ballot list

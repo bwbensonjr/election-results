@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "decisions": [
+    {
+      "cycle": 2026,
+      "state": "NJ",
+      "district": "08",
+      "ballot_name": "Rob Menendez",
+      "decision": "match",
+      "canonical_fec_id": "H2NJ08232",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/H2NJ08232/",
+        "https://www.fec.gov/data/candidate/H2NJ13075/",
+        "2026/candidates/ballotbrief-house-candidates.csv",
+        "2026/candidates/fec-house-candidates-flagged.csv",
+        "https://theballotbrief.com/district/nj-8"
+      ],
+      "rationale": "The canonical FEC profile identifies the 2026 NJ-08 incumbent and a June 2026 statement. The competing profile is labeled challenger with a 2005 statement. Select the current incumbent record; shared committee and totals do not establish that the competing ID belongs to the same person.",
+      "reviewed_by": "Codex (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "state": "MO",
+      "district": "03",
+      "ballot_name": "Bob Onder",
+      "decision": "match",
+      "canonical_fec_id": "H4MO03221",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/H4MO03221/",
+        "https://www.fec.gov/data/candidate/H8MO09146/",
+        "2026/candidates/ballotbrief-house-candidates.csv",
+        "2026/candidates/fec-house-candidates-flagged.csv",
+        "https://theballotbrief.com/district/mo-3"
+      ],
+      "rationale": "The canonical FEC profile identifies the 2026 MO-03 incumbent, consistent with the incumbent record in the snapshot. The competing profile is labeled challenger. Select the incumbent record; no alternate-ID grouping is asserted without person-level confirmation.",
+      "reviewed_by": "Codex (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "state": "NC",
+      "district": "08",
+      "ballot_name": "Mark Harris",
+      "decision": "match",
+      "canonical_fec_id": "H4NC08066",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/H4NC08066/",
+        "https://www.fec.gov/data/candidate/H6NC09200/",
+        "2026/candidates/ballotbrief-house-candidates.csv",
+        "2026/candidates/fec-house-candidates-flagged.csv",
+        "https://theballotbrief.com/district/nc-8"
+      ],
+      "rationale": "The canonical FEC profile identifies the 2026 NC-08 incumbent, consistent with the incumbent record in the snapshot. The competing profile is labeled challenger. Select the incumbent record; no alternate-ID grouping is asserted without person-level confirmation.",
+      "reviewed_by": "Codex (automated source review)",
+      "reviewed_at": "2026-11-02"
+    }
+  ]
+}

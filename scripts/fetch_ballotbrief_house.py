@@ -4,7 +4,7 @@
 # ///
 """Download 2026 U.S. House general-election candidates from The Ballot Brief.
 
-The Ballot Brief lists each state's certified November candidates. Its list
+The Ballot Brief is a secondary source for November candidates. Its list
 page truncates races with many candidates ("and 2 more"), so those districts
 are fetched individually. robots.txt asks for a 0.5s crawl delay.
 

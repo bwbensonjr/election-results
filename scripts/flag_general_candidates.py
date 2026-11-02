@@ -4,8 +4,9 @@
 # ///
 """Flag 2026 House candidates who filed an FEC pre-general (12G) report.
 
-Only campaigns participating in the general election file the 12G report,
-so it separates November candidates from primary losers.
+A 12G filing corroborates general-election participation; it does not
+certify ballot eligibility. Preserve all committee links and select the
+latest report by receipt date, then numeric report identifier on ties.
 
 Usage:
     uv run scripts/flag_general_candidates.py
@@ -38,6 +39,14 @@ FLAG_FIELDS = [
 ]
 
 
+def report_order(report):
+    """Stable ordering within and across committees, including amended reports."""
+    identifier = report.get("file_number") or report.get("beginning_image_number") or "0"
+    return (report.get("receipt_date") or "", int(identifier),
+            str(report.get("beginning_image_number") or ""),
+            str(report.get("committee_id") or ""))
+
+
 def fetch_12g_reports(session):
     """Return the latest 12G report per House committee, keyed by committee_id."""
     reports = fetch_all(
@@ -54,23 +63,42 @@ def fetch_12g_reports(session):
     latest = {}
     for r in reports:
         cid = r["committee_id"]
-        if cid not in latest or r["receipt_date"] > latest[cid]["receipt_date"]:
+        if cid not in latest or report_order(r) > report_order(latest[cid]):
             latest[cid] = r
     return latest
 
 
 def fetch_principal_committees(session):
-    """Return a map of committee_id to candidate_id for House candidates."""
+    """Return every candidate ID linked to each principal committee."""
     candidates = fetch_all(
         session,
         "/candidates/search/",
         {"office": "H", "election_year": CYCLE, "sort": "candidate_id"},
     )
-    mapping = {}
+    mapping = defaultdict(set)
     for c in candidates:
         for comm in c.get("principal_committees") or []:
-            mapping[comm["committee_id"]] = c["candidate_id"]
+            mapping[comm["committee_id"]].add(c["candidate_id"])
     return mapping
+
+
+def attribute_reports(session, reports, committee_links, house_ids):
+    """Attribute the latest report to all in-scope linked candidate IDs."""
+    report_by_candidate = {}
+    unmatched = []
+    for cid, report in sorted(reports.items()):
+        linked = set(committee_links.get(cid, set())) & house_ids
+        if not linked:
+            data = get_json(session, f"/committee/{cid}/", {})
+            linked = {candidate_id for row in data["results"]
+                      for candidate_id in (row.get("candidate_ids") or [])} & house_ids
+        if not linked:
+            unmatched.append(report.get("committee_name", cid))
+        for candidate_id in sorted(linked):
+            previous = report_by_candidate.get(candidate_id)
+            if previous is None or report_order(report) > report_order(previous):
+                report_by_candidate[candidate_id] = report
+    return report_by_candidate, sorted(unmatched)
 
 
 def review_reason(state, cands):
@@ -121,20 +149,9 @@ def main():
     committee_to_candidate = fetch_principal_committees(session)
 
     house_ids = {c["candidate_id"] for c in candidates}
-    report_by_candidate = {}
-    unmatched = []
-    for cid, r in reports.items():
-        cand_id = committee_to_candidate.get(cid)
-        if not cand_id:
-            # Committee may be linked to a candidate record from another
-            # cycle; ask the committee endpoint directly.
-            data = get_json(session, f"/committee/{cid}/", {})
-            linked = data["results"][0].get("candidate_ids") or [] if data["results"] else []
-            cand_id = next((x for x in linked if x in house_ids), None)
-        if cand_id:
-            report_by_candidate[cand_id] = r
-        else:
-            unmatched.append(r["committee_name"])
+    report_by_candidate, unmatched = attribute_reports(
+        session, reports, committee_to_candidate, house_ids
+    )
     if unmatched:
         print(
             f"{len(unmatched)} 12G committees not matched to a 2026 House "
