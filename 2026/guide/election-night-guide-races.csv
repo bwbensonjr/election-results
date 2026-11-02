@@ -1,0 +1,63 @@
+slot_et,poll_close_et,state,office,district,card,incumbent,incumbent_party,open_seat,dem_candidate,rep_candidate,other_candidate,rating,silver_avg_dem_margin,trump_2024_margin,senate_path,ladder_tier,hell_yes,ffs,chill,notes
+6:00,18:00,KY,House,06,"KY-6 · Lexington (open, R)",,R,True,Dembo,Alvarado,,,,15,,2018-style,Dembo wins: DDHQ puts the D House majority at 96%+; Todd says 230+ seats.,"Comfortable R hold: a normal Dem gain, not a wave.",,"Polls roughly tied. Cook's Erin Covey calls it the bellwether for a ""big blue wave."""
+6:00,18:00,IN,House,05,"IN-5 · Indy suburbs (Spartz, R)",Spartz,R,False,J.D. Ford,Spartz,,Spartz clearly favored,,,,Holy shit,Ford near 49 to 50% (Todd's wave mark). A Ford win = near-certain majority.,"Ford stuck at 45 to 47%, where the polls have him.",,"Watch Hamilton County (Trump 52 to 46 in 2024). Ladder: ""IN-5 not close"" in the We'll take it tier."
+6:00,19:00,IN,House,01,"IN-1 · NW Indiana (Mrvan, D) · 7:00",Mrvan,D,False,Mrvan,,,,,,,,Called quickly for the Democrat.,Too close to call: Todd reads that as Republicans beating expectations.,,Central-time part of Indiana closes an hour later.
+7:00,19:00,VA,House,02,Virginia ladder · Todd's small / medium / large test,Kiggans,R,False,Luria,Kiggans,,Luria favored,,,,We'll take it,"Luria wins, as expected.",Kiggans holds: no wave. DDHQ: D majority odds fall below 50%.,,SMALL test. Virginia Beach swing seat.
+7:00,19:00,VA,House,01,Virginia ladder · Todd's small / medium / large test,Wittman,R,False,Taylor,Wittman,,Cook Toss-up,,5,,2018-style,Taylor wins: the classic wave test; Todd says ~235 seats.,,"Wittman won by ~13 in 2024, so even close is good.",MEDIUM test.
+7:00,19:00,VA,House,05,Virginia ladder · Todd's small / medium / large test,McGuire,R,False,Perriello,McGuire,,,,12,,Holy shit,"Perriello wins: tsunami territory, Todd says ~250.",,,LARGE test.
+7:00,19:00,VA,House,07,Virginia ladder · Todd's small / medium / large test,Vindman,D,False,Vindman,,,,,,,,,,"VA-7 (Vindman, D) should be a routine hold.",
+7:00,19:00,FL,Governor,,Florida · the fast-count state,,,,Jolly,Donalds,,,,,,,"Governor still uncalled at 9:00 (Todd: ""a very good sign""). 11:00 checkpoint: Florida governor's race still uncalled.",GOP wins statewide by 5+.,,80%+ of ballots expected counted by 8:00 ET. FL Panhandle closes at 8:00.
+7:00,19:00,FL,Senate,,Florida · the fast-count state,,,,Nixon,Moody,,,,,,,,GOP wins statewide by 5+.,,80%+ of ballots expected counted by 8:00 ET. FL Panhandle closes at 8:00.
+7:00,19:00,FL,House,14,Florida · the fast-count state,Castor,D,False,Castor,,,,,,,Solid,FL-14 Castor and FL-25 Moskowitz both hold: near-certain House majority (DDHQ).,Castor and Moskowitz both lose: D majority odds about 1 in 3.,,GOP redrew House lines. Ladder: Florida's redrawn D seats mostly hold in the Solid tier.
+7:00,19:00,FL,House,25,Florida · the fast-count state,Moskowitz,D,False,Moskowitz,,,,,,,Solid,FL-14 Castor and FL-25 Moskowitz both hold: near-certain House majority (DDHQ).,Castor and Moskowitz both lose: D majority odds about 1 in 3.,,GOP redrew House lines. Ladder: Florida's redrawn D seats mostly hold in the Solid tier.
+7:00,19:00,FL,House,22,Florida · the fast-count state,,,True,,,,Toss-up,,,,,,,,Stretch seat.
+7:00,19:00,FL,House,09,Florida · the fast-count state,Soto,D,False,Soto,,,,,16,,,,,,Stretch seat. Trump margin is on the new lines.
+7:00,19:00,FL,House,27,Florida · the fast-count state,Salazar,R,False,,Salazar,,,,,,Holy shit,,,,Stretch seat. Latino backlash test.
+7:00,19:00,GA,Senate,,Georgia · Senate and Governor,,,,Ossoff,Mike Collins,,Cook Likely D,,,Hold,,Ossoff margin bigger than expected: good omen for the Southeast.,,Metro Atlanta counts last. Early R leads mean little. Under 50% = runoff.,
+7:00,19:00,GA,Governor,,Georgia · Senate and Governor,,,,Bottoms,Jackson,,,,,,,,Jackson called by 11:00 means GOP turnout beat expectations; Todd says that rules out a wave. 11:00 checkpoint: Jackson already called in Georgia.,Metro Atlanta counts last. Early R leads mean little. Under 50% = runoff.,
+7:00,19:00,SC,Senate,,South Carolina · the sleeper,Darline Graham,R,False,Annie Andrews,Darline Graham,,Cook and Sabato Likely R,-1.7,,Flip target,,"Strong Black turnout, which surged in the primaries (Todd). Race uncalled late.",Called early for Graham.,,Graham is appointed.
+7:00,19:00,SC,House,01,South Carolina · the sleeper,,,True,,,,,,,,,,,,Tsunami House tell.
+7:00,19:00,SC,House,02,South Carolina · the sleeper,Wilson,R,False,,Wilson,,,,14,,,,,,Tsunami House tell.
+7:30,19:30,NC,Senate,,North Carolina · Senate (flip #1),,R,True,Cooper,Whatley,,Cook Likely D,,,Flip target,,"Comfortable, early Cooper call.",Cooper struggling: the whole Senate path gets shaky.,,Watch Wake and Mecklenburg.
+7:30,19:30,OH,Senate,,Ohio · Senate (flip #2),,,,Brown,Husted,,,3.7,,Flip target,,Brown wins comfortably: Republicans should worry elsewhere too.,Brown trails or it's a coin flip late.,,
+7:30,19:30,NC,House,01,NC and OH House,Davis,D,False,Davis,,,,,,,,NC-1 Davis (D) holds and NC-11 Ager (D) flips: majority odds 90%+ (DDHQ).,Lose both NC seats: majority odds fall to ~60%.,,
+7:30,19:30,NC,House,11,NC and OH House,,R,False,Ager,,,,,,,,NC-1 Davis (D) holds and NC-11 Ager (D) flips: majority odds 90%+ (DDHQ).,Lose both NC seats: majority odds fall to ~60%.,,
+7:30,19:30,OH,House,07,NC and OH House,,,,Poindexter,Max Miller,,,,,,,OH-7 Poindexter (D) beats Max Miller: 90%+.,,,
+7:30,19:30,OH,House,09,NC and OH House,Kaptur,D,False,Kaptur,,,,,,,,,"OH-9 Kaptur (D) is on redrawn, redder lines.",,
+7:30,19:30,NC,House,09,NC and OH House,Hudson,R,False,,Hudson,,,,,,Holy shit,,,,Tsunami tell. Hudson is NRCC chair.
+7:30,19:30,OH,House,15,NC and OH House,Carey,R,False,,Carey,,,,,,Holy shit,,,,Tsunami tell.
+8:00,20:00,TX,Senate,,Texas · Senate and Governor,,,,Talarico,Paxton,,,2.4,,Flip target,,,,"Houston, Dallas, San Antonio, Austin report late. Expect a long night. West Texas closes at 9:00.",
+8:00,20:00,TX,Governor,,Texas · Senate and Governor,,,,Hinojosa,Abbott,,,,,,,"Abbott still uncalled at 11:00 (Todd: GOP has a problem). Tsunami trio: one Republican loss in NE Senate, KS Senate or TX Governor = a very big Dem night; two or more = historic (Todd). 11:00 checkpoint: Texas still uncalled.",11:00 checkpoint: Abbott called comfortably.,"Houston, Dallas, San Antonio, Austin report late. Expect a long night. West Texas closes at 9:00.",
+8:00,20:00,TX,House,15,Texas · Senate and Governor,,,,Pulido,,,,,,,,TX-15 Pulido (D) flips: Latino voters swinging back.,,"Houston, Dallas, San Antonio, Austin report late. Expect a long night. West Texas closes at 9:00.",
+8:00,20:00,MI,Senate,,Michigan · Senate (must hold),,,,El-Sayed,Rogers,,Sabato Leans D,3.0,,Hold,,Called for El-Sayed before midnight.,Rogers running ahead of his polls (Todd's GOP-surprise sign).,Detroit and Wayne County report late. Don't panic early.,
+8:00,20:00,ME,Senate,,Maine · Senate and ME-2,,,,Jackson,Collins,,,2.8,,Flip target,,,,"Ranked-choice: if no one tops 50%, the final tally can take days.",Dunlap close or ahead in ME-2 is a leading indicator for this race.
+8:00,20:00,ME,House,02,Maine · Senate and ME-2,,,True,Dunlap,LePage,,,,9,,,Dunlap close or ahead in ME-2: leading indicator for the Senate race.,,"Ranked-choice: if no one tops 50%, the final tally can take days.",
+8:00,20:00,KS,Senate,,Kansas · Senate,,,,Hamilton,Marshall,,Cook Toss-up,1.1,,Flip target,,"Marshall can't get a quick call. A Hamilton win is Senate insurance. Tsunami trio: one Republican loss in NE Senate, KS Senate or TX Governor = a very big Dem night; two or more = historic (Todd).",Called for Marshall early in the night. 11:00 checkpoint: Marshall called comfortably.,,RCP had R +0.3. Western KS closes at 9:00.
+8:00,20:00,PA,House,07,Pennsylvania House · four GOP seats to defend,Mackenzie,R,False,,Mackenzie,,Cook Lean D,,,,,"PA-7 Mackenzie loses (Lehigh Valley bellwether, Cook Lean D) and PA-10 Perry loses (Cook Lean D). That's the expected night.",,,Lehigh Valley bellwether.
+8:00,20:00,PA,House,10,Pennsylvania House · four GOP seats to defend,Perry,R,False,,Perry,,Cook Lean D,,,,,"PA-7 Mackenzie loses (Lehigh Valley bellwether, Cook Lean D) and PA-10 Perry loses (Cook Lean D). That's the expected night.",,,
+8:00,20:00,PA,House,08,Pennsylvania House · four GOP seats to defend,Bresnahan,R,False,Cognetti,Bresnahan,,,,8,,,"PA-8 Bresnahan (Trump +8) loses to Cognetti, or PA-1 Fitzpatrick finally falls: a wave.",,,
+8:00,20:00,PA,House,01,Pennsylvania House · four GOP seats to defend,Fitzpatrick,R,False,,Fitzpatrick,,,,,,,"PA-8 Bresnahan (Trump +8) loses to Cognetti, or PA-1 Fitzpatrick finally falls: a wave.",,,
+8:00,20:00,NJ,House,07,Pennsylvania House · four GOP seats to defend,Kean,R,False,,Kean,,Cook Lean D,,,,,,,,Also at 8:00.
+8:00,20:00,MI,House,04,Pennsylvania House · four GOP seats to defend,Huizenga,R,False,,Huizenga,,Toss-up,,,,,,,,Also at 8:00.
+8:00,20:00,MO,House,02,Pennsylvania House · four GOP seats to defend,,,,,,,,,,,,,,,Also at 8:00. St. Louis suburbs.
+8:00,20:00,NH,Senate,,Pennsylvania House · four GOP seats to defend,,,,Pappas,Sununu,,Cook Lean D,,,Hold,,,,,Also at 8:00.
+9:00,21:00,IA,Senate,,"Iowa · Todd's ""coma state"" test",,,True,Turek,Hinson,,Sabato Toss-up,1.2,,Flip target,,"Dems sweep Senate, Governor and all three House seats: Todd calls that a wave, House and Senate. 11:00 checkpoint: Iowa still uncalled.",Lose the Iowa Senate race: the Senate path narrows considerably. 11:00 checkpoint: Hinson called comfortably.,,
+9:00,21:00,IA,Governor,,"Iowa · Todd's ""coma state"" test",,,,Rob Sand,,,,,,,,"Dems sweep Senate, Governor and all three House seats: Todd calls that a wave, House and Senate.",,,
+9:00,21:00,IA,House,01,"Iowa · Todd's ""coma state"" test",Miller-Meeks,R,False,,Miller-Meeks,,,,,,2018-style,"Dems sweep Senate, Governor and all three House seats: Todd calls that a wave, House and Senate.",,,
+9:00,21:00,IA,House,02,"Iowa · Todd's ""coma state"" test",,,True,,,,,,,,2018-style,"Dems sweep Senate, Governor and all three House seats: Todd calls that a wave, House and Senate.",,,
+9:00,21:00,IA,House,03,"Iowa · Todd's ""coma state"" test",Nunn,R,False,,Nunn,,,,,,2018-style,"Dems sweep Senate, Governor and all three House seats: Todd calls that a wave, House and Senate.",,,
+9:00,21:00,NE,Senate,,"The tsunami trio · NE, KS, TX",,,,,Ricketts,Osborn (I),,,,Wildcard,,"One Republican loss in NE Senate, KS Senate or TX Governor = a very big Dem night. Two or more = historic (Todd).",,,Independent Osborn could scramble the Senate math.
+9:00,21:00,MN,Senate,,"The tsunami trio · NE, KS, TX",,,,Flanagan,Tafoya,,,,,Hold,,,,"Minnesota should be safe. If it's a nail-biter while others are blue, it's the candidates, not the climate.",
+9:00,21:00,NY,House,17,House battlegrounds at 9:00,Lawler,R,False,,Lawler,,,,,,,,,,
+9:00,21:00,AZ,House,01,House battlegrounds at 9:00,,,True,,,,Cook Lean D,,,,,,,"Arizona counts slowly. Expect days, not hours.",
+9:00,21:00,AZ,House,06,House battlegrounds at 9:00,Ciscomani,R,False,,Ciscomani,,,,,,,,,"Arizona counts slowly. Expect days, not hours.",
+9:00,21:00,CO,House,08,House battlegrounds at 9:00,Evans,R,False,,Evans,,,,,,,,,,
+9:00,21:00,WI,House,03,House battlegrounds at 9:00,Van Orden,R,False,,Van Orden,,,,,,,,,,
+9:00,21:00,NE,House,02,House battlegrounds at 9:00,,,True,,,,Cook Likely D,,,,,,,,
+9:00,21:00,CO,House,05,House battlegrounds at 9:00,Crank,R,False,,Crank,,Cook Lean R,,,,,Reach seats in play: CO-5 Crank and WI-1 Steil.,,,
+9:00,21:00,WI,House,01,House battlegrounds at 9:00,Steil,R,False,,Steil,,Cook Lean R,,,,,Reach seats in play: CO-5 Crank and WI-1 Steil.,,,
+10 to 11,22:00,MT,House,01,The West,,,True,,,,Cook Lean R,,,,,,,,A Dem win means competing outside usual turf.
+10 to 11,22:00,NV,House,03,The West,Lee,D,False,Lee,,,Cook Likely D,,,,,,,,Should hold.
+10 to 11,23:00,WA,House,03,The West,Gluesenkamp Perez,D,False,Gluesenkamp Perez,,,Cook Lean D,,,,,,,,Should hold.
+10 to 11,23:00,CA,House,22,California · Prop 50 seats,Valadao,R,False,,Valadao,,,,,,,,,Ballots postmarked by Election Day count if they arrive within 7 days. Calls can take days to weeks. Don't expect answers Tuesday.,New Prop 50 lines target GOP seats.
+12:00+,24:00,AK,Senate,,Alaska · Senate,,,,Peltola,Sullivan,,Sabato Leans D,3.5,,Flip target,,,,"Ranked-choice tabulation doesn't start until Nov 18. Early numbers are a hint, nothing more.",
