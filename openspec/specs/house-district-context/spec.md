@@ -37,9 +37,17 @@ Exports SHALL expose numeric 2020 and 2024 Democratic-minus-Republican margins i
 - **THEN** district-level counts use its single context row rather than repeated candidate-grain metrics
 - **AND** the district candidate count includes every ballot row, including unresolved FEC identities
 
+### Requirement: Polling average columns are joined by district
+
+Both exports SHALL append the district polling average after all other columns: its nominee names, shares, Democratic-minus-Republican margin, poll and pollster counts, latest poll end date, status, and source ID. Values SHALL be copied unchanged from the polling averages by district, once per district row and repeated on each of that district's candidate rows.
+
+#### Scenario: Polling average joined by district
+- **WHEN** the polling averages report an `available` margin for a district
+- **THEN** that district's context row and each of its candidate rows carry the same polling columns and values as the averages row
+
 ### Requirement: Coverage and missing values are visible
 
-Every district metric SHALL have an available or missing status based on source coverage and value presence. Unavailable metrics SHALL remain blank. A deterministic issue report SHALL identify affected district, metric, source, and reason, including missing or source-only district keys. Unknown values SHALL NOT become zero, EVEN, or a fabricated result.
+Every presidential and PVI metric SHALL have an available or missing status based on source coverage and value presence. Unavailable metrics SHALL remain blank. A deterministic issue report SHALL identify affected district, metric, source, and reason for missing presidential or PVI values and missing or source-only district keys. Unknown values SHALL NOT become zero, EVEN, or a fabricated result.
 
 #### Scenario: Margins with undocumented map vintage
 - **WHEN** a district has published PVI and valid presidential margins whose source map vintage is undocumented
@@ -50,9 +58,18 @@ Every district metric SHALL have an available or missing status based on source 
 - **WHEN** one district lacks a source PVI value
 - **THEN** only its PVI is blank with missing status and an actionable issue row
 
+### Requirement: Polling gaps are explicit without issue rows
+
+The polling average SHALL carry its own status from the polling build: `available`, `no_polls`, `no_eligible_polls`, or `no_dem_rep_field`. Polling values SHALL be blank unless the status is `available`, never zero. Districts without polling SHALL NOT generate issue report rows.
+
+#### Scenario: District without polling
+- **WHEN** a district has no eligible nominee polls
+- **THEN** its polling columns are blank with the polling build's non-available status
+- **AND** no issue row is added for that district's polling
+
 ### Requirement: Reproducible and validated publication
 
-The rebuild SHALL run offline from saved inputs and metadata and produce deterministic outputs independent of source row order. Invalid schemas, duplicate source keys, or contradictory metadata SHALL exit nonzero before replacing successful exports. A complete-data validation mode SHALL reject missing target metrics before replacing exports.
+The rebuild SHALL run offline from saved inputs and metadata and produce deterministic outputs independent of source row order. Invalid schemas, duplicate source keys, contradictory metadata, or polling averages that are stale for the current poll snapshot and candidate field SHALL exit nonzero before replacing successful exports. A complete-data validation mode SHALL reject missing presidential or PVI target metrics before replacing exports. It SHALL NOT require polling averages.
 
 #### Scenario: Reordered inputs
 - **WHEN** unchanged candidate and source rows are shuffled
@@ -61,3 +78,11 @@ The rebuild SHALL run offline from saved inputs and metadata and produce determi
 #### Scenario: Strict completeness check
 - **WHEN** complete-data validation is requested and any target district lacks either presidential margin or published PVI
 - **THEN** the command exits nonzero with actionable diagnostics and preserves the previous exports
+
+#### Scenario: Strict build with unpolled districts
+- **WHEN** complete-data validation is requested and every district has both margins and PVI, but most districts have no polling average
+- **THEN** the build succeeds
+
+#### Scenario: Stale polling averages
+- **WHEN** the poll snapshot or candidate field changed after the averages were built
+- **THEN** the context build exits nonzero with an instruction to rerun the polling build, and it preserves the previous exports
