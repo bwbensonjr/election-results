@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "presidential": {
+      "source_id": "presidential-results-2020-2024",
+      "path": "2026/results/presidential-results-by-us-house-district-2020-2024.csv",
+      "format": "presidential-two-header",
+      "edition": "2020-2024 user-supplied",
+      "election_years": [
+        2020,
+        2024
+      ],
+      "source_url": null,
+      "retrieved_at": null,
+      "published_at": null,
+      "notes": "User-supplied district results. Exact upstream URL, acquisition date, and boundary vintage are not recorded. Values join by normalized district ID as supplied; no interpolation or boundary approval is performed.",
+      "sha256": "325d42de8e3a511266760daca768b54b3f9910aa87d5fd1405a1c011675b3556"
+    },
+    "cook_pvi": {
+      "source_id": "cook-pvi-2026",
+      "path": "2026/results/cook-pvi-2026-source.csv",
+      "format": "cook-pvi-six-column",
+      "edition": "2026",
+      "election_years": [
+        2020,
+        2024
+      ],
+      "source_url": "https://www.cookpolitical.com/cook-pvi/2026-partisan-voting-index/district-map-and-list",
+      "embedded_table_url": "https://datawrapper.dwcdn.net/fejB0/2/",
+      "retrieved_at": "2026-11-02",
+      "published_at": "2026-07-29",
+      "acquisition_method": "Integrated Browser: expanded Show 385 more and captured all 435 rendered table rows; omitted the empty layout cell and retained the six visible column headings.",
+      "notes": "The 2026 PVI column supplies the published metric. The saved 2025 PVI and 2026 Rank columns are retained as source context. Source incumbent labels do not update candidate identities.",
+      "sha256": "9263e84b0b4635f5a4a410527759c4ae70e1e85fbe9fd497f774af6c9731a278"
+    }
+  }
+}

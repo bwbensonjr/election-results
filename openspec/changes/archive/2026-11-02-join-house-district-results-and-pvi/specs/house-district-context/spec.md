@@ -1,0 +1,63 @@
+# Spec Delta
+
+## Purpose
+
+Expose district and candidate datasets that join source partisan history to the 2026 House field without hiding missing evidence or changing candidate identity decisions.
+
+## ADDED Requirements
+
+### Requirement: One context row per target district
+
+The context export SHALL contain exactly one row for each distinct district in the 2026 candidate field. It SHALL join unique normalized metrics by state and district without boundary approval checks. Source-only districts SHALL be reported rather than silently added to the target universe or used to drop existing districts.
+
+#### Scenario: Current district coverage
+- **WHEN** the committed candidate field has 435 distinct districts
+- **THEN** the context export has 435 uniquely keyed rows even if some metrics are missing
+- **AND** an extra historical district produces a source-only coverage issue
+
+### Requirement: Candidate enrichment preserves grain and identity
+
+The candidate export SHALL preserve every input candidate row and its existing columns and values, appending district context through a many-to-one district join. It SHALL preserve unresolved FEC matches, incumbency, filing flags, finance, and poll-presence values. Historical incumbent names SHALL NOT identify candidates or overwrite candidate records.
+
+#### Scenario: Several candidates share a district
+- **WHEN** a district has three candidate rows and one context row
+- **THEN** the enriched export still has three candidate rows carrying the same district metrics
+- **AND** an unresolved FEC ID remains blank with its existing match status
+
+#### Scenario: Historical incumbent differs
+- **WHEN** the results source names an incumbent who differs from the current candidate field
+- **THEN** that label remains source metadata and does not replace the candidate-level incumbent flag or assert a current incumbent roster
+
+### Requirement: Analytics fields have explicit semantics
+
+Exports SHALL expose numeric 2020 and 2024 Democratic-minus-Republican margins in percentage points, the published Cook PVI label and signed lean, and per-metric source/status fields. District metrics SHALL exist once at district grain for district counts and aggregates. Candidate counts SHALL describe ballot rows and preserve unresolved identities in their totals.
+
+#### Scenario: Safe district counting
+- **WHEN** a district has several candidates
+- **THEN** district-level counts use its single context row rather than repeated candidate-grain metrics
+- **AND** the district candidate count includes every ballot row, including unresolved FEC identities
+
+### Requirement: Coverage and missing values are visible
+
+Every district metric SHALL have an available or missing status based on source coverage and value presence. Unavailable metrics SHALL remain blank. A deterministic issue report SHALL identify affected district, metric, source, and reason, including missing or source-only district keys. Unknown values SHALL NOT become zero, EVEN, or a fabricated result.
+
+#### Scenario: Margins with undocumented map vintage
+- **WHEN** a district has published PVI and valid presidential margins whose source map vintage is undocumented
+- **THEN** all three metrics populate by district ID and have available status
+- **AND** documentation records the source limitation without withholding the margins
+
+#### Scenario: Missing published value
+- **WHEN** one district lacks a source PVI value
+- **THEN** only its PVI is blank with missing status and an actionable issue row
+
+### Requirement: Reproducible and validated publication
+
+The rebuild SHALL run offline from saved inputs and metadata and produce deterministic outputs independent of source row order. Invalid schemas, duplicate source keys, or contradictory metadata SHALL exit nonzero before replacing successful exports. A complete-data validation mode SHALL reject missing target metrics before replacing exports.
+
+#### Scenario: Reordered inputs
+- **WHEN** unchanged candidate and source rows are shuffled
+- **THEN** rebuilding produces the same sorted output records and issue report
+
+#### Scenario: Strict completeness check
+- **WHEN** complete-data validation is requested and any target district lacks either presidential margin or published PVI
+- **THEN** the command exits nonzero with actionable diagnostics and preserves the previous exports

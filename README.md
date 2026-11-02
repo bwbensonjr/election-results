@@ -12,7 +12,9 @@ Implemented:
 - A combined candidate field with FEC incumbency, financial values, and a poll-presence flag.
 - Seven [polling snapshots](2026/polls), described in the original project notes as NY Times data; polling acquisition is currently manual.
 
-Planned: district-level 2024 Harris/Trump and 2020 Biden/Trump results, PVI, a separate district incumbent roster, and an election-night briefing or watchlist.
+The [district context dataset](2026/districts/house-district-context.csv) joins 2020 Biden/Trump and 2024 Harris/Trump source margins with published Cook 2026 PVI for all 435 districts. A separate [candidate context dataset](2026/districts/house-candidate-context.csv) retains all candidate details and appends those metrics. See the [district-data reference](docs/district-data.md) for source editions, schemas, and analytical examples.
+
+Planned: a separate district incumbent roster and an election-night briefing or watchlist.
 
 ## Rebuild from committed inputs
 
@@ -40,6 +42,19 @@ Use `--totals` to include the financial columns required by the builder. Refresh
 The implemented ballot source is [The Ballot Brief](https://theballotbrief.com/candidates/us-house), a secondary source that warns its AI-assisted information can contain errors. Verify important ballot details with official sources. [Ballotpedia](https://ballotpedia.org/List_of_congressional_candidates_in_the_2026_elections) is an additional reference, not an input to these scripts. FEC registration, incumbency codes, filing flags, and a poll appearance do not certify the general-election ballot.
 
 See the [pipeline reference](docs/candidate-pipeline.md) for file schemas, identity-review procedures, sources, limitations, dated review dispositions, and refresh status.
+
+## Build district data for viewing and analysis
+
+After rebuilding the candidate field, run:
+
+```sh
+uv run scripts/normalize_district_history.py
+uv run scripts/build_house_district_context.py --require-complete
+```
+
+These commands read saved source snapshots and need no API key or live Cook access. District IDs normalize at-large seats to `STATE-AL` and district code `00`. Margins are Democratic minus Republican in percentage points. Cook PVI retains its published 2026 label and a numeric lean, positive for D and negative for R.
+
+The join uses normalized district IDs without boundary approval checks. The supplied historical results' map vintage is undocumented; they are used as supplied, and the [source notes](docs/district-data.md) explain limits on historical comparisons. Missing metrics are reported rather than assigned zero or EVEN. The current strict build has all three metrics for every district.
 
 ## Tests
 
