@@ -1,7 +1,7 @@
 # /// script
 # requires-python = ">=3.11"
 # ///
-"""Join saved district margins, published PVI, and polling averages to the House field, offline."""
+"""Join saved district margins, published PVI, polling averages, and the election guide to the House field, offline."""
 
 import argparse
 import sys
@@ -10,6 +10,9 @@ from pathlib import Path
 
 from build_house_poll_averages import (
     AVERAGE_COLUMNS, DEFAULT_POLLS, OUTPUT_DIR as POLLS_DIR, POLL_COLUMNS, compute as compute_poll_averages,
+)
+from election_guide import (
+    DEFAULT_GUIDE, DEFAULT_MARKDOWN, GUIDE_COLUMNS, SOURCE_ID as GUIDE_SOURCE_ID, load_guide, name_check,
 )
 from district_history import (
     DEFAULT_MANIFEST, ROOT, RESULTS_DIR, PRESIDENTIAL_COLUMNS, PVI_COLUMNS,
@@ -24,8 +27,11 @@ COUNT_COLUMNS = ["candidate_count", "unresolved_fec_candidate_count"]
 METRIC_COLUMNS = ["pres_2020_dem_margin_pp", "pres_2024_dem_margin_pp", "cook_pvi_label", "cook_pvi_dem_lean_pp"]
 STATUS_COLUMNS = ["pres_2020_status", "pres_2024_status", "cook_pvi_status"]
 SOURCE_COLUMNS = ["pres_2020_source_id", "pres_2024_source_id", "cook_pvi_source_id"]
-DISTRICT_COLUMNS = IDENTITY_COLUMNS + COUNT_COLUMNS + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS + POLL_COLUMNS
-APPENDED_COLUMNS = ["district_id", "election_cycle"] + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS + POLL_COLUMNS
+GUIDE_CONTEXT_COLUMNS = GUIDE_COLUMNS[1:] + ["guide_name_check", "guide_status", "guide_source_id"]
+DISTRICT_COLUMNS = (IDENTITY_COLUMNS + COUNT_COLUMNS + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS
+                    + POLL_COLUMNS + GUIDE_CONTEXT_COLUMNS)
+APPENDED_COLUMNS = (["district_id", "election_cycle"] + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS
+                    + POLL_COLUMNS + GUIDE_CONTEXT_COLUMNS)
 ISSUE_COLUMNS = ["state", "district", "district_id", "metric", "source_id", "issue", "detail"]
 UNRESOLVED_STATUSES = {"unmatched", "ambiguous", "reviewed_unmatched"}
 MATCH_STATUSES = UNRESOLVED_STATUSES | {"automatic", "reviewed"}
@@ -53,7 +59,8 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
           history_path=RESULTS_DIR / "presidential-results-normalized.csv",
           pvi_path=RESULTS_DIR / "cook-pvi-normalized.csv", output_dir=OUTPUT_DIR,
           require_complete=False, project_root=ROOT, polls_path=DEFAULT_POLLS,
-          poll_averages_path=DEFAULT_POLL_AVERAGES):
+          poll_averages_path=DEFAULT_POLL_AVERAGES, guide_path=DEFAULT_GUIDE,
+          guide_markdown_path=DEFAULT_MARKDOWN):
     sources, expected_history, expected_pvi = normalized_sources(manifest_path, project_root)
     history = verify_normalized(history_path, PRESIDENTIAL_COLUMNS, expected_history,
                                 lambda r: (r["state"], r["district"], r["election_year"]))
@@ -61,6 +68,7 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
                            lambda r: (r["state"], r["district"]))
     candidate_columns, candidates = read_records(candidate_path)
     poll_averages = verify_poll_averages(poll_averages_path, polls_path, candidate_path)
+    guide = load_guide(guide_path, guide_markdown_path, candidate_path)
     if not {"state", "district", "name", "fec_match_status"} <= set(candidate_columns):
         raise ValueError(f"{candidate_path}: missing required candidate columns")
     if set(candidate_columns) & set(APPENDED_COLUMNS):
@@ -103,6 +111,10 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
             add_issue(key, "cook_pvi", source_id, "missing_value" if record else "missing_district",
                       "Published 2026 PVI is blank" if record else "No Cook district row")
         context.update({column: poll_averages[(state, district)][column] for column in POLL_COLUMNS})
+        guide_row = guide.get(key)
+        context.update({column: guide_row[column] if guide_row else "" for column in GUIDE_COLUMNS[1:]})
+        context.update(guide_name_check=name_check(guide_row, rows) if guide_row else "",
+                       guide_status="in_guide" if guide_row else "not_in_guide", guide_source_id=GUIDE_SOURCE_ID)
         districts.append(context)
         for row in rows:
             enriched.append(dict(row, **{column: context[column] for column in APPENDED_COLUMNS}))
@@ -139,13 +151,16 @@ def main():
     parser.add_argument("--pvi", type=Path, default=RESULTS_DIR / "cook-pvi-normalized.csv")
     parser.add_argument("--polls", type=Path, default=DEFAULT_POLLS)
     parser.add_argument("--poll-averages", type=Path, default=DEFAULT_POLL_AVERAGES)
+    parser.add_argument("--guide", type=Path, default=DEFAULT_GUIDE)
+    parser.add_argument("--guide-markdown", type=Path, default=DEFAULT_MARKDOWN)
     parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
     parser.add_argument("--require-complete", action="store_true")
     args = parser.parse_args()
     try:
         districts, candidates, issues = build(args.candidates, args.manifest, args.history,
                                              args.pvi, args.output_dir, args.require_complete,
-                                             polls_path=args.polls, poll_averages_path=args.poll_averages)
+                                             polls_path=args.polls, poll_averages_path=args.poll_averages,
+                                             guide_path=args.guide, guide_markdown_path=args.guide_markdown)
     except (ValueError, KeyError, OSError) as exc:
         sys.exit(f"District build failed: {exc}")
     print(f"Wrote {len(districts)} districts, {len(candidates)} candidates, {len(issues)} issues", file=sys.stderr)

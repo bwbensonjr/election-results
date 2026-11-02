@@ -1,0 +1,45 @@
+district_id,guide_watch_time_et,guide_section,guide_role,guide_dem_win_tier,guide_seat_signal,guide_dem_name,guide_rep_name,guide_incumbent_note,guide_rating_note,guide_hell_yes,guide_ffs,guide_chill,guide_note
+AZ-01,9:00,House battlegrounds at 9:00,battleground,,,,,open,Cook Lean D,,,"Arizona counts slowly. Expect days, not hours.",
+AZ-06,9:00,House battlegrounds at 9:00,battleground,,,,Ciscomani,"Ciscomani, R",,,,"Arizona counts slowly. Expect days, not hours.",
+CA-22,11:00,California Prop 50 seats,battleground,,,,Valadao,"Valadao, R",,,,Ballots postmarked by Election Day count if they arrive within 7 days. Calls can take days to weeks. Don't expect answers Tuesday.,"Prop 50: new lines target GOP seats, including CA-22."
+CO-05,9:00,House battlegrounds at 9:00,reach,,,,Crank,,Cook Lean R,Reach seats in play: CO-5 Crank and WI-1 Steil (both Cook Lean R).,,,
+CO-08,9:00,House battlegrounds at 9:00,battleground,,,,Evans,"Evans, R",,,,,
+FL-09,7:00,Florida,stretch,,,Soto,,,Trump +16 new lines,,,,Stretch seat.
+FL-14,7:00,Florida,majority_check,,,Castor,,,,FL-14 Castor and FL-25 Moskowitz both hold: near-certain House majority (DDHQ).,GOP wins statewide by 5+. Castor and Moskowitz both lose: D majority odds about 1 in 3.,,Florida is the fast-count state: 80%+ of ballots expected counted by 8:00 ET. GOP redrew House lines.
+FL-22,7:00,Florida,stretch,,,,,open,toss-up,,,,Stretch seat.
+FL-25,7:00,Florida,majority_check,,,Moskowitz,,,,FL-14 Castor and FL-25 Moskowitz both hold: near-certain House majority (DDHQ).,GOP wins statewide by 5+. Castor and Moskowitz both lose: D majority odds about 1 in 3.,,Florida is the fast-count state: 80%+ of ballots expected counted by 8:00 ET. GOP redrew House lines.
+FL-27,7:00,Florida,stretch,Holy shit,,,Salazar,,,,,,Stretch seat; Latino backlash test. Ladder: FL-27 flips (Holy shit).
+IA-01,9:00,Iowa,battleground,2018-style,,,Miller-Meeks,"Miller-Meeks, R",,"Dems sweep Senate, Governor and all three House seats: Todd calls that a wave, House and Senate.",,,"Todd's ""coma state"" test. Ladder: Iowa House sweep (2018-style)."
+IA-02,9:00,Iowa,battleground,2018-style,,,,open,,"Dems sweep Senate, Governor and all three House seats: Todd calls that a wave, House and Senate.",,,"Todd's ""coma state"" test. Ladder: Iowa House sweep (2018-style)."
+IA-03,9:00,Iowa,battleground,2018-style,,,Nunn,"Nunn, R",,"Dems sweep Senate, Governor and all three House seats: Todd calls that a wave, House and Senate.",,,"Todd's ""coma state"" test. Ladder: Iowa House sweep (2018-style)."
+IN-01,7:00,6:00 ET,hold_check,,,Mrvan,,"Mrvan, D",,Called quickly for the Democrat.,Too close to call: Todd reads that as Republicans beating expectations.,,NW Indiana. Central-time part of Indiana closes an hour later.
+IN-05,6:00,6:00 ET,battleground,Holy shit,,J.D. Ford,Spartz,"Spartz, R",Spartz clearly favored,Ford near 49 to 50% (Todd's wave mark). A Ford win = near-certain majority.,"Ford stuck at 45 to 47%, where the polls have him.",,Indy suburbs. Watch Hamilton County (Trump 52 to 46 in 2024). Ladder: IN-5 not close (We'll take it); IN-5 flips (Holy shit).
+KY-06,6:00,6:00 ET,bellwether,2018-style,230+,Dembo,Alvarado,"open, R",Trump +15 in 2024; polls roughly tied,Dembo wins: DDHQ puts the D House majority at 96%+; Todd says 230+ seats.,"Comfortable R hold: a normal Dem gain, not a wave.",,"Lexington. Cook's Erin Covey calls it the bellwether for a ""big blue wave."" Ladder: KY-6 stays R (We'll take it); KY-6 flips (2018-style, Todd: 230+)."
+ME-02,8:00,Maine,battleground,,,Dunlap,LePage,open,Trump +9,Dunlap close or ahead in ME-2: leading indicator for the Senate race.,,"Ranked-choice: if no one tops 50%, the final tally can take days.",
+MI-04,8:00,Also at 8:00,battleground,,,,Huizenga,"Huizenga, R",toss-up,,,,
+MO-02,8:00,Also at 8:00,battleground,,,,,,,,,,St. Louis suburbs.
+MT-01,10:00,The West,reach,,,,,open,Cook Lean R,,,,A Dem win means competing outside usual turf.
+NC-01,7:30,NC and OH House,majority_check,,,Davis,,,,NC-1 Davis (D) holds and NC-11 Ager (D) flips: majority odds 90%+ (DDHQ).,Lose both NC seats: majority odds fall to ~60%.,,
+NC-09,7:30,NC and OH House,tsunami_tell,Holy shit,,,Hudson,"Hudson, R",,,,,Tsunami tell; Hudson is NRCC chair. Ladder: NC-9 flips (Holy shit).
+NC-11,7:30,NC and OH House,majority_check,,,Ager,,,,NC-1 Davis (D) holds and NC-11 Ager (D) flips: majority odds 90%+ (DDHQ).,Lose both NC seats: majority odds fall to ~60%.,,
+NE-02,9:00,House battlegrounds at 9:00,battleground,,,,,open,Cook Likely D,,,,
+NJ-07,8:00,Also at 8:00,battleground,,,,Kean,"Kean, R",Cook Lean D,,,,
+NV-03,10:00,The West,hold_check,,,Lee,,"Lee, D",Cook Likely D,,,,Should hold.
+NY-17,9:00,House battlegrounds at 9:00,battleground,,,,Lawler,"Lawler, R",,,,,
+OH-07,7:30,NC and OH House,majority_check,,,Poindexter,Max Miller,,,OH-7 Poindexter (D) beats Max Miller: 90%+.,,,
+OH-09,7:30,NC and OH House,hold_check,,,Kaptur,,"Kaptur, D",,,"OH-9 Kaptur (D) is on redrawn, redder lines.",,
+OH-15,7:30,NC and OH House,tsunami_tell,Holy shit,,,Carey,"Carey, R",,,,,Tsunami tell. Ladder: OH-15 flips (Holy shit).
+PA-01,8:00,Pennsylvania House,battleground,,,,Fitzpatrick,"Fitzpatrick, R",,"PA-8 Bresnahan (Trump +8) loses to Cognetti, or PA-1 Fitzpatrick finally falls: a wave.",,,One of four GOP seats to defend.
+PA-07,8:00,Pennsylvania House,battleground,,,,Mackenzie,"Mackenzie, R",Cook Lean D,"PA-7 Mackenzie loses (Lehigh Valley bellwether, Cook Lean D) and PA-10 Perry loses (Cook Lean D). That's the expected night.",,,Lehigh Valley bellwether. One of four GOP seats to defend.
+PA-08,8:00,Pennsylvania House,battleground,,,Cognetti,Bresnahan,"Bresnahan, R",Trump +8,"PA-8 Bresnahan (Trump +8) loses to Cognetti, or PA-1 Fitzpatrick finally falls: a wave.",,,One of four GOP seats to defend.
+PA-10,8:00,Pennsylvania House,battleground,,,,Perry,"Perry, R",Cook Lean D,"PA-7 Mackenzie loses (Lehigh Valley bellwether, Cook Lean D) and PA-10 Perry loses (Cook Lean D). That's the expected night.",,,One of four GOP seats to defend.
+SC-01,7:00,South Carolina,tsunami_tell,,,,,open,,,,,Tsunami House tell.
+SC-02,7:00,South Carolina,tsunami_tell,,,,Wilson,,Trump +14,,,,Tsunami House tell.
+TX-15,8:00,Texas,battleground,,,Pulido,,,,TX-15 Pulido (D) flips: Latino voters swinging back.,,,
+VA-01,7:00,Virginia ladder,wave_ladder,2018-style,~235,Taylor,Wittman,,Trump +5; Cook toss-up,Taylor wins: the classic wave test; Todd says ~235 seats.,,"Wittman won by ~13 in 2024, so even close is good.","MEDIUM rung of Todd's Virginia ladder. Ladder: Dems lose VA-1 (We'll take it); VA-1 is close (Solid); VA-1 flips (2018-style, Todd: ~235)."
+VA-02,7:00,Virginia ladder,wave_ladder,We'll take it,,Luria,Kiggans,,Virginia Beach swing seat; Luria favored,"Luria wins, as expected.",Kiggans holds: no wave. DDHQ: D majority odds fall below 50%.,,SMALL rung of Todd's Virginia ladder. Ladder: Dems win VA-2 (We'll take it); VA-2 flips (Solid).
+VA-05,7:00,Virginia ladder,wave_ladder,Holy shit,~250,Perriello,McGuire,,Trump +12,"Perriello wins: tsunami territory, Todd says ~250.",,,"LARGE rung of Todd's Virginia ladder. Ladder: VA-5 flips (Holy shit, Todd: ~250)."
+VA-07,7:00,Virginia ladder,hold_check,,,Vindman,,"Vindman, D",,,,"VA-7 (Vindman, D) should be a routine hold.",
+WA-03,11:00,The West,hold_check,,,Gluesenkamp Perez,,"Gluesenkamp Perez, D",Cook Lean D,,,,Should hold.
+WI-01,9:00,House battlegrounds at 9:00,reach,,,,Steil,,Cook Lean R,Reach seats in play: CO-5 Crank and WI-1 Steil (both Cook Lean R).,,,
+WI-03,9:00,House battlegrounds at 9:00,battleground,,,,Van Orden,"Van Orden, R",,,,,

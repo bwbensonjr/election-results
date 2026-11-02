@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import build_house_district_context as context
 import build_house_field as candidates
 import build_house_poll_averages as polls
+import election_guide as guide
 import district_history as history
 from test_district_history import HistoryFixture, ROOT, write_csv
 
@@ -21,6 +22,14 @@ class ContextTests(HistoryFixture):
         self.polls_path = self.root / "polls.csv"
         self.poll_output = self.root / "polls"
         self.poll_rows = []
+        self.guide_path = self.root / "guide.csv"
+        self.guide_markdown = self.root / "guide.md"
+        self.guide_markdown.write_text("### AK-1 · Alaska at-large\nCandidate B (R) v Candidate A (D).\n")
+        guide_row = {column: "" for column in guide.GUIDE_COLUMNS}
+        guide_row.update(district_id="AK-AL", guide_watch_time_et="12:00+", guide_section="Alaska",
+                         guide_role="battleground", guide_dem_name="Candidate A", guide_chill="Counts slowly.")
+        self.guide_rows = [guide_row]
+        self.save_guide()
         self.candidate_rows = []
         for state, district, name, status in [("AK", "00", "Candidate A", "reviewed"),
                                                ("AK", "00", "Candidate B", "unmatched"),
@@ -40,6 +49,10 @@ class ContextTests(HistoryFixture):
                   [[row[c] for c in candidates.FIELD_COLUMNS] for row in self.candidate_rows])
         self.save_polls()
 
+    def save_guide(self):
+        write_csv(self.guide_path, [guide.GUIDE_COLUMNS] +
+                  [[row[c] for c in guide.GUIDE_COLUMNS] for row in self.guide_rows])
+
     def save_polls(self, rebuild=True):
         write_csv(self.polls_path, [polls.REQUIRED_COLUMNS] +
                   [[row.get(c, "") for c in polls.REQUIRED_COLUMNS] for row in self.poll_rows])
@@ -50,7 +63,8 @@ class ContextTests(HistoryFixture):
         return context.build(self.candidate_path, self.manifest,
                              self.normalized / "presidential-results-normalized.csv",
                              self.normalized / "cook-pvi-normalized.csv", self.output, strict, self.root,
-                             self.polls_path, self.poll_output / "house-poll-averages.csv")
+                             self.polls_path, self.poll_output / "house-poll-averages.csv",
+                             self.guide_path, self.guide_markdown)
 
     def output_bytes(self):
         return {p.name: p.read_bytes() for p in self.output.glob("*.csv")}
@@ -156,6 +170,7 @@ class ContextTests(HistoryFixture):
                                  "--candidates", str(self.candidate_path), "--output-dir", str(self.output),
                                  "--polls", str(self.polls_path),
                                  "--poll-averages", str(self.poll_output / "house-poll-averages.csv"),
+                                 "--guide", str(self.guide_path), "--guide-markdown", str(self.guide_markdown),
                                  "--require-complete"], cwd=ROOT, capture_output=True, text=True)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("AL-99", result.stderr)
@@ -177,12 +192,13 @@ class ContextTests(HistoryFixture):
         self.assertEqual(issues, [])
         with (self.output / "house-district-context.csv").open(newline="") as stream:
             header = next(csv.reader(stream))
-        self.assertEqual(header[:len(context.DISTRICT_COLUMNS) - len(polls.POLL_COLUMNS)], [
+        self.assertEqual(header[:16], [
             "state", "district", "district_id", "election_cycle", "candidate_count",
             "unresolved_fec_candidate_count", "pres_2020_dem_margin_pp", "pres_2024_dem_margin_pp",
             "cook_pvi_label", "cook_pvi_dem_lean_pp", "pres_2020_status", "pres_2024_status",
             "cook_pvi_status", "pres_2020_source_id", "pres_2024_source_id", "cook_pvi_source_id"])
-        self.assertEqual(header[-len(polls.POLL_COLUMNS):], polls.POLL_COLUMNS)
+        self.assertEqual(header[16:16 + len(polls.POLL_COLUMNS)], polls.POLL_COLUMNS)
+        self.assertEqual(header[16 + len(polls.POLL_COLUMNS):], context.GUIDE_CONTEXT_COLUMNS)
         ak, al = districts
         self.assertEqual((ak["poll_avg_status"], ak["poll_count"], ak["poll_avg_dem_candidate"]),
                          ("available", "2", "Candidate A"))
@@ -196,6 +212,28 @@ class ContextTests(HistoryFixture):
         self.poll_rows[0]["pct"] = "50"
         self.save_polls(rebuild=False)
         with self.assertRaisesRegex(ValueError, "stale polling averages"):
+            self.build()
+        self.assertEqual(before, self.output_bytes())
+
+    def test_guide_columns_join_and_mismatch_fails(self):
+        districts, enriched, issues = self.build(strict=True)
+        self.assertEqual(issues, [])
+        ak, al = districts
+        self.assertEqual((ak["guide_status"], ak["guide_role"], ak["guide_chill"], ak["guide_name_check"]),
+                         ("in_guide", "battleground", "Counts slowly.", "matched"))
+        self.assertEqual(ak["guide_source_id"], guide.SOURCE_ID)
+        self.assertEqual(al["guide_status"], "not_in_guide")
+        self.assertTrue(all(al[c] == "" for c in guide.GUIDE_COLUMNS[1:] + ["guide_name_check"]))
+        ak_rows = [r for r in enriched if r["district_id"] == "AK-AL"]
+        self.assertTrue(all(r[c] == ak[c] for r in ak_rows for c in context.GUIDE_CONTEXT_COLUMNS))
+        self.guide_rows[0]["guide_dem_name"] = "Someone Else"
+        self.save_guide()
+        districts, _, _ = self.build()
+        self.assertEqual(districts[0]["guide_name_check"], "mismatch")
+        self.assertEqual(districts[0]["guide_dem_name"], "Someone Else")
+        before = self.output_bytes()
+        self.guide_markdown.write_text("AK-1 and AL-1 tonight.\n")
+        with self.assertRaisesRegex(ValueError, "missing from the CSV: AL-01"):
             self.build()
         self.assertEqual(before, self.output_bytes())
 
@@ -215,6 +253,10 @@ class ContextTests(HistoryFixture):
         self.assertEqual(statuses["available"], 111)
         me02 = next(r for r in districts if r["district_id"] == "ME-02")
         self.assertEqual(me02["poll_avg_dem_margin_pp"], "3.31")
+        guide_statuses = collections.Counter(r["guide_status"] for r in districts)
+        self.assertEqual(guide_statuses, {"in_guide": 44, "not_in_guide": 391})
+        self.assertEqual(me02["guide_role"], "battleground")
+        self.assertNotIn("mismatch", {r["guide_name_check"] for r in districts})
 
 
 if __name__ == "__main__":
