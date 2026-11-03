@@ -269,7 +269,7 @@ class WeightTests(PollFixture):
     def test_current_snapshot(self):
         averages, records = polls.compute()
         self.assertEqual(len(averages), 435)
-        self.assertEqual(len(records), 1680)
+        self.assertEqual(len(records), 1699)
         statuses = [r["poll_avg_status"] for r in averages]
         self.assertEqual(statuses.count("available"), 111)
         me = next(r for r in averages if r["district_id"] == "ME-02")

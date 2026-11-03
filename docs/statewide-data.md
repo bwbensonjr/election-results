@@ -69,7 +69,7 @@ Reasons are applied in this order: `out_of_cycle`, `not_general`, `unknown_race`
 
 `2026/polls/statewide-poll-average-inputs.csv` logs every question in both snapshots: `office` and `race_id`, then the House log's columns without `district` and `district_id`. As with the House, the weighted mean of one race's included margins, using the logged weights, reproduces its published margin.
 
-In the November 2, 2026 snapshot, 60 of 71 races have an average: 28 Senate and 32 governor. Six Senate races have no polls (CO, DE, NJ, OR, WV, WY), and Virginia's only Senate question is a 2025 Warner vs. Youngkin hypothetical (`no_eligible_polls`). Hawaii and Wyoming have no governor polls, Colorado's only governor question is from 2025, and Alaska's governor race has no principal matchup.
+In the November 3, 2026 snapshot, 62 of 71 races have an average: 29 Senate and 33 governor. Five Senate races have no polls (DE, NJ, OR, WV, WY), and Virginia's only Senate question is a 2025 Warner vs. Youngkin hypothetical (`no_eligible_polls`). Hawaii and Wyoming have no governor polls, and Alaska's governor race has no principal matchup.
 
 ### Limitations
 
@@ -133,4 +133,4 @@ for r in sorted(senate, key=lambda r: abs(float(r["poll_avg_dem_margin_pp"]))):
     print(r["race_id"], r["poll_avg_matchup_basis"], r["poll_avg_dem_margin_pp"], f"{overperformance:+.1f}")
 ```
 
-In the November 2, 2026 snapshot, the six closest Senate averages are Iowa (+0.16), Louisiana (-0.43), Nebraska (Osborn vs. Ricketts, -1.42), South Carolina (-1.61), Alaska (+2.55), and Kansas (+2.91). Each runs 13 to 22 points ahead of its state's 2024 presidential margin. These are first-round polling averages, not forecasts, and several rest on few polls; check `poll_count`.
+In the November 3, 2026 snapshot, the six closest Senate averages are Louisiana (-0.43), Iowa (+0.47), South Carolina (-1.63), Nebraska (Osborn vs. Ricketts, -1.82), Alaska (+2.50), and Texas (+3.22). Each runs 13 to 22 points ahead of its state's 2024 presidential margin. These are first-round polling averages, not forecasts, and several rest on few polls; check `poll_count`.

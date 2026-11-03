@@ -856,6 +856,7 @@ d9edc00c-6615-49f4-9afc-e5aa6a53e9a7,1a509bcb-369f-4f6a-bc64-0541a538a7ec,US,,,g
 d9edc00c-6615-49f4-9afc-e5aa6a53e9a7,4498d33c-96a4-488b-adb8-fca7a1f37176,US,,,general,RMG Research,2026-10-13,lv,,,,,,,,,False,nationwide,,,,,,
 197bca5d-f316-4725-b967-ddcd308d43c1,84807081-cc43-44e5-b4a0-5c3606002e2d,US,,,general,ActiVote,2026-10-14,lv,1000,,,,,,,,False,nationwide,,,,,,
 1910236f-9989-449e-8c35-bd3ffa385ac4,2eb8b5df-d837-42ee-b24a-291d7db12db4,US,,,general,CNN/SSRS,2026-10-18,rv,1206,,,,,,,,False,nationwide,,,,,,
+4f3d7bb4-fac9-4d13-aa12-12971392b48a,bcc28d27-3a97-42a3-ad04-4dd052cfc6c8,US,,,general,Change Research,2026-10-18,rv,2240,,,,,,,,False,nationwide,,,,,,
 6dfe3c8e-6bf3-4366-95aa-dd0b03eebc6c,39230780-de7f-48c4-ab1a-2830fa86fb05,US,,,general,Hart Research Associates/Public Opinion Strategies,2026-10-18,rv,1000,,,,,,,,False,nationwide,,,,,,
 eea45d78-eb39-4836-9819-ab58a933cdb7,005d0308-d4a0-4fb7-945e-9de9091eed3b,US,,,general,Morning Consult,2026-10-18,lv,17706,,,,,,,,False,nationwide,,,,,,
 9cece65d-620b-4a29-ba30-f94f00e0c0b0,136527f3-98f4-4f51-b6fa-39ed9a2ea9a4,US,,,general,Ipsos,2026-10-19,a,1679,,,,,,,,False,nationwide,,,,,,
@@ -899,44 +900,55 @@ db237858-2745-45cb-90c9-1a24b1161d06,f8da0cd3-b133-4489-bb4b-3780c314aa0e,US,,,g
 04053aa5-3fee-407a-8628-1f4e4ff038b9,cc4a35fe-7cd3-444b-b772-4372e39c9434,US,,,general,Ipsos,2026-10-28,lv,1209,,,,,,,,False,nationwide,,,,,,
 07bc5c84-fd75-4eab-b04c-6970b1f32c53,12e5464a-fa10-40f0-a87a-15c8ecb393d0,US,,,general,The Honest Poll,2026-10-29,rv,1290,,,,,,,,False,nationwide,,,,,,
 07bc5c84-fd75-4eab-b04c-6970b1f32c53,2ffaa021-779a-4e5e-a0a0-02a0efee677b,US,,,general,The Honest Poll,2026-10-29,lv,1158,,,,,,,,False,nationwide,,,,,,
+2f272977-578b-432e-a3d2-3a8282f8797c,086aac04-af31-4493-a3b4-d6693977b1ae,US,,,general,YouGov,2026-10-30,lv,3908,,,,,,,,False,nationwide,,,,,,
+98e6e19d-90c9-4ed9-8eff-be7511d5def7,b3c4aaae-0d8f-485a-96fa-8d970107207d,US,,,general,TIPP Insights,2026-10-30,lv,1158,,,,,,,,False,nationwide,,,,,,
 b42ce1dd-155d-4705-9bb4-dc23234fa2b5,f4d45635-6016-4003-b854-50f9241559b5,US,,,general,Hart Research Associates/Public Opinion Strategies,2026-10-30,rv,1000,,,,,,,,False,nationwide,,,,,,
 b606d0d2-4431-44ba-a917-409b7f7367ec,2f2a6739-f7c1-487c-bb20-725ceab9d4a3,US,,,general,ActiVote,2026-10-30,lv,2000,,,,,,,,False,nationwide,,,,,,
 cffea967-f365-47a4-ab0b-1017eddd4030,041f66e6-534e-4833-af4f-0ea093ea5464,US,,,general,Big Data Poll,2026-10-30,lv,3214,,,,,,,,False,nationwide,,,,,,
 cffea967-f365-47a4-ab0b-1017eddd4030,e2c8e76d-2eb0-4a69-b656-1ace57556eb2,US,,,general,Big Data Poll,2026-10-30,rv,3418,,,,,,,,False,nationwide,,,,,,
+19b79352-7109-4aaa-b799-2ed3b467e3b2,24bd6fb2-1a1d-4bb5-8cc8-71c135a061b2,US,,,general,Focaldata,2026-11-01,lv,2090,,,,,,,,False,nationwide,,,,,,
+19b79352-7109-4aaa-b799-2ed3b467e3b2,43a14a62-bb19-4db0-8770-4787970ed934,US,,,general,Focaldata,2026-11-01,a,2444,,,,,,,,False,nationwide,,,,,,
+19b79352-7109-4aaa-b799-2ed3b467e3b2,fd152be6-fa56-4440-8675-0d39db0fa46c,US,,,general,Focaldata,2026-11-01,rv,2163,,,,,,,,False,nationwide,,,,,,
+3bb2626d-67e3-4219-b58a-b5a89cb3fe5a,d21d02cf-10e0-4a1f-8f03-ab919f8eac15,US,,,general,Morning Consult,2026-11-01,lv,16929,,,,,,,,False,nationwide,,,,,,
+dd7a5188-9604-411b-b895-8472c9a0b6cf,1f83be8c-d3ed-4f86-a3c5-fa5520670325,US,,,general,AtlasIntel,2026-11-01,a,3566,,,,,,,,False,nationwide,,,,,,
+15f97ae3-1cb5-4947-a3a7-45c0d9899585,d81847df-e060-43b0-a127-0079a1a5e966,US,,,general,John Zogby Strategies,2026-11-02,lv,1001,,,,,,,,False,nationwide,,,,,,
+a9616bee-7807-49fd-8259-072cdba5bea5,4d0fd3ce-d936-4d38-9a2a-8c282d4fa197,US,,,general,Ipsos,2026-11-02,lv,1212,,,,,,,,False,nationwide,,,,,,
+a9616bee-7807-49fd-8259-072cdba5bea5,7f8b5e3d-1d6e-43fa-b05a-22258b69f4da,US,,,general,Ipsos,2026-11-02,rv,1357,,,,,,,,False,nationwide,,,,,,
 1cb7cec3-d3fa-4974-9c0d-32629c10d681,39a3244f-4480-42ef-9946-47690c3aa794,AK,00,AK-AL,general,Data for Progress,2025-03-07,lv,1008,,,,,,,,False,non_nominee,,,,,,
 20ef28e6-5dec-48e3-8573-f26aaf7b91c1,b5405480-f234-420a-9fff-18b4e03da53e,AK,00,AK-AL,general,Data for Progress,2025-07-27,lv,678,,,,,,,,False,non_nominee,,,,,,
 2abdc064-3a16-4478-a841-23467c99f334,5bf2d7ff-4ed5-4d40-808a-e493cd34de04,AK,00,AK-AL,general,Data for Progress,2025-10-23,lv,823,,,,,,,,False,non_nominee,,,,,,
 9cb6e02e-12c1-4147-b7a0-1f4dbd94529e,790c5fb9-9aa6-4c80-870f-a36de662e58d,AK,00,AK-AL,general,Public Policy Polling,2026-02-12,lv,600,,IND,,,,,,False,non_nominee,,,,,,
-9cb6e02e-12c1-4147-b7a0-1f4dbd94529e,cfd70950-b448-414b-b6f7-6fb1c1a9a901,AK,00,AK-AL,general,Public Policy Polling,2026-02-12,lv,600,False,IND,Bill Hill,Nick Begich,37.00,41.00,-4.00,True,,260,0.000187,1.000000,1.000000,0.500000,0.000094
-edef3b32-7941-4cf6-9094-3096d38ad838,b7943b01-2d99-422f-b1f8-938878e6bfce,AK,00,AK-AL,general,Change Research,2026-03-20,lv,624,False,IND,Bill Hill,Nick Begich,12.98,44.78,-31.80,True,,224,0.000615,1.019804,1.000000,0.500000,0.000314
+9cb6e02e-12c1-4147-b7a0-1f4dbd94529e,cfd70950-b448-414b-b6f7-6fb1c1a9a901,AK,00,AK-AL,general,Public Policy Polling,2026-02-12,lv,600,False,IND,Bill Hill,Nick Begich,37.00,41.00,-4.00,True,,262,0.000176,1.000000,1.000000,0.500000,0.000088
+edef3b32-7941-4cf6-9094-3096d38ad838,b7943b01-2d99-422f-b1f8-938878e6bfce,AK,00,AK-AL,general,Change Research,2026-03-20,lv,624,False,IND,Bill Hill,Nick Begich,12.98,44.78,-31.80,True,,226,0.000576,1.019804,1.000000,0.500000,0.000294
 b613d76c-3e02-43de-aa2a-d6323fbd68fe,fb046050-b1a7-4ffb-b876-ddf52e3c894a,AK,00,AK-AL,primary,Alaska Survey Research,2026-04-19,lv,1923,,,,,,,,False,not_general,,,,,,
 24511bba-225f-4c6f-91fc-a51dcc039b64,5cf95b15-b16c-4165-a9ab-f4a0a99d2cbb,AK,00,AK-AL,primary,Alaska Survey Research,2026-05-17,lv,1401,,,,,,,,False,not_general,,,,,,
 4526fc3d-7f56-4e8f-9b98-5981c216ed79,5362d1ba-458f-4bd7-ba06-9357bd7a997e,AK,00,AK-AL,general,Tavern Research,2026-05-27,lv,452,,IND,,,,,,False,non_nominee,,,,,,
 4526fc3d-7f56-4e8f-9b98-5981c216ed79,9886c42b-6a71-4914-bae2-4cbde16d0597,AK,00,AK-AL,general,Tavern Research,2026-05-27,lv,452,,IND,,,,,,False,non_nominee,,,,,,
-4526fc3d-7f56-4e8f-9b98-5981c216ed79,b0614ddc-1087-47b1-9d0d-d5d23830362a,AK,00,AK-AL,general,Tavern Research,2026-05-27,lv,452,False,IND,Bill Hill,Nick Begich,48.00,52.00,-4.00,True,,156,0.005805,0.867948,1.000000,0.500000,0.002519
+4526fc3d-7f56-4e8f-9b98-5981c216ed79,b0614ddc-1087-47b1-9d0d-d5d23830362a,AK,00,AK-AL,general,Tavern Research,2026-05-27,lv,452,False,IND,Bill Hill,Nick Begich,48.00,52.00,-4.00,True,,158,0.005434,0.867948,1.000000,0.500000,0.002358
 8e054071-9b5e-46d0-a921-ecc4f3c1737e,9d3bf4c0-c6e4-40e9-831f-13906c496766,AK,00,AK-AL,general,The New York Times/Siena University,2026-06-29,lv,593,,,,,,,,False,non_nominee,,,,,,
-def7f487-2bd9-410b-b135-c0d6a7de191a,44fd1944-b2bb-4d24-ae87-6ddc67e3644a,AK,00,AK-AL,general,The Bullfinch Group,2026-07-16,lv,546,False,IND,Bill Hill,Nick Begich,20.00,46.00,-26.00,True,,106,0.030235,0.953939,0.707107,0.500000,0.010197
-7ec6f01b-349f-4e8a-b058-78704ccaaace,6989a45e-09de-4143-99e2-8eb8993c0f8c,AK,00,AK-AL,general,Data for Progress,2026-08-04,lv,605,False,,Bill Hill,Nick Begich,37.00,47.00,-10.00,True,,87,0.056608,1.004158,0.707107,1.000000,0.040194
+def7f487-2bd9-410b-b135-c0d6a7de191a,44fd1944-b2bb-4d24-ae87-6ddc67e3644a,AK,00,AK-AL,general,The Bullfinch Group,2026-07-16,lv,546,False,IND,Bill Hill,Nick Begich,20.00,46.00,-26.00,True,,108,0.028304,0.953939,0.707107,0.500000,0.009546
+7ec6f01b-349f-4e8a-b058-78704ccaaace,6989a45e-09de-4143-99e2-8eb8993c0f8c,AK,00,AK-AL,general,Data for Progress,2026-08-04,lv,605,False,,Bill Hill,Nick Begich,37.00,47.00,-10.00,True,,89,0.052991,1.004158,0.707107,1.000000,0.037626
 25f3873e-a991-4492-a3a3-aa1c6b9c0d71,7210ea61-d522-4c45-96fc-e43e5d075808,AK,00,AK-AL,general,Alaska Survey Research,2026-08-05,lv,1371,,,,,,,,False,non_nominee,,,,,,
 25f3873e-a991-4492-a3a3-aa1c6b9c0d71,b8117df0-b61f-42cd-a523-c6d10640c672,AK,00,AK-AL,general,Alaska Survey Research,2026-08-05,lv,1371,,,,,,,,False,non_nominee,,,,,,
-2f3e0cb7-97d9-49ab-b495-f74c7cb5f55f,8740596c-0779-4b9b-9dc7-70b5fe205f1a,AK,00,AK-AL,general,GBAO,2026-08-05,lv,500,False,IND,Bill Hill,Nick Begich,42.00,46.00,-4.00,True,,86,0.058507,0.912871,1.000000,0.500000,0.026705
+2f3e0cb7-97d9-49ab-b495-f74c7cb5f55f,8740596c-0779-4b9b-9dc7-70b5fe205f1a,AK,00,AK-AL,general,GBAO,2026-08-05,lv,500,False,IND,Bill Hill,Nick Begich,42.00,46.00,-4.00,True,,88,0.054770,0.912871,1.000000,0.500000,0.024999
 5644eb93-7595-4afd-bacf-2fd24589ef3b,41475eb0-d6aa-458c-8c34-29e2fe9047f2,AK,00,AK-AL,general,Alaska Survey Research,2026-08-23,lv,1872,,,,,,,,False,non_nominee,,,,,,
-0382125c-8525-4d78-bfc6-44f54d037073,2c149de6-669a-4ef9-9b95-499f86620427,AK,00,AK-AL,general,The Bullfinch Group,2026-09-06,lv,820,False,IND,Bill Hill,Nick Begich,36.60,44.20,-7.60,True,,54,0.168238,1.169045,0.707107,0.500000,0.069536
+0382125c-8525-4d78-bfc6-44f54d037073,2c149de6-669a-4ef9-9b95-499f86620427,AK,00,AK-AL,general,The Bullfinch Group,2026-09-06,lv,820,False,IND,Bill Hill,Nick Begich,36.60,44.20,-7.60,True,,56,0.157490,1.169045,0.707107,0.500000,0.065094
 0382125c-8525-4d78-bfc6-44f54d037073,fe23cfb0-52ed-4bcc-9ac0-ff2a0d64c66d,AK,00,AK-AL,general,The Bullfinch Group,2026-09-06,lv,820,,IND,,,,,,False,non_nominee,,,,,,
 a1d3551f-cc1f-40ee-8d08-c7fdc1872796,380d2ce9-3596-4ac3-a84a-161d3c06e9c3,AK,00,AK-AL,general,Fabrizio Ward/Impact Research,2026-09-11,lv,800,,,,,,,,False,non_nominee,,,,,,
 a1d3551f-cc1f-40ee-8d08-c7fdc1872796,8c8707af-d6ef-470e-a7ef-2f7559d7c504,AK,00,AK-AL,general,Fabrizio Ward/Impact Research,2026-09-11,lv,800,,,,,,,,False,non_nominee,,,,,,
-a1d3551f-cc1f-40ee-8d08-c7fdc1872796,f081288b-dc74-4113-96a1-4606bbc9badc,AK,00,AK-AL,general,Fabrizio Ward/Impact Research,2026-09-11,lv,800,False,,Bill Hill,Nick Begich,31.00,45.00,-14.00,True,,49,0.198425,1.154701,1.000000,1.000000,0.229122
-c115983e-1ed7-42e1-bd8c-92692471a053,10f76672-a41f-43bd-b374-c33d41b7c2f5,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-01,lv,504,False,,Bill Hill,Nick Begich,35.06,46.59,-11.53,True,,29,0.383965,0.916515,0.707107,1.000000,0.248838
+a1d3551f-cc1f-40ee-8d08-c7fdc1872796,f081288b-dc74-4113-96a1-4606bbc9badc,AK,00,AK-AL,general,Fabrizio Ward/Impact Research,2026-09-11,lv,800,False,,Bill Hill,Nick Begich,31.00,45.00,-14.00,True,,51,0.185749,1.154701,1.000000,1.000000,0.214485
+c115983e-1ed7-42e1-bd8c-92692471a053,10f76672-a41f-43bd-b374-c33d41b7c2f5,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-01,lv,504,False,,Bill Hill,Nick Begich,35.06,46.59,-11.53,True,,31,0.359437,0.916515,0.707107,1.000000,0.232942
 c115983e-1ed7-42e1-bd8c-92692471a053,b15fface-5ca7-4991-b260-7db3774a212c,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-01,lv,487,,,,,,,,False,non_nominee,,,,,,
 c115983e-1ed7-42e1-bd8c-92692471a053,ea630427-36f6-43f4-83f6-8570b043002e,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-01,lv,476,,,,,,,,False,non_nominee,,,,,,
 e5216fed-b2a6-4670-9dae-7707e2912184,bb141d58-801c-42b9-ba34-607a6bb58a71,AK,00,AK-AL,general,Alaska Survey Research,2026-10-03,lv,1512,,,,,,,,False,non_nominee,,,,,,
 e5216fed-b2a6-4670-9dae-7707e2912184,c3d540b9-4726-49d3-8de0-608fa29b16ad,AK,00,AK-AL,general,Alaska Survey Research,2026-10-03,lv,1512,,,,,,,,False,non_nominee,,,,,,
 fa49898d-55a4-4393-962f-1cd6cfe135c3,74e74bba-5c5e-4149-a627-55c8f1872a1a,AK,00,AK-AL,general,Data for Progress,2026-10-16,lv,659,,,,,,,,False,non_nominee,,,,,,
 fa49898d-55a4-4393-962f-1cd6cfe135c3,843ff988-f9ae-4553-8aa9-3b87af20e024,AK,00,AK-AL,general,Data for Progress,2026-10-16,lv,668,,,,,,,,False,non_nominee,,,,,,
-fa49898d-55a4-4393-962f-1cd6cfe135c3,c26d3d74-9449-428e-a81e-65b1376c5a57,AK,00,AK-AL,general,Data for Progress,2026-10-16,lv,694,False,,Bill Hill,Nick Begich,42.00,48.00,-6.00,True,,14,0.629961,1.075484,0.707107,1.000000,0.479074
+fa49898d-55a4-4393-962f-1cd6cfe135c3,c26d3d74-9449-428e-a81e-65b1376c5a57,AK,00,AK-AL,general,Data for Progress,2026-10-16,lv,694,False,,Bill Hill,Nick Begich,42.00,48.00,-6.00,True,,16,0.589717,1.075484,0.707107,1.000000,0.448470
 a0d99ae7-a6c2-430d-ad8f-92e91d659b66,15a4224d-bafd-41e2-9954-ae6a323a6fd7,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-30,lv,576,,,,,,,,False,non_nominee,,,,,,
 a0d99ae7-a6c2-430d-ad8f-92e91d659b66,521dd9f5-976f-4272-9d61-08322710747e,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-30,lv,562,,,,,,,,False,non_nominee,,,,,,
-a0d99ae7-a6c2-430d-ad8f-92e91d659b66,604ee3d1-9988-440c-ba9f-c8d91d0bf6f4,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-30,lv,610,False,,Bill Hill,Nick Begich,37.20,44.00,-6.80,True,,0,1.000000,1.008299,0.707107,1.000000,0.712975
+a0d99ae7-a6c2-430d-ad8f-92e91d659b66,604ee3d1-9988-440c-ba9f-c8d91d0bf6f4,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-30,lv,610,False,,Bill Hill,Nick Begich,37.20,44.00,-6.80,True,,2,0.936118,1.008299,0.707107,1.000000,0.667429
+3aa7e2be-bfad-4a59-80ba-a7c5add4aeea,563bb6e7-21b5-4c84-b936-5af13f5727de,AK,00,AK-AL,general,AtlasIntel,2026-11-01,lv,522,False,,Bill Hill,Nick Begich,46.60,46.50,0.10,True,,0,1.000000,0.932738,1.000000,1.000000,0.932738
 7f2ef24d-b30f-4971-93d8-2d90a1131a00,cdb6a730-ea58-455e-9460-f22021af2b84,AL,02,AL-02,special primary,Peak Insights,2026-06-09,lv,400,,,,,,,,False,not_general,,,,,,
 c51b7de5-0b90-464c-8778-459c24d25b3b,47e38a21-e881-4974-924a-a60d1ec24911,AL,02,AL-02,general,Impact Research,2026-06-25,lv,400,False,DEM,Shomari C. Figures,Rhett Marques,44.00,45.00,-1.00,True,,122,0.017830,0.816497,1.000000,0.500000,0.007279
 ea557308-74fd-4024-b845-b5fd1baa6132,c4a2c64f-c96a-47f5-a0ca-9629fb0d232a,AL,02,AL-02,general,DCCC Targeting Team,2026-07-30,lv,421,False,DEM,Shomari C. Figures,Rhett Marques,46.00,46.00,0.00,True,,87,0.056608,0.837655,1.000000,0.500000,0.023709
@@ -985,6 +997,7 @@ b474b585-19e7-4a33-88eb-bebcfc175bcb,ee93d66e-e0de-4483-99a0-36553db97c2c,CA,06,
 0ea12cd9-e9db-4bda-94c7-84de330d55ec,b7f9a04e-07d3-4653-9a58-2a3d47aa412b,CA,07,CA-07,primary,Upswing Research,2026-03-23,lv,400,,DEM,,,,,,False,not_general,,,,,,
 856828ec-524b-4ed8-b44f-0eec506fe6d3,8d87ef0a-0134-4acd-9743-e84d3d0117ae,CA,07,CA-07,primary,Data for Progress,2026-05-05,lv,572,,DEM,,,,,,False,not_general,,,,,,
 a7657866-781c-41c9-9d22-0fe05a2e2091,da178f42-e718-4ba0-a763-54e76528ed41,CA,07,CA-07,general,Data for Progress,2026-08-21,lv,651,,DEM,,,,,,False,no_dem_rep_field,,,,,,
+4b9bda6c-8271-42bc-adf6-286f4078ae6f,6d14be3c-3229-41bc-85ff-fb582f584172,CA,07,CA-07,general,USC Democracy and Fair Elections Lab,2026-11-01,lv,442,,,,,,,,False,no_dem_rep_field,,,,,,
 8d32f51e-31d7-4159-8805-a204e2127727,2ee73a4b-9cc0-48c1-b978-f580bb54db9c,CA,11,CA-11,primary,EMC Research,2025-09-18,lv,500,,DEM,,,,,,False,not_general,,,,,,
 51d6beee-6fab-4c97-9d83-2ba5200e1b18,2b4105be-0ca4-4989-9123-07146545f9b9,CA,11,CA-11,general,Beacon Research,2025-09-20,rv,600,,DEM,,,,,,False,no_dem_rep_field,,,,,,
 51d6beee-6fab-4c97-9d83-2ba5200e1b18,a95a9e37-dab3-4354-8dd4-9153c30f9be8,CA,11,CA-11,primary,Beacon Research,2025-09-20,rv,600,,DEM,,,,,,False,not_general,,,,,,
@@ -1225,7 +1238,8 @@ e4752a4d-2349-4074-acef-5c0de1730aeb,c55f3216-dd70-4ff5-9ee4-0527a911889a,MD,06,
 831fb106-2218-45d9-bb61-e5a1c341a0ef,7dab68dc-c0fb-45b2-965a-ddde41f31626,MD,06,MD-06,primary,Hart Research Associates,2026-06-04,lv,500,,DEM,,,,,,False,not_general,,,,,,
 873f6921-73f1-4f62-81fa-305a7caceb5c,794eb53c-5102-4604-98a6-a47787eecc48,MD,06,MD-06,primary,Global Strategy Group,2026-06-11,lv,500,,DEM,,,,,,False,not_general,,,,,,
 7bac6163-a4b1-4378-872d-9e3247a9f447,4d68afb4-b6ac-464c-b5f0-d31c230b52df,ME,01,ME-01,primary,University of New Hampshire,2026-05-25,lv,185,,,,,,,,False,not_general,,,,,,
-f25eb113-894c-4eaa-b591-a9257b79e807,51fde33d-e0b6-4f77-a618-6ca8277d952e,ME,01,ME-01,general,University of New Hampshire,2026-09-21,lv,657,False,,Chellie Pingree,Ronald C. Russell,57.00,35.00,22.00,True,,0,1.000000,1.046422,1.000000,1.000000,1.046422
+f25eb113-894c-4eaa-b591-a9257b79e807,51fde33d-e0b6-4f77-a618-6ca8277d952e,ME,01,ME-01,general,University of New Hampshire,2026-09-21,lv,657,False,,Chellie Pingree,Ronald C. Russell,57.00,35.00,22.00,True,,40,0.267060,1.046422,0.707107,1.000000,0.197607
+874e66b5-2a4c-4aca-98bf-0a195be794af,38da3cc4-c8cf-4510-8e06-9b8f3d351fbd,ME,01,ME-01,general,University of New Hampshire,2026-10-31,lv,839,False,,Chellie Pingree,Ronald C. Russell,65.00,32.00,33.00,True,,0,1.000000,1.182511,0.707107,1.000000,0.836162
 fb7e172d-fdbc-4ef1-b4b9-de046036c933,bc01452c-b04a-4e9e-8572-60f00ef4db0d,ME,02,ME-02,general,Ragnar Research Partners,2025-04-15,lv,400,,REP,,,,,,False,non_nominee,,,,,,
 61637f40-79d4-4b9a-9b0b-256aec63804e,9a23682e-9ce8-43d3-b2f5-b122daffad4b,ME,02,ME-02,general,Mellman Group,2025-06-10,lv,400,,DEM,,,,,,False,non_nominee,,,,,,
 1a3cbc7a-9ae3-4bcd-a2dc-3a59cfc406c8,62d148c5-c4f4-46a1-bfbc-324182f6d800,ME,02,ME-02,general,University of New Hampshire,2025-06-23,a,394,,,,,,,,False,non_nominee,,,,,,
@@ -1233,26 +1247,27 @@ fb7e172d-fdbc-4ef1-b4b9-de046036c933,bc01452c-b04a-4e9e-8572-60f00ef4db0d,ME,02,
 15757c4d-b890-4852-b6f8-3011deda6800,3489bc74-0310-46f2-ab8b-796f92572573,ME,02,ME-02,general,Pan Atlantic SMS Group,2025-12-07,lv,387,,DEM,,,,,,False,non_nominee,,,,,,
 15757c4d-b890-4852-b6f8-3011deda6800,38544067-71e1-49fb-a9b5-7332485cf4bd,ME,02,ME-02,primary,Pan Atlantic SMS Group,2025-12-07,lv,145,,DEM,,,,,,False,not_general,,,,,,
 5689d9df-5f0f-4060-bbe2-6543a6a67a9e,588acc12-b1d5-4ae6-a8f7-ed376e93e45b,ME,02,ME-02,general,University of New Hampshire,2026-02-16,lv,520,,,,,,,,False,non_nominee,,,,,,
-5689d9df-5f0f-4060-bbe2-6543a6a67a9e,816b9220-928f-482b-8fdf-4dcf0d632784,ME,02,ME-02,general,University of New Hampshire,2026-02-16,lv,520,False,,Matthew G. Dunlap,Paul R. LePage,46.00,47.00,-1.00,True,,240,0.000363,0.930949,0.707107,1.000000,0.000239
+5689d9df-5f0f-4060-bbe2-6543a6a67a9e,816b9220-928f-482b-8fdf-4dcf0d632784,ME,02,ME-02,general,University of New Hampshire,2026-02-16,lv,520,False,,Matthew G. Dunlap,Paul R. LePage,46.00,47.00,-1.00,True,,257,0.000207,0.930949,0.577350,1.000000,0.000111
 5689d9df-5f0f-4060-bbe2-6543a6a67a9e,ec9a937a-861c-4a2d-acb5-beab8ed507b2,ME,02,ME-02,general,University of New Hampshire,2026-02-16,lv,520,,,,,,,,False,non_nominee,,,,,,
 e15731a0-b008-4f62-bbbb-eb3f3eb62701,d13a6fda-c3b9-4b35-a71f-35637f435d70,ME,02,ME-02,general,Upswing Research,2026-02-27,lv,403,,DEM,,,,,,False,non_nominee,,,,,,
 d757f1c9-62ce-48b2-9bb8-763f406a416f,f525692e-47df-4f2c-8f12-d5d9fc940cf8,ME,02,ME-02,primary,Pan Atlantic SMS Group,2026-03-02,lv,144,,,,,,,,False,not_general,,,,,,
 d31c043c-1f69-4981-a9b4-20eaeae206b3,af5bbcaa-9c19-4072-9c59-4a7ec8788a26,ME,02,ME-02,primary,Tulchin Research,2026-03-08,lv,400,,DEM,,,,,,False,not_general,,,,,,
 d31c043c-1f69-4981-a9b4-20eaeae206b3,edde080f-025a-4382-8cbf-e0345e27aa8c,ME,02,ME-02,primary,Tulchin Research,2026-03-08,lv,400,,DEM,,,,,,False,not_general,,,,,,
 ac03c1df-2f0d-4fca-b638-ba251f92c128,1ce8dd95-98af-44ef-a7d7-1cccd0a56d1b,ME,02,ME-02,general,co/efficient,2026-04-28,lv,918,,REP,,,,,,False,non_nominee,,,,,,
-ac03c1df-2f0d-4fca-b638-ba251f92c128,3ca501d1-cb7f-407a-8ba0-938e300e8d3b,ME,02,ME-02,general,co/efficient,2026-04-28,lv,918,False,REP,Matthew G. Dunlap,Paul R. LePage,40.00,50.00,-10.00,True,,169,0.003779,1.236932,1.000000,0.500000,0.002337
+ac03c1df-2f0d-4fca-b638-ba251f92c128,3ca501d1-cb7f-407a-8ba0-938e300e8d3b,ME,02,ME-02,general,co/efficient,2026-04-28,lv,918,False,REP,Matthew G. Dunlap,Paul R. LePage,40.00,50.00,-10.00,True,,186,0.002156,1.236932,1.000000,0.500000,0.001334
 ac03c1df-2f0d-4fca-b638-ba251f92c128,b3cf21ea-4ad7-4c91-adb3-aab9343494a5,ME,02,ME-02,general,co/efficient,2026-04-28,lv,918,,REP,,,,,,False,not_head_to_head,,,,,,
 09a21c73-2dcf-4c37-8c14-fa62361b2c7e,0e5a39a4-2a54-4b14-9728-63828eeacba5,ME,02,ME-02,general,Pan Atlantic SMS Group,2026-05-18,lv,418,,DEM,,,,,,False,non_nominee,,,,,,
 09a21c73-2dcf-4c37-8c14-fa62361b2c7e,4e777c04-1d30-4112-874f-30990a58b10c,ME,02,ME-02,primary,Pan Atlantic SMS Group,2026-05-18,lv,169,,DEM,,,,,,False,not_general,,,,,,
 7bac6163-a4b1-4378-872d-9e3247a9f447,2d6d6ea2-d7fe-418f-8b25-2699f9fd53fe,ME,02,ME-02,primary,University of New Hampshire,2026-05-25,lv,238,,,,,,,,False,not_general,,,,,,
 802de4de-1410-4399-a912-2c29561512df,e32eedc8-2459-4c31-a133-b6917a6f2609,ME,02,ME-02,primary,SurveyUSA,2026-06-03,lv,190,,,,,,,,False,not_general,,,,,,
-323bf26d-5b35-4615-bfab-ae10a8f170a1,410f904a-5cee-4936-aafc-79817177057f,ME,02,ME-02,general,Tulchin Research,2026-07-16,lv,600,False,DEM,Matthew G. Dunlap,Paul R. LePage,49.00,48.00,1.00,True,,90,0.051271,1.000000,0.577350,0.500000,0.014801
-1f6ed24d-8b93-4444-a8bc-f39f1c65f819,759998b6-19b4-41d8-9581-cd63c8762c14,ME,02,ME-02,general,DCCC Targeting Team,2026-08-13,lv,621,False,DEM,Matthew G. Dunlap,Paul R. LePage,48.00,49.00,-1.00,True,,62,0.129195,1.017349,1.000000,0.500000,0.065718
-b2619401-96a2-4c9e-847a-530e24cf3495,83c0b726-dd53-4395-b72f-22453fd4857f,ME,02,ME-02,general,Impact Research,2026-09-12,lv,500,False,DEM,Matthew G. Dunlap,Paul R. LePage,49.00,49.00,0.00,True,,32,0.347766,0.912871,1.000000,0.500000,0.158733
+323bf26d-5b35-4615-bfab-ae10a8f170a1,410f904a-5cee-4936-aafc-79817177057f,ME,02,ME-02,general,Tulchin Research,2026-07-16,lv,600,False,DEM,Matthew G. Dunlap,Paul R. LePage,49.00,48.00,1.00,True,,107,0.029254,1.000000,0.577350,0.500000,0.008445
+1f6ed24d-8b93-4444-a8bc-f39f1c65f819,759998b6-19b4-41d8-9581-cd63c8762c14,ME,02,ME-02,general,DCCC Targeting Team,2026-08-13,lv,621,False,DEM,Matthew G. Dunlap,Paul R. LePage,48.00,49.00,-1.00,True,,79,0.073715,1.017349,1.000000,0.500000,0.037497
+b2619401-96a2-4c9e-847a-530e24cf3495,83c0b726-dd53-4395-b72f-22453fd4857f,ME,02,ME-02,general,Impact Research,2026-09-12,lv,500,False,DEM,Matthew G. Dunlap,Paul R. LePage,49.00,49.00,0.00,True,,49,0.198425,0.912871,1.000000,0.500000,0.090568
 b2619401-96a2-4c9e-847a-530e24cf3495,f2697651-a9f0-48ff-b800-6b849d4b6266,ME,02,ME-02,general,Impact Research,2026-09-12,lv,500,,DEM,,,,,,False,not_head_to_head,,,,,,
-f25eb113-894c-4eaa-b591-a9257b79e807,62fc2a3e-a443-43c6-9b2d-14ceb4893309,ME,02,ME-02,general,University of New Hampshire,2026-09-21,lv,622,False,,Matthew G. Dunlap,Paul R. LePage,51.00,45.00,6.00,True,,23,0.468059,1.018168,0.707107,1.000000,0.336981
-83712527-4e19-4c8f-9e44-b3c662594205,fe35ff91-39fc-49ed-a8c3-34026ca63141,ME,02,ME-02,general,Tulchin Research,2026-09-30,lv,500,False,DEM,Matthew G. Dunlap,Paul R. LePage,50.00,48.00,2.00,True,,14,0.629961,0.912871,0.577350,0.500000,0.166009
-a126058f-5842-4b2d-9251-ba3e0f2874bf,818d190f-5c21-41ef-a236-17618365416f,ME,02,ME-02,general,Tulchin Research,2026-10-14,lv,500,False,DEM,Matthew G. Dunlap,Paul R. LePage,50.00,46.00,4.00,True,,0,1.000000,0.912871,0.577350,0.500000,0.263523
+f25eb113-894c-4eaa-b591-a9257b79e807,62fc2a3e-a443-43c6-9b2d-14ceb4893309,ME,02,ME-02,general,University of New Hampshire,2026-09-21,lv,622,False,,Matthew G. Dunlap,Paul R. LePage,51.00,45.00,6.00,True,,40,0.267060,1.018168,0.577350,1.000000,0.156989
+83712527-4e19-4c8f-9e44-b3c662594205,fe35ff91-39fc-49ed-a8c3-34026ca63141,ME,02,ME-02,general,Tulchin Research,2026-09-30,lv,500,False,DEM,Matthew G. Dunlap,Paul R. LePage,50.00,48.00,2.00,True,,31,0.359437,0.912871,0.577350,0.500000,0.094720
+a126058f-5842-4b2d-9251-ba3e0f2874bf,818d190f-5c21-41ef-a236-17618365416f,ME,02,ME-02,general,Tulchin Research,2026-10-14,lv,500,False,DEM,Matthew G. Dunlap,Paul R. LePage,50.00,46.00,4.00,True,,17,0.570570,0.912871,0.577350,0.500000,0.150358
+874e66b5-2a4c-4aca-98bf-0a195be794af,99bb9b9d-1698-47ee-af9d-6938da9ea8d7,ME,02,ME-02,general,University of New Hampshire,2026-10-31,lv,793,False,,Matthew G. Dunlap,Paul R. LePage,47.00,52.00,-5.00,True,,0,1.000000,1.149638,0.577350,1.000000,0.663744
 f33c3514-2271-4179-93da-6545ef164594,fe110e9b-4432-46d0-a449-e5ab00165145,MI,04,MI-04,general,Public Policy Polling,2025-11-21,rv,559,False,,Sean McCann,Bill Huizenga,42.00,44.00,-2.00,True,,299,0.000052,0.965229,1.000000,1.000000,0.000050
 4bb2d1b7-92d7-483f-a42f-600217a627e3,5926a856-6a7b-42d8-b92a-a3a6f4f4956e,MI,04,MI-04,general,Ragnar Research Partners,2026-03-14,lv,400,,REP,,,,,,False,not_head_to_head,,,,,,
 4bb2d1b7-92d7-483f-a42f-600217a627e3,a45d8122-2cbe-416b-b3cb-9c1eecb3185b,MI,04,MI-04,general,Ragnar Research Partners,2026-03-14,lv,400,False,REP,Sean McCann,Bill Huizenga,42.00,48.00,-6.00,True,,186,0.002156,0.816497,1.000000,0.500000,0.000880
@@ -1297,26 +1312,28 @@ c62a0cbf-0bd3-4b90-a789-c8f9c187c5a3,0fcc3540-996f-4ec1-bc23-3b1978361b4a,MN,02,
 d1443dbf-115d-4805-bf7a-685b040b0291,67011c4c-6337-4301-812a-6faaefda4707,MN,08,MN-08,general,Public Policy Polling,2026-10-26,rv,585,,DEM,,,,,,False,not_head_to_head,,,,,,
 d1443dbf-115d-4805-bf7a-685b040b0291,7536c684-a2fb-42ed-9da6-5e03fa510fbe,MN,08,MN-08,general,Public Policy Polling,2026-10-26,rv,585,False,DEM,Trina Swanson,Pete Stauber,43.00,49.00,-6.00,True,,0,1.000000,0.987421,1.000000,0.500000,0.493710
 bf25c2a8-f921-49cb-a67e-7765fba4d9fd,b29befae-70c8-47d4-9a01-9e0bfd925ffc,MO,01,MO-01,primary,HIT Strategies,2026-02-23,lv,401,,DEM,,,,,,False,not_general,,,,,,
-cea07761-3ae5-401c-8ccc-2b061d4d6785,35fcf47d-2ee5-4210-87df-f2d52871500d,MO,02,MO-02,general,Remington,2026-09-15,lv,565,False,,Fred Wellman,Ann Wagner,42.00,43.00,-1.00,True,,35,0.314980,0.970395,1.000000,1.000000,0.305655
+cea07761-3ae5-401c-8ccc-2b061d4d6785,35fcf47d-2ee5-4210-87df-f2d52871500d,MO,02,MO-02,general,Remington,2026-09-15,lv,565,False,,Fred Wellman,Ann Wagner,42.00,43.00,-1.00,True,,47,0.211966,0.970395,1.000000,1.000000,0.205691
 cea07761-3ae5-401c-8ccc-2b061d4d6785,8ac157f5-bb52-495e-b2a2-4a83a63375a7,MO,02,MO-02,general,Remington,2026-09-15,lv,565,,,,,,,,False,not_head_to_head,,,,,,
-0bacc719-ee5f-45ac-9472-7dba621fd972,26276d29-8775-4ed8-b941-3cb64ac43b88,MO,02,MO-02,general,Emerson College,2026-10-14,lv,401,False,,Fred Wellman,Ann Wagner,51.00,46.00,5.00,True,,6,0.820335,0.817517,1.000000,1.000000,0.670638
-9bdf0057-1207-4fb5-ad44-87b755c78031,a72e597c-dd78-47aa-864b-3b9fe831a7a6,MO,02,MO-02,general,Public Policy Polling,2026-10-20,lv,600,True,DEM,Fred Wellman,Ann Wagner,46.00,45.00,1.00,True,,0,1.000000,1.000000,1.000000,0.500000,0.500000
+0bacc719-ee5f-45ac-9472-7dba621fd972,26276d29-8775-4ed8-b941-3cb64ac43b88,MO,02,MO-02,general,Emerson College,2026-10-14,lv,401,False,,Fred Wellman,Ann Wagner,51.00,46.00,5.00,True,,18,0.552045,0.817517,0.707107,1.000000,0.319121
+9bdf0057-1207-4fb5-ad44-87b755c78031,a72e597c-dd78-47aa-864b-3b9fe831a7a6,MO,02,MO-02,general,Public Policy Polling,2026-10-20,lv,600,True,DEM,Fred Wellman,Ann Wagner,46.00,45.00,1.00,True,,12,0.672950,1.000000,1.000000,0.500000,0.336475
+f401ff8a-e171-40fd-965d-609713aa35c5,9a86146d-d731-4edd-ae55-f57945769713,MO,02,MO-02,general,Emerson College,2026-11-01,lv,413,False,,Fred Wellman,Ann Wagner,49.50,48.70,0.80,True,,0,1.000000,0.829659,0.707107,1.000000,0.586657
 e51e7d84-b30f-4186-a1f1-07c0800edcfb,f823717b-642c-4cd5-8c37-f51fda0004bd,MT,01,MT-01,general,Tulchin Research,2025-11-25,lv,424,,DEM,,,,,,False,non_nominee,,,,,,
 0245de88-747f-4893-9c92-fd35eb70f977,73e8c905-d20f-4d20-85d2-8150cf0e2551,MT,01,MT-01,general,Peak Insights,2026-01-15,lv,400,,REP,,,,,,False,non_nominee,,,,,,
 0245de88-747f-4893-9c92-fd35eb70f977,957f3c8e-b3ac-4427-8c46-d0bf1e0df13b,MT,01,MT-01,general,Peak Insights,2026-01-15,lv,400,,REP,,,,,,False,non_nominee,,,,,,
 365e0e9b-7c6b-4d94-ad89-a16da2ccefdb,5bfd8476-29a9-4fa2-bda8-bd04b09b797f,MT,01,MT-01,primary,Tulchin Research,2026-04-01,lv,400,,DEM,,,,,,False,not_general,,,,,,
 f55d29d1-a799-4b26-8406-120005160eee,323b4500-3ecc-4267-9e6f-f51cee1f5d48,MT,01,MT-01,general,Upswing Research,2026-05-05,lv,401,,DEM,,,,,,False,non_nominee,,,,,,
-f55d29d1-a799-4b26-8406-120005160eee,5de721be-511b-4adc-8e23-4fdedf6e55d0,MT,01,MT-01,general,Upswing Research,2026-05-05,lv,401,False,DEM,Sam Forstag,Aaron Flint,43.00,48.00,-5.00,True,,169,0.003779,0.817517,1.000000,0.500000,0.001545
+f55d29d1-a799-4b26-8406-120005160eee,5de721be-511b-4adc-8e23-4fdedf6e55d0,MT,01,MT-01,general,Upswing Research,2026-05-05,lv,401,False,DEM,Sam Forstag,Aaron Flint,43.00,48.00,-5.00,True,,180,0.002629,0.817517,1.000000,0.500000,0.001075
 6f4f65a0-437e-4ea3-b0c0-06ebc4e20386,79b59120-810a-49f9-bf53-aa2b5b9a6880,MT,01,MT-01,general,Impact Research,2026-06-25,lv,500,,DEM,,,,,,False,not_head_to_head,,,,,,
-b611f1b0-7ca1-49c8-9c2d-29140802d492,997a4cc3-4ad3-4ce1-a20b-f5ad4a11d584,MT,01,MT-01,general,Rutgers-Eagleton,2026-09-07,rv,375,False,,Sam Forstag,Aaron Flint,41.00,42.00,-1.00,True,,44,0.234029,0.790569,1.000000,1.000000,0.185017
-a77ecdd0-89ee-4b0f-acd1-e0968f0a84a4,65f2b98a-53d8-4e9c-9208-9fa494910519,MT,01,MT-01,general,Public Policy Polling,2026-09-10,rv,536,False,DEM,Sam Forstag,Aaron Flint,45.00,43.00,2.00,True,,41,0.258389,0.945163,0.707107,0.500000,0.086345
+b611f1b0-7ca1-49c8-9c2d-29140802d492,997a4cc3-4ad3-4ce1-a20b-f5ad4a11d584,MT,01,MT-01,general,Rutgers-Eagleton,2026-09-07,rv,375,False,,Sam Forstag,Aaron Flint,41.00,42.00,-1.00,True,,55,0.162775,0.790569,1.000000,1.000000,0.128685
+a77ecdd0-89ee-4b0f-acd1-e0968f0a84a4,65f2b98a-53d8-4e9c-9208-9fa494910519,MT,01,MT-01,general,Public Policy Polling,2026-09-10,rv,536,False,DEM,Sam Forstag,Aaron Flint,45.00,43.00,2.00,True,,52,0.179718,0.945163,0.707107,0.500000,0.060056
 a77ecdd0-89ee-4b0f-acd1-e0968f0a84a4,a7c13f85-e6f2-4fc0-a93d-37f14784a0b5,MT,01,MT-01,general,Public Policy Polling,2026-09-10,rv,536,,DEM,,,,,,False,not_head_to_head,,,,,,
-e6c11e5c-af3c-4df0-a274-4e1594b1f455,2398dac0-2e1e-4709-b38f-4b616e1f81ee,MT,01,MT-01,general,Impact Research,2026-09-23,lv,500,False,DEM,Sam Forstag,Aaron Flint,47.00,44.00,3.00,True,,28,0.396850,0.912871,1.000000,0.500000,0.181137
+e6c11e5c-af3c-4df0-a274-4e1594b1f455,2398dac0-2e1e-4709-b38f-4b616e1f81ee,MT,01,MT-01,general,Impact Research,2026-09-23,lv,500,False,DEM,Sam Forstag,Aaron Flint,47.00,44.00,3.00,True,,39,0.276022,0.912871,1.000000,0.500000,0.125986
 08b59de1-c77b-418d-b8ce-f313b38f3880,60d81e7a-92d1-48a6-a5f5-d90479ccb42d,MT,01,MT-01,general,American Pulse Research & Polling,2026-09-24,lv,314,,,,,,,,False,not_head_to_head,,,,,,
-08b59de1-c77b-418d-b8ce-f313b38f3880,fca049e2-f331-475a-babb-9b42f601bf19,MT,01,MT-01,general,American Pulse Research & Polling,2026-09-24,lv,314,False,,Sam Forstag,Aaron Flint,45.40,45.90,-0.50,True,,27,0.410168,0.723418,1.000000,1.000000,0.296723
-003fc85c-bf21-4fad-8364-0b8617e82a84,4399594d-e5e0-4802-94ff-4a55dd92bd5b,MT,01,MT-01,general,Public Policy Polling,2026-10-14,lv,600,True,DEM,Sam Forstag,Aaron Flint,48.00,45.00,3.00,True,,7,0.793701,1.000000,0.707107,0.500000,0.280616
-7bcdc7fc-b3cd-474d-9021-b4241ed066fa,612af382-aa69-400b-a23b-8d53b0c03ac0,MT,01,MT-01,general,Emerson College,2026-10-14,lv,329,False,,Sam Forstag,Aaron Flint,50.00,46.00,4.00,True,,7,0.793701,0.740495,1.000000,1.000000,0.587732
-81be1cc2-3c9d-4786-9ee7-9d01bceb06e7,8a35f1b1-0eb3-4702-a753-60a3e6ec50fa,MT,01,MT-01,general,Montana State University Billings,2026-10-21,a,287,False,,Sam Forstag,Aaron Flint,49.00,32.00,17.00,True,,0,1.000000,0.691616,1.000000,1.000000,0.691616
+08b59de1-c77b-418d-b8ce-f313b38f3880,fca049e2-f331-475a-babb-9b42f601bf19,MT,01,MT-01,general,American Pulse Research & Polling,2026-09-24,lv,314,False,,Sam Forstag,Aaron Flint,45.40,45.90,-0.50,True,,38,0.285285,0.723418,1.000000,1.000000,0.206380
+003fc85c-bf21-4fad-8364-0b8617e82a84,4399594d-e5e0-4802-94ff-4a55dd92bd5b,MT,01,MT-01,general,Public Policy Polling,2026-10-14,lv,600,True,DEM,Sam Forstag,Aaron Flint,48.00,45.00,3.00,True,,18,0.552045,1.000000,0.707107,0.500000,0.195177
+7bcdc7fc-b3cd-474d-9021-b4241ed066fa,612af382-aa69-400b-a23b-8d53b0c03ac0,MT,01,MT-01,general,Emerson College,2026-10-14,lv,329,False,,Sam Forstag,Aaron Flint,50.00,46.00,4.00,True,,18,0.552045,0.740495,0.707107,1.000000,0.289056
+81be1cc2-3c9d-4786-9ee7-9d01bceb06e7,8a35f1b1-0eb3-4702-a753-60a3e6ec50fa,MT,01,MT-01,general,Montana State University Billings,2026-10-21,a,287,False,,Sam Forstag,Aaron Flint,49.00,32.00,17.00,True,,11,0.695533,0.691616,1.000000,1.000000,0.481042
+9e0f87da-c6ab-408d-bae8-5e87561286d6,097ca0e7-86b5-4477-bc48-abb8925dc801,MT,01,MT-01,general,Emerson College,2026-11-01,lv,311,False,,Sam Forstag,Aaron Flint,48.80,48.50,0.30,True,,0,1.000000,0.719954,0.707107,1.000000,0.509084
 b611f1b0-7ca1-49c8-9c2d-29140802d492,5444a360-62b4-470c-8911-5e7c73562fe6,MT,02,MT-02,general,Rutgers-Eagleton,2026-09-07,rv,600,True,,Brian J. Miller,Troy Downing,26.00,48.00,-22.00,True,,44,0.234029,1.000000,1.000000,1.000000,0.234029
 81be1cc2-3c9d-4786-9ee7-9d01bceb06e7,b58771db-ecb1-4541-9630-7d90f0df9fad,MT,02,MT-02,general,Montana State University Billings,2026-10-21,a,350,False,,Brian J. Miller,Troy Downing,18.00,29.00,-11.00,True,,0,1.000000,0.763763,1.000000,1.000000,0.763763
 3440fa4a-0c67-43d6-a61b-504c00357db0,3dca5f86-869e-4395-915f-194c5b19b130,NC,01,NC-01,general,GQR,2026-02-02,lv,500,,DEM,,,,,,False,not_head_to_head,,,,,,
@@ -1371,25 +1388,27 @@ ceea1397-da26-4ef3-8b12-629a82c88d6c,8e2aced1-5cf0-4461-b303-046e733c24b2,NH,01,
 da531189-726e-4fe8-af41-495962027a60,1f73f0de-faf9-4016-9489-0cb9b289b4fd,NH,01,NH-01,primary,University of New Hampshire,2026-08-24,lv,443,,,,,,,,False,not_general,,,,,,
 da531189-726e-4fe8-af41-495962027a60,e647dc5f-c391-4842-9c10-a783e2f6ff6d,NH,01,NH-01,primary,University of New Hampshire,2026-08-24,lv,460,,,,,,,,False,not_general,,,,,,
 553c0703-4004-4e99-ae7c-bf2e35c84d15,06aa9c06-b664-4cb4-9f60-c9d44923de09,NH,01,NH-01,primary,Tavern Research,2026-08-31,lv,1068,,,,,,,,False,not_general,,,,,,
-b43da69c-6c45-48c7-9257-45e13bb3984b,6fc1a7d6-df4f-4c24-b36f-2bef24150921,NH,01,NH-01,general,University of New Hampshire,2026-09-21,lv,707,False,,Stefany Shaheen,Anthony DiLorenzo,46.00,42.00,4.00,True,,29,0.383965,1.085511,1.000000,1.000000,0.416798
-2e6c66e4-f4aa-418e-9126-6e237ed7459f,04c86394-6108-41fb-b960-2f50e769121f,NH,01,NH-01,general,St. Anselm,2026-10-20,lv,861,False,,Stefany Shaheen,Anthony DiLorenzo,46.00,42.00,4.00,True,,0,1.000000,1.197915,1.000000,1.000000,1.197915
-24096bf7-3cb0-468d-8b3a-ffd12207d155,29a202f9-cfc5-496b-8261-3e672cce0c06,NH,02,NH-02,general,St. Anselm,2025-08-27,rv,881,False,,Maggie Goodlander,Lily Tang Williams,49.00,31.00,18.00,True,,419,0.000001,1.211748,0.408248,1.000000,0.000000
-ee58b3cf-d675-4c2c-be68-38bb27afb90b,aeeafceb-7547-40bc-91ac-aef6adf6100c,NH,02,NH-02,general,University of New Hampshire,2025-09-23,lv,508,False,,Maggie Goodlander,Lily Tang Williams,51.00,39.00,12.00,True,,392,0.000002,0.920145,0.577350,1.000000,0.000001
-0208a971-f1c8-4f04-aae8-2acbc265a583,5ab93d8c-0f9c-42c9-963c-a23e40a5e9b4,NH,02,NH-02,general,St. Anselm,2025-11-19,rv,1102,False,,Maggie Goodlander,Lily Tang Williams,40.00,35.00,5.00,True,,335,0.000016,1.355237,0.408248,1.000000,0.000009
+b43da69c-6c45-48c7-9257-45e13bb3984b,6fc1a7d6-df4f-4c24-b36f-2bef24150921,NH,01,NH-01,general,University of New Hampshire,2026-09-21,lv,707,False,,Stefany Shaheen,Anthony DiLorenzo,46.00,42.00,4.00,True,,40,0.267060,1.085511,0.707107,1.000000,0.204988
+2e6c66e4-f4aa-418e-9126-6e237ed7459f,04c86394-6108-41fb-b960-2f50e769121f,NH,01,NH-01,general,St. Anselm,2026-10-20,lv,861,False,,Stefany Shaheen,Anthony DiLorenzo,46.00,42.00,4.00,True,,11,0.695533,1.197915,1.000000,1.000000,0.833189
+63516926-7ba4-457a-8b7c-e52aed2edb55,19b3b0b4-78a2-41ec-935b-161da355b85b,NH,01,NH-01,general,University of New Hampshire,2026-10-31,lv,1029,False,,Stefany Shaheen,Anthony DiLorenzo,56.00,43.00,13.00,True,,0,1.000000,1.309580,0.707107,1.000000,0.926013
+24096bf7-3cb0-468d-8b3a-ffd12207d155,29a202f9-cfc5-496b-8261-3e672cce0c06,NH,02,NH-02,general,St. Anselm,2025-08-27,rv,881,False,,Maggie Goodlander,Lily Tang Williams,49.00,31.00,18.00,True,,430,0.000001,1.211748,0.408248,1.000000,0.000000
+ee58b3cf-d675-4c2c-be68-38bb27afb90b,aeeafceb-7547-40bc-91ac-aef6adf6100c,NH,02,NH-02,general,University of New Hampshire,2025-09-23,lv,508,False,,Maggie Goodlander,Lily Tang Williams,51.00,39.00,12.00,True,,403,0.000002,0.920145,0.500000,1.000000,0.000001
+0208a971-f1c8-4f04-aae8-2acbc265a583,5ab93d8c-0f9c-42c9-963c-a23e40a5e9b4,NH,02,NH-02,general,St. Anselm,2025-11-19,rv,1102,False,,Maggie Goodlander,Lily Tang Williams,40.00,35.00,5.00,True,,346,0.000011,1.355237,0.408248,1.000000,0.000006
 0208a971-f1c8-4f04-aae8-2acbc265a583,8553cd3f-2f1b-464d-9055-b4ae84256460,NH,02,NH-02,primary,St. Anselm,2025-11-19,rv,515,,,,,,,,False,not_general,,,,,,
-f93e7e0b-ac53-45cd-b753-fb628b1246d0,38092adc-f38b-4e47-8ddd-17a5e132b479,NH,02,NH-02,general,University of New Hampshire,2026-01-19,lv,1094,False,,Maggie Goodlander,Lily Tang Williams,54.00,40.00,14.00,True,,274,0.000118,1.350309,0.577350,1.000000,0.000092
+f93e7e0b-ac53-45cd-b753-fb628b1246d0,38092adc-f38b-4e47-8ddd-17a5e132b479,NH,02,NH-02,general,University of New Hampshire,2026-01-19,lv,1094,False,,Maggie Goodlander,Lily Tang Williams,54.00,40.00,14.00,True,,285,0.000082,1.350309,0.500000,1.000000,0.000055
 f93e7e0b-ac53-45cd-b753-fb628b1246d0,da61e403-273c-4491-a23e-fc78ca402a6c,NH,02,NH-02,primary,University of New Hampshire,2026-01-19,lv,511,,,,,,,,False,not_general,,,,,,
-d7616879-a233-45d2-ac0f-5d506dbc64a3,4a73f8cd-f915-47c0-8b5d-c3811ff9a8e1,NH,02,NH-02,general,St. Anselm,2026-03-18,rv,739,False,,Maggie Goodlander,Lily Tang Williams,48.00,36.00,12.00,True,,216,0.000801,1.109805,0.408248,1.000000,0.000363
+d7616879-a233-45d2-ac0f-5d506dbc64a3,4a73f8cd-f915-47c0-8b5d-c3811ff9a8e1,NH,02,NH-02,general,St. Anselm,2026-03-18,rv,739,False,,Maggie Goodlander,Lily Tang Williams,48.00,36.00,12.00,True,,227,0.000557,1.109805,0.408248,1.000000,0.000252
 323ff676-e8d3-44aa-a932-d8cb8fbc0695,3da006f4-df76-4d86-b81d-58dd45cab253,NH,02,NH-02,primary,St. Anselm,2026-06-25,rv,362,,,,,,,,False,not_general,,,,,,
 323ff676-e8d3-44aa-a932-d8cb8fbc0695,695500ff-8c3b-4d6c-b21f-df2feb027e42,NH,02,NH-02,primary,St. Anselm,2026-06-25,rv,412,,,,,,,,False,not_general,,,,,,
-323ff676-e8d3-44aa-a932-d8cb8fbc0695,f78d53af-dcff-4a02-bf23-b868ed7c8c10,NH,02,NH-02,general,St. Anselm,2026-06-25,rv,802,False,,Maggie Goodlander,Lily Tang Williams,50.00,31.00,19.00,True,,117,0.021030,1.156143,0.408248,1.000000,0.009926
+323ff676-e8d3-44aa-a932-d8cb8fbc0695,f78d53af-dcff-4a02-bf23-b868ed7c8c10,NH,02,NH-02,general,St. Anselm,2026-06-25,rv,802,False,,Maggie Goodlander,Lily Tang Williams,50.00,31.00,19.00,True,,128,0.014627,1.156143,0.408248,1.000000,0.006904
 ceea1397-da26-4ef3-8b12-629a82c88d6c,871a35d2-ab42-45dc-89f1-d916940dd528,NH,02,NH-02,primary,St. Anselm,2026-08-18,lv,374,,,,,,,,False,not_general,,,,,,
 ceea1397-da26-4ef3-8b12-629a82c88d6c,a07431c1-a028-43f8-b690-49126b8e6385,NH,02,NH-02,primary,St. Anselm,2026-08-18,lv,327,,,,,,,,False,not_general,,,,,,
-ceea1397-da26-4ef3-8b12-629a82c88d6c,fef3b73a-3ef3-4819-ab97-cff56477fb80,NH,02,NH-02,general,St. Anselm,2026-08-18,lv,701,False,,Maggie Goodlander,Lily Tang Williams,50.00,35.00,15.00,True,,63,0.125000,1.080895,0.408248,1.000000,0.055159
+ceea1397-da26-4ef3-8b12-629a82c88d6c,fef3b73a-3ef3-4819-ab97-cff56477fb80,NH,02,NH-02,general,St. Anselm,2026-08-18,lv,701,False,,Maggie Goodlander,Lily Tang Williams,50.00,35.00,15.00,True,,74,0.086942,1.080895,0.408248,1.000000,0.038365
 da531189-726e-4fe8-af41-495962027a60,09f596cc-b273-4a8f-97d6-bad812a68ab3,NH,02,NH-02,primary,University of New Hampshire,2026-08-24,lv,374,,,,,,,,False,not_general,,,,,,
 da531189-726e-4fe8-af41-495962027a60,d86d45ff-3414-4c26-9ff2-5de1659f2d6a,NH,02,NH-02,primary,University of New Hampshire,2026-08-24,lv,421,,,,,,,,False,not_general,,,,,,
-b43da69c-6c45-48c7-9257-45e13bb3984b,11f1f8fd-02b9-429b-902a-bc616e621038,NH,02,NH-02,general,University of New Hampshire,2026-09-21,lv,694,False,,Maggie Goodlander,Lily Tang Williams,56.00,35.00,21.00,True,,29,0.383965,1.075484,0.577350,1.000000,0.238416
-2e6c66e4-f4aa-418e-9126-6e237ed7459f,e9ef207a-f8e8-4d9c-bf44-d5384b911cc1,NH,02,NH-02,general,St. Anselm,2026-10-20,lv,811,False,,Maggie Goodlander,Lily Tang Williams,54.00,38.00,16.00,True,,0,1.000000,1.162612,0.408248,1.000000,0.474634
+b43da69c-6c45-48c7-9257-45e13bb3984b,11f1f8fd-02b9-429b-902a-bc616e621038,NH,02,NH-02,general,University of New Hampshire,2026-09-21,lv,694,False,,Maggie Goodlander,Lily Tang Williams,56.00,35.00,21.00,True,,40,0.267060,1.075484,0.500000,1.000000,0.143610
+2e6c66e4-f4aa-418e-9126-6e237ed7459f,e9ef207a-f8e8-4d9c-bf44-d5384b911cc1,NH,02,NH-02,general,St. Anselm,2026-10-20,lv,811,False,,Maggie Goodlander,Lily Tang Williams,54.00,38.00,16.00,True,,11,0.695533,1.162612,0.408248,1.000000,0.330124
+63516926-7ba4-457a-8b7c-e52aed2edb55,4d97e2a6-2f00-4c5e-b06e-b8e670e22af7,NH,02,NH-02,general,University of New Hampshire,2026-10-31,lv,997,False,,Maggie Goodlander,Lily Tang Williams,56.00,41.00,15.00,True,,0,1.000000,1.289057,0.500000,1.000000,0.644528
 1f1d93d8-d35a-4c69-ac7d-93f2eb120b0a,e8eb78b3-2496-4f8a-87df-15773fa89922,NJ,02,NJ-02,general,Public Policy Polling,2025-05-22,rv,505,,DEM,,,,,,False,not_head_to_head,,,,,,
 b600792e-e9fd-4658-afba-d2e637a6c828,cc061900-5184-4ed7-8098-6bdfed996998,NJ,02,NJ-02,general,Impact Research,2026-10-10,lv,600,True,DEM,Zack Mullock,Jeff Van Drew,40.00,50.00,-10.00,True,,0,1.000000,1.000000,1.000000,0.500000,0.500000
 41097f53-856e-445d-881c-21b2764ff063,9e575a5e-4505-4af5-b737-671396896353,NJ,07,NJ-07,primary,GQR,2026-02-25,lv,403,,DEM,,,,,,False,not_general,,,,,,

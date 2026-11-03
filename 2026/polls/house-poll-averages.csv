@@ -1,5 +1,5 @@
 state,district,district_id,poll_avg_dem_candidate,poll_avg_rep_candidate,poll_avg_dem_pct,poll_avg_rep_pct,poll_avg_dem_margin_pp,poll_count,poll_pollster_count,poll_latest_end_date,poll_avg_status,poll_avg_source_id,poll_avg_matchup_basis
-AK,00,AK-AL,Bill Hill,Nick Begich,37.35,45.66,-8.31,11,8,2026-10-30,available,us-house-polls-2026,reviewed
+AK,00,AK-AL,Bill Hill,Nick Begich,40.62,45.96,-5.33,12,9,2026-11-01,available,us-house-polls-2026,reviewed
 AL,01,AL-01,,,,,,,,,no_polls,us-house-polls-2026,
 AL,02,AL-02,Shomari C. Figures,Rhett Marques,46.06,47.87,-1.81,4,4,2026-10-25,available,us-house-polls-2026,dem_rep
 AL,03,AL-03,,,,,,,,,no_polls,us-house-polls-2026,
@@ -195,8 +195,8 @@ MD,05,MD-05,,,,,,,,,no_polls,us-house-polls-2026,
 MD,06,MD-06,,,,,,,,,no_polls,us-house-polls-2026,
 MD,07,MD-07,,,,,,,,,no_polls,us-house-polls-2026,
 MD,08,MD-08,,,,,,,,,no_polls,us-house-polls-2026,
-ME,01,ME-01,Chellie Pingree,Ronald C. Russell,57.00,35.00,22.00,1,1,2026-09-21,available,us-house-polls-2026,dem_rep
-ME,02,ME-02,Matthew G. Dunlap,Paul R. LePage,50.01,46.70,3.31,8,5,2026-10-14,available,us-house-polls-2026,dem_rep
+ME,01,ME-01,Chellie Pingree,Ronald C. Russell,63.47,32.57,30.90,2,1,2026-10-31,available,us-house-polls-2026,dem_rep
+ME,02,ME-02,Matthew G. Dunlap,Paul R. LePage,48.32,49.67,-1.35,9,5,2026-10-31,available,us-house-polls-2026,dem_rep
 MI,01,MI-01,,,,,,,,,no_polls,us-house-polls-2026,
 MI,02,MI-02,,,,,,,,,no_polls,us-house-polls-2026,
 MI,03,MI-03,,,,,,,,,no_polls,us-house-polls-2026,
@@ -219,7 +219,7 @@ MN,06,MN-06,,,,,,,,,no_polls,us-house-polls-2026,
 MN,07,MN-07,,,,,,,,,no_polls,us-house-polls-2026,
 MN,08,MN-08,Trina Swanson,Pete Stauber,43.00,49.00,-6.00,1,1,2026-10-26,available,us-house-polls-2026,dem_rep
 MO,01,MO-01,,,,,,,,,no_polls,us-house-polls-2026,
-MO,02,MO-02,Fred Wellman,Ann Wagner,47.44,45.04,2.40,3,3,2026-10-20,available,us-house-polls-2026,dem_rep
+MO,02,MO-02,Fred Wellman,Ann Wagner,47.95,46.44,1.52,4,3,2026-11-01,available,us-house-polls-2026,dem_rep
 MO,03,MO-03,,,,,,,,,no_polls,us-house-polls-2026,
 MO,04,MO-04,,,,,,,,,no_polls,us-house-polls-2026,
 MO,05,MO-05,,,,,,,,,no_polls,us-house-polls-2026,
@@ -230,7 +230,7 @@ MS,01,MS-01,,,,,,,,,no_polls,us-house-polls-2026,
 MS,02,MS-02,,,,,,,,,no_polls,us-house-polls-2026,
 MS,03,MS-03,,,,,,,,,no_polls,us-house-polls-2026,
 MS,04,MS-04,,,,,,,,,no_polls,us-house-polls-2026,
-MT,01,MT-01,Sam Forstag,Aaron Flint,47.72,41.09,6.63,8,7,2026-10-21,available,us-house-polls-2026,dem_rep
+MT,01,MT-01,Sam Forstag,Aaron Flint,47.86,42.68,5.18,9,7,2026-11-01,available,us-house-polls-2026,dem_rep
 MT,02,MT-02,Brian J. Miller,Troy Downing,19.88,33.46,-13.58,2,2,2026-10-21,available,us-house-polls-2026,dem_rep
 NC,01,NC-01,Don Davis,Laurie Buckhout,47.96,41.44,6.52,7,4,2026-10-08,available,us-house-polls-2026,dem_rep
 NC,02,NC-02,,,,,,,,,no_polls,us-house-polls-2026,
@@ -250,8 +250,8 @@ ND,00,ND-AL,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
 NE,01,NE-01,Chris Backemeyer,Mike Flood,45.67,45.82,-0.15,3,3,2026-10-20,available,us-house-polls-2026,dem_rep
 NE,02,NE-02,Denise Powell,Brinker Harding,48.39,39.61,8.78,2,2,2026-10-05,available,us-house-polls-2026,dem_rep
 NE,03,NE-03,,,,,,,,,no_polls,us-house-polls-2026,
-NH,01,NH-01,Stefany Shaheen,Anthony DiLorenzo,46.00,42.00,4.00,2,2,2026-10-20,available,us-house-polls-2026,dem_rep
-NH,02,NH-02,Maggie Goodlander,Lily Tang Williams,54.28,36.78,17.50,9,2,2026-10-20,available,us-house-polls-2026,dem_rep
+NH,01,NH-01,Stefany Shaheen,Anthony DiLorenzo,50.71,42.47,8.24,3,2,2026-10-31,available,us-house-polls-2026,dem_rep
+NH,02,NH-02,Maggie Goodlander,Lily Tang Williams,55.20,39.15,16.05,10,2,2026-10-31,available,us-house-polls-2026,dem_rep
 NJ,01,NJ-01,,,,,,,,,no_polls,us-house-polls-2026,
 NJ,02,NJ-02,Zack Mullock,Jeff Van Drew,40.00,50.00,-10.00,1,1,2026-10-10,available,us-house-polls-2026,dem_rep
 NJ,03,NJ-03,,,,,,,,,no_polls,us-house-polls-2026,

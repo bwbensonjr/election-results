@@ -324,7 +324,7 @@ class ContextTests(HistoryFixture):
         statuses = collections.Counter(r["poll_avg_status"] for r in districts)
         self.assertEqual(statuses["available"], 111)
         me02 = next(r for r in districts if r["district_id"] == "ME-02")
-        self.assertEqual(me02["poll_avg_dem_margin_pp"], "3.31")
+        self.assertEqual(me02["poll_avg_dem_margin_pp"], "-1.35")
         akal = next(r for r in districts if r["district_id"] == "AK-AL")
         self.assertEqual((akal["poll_avg_dem_candidate"], akal["poll_avg_matchup_basis"]), ("Bill Hill", "reviewed"))
         guide_statuses = collections.Counter(r["guide_status"] for r in districts)
