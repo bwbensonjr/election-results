@@ -103,5 +103,45 @@ class IdentityTests(unittest.TestCase):
         self.assertEqual(result.member_ids, {"H1", "H2"})
 
 
+class OfficeTests(unittest.TestCase):
+    def senate_ballot(self):
+        return dict(state="NY", district="00", name="Alice Smith", party="Democratic", source_url="")
+
+    def senate_record(self, cid="S6NY00001"):
+        return dict(fec(cid), district="00")
+
+    def load(self, entries, office, ballots, records):
+        with tempfile.TemporaryDirectory() as td:
+            path = Path(td) / "decisions.json"
+            path.write_text(json.dumps(dict(schema_version=1, decisions=entries)))
+            return load_decisions(path, ballots, records, office)
+
+    def senate_decision(self, **updates):
+        row = decision(office="Senate", canonical_fec_id="S6NY00001")
+        del row["district"]
+        row.update(updates)
+        return row
+
+    def test_senate_decision_uses_statewide_key(self):
+        entries = self.load([self.senate_decision()], "Senate", [self.senate_ballot()], [self.senate_record()])
+        result = resolve(self.senate_ballot(), [self.senate_record()], entries)
+        self.assertEqual(result.status, "reviewed")
+        self.assertEqual(result.canonical["candidate_id"], "S6NY00001")
+
+    def test_senate_decision_naming_house_id_fails(self):
+        house = dict(fec("H6NY01001"), district="00")
+        with self.assertRaisesRegex(ValueError, "not a Senate candidacy"):
+            self.load([self.senate_decision(canonical_fec_id="H6NY01001")], "Senate",
+                      [self.senate_ballot()], [self.senate_record(), house])
+
+    def test_registry_office_must_match(self):
+        with self.assertRaisesRegex(ValueError, "office must be House"):
+            self.load([self.senate_decision()], "House", [self.senate_ballot()], [self.senate_record()])
+        with self.assertRaisesRegex(ValueError, "office must be Senate"):
+            self.load([decision()], "Senate", [ballot()], [fec()])
+        entries = self.load([decision(office="House")], "House", [ballot()], [fec()])
+        self.assertEqual(resolve(ballot(), [fec()], entries).status, "reviewed")
+
+
 if __name__ == "__main__":
     unittest.main()

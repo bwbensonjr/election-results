@@ -16,6 +16,8 @@ Implemented:
 
 The [district context dataset](2026/districts/house-district-context.csv) joins 2020 Biden/Trump and 2024 Harris/Trump source margins with published Cook 2026 PVI for all 435 districts, and appends the polling average and the election-night guide's House race columns where they exist. In the current snapshot, 111 districts have an average and the rest have blank polling columns with a status explaining why. A separate [candidate context dataset](2026/districts/house-candidate-context.csv) retains all candidate details and appends those metrics. See the [district-data reference](docs/district-data.md) for source editions, schemas, and analytical examples.
 
+The same context is built for the 71 Senate and governor races on the November 3 ballot (35 Senate, including the Ohio and Florida specials, and 36 governor). The [statewide candidate field](2026/candidates/statewide-general-field.csv) has 260 candidates, with FEC identities for Senate candidates and an explicit `not_federal` status for governors. The [race context](2026/statewide/statewide-race-context.csv) and [candidate context](2026/statewide/statewide-candidate-context.csv) exports join state 2020 and 2024 presidential margins (summed from the district vote counts), Cook's latest (2025) state PVI, a weighted polling average of each race's principal matchup, and the guide's Senate and governor rows. In the current snapshot, 60 races have a polling average. See the [statewide reference](docs/statewide-data.md).
+
 Planned: a separate district incumbent roster and an election-night briefing or watchlist.
 
 ## Rebuild from committed inputs
@@ -37,6 +39,10 @@ uv run scripts/fetch_fec_house_candidates.py --totals
 uv run scripts/flag_general_candidates.py
 uv run scripts/fetch_ballotbrief_house.py
 uv run scripts/build_house_field.py
+uv run scripts/fetch_fec_house_candidates.py --office S --totals
+uv run scripts/flag_general_candidates.py --office S
+uv run scripts/fetch_ballotbrief_statewide.py
+uv run scripts/build_statewide_field.py
 ```
 
 Use `--totals` to include the financial columns required by the builder. Refresh polling CSVs separately before rebuilding; there is no poll-download script. Review unmatched identities, ambiguous records, stale registry decisions, and output changes after every refresh.
@@ -55,14 +61,22 @@ uv run scripts/build_house_poll_averages.py
 uv run scripts/build_house_district_context.py --require-complete
 ```
 
-These commands read saved source snapshots and need no API key or live Cook access. District IDs normalize at-large seats to `STATE-AL` and district code `00`. Margins are Democratic minus Republican in percentage points. Cook PVI retains its published 2026 label and a numeric lean, positive for D and negative for R.
+Then build the Senate and governor data:
+
+```sh
+uv run scripts/build_statewide_field.py
+uv run scripts/build_statewide_poll_averages.py
+uv run scripts/build_statewide_race_context.py --require-complete
+```
+
+`normalize_district_history.py` also writes the state presidential and Cook state PVI files the statewide context needs. These commands read saved source snapshots and need no API key or live Cook access. District IDs normalize at-large seats to `STATE-AL` and district code `00`. Margins are Democratic minus Republican in percentage points. Cook PVI retains its published 2026 label and a numeric lean, positive for D and negative for R.
 
 The join uses normalized district IDs without boundary approval checks. The supplied historical results' map vintage is undocumented; they are used as supplied, and the [source notes](docs/district-data.md) explain limits on historical comparisons. Missing metrics are reported rather than assigned zero or EVEN. The current strict build has all three metrics for every district. Polling averages are optional: strict mode does not require them, and unpolled districts keep blank polling columns rather than zeroes. See the [polling-average method](docs/district-data.md#house-polling-averages) for eligibility, weights, and limitations. The context build also validates the guide CSV against the guide markdown; after editing the guide, update the affected rows and run `uv run scripts/election_guide.py` (see the [guide conventions](docs/district-data.md#election-night-guide)).
 
 ## Tests
 
 ```sh
-uv run --with requests python -m unittest discover -s tests -v
+uv run --with requests --with beautifulsoup4 python -m unittest discover -s tests -v
 ```
 
-Tests use fixtures and committed snapshots without API credentials or network calls. The first run may download `requests`; use `--offline` with `uv` after dependencies and Python are cached.
+Tests use fixtures and committed snapshots without API credentials or network calls. The first run may download `requests` and `beautifulsoup4`; use `--offline` with `uv` after dependencies and Python are cached.

@@ -81,6 +81,61 @@ def weighted(values, weights):
     return sum(v * w for v, w in zip(values, weights)) / sum(weights)
 
 
+def candidate_answers(question_id, rows):
+    """Return a question's named-candidate answers: no NONE, Generic, or reallocated ranked-choice rows."""
+    answers = [r for r in rows if r["party"] != "NONE" and not r["candidate_name"].startswith("Generic")
+               and r["ranked_choice_reallocated"].strip().upper() != "TRUE"]
+    names = [(r["party"], r["candidate_name"]) for r in answers]
+    if len(names) != len(set(names)):
+        raise ValueError(f"question {question_id}: duplicate candidate answers")
+    return answers
+
+
+def mark_eligible(record, question_id, first, dem_answer, rep_answer, dem_name, rep_name, matched, key):
+    """Parse an eligible question's values into its log record and attach private selection fields."""
+    location = f"question {question_id}"
+    dem_pct, rep_pct = parse_pct(dem_answer["pct"], location), parse_pct(rep_answer["pct"], location)
+    end = parse_date(first["end_date"], location)
+    sample = parse_sample(first["sample_size"], location)
+    record.update(dem_candidate=dem_name, rep_candidate=rep_name,
+                  dem_pct=fixed(dem_pct, 2), rep_pct=fixed(rep_pct, 2),
+                  dem_margin_pp=fixed(dem_pct - rep_pct, 2), end_date=end.isoformat(),
+                  sample_size_imputed=str(sample is None),
+                  sample_size=str(sample if sample is not None else SAMPLE_DEFAULT))
+    record["_eligible"] = dict(key=key, end=end, sample=sample or SAMPLE_DEFAULT, dem=dem_pct, rep=rep_pct,
+                               rank=(POPULATION_RANK.get(first["population"], len(POPULATION_RANK)),
+                                     -matched, question_id))
+
+
+def select_questions(records, race_of):
+    """Keep each poll's best-ranked eligible question per race and mark the others superseded."""
+    by_poll = defaultdict(list)
+    for record in records:
+        if "_eligible" in record:
+            by_poll[(record["poll_id"], race_of(record))].append(record)
+    selected = defaultdict(list)
+    for group in by_poll.values():
+        group.sort(key=lambda r: r["_eligible"]["rank"])
+        selected[group[0]["_eligible"]["key"]].append(group[0])
+        for record in group[1:]:
+            record["reason"] = "superseded"
+    return selected
+
+
+def summarize(selected):
+    """Weigh one race's selected polls and return its average columns."""
+    weights = weigh(selected)
+    dem = [r["_eligible"]["dem"] for r in selected]
+    rep = [r["_eligible"]["rep"] for r in selected]
+    return dict(poll_avg_dem_pct=fixed(weighted(dem, weights), 2),
+                poll_avg_rep_pct=fixed(weighted(rep, weights), 2),
+                poll_avg_dem_margin_pp=fixed(weighted([d - r for d, r in zip(dem, rep)], weights), 2),
+                poll_count=str(len(selected)),
+                poll_pollster_count=str(len({r["pollster"] for r in selected})),
+                poll_latest_end_date=max(r["_eligible"]["end"] for r in selected).isoformat(),
+                poll_avg_status="available")
+
+
 def poll_district(state, seat, at_large):
     """Map a poll seat to (state, district, district_id), or None when it is not a valid seat."""
     if not seat.isdigit():
@@ -134,11 +189,7 @@ def classify(question_id, rows, field, pairs, at_large):
             return "unknown_district"
         if key not in pairs:
             return "no_dem_rep_field"
-        answers = [r for r in rows if r["party"] != "NONE" and not r["candidate_name"].startswith("Generic")
-                   and r["ranked_choice_reallocated"].strip().upper() != "TRUE"]
-        names = [(r["party"], r["candidate_name"]) for r in answers]
-        if len(names) != len(set(names)):
-            raise ValueError(f"question {question_id}: duplicate candidate answers")
+        answers = candidate_answers(question_id, rows)
         dem = [r for r in answers if r["party"] == "DEM"]
         rep = [r for r in answers if r["party"] == "REP"]
         if len(dem) != 1 or len(rep) != 1:
@@ -149,19 +200,9 @@ def classify(question_id, rows, field, pairs, at_large):
                 return "ambiguous_match"
             if not hits or hits[0] is not pairs[key][answer["party"]]:
                 return "non_nominee"
-        location = f"question {question_id}"
-        dem_pct, rep_pct = parse_pct(dem[0]["pct"], location), parse_pct(rep[0]["pct"], location)
-        end = parse_date(first["end_date"], location)
-        sample = parse_sample(first["sample_size"], location)
         matched = sum(len(poll_candidates(a["candidate_name"], field[key])) == 1 for a in answers)
-        record.update(dem_candidate=pairs[key]["DEM"]["name"], rep_candidate=pairs[key]["REP"]["name"],
-                      dem_pct=fixed(dem_pct, 2), rep_pct=fixed(rep_pct, 2),
-                      dem_margin_pp=fixed(dem_pct - rep_pct, 2), end_date=end.isoformat(),
-                      sample_size_imputed=str(sample is None),
-                      sample_size=str(sample if sample is not None else SAMPLE_DEFAULT))
-        record["_eligible"] = dict(key=key, end=end, sample=sample or SAMPLE_DEFAULT, dem=dem_pct, rep=rep_pct,
-                                   rank=(POPULATION_RANK.get(first["population"], len(POPULATION_RANK)),
-                                         -matched, question_id))
+        mark_eligible(record, question_id, first, dem[0], rep[0], pairs[key]["DEM"]["name"],
+                      pairs[key]["REP"]["name"], matched, key)
         return ""
 
     record["reason"] = reason()
@@ -205,16 +246,7 @@ def compute(polls_path=DEFAULT_POLLS, candidate_path=DEFAULT_CANDIDATES):
         questions[row["question_id"]].append(row)
     records = [classify(qid, sorted(rows, key=lambda r: tuple(r[c] for c in columns)), field, pairs, at_large)
                for qid, rows in questions.items()]
-    by_poll = defaultdict(list)
-    for record in records:
-        if "_eligible" in record:
-            by_poll[(record["poll_id"], record["district_id"])].append(record)
-    selected = defaultdict(list)
-    for group in by_poll.values():
-        group.sort(key=lambda r: r["_eligible"]["rank"])
-        selected[group[0]["_eligible"]["key"]].append(group[0])
-        for record in group[1:]:
-            record["reason"] = "superseded"
+    selected = select_questions(records, lambda r: r["district_id"])
     general = {(r["state"], r["district"]) for r in records
                if r["district_id"] and r["stage"] == "general"
                and questions[r["question_id"]][0]["cycle"] == CYCLE}
@@ -227,18 +259,8 @@ def compute(polls_path=DEFAULT_POLLS, candidate_path=DEFAULT_CANDIDATES):
         if key not in pairs:
             row["poll_avg_status"] = "no_dem_rep_field"
         elif polls_in:
-            weights = weigh(polls_in)
-            dem = [r["_eligible"]["dem"] for r in polls_in]
-            rep = [r["_eligible"]["rep"] for r in polls_in]
-            row.update(poll_avg_dem_candidate=pairs[key]["DEM"]["name"],
-                       poll_avg_rep_candidate=pairs[key]["REP"]["name"],
-                       poll_avg_dem_pct=fixed(weighted(dem, weights), 2),
-                       poll_avg_rep_pct=fixed(weighted(rep, weights), 2),
-                       poll_avg_dem_margin_pp=fixed(weighted([d - r for d, r in zip(dem, rep)], weights), 2),
-                       poll_count=str(len(polls_in)),
-                       poll_pollster_count=str(len({r["pollster"] for r in polls_in})),
-                       poll_latest_end_date=max(r["_eligible"]["end"] for r in polls_in).isoformat(),
-                       poll_avg_status="available")
+            row.update(summarize(polls_in), poll_avg_dem_candidate=pairs[key]["DEM"]["name"],
+                       poll_avg_rep_candidate=pairs[key]["REP"]["name"])
         else:
             row["poll_avg_status"] = "no_eligible_polls" if (state, district) in general else "no_polls"
         averages.append(row)

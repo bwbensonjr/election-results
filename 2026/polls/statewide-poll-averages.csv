@@ -1,0 +1,72 @@
+state,office,race_id,poll_avg_dem_candidate,poll_avg_rep_candidate,poll_avg_matchup_basis,poll_avg_dem_pct,poll_avg_rep_pct,poll_avg_dem_margin_pp,poll_count,poll_pollster_count,poll_latest_end_date,poll_avg_status,poll_avg_source_id
+AK,Governor,AK-GOV,,,,,,,,,,no_principal_matchup,governor-polls-2026
+AK,Senate,AK-SEN,Mary Peltola,Dan Sullivan,reviewed,47.27,44.72,2.55,19,9,2026-10-30,available,us-senate-polls-2026
+AL,Governor,AL-GOV,Doug Jones,Tommy Tuberville,dem_rep,41.48,49.65,-8.17,6,5,2026-10-24,available,governor-polls-2026
+AL,Senate,AL-SEN,Everett Wess,Barry Moore,dem_rep,36.53,51.02,-14.50,5,5,2026-10-24,available,us-senate-polls-2026
+AR,Governor,AR-GOV,Fredrick Love,Sarah Huckabee Sanders,dem_rep,33.16,50.13,-16.97,2,1,2026-10-13,available,governor-polls-2026
+AR,Senate,AR-SEN,Hallie Shoffner,Tom Cotton,dem_rep,40.16,50.82,-10.66,7,4,2026-10-28,available,us-senate-polls-2026
+AZ,Governor,AZ-GOV,Katie Hobbs,Andy Biggs,dem_rep,48.97,40.58,8.39,28,14,2026-10-29,available,governor-polls-2026
+CA,Governor,CA-GOV,Xavier Becerra,Steve Hilton,dem_rep,57.94,36.24,21.70,19,11,2026-10-31,available,governor-polls-2026
+CO,Governor,CO-GOV,,,,,,,,,,no_eligible_polls,governor-polls-2026
+CO,Senate,CO-SEN,,,,,,,,,,no_polls,us-senate-polls-2026
+CT,Governor,CT-GOV,Ned Lamont,Ryan Fazio,dem_rep,54.88,37.10,17.79,11,6,2026-10-12,available,governor-polls-2026
+DE,Senate,DE-SEN,,,,,,,,,,no_polls,us-senate-polls-2026
+FL,Governor,FL-GOV,David Jolly,Byron Donalds,dem_rep,43.83,48.00,-4.17,43,25,2026-10-31,available,governor-polls-2026
+FL,Senate,FL-SEN,Angie Nixon,Ashley Moody,dem_rep,43.17,49.22,-6.05,28,18,2026-10-30,available,us-senate-polls-2026
+GA,Governor,GA-GOV,Keisha Lance Bottoms,Rick Jackson,dem_rep,47.44,48.03,-0.59,17,12,2026-10-27,available,governor-polls-2026
+GA,Senate,GA-SEN,Jon Ossoff,Mike Collins,dem_rep,51.83,42.72,9.11,21,15,2026-10-23,available,us-senate-polls-2026
+HI,Governor,HI-GOV,,,,,,,,,,no_polls,governor-polls-2026
+IA,Governor,IA-GOV,Rob Sand,Zach Lahn,dem_rep,51.21,44.12,7.09,25,13,2026-11-01,available,governor-polls-2026
+IA,Senate,IA-SEN,Josh Turek,Ashley Hinson,dem_rep,46.37,46.21,0.16,36,20,2026-11-01,available,us-senate-polls-2026
+ID,Governor,ID-GOV,Terri Pickens,Brad Little,dem_rep,29.77,48.92,-19.15,2,2,2026-10-22,available,governor-polls-2026
+ID,Senate,ID-SEN,Todd Achilles,Jim Risch,reviewed,35.61,49.36,-13.75,9,5,2026-10-22,available,us-senate-polls-2026
+IL,Governor,IL-GOV,JB Pritzker,Darren Bailey,dem_rep,57.58,39.24,18.34,4,3,2026-10-31,available,governor-polls-2026
+IL,Senate,IL-SEN,Juliana Stratton,Don Tracy,dem_rep,54.67,41.22,13.45,3,2,2026-10-30,available,us-senate-polls-2026
+KS,Governor,KS-GOV,Cindy Holscher,Ty Masterson,dem_rep,47.26,48.74,-1.48,12,7,2026-11-01,available,governor-polls-2026
+KS,Senate,KS-SEN,Adam Hamilton,Roger Marshall,dem_rep,48.55,45.64,2.91,18,12,2026-11-01,available,us-senate-polls-2026
+KY,Senate,KY-SEN,Charles Booker,Andy Barr,dem_rep,40.00,49.00,-9.00,2,2,2026-08-27,available,us-senate-polls-2026
+LA,Senate,LA-SEN,Jamie Davis,Julia Letlow,dem_rep,45.87,46.31,-0.43,4,3,2026-10-31,available,us-senate-polls-2026
+MA,Governor,MA-GOV,Maura Healey,Michael Minogue,dem_rep,56.51,31.99,24.52,13,6,2026-10-18,available,governor-polls-2026
+MA,Senate,MA-SEN,Ed Markey,John Deaton,dem_rep,55.47,28.33,27.14,14,7,2026-10-18,available,us-senate-polls-2026
+MD,Governor,MD-GOV,Wes Moore,Dan Cox,dem_rep,51.53,24.53,27.00,2,2,2026-09-27,available,governor-polls-2026
+ME,Governor,ME-GOV,Hannah Pingree,Bobby Charles,dem_rep,49.70,39.42,10.27,22,13,2026-11-01,available,governor-polls-2026
+ME,Senate,ME-SEN,Troy Jackson,Susan Collins,dem_rep,49.35,46.39,2.96,29,20,2026-11-01,available,us-senate-polls-2026
+MI,Governor,MI-GOV,Jocelyn Benson,John James,dem_rep,50.93,42.32,8.61,47,24,2026-11-01,available,governor-polls-2026
+MI,Senate,MI-SEN,Abdul El-Sayed,Mike Rogers,dem_rep,49.00,44.54,4.45,59,33,2026-11-01,available,us-senate-polls-2026
+MN,Governor,MN-GOV,Amy Klobuchar,Lisa Demuth,dem_rep,51.17,40.52,10.65,14,9,2026-10-28,available,governor-polls-2026
+MN,Senate,MN-SEN,Peggy Flanagan,Michele Tafoya,dem_rep,48.10,43.04,5.06,19,14,2026-10-30,available,us-senate-polls-2026
+MS,Senate,MS-SEN,Scott Colom,Cindy Hyde-Smith,dem_rep,39.79,43.10,-3.31,3,3,2026-10-22,available,us-senate-polls-2026
+MT,Senate,MT-SEN,Seth Bodnar,Kurt Alme,reviewed,28.93,38.94,-10.01,18,14,2026-10-23,available,us-senate-polls-2026
+NC,Senate,NC-SEN,Roy Cooper,Michael Whatley,dem_rep,52.42,42.04,10.38,50,19,2026-10-29,available,us-senate-polls-2026
+NE,Governor,NE-GOV,Lynne Walz,Jim Pillen,dem_rep,41.35,46.62,-5.28,14,10,2026-10-29,available,governor-polls-2026
+NE,Senate,NE-SEN,Dan Osborn,Pete Ricketts,reviewed,45.52,46.93,-1.42,19,11,2026-10-29,available,us-senate-polls-2026
+NH,Governor,NH-GOV,Cinde Warmington,Kelly Ayotte,dem_rep,40.61,50.14,-9.52,14,7,2026-10-20,available,governor-polls-2026
+NH,Senate,NH-SEN,Chris Pappas,John Sununu,dem_rep,48.89,42.35,6.54,29,17,2026-10-20,available,us-senate-polls-2026
+NJ,Senate,NJ-SEN,,,,,,,,,,no_polls,us-senate-polls-2026
+NM,Governor,NM-GOV,Deb Haaland,Gregg Hull,dem_rep,47.68,40.47,7.20,5,4,2026-10-09,available,governor-polls-2026
+NM,Senate,NM-SEN,Ben Ray Luján,Larry Marker,dem_rep,53.39,36.70,16.69,3,2,2026-10-09,available,us-senate-polls-2026
+NV,Governor,NV-GOV,Aaron Ford,Joe Lombardo,dem_rep,45.81,44.91,0.89,14,10,2026-10-28,available,governor-polls-2026
+NY,Governor,NY-GOV,Kathy Hochul,Bruce Blakeman,dem_rep,53.58,40.70,12.88,30,16,2026-10-25,available,governor-polls-2026
+OH,Governor,OH-GOV,Amy Acton,Vivek Ramaswamy,dem_rep,48.74,45.30,3.45,40,24,2026-11-01,available,governor-polls-2026
+OH,Senate,OH-SEN,Sherrod Brown,Jon Husted,dem_rep,48.20,44.99,3.21,44,23,2026-11-01,available,us-senate-polls-2026
+OK,Governor,OK-GOV,Cyndi Munson,Mike Mazzei,dem_rep,45.00,49.00,-4.00,1,1,2026-10-13,available,governor-polls-2026
+OK,Senate,OK-SEN,N'Kiyla Jasmine Thomas,Kevin Hern,dem_rep,25.00,49.00,-24.00,1,1,2026-08-06,available,us-senate-polls-2026
+OR,Governor,OR-GOV,Tina Kotek,Christine Drazan,dem_rep,45.58,44.45,1.13,7,5,2026-10-04,available,governor-polls-2026
+OR,Senate,OR-SEN,,,,,,,,,,no_polls,us-senate-polls-2026
+PA,Governor,PA-GOV,Josh Shapiro,Stacy Garrity,dem_rep,57.60,34.29,23.31,22,8,2026-10-21,available,governor-polls-2026
+RI,Governor,RI-GOV,Helena Foulkes,Aaron Guckian,dem_rep,43.15,15.08,28.07,6,4,2026-10-11,available,governor-polls-2026
+RI,Senate,RI-SEN,Jack Reed,Ray McKay,dem_rep,56.45,29.15,27.29,6,3,2026-10-11,available,us-senate-polls-2026
+SC,Governor,SC-GOV,Jermaine Johnson,Alan Wilson,dem_rep,38.57,48.70,-10.13,7,7,2026-10-26,available,governor-polls-2026
+SC,Senate,SC-SEN,Annie Andrews,Darline Graham,dem_rep,44.98,46.59,-1.61,15,10,2026-10-29,available,us-senate-polls-2026
+SD,Governor,SD-GOV,Dan Ahlers,Larry Rhoden,dem_rep,38.80,55.76,-16.96,5,4,2026-10-26,available,governor-polls-2026
+SD,Senate,SD-SEN,Brian Bengs,Mike Rounds,reviewed,41.43,53.45,-12.03,15,9,2026-10-26,available,us-senate-polls-2026
+TN,Governor,TN-GOV,Jerri Green,Marsha Blackburn,dem_rep,32.68,44.84,-12.17,5,4,2026-10-16,available,governor-polls-2026
+TN,Senate,TN-SEN,Marquita Bradshaw,Bill Hagerty,dem_rep,33.00,58.00,-25.00,1,1,2026-08-26,available,us-senate-polls-2026
+TX,Governor,TX-GOV,Gina Hinojosa,Greg Abbott,dem_rep,46.81,48.88,-2.07,60,27,2026-11-01,available,governor-polls-2026
+TX,Senate,TX-SEN,James Talarico,Ken Paxton,dem_rep,48.77,45.65,3.12,71,34,2026-11-01,available,us-senate-polls-2026
+VA,Senate,VA-SEN,,,,,,,,,,no_eligible_polls,us-senate-polls-2026
+VT,Governor,VT-GOV,Amanda Janoo,Phil Scott,dem_rep,43.51,46.81,-3.30,6,3,2026-10-25,available,governor-polls-2026
+WI,Governor,WI-GOV,David Crowley,Tom Tiffany,dem_rep,48.80,44.38,4.42,11,8,2026-10-23,available,governor-polls-2026
+WV,Senate,WV-SEN,,,,,,,,,,no_polls,us-senate-polls-2026
+WY,Governor,WY-GOV,,,,,,,,,,no_polls,governor-polls-2026
+WY,Senate,WY-SEN,,,,,,,,,,no_polls,us-senate-polls-2026

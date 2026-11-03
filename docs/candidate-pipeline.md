@@ -14,15 +14,24 @@ uv run scripts/flag_general_candidates.py
 uv run scripts/fetch_ballotbrief_house.py
 uv run scripts/build_house_field.py
 
-# Offline test data; first run can download requests.
-uv run --with requests python -m unittest discover -s tests -v
+# Senate and governor source refresh (network and FEC_API_KEY required).
+uv run scripts/fetch_fec_house_candidates.py --office S --totals
+uv run scripts/flag_general_candidates.py --office S
+uv run scripts/fetch_ballotbrief_statewide.py
+
+# Offline test data; first run can download requests and beautifulsoup4.
+uv run --with requests --with beautifulsoup4 python -m unittest discover -s tests -v
 ```
+
+`--office` takes the FEC office code, `H` (the default) or `S`. With `S` the fetcher writes `fec-senate-candidates.csv`, and the flagger reads it and writes `fec-senate-candidates-flagged.csv`, `fec-senate-general.csv`, and `review-senate-races.csv`. Without `--office`, both scripts read and write exactly the House paths they always have.
 
 `uv` reads Python/dependency requirements from each script's PEP 723 header. Fetching FEC records and flagging need `requests`; scraping also needs `beautifulsoup4`; the builder needs only the standard library. The scripts use repository-relative paths. Optional `--out` paths on the fetchers do not change downstream defaults; move outputs into the expected locations before continuing.
 
 The fetcher reads `FEC_API_KEY` from the environment, then a root `.env` file with a plain `FEC_API_KEY=...` assignment. The simple loader is not a complete dotenv parser. The fetcher can fall back to a severely rate-limited demo key; the flagger requires a real key. API keys are available through [api.data.gov](https://api.data.gov/signup/). Keep `.env` local and ignored.
 
 Sources are [OpenFEC](https://api.open.fec.gov/developers/) for registrations, candidate classifications, financial totals, and reports, and [The Ballot Brief](https://theballotbrief.com/candidates/us-house) for ballot candidate coverage. Ballot Brief uses AI-assisted research and warns of possible errors; it is not an official certification source. Its district links are retained in `source_url`. [Ballotpedia](https://ballotpedia.org/List_of_congressional_candidates_in_the_2026_elections) is an additional reference, not a scraper input.
+
+Senate and governor candidates come from Ballot Brief's [Senate](https://theballotbrief.com/candidates/us-senate) and [governor](https://theballotbrief.com/candidates/governor) list pages, with the same AI-assisted-research caveat. Each list row links to a state page (`/state/<name>`), which is kept as `source_url`. A row that ends in "and N more" is replaced by the candidates of that office's contest (`details#race-u-s-senate` or `details#race-governor`) on the state page. A trailing "(+N more contests)" note on a list row refers to other contests on the state page and is dropped. The Ohio and Florida Senate races in 2026 are special elections; the list shows each as that state's only Senate race. Governors are not federal candidates, so OpenFEC has no governor records; the pipeline uses no state campaign-finance source.
 
 The seven polling CSVs in `2026/polls/` are attributed to the NY Times in the original README. They include House, Senate, governor, president, presidential approval, presidential approval averages, and other polls. No download script, exact export URL, or retrieval timestamp is recorded. Acquire refreshed exports manually, preserve their schemas, and record the actual source/retrieval date when refreshing. This pipeline reads only `us-house-polls.csv`; the other six files are retained for separate analysis. Candidate rows and answer choices can repeat per poll; a CSV row is not necessarily one poll.
 
@@ -34,6 +43,9 @@ The seven polling CSVs in `2026/polls/` are attributed to the NY Times in the or
 | `flag_general_candidates.py` | Raw candidate CSV, House 12G report endpoint, candidate search, committee fallback endpoint | `fec-house-candidates-flagged.csv`, `fec-house-general.csv`, `review-districts.csv` |
 | `fetch_ballotbrief_house.py` | House list and truncated district pages from Ballot Brief | `ballotbrief-house-candidates.csv` |
 | `build_house_field.py` | Ballot CSV, flagged FEC CSV, reviewed registry, House polls | `house-general-field.csv`, `field-discrepancies.csv`, `candidate-match-review.csv` |
+| `fetch_fec_house_candidates.py --office S --totals` | The same FEC endpoints for 2026 Senate candidates | `fec-senate-candidates.csv` |
+| `flag_general_candidates.py --office S` | Raw Senate CSV, Senate 12G reports, candidate search, committee fallback | `fec-senate-candidates-flagged.csv`, `fec-senate-general.csv`, `review-senate-races.csv` |
+| `fetch_ballotbrief_statewide.py` | Senate and governor list pages and truncated state pages from Ballot Brief | `ballotbrief-statewide-candidates.csv` |
 
 All candidate paths are under `2026/candidates/`. The first seven CSVs above existed before identity resolution was added. `candidate-match-review.csv` is new. `candidate-identity-decisions.json` is maintained review input, not downloaded or regenerated by the fetchers. Keep it when refreshing source CSVs.
 
@@ -248,3 +260,51 @@ Compared with the previous combined field, changed fields were inspected by iden
 | incumbent to populated value | 2 |
 
 All populated canonical-ID changes are backed by registry decisions; remaining removed assignments are explained by the per-row match reason. No financial totals were summed. Lower known-incumbent or filing counts reflect withheld matches, not newly verified changes in officeholding or participation.
+
+## Senate and governor field
+
+`build_statewide_field.py` builds the 2026 Senate and governor general-election field offline from `ballotbrief-statewide-candidates.csv`, `fec-senate-candidates-flagged.csv`, `senate-identity-decisions.json`, `2026/polls/us-senate-polls.csv`, and `2026/polls/governor-polls.csv`:
+
+```sh
+uv run scripts/build_statewide_field.py
+```
+
+It writes three files to `2026/candidates/`: `statewide-general-field.csv`, `statewide-match-review.csv`, and `statewide-field-discrepancies.csv`. It never reads or writes House files. A race is a state and an office, identified as `STATE-SEN` or `STATE-GOV`. The Ballot Brief list has one entry per state and office, so a candidate listed twice for one state and office fails the build: it would mean two contests had been flattened together and could not be told apart. Ohio's and Florida's 2026 Senate races are special elections, and each is that state's only Senate race.
+
+### Statewide schemas
+
+`ballotbrief-statewide-candidates.csv` has `state`, `office` (`Senate` or `Governor`), `name`, `party`, and `source_url` (the Ballot Brief state page). Party labels are abbreviations from the list pages (`D`, `R`, `L`, `NPA`, `I`) or the state page's full names for races read from there.
+
+`statewide-general-field.csv` has the House field's columns in the same order, with `district` replaced by `office` and `race_id`:
+
+| Column | Meaning |
+| --- | --- |
+| `state`, `office`, `race_id` | Race identity, for example `GA`, `Senate`, `GA-SEN` |
+| `name`, `party`, `party_raw` | Ballot name, `DEM`/`REP`/`OTHER`, and the original label |
+| `fec_candidate_id` through `cash_on_hand_end_period` | Canonical FEC Senate record's values, as in the House field |
+| `in_general_polls` | Appears in a qualifying general-election poll for that office and state |
+| `source_url`, `fec_match_status`, `fec_match_reason`, `fec_alternate_ids` | As in the House field |
+
+Governor candidates are not federal candidates and are not in OpenFEC. Their `fec_match_status` is `not_federal`, and their FEC ID, incumbency, `filed_12g`, receipts, and cash on hand are blank. Blank means unknown: it does not mean a governor is not an incumbent or did not raise money. No state campaign-finance source is used, and governor rows never enter the review queue.
+
+Senate rows resolve only against FEC records whose IDs begin with `S`, matched within the state. Some FEC Senate records have a blank district instead of `00`; all are treated as statewide. `statewide-match-review.csv` uses the House review columns with `office` and `race_id` in place of `district`. `statewide-field-discrepancies.csv` has `state`, `office`, `race_id`, `candidate`, and `issue`, with the House issue types plus `in general polls but no race on ballot list` for poll names in a state without that race.
+
+Poll presence uses the House rule and window (cycle 2026, stage `general`, end date on or after September 1, 2026, no `NONE`, `ALL`, or `Generic` answers). The Senate snapshot marks only Senate rows, and the governor snapshot marks only governor rows. The governor snapshot's 2025 Virginia and New Jersey rows are a different cycle and are ignored.
+
+### Senate decisions
+
+`senate-identity-decisions.json` has the House registry's schema plus `"office": "Senate"` on every entry. `district` may be omitted and means `00`. Each registry serves one office: the House builder rejects an entry with a non-House office, and the statewide builder rejects one without `"office": "Senate"`. A Senate decision that names an `H` FEC ID fails as "not a Senate candidacy". All other validation, the review workflow, and the rule that alternates never sum finances are the same as for the House.
+
+### Snapshot review: November 2, 2026
+
+The statewide field has 260 candidates in 71 races (35 Senate, 36 governor): 124 Senate and 136 governor rows. Senate identities are 71 automatic, 45 reviewed, and 8 unmatched. Review performed by Claude Code (automated source review) against the committed FEC Senate file, the FEC candidate profiles, and Ballot Brief state pages. Most automatic misses were legal-name or nickname differences (Thomas/Tom Cotton, Margaret/Peggy Flanagan, Felix Barry Moore, Garland Andy Barr, Ashley Hinson Arenholz), and minor-party labels the matcher does not recognize. Notable judgments:
+
+- Alaska has two Republican Sullivans on the ballot: incumbent Dan Sullivan (`S4AK00214`) and Daniel J. Sullivan Jr. (`S6AK00326`). Both filed 12G reports; each ballot row has its own record.
+- South Carolina's Darline Graham maps to `S6SC04437`, not Lindsey Graham's `S0SC00149`. Mississippi's Cindy Hyde-Smith and Texas's Ted Brown also had a second record that shared only a name fragment.
+- Florida's Neil J. Gillespie maps to `S6FL00863`, which FEC spells GILESPIE.
+- Colorado's Bob Chew has two records with identical totals. `S6CO00549` is canonical because its party code is Forward Party. The other record (`S6CO00556`) is not asserted as an alternate, so it appears in the discrepancies as an unresolved 12G filer.
+- Idaho's Jim Risch has FEC party code `UNK`, and New Hampshire's Edmond Laplante has `RNC` against the ballot's Constitution label. Both are unique exact-name records and are treated as source coding gaps.
+
+The 8 unresolved candidates have no FEC Senate record under any spelling: Blake Huber and Christopher Baum (CO), Curtis Stinnett and Sevier White (OK), Mark Hackett (SC), and Andrew Gerena, James William Macon III, and Jeremy Dean Hearn (TN). All are minor-party or independent candidates, who may not have reached the FEC registration threshold.
+
+Remaining discrepancies are expected. 12G filers absent from the ballot are primary losers who filed before their primaries were settled (for example John Cornyn in Texas and Daniel Cameron in Kentucky). Some poll names are absent from the ballot because they come from hypothetical or primary-season general-election questions. Idaho, Nebraska, and South Dakota have no Democratic Senate candidate, and Nebraska's principal opponent is independent Dan Osborn.

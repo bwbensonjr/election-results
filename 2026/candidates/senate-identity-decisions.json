@@ -1,0 +1,770 @@
+{
+  "schema_version": 1,
+  "decisions": [
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "AK",
+      "ballot_name": "Dan Sullivan",
+      "decision": "match",
+      "canonical_fec_id": "S4AK00214",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S4AK00214/",
+        "https://theballotbrief.com/state/alaska",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Unique incumbent record named Dan Sullivan; the other Alaska Sullivan record (S6AK00326, Daniel J) is a separate challenger who also appears on the ballot.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "AK",
+      "ballot_name": "Daniel J. Sullivan Jr.",
+      "decision": "match",
+      "canonical_fec_id": "S6AK00326",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6AK00326/",
+        "https://theballotbrief.com/state/alaska",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "FEC record SULLIVAN, DANIEL J is a challenger distinct from incumbent Dan Sullivan (S4AK00214); given name and middle initial match this ballot row.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "AL",
+      "ballot_name": "Barry Moore",
+      "decision": "match",
+      "canonical_fec_id": "S6AL00476",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6AL00476/",
+        "https://theballotbrief.com/state/alabama",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "FEC legal name Felix Barry Moore; the ballot uses his middle name. Only Moore Senate record in Alabama; Republican, filed 12G.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "AR",
+      "ballot_name": "Tom Cotton",
+      "decision": "match",
+      "canonical_fec_id": "S4AR00103",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S4AR00103/",
+        "https://theballotbrief.com/state/arkansas",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Incumbent; the ballot name is a common short form of the FEC legal given name (Thomas).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "AR",
+      "ballot_name": "Jeff Wadlin",
+      "decision": "match",
+      "canonical_fec_id": "S6AR00223",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6AR00223/",
+        "https://theballotbrief.com/state/arkansas",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Libertarian on both; the ballot name is a common short form of the FEC legal given name (Jeffrey).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "CO",
+      "ballot_name": "Adam Withrow",
+      "decision": "match",
+      "canonical_fec_id": "S6CO00564",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6CO00564/",
+        "https://theballotbrief.com/state/colorado",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact name; the matcher does not recognize this minor-party label, so it withheld the otherwise exact name match; the FEC party code is consistent with the ballot party (Unity Party, FEC UNI).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "CO",
+      "ballot_name": "Bob Chew",
+      "decision": "match",
+      "canonical_fec_id": "S6CO00549",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6CO00549/",
+        "https://theballotbrief.com/state/colorado",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Two Colorado records (S6CO00549 CHEW, ROBERT, party FWD; S6CO00556 CHEW, BOB, party OTH) report identical totals. S6CO00549 is canonical because its party code matches the ballot's Forward Party. Person-level equivalence of the second record is not asserted, so it is not an alternate.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "DE",
+      "ballot_name": "Chris Coons",
+      "decision": "match",
+      "canonical_fec_id": "S0DE00092",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S0DE00092/",
+        "https://theballotbrief.com/state/delaware",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Incumbent; the ballot name is a common short form of the FEC legal given name (Christopher).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "FL",
+      "ballot_name": "Angie Nixon",
+      "decision": "match",
+      "canonical_fec_id": "S6FL00830",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6FL00830/",
+        "https://theballotbrief.com/state/florida",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Democrat on both, filed 12G; the ballot name is a common short form of the FEC legal given name (Angela).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "FL",
+      "ballot_name": "Neil J. Gillespie",
+      "decision": "match",
+      "canonical_fec_id": "S6FL00863",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6FL00863/",
+        "https://theballotbrief.com/state/florida",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "FEC record GILESPIE, NEIL JOSEPH is the only Florida no-party Senate filer with this given name and middle initial and filed 12G; the FEC surname omits one L.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "GA",
+      "ballot_name": "Jon Ossoff",
+      "decision": "match",
+      "canonical_fec_id": "S8GA00180",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S8GA00180/",
+        "https://theballotbrief.com/state/georgia",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Incumbent; FEC lists T. Jonathan Ossoff.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "GA",
+      "ballot_name": "Mike Collins",
+      "decision": "match",
+      "canonical_fec_id": "S6GA00390",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6GA00390/",
+        "https://theballotbrief.com/state/georgia",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Republican, filed 12G; the ballot name is a common short form of the FEC legal given name (Michael A Jr).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "IA",
+      "ballot_name": "Ashley Hinson",
+      "decision": "match",
+      "canonical_fec_id": "S6IA00314",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6IA00314/",
+        "https://theballotbrief.com/state/iowa",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "FEC record ARENHOLZ, ASHLEY HINSON carries her married surname with Hinson as a middle name; Republican, filed 12G.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "IA",
+      "ballot_name": "Josh Turek",
+      "decision": "match",
+      "canonical_fec_id": "S6IA00298",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6IA00298/",
+        "https://theballotbrief.com/state/iowa",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Democrat, filed 12G; the ballot name is a common short form of the FEC legal given name (Joshua).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "ID",
+      "ballot_name": "Jim Risch",
+      "decision": "match",
+      "canonical_fec_id": "S8ID00092",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S8ID00092/",
+        "https://theballotbrief.com/state/idaho",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Incumbent; the ballot name is a common short form of the FEC legal given name (James). The FEC party code is UNK, a source coding gap rather than a conflicting party.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "ID",
+      "ballot_name": "Natalie M Fleming",
+      "decision": "match",
+      "canonical_fec_id": "S0ID00172",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S0ID00172/",
+        "https://theballotbrief.com/state/idaho",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact given name, middle initial, and surname; the FEC record is unaffiliated (UN), consistent with the ballot's Independent label.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "IL",
+      "ballot_name": "Whitfield Harrington Jr",
+      "decision": "match",
+      "canonical_fec_id": "S6IL00680",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6IL00680/",
+        "https://theballotbrief.com/state/illinois",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact name; the matcher does not recognize this minor-party label, so it withheld the otherwise exact name match; the FEC party code is consistent with the ballot party (American Center Party, FEC IND).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "KY",
+      "ballot_name": "Andy Barr",
+      "decision": "match",
+      "canonical_fec_id": "S6KY00286",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6KY00286/",
+        "https://theballotbrief.com/state/kentucky",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "FEC legal name Garland Andy Barr; Republican, filed 12G.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "KY",
+      "ballot_name": "Christopher Campbell",
+      "decision": "match",
+      "canonical_fec_id": "S6KY00377",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6KY00377/",
+        "https://theballotbrief.com/state/kentucky",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact given name and surname; the matcher does not recognize this minor-party label, so it withheld the otherwise exact name match; the FEC party code is consistent with the ballot party (Kentucky Party, FEC OTH).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "MA",
+      "ballot_name": "Ed Markey",
+      "decision": "match",
+      "canonical_fec_id": "S4MA00028",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S4MA00028/",
+        "https://theballotbrief.com/state/massachusetts",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Incumbent; the ballot name is a common short form of the FEC legal given name (Edward).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "MA",
+      "ballot_name": "Joe Tache",
+      "decision": "match",
+      "canonical_fec_id": "S6MA00288",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6MA00288/",
+        "https://theballotbrief.com/state/massachusetts",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Filed 12G; the ballot name is a common short form of the FEC legal given name (Joseph); FEC OTH for Socialism and Liberation.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "MI",
+      "ballot_name": "Douglas P. Marsh",
+      "decision": "match",
+      "canonical_fec_id": "S4MI00512",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S4MI00512/",
+        "https://theballotbrief.com/state/michigan",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact name; the matcher does not recognize this minor-party label, so it withheld the otherwise exact name match; the FEC party code is consistent with the ballot party (Green, FEC GRE).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "MI",
+      "ballot_name": "Mike Rogers",
+      "decision": "match",
+      "canonical_fec_id": "S4MI00595",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S4MI00595/",
+        "https://theballotbrief.com/state/michigan",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Republican, filed 12G; the ballot name is a common short form of the FEC legal given name (Michael J).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "MI",
+      "ballot_name": "Tim Long",
+      "decision": "match",
+      "canonical_fec_id": "S6MI00566",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6MI00566/",
+        "https://theballotbrief.com/state/michigan",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "the ballot name is a common short form of the FEC legal given name (Timothy); FEC UST matches U.S. Taxpayers.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "MI",
+      "ballot_name": "Walter P. Kristy",
+      "decision": "match",
+      "canonical_fec_id": "S6MI00590",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6MI00590/",
+        "https://theballotbrief.com/state/michigan",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact name; the matcher does not recognize this minor-party label, so it withheld the otherwise exact name match; the FEC party code is consistent with the ballot party (Natural Law, FEC NLP).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "MN",
+      "ballot_name": "Marisa Simonetti",
+      "decision": "match",
+      "canonical_fec_id": "S6MN00481",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6MN00481/",
+        "https://theballotbrief.com/state/minnesota",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact name; the matcher does not recognize this minor-party label, so it withheld the otherwise exact name match; the FEC party code is consistent with the ballot party (Independent, FEC NON).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "MN",
+      "ballot_name": "Peggy Flanagan",
+      "decision": "match",
+      "canonical_fec_id": "S6MN00440",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6MN00440/",
+        "https://theballotbrief.com/state/minnesota",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "DFL, filed 12G; the ballot name is a common short form of the FEC legal given name (Margaret).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "MS",
+      "ballot_name": "Cindy Hyde-Smith",
+      "decision": "match",
+      "canonical_fec_id": "S8MS00261",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S8MS00261/",
+        "https://theballotbrief.com/state/mississippi",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Incumbent HYDE-SMITH, CINDY; the other plausible record (S6MS00125, Andrew Scott Smith) only shares the Smith fragment.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "NC",
+      "ballot_name": "Michael Dublin",
+      "decision": "match",
+      "canonical_fec_id": "S6NC00563",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6NC00563/",
+        "https://theballotbrief.com/state/north-carolina",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact given name and surname, filed 12G; the matcher does not recognize this minor-party label, so it withheld the otherwise exact name match; the FEC party code is consistent with the ballot party (Green, FEC GRE).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "NE",
+      "ballot_name": "Chuck Conboy",
+      "decision": "match",
+      "canonical_fec_id": "S6NE00202",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6NE00202/",
+        "https://theballotbrief.com/state/nebraska",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "the ballot name is a common short form of the FEC legal given name (Charles); filed 12G; FEC OTH for America First.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "NE",
+      "ballot_name": "Mike Marvin",
+      "decision": "match",
+      "canonical_fec_id": "S6NE00152",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6NE00152/",
+        "https://theballotbrief.com/state/nebraska",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact name; the matcher does not recognize this minor-party label, so it withheld the otherwise exact name match; the FEC party code is consistent with the ballot party (Legal Marijuana NOW, FEC OTH).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "NE",
+      "ballot_name": "Robin Richards",
+      "decision": "match",
+      "canonical_fec_id": "S6NE00210",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6NE00210/",
+        "https://theballotbrief.com/state/nebraska",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact name, filed 12G; the matcher does not recognize this minor-party label, so it withheld the otherwise exact name match; the FEC party code is consistent with the ballot party (Nebraska Working People, FEC OTH).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "NH",
+      "ballot_name": "Edmond Laplante",
+      "decision": "match",
+      "canonical_fec_id": "S2NH00223",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S2NH00223/",
+        "https://theballotbrief.com/state/new-hampshire",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact name; the only New Hampshire Laplante Senate record. Its FEC party code (RNC) differs from the ballot's Constitution label and is treated as a source coding difference for this unique name.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "NJ",
+      "ballot_name": "Joanne Kuniansky",
+      "decision": "match",
+      "canonical_fec_id": "S4NJ00144",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S4NJ00144/",
+        "https://theballotbrief.com/state/new-jersey",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact name; the matcher does not recognize this minor-party label, so it withheld the otherwise exact name match; the FEC party code is consistent with the ballot party (Socialist Workers Party, FEC SWP).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "OH",
+      "ballot_name": "Greg Levy",
+      "decision": "match",
+      "canonical_fec_id": "S6OH00395",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6OH00395/",
+        "https://theballotbrief.com/state/ohio",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "the ballot name is a common short form of the FEC legal given name (Gregory); filed 12G; FEC IND for Party for Socialism and Liberation.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "OK",
+      "ballot_name": "N'Kiyla Jasmine Thomas",
+      "decision": "match",
+      "canonical_fec_id": "S6OK04163",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6OK04163/",
+        "https://theballotbrief.com/state/oklahoma",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "FEC name THOMAS, N'KIYLA JASMINE - ANN; Democrat, filed 12G.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "OR",
+      "ballot_name": "Chris Henry",
+      "decision": "match",
+      "canonical_fec_id": "S2OR00234",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S2OR00234/",
+        "https://theballotbrief.com/state/oregon",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact name; the matcher does not recognize this minor-party label, so it withheld the otherwise exact name match; the FEC party code is consistent with the ballot party (Progressive, FEC PRO).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "OR",
+      "ballot_name": "Jeff Merkley",
+      "decision": "match",
+      "canonical_fec_id": "S8OR00207",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S8OR00207/",
+        "https://theballotbrief.com/state/oregon",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Incumbent; the ballot name is a common short form of the FEC legal given name (Jeffrey).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "RI",
+      "ballot_name": "Jack Reed",
+      "decision": "match",
+      "canonical_fec_id": "S6RI00163",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6RI00163/",
+        "https://theballotbrief.com/state/rhode-island",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Incumbent; FEC lists John F. Reed, of which Jack is the customary short form.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "RI",
+      "ballot_name": "Ray McKay",
+      "decision": "match",
+      "canonical_fec_id": "S4RI00051",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S4RI00051/",
+        "https://theballotbrief.com/state/rhode-island",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Republican, filed 12G; the ballot name is a common short form of the FEC legal given name (Raymond).",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "SC",
+      "ballot_name": "Darline Graham",
+      "decision": "match",
+      "canonical_fec_id": "S6SC04437",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6SC04437/",
+        "https://theballotbrief.com/state/south-carolina",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "FEC record GRAHAM, DARLINE, Republican, filed 12G; the other plausible record (S0SC00149) is Lindsey Graham.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "TX",
+      "ballot_name": "Ken Paxton",
+      "decision": "match",
+      "canonical_fec_id": "S6TX00388",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6TX00388/",
+        "https://theballotbrief.com/state/texas",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "FEC legal name Warren Kenneth Paxton Jr.; Republican, filed 12G.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "TX",
+      "ballot_name": "Ted Brown",
+      "decision": "match",
+      "canonical_fec_id": "S4TX00888",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S4TX00888/",
+        "https://theballotbrief.com/state/texas",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "FEC record BROWN, THEODORE E. JR., Libertarian, filed 12G; the other plausible record (S6TX00594) is Jennifer Brown Gaines.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "WV",
+      "ballot_name": "Rio Phillips",
+      "decision": "match",
+      "canonical_fec_id": "S6WV00170",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6WV00170/",
+        "https://theballotbrief.com/state/west-virginia",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact name; the ballot lists a write-in candidacy and FEC codes the record IND.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "state": "WV",
+      "ballot_name": "S. Marshall Wilson",
+      "decision": "match",
+      "canonical_fec_id": "S6WV00204",
+      "alternate_fec_ids": [],
+      "evidence": [
+        "https://www.fec.gov/data/candidate/S6WV00204/",
+        "https://theballotbrief.com/state/west-virginia",
+        "2026/candidates/fec-senate-candidates-flagged.csv"
+      ],
+      "rationale": "Exact name; Constitution on both, filed 12G.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    }
+  ]
+}

@@ -7,7 +7,8 @@ import os
 import re
 import tempfile
 from datetime import date
-from decimal import Decimal, InvalidOperation
+from collections import defaultdict
+from decimal import ROUND_HALF_UP, Decimal, InvalidOperation
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,6 +30,26 @@ PVI_COLUMNS = [
     "source_incumbent_label", "source_party_label", "source_id", "source_record", "pvi_edition",
 ]
 TOLERANCE = Decimal("0.011")
+STATE_PVI_COLUMNS_SOURCE = ["State", "PVI"]
+STATE_NAMES = {
+    "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR", "California": "CA",
+    "Colorado": "CO", "Connecticut": "CT", "Delaware": "DE", "Florida": "FL", "Georgia": "GA",
+    "Hawaii": "HI", "Idaho": "ID", "Illinois": "IL", "Indiana": "IN", "Iowa": "IA", "Kansas": "KS",
+    "Kentucky": "KY", "Louisiana": "LA", "Maine": "ME", "Maryland": "MD", "Massachusetts": "MA",
+    "Michigan": "MI", "Minnesota": "MN", "Mississippi": "MS", "Missouri": "MO", "Montana": "MT",
+    "Nebraska": "NE", "Nevada": "NV", "New Hampshire": "NH", "New Jersey": "NJ", "New Mexico": "NM",
+    "New York": "NY", "North Carolina": "NC", "North Dakota": "ND", "Ohio": "OH", "Oklahoma": "OK",
+    "Oregon": "OR", "Pennsylvania": "PA", "Rhode Island": "RI", "South Carolina": "SC",
+    "South Dakota": "SD", "Tennessee": "TN", "Texas": "TX", "Utah": "UT", "Vermont": "VT",
+    "Virginia": "VA", "Washington": "WA", "Washington, D.C.": "DC", "West Virginia": "WV",
+    "Wisconsin": "WI", "Wyoming": "WY",
+}
+STATE_PRESIDENTIAL_COLUMNS = [
+    "state", "election_year", "dem_votes", "rep_votes", "total_votes", "dem_share_pct",
+    "rep_share_pct", "dem_margin_pp", "district_count", "status", "missing_districts",
+    "source_id", "source_record",
+]
+STATE_PVI_COLUMNS = ["state", "cook_pvi_label", "cook_pvi_dem_lean_pp", "source_id", "source_record", "pvi_edition"]
 
 
 def district_key(label):
@@ -78,8 +99,8 @@ def load_sources(manifest_path=DEFAULT_MANIFEST, project_root=ROOT):
     if not isinstance(data, dict) or type(data.get("schema_version")) is not int or data["schema_version"] != 1:
         raise ValueError("manifest: schema_version must be 1")
     sources = data.get("sources")
-    if not isinstance(sources, dict) or set(sources) != {"presidential", "cook_pvi"}:
-        raise ValueError("manifest: sources must contain presidential and cook_pvi")
+    if not isinstance(sources, dict) or set(sources) - {"cook_state_pvi"} != {"presidential", "cook_pvi"}:
+        raise ValueError("manifest: sources must contain presidential and cook_pvi, and may add cook_state_pvi")
     result, ids = {}, set()
     for kind, entry in sources.items():
         if not isinstance(entry, dict):
@@ -92,8 +113,13 @@ def load_sources(manifest_path=DEFAULT_MANIFEST, project_root=ROOT):
         ids.add(entry["source_id"])
         if entry.get("election_years") != [2020, 2024]:
             raise ValueError(f"manifest {kind}: election_years must be [2020, 2024]")
-        expected_format = "presidential-two-header" if kind == "presidential" else "cook-pvi-six-column"
-        if entry["format"] != expected_format or (kind == "cook_pvi" and entry["edition"] != "2026"):
+        expected_format, expected_edition = {
+            "presidential": ("presidential-two-header", None),
+            "cook_pvi": ("cook-pvi-six-column", "2026"),
+            # Cook's 2026 update re-scored districts only; 2025 is the latest state edition.
+            "cook_state_pvi": ("cook-state-pvi-two-column", "2025"),
+        }[kind]
+        if entry["format"] != expected_format or expected_edition not in (None, entry["edition"]):
             raise ValueError(f"manifest {kind}: contradictory format or edition")
         for field in ["retrieved_at", "published_at"]:
             value = entry.get(field)
@@ -207,6 +233,77 @@ def normalize_cook(source):
     return sorted(rows, key=lambda r: (r["state"], r["district"]))
 
 
+def normalize_state_pvi(source):
+    """Return published state PVI rows from the two-column state snapshot, keyed by postal code."""
+    _, records = read_records(source["resolved_path"], STATE_PVI_COLUMNS_SOURCE)
+    rows, seen = [], {}
+    for line, raw in enumerate(records, 2):
+        location = f"{source['resolved_path']} row {line}"
+        name = raw["State"].strip()
+        if name not in STATE_NAMES:
+            raise ValueError(f"{location}: unknown state {name!r}")
+        state = STATE_NAMES[name]
+        if state in seen:
+            raise ValueError(f"{location}: duplicate state {state}, rows {seen[state]} and {line}")
+        seen[state] = line
+        label = raw["PVI"].strip()
+        rows.append(dict(zip(STATE_PVI_COLUMNS, [state, label, pvi_lean(label, location), source["source_id"],
+                                                 f"State={name};edition={source['edition']}", source["edition"]])))
+    return sorted(rows, key=lambda r: r["state"])
+
+
+def percent(part, total):
+    return format((100 * part / total).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP), "f")
+
+
+def aggregate_states(history, expected_districts):
+    """Sum district vote counts into state rows, only where every expected district has counts."""
+    by_state = defaultdict(dict)
+    for row in history:
+        by_state[(row["state"], row["election_year"])][row["district"]] = row
+    rows = []
+    for state in sorted(expected_districts):
+        districts = sorted(expected_districts[state])
+        for year in ["2020", "2024"]:
+            found = by_state.get((state, year), {})
+            missing = [d for d in districts if d not in found
+                       or "" in (found[d]["dem_votes"], found[d]["rep_votes"], found[d]["total_votes"])]
+            row = dict.fromkeys(STATE_PRESIDENTIAL_COLUMNS, "")
+            row.update(state=state, election_year=year, district_count=str(len(districts)),
+                       missing_districts=";".join(missing), status="missing" if missing else "available",
+                       source_record=f"State={state};year={year};summed districts")
+            source_ids = {found[d]["source_id"] for d in districts if d in found}
+            row["source_id"] = ";".join(sorted(source_ids))
+            if not missing:
+                dem, rep, total = (sum(Decimal(found[d][c]) for d in districts)
+                                   for c in ["dem_votes", "rep_votes", "total_votes"])
+                row.update(dem_votes=str(dem), rep_votes=str(rep), total_votes=str(total),
+                           dem_share_pct=percent(dem, total), rep_share_pct=percent(rep, total),
+                           dem_margin_pp=percent(dem - rep, total))
+            rows.append(row)
+    return rows
+
+
+def expected_state_districts(candidate_path):
+    """Return each state's districts from the House candidate field, the target district universe."""
+    _, candidates = read_records(candidate_path)
+    districts = defaultdict(set)
+    for row in candidates:
+        state, district, _ = district_key(f"{row['state']}-{row['district']}")
+        districts[state].add(district)
+    return districts
+
+
+def normalized_state_sources(manifest_path=DEFAULT_MANIFEST, project_root=ROOT,
+                             candidate_path=ROOT / "2026/candidates/house-general-field.csv"):
+    """Return (sources, state presidential rows, state PVI rows) without writing files."""
+    sources, history, _ = normalized_sources(manifest_path, project_root)
+    if "cook_state_pvi" not in sources:
+        raise ValueError("manifest: cook_state_pvi source is required for state normalization")
+    states = aggregate_states(history, expected_state_districts(candidate_path))
+    return sources, states, normalize_state_pvi(sources["cook_state_pvi"])
+
+
 def normalized_sources(manifest_path=DEFAULT_MANIFEST, project_root=ROOT):
     sources = load_sources(manifest_path, project_root)
     return sources, normalize_presidential(sources["presidential"]), normalize_cook(sources["cook_pvi"])
@@ -234,10 +331,22 @@ def publish_csvs(directory, outputs):
             temporary.unlink(missing_ok=True)
 
 
-def normalize(manifest_path=DEFAULT_MANIFEST, output_dir=RESULTS_DIR, project_root=ROOT):
-    _, history, pvi = normalized_sources(manifest_path, project_root)
-    publish_csvs(output_dir, [
+def normalize(manifest_path=DEFAULT_MANIFEST, output_dir=RESULTS_DIR, project_root=ROOT, candidate_path=None):
+    """Publish district outputs, plus state outputs when a candidate field is given.
+
+    Every source is validated before any file is replaced, so a bad state
+    snapshot also leaves the district outputs untouched.
+    """
+    sources, history, pvi = normalized_sources(manifest_path, project_root)
+    outputs = [
         ("presidential-results-normalized.csv", PRESIDENTIAL_COLUMNS, history),
         ("cook-pvi-normalized.csv", PVI_COLUMNS, pvi),
-    ])
+    ]
+    if candidate_path is not None:
+        _, states, state_pvi = normalized_state_sources(manifest_path, project_root, candidate_path)
+        outputs += [
+            ("state-presidential-normalized.csv", STATE_PRESIDENTIAL_COLUMNS, states),
+            ("cook-state-pvi-normalized.csv", STATE_PVI_COLUMNS, state_pvi),
+        ]
+    publish_csvs(output_dir, outputs)
     return history, pvi

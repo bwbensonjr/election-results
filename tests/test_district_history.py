@@ -168,12 +168,115 @@ class DistrictHistoryTests(HistoryFixture):
     def save_sources_for_invalid_path(self):
         self.manifest.write_text(json.dumps(dict(schema_version=1, sources=self.sources)))
 
+    def test_committed_state_snapshot(self):
+        _, states, pvi = history.normalized_state_sources()
+        self.assertEqual(len(states), 100)
+        self.assertEqual({r["status"] for r in states}, {"available"})
+        georgia = {r["election_year"]: r["dem_margin_pp"] for r in states if r["state"] == "GA"}
+        self.assertEqual(georgia, {"2020": "0.24", "2024": "-2.19"})
+        self.assertEqual(len(pvi), 51)
+        self.assertEqual(next(r for r in pvi if r["state"] == "GA")["cook_pvi_dem_lean_pp"], "-1")
+        self.assertEqual({r["pvi_edition"] for r in pvi}, {"2025"})
+
     def test_committed_snapshot(self):
         _, presidential, pvi = history.normalized_sources()
         self.assertEqual(len(presidential), 870)
         self.assertEqual(len(pvi), 435)
         self.assertEqual(next(r for r in presidential if r["district_id"] == "AK-AL" and r["election_year"] == "2024")["dem_margin_pp"], "-13.14")
         self.assertEqual(next(r for r in pvi if r["district_id"] == "CA-13")["cook_pvi_label"], "D+2")
+
+
+
+class StateHistoryTests(HistoryFixture):
+    def setUp(self):
+        super().setUp()
+        self.pres_rows.append(["AL-02", "Third incumbent", "(R)", "100", "300", "500", "20.00%", "60.00%", "-40.00%", "",
+                               "200", "200", "500", "40.00%", "40.00%", "0.00%"])
+        self.state_rows = [["State", "PVI"], ["Alaska", "R+6"], ["Alabama", "R+15"], ["Michigan", "EVEN"],
+                           ["Washington, D.C.", "D+44"]]
+        self.sources["cook_state_pvi"] = dict(
+            source_id="test-state-pvi", path="state.csv", edition="2025", format="cook-state-pvi-two-column",
+            election_years=[2020, 2024], notes="Latest state edition", source_url="https://example.test",
+            retrieved_at="2026-11-02", published_at="2025-03-06")
+        self.candidates = self.root / "field.csv"
+        self.field_districts = [("AK", "00"), ("AL", "01"), ("AL", "02")]
+        self.save_all()
+
+    def save_all(self):
+        write_csv(self.root / "state.csv", self.state_rows)
+        write_csv(self.candidates, [["state", "district", "name"]] + [[s, d, f"{s}{d}"] for s, d in self.field_districts])
+        self.save_sources()
+
+    def normalize(self):
+        return history.normalize(self.manifest, self.normalized, self.root, self.candidates)
+
+    def read(self, name):
+        with (self.normalized / name).open(newline="") as stream:
+            return list(csv.DictReader(stream))
+
+    def test_multi_district_sum_and_at_large(self):
+        self.normalize()
+        rows = {(r["state"], r["election_year"]): r for r in self.read("state-presidential-normalized.csv")}
+        alabama = rows[("AL", "2024")]
+        # (500 + 100) - (500 + 300) over 1,000 + 500 votes, not an average of the district margins.
+        self.assertEqual((alabama["dem_votes"], alabama["rep_votes"], alabama["total_votes"]), ("600", "800", "1500"))
+        self.assertEqual(alabama["dem_margin_pp"], "-13.33")
+        self.assertEqual((alabama["district_count"], alabama["status"]), ("2", "available"))
+        self.assertEqual(rows[("AK", "2024")]["dem_margin_pp"], "-20.00")
+        self.assertEqual(rows[("AK", "2020")]["dem_share_pct"], "60.00")
+
+    def test_missing_district_counts_leave_state_blank(self):
+        self.pres_rows[-1][10:13] = ["", "", ""]
+        self.save_all()
+        self.normalize()
+        rows = {(r["state"], r["election_year"]): r for r in self.read("state-presidential-normalized.csv")}
+        self.assertEqual((rows[("AL", "2020")]["status"], rows[("AL", "2020")]["dem_margin_pp"]), ("missing", ""))
+        self.assertEqual(rows[("AL", "2020")]["missing_districts"], "02")
+        self.assertEqual(rows[("AL", "2024")]["status"], "available")
+        self.field_districts.append(("AL", "03"))
+        self.save_all()
+        self.normalize()
+        rows = {(r["state"], r["election_year"]): r for r in self.read("state-presidential-normalized.csv")}
+        self.assertEqual(rows[("AL", "2024")]["missing_districts"], "03")
+
+    def test_state_pvi_labels(self):
+        self.normalize()
+        rows = {r["state"]: r for r in self.read("cook-state-pvi-normalized.csv")}
+        self.assertEqual((rows["AK"]["cook_pvi_label"], rows["AK"]["cook_pvi_dem_lean_pp"]), ("R+6", "-6"))
+        self.assertEqual(rows["MI"]["cook_pvi_dem_lean_pp"], "0")
+        self.assertEqual(rows["DC"]["cook_pvi_dem_lean_pp"], "44")
+        self.assertEqual(rows["AL"]["pvi_edition"], "2025")
+
+    def test_invalid_state_sources_preserve_all_outputs(self):
+        self.normalize()
+        before = {p.name: p.read_bytes() for p in self.normalized.iterdir()}
+        for rows, message in [(self.state_rows + [["Alaska", "R+5"]], "duplicate state AK"),
+                              (self.state_rows + [["Guam", "R+1"]], "unknown state"),
+                              (self.state_rows + [["Ohio", "R5"]], "invalid published PVI")]:
+            with self.subTest(message=message):
+                write_csv(self.root / "state.csv", rows)
+                self.save_sources()
+                with self.assertRaisesRegex(ValueError, message):
+                    self.normalize()
+                self.assertEqual(before, {p.name: p.read_bytes() for p in self.normalized.iterdir()})
+        self.save_all()
+        write_csv(self.root / "state.csv", self.state_rows + [["Ohio", "R+5"]])
+        with self.assertRaisesRegex(ValueError, "stale SHA-256"):
+            self.normalize()
+        self.sources["cook_state_pvi"]["edition"] = "2026"
+        self.save_all()
+        with self.assertRaisesRegex(ValueError, "contradictory"):
+            self.normalize()
+        self.assertEqual(before, {p.name: p.read_bytes() for p in self.normalized.iterdir()})
+
+    def test_district_outputs_unchanged_by_state_step(self):
+        history.normalize(self.manifest, self.normalized, self.root)
+        district_only = {p.name: p.read_bytes() for p in self.normalized.iterdir()}
+        self.normalize()
+        both = {p.name: p.read_bytes() for p in self.normalized.iterdir()}
+        self.assertEqual(set(both) - set(district_only),
+                         {"state-presidential-normalized.csv", "cook-state-pvi-normalized.csv"})
+        self.assertEqual({k: both[k] for k in district_only}, district_only)
 
 
 if __name__ == "__main__":

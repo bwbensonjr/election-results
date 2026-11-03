@@ -2,10 +2,10 @@
 # requires-python = ">=3.11"
 # dependencies = ["requests"]
 # ///
-"""Download 2026 U.S. House candidates from the FEC API to CSV.
+"""Download 2026 U.S. House or Senate candidates from the FEC API to CSV.
 
 Usage:
-    FEC_API_KEY=... uv run scripts/fetch_fec_house_candidates.py [--totals] [--out PATH]
+    FEC_API_KEY=... uv run scripts/fetch_fec_house_candidates.py [--office {H,S}] [--totals] [--out PATH]
 
 Get a free key at https://api.data.gov/signup/. Without one, DEMO_KEY is
 used, which has a very low hourly rate limit.
@@ -27,6 +27,8 @@ import requests
 API_BASE = "https://api.open.fec.gov/v1"
 PER_PAGE = 100
 CYCLE = 2026
+DATA_DIR = Path("2026/candidates")
+OFFICE_NAMES = {"H": "house", "S": "senate"}
 
 CANDIDATE_FIELDS = [
     "candidate_id",
@@ -51,6 +53,11 @@ TOTALS_FIELDS = [
     "cash_on_hand_end_period",
     "coverage_end_date",
 ]
+
+
+def candidates_path(office):
+    """Default raw candidate CSV for an office; House keeps its original path."""
+    return DATA_DIR / f"fec-{OFFICE_NAMES[office]}-candidates.csv"
 
 
 def load_api_key():
@@ -103,13 +110,18 @@ def fetch_all(session, path, params):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Download 2026 U.S. House candidates from the FEC API to CSV."
+        description="Download 2026 U.S. House or Senate candidates from the FEC API to CSV."
+    )
+    parser.add_argument(
+        "--office",
+        choices=sorted(OFFICE_NAMES),
+        default="H",
+        help="FEC office code: H for House (default) or S for Senate",
     )
     parser.add_argument(
         "--out",
         type=Path,
-        default=Path("2026/candidates/fec-house-candidates.csv"),
-        help="Output CSV path",
+        help="Output CSV path (default: 2026/candidates/fec-<office>-candidates.csv)",
     )
     parser.add_argument(
         "--totals",
@@ -117,6 +129,7 @@ def main():
         help="Also fetch 2026 cycle financial totals (receipts, cash on hand)",
     )
     args = parser.parse_args()
+    out = args.out or candidates_path(args.office)
 
     api_key = load_api_key()
     if api_key == "DEMO_KEY":
@@ -129,7 +142,7 @@ def main():
     candidates = fetch_all(
         session,
         "/candidates/",
-        {"office": "H", "election_year": CYCLE, "sort": "candidate_id"},
+        {"office": args.office, "election_year": CYCLE, "sort": "candidate_id"},
     )
 
     fields = list(CANDIDATE_FIELDS)
@@ -138,7 +151,7 @@ def main():
         totals = fetch_all(
             session,
             "/candidates/totals/",
-            {"office": "H", "election_year": CYCLE, "cycle": CYCLE, "sort": "candidate_id"},
+            {"office": args.office, "election_year": CYCLE, "cycle": CYCLE, "sort": "candidate_id"},
         )
         by_id = {t["candidate_id"]: t for t in totals}
         for c in candidates:
@@ -149,13 +162,13 @@ def main():
 
     candidates.sort(key=lambda c: (c["state"], c["district"] or "", c["name"]))
 
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    with args.out.open("w", newline="") as f:
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with out.open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(candidates)
 
-    print(f"Wrote {len(candidates)} candidates to {args.out}", file=sys.stderr)
+    print(f"Wrote {len(candidates)} candidates to {out}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -2,22 +2,25 @@
 # requires-python = ">=3.11"
 # dependencies = ["requests"]
 # ///
-"""Flag 2026 House candidates who filed an FEC pre-general (12G) report.
+"""Flag 2026 House or Senate candidates who filed an FEC pre-general (12G) report.
 
 A 12G filing corroborates general-election participation; it does not
 certify ballot eligibility. Preserve all committee links and select the
 latest report by receipt date, then numeric report identifier on ties.
 
 Usage:
-    uv run scripts/flag_general_candidates.py
+    uv run scripts/flag_general_candidates.py [--office {H,S}]
 
-Reads 2026/candidates/fec-house-candidates.csv (from
+Reads 2026/candidates/fec-<office>-candidates.csv (from
 fetch_fec_house_candidates.py) and writes, in the same directory:
-    fec-house-candidates-flagged.csv  every candidate plus 12G columns
-    fec-house-general.csv             only candidates who filed a 12G
-    review-districts.csv              districts without a clean D vs. R field
+    fec-<office>-candidates-flagged.csv  every candidate plus 12G columns
+    fec-<office>-general.csv             only candidates who filed a 12G
+    review-districts.csv                 House districts without a clean D vs. R field
+    review-senate-races.csv              the same review for Senate races
+where <office> is house (default) or senate.
 """
 
+import argparse
 import csv
 import sys
 from collections import defaultdict
@@ -25,11 +28,14 @@ from pathlib import Path
 
 import requests
 
-from fetch_fec_house_candidates import CYCLE, fetch_all, get_json, load_api_key
+from fetch_fec_house_candidates import (
+    CYCLE, DATA_DIR, OFFICE_NAMES, candidates_path, fetch_all, get_json, load_api_key,
+)
 
-DATA_DIR = Path("2026/candidates")
 TOP_TWO_STATES = {"CA", "WA"}
 DEM_PARTIES = {"DEM", "DFL"}
+
+REVIEW_FILES = {"H": "review-districts.csv", "S": "review-senate-races.csv"}
 
 FLAG_FIELDS = [
     "filed_12g",
@@ -47,15 +53,22 @@ def report_order(report):
             str(report.get("committee_id") or ""))
 
 
-def fetch_12g_reports(session):
-    """Return the latest 12G report per House committee, keyed by committee_id."""
+def output_paths(office):
+    """Return (flagged, general, review) CSV paths for an office."""
+    name = OFFICE_NAMES[office]
+    return (DATA_DIR / f"fec-{name}-candidates-flagged.csv",
+            DATA_DIR / f"fec-{name}-general.csv", DATA_DIR / REVIEW_FILES[office])
+
+
+def fetch_12g_reports(session, office="H"):
+    """Return the latest 12G report per committee of the office, keyed by committee_id."""
     reports = fetch_all(
         session,
         "/reports/house-senate/",
         {
             "cycle": CYCLE,
             "report_type": "12G",
-            "committee_type": "H",
+            "committee_type": office,
             # Must be unique: offset paging on a tied key skips rows.
             "sort": "beginning_image_number",
         },
@@ -68,12 +81,12 @@ def fetch_12g_reports(session):
     return latest
 
 
-def fetch_principal_committees(session):
+def fetch_principal_committees(session, office="H"):
     """Return every candidate ID linked to each principal committee."""
     candidates = fetch_all(
         session,
         "/candidates/search/",
-        {"office": "H", "election_year": CYCLE, "sort": "candidate_id"},
+        {"office": office, "election_year": CYCLE, "sort": "candidate_id"},
     )
     mapping = defaultdict(set)
     for c in candidates:
@@ -82,16 +95,16 @@ def fetch_principal_committees(session):
     return mapping
 
 
-def attribute_reports(session, reports, committee_links, house_ids):
+def attribute_reports(session, reports, committee_links, office_ids):
     """Attribute the latest report to all in-scope linked candidate IDs."""
     report_by_candidate = {}
     unmatched = []
     for cid, report in sorted(reports.items()):
-        linked = set(committee_links.get(cid, set())) & house_ids
+        linked = set(committee_links.get(cid, set())) & office_ids
         if not linked:
             data = get_json(session, f"/committee/{cid}/", {})
             linked = {candidate_id for row in data["results"]
-                      for candidate_id in (row.get("candidate_ids") or [])} & house_ids
+                      for candidate_id in (row.get("candidate_ids") or [])} & office_ids
         if not linked:
             unmatched.append(report.get("committee_name", cid))
         for candidate_id in sorted(linked):
@@ -130,7 +143,11 @@ def write_csv(path, rows, fields):
 
 
 def main():
-    in_path = DATA_DIR / "fec-house-candidates.csv"
+    parser = argparse.ArgumentParser(description="Flag FEC candidates who filed a 12G report.")
+    parser.add_argument("--office", choices=sorted(OFFICE_NAMES), default="H",
+                        help="FEC office code: H for House (default) or S for Senate")
+    args = parser.parse_args()
+    in_path = candidates_path(args.office)
     if not in_path.exists():
         sys.exit(f"{in_path} not found; run fetch_fec_house_candidates.py first")
     with in_path.open(newline="") as f:
@@ -144,17 +161,17 @@ def main():
     session.params = {"api_key": api_key}
 
     print("Fetching 12G reports", file=sys.stderr)
-    reports = fetch_12g_reports(session)
+    reports = fetch_12g_reports(session, args.office)
     print("Fetching principal committees", file=sys.stderr)
-    committee_to_candidate = fetch_principal_committees(session)
+    committee_to_candidate = fetch_principal_committees(session, args.office)
 
-    house_ids = {c["candidate_id"] for c in candidates}
+    office_ids = {c["candidate_id"] for c in candidates}
     report_by_candidate, unmatched = attribute_reports(
-        session, reports, committee_to_candidate, house_ids
+        session, reports, committee_to_candidate, office_ids
     )
     if unmatched:
         print(
-            f"{len(unmatched)} 12G committees not matched to a 2026 House "
+            f"{len(unmatched)} 12G committees not matched to a 2026 {OFFICE_NAMES[args.office].title()} "
             f"candidate: {', '.join(sorted(unmatched))}",
             file=sys.stderr,
         )
@@ -175,8 +192,9 @@ def main():
 
     fields = base_fields + FLAG_FIELDS
     general = [c for c in candidates if c["filed_12g"]]
-    write_csv(DATA_DIR / "fec-house-candidates-flagged.csv", candidates, fields)
-    write_csv(DATA_DIR / "fec-house-general.csv", general, fields)
+    flagged_path, general_path, review_path = output_paths(args.office)
+    write_csv(flagged_path, candidates, fields)
+    write_csv(general_path, general, fields)
 
     review = []
     for (state, district), cands in sorted(by_district.items()):
@@ -193,7 +211,7 @@ def main():
                 }
             )
     write_csv(
-        DATA_DIR / "review-districts.csv",
+        review_path,
         review,
         ["state", "district", "reason", "filers_12g"],
     )

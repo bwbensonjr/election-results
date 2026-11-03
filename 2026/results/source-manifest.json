@@ -32,6 +32,23 @@
       "acquisition_method": "Integrated Browser: expanded Show 385 more and captured all 435 rendered table rows; omitted the empty layout cell and retained the six visible column headings.",
       "notes": "The 2026 PVI column supplies the published metric. The saved 2025 PVI and 2026 Rank columns are retained as source context. Source incumbent labels do not update candidate identities.",
       "sha256": "9263e84b0b4635f5a4a410527759c4ae70e1e85fbe9fd497f774af6c9731a278"
+    },
+    "cook_state_pvi": {
+      "source_id": "cook-state-pvi-2025",
+      "path": "2026/results/cook-state-pvi-2025-source.csv",
+      "format": "cook-state-pvi-two-column",
+      "edition": "2025",
+      "election_years": [
+        2020,
+        2024
+      ],
+      "source_url": "https://en.wikipedia.org/w/index.php?title=Cook_Partisan_Voting_Index&oldid=1374239063",
+      "upstream_url": "https://www.cookpolitical.com/cook-pvi/2025-partisan-voting-index/state-map-and-list",
+      "retrieved_at": "2026-11-02",
+      "published_at": "2025-03-06",
+      "acquisition_method": "Integrated Browser: read the State and PVI columns of the 'By state' table on Wikipedia's Cook Partisan Voting Index article (revision 1374239063, last edited 2026-09-10), which cites Cook's 2025 state map and list. Cook's own state list is subscriber-only.",
+      "notes": "Cook's latest published state PVI. The 2026 Cook PVI update re-scored only House districts in the ten states that redrew, and published no state list; state scores use the same 2020 and 2024 presidential elections and do not change with redistricting. Secondary transcription: verify against Cook if a subscriber copy becomes available. Includes Washington, D.C.",
+      "sha256": "2791760661eb038dd66e2adf9421cf4571a40506ba813548000c5ae837d731bb"
     }
   }
 }

@@ -1,0 +1,52 @@
+state,cook_pvi_label,cook_pvi_dem_lean_pp,source_id,source_record,pvi_edition
+AK,R+6,-6,cook-state-pvi-2025,State=Alaska;edition=2025,2025
+AL,R+15,-15,cook-state-pvi-2025,State=Alabama;edition=2025,2025
+AR,R+15,-15,cook-state-pvi-2025,State=Arkansas;edition=2025,2025
+AZ,R+2,-2,cook-state-pvi-2025,State=Arizona;edition=2025,2025
+CA,D+12,12,cook-state-pvi-2025,State=California;edition=2025,2025
+CO,D+6,6,cook-state-pvi-2025,State=Colorado;edition=2025,2025
+CT,D+8,8,cook-state-pvi-2025,State=Connecticut;edition=2025,2025
+DC,D+44,44,cook-state-pvi-2025,"State=Washington, D.C.;edition=2025",2025
+DE,D+8,8,cook-state-pvi-2025,State=Delaware;edition=2025,2025
+FL,R+5,-5,cook-state-pvi-2025,State=Florida;edition=2025,2025
+GA,R+1,-1,cook-state-pvi-2025,State=Georgia;edition=2025,2025
+HI,D+13,13,cook-state-pvi-2025,State=Hawaii;edition=2025,2025
+IA,R+6,-6,cook-state-pvi-2025,State=Iowa;edition=2025,2025
+ID,R+18,-18,cook-state-pvi-2025,State=Idaho;edition=2025,2025
+IL,D+6,6,cook-state-pvi-2025,State=Illinois;edition=2025,2025
+IN,R+9,-9,cook-state-pvi-2025,State=Indiana;edition=2025,2025
+KS,R+8,-8,cook-state-pvi-2025,State=Kansas;edition=2025,2025
+KY,R+15,-15,cook-state-pvi-2025,State=Kentucky;edition=2025,2025
+LA,R+11,-11,cook-state-pvi-2025,State=Louisiana;edition=2025,2025
+MA,D+14,14,cook-state-pvi-2025,State=Massachusetts;edition=2025,2025
+MD,D+15,15,cook-state-pvi-2025,State=Maryland;edition=2025,2025
+ME,D+4,4,cook-state-pvi-2025,State=Maine;edition=2025,2025
+MI,EVEN,0,cook-state-pvi-2025,State=Michigan;edition=2025,2025
+MN,D+3,3,cook-state-pvi-2025,State=Minnesota;edition=2025,2025
+MO,R+9,-9,cook-state-pvi-2025,State=Missouri;edition=2025,2025
+MS,R+11,-11,cook-state-pvi-2025,State=Mississippi;edition=2025,2025
+MT,R+10,-10,cook-state-pvi-2025,State=Montana;edition=2025,2025
+NC,R+1,-1,cook-state-pvi-2025,State=North Carolina;edition=2025,2025
+ND,R+18,-18,cook-state-pvi-2025,State=North Dakota;edition=2025,2025
+NE,R+10,-10,cook-state-pvi-2025,State=Nebraska;edition=2025,2025
+NH,D+2,2,cook-state-pvi-2025,State=New Hampshire;edition=2025,2025
+NJ,D+4,4,cook-state-pvi-2025,State=New Jersey;edition=2025,2025
+NM,D+4,4,cook-state-pvi-2025,State=New Mexico;edition=2025,2025
+NV,R+1,-1,cook-state-pvi-2025,State=Nevada;edition=2025,2025
+NY,D+8,8,cook-state-pvi-2025,State=New York;edition=2025,2025
+OH,R+5,-5,cook-state-pvi-2025,State=Ohio;edition=2025,2025
+OK,R+17,-17,cook-state-pvi-2025,State=Oklahoma;edition=2025,2025
+OR,D+8,8,cook-state-pvi-2025,State=Oregon;edition=2025,2025
+PA,R+1,-1,cook-state-pvi-2025,State=Pennsylvania;edition=2025,2025
+RI,D+8,8,cook-state-pvi-2025,State=Rhode Island;edition=2025,2025
+SC,R+8,-8,cook-state-pvi-2025,State=South Carolina;edition=2025,2025
+SD,R+15,-15,cook-state-pvi-2025,State=South Dakota;edition=2025,2025
+TN,R+14,-14,cook-state-pvi-2025,State=Tennessee;edition=2025,2025
+TX,R+6,-6,cook-state-pvi-2025,State=Texas;edition=2025,2025
+UT,R+11,-11,cook-state-pvi-2025,State=Utah;edition=2025,2025
+VA,D+3,3,cook-state-pvi-2025,State=Virginia;edition=2025,2025
+VT,D+17,17,cook-state-pvi-2025,State=Vermont;edition=2025,2025
+WA,D+10,10,cook-state-pvi-2025,State=Washington;edition=2025,2025
+WI,EVEN,0,cook-state-pvi-2025,State=Wisconsin;edition=2025,2025
+WV,R+21,-21,cook-state-pvi-2025,State=West Virginia;edition=2025,2025
+WY,R+23,-23,cook-state-pvi-2025,State=Wyoming;edition=2025,2025

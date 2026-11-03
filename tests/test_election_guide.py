@@ -171,5 +171,58 @@ class CommittedGuideTests(unittest.TestCase):
         self.assertEqual(self.guide["MT-01"]["guide_slot_et"], "10 to 11")
 
 
+
+class StatewideGuideTests(GuideFixture):
+    def setUp(self):
+        super().setUp()
+        import build_statewide_field as statewide
+        self.statewide = self.root / "statewide.csv"
+        rows = []
+        for state, office, name, party in [("AK", "Senate", "Mary Peltola", "DEM"), ("AK", "Senate", "Dan Sullivan", "REP"),
+                                           ("NE", "Senate", "Pete Ricketts", "REP"), ("NE", "Senate", "Dan Osborn", "OTHER"),
+                                           ("GA", "Governor", "Rick Jackson", "REP")]:
+            row = {column: "" for column in statewide.FIELD_COLUMNS}
+            row.update(state=state, office=office, race_id=statewide.race_id(state, office), name=name, party=party)
+            rows.append(row)
+        self.write(self.statewide, statewide.FIELD_COLUMNS, rows)
+
+    def load_statewide(self):
+        self.write(self.csv, guide.RACE_COLUMNS, self.rows)
+        return guide.load_statewide_guide(self.csv, self.statewide)
+
+    def test_statewide_rows_join_by_race_id(self):
+        self.rows.append(race("NE", "", office="Senate", slot_et="9:00", poll_close_et="21:00",
+                              rep_candidate="Ricketts", other_candidate="Osborn (I)", senate_path="Wildcard"))
+        loaded = self.load_statewide()
+        self.assertEqual(set(loaded), {"AK-SEN", "NE-SEN"})
+        self.assertEqual(loaded["NE-SEN"]["guide_senate_path"], "Wildcard")
+        self.assertEqual(loaded["AK-SEN"]["guide_silver_avg_dem_margin"], "3.5")
+        # House validation is unchanged by the statewide rows.
+        self.assertEqual(set(self.load()), {("KY", "06", "KY-06"), ("VA", "01", "VA-01"), ("AK", "00", "AK-AL")})
+
+    def test_duplicate_senate_row(self):
+        self.rows.append(race("AK", "", office="Senate", slot_et="12:00+", poll_close_et="24:00"))
+        with self.assertRaisesRegex(ValueError, "duplicate Senate row for AK"):
+            self.load_statewide()
+
+    def test_unknown_governor_race(self):
+        self.rows.append(race("KY", "", office="Governor", slot_et="6:00", poll_close_et="18:00"))
+        with self.assertRaisesRegex(ValueError, "KY Governor race KY-GOV is not in the statewide field"):
+            self.load_statewide()
+
+    def test_statewide_name_check(self):
+        field = [dict(name="Pete Ricketts", party="REP"), dict(name="Dan Osborn", party="OTHER")]
+        row = {column: "" for column in guide.STATEWIDE_GUIDE_COLUMNS}
+        self.assertEqual(guide.statewide_name_check(dict(row, guide_rep_candidate="Ricketts",
+                                                         guide_other_candidate="Osborn (I)"), field), "matched")
+        self.assertEqual(guide.statewide_name_check(dict(row, guide_dem_candidate="Osborn"), field), "mismatch")
+        self.assertEqual(guide.statewide_name_check(row, field), "not_named")
+
+    def test_committed_statewide_rows_validate(self):
+        loaded = guide.load_statewide_guide()
+        self.assertEqual(len(loaded), 18)
+        self.assertEqual(sum(r.endswith("-SEN") for r in loaded), 14)
+
+
 if __name__ == "__main__":
     unittest.main()

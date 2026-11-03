@@ -67,6 +67,26 @@ def poll_candidates(name, ballot):
     return sorted(hits, key=lambda b: (b["name"], b["party"]))
 
 
+def resolve_rows(rows, records, decisions):
+    """Resolve one race's ballot rows, keeping each accepted FEC ID with one identity."""
+    resolutions = [(b, resolve(b, records, decisions)) for b in rows]
+    owners = defaultdict(list)
+    for index, (_, resolution) in enumerate(resolutions):
+        for cid in resolution.member_ids:
+            owners[cid].append(index)
+    for cid, indices in owners.items():
+        if len(indices) > 1:
+            # A reviewed decision reserves its IDs; automatic competitors
+            # remain unresolved instead of duplicating the accepted identity.
+            for index in indices:
+                b, result = resolutions[index]
+                if result.status == "automatic":
+                    resolutions[index] = (b, Resolution(
+                        "ambiguous", f"FEC ID {cid} also fits another ballot identity; review required",
+                        result.candidates))
+    return resolutions
+
+
 def publish_csvs(data_dir, outputs):
     """Stage every CSV before replacement; validation happens before this call."""
     staged = []
@@ -121,22 +141,7 @@ def build(data_dir=DATA_DIR, polls_path=POLLS_PATH):
                 discrepancies.append((*key, name, "ambiguous poll-to-ballot association"))
             else:
                 discrepancies.append((*key, name, "in general polls but not on ballot list"))
-        resolutions = [(b, resolve(b, fec_by_district[key], decisions)) for b in rows]
-        owners = defaultdict(list)
-        for index, (_, resolution) in enumerate(resolutions):
-            for cid in resolution.member_ids:
-                owners[cid].append(index)
-        for cid, indices in owners.items():
-            if len(indices) > 1:
-                # A reviewed decision reserves its IDs; automatic competitors
-                # remain unresolved instead of duplicating the accepted identity.
-                for index in indices:
-                    b, result = resolutions[index]
-                    if result.status == "automatic":
-                        resolutions[index] = (b, Resolution(
-                            "ambiguous", f"FEC ID {cid} also fits another ballot identity; review required",
-                            result.candidates))
-        for b, result in resolutions:
+        for b, result in resolve_rows(rows, fec_by_district[key], decisions):
             f = result.canonical
             accepted_ids.update(result.member_ids)
             plausible_ids.update(c["candidate_id"] for c in result.candidates)

@@ -7,6 +7,8 @@ from dataclasses import dataclass
 from datetime import date
 
 CYCLE = 2026
+# FEC candidate IDs begin with the office code: H for House, S for Senate.
+OFFICE_ID_PREFIXES = {"House": "H", "Senate": "S"}
 SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "mr", "mrs", "ms", "dr"}
 PARTIES = {
     "rep": "REP", "r": "REP", "republican": "REP",
@@ -131,8 +133,14 @@ def resolve(ballot, records, decisions=None):
                       candidates, candidate)
 
 
-def load_decisions(path, ballot, records):
-    """Validate all decisions before any output can be published."""
+def load_decisions(path, ballot, records, office="House"):
+    """Validate all decisions before any output can be published.
+
+    Each registry serves one office. An entry without an office is a House
+    decision; Senate entries use statewide district 00 and Senate FEC IDs.
+    """
+    if office not in OFFICE_ID_PREFIXES:
+        raise ValueError(f"identity registry: unknown office {office!r}")
     data = json.loads(path.read_text())
     if not isinstance(data, dict) or type(data.get("schema_version")) is not int or data["schema_version"] != 1:
         raise ValueError("identity registry: schema_version must be 1")
@@ -148,6 +156,10 @@ def load_decisions(path, ballot, records):
         try:
             if not isinstance(entry, dict):
                 raise ValueError("must be an object")
+            if entry.get("office", "House") != office:
+                raise ValueError(f"office must be {office}")
+            if office != "House":
+                entry = dict(entry, district=entry.get("district", "00"))
             for key in ("state", "district", "ballot_name", "decision", "rationale", "reviewed_by", "reviewed_at"):
                 if not isinstance(entry.get(key), str) or not entry[key].strip():
                     raise ValueError(f"missing or invalid {key}")
@@ -182,6 +194,9 @@ def load_decisions(path, ballot, records):
             if len(set(ids)) != len(ids) or set(ids) & claimed:
                 raise ValueError("duplicate or reused FEC ID")
             for cid in ids:
+                if (cid[:1] in OFFICE_ID_PREFIXES.values()
+                        and not cid.startswith(OFFICE_ID_PREFIXES[office])):
+                    raise ValueError(f"FEC ID {cid} is not a {office} candidacy")
                 if cid not in by_id:
                     raise ValueError(f"nonexistent FEC ID {cid}")
                 if scope(by_id[cid]) != key[1:3]:

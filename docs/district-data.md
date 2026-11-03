@@ -2,6 +2,8 @@
 
 This workflow joins the supplied 2020/2024 presidential margins, Cook's published 2026 PVI, a weighted polling average of each district's Democratic and Republican nominees, and the House races from the election-night guide to the existing 2026 House candidate field, using normalized district IDs. It provides one export for district analysis and another for candidate details. Districts without eligible polling keep blank polling columns.
 
+The Senate and governor races have a parallel workflow, documented in [statewide-data.md](statewide-data.md). It sums this file's district vote counts into state margins and adds Cook's state PVI.
+
 ## Sources and refresh
 
 The user-supplied [`presidential-results-by-us-house-district-2020-2024.csv`](../2026/results/presidential-results-by-us-house-district-2020-2024.csv) has two header rows and 435 district rows. Its exact upstream URL, retrieval date, and map vintage are unknown. Both years' values are used as supplied; matching a district label does not establish that its electorate stayed the same across source editions. This limits interpretation of historical shifts, but does not block the join or withhold valid margins. The pipeline does not interpolate votes or estimate PVI.

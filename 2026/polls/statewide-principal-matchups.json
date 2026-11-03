@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "matchups": [
+    {
+      "race_id": "AK-SEN",
+      "principal_candidate": "Mary Peltola",
+      "republican_candidate": "Dan Sullivan",
+      "evidence": [
+        "https://theballotbrief.com/state/alaska",
+        "2026/guide/election-night-guide-races.csv (AK Senate: Peltola against Sullivan)",
+        "2026/polls/us-senate-polls.csv (September-October first-round questions: Sullivan about 45%, Peltola about 47%, Heikes and Dan J. Sullivan under 3%)"
+      ],
+      "rationale": "Alaska's top-four ballot lists three Republicans. Incumbent Dan Sullivan is the Republican principal; Republicans Gerald Heikes and namesake Daniel J. Sullivan Jr. each poll under 3%.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "race_id": "ID-SEN",
+      "principal_candidate": "Todd Achilles",
+      "evidence": [
+        "https://theballotbrief.com/state/idaho",
+        "2026/polls/us-senate-polls.csv (2026 general questions pair independent Achilles with Risch)"
+      ],
+      "rationale": "The ballot has no Democratic Senate candidate. Independent Todd Achilles is the candidate every general-election poll pairs with Republican Jim Risch.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "race_id": "MT-SEN",
+      "principal_candidate": "Seth Bodnar",
+      "evidence": [
+        "https://theballotbrief.com/state/montana",
+        "2026/polls/us-senate-polls.csv (September-October questions: Alme about 41%, Bodnar about 31%, Bankhead about 17%)"
+      ],
+      "rationale": "Independent Seth Bodnar, not Democrat Alani Bankhead, is the Republican nominee's principal opponent: he runs second to Kurt Alme and well ahead of Bankhead in every recent poll.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "race_id": "NE-SEN",
+      "principal_candidate": "Dan Osborn",
+      "evidence": [
+        "https://theballotbrief.com/state/nebraska",
+        "2026/guide/election-night-guide-races.csv (NE Senate: rep_candidate Ricketts, other_candidate Osborn (I))",
+        "2026/polls/us-senate-polls.csv (2026 general questions pair Osborn, coded DEM, with Ricketts)"
+      ],
+      "rationale": "The ballot has no Democratic Senate candidate. Independent Dan Osborn is the Republican nominee's principal opponent: the general-election polls pair him with Pete Ricketts, and the guide treats the race as Ricketts against Osborn.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "race_id": "SD-SEN",
+      "principal_candidate": "Brian Bengs",
+      "evidence": [
+        "https://theballotbrief.com/state/south-dakota",
+        "2026/polls/us-senate-polls.csv (2026 general questions pair independent Bengs with Rounds)"
+      ],
+      "rationale": "The ballot lists only Republican Mike Rounds and independent Brian Bengs, so Bengs is the principal opponent.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    }
+  ]
+}

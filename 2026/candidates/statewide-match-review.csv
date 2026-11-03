@@ -1,0 +1,9 @@
+state,office,race_id,ballot_name,ballot_party,fec_match_status,fec_match_reason,fec_candidate_id,fec_name,fec_party,incumbent,filed_12g,receipts,cash_on_hand_end_period,coverage_end_date,decision_evidence
+CO,Senate,CO-SEN,Blake Huber,Libertarian,unmatched,no plausible FEC record in district,,,,,,,,,
+CO,Senate,CO-SEN,Christopher Baum,Approval Voting Party,unmatched,no plausible FEC record in district,,,,,,,,,
+OK,Senate,OK-SEN,Curtis Stinnett,Independent,unmatched,no plausible FEC record in district,,,,,,,,,
+OK,Senate,OK-SEN,Sevier White,Libertarian,unmatched,no plausible FEC record in district,,,,,,,,,
+SC,Senate,SC-SEN,Mark Hackett,Constitution,unmatched,no plausible FEC record in district,,,,,,,,,
+TN,Senate,TN-SEN,Andrew Gerena,Independent,unmatched,no plausible FEC record in district,,,,,,,,,
+TN,Senate,TN-SEN,James William Macon III,Independent,unmatched,no plausible FEC record in district,,,,,,,,,
+TN,Senate,TN-SEN,Jeremy Dean Hearn,Independent,unmatched,no plausible FEC record in district,,,,,,,,,

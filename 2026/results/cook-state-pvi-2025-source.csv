@@ -1,0 +1,52 @@
+State,PVI
+Alabama,R+15
+Alaska,R+6
+Arizona,R+2
+Arkansas,R+15
+California,D+12
+Colorado,D+6
+Connecticut,D+8
+Delaware,D+8
+Florida,R+5
+Georgia,R+1
+Hawaii,D+13
+Idaho,R+18
+Illinois,D+6
+Indiana,R+9
+Iowa,R+6
+Kansas,R+8
+Kentucky,R+15
+Louisiana,R+11
+Maine,D+4
+Maryland,D+15
+Massachusetts,D+14
+Michigan,EVEN
+Minnesota,D+3
+Mississippi,R+11
+Missouri,R+9
+Montana,R+10
+Nebraska,R+10
+Nevada,R+1
+New Hampshire,D+2
+New Jersey,D+4
+New Mexico,D+4
+New York,D+8
+North Carolina,R+1
+North Dakota,R+18
+Ohio,R+5
+Oklahoma,R+17
+Oregon,D+8
+Pennsylvania,R+1
+Rhode Island,D+8
+South Carolina,R+8
+South Dakota,R+15
+Tennessee,R+14
+Texas,R+6
+Utah,R+11
+Vermont,D+17
+Virginia,D+3
+Washington,D+10
+"Washington, D.C.",D+44
+West Virginia,R+21
+Wisconsin,EVEN
+Wyoming,R+23
