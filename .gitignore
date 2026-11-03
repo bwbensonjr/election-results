@@ -2,3 +2,7 @@
 .DS_Store
 .env
 __pycache__/
+2026/live/*
+!2026/live/.gitkeep
+2026/geometry/cache/
+bigboard/data/

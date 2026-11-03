@@ -1,0 +1,13 @@
+{
+  "title": "Big Board 2026",
+  "url": "https://claude.ai/artifact/PYJrwsZ2CfhnGuu8SV6FnN",
+  "visibility": "private until shared from the artifact's Share menu",
+  "page": "bigboard/index.html",
+  "root": "bigboard",
+  "files": {
+    "data/results.json": "2026/live/results.json"
+  },
+  "published_version": "1793721651-99ff",
+  "published_at": "2026-11-03T16:00:51Z",
+  "notes": "Publish with the Artifact tool: file_path bigboard/index.html, root bigboard, and files mapping data/results.json to 2026/live/results.json (absolute path). From another conversation pass this url so the same link is updated. The page's static data is embedded by scripts/build_bigboard_data.py; data/results.json is the live ingestor output and is not committed."
+}

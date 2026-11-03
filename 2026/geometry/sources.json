@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "description": "Source files for the Big Board district shapes. The base file supplies every district; an override replaces one redrawn state's districts with its enacted 2026 plan. Registry states without an override are drawn on 119th Congress lines and flagged prior_boundaries.",
+  "base": {
+    "id": "census_cd119_20m",
+    "url": "https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_cd119_20m.zip",
+    "plan": "U.S. Census Bureau cartographic boundary file, 119th Congress, 1:20,000,000",
+    "retrieved": "2026-11-03",
+    "sha256": "b4d141a4395ab411e45af416f5a851cca8fed21af639dabc8d2b642fde0defa5"
+  },
+  "overrides": [
+    {
+      "id": "ca_ab604",
+      "state": "CA",
+      "file": "ca-ab604.zip",
+      "url": "https://selc.senate.ca.gov/system/files/2025-08/ab604.zip",
+      "plan": "AB 604 congressional plan, put in effect by Proposition 50 (November 4, 2025); California Senate Elections and Constitutional Amendments Committee",
+      "retrieved": "2026-11-03",
+      "sha256": "0adf00848210b81abb38b62f24f05a854dc1f8dcfec44c8af5a4eb847c481f74",
+      "district_field": "DISTRICT",
+      "layer_path": "AB604/AB604.shp"
+    },
+    {
+      "id": "fl_eogpcrp2026",
+      "state": "FL",
+      "file": "fl-eogpcrp2026.zip",
+      "url": "https://www.flsenate.gov/PublishedContent/Session/Congressional/EOGPCRP2026.zip",
+      "plan": "EOGPCRP2026, enacted by HB 1-D, approved May 4, 2026 (Chapter 2026-229); Florida Senate",
+      "retrieved": "2026-11-03",
+      "sha256": "253cfc70414929eeccd29f4c559746e480fb3d2b4e94c2fd02d3175a9923a789",
+      "district_field": "DISTRICT",
+      "layer_path": "EOGPCRP2026.shp"
+    },
+    {
+      "id": "la_act2_2026rs",
+      "state": "LA",
+      "file": "la-act2-2026rs.zip",
+      "url": "https://redist.legis.la.gov/2026_Files/Act2Congress/Shapefile/Shapefile%20-%20Act_2_(2026_RS).zip",
+      "plan": "Act 2 of the 2026 Regular Session (SB 121), signed May 29, 2026; Louisiana Legislature",
+      "retrieved": "2026-11-03",
+      "sha256": "76bc207311a591dbfe90ff70c59cdec548ef402ef246783c214642151f359ca4",
+      "district_field": "DISTRICT_I",
+      "layer_path": "Act_2_(2026_RS).shp"
+    },
+    {
+      "id": "nc_sl2025_95",
+      "state": "NC",
+      "file": "nc-sl2025-95.zip",
+      "url": "https://webservices.ncleg.gov/ViewBillDocument/2025/7667/0/SL%202025-95%20-%20Shapefile",
+      "plan": "Session Law 2025-95 (S249), enacted October 22, 2025; North Carolina General Assembly",
+      "retrieved": "2026-11-03",
+      "sha256": "c21e18d29a0f6dd52636c866ca3b05295a0757c6d6d98ee42ffa0b2eee795897",
+      "district_field": "DISTRICT",
+      "layer_path": "SL 2025-95.shp"
+    },
+    {
+      "id": "tx_planc2333",
+      "state": "TX",
+      "file": "tx-planc2333.zip",
+      "url": "https://data.capitol.texas.gov/dataset/748c952b-e926-4f44-8d01-a738884b3ec8/resource/5712ebe1-d777-4d4a-b836-0534e17bca01/download/planc2333.zip",
+      "plan": "PLANC2333, enacted by the 89th Legislature, 2nd Called Session, 2025; Texas Legislative Council",
+      "retrieved": "2026-11-03",
+      "sha256": "6797d6e39f76224fa0d9a4f4226e8f1a044fbeaa890d706d366dbdd24a2a2099",
+      "district_field": "District",
+      "layer_path": "PLANC2333/PLANC2333.shp"
+    },
+    {
+      "id": "ut_map1a",
+      "state": "UT",
+      "file": "ut-congress-2026-2032.zip",
+      "url": "https://opendata.gis.utah.gov/api/download/v1/items/d3388c1f7d894ab789247f6442855d66/shapefile?layers=0",
+      "plan": "Court-adopted plaintiffs' Map 1 (as Map 1A), Utah US Congress Districts 2026 to 2032; Utah Geospatial Resource Center",
+      "retrieved": "2026-11-03",
+      "sha256": "bc3bbe19da6c0b425e0dbd584ee6eb326d7cabe96dd50c1bd0b64b6f43f8e34b",
+      "district_field": "DISTRICT",
+      "note": "The portal regenerates this zip on each export, so a fresh download will not match this hash; keep the cached copy or re-verify and update the hash.",
+      "layer_path": "us_congress_districts_2026_to_2032.shp"
+    }
+  ],
+  "not_found": [
+    {
+      "state": "AL",
+      "note": "Only PDF maps and block descriptions of the 2023 Livingston Congressional Plan 3-2023 are published; court exhibits require PACER sign-in."
+    },
+    {
+      "state": "OH",
+      "note": "The Ohio Redistricting Commission's October 31, 2025 plan download has a block assignment file and PDFs, no shapefile."
+    },
+    {
+      "state": "TN",
+      "note": "HB 7003 (signed May 7, 2026) is published only as PDF maps; the state GIS server still has the 2022 layer."
+    }
+  ]
+}
