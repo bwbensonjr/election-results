@@ -48,10 +48,19 @@
 - [x] 7.2 Run a rehearsal: mock in play mode, ingestor every 60 seconds, and a Claude `/loop` that republishes `data/results.json` only when `status.json` says it changed; verify at least three republishes show up on an open board without a manual reload, or that a reload restores the view
 - [x] 7.3 Write the election-night runbook (terminals, commands, keep-awake, loop prompt, restart and rollback) in `docs/big-board.md`; verify it matches the commands used in the rehearsal
 
-## 8. Live cutover (before 6pm ET)
+## 8. Database delivery
 
-- [ ] 8.1 Stop the mock, run the ingestor with `--source live --every 120`, and republish; verify the test banner is gone and races show `Awaiting Poll Close`
-- [ ] 8.2 After the first calls in Kentucky and Indiana, compare the parsed winners with the raw snapshots and fix call parsing if needed; verify by replaying the saved snapshots through the ingestor
+- [x] 8.1 Make the ingestor write the five record files (`meta`, `statewide`, `house-1` to `house-3`) to `2026/live/db/` atomically after `results.json` on each changed run, each with the content hash and under 240 KiB or the run fails; verify with tests that the records hold all 506 races once, share the hash, and that an oversized record fails and keeps the previous files
+- [x] 8.2 Change the page: subscribe once to the `live` collection, render only a complete set with one content hash, fall back to `data/results.json` with 60-second polling when the database is unavailable or silent for 10 seconds, apply the saved zoom before the first draw, hold the results map until results arrive, show the loaded time, and remove the `hot` snapshot code; verify in the browser pane against the fallback file that a reload while zoomed shows no grey or full-country frame
+- [x] 8.3 Republish the board with `capabilities: {db: {rules: [{path: "live", read: "view", write: "owner"}]}}` and write the first records; verify the records read back, and that a write with `as_level` `interact` is refused
+- [x] 8.4 Write the loop prompt for database writes (read `status.json`, batch-write the five record files pinned to the last versions, re-list and retry once on a refused pin); verify one manual tick writes all five records in one batch
+- [x] 8.5 Rehearse: mock in play mode, ingestor every 60 seconds, and the database loop unattended; verify at least three updates appear on an open board with its loaded time, zoom, and selection unchanged
+- [x] 8.6 Update the runbook in `docs/big-board.md` (database loop, permissions, fallback, rollback to republishing the file) and `bigboard/artifact.json`; verify it matches the commands used in the rehearsal
+
+## 9. Live cutover (before 6pm ET)
+
+- [ ] 9.1 Stop the mock, run the ingestor with `--source live --every 120`, write the records once, republish the fallback file, and start the database loop; verify the test banner is gone and races show `Awaiting Poll Close`
+- [ ] 9.2 After the first calls in Kentucky and Indiana, compare the parsed winners with the raw snapshots and fix call parsing if needed; verify by replaying the saved snapshots through the ingestor
 
 ## Workflow follow-up
 

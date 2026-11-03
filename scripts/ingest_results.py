@@ -32,6 +32,8 @@ SCHEMA_VERSION = 1
 TRACKED_OFFICES = ("H", "S", "G")
 OFFICE_NAMES = {"H": "House", "S": "Senate", "G": "Governor"}
 MIN_INTERVAL = 60
+RECORD_LIMIT = 240 * 1024
+HOUSE_PARTS = 3
 SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "v"}
 RAW_NAME = re.compile(r"(\d{4}-\d{2}-\d{2}T\d{6}Z)")
 
@@ -306,6 +308,37 @@ def previous_hash(results_path):
         return None
 
 
+def split_records(results):
+    """The database records for the board: meta, statewide, and the House in state groups."""
+    races = results["races"]
+    meta = {k: v for k, v in results.items() if k != "races"}
+    meta["records"] = ["statewide"] + [f"house-{n}" for n in range(1, HOUSE_PARTS + 1)]
+    records = {"meta": meta, "statewide": {k: r for k, r in races.items() if r["office"] != "House"}}
+    house = sorted(k for k, r in races.items() if r["office"] == "House")
+    states = sorted({races[k]["state_postal"] for k in house})
+    groups, done = [[] for _ in range(HOUSE_PARTS)], 0
+    for state in states:
+        keys = [k for k in house if races[k]["state_postal"] == state]
+        part = min(done * HOUSE_PARTS // len(house), HOUSE_PARTS - 1)
+        groups[part].extend(keys)
+        done += len(keys)
+    for n, keys in enumerate(groups, 1):
+        records[f"house-{n}"] = {k: races[k] for k in keys}
+    out = {}
+    for name, body in records.items():
+        record = body if name == "meta" else {"content_hash": results["content_hash"], "races": body}
+        text = json.dumps(record, separators=(",", ":"))
+        if len(text.encode()) >= RECORD_LIMIT:
+            raise IngestError(f"database record {name} is {len(text.encode())} bytes, over {RECORD_LIMIT}")
+        out[name] = text + "\n"
+    return out
+
+
+def write_records(records, db_dir):
+    for name, text in records.items():
+        write_atomic(db_dir / f"{name}.json", text)
+
+
 def log_run(output_dir, entry):
     output_dir.mkdir(parents=True, exist_ok=True)
     with open(output_dir / "runs.jsonl", "a") as f:
@@ -325,8 +358,14 @@ def run_once(data, fetched_at, output_dir, baseline, source):
     except (KeyError, IndexError, TypeError) as error:
         raise IngestError(f"unexpected response shape: {error!r}")
     results_path = output_dir / "results.json"
+    db_dir = output_dir / "db"
     changed = results["content_hash"] != previous_hash(results_path)
+    records = split_records(results)
     write_atomic(results_path, json.dumps(results, separators=(",", ":")) + "\n")
+    if changed or not all((db_dir / f"{name}.json").exists() for name in records):
+        write_records(records, db_dir)
+    else:
+        write_records({"meta": records["meta"]}, db_dir)  # keeps fetched_at current for the freshness line
     status = {
         "ok": True,
         "changed": changed,
