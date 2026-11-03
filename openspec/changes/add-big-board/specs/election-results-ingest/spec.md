@@ -86,6 +86,18 @@ The results file SHALL be replaced atomically. A run whose results content is un
 - **WHEN** two consecutive runs fetch responses with identical race data
 - **THEN** the second run reports unchanged and the file's race content is identical
 
+### Requirement: Database record files
+
+Each run whose results content changed SHALL also write five record files for the board's database: `meta` (top-level fields except races), `statewide` (Senate and governor), and `house-1` to `house-3` (House races grouped by state alphabetically). Each record SHALL carry the run's content hash and serialize to under 240 KiB, or the run SHALL fail and keep the previous files. Every run SHALL rewrite `meta` so its fetch time stays current.
+
+#### Scenario: Normal split
+- **WHEN** a run on a full response changes the results
+- **THEN** five record files are written, together they hold all 506 races once, and each carries the same content hash as the results file
+
+#### Scenario: Oversized record
+- **WHEN** a record would serialize to 240 KiB or more
+- **THEN** the run fails naming the record and the previous files are unchanged
+
 ### Requirement: Scheduled operation
 
 The ingestor SHALL support a repeating mode that runs every configurable interval of at least 60 seconds, logs each run's outcome, and keeps running after a failed fetch or validation, leaving the last good results file in place.

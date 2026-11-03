@@ -161,6 +161,46 @@ class IngestTests(unittest.TestCase):
                 ingest.ingest("live", self.out, BASELINE)
         self.assertEqual((self.out / "results.json").read_bytes(), before)
 
+    def records(self):
+        return {p.stem: json.loads(p.read_text()) for p in (self.out / "db").glob("*.json")}
+
+    def test_database_records_split_and_hash(self):
+        self.run_document(fixture())
+        records, results = self.records(), self.results()
+        self.assertEqual(sorted(records), ["house-1", "house-2", "house-3", "meta", "statewide"])
+        self.assertEqual(records["meta"]["records"], ["statewide", "house-1", "house-2", "house-3"])
+        self.assertNotIn("races", records["meta"])
+        self.assertEqual(records["meta"]["content_hash"], results["content_hash"])
+        keys = []
+        for name in records["meta"]["records"]:
+            self.assertEqual(records[name]["content_hash"], results["content_hash"])
+            keys.extend(records[name]["races"])
+        self.assertEqual(sorted(keys), sorted(results["races"]))
+        self.assertEqual(len(keys), 506)
+        house_states = [{r["state_postal"] for r in records[f"house-{n}"]["races"].values()} for n in (1, 2, 3)]
+        self.assertFalse(house_states[0] & house_states[1] or house_states[1] & house_states[2])
+        for path in (self.out / "db").glob("*.json"):
+            self.assertLess(path.stat().st_size, ingest.RECORD_LIMIT)
+
+    def test_race_records_follow_changes_meta_every_run(self):
+        self.run_document(fixture())
+        before = (self.out / "db/statewide.json").stat().st_mtime_ns
+        later = datetime(2026, 11, 4, 1, 17, tzinfo=timezone.utc)
+        self.run_document(fixture(), later)
+        self.assertEqual((self.out / "db/statewide.json").stat().st_mtime_ns, before)
+        self.assertEqual(self.records()["meta"]["fetched_at"], self.results()["fetched_at"])
+
+    def test_oversized_record_fails_and_keeps_files(self):
+        self.run_document(fixture())
+        before = {p.name: p.read_bytes() for p in [self.out / "results.json", *(self.out / "db").glob("*.json")]}
+        document = fixture()
+        find(document, "GA", "S")["raceResponse"]["reportingUnits"][0]["candidates"][0]["voteCount"] = 1234
+        with mock.patch.object(ingest, "RECORD_LIMIT", 100_000):
+            with self.assertRaisesRegex(ingest.IngestError, "database record house-1"):
+                self.run_document(document)
+        after = {p.name: p.read_bytes() for p in [self.out / "results.json", *(self.out / "db").glob("*.json")]}
+        self.assertEqual(after, before)
+
     def test_interval_minimum(self):
         with self.assertRaises(SystemExit):
             ingest.main(["--every", "30", "--output-dir", str(self.out)])

@@ -1,13 +1,36 @@
 {
   "title": "Big Board 2026",
   "url": "https://claude.ai/artifact/PYJrwsZ2CfhnGuu8SV6FnN",
-  "visibility": "private until shared from the artifact's Share menu",
+  "visibility": "shared with the organization from the artifact's Share menu",
   "page": "bigboard/index.html",
   "root": "bigboard",
   "files": {
     "data/results.json": "2026/live/results.json"
   },
-  "published_version": "1793721651-99ff",
-  "published_at": "2026-11-03T16:00:51Z",
-  "notes": "Publish with the Artifact tool: file_path bigboard/index.html, root bigboard, and files mapping data/results.json to 2026/live/results.json (absolute path). From another conversation pass this url so the same link is updated. The page's static data is embedded by scripts/build_bigboard_data.py; data/results.json is the live ingestor output and is not committed."
+  "published_version": "1793730063-ee40",
+  "published_at": "2026-11-03T18:21:03Z",
+  "notes": "Live results are written to the artifact database (collection live) with ArtifactData from the files in 2026/live/db; see the runbook in docs/big-board.md. Republish the page only for page fixes or to refresh the fallback file: file_path bigboard/index.html, root bigboard, files mapping data/results.json to 2026/live/results.json (absolute path), and omit capabilities to keep the database declaration. From another conversation pass this url so the same link is updated.",
+  "capabilities": {
+    "db": {
+      "rules": [
+        {
+          "path": "live",
+          "read": "view",
+          "write": "owner"
+        }
+      ]
+    }
+  },
+  "database": {
+    "collection": "live",
+    "records": [
+      "meta",
+      "statewide",
+      "house-1",
+      "house-2",
+      "house-3"
+    ],
+    "source_dir": "2026/live/db",
+    "state_file": "2026/live/db-written.json"
+  }
 }

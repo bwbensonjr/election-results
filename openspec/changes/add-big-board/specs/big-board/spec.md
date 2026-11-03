@@ -80,11 +80,35 @@ When the published results come from races AP marks as test data, the board SHAL
 
 ### Requirement: Picks up new results without losing context
 
-When a newer results file is published, an open board SHALL show the new results without the viewer reloading by hand, and SHALL keep the selected office, metric, zoom, and selected race.
+The board SHALL read live results from the artifact's database and show new results as soon as they are written, without the page reloading, keeping the selected office, metric, zoom, and selected race. It SHALL draw results only from a complete set of records that share one content hash, never a mix of two runs. The board SHALL show when it was loaded, so a reload can be seen.
 
 #### Scenario: Update while a race is selected
-- **WHEN** new results are published while the viewer has GA-SEN selected under the results metric
-- **THEN** the board shows the new GA-SEN numbers with the same mode, metric, and selection
+- **WHEN** new results are written while the viewer has GA-SEN selected under the results metric and the map zoomed to Georgia
+- **THEN** the board shows the new GA-SEN numbers with the same mode, metric, zoom, and selection
+
+#### Scenario: No reload on update
+- **WHEN** three successive result updates are written to the database
+- **THEN** the board shows each one and its loaded time does not change
+
+#### Scenario: Partial update
+- **WHEN** the board has received some records of a new run but not all of them
+- **THEN** it keeps showing the previous complete results until the set is complete
+
+### Requirement: Fallback to the published results file
+
+When the database is unavailable to the viewer, or no complete set of records arrives within 10 seconds of loading, the board SHALL read the published results file and check it every 60 seconds, and SHALL switch to the database when it delivers.
+
+#### Scenario: Database unavailable
+- **WHEN** the board cannot reach the database
+- **THEN** it shows the results from the published file with their publish time
+
+### Requirement: No flash on load
+
+When the board loads, it SHALL apply the viewer's saved zoom before drawing the map, and SHALL NOT draw an empty results map before results arrive when the results metric is selected.
+
+#### Scenario: Reload while zoomed
+- **WHEN** the board reloads while the viewer's saved view is zoomed to Pennsylvania under the results metric
+- **THEN** the first map drawn is zoomed to Pennsylvania and shows results, with no full-country or grey frame first
 
 ### Requirement: Works on phone and desktop, light and dark
 

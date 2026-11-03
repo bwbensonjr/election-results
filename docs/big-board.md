@@ -48,7 +48,7 @@ The board has four parts, each a script run from the repository root with `uv ru
 | Mock election night | `scripts/mock_election_feed.py` | numbered responses in the AP feed's shape |
 | Board page data | `scripts/build_bigboard_data.py` | the embedded data block in `bigboard/index.html` |
 
-The board uses flat JSON files, not SQLite. The page embeds its static data (district shapes and a slim baseline) and fetches one live file, `data/results.json`, which a Claude session republishes to the artifact when it changes. Everything under `2026/live/` is ignored by git.
+The board uses flat JSON files, not SQLite. The page embeds its static data (district shapes and a slim baseline) and gets live results as five records in the artifact's database, which a Claude session writes when they change; `data/results.json` is published beside the page as a fallback. Everything under `2026/live/` is ignored by git.
 
 ## Results ingestion
 
@@ -80,6 +80,8 @@ With `--every`, a failed fetch or validation is logged and the next interval run
 | `unmatched_candidates` | AP candidates with no baseline link |
 
 Each race entry carries `ap_race_id`, `race_type` (`General`, `Special General`, `Nonpartisan Election`), `poll_close` (UTC), `tabulation_status`, `call_status` (AP's text), `called` and `winner` (from AP's candidate `winner: "X"` flag; any other call status is treated as uncalled), `eevp` (percent of expected vote), `precincts_pct`, `total_votes`, `leader_party_group` and `leader_margin_pp`, `dem_margin_pp` (top Democrat minus top Republican, when both ran), `ranked_choice`, `test`, and `candidates`, sorted by votes, each with `ap_candidate_id`, `name`, AP `party`, `party_group`, `votes`, `pct` (null before any votes), `incumbent`, `winner`, and `baseline_name`.
+
+`db/` holds the same results as five database records for the board: `meta.json` (every field above except `races`, plus the list of race records), `statewide.json` (Senate and governor races), and `house-1.json` to `house-3.json` (House races grouped by state alphabetically). Race records carry `content_hash` and `races`. They are rewritten when results change; `meta.json` is rewritten on every run so its `fetched_at` stays current. A record of 240 KiB or more fails the run (the database limit is 256 KiB; a fully counted mock night peaks near 150 KB).
 
 `status.json` summarizes the last successful run for the publishing step: `changed` (whether `content_hash` differs from the previous file), times, the test flag, and counts. `runs.jsonl` logs every run, including failures.
 
@@ -154,11 +156,13 @@ uv run scripts/build_bigboard_data.py       # after any baseline or shape rebuil
 uv run python -m unittest tests.test_build_bigboard_data
 ```
 
-[`bigboard/index.html`](../bigboard/index.html) is a hand-written page; the build script replaces only the block between the `board-data` markers with the slim baseline (the race columns the board shows, plus candidate names) and the district shapes, about 330 KB in all. The page loads d3 from cdnjs for zoom, draws the pre-projected paths, and fetches `data/results.json` every 60 seconds, re-rendering when its `fetched_at` changes. Mode, metric, zoom, and selection are kept in `localStorage` and in the viewer's update snapshot, so a reload or a new version keeps the view.
+[`bigboard/index.html`](../bigboard/index.html) is a hand-written page; the build script replaces only the block between the `board-data` markers with the slim baseline (the race columns the board shows, plus candidate names) and the district shapes, about 330 KB in all. The page loads d3 from cdnjs for zoom and draws the pre-projected paths. Live results come from the artifact's database: the page subscribes once to the `live` collection and redraws only when all five records share one `content_hash`. A database write makes no new artifact version, so open boards update in place with no reload. If the database is unavailable or silent for 10 seconds, the page reads the published `data/results.json` instead and checks it every 60 seconds. The footer says when the board was loaded and which source it is using. Mode, metric, zoom, and selection are kept in `localStorage`; on load the page applies the saved zoom before drawing and holds the map until results arrive, so a reload shows no grey map or zoom jump.
+
+The database is declared at publish with one access rule, `{path: "live", read: "view", write: "owner"}`: everyone the board is shared with reads the results, and only the owner writes them.
 
 Metrics: **Results**, **Polls** (polling average margin), **President** (2024 Harris–Trump margin; grey where it describes pre-2026 lines), **PVI** (Cook PVI lean), and **Incumbent** (party). Colors: Democratic blue and Republican red in four margin steps (under 5, 5 to 10, 10 to 20, and 20 or more points; PVI uses half those steps, since a PVI lean is about half a two-party margin), validated as ordinal ramps in both themes; violet for any other party; mid grey for no data; a pale fill for states or districts with no race. Under the results metric a called race is solid and an uncalled lead is hatched. Districts drawn on 2024 lines have a dashed outline. A test-data banner appears whenever results come from the mock, and a warning appears during the night when published results are more than 15 minutes old.
 
-The published board: <https://claude.ai/artifact/PYJrwsZ2CfhnGuu8SV6FnN> (private until shared from its Share menu). [`bigboard/artifact.json`](../bigboard/artifact.json) records the link and publish settings, so any Claude session can republish to the same link.
+The published board: <https://claude.ai/artifact/PYJrwsZ2CfhnGuu8SV6FnN> (shared with the organization from its Share menu; sharing carries across versions). [`bigboard/artifact.json`](../bigboard/artifact.json) records the link and publish settings, so any Claude session can republish to the same link.
 
 ## Election-night runbook
 
@@ -172,20 +176,24 @@ Times are Eastern. Keep the Mac awake and plugged in for the night.
 
    Each run prints one line: `changed` or `unchanged`, AP's update time, and called seats. Errors print and the loop continues with the last good `2026/live/results.json`.
 
-2. **Publish** (this Claude Code session). Start a loop:
+2. **Write results to the database** (this Claude Code session). Start a loop:
 
    ```
-   /loop 5m Read 2026/live/status.json and 2026/live/last-publish.json (missing means never published). If status.ok is true and either status.content_hash differs from last-publish.content_hash or the last publish is more than 10 minutes old, republish bigboard/index.html to the Big Board artifact with root bigboard and files {"data/results.json": {"from": "<repo>/2026/live/results.json"}}, then write {"content_hash": ..., "published_at": <UTC now>} to 2026/live/last-publish.json. Otherwise do nothing. Report one line.
+   /loop 2m Big Board database tick. Read <repo>/2026/live/status.json and <repo>/2026/live/db-written.json. If status.ok is true and status.content_hash differs from db-written.content_hash, call ArtifactData action batch on https://claude.ai/artifact/PYJrwsZ2CfhnGuu8SV6FnN with five set writes to collection live for doc ids meta, statewide, house-1, house-2, house-3, each with file_path <repo>/2026/live/db/<doc id>.json and if_version from db-written.versions. Otherwise, if db-written.written_at is more than 10 minutes old, set only meta the same way. If a write is refused for a version mismatch, list collection live for the current versions and retry once. After a successful write, overwrite db-written.json with the status content_hash, written_at as UTC now, and the versions the write returned. Do nothing else and report one line.
    ```
 
-   Replace `<repo>` with the absolute repository path. The 10-minute republish keeps the board's freshness line current when no new votes arrive.
+   Replace `<repo>` with the absolute repository path. `2026/live/db-written.json` records the last hash written and each record's version; if it is missing, list the `live` collection with ArtifactData and recreate it from the versions shown. The 10-minute `meta` write keeps the board's freshness line current when no new votes arrive. Approve ArtifactData writes for the session before leaving it unattended, or the loop stops at a permission prompt.
+
+   The published fallback file is updated only by republishing the page (step 5).
 
 3. **Watch** `2026/live/runs.jsonl` for repeated errors. A join failure names the races involved; compare with the newest file in `2026/live/raw/`.
 
-4. **After the first calls** (Kentucky and Indiana, after 7pm): confirm that called races show a winner. If they do not, AP's call format differs from the `winner: "X"` flag the ingestor expects: fix the parser, then replay the night so far with `uv run scripts/ingest_results.py --source 2026/live/raw` and republish.
+4. **After the first calls** (Kentucky and Indiana, after 7pm): confirm that called races show a winner. If they do not, AP's call format differs from the `winner: "X"` flag the ingestor expects: fix the parser, then replay the night so far with `uv run scripts/ingest_results.py --source 2026/live/raw` and let the loop write the records.
 
-**Restart:** rerun step 1 or 2; the ingestor needs no state, and the loop republishes on its next tick.
+5. **Republish the page** only for a page fix or to refresh the fallback file: the Artifact tool with `file_path` `bigboard/index.html`, `url` from [`bigboard/artifact.json`](../bigboard/artifact.json), `root` `bigboard`, and `files` `{"data/results.json": {"from": "<repo>/2026/live/results.json"}}`. Omit `capabilities` so the database declaration is kept. Open boards reload once and restore their view.
 
-**Rollback:** stop both. The artifact keeps its last published results.
+**Restart:** rerun step 1 or 2; the ingestor needs no state, and the loop writes on its next tick.
+
+**Rollback:** stop both; the database keeps the last written results. If the database path fails, go back to republishing the page with the current `results.json` every few minutes (step 5); the page reads the file whenever the database is silent.
 
 **Rehearsal:** the same steps with the mock instead of the live feed (see [Mock election night](#mock-election-night)): `--play 60 --out 2026/live/mock/current.json` in one terminal and `uv run scripts/ingest_results.py --source 2026/live/mock/current.json --every 60` in the other. The board shows the test-data banner until a live run replaces the results.
