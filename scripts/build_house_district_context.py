@@ -9,14 +9,19 @@ from collections import defaultdict
 from pathlib import Path
 
 from build_house_poll_averages import (
-    AVERAGE_COLUMNS, DEFAULT_POLLS, OUTPUT_DIR as POLLS_DIR, POLL_COLUMNS, compute as compute_poll_averages,
+    AVERAGE_COLUMNS, DEFAULT_MATCHUPS, DEFAULT_POLLS, MATCHUP_COLUMNS, OUTPUT_DIR as POLLS_DIR, POLL_COLUMNS,
+    compute as compute_poll_averages,
+)
+from incumbent_roster import (
+    CANDIDATE_COLUMNS as ROSTER_CANDIDATE_COLUMNS, DEFAULT_ROSTER, RACE_COLUMNS as ROSTER_COLUMNS, candidate_flag,
+    load_roster, race_values,
 )
 from election_guide import (
     DEFAULT_GUIDE, DEFAULT_MARKDOWN, GUIDE_COLUMNS, SOURCE_ID as GUIDE_SOURCE_ID, load_guide, name_check,
 )
 from district_history import (
     DEFAULT_MANIFEST, ROOT, RESULTS_DIR, PRESIDENTIAL_COLUMNS, PVI_COLUMNS,
-    district_key, normalized_sources, publish_csvs, read_records, require_unique,
+    district_key, load_boundary_vintage, normalized_sources, publish_csvs, read_records, require_unique,
 )
 
 DEFAULT_CANDIDATES = ROOT / "2026/candidates/house-general-field.csv"
@@ -29,9 +34,9 @@ STATUS_COLUMNS = ["pres_2020_status", "pres_2024_status", "cook_pvi_status"]
 SOURCE_COLUMNS = ["pres_2020_source_id", "pres_2024_source_id", "cook_pvi_source_id"]
 GUIDE_CONTEXT_COLUMNS = GUIDE_COLUMNS + ["guide_name_check", "guide_status", "guide_source_id"]
 DISTRICT_COLUMNS = (IDENTITY_COLUMNS + COUNT_COLUMNS + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS
-                    + POLL_COLUMNS + GUIDE_CONTEXT_COLUMNS)
+                    + POLL_COLUMNS + GUIDE_CONTEXT_COLUMNS + MATCHUP_COLUMNS + ROSTER_COLUMNS)
 APPENDED_COLUMNS = (["district_id", "election_cycle"] + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS
-                    + POLL_COLUMNS + GUIDE_CONTEXT_COLUMNS)
+                    + POLL_COLUMNS + GUIDE_CONTEXT_COLUMNS + MATCHUP_COLUMNS + ROSTER_CANDIDATE_COLUMNS)
 ISSUE_COLUMNS = ["state", "district", "district_id", "metric", "source_id", "issue", "detail"]
 UNRESOLVED_STATUSES = {"unmatched", "ambiguous", "reviewed_unmatched"}
 MATCH_STATUSES = UNRESOLVED_STATUSES | {"automatic", "reviewed"}
@@ -47,8 +52,8 @@ def verify_normalized(path, columns, expected, key_of):
     return rows
 
 
-def verify_poll_averages(path, polls_path, candidate_path):
-    expected, _ = compute_poll_averages(polls_path, candidate_path)
+def verify_poll_averages(path, polls_path, candidate_path, matchups_path):
+    expected, _ = compute_poll_averages(polls_path, candidate_path, matchups_path)
     _, rows = read_records(path, AVERAGE_COLUMNS)
     if sorted(tuple(r.values()) for r in rows) != sorted(tuple(r.values()) for r in expected):
         raise ValueError(f"{path}: stale polling averages; run build_house_poll_averages.py")
@@ -60,14 +65,15 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
           pvi_path=RESULTS_DIR / "cook-pvi-normalized.csv", output_dir=OUTPUT_DIR,
           require_complete=False, project_root=ROOT, polls_path=DEFAULT_POLLS,
           poll_averages_path=DEFAULT_POLL_AVERAGES, guide_path=DEFAULT_GUIDE,
-          guide_markdown_path=DEFAULT_MARKDOWN):
+          guide_markdown_path=DEFAULT_MARKDOWN, matchups_path=DEFAULT_MATCHUPS, roster_path=DEFAULT_ROSTER):
     sources, expected_history, expected_pvi = normalized_sources(manifest_path, project_root)
+    redrawn = load_boundary_vintage(manifest_path, project_root)
     history = verify_normalized(history_path, PRESIDENTIAL_COLUMNS, expected_history,
                                 lambda r: (r["state"], r["district"], r["election_year"]))
     pvi = verify_normalized(pvi_path, PVI_COLUMNS, expected_pvi,
                            lambda r: (r["state"], r["district"]))
     candidate_columns, candidates = read_records(candidate_path)
-    poll_averages = verify_poll_averages(poll_averages_path, polls_path, candidate_path)
+    poll_averages = verify_poll_averages(poll_averages_path, polls_path, candidate_path, matchups_path)
     guide = load_guide(guide_path, guide_markdown_path, candidate_path)
     if not {"state", "district", "name", "fec_match_status"} <= set(candidate_columns):
         raise ValueError(f"{candidate_path}: missing required candidate columns")
@@ -79,6 +85,7 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
         if row["fec_match_status"] not in MATCH_STATUSES:
             raise ValueError(f"{candidate_path}: invalid candidate match status for {row['name']}")
         groups[key].append(row)
+    roster = load_roster(roster_path, {key[2]: ("House", rows) for key, rows in groups.items()}, {"House"})
     history_by_key = {(r["state"], r["district"], r["election_year"]): r for r in history}
     pvi_by_key = {(r["state"], r["district"]): r for r in pvi}
     districts, enriched, issues = [], [], []
@@ -97,7 +104,8 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
             record = history_by_key.get((state, district, year))
             value = record["dem_margin_pp"] if record else ""
             context[f"{metric}_dem_margin_pp"] = value
-            context[f"{metric}_status"] = "available" if value != "" else "missing"
+            context[f"{metric}_status"] = ("missing" if value == "" else
+                                           "prior_boundaries" if state in redrawn else "available")
             context[f"{metric}_source_id"] = source_id
             if value == "":
                 add_issue(key, metric, source_id, "missing_value" if record else "missing_district",
@@ -110,14 +118,17 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
         if not label:
             add_issue(key, "cook_pvi", source_id, "missing_value" if record else "missing_district",
                       "Published 2026 PVI is blank" if record else "No Cook district row")
-        context.update({column: poll_averages[(state, district)][column] for column in POLL_COLUMNS})
+        context.update({column: poll_averages[(state, district)][column] for column in POLL_COLUMNS + MATCHUP_COLUMNS})
         guide_row = guide.get(key)
         context.update({column: guide_row[column] if guide_row else "" for column in GUIDE_COLUMNS})
         context.update(guide_name_check=name_check(guide_row, rows) if guide_row else "",
                        guide_status="in_guide" if guide_row else "not_in_guide", guide_source_id=GUIDE_SOURCE_ID)
+        context.update(race_values(roster[district_id]))
         districts.append(context)
         for row in rows:
-            enriched.append(dict(row, **{column: context[column] for column in APPENDED_COLUMNS}))
+            enriched.append(dict(row, **{column: context[column] for column in APPENDED_COLUMNS
+                                         if column != "roster_incumbent"},
+                                 roster_incumbent=candidate_flag(roster[district_id], row)))
     target_keys = {(state, district) for state, district, _ in groups}
     for record in history:
         key = record["state"], record["district"]
@@ -151,6 +162,8 @@ def main():
     parser.add_argument("--pvi", type=Path, default=RESULTS_DIR / "cook-pvi-normalized.csv")
     parser.add_argument("--polls", type=Path, default=DEFAULT_POLLS)
     parser.add_argument("--poll-averages", type=Path, default=DEFAULT_POLL_AVERAGES)
+    parser.add_argument("--matchups", type=Path, default=DEFAULT_MATCHUPS)
+    parser.add_argument("--roster", type=Path, default=DEFAULT_ROSTER)
     parser.add_argument("--guide", type=Path, default=DEFAULT_GUIDE)
     parser.add_argument("--guide-markdown", type=Path, default=DEFAULT_MARKDOWN)
     parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
@@ -160,7 +173,8 @@ def main():
         districts, candidates, issues = build(args.candidates, args.manifest, args.history,
                                              args.pvi, args.output_dir, args.require_complete,
                                              polls_path=args.polls, poll_averages_path=args.poll_averages,
-                                             guide_path=args.guide, guide_markdown_path=args.guide_markdown)
+                                             guide_path=args.guide, guide_markdown_path=args.guide_markdown,
+                                             matchups_path=args.matchups, roster_path=args.roster)
     except (ValueError, KeyError, OSError) as exc:
         sys.exit(f"District build failed: {exc}")
     print(f"Wrote {len(districts)} districts, {len(candidates)} candidates, {len(issues)} issues", file=sys.stderr)

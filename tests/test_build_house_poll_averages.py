@@ -1,4 +1,5 @@
 import csv
+import json
 import math
 import random
 import subprocess
@@ -23,6 +24,7 @@ FIELD = [
     ("CA", "34", "Jimmy Gomez", "DEM"), ("CA", "34", "David Kim", "DEM"),
     ("ME", "02", "Matthew G. Dunlap", "DEM"), ("ME", "02", "Paul R. LePage", "REP"),
     ("NY", "01", "Nick LaLota", "REP"), ("NY", "01", "John Avlon", "DEM"),
+    ("AK", "00", "Eric Hafner", "DEM"), ("AK", "00", "Nick Begich", "REP"), ("AK", "00", "Bill Hill", "OTHER"),
 ]
 
 
@@ -49,6 +51,7 @@ class PollFixture(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.polls_path = self.root / "polls.csv"
         self.candidates_path = self.root / "candidates.csv"
+        self.matchups = self.root / "matchups.json"
         self.output = self.root / "out"
         rows = []
         for state, district, name, party in FIELD:
@@ -66,12 +69,12 @@ class PollFixture(unittest.TestCase):
 
     def compute(self, columns=POLL_COLUMNS):
         self.write(self.polls_path, columns, [{c: r[c] for c in columns} for r in self.rows])
-        averages, records = polls.compute(self.polls_path, self.candidates_path)
+        averages, records = polls.compute(self.polls_path, self.candidates_path, self.matchups)
         return {r["district_id"]: r for r in averages}, {r["question_id"]: r for r in records}
 
     def build(self):
         self.write(self.polls_path, POLL_COLUMNS, self.rows)
-        return polls.build(self.polls_path, self.candidates_path, self.output)
+        return polls.build(self.polls_path, self.candidates_path, self.output, self.matchups)
 
     def output_bytes(self):
         return {p.name: p.read_bytes() for p in self.output.glob("*.csv")}
@@ -215,10 +218,53 @@ class WeightTests(PollFixture):
         self.assertEqual(before, self.output_bytes())
         result = subprocess.run([sys.executable, str(ROOT / "scripts/build_house_poll_averages.py"),
                                  "--polls", str(self.polls_path), "--candidates", str(self.candidates_path),
-                                 "--output-dir", str(self.output)], cwd=ROOT, capture_output=True, text=True)
+                                 "--output-dir", str(self.output), "--matchups", str(self.matchups)],
+                                cwd=ROOT, capture_output=True, text=True)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("Poll average build failed", result.stderr)
         self.assertEqual(before, self.output_bytes())
+
+    def save_matchups(self, **updates):
+        entry = dict(district_id="AK-AL", principal_candidate="Bill Hill", republican_candidate="Nick Begich",
+                     evidence=["https://example.test/ak"], rationale="Fixture", reviewed_by="Fixture reviewer",
+                     reviewed_at="2026-11-02")
+        entry.update(updates)
+        self.matchups.write_text(json.dumps(dict(schema_version=1, matchups=[entry])))
+
+    def alaska(self, question, hill, begich, hafner):
+        return [answer(question, "IND", "Bill Hill", hill, state="AK", seat="1"),
+                answer(question, "REP", "Nick Begich", begich, state="AK", seat="1"),
+                answer(question, "DEM", "Eric Hafner", hafner, state="AK", seat="1")]
+
+    def test_reviewed_independent_principal(self):
+        self.save_matchups()
+        self.rows = self.alaska("ak1", 40, 45, 6) + head_to_head("pa1", 48, 46)
+        averages, records = self.compute()
+        ak = averages["AK-AL"]
+        self.assertEqual((ak["poll_avg_dem_candidate"], ak["poll_avg_rep_candidate"]), ("Bill Hill", "Nick Begich"))
+        self.assertEqual((ak["poll_avg_dem_pct"], ak["poll_avg_dem_margin_pp"]), ("40.00", "-5.00"))
+        self.assertEqual(ak["poll_avg_matchup_basis"], "reviewed")
+        self.assertEqual(records["ak1"]["included"], "True")
+        self.assertEqual(averages["PA-07"]["poll_avg_matchup_basis"], "dem_rep")
+
+    def test_without_entry_alaska_uses_the_democrat(self):
+        self.rows = self.alaska("ak1", 40, 45, 6)
+        averages, _ = self.compute()
+        self.assertEqual(averages["AK-AL"]["poll_avg_dem_candidate"], "Eric Hafner")
+        self.assertEqual(averages["AK-AL"]["poll_avg_matchup_basis"], "dem_rep")
+
+    def test_stale_reviewed_entry_fails_and_preserves_outputs(self):
+        self.save_matchups()
+        self.rows = self.alaska("ak1", 40, 45, 6)
+        self.build()
+        before = self.output_bytes()
+        for updates, message in [(dict(principal_candidate="Nobody"), "not in the district's field"),
+                                 (dict(district_id="ZZ-01"), "not in the House field"),
+                                 (dict(evidence=[]), "evidence")]:
+            self.save_matchups(**updates)
+            with self.subTest(message=message), self.assertRaisesRegex(ValueError, message):
+                self.build()
+            self.assertEqual(before, self.output_bytes())
 
     def test_current_snapshot(self):
         averages, records = polls.compute()

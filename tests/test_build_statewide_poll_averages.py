@@ -148,7 +148,8 @@ class StatewidePollTests(unittest.TestCase):
                  for name, party in [("Jon Ossoff", "DEM"), ("Mike Collins", "REP")]]
         write_csv(house_dir / "field.csv", house_field.FIELD_COLUMNS, field)
         write_csv(house_dir / "polls.csv", POLL_COLUMNS, [dict(r, state="VT", seat_number="1") for r in rows])
-        house_averages, house_log = house_polls.compute(house_dir / "polls.csv", house_dir / "field.csv")
+        house_averages, house_log = house_polls.compute(house_dir / "polls.csv", house_dir / "field.csv",
+                                                          house_dir / "matchups.json")
         house_log = {r["question_id"]: r for r in house_log}
         for question in ["q2", "q3"]:
             for column in ["recency_factor", "sample_factor", "pollster_factor", "partisan_factor", "weight",

@@ -54,6 +54,62 @@ class HistoryFixture(unittest.TestCase):
     def normalize(self):
         return history.normalize(self.manifest, self.normalized, self.root)
 
+    def boundary_entry(self, state="AK", **updates):
+        entry = dict(state=state, plan_2026="Fixture 2026 plan", evidence=["https://example.test/map"],
+                     reviewed_by="Fixture reviewer", reviewed_at="2026-11-02")
+        entry.update(updates)
+        return entry
+
+    def save_boundary(self, *entries):
+        (self.root / "boundary.json").write_text(json.dumps(dict(schema_version=1, states=list(entries))))
+        data = json.loads(self.manifest.read_text())
+        data["reviewed_inputs"] = {"boundary_vintage": dict(path="boundary.json", notes="Fixture registry")}
+        self.manifest.write_text(json.dumps(data))
+
+
+class BoundaryVintageTests(HistoryFixture):
+    def review(self):
+        with (self.normalized / "boundary-review.csv").open(newline="") as stream:
+            return list(csv.DictReader(stream))
+
+    def test_check_flags_unlisted_disagreement_and_still_publishes(self):
+        # National margins sum to -10 (2024) and +20 (2020). AK implies (0 - 10) / 4 = -2.5
+        # against a published D+4, a 6.5-point gap; AL implies 2.5 against EVEN.
+        self.normalize()
+        rows = self.review()
+        self.assertEqual([(r["district_id"], r["implied_dem_lean_pp"], r["difference_pp"]) for r in rows],
+                         [("AK-AL", "-2.5", "6.5")])
+        self.assertTrue((self.normalized / "presidential-results-normalized.csv").exists())
+
+    def test_listed_state_is_not_reported(self):
+        self.save_boundary(self.boundary_entry())
+        self.normalize()
+        self.assertEqual(self.review(), [])
+        self.assertEqual(set(history.load_boundary_vintage(self.manifest, self.root)), {"AK"})
+
+    def test_manifest_without_registry_has_no_redrawn_states(self):
+        self.assertEqual(history.load_boundary_vintage(self.manifest, self.root), {})
+
+    def test_invalid_entries_fail_and_preserve_outputs(self):
+        self.normalize()
+        before = {p.name: p.read_bytes() for p in self.normalized.glob("*.csv")}
+        for entries, message in [([self.boundary_entry(state="XX")], "unknown state"),
+                                 ([self.boundary_entry(), self.boundary_entry()], "duplicate state"),
+                                 ([self.boundary_entry(evidence=[])], "evidence"),
+                                 ([self.boundary_entry(reviewed_by="")], "reviewed_by"),
+                                 ([self.boundary_entry(reviewed_at="yesterday")], "Invalid isoformat")]:
+            self.save_boundary(*entries)
+            with self.subTest(message=message), self.assertRaisesRegex(ValueError, message):
+                self.normalize()
+            self.assertEqual(before, {p.name: p.read_bytes() for p in self.normalized.glob("*.csv")})
+
+    def test_committed_registry_explains_every_flagged_state(self):
+        _, rows, pvi = history.normalized_sources()
+        registry = history.load_boundary_vintage()
+        flagged = {r["state"] for r in history.boundary_review(rows, pvi, {})}
+        self.assertEqual(flagged, set(registry))
+        self.assertEqual(history.boundary_review(rows, pvi, registry), [])
+
 
 class DistrictHistoryTests(HistoryFixture):
     def test_keys(self):

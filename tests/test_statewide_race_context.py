@@ -48,6 +48,19 @@ def answer(question, party, name, pct, state="GA", **fields):
     return row
 
 
+def roster_entry(race_key, office, name, party, **extra):
+    entry = dict(race_key=race_key, office=office, name=name, party=party, vacant=False,
+                 evidence=["https://example.test/roster"], reviewed_by="Fixture reviewer", reviewed_at="2026-11-02")
+    entry.update(extra)
+    return entry
+
+
+ROSTER = [roster_entry("AK-SEN", "Senate", "Dan Sullivan", "R"),
+          roster_entry("GA-GOV", "Governor", "Brian Kemp", "R"),
+          roster_entry("GA-SEN", "Senate", "Jon Ossoff", "D"),
+          roster_entry("NE-SEN", "Senate", "Pete Ricketts", "R")]
+
+
 def guide_race(state, office, **values):
     row = dict.fromkeys(guide.RACE_COLUMNS, "")
     row.update(slot_et="7:00", poll_close_et="19:00", state=state, office=office, card="Test")
@@ -64,6 +77,8 @@ class ContextFixture(unittest.TestCase):
         self.output = self.root / "statewide"
         self.paths = {"Senate": self.root / "senate.csv", "Governor": self.root / "governor.csv"}
         self.field_rows = copy.deepcopy(FIELD)
+        self.roster = self.root / "roster.json"
+        self.save_roster(copy.deepcopy(ROSTER))
         self.state_pvi = [["State", "PVI"], ["Alaska", "R+6"], ["Georgia", "R+1"], ["Nebraska", "R+10"]]
         self.senate = [answer("q1", "DEM", "Jon Ossoff", 50), answer("q1", "REP", "Mike Collins", 44),
                        answer("q2", "DEM", "Dan Osborn", 46, "NE"), answer("q2", "REP", "Pete Ricketts", 48, "NE")]
@@ -118,11 +133,14 @@ class ContextFixture(unittest.TestCase):
             history.normalize(self.manifest, self.results, self.root, self.house)
             polls.build(self.paths, self.field, self.matchups, self.root)
 
+    def save_roster(self, entries):
+        self.roster.write_text(json.dumps(dict(schema_version=1, entries=entries)))
+
     def build(self, strict=False):
         return context.build(self.field, self.manifest, self.house, self.results / "state-presidential-normalized.csv",
                              self.results / "cook-state-pvi-normalized.csv", self.paths,
                              self.root / "statewide-poll-averages.csv", self.matchups, self.guide, self.output,
-                             strict, self.root)
+                             strict, self.root, self.roster)
 
     def output_bytes(self):
         return {p.name: p.read_bytes() for p in self.output.iterdir()}
@@ -214,6 +232,37 @@ class StatewideContextTests(ContextFixture):
         self.save_all()
         self.build()
         self.assertEqual(self.output_bytes(), before)
+
+    def test_roster_columns_running_governor_and_open_senate_seat(self):
+        roster = copy.deepcopy(ROSTER)
+        roster[1] = roster_entry("GA-GOV", "Governor", "Keisha Lance Bottoms", "D")
+        roster[0] = roster_entry("AK-SEN", "Senate", "Lisa Murkowski", "R")
+        self.save_roster(roster)
+        races, candidates, _ = self.build()
+        by_race = {r["race_id"]: r for r in races}
+        self.assertEqual([by_race["GA-GOV"][c] for c in ["roster_incumbent_name", "roster_ballot_status", "open_seat"]],
+                         ["Keisha Lance Bottoms", "running", "False"])
+        self.assertEqual((by_race["AK-SEN"]["roster_ballot_status"], by_race["AK-SEN"]["open_seat"]), ("not_running", "True"))
+        flagged = {(r["race_id"], r["name"]) for r in candidates if r["roster_incumbent"] == "True"}
+        self.assertEqual(flagged, {("GA-GOV", "Keisha Lance Bottoms"), ("GA-SEN", "Jon Ossoff"), ("NE-SEN", "Pete Ricketts")})
+        bottoms = next(r for r in candidates if r["name"] == "Keisha Lance Bottoms")
+        self.assertEqual((bottoms["fec_match_status"], bottoms["incumbent"]), ("not_federal", ""))
+        self.assertEqual(context.RACE_COLUMNS[-len(context.ROSTER_COLUMNS):], context.ROSTER_COLUMNS)
+        self.assertEqual(by_race["GA-SEN"]["roster_source_id"], "incumbent-roster-2026")
+
+    def test_invalid_roster_preserves_exports(self):
+        self.build()
+        before = self.output_bytes()
+        for entries, message in [(ROSTER[:3], "no roster entry"),
+                                 (ROSTER + [ROSTER[0]], "duplicate race key"),
+                                 ([dict(ROSTER[0], party="X")] + ROSTER[1:], "party"),
+                                 ([dict(ROSTER[0], evidence=[])] + ROSTER[1:], "evidence"),
+                                 ([dict(ROSTER[0], ballot_status_override="running", override_candidate="Nobody",
+                                        override_rationale="Fixture")] + ROSTER[1:], "override_candidate")]:
+            self.save_roster(entries)
+            with self.subTest(message=message), self.assertRaisesRegex(ValueError, message):
+                self.build()
+            self.assertEqual(before, self.output_bytes())
 
     def test_committed_snapshot_cardinality(self):
         with (ROOT / "2026/statewide/statewide-race-context.csv").open(newline="") as stream:

@@ -6,13 +6,21 @@ The Senate and governor races have a parallel workflow, documented in [statewide
 
 ## Sources and refresh
 
-The user-supplied [`presidential-results-by-us-house-district-2020-2024.csv`](../2026/results/presidential-results-by-us-house-district-2020-2024.csv) has two header rows and 435 district rows. Its exact upstream URL, retrieval date, and map vintage are unknown. Both years' values are used as supplied; matching a district label does not establish that its electorate stayed the same across source editions. This limits interpretation of historical shifts, but does not block the join or withhold valid margins. The pipeline does not interpolate votes or estimate PVI.
+The user-supplied [`presidential-results-by-us-house-district-2020-2024.csv`](../2026/results/presidential-results-by-us-house-district-2020-2024.csv) has two header rows and 435 district rows. Its exact upstream URL, retrieval date, and map vintage are unknown. Both years' values are used as supplied; matching a district label does not establish that its electorate stayed the same across source editions. The pipeline does not interpolate votes or estimate PVI. The source describes the 2024 congressional map, so in states that redrew for 2026 its margins describe districts that no longer exist; see [Redrawn states](#redrawn-states).
 
 [`cook-pvi-2026-source.csv`](../2026/results/cook-pvi-2026-source.csv) was captured on November 2, 2026 from the user's open [Cook 2026 district page](https://www.cookpolitical.com/cook-pvi/2026-partisan-voting-index/district-map-and-list), dated July 29, 2026. Its embedded [Datawrapper table](https://datawrapper.dwcdn.net/fejB0/2/) has six visible columns: `Dist`, `Incumbent`, `Incumbent Party`, `2025 PVI`, `2026 PVI`, `2026 Rank`. The normalizer imports **2026 PVI**. Presidential margins do not come from this table.
 
 To refresh Cook data, use the integrated Browser on the linked page, open the table's show-more control, and capture all rendered rows. The initial table shows only 50 of 435; expanding "Show 385 more" displayed all rows in this capture. Preserve the six source columns and quoted CSV values. Ignore the empty layout cell, not an actual data column. Verify 435 unique district keys, coverage against the candidate field, a published EVEN value, and a changed-edition sample such as CA-13 (`2025 PVI=R+1`, `2026 PVI=D+2`). Do not infer unavailable values or capture just the first page.
 
-[`source-manifest.json`](../2026/results/source-manifest.json) records source identifiers, repository-relative paths, hashes, source/embedded URLs, known publication and acquisition dates, editions, and notes. Unknown presidential metadata is null, not inferred from Git dates. After replacing either source snapshot, update its SHA-256 and actual provenance, normalize again, and rebuild. There is no district-boundary approval registry. Offline builds do not need browser access, credentials, or new network requests once Python is available.
+[`source-manifest.json`](../2026/results/source-manifest.json) records source identifiers, repository-relative paths, hashes, source/embedded URLs, known publication and acquisition dates, editions, and notes. Unknown presidential metadata is null, not inferred from Git dates. After replacing either source snapshot, update its SHA-256 and actual provenance, normalize again, and rebuild. Its `reviewed_inputs.boundary_vintage` entry points to the reviewed registry of redrawn states described below. Offline builds do not need browser access, credentials, or new network requests once Python is available.
+
+## Redrawn states
+
+Nine states vote in 2026 on different congressional lines than the 2024 map the presidential source describes: Alabama, California, Florida, Louisiana, North Carolina, Ohio, Tennessee, Texas, and Utah. [`boundary-vintage.json`](../2026/results/boundary-vintage.json) lists them, each with its 2026 plan, enactment date, evidence, `reviewed_by`, and `reviewed_at`. A `not_listed` array records states that redrew but still use 2024 lines in November: Missouri, whose 2025 map is stayed pending Proposition A, and Virginia, whose 2026 map never took effect. Cook's 2026 PVI is already scored on each state's current lines.
+
+Presidential margins for every district in a listed state keep their source values but get status `prior_boundaries` instead of `available` (173 of 435 districts). Treat them as describing the old district with the same number, not the current one; use Cook PVI instead. `--require-complete` treats them as present. An entry with an unknown or duplicate state, no evidence, or no review metadata fails normalization and the context build without replacing outputs.
+
+Normalization also writes [`boundary-review.csv`](../2026/results/boundary-review.csv), a non-failing check for states the registry may be missing. For each district outside a listed state, it compares the published 2026 PVI lean with the lean implied by the presidential margins: each year's margin minus the national margin summed from the same source, averaged over 2020 and 2024 and halved to put it on Cook's scale. Districts where the two differ by more than four points are listed. With an empty registry, the check flags exactly the nine listed states; with the registry, the report is empty. A new row means a state may have redrawn: confirm with a source and add it, or explain it in `not_listed`.
 
 ## District identifiers
 
@@ -44,7 +52,7 @@ uv run scripts/build_house_district_context.py
 uv run scripts/build_house_district_context.py --require-complete
 ```
 
-The first command refreshes derived candidate data from its committed inputs; it does not download new FEC/ballot/poll data. The remaining commands run entirely on saved inputs without an API key. Rebuild the polling averages after any change to the candidate field or the poll snapshot. Joiner options are `--candidates`, `--manifest`, `--history`, `--pvi`, `--polls`, `--poll-averages`, `--guide`, `--guide-markdown`, `--output-dir`, and `--require-complete`; paths can select alternate candidate, metadata, normalized, poll, guide, and output files. The joiner validates the guide CSV against its markdown and the candidate field before it replaces any export. Source paths inside the manifest remain relative to the repository root.
+The first command refreshes derived candidate data from its committed inputs; it does not download new FEC/ballot/poll data. The remaining commands run entirely on saved inputs without an API key. Rebuild the polling averages after any change to the candidate field or the poll snapshot. Joiner options are `--candidates`, `--manifest`, `--history`, `--pvi`, `--polls`, `--poll-averages`, `--matchups`, `--roster`, `--guide`, `--guide-markdown`, `--output-dir`, and `--require-complete`; paths can select alternate candidate, metadata, normalized, poll, guide, and output files. The joiner validates the guide CSV against its markdown and the candidate field before it replaces any export. Source paths inside the manifest remain relative to the repository root.
 
 ## Files and schemas
 
@@ -53,6 +61,10 @@ The first command refreshes derived candidate data from its committed inputs; it
 | `2026/results/presidential-results-by-us-house-district-2020-2024.csv` | Original two-row-header presidential input; preserved |
 | `2026/results/cook-pvi-2026-source.csv` | Captured six-column Cook table; both PVI editions preserved |
 | `2026/results/source-manifest.json` | Source provenance, editions, and snapshot hashes |
+| `2026/results/boundary-vintage.json` | Reviewed registry of states voting on 2026 lines that differ from the presidential source |
+| `2026/roster/incumbent-roster.json` | Reviewed incumbent for every 2026 House, Senate, and governor race |
+| `2026/roster/roster-review.csv` | Seed issues for review, with who resolved each |
+| `2026/results/boundary-review.csv` | Districts outside listed states whose PVI and presidential margins disagree by more than four points |
 | `2026/results/presidential-results-normalized.csv` | One row per source district and presidential election year |
 | `2026/results/cook-pvi-normalized.csv` | One row per Cook district for published 2026 PVI |
 | `2026/polls/house-poll-averages.csv` | One row per candidate-field district with its weighted nominee polling average or status |
@@ -93,21 +105,27 @@ The district context columns are:
 | `unresolved_fec_candidate_count` | Rows with unmatched, ambiguous, or reviewed-unmatched FEC identity |
 | `pres_2020_dem_margin_pp`, `pres_2024_dem_margin_pp` | Source D-minus-R margins on all-vote denominator |
 | `cook_pvi_label`, `cook_pvi_dem_lean_pp` | Published Cook label and signed lean |
-| `pres_2020_status`, `pres_2024_status`, `cook_pvi_status` | `available` when the source value exists, otherwise `missing` |
+| `pres_2020_status`, `pres_2024_status`, `cook_pvi_status` | `available` when the source value exists, otherwise `missing`; presidential statuses are `prior_boundaries` in [redrawn states](#redrawn-states) |
 | `pres_2020_source_id`, `pres_2024_source_id`, `cook_pvi_source_id` | Source attribution; configured source ID is retained even when the metric is missing |
 | `poll_avg_dem_candidate` through `poll_avg_source_id` | The ten polling-average columns, copied from `house-poll-averages.csv` and described under [House polling averages](#house-polling-averages); blank unless `poll_avg_status` is `available` |
 | `guide_slot_et` through `guide_notes` | Seventeen columns copied unchanged from the House rows of the [election-night guide](#election-night-guide) races CSV, each prefixed with `guide_`; blank for districts the guide does not name |
 | `guide_name_check` | `matched`, `mismatch`, or `not_named` for guide districts; blank otherwise |
 | `guide_status` | `in_guide` or `not_in_guide` |
 | `guide_source_id` | `election-night-guide-2026-11-03` |
+| `poll_avg_matchup_basis` | `dem_rep` or `reviewed`, copied from `house-poll-averages.csv`; added after the guide columns so earlier columns keep their positions |
+| `roster_incumbent_name`, `roster_incumbent_party` | The [incumbent roster](#incumbent-roster)'s incumbent; blank when the seat is vacant |
+| `roster_vacant` | `True` when the seat has no member |
+| `roster_ballot_status` | `running` or `not_running`; blank when vacant |
+| `open_seat` | `True` when the incumbent is not running or the seat is vacant |
+| `roster_source_id` | `incumbent-roster-2026` |
 
-Candidate context retains all original candidate columns and exact values, appending `district_id`, `election_cycle`, and the district context's metric, status, source-ID, and polling-average columns. The polling columns and then the guide columns come last in both exports, so earlier columns keep their positions. It does not append district candidate counts. Candidate columns and finance/filing/poll semantics are described in the [candidate pipeline reference](candidate-pipeline.md). In particular, a blank candidate FEC identity remains blank after this join. Different source incumbent names do not overwrite candidate records or establish a verified current-incumbent roster.
+Candidate context retains all original candidate columns and exact values, appending `district_id`, `election_cycle`, and the district context's metric, status, source-ID, and polling-average columns. The polling columns, the guide columns, `poll_avg_matchup_basis`, and then the roster columns come last in both exports, so earlier columns keep their positions. The candidate export adds `roster_incumbent`, `True` only on the row of a running roster incumbent. It does not append district candidate counts. Candidate columns and finance/filing/poll semantics are described in the [candidate pipeline reference](candidate-pipeline.md). In particular, a blank candidate FEC identity remains blank after this join. Source incumbent labels in the presidential and Cook files do not overwrite candidate records; current incumbency comes from the reviewed [incumbent roster](#incumbent-roster).
 
 All generated CSVs are sorted deterministically with UTF-8 encoding and LF line endings. Candidate rows are sorted by canonical district ID and their original field values; duplicate input candidate rows remain duplicated. Repeated district metrics are deliberate in that detail export.
 
 ## Missing data and validation
 
-Normal mode keeps every candidate-field district and every candidate row, using blank missing metrics and `missing` statuses. Zero margins and published EVEN are real values, not missing. Unknown boundary vintage does not affect availability. `district-context-issues.csv` has `state`, `district`, `district_id`, `metric`, `source_id`, `issue`, `detail`. Metrics are `pres_2020`, `pres_2024`, or `cook_pvi`.
+Normal mode keeps every candidate-field district and every candidate row, using blank missing metrics and `missing` statuses. Zero margins and published EVEN are real values, not missing. Redrawn states change presidential status to `prior_boundaries` but add no issue rows. `district-context-issues.csv` has `state`, `district`, `district_id`, `metric`, `source_id`, `issue`, `detail`. Metrics are `pres_2020`, `pres_2024`, or `cook_pvi`.
 
 | Issue | Meaning |
 | --- | --- |
@@ -117,9 +135,23 @@ Normal mode keeps every candidate-field district and every candidate row, using 
 
 `--require-complete` requires all three metrics for every target district; source-only issues alone do not fail it. It does not require polling averages or guide coverage, and districts without polling or outside the guide add no issue rows; their polling and guide statuses explain the gap. A guide CSV that fails validation stops the build in either mode. Invalid schemas/values, duplicate normalized keys, stale snapshots/normalizations, or contradictory metadata fail in either mode. Validation and strict-completeness errors exit nonzero with actionable stderr diagnostics and preserve previous successful outputs. Files are staged before replacement; an operating-system interruption during replacement is not a multi-file transaction guarantee.
 
+## Incumbent roster
+
+[`incumbent-roster.json`](../2026/roster/incumbent-roster.json) names the incumbent for every 2026 House, Senate, and governor race: 506 entries, one per race key (`VA-01`, `GA-SEN`, `GA-GOV`). It replaces neither candidate identities nor the FEC-derived `incumbent` flag, which stays blank for 325 unresolved House rows and for every governor. The roster answers a simpler question from better sources.
+
+**Who counts as the incumbent.** For House races the roster follows Cook's 2026 table: the sitting member contesting the district, or, where Cook marks the district `OPEN (Name)`, the departing member. In redrawn states this can differ from whoever held the district with the same number in 2024: CA-03's incumbent is Ami Bera, who now runs there. A seat with no member is `vacant` with blank name and party, keeping `previous_party` and `previous_holder`. Senate incumbents come from the [Senate member list](https://www.senate.gov/general/contact_information/senators_cfm.xml): the Class II senator, or the Class III appointee in Ohio and Florida, which hold special elections. Governors come from the [National Governors Association list](https://www.nga.org/governors/), with party from [Wikipedia's current-governors list](https://en.wikipedia.org/wiki/List_of_current_United_States_governors). All three are saved under `2026/roster/sources/` and hashed in the manifest's `roster_sources`.
+
+Each entry has `race_key`, `office`, `name`, `party` (`D`, `R`, or `I`), `vacant`, `evidence`, `reviewed_by`, and `reviewed_at`. An optional `ballot_status_override` (`running` or `not_running`, with `override_rationale`, and `override_candidate` for `running`) settles cases the name rule cannot.
+
+**Ballot status** is computed by each context build, not stored. A non-vacant incumbent is `running` when they match exactly one candidate in that race's field by the surname rule refined by first initial, or by override; otherwise `not_running`. Cook's `OPEN` districts carry a `not_running` override, because a different candidate can share the departing member's surname. Alaska's Senate race has a `running` override for Dan Sullivan, since Daniel J. Sullivan Jr. is also on the ballot. `open_seat` is true when the incumbent is not running or the seat is vacant.
+
+**Seeding and review.** `uv run scripts/build_incumbent_roster.py --reseed` regenerates the roster from the saved sources; without `--reseed`, an existing roster is left alone and only [`roster-review.csv`](../2026/roster/roster-review.csv) is rewritten. The report lists seed entries that need a decision: disagreements between Cook and the presidential source, vacancies, open-seat names to complete, special elections, and incumbents not on their race's ballot. `resolved_by` shows the reviewer of the committed entry. In the November 2, 2026 snapshot all 61 report rows are resolved. Review corrected Cook's spellings of Pettersen (CO-07) and Haridopolos (FL-08), made Aisha Wahab CA-14's incumbent after her August special-election win, and made Debbie Wasserman Schultz FL-20's incumbent, since she is on its ballot while Cook lists the old seat as vacant. GA-13 and TX-23 remain vacant per the House Clerk. CA-40 is a member-versus-member race: the roster follows Cook in naming Young Kim, and Ken Calvert is also on the ballot. All 71 Senate and governor entries were reviewed; 409 House entries remain marked as seed-only because Cook's name matched exactly one ballot candidate, or Cook marked the seat open, with nothing for a reviewer to decide. Reviews were made by an automated source review, recorded in `reviewed_by`.
+
+The context builds validate the roster before replacing exports: a missing, duplicate, or unknown race key, a wrong office, an invalid party, missing evidence or review metadata, or an override naming a candidate not in the race's field fails the build. In the snapshot, 360 House incumbents are running and 75 districts are open seats, two of them vacant.
+
 ## House polling averages
 
-`uv run scripts/build_house_poll_averages.py` builds a weighted Democratic-versus-Republican polling average for each district from the saved [`us-house-polls.csv`](../2026/polls/us-house-polls.csv) snapshot and the candidate field. It uses only the Python standard library, runs offline, and has the options `--polls`, `--candidates`, and `--output-dir`. Polling acquisition is still manual (see the [README](../README.md)), and no other poll file is read.
+`uv run scripts/build_house_poll_averages.py` builds a weighted Democratic-versus-Republican polling average for each district from the saved [`us-house-polls.csv`](../2026/polls/us-house-polls.csv) snapshot and the candidate field. It uses only the Python standard library, runs offline, and has the options `--polls`, `--candidates`, `--output-dir`, and `--matchups`. Polling acquisition is still manual (see the [README](../README.md)), and no other poll file is read.
 
 ### Eligibility and matching
 
@@ -133,12 +165,18 @@ Answer rows are grouped by `question_id`. Each question gets the first reason in
 | `missing_seat` | No `seat_number` |
 | `unknown_district` | The seat does not map to a candidate-field district |
 | `no_dem_rep_field` | The district's field lacks exactly one `DEM` and one `REP` candidate |
-| `not_head_to_head` | After dropping `NONE` answers, `Generic` names, and reallocated ranked-choice rows, the question lacks exactly one Democratic and one Republican answer |
-| `non_nominee` | A Democratic or Republican answer matches no field candidate, or matches someone other than that party's nominee |
+| `not_head_to_head` | After dropping `NONE` answers, `Generic` names, and reallocated ranked-choice rows, the question lacks exactly one Democratic and one Republican answer (not checked for a reviewed matchup) |
+| `non_nominee` | A Democratic or Republican answer matches no field candidate, or matches someone other than that party's nominee; for a reviewed matchup, the question lacks exactly one answer for each principal |
 | `ambiguous_match` | A name matches more than one field candidate in the district |
 | `superseded` | Another question from the same poll was chosen |
 
 Seat `1` in an at-large state (one whose only field district is `00`) maps to `STATE-AL`. Other seats are zero-padded. Names are matched against every field candidate in the district with the same surname rule, refined by first initial, that sets `in_general_polls`. Party-label questions (`Generic Democrat` against `Generic Republican`) never count. Independent and third-party answers may appear in an eligible question, but their shares are not averaged.
+
+### Reviewed principal matchups
+
+By default a district's matchup is its single Democratic and single Republican nominee (basis `dem_rep`). [`house-principal-matchups.json`](../2026/polls/house-principal-matchups.json) can name a different pair, with the same shape as the [statewide matchups](statewide-data.md): `schema_version: 1` and a `matchups` array whose entries have `district_id`, `principal_candidate` (the non-Republican principal, as spelled in the field), optional `republican_candidate` (required when the field has several Republicans), `evidence`, `rationale`, `reviewed_by`, and `reviewed_at`. A reviewed district has basis `reviewed`. Its questions count when exactly one answer matches each principal by name; the poll's party code is not compared, because polls often code independents inconsistently. An entry for a district or candidate not in the field, a duplicate district, or missing evidence or review metadata fails the build without replacing outputs.
+
+The November 2, 2026 snapshot has one entry. AK-AL's only Democrat, Eric Hafner, polls near 5%, while independent Bill Hill polls about 40% against Republican Nick Begich. With the entry, AK-AL averages 11 polls from 8 pollsters: Hill 37.35, Begich 45.66, margin -8.31. Without it, the average was Hafner against Begich at -39.63.
 
 Each poll contributes at most one question. Likely voters are preferred over registered voters, and registered voters over adults. Ties go to the question naming the most field candidates, then to the lowest `question_id`. Ranked-choice questions use first-choice answers only. `pct`, `sample_size`, and `end_date` are parsed strictly only for questions that pass the head-to-head and matching checks. A malformed value there fails the build and names the question. Malformed values in out-of-scope questions do not.
 
@@ -162,13 +200,14 @@ The snapshot has no pollster ratings (`numeric_grade` and `pollscore` are empty)
 | Column | Meaning |
 | --- | --- |
 | `state`, `district`, `district_id` | Canonical district identity |
-| `poll_avg_dem_candidate`, `poll_avg_rep_candidate` | Nominee names as spelled in the candidate field |
+| `poll_avg_dem_candidate`, `poll_avg_rep_candidate` | Principal names as spelled in the candidate field. The `dem` columns hold the non-Republican principal, who is an independent when the basis is `reviewed` |
 | `poll_avg_dem_pct`, `poll_avg_rep_pct` | Weighted mean shares of all respondents, including undecided; not rescaled to two-party totals |
-| `poll_avg_dem_margin_pp` | Weighted mean of each poll's D-minus-R margin, in percentage points |
+| `poll_avg_dem_margin_pp` | Weighted mean of each poll's non-Republican-principal-minus-Republican margin, in percentage points |
 | `poll_count`, `poll_pollster_count` | Selected polls and distinct pollsters |
 | `poll_latest_end_date` | ISO end date of the newest selected poll |
 | `poll_avg_status` | `available`, `no_polls` (no 2026 general-election question for the district), `no_eligible_polls` (questions exist but none qualified), or `no_dem_rep_field` |
 | `poll_avg_source_id` | `us-house-polls-2026` |
+| `poll_avg_matchup_basis` | `dem_rep` or `reviewed`; appended last so earlier columns keep their positions |
 
 All values except status and source ID are blank unless the status is `available`. A blank is never zero.
 
@@ -176,9 +215,9 @@ All values except status and source ID are blank unless the status is `available
 
 ### Limitations
 
-- **Sponsored polls.** 198 of the 296 selected polls in the current snapshot have a party sponsor. They are discounted, not removed or adjusted for house effects, so a district polled mostly by one side can lean toward that side.
+- **Sponsored polls.** 203 of the 302 selected polls in the current snapshot have a party sponsor. They are discounted, not removed or adjusted for house effects, so a district polled mostly by one side can lean toward that side.
 - **Single polls.** 40 of the 111 averaged districts rest on one poll. Read `poll_count` and `poll_pollster_count` next to the margin.
-- **Strong independents.** The margin measures only the Democrat against the Republican. Where an independent is a main contender, it does not describe the race. In AK-AL, independent Bill Hill polls far ahead of Democrat Eric Hafner, so the -39.63 D-minus-R margin says little about how close the seat is. Check the input log and the source poll for those districts.
+- **Strong independents.** Without a reviewed matchup the margin measures only the Democrat against the Republican, which does not describe a race where an independent is the main contender. AK-AL has a reviewed entry; add one for any other such district, and check the input log and source poll when a margin looks lopsided.
 - **Same-party contests.** Districts such as California's same-party runoffs get `no_dem_rep_field` even when polled.
 - **Nominee matching.** Matching uses the candidate field's current names. If the field is wrong or out of date, nominee polls are logged as `non_nominee` rather than guessed.
 
@@ -269,11 +308,11 @@ PY
 
 In the November 2, 2026 snapshot, Alaska has source margins of -10.12 points (2020) and -13.14 points (2024), and published PVI R+6. CA-13 has D+2 in Cook's 2026 column; R+1 in its 2025 column is preserved only in the captured source. The 435 districts have 224 R-leaning labels, 204 D-leaning labels, and 7 EVEN labels. These are published PVI groups, not forecasts or predicted seat counts.
 
-The polling statuses are 111 `available`, 297 `no_polls`, 25 `no_dem_rep_field`, and 2 `no_eligible_polls`. The input log has 1,680 questions; 296 were selected. ME-02 averages eight polls from five pollsters to a D+3.31 margin (Matthew G. Dunlap 50.01, Paul R. LePage 46.70), with the latest poll ending October 14, 2026. CA-13 has `no_polls`, so its polling columns are blank.
+The polling statuses are 111 `available`, 297 `no_polls`, 25 `no_dem_rep_field`, and 2 `no_eligible_polls`. The input log has 1,680 questions; 302 were selected. ME-02 averages eight polls from five pollsters to a D+3.31 margin (Matthew G. Dunlap 50.01, Paul R. LePage 46.70), with the latest poll ending October 14, 2026. CA-13 has `no_polls`, so its polling columns are blank.
 
 44 districts are `in_guide` and 391 are `not_in_guide`. Sorted by poll close and district ID, the example's first guide races close at 18:00 ET: IN-05 (Holy shit tier, poll average -2.41, R+8) and KY-06 (2018-style, 6.19, R+7). They are followed at 19:00 ET by FL-09 (no tier, 0.00, R+8) and FL-14 (Solid, 5.21, R+4).
 
-The build produces 870 presidential year rows, 435 normalized PVI rows, 435 district context rows, and 1,159 candidate context rows. All target metrics are available, the issue report has only its header, and `--require-complete` passes. Counts apply to these saved inputs; future refreshes can change candidate counts and source coverage. The existing 325 unresolved FEC identities remain unresolved in the enriched export.
+The build produces 870 presidential year rows, 435 normalized PVI rows, 435 district context rows, and 1,160 candidate context rows. Every target metric has a value: PVI is `available` everywhere, and presidential margins are `available` for 262 districts and `prior_boundaries` for the 173 in redrawn states. The issue report and the boundary review have only their headers, and `--require-complete` passes. Counts apply to these saved inputs; future refreshes can change candidate counts and source coverage. The existing 325 unresolved FEC identities remain unresolved in the enriched export.
 
 Run all offline tests with:
 

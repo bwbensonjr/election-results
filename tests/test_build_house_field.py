@@ -122,14 +122,56 @@ class BuilderTests(unittest.TestCase):
         self.assertEqual(field[0]["incumbent"], "")
         self.assertEqual(review[0]["decision_evidence"], "https://example.test/evidence")
 
+    def corrections(self, *entries):
+        (self.data / builder.CORRECTIONS_FILE).write_text(json.dumps(
+            dict(schema_version=1, corrections=list(entries))))
+
+    def merged_correction(self, **updates):
+        row = dict(id="NY-01-split", state="NY", district="01", source_name="Bob Lee, Cy Moe",
+                   replacements=[dict(name="Bob Lee", party="Independent"),
+                                 dict(name="Cy Moe", party="Libertarian")],
+                   evidence=["https://example.test/ballot"], reviewed_by="Fixture reviewer",
+                   reviewed_at="2026-11-02")
+        row.update(updates)
+        return row
+
+    def test_correction_splits_merged_row(self):
+        self.inputs(ballots=[ballot(), ballot("Bob Lee, Cy Moe", "Libertarian")])
+        self.corrections(self.merged_correction())
+        write_csv(self.polls, [dict(cycle="2026", stage="general", state="NY", seat_number="1",
+                                    party="IND", candidate_name="Bob Lee", end_date="10/30/26")])
+        field, _, _ = builder.build(self.data, self.polls)
+        by_name = {r["name"]: r for r in field}
+        self.assertEqual(set(by_name), {"Alice Smith", "Bob Lee", "Cy Moe"})
+        self.assertEqual(by_name["Bob Lee"]["party"], "OTHER")
+        self.assertEqual(by_name["Bob Lee"]["party_raw"], "Independent")
+        self.assertTrue(by_name["Bob Lee"]["in_general_polls"])
+        self.assertEqual(by_name["Cy Moe"]["source_correction"], "NY-01-split")
+        self.assertEqual(by_name["Alice Smith"]["source_correction"], "")
+        self.assertEqual(by_name["Alice Smith"]["fec_candidate_id"], "H1")
+
+    def test_stale_or_unevidenced_correction_preserves_outputs(self):
+        self.inputs(ballots=[ballot(), ballot("Bob Lee, Cy Moe", "Libertarian")])
+        builder.build(self.data, self.polls)
+        before = self.output_bytes()
+        for entry, message in [(self.merged_correction(source_name="Nobody"), "stale correction"),
+                               (self.merged_correction(evidence=[]), "needs evidence")]:
+            self.corrections(entry)
+            with self.subTest(message=message), self.assertRaisesRegex(ValueError, message):
+                builder.build(self.data, self.polls)
+            self.assertEqual(self.output_bytes(), before)
+
     def test_current_snapshot_coverage_and_shuffled_rebuild(self):
         source = ROOT / "2026/candidates"
         for name in ["ballotbrief-house-candidates.csv", "fec-house-candidates-flagged.csv",
-                     "candidate-identity-decisions.json"]:
+                     "candidate-identity-decisions.json", builder.CORRECTIONS_FILE]:
             (self.data / name).write_bytes((source / name).read_bytes())
         polls = ROOT / "2026/polls/us-house-polls.csv"
         field, _, _ = builder.build(self.data, polls)
-        self.assertEqual(len(field), 1159)
+        self.assertEqual(len(field), 1160)
+        alaska = {r["name"]: r for r in field if r["state"] == "AK"}
+        self.assertEqual(alaska["Bill Hill"]["party_raw"], "Independent")
+        self.assertTrue(alaska["Bill Hill"]["in_general_polls"])
         self.assertEqual(len({(r["state"], r["district"]) for r in field}), 435)
         before = self.output_bytes()
         records = builder.read_csv(self.data / "fec-house-candidates-flagged.csv")

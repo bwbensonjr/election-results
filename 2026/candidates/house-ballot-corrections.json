@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "corrections": [
+    {
+      "id": "AK-AL-hill-mcdermott",
+      "state": "AK",
+      "district": "00",
+      "source_name": "Bill Hill, James C. \"Jim\" McDermott",
+      "replacements": [
+        {"name": "Bill Hill", "party": "Independent"},
+        {"name": "James C. \"Jim\" McDermott", "party": "Libertarian"}
+      ],
+      "evidence": [
+        "https://theballotbrief.com/district/ak-al",
+        "2026/polls/us-house-polls.csv (AK-AL general-election questions list Bill Hill as IND and Jim C. McDermott as LIB, e.g. question 604ee3d1-9988-440c-ba9f-c8d91d0bf6f4)"
+      ],
+      "rationale": "The ballot source joins two top-four candidates into one Libertarian row. Polls name them separately: independent Bill Hill and Libertarian Jim McDermott.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 state,district,ballot_name,ballot_party,fec_match_status,fec_match_reason,fec_candidate_id,fec_name,fec_party,incumbent,filed_12g,receipts,cash_on_hand_end_period,coverage_end_date,decision_evidence
-AK,00,"Bill Hill, James C. ""Jim"" McDermott",Libertarian,unmatched,unknown or conflicting party; review required,H6AK01092,"HILL, BILL",IND,False,True,2630792.87,117732.32,2026-10-14,
 AK,00,Eric Hafner,Democratic,unmatched,weak given-name or surname evidence; review required,H4AK00164,"ERIC, HAFNER",DEM,False,False,0.0,0.00,,
+AK,00,"James C. ""Jim"" McDermott",Libertarian,unmatched,weak given-name or surname evidence; review required,H2AK00143,"MCDERMOTT, JIM C",LIB,False,False,0.0,0.00,,
 AK,00,Nick Begich,Republican,unmatched,weak given-name or surname evidence; review required,H2AK01083,"BEGICH, NICHOLAS III",REP,True,True,6438903.51,1782866.69,2026-10-14,
 AL,03,Lee McInnis,Democratic,unmatched,weak given-name or surname evidence; review required,H6AL03199,"MCINNIS, VICTOR LEE",DEM,False,True,62981.54,41130.49,2026-10-14,
 AL,03,Mike Rogers,Republican,unmatched,weak given-name or surname evidence; review required,H2AL03032,"ROGERS, MICHAEL",REP,True,True,2521576.37,2707643.70,2026-10-14,

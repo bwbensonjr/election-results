@@ -8,6 +8,7 @@ See docs/candidate-pipeline.md for schemas, decisions, and refresh instructions.
 """
 
 import csv
+import json
 import os
 import sys
 import tempfile
@@ -26,8 +27,9 @@ FIELD_COLUMNS = [
     "state", "district", "name", "party", "party_raw", "fec_candidate_id",
     "fec_name", "incumbent", "filed_12g", "receipts", "cash_on_hand_end_period",
     "in_general_polls", "source_url", "fec_match_status", "fec_match_reason",
-    "fec_alternate_ids",
+    "fec_alternate_ids", "source_correction",
 ]
+CORRECTIONS_FILE = "house-ballot-corrections.json"
 REVIEW_COLUMNS = [
     "state", "district", "ballot_name", "ballot_party", "fec_match_status",
     "fec_match_reason", "fec_candidate_id", "fec_name", "fec_party", "incumbent",
@@ -44,6 +46,36 @@ def normalize_party(party):
 def read_csv(path):
     with path.open(newline="", encoding="utf-8") as stream:
         return list(csv.DictReader(stream))
+
+
+def apply_corrections(ballot, path):
+    """Replace reviewed source rows; the saved ballot source is never edited."""
+    if not path.exists():
+        return [dict(row, source_correction="") for row in ballot]
+    corrections = json.loads(path.read_text(encoding="utf-8"))["corrections"]
+    replaced = {}
+    for c in corrections:
+        label = c.get("id") or "<missing id>"
+        if not c.get("evidence") or not c.get("reviewed_by") or not c.get("reviewed_at"):
+            raise ValueError(f"correction {label} needs evidence, reviewed_by, and reviewed_at")
+        if not c.get("replacements"):
+            raise ValueError(f"correction {label} has no replacement rows")
+        hits = [i for i, row in enumerate(ballot) if (row["state"], row["district"], row["name"])
+                == (c["state"], c["district"], c["source_name"])]
+        if len(hits) != 1:
+            raise ValueError(f"stale correction {label}: matches {len(hits)} ballot rows, expected 1")
+        if hits[0] in replaced:
+            raise ValueError(f"corrections {replaced[hits[0]]['id']} and {label} replace the same row")
+        replaced[hits[0]] = c
+    corrected = []
+    for index, row in enumerate(ballot):
+        c = replaced.get(index)
+        if c is None:
+            corrected.append(dict(row, source_correction=""))
+            continue
+        for r in c["replacements"]:
+            corrected.append(dict(row, name=r["name"], party=r["party"], source_correction=c["id"]))
+    return corrected
 
 
 def poll_district(row):
@@ -106,8 +138,9 @@ def publish_csvs(data_dir, outputs):
 
 
 def build(data_dir=DATA_DIR, polls_path=POLLS_PATH):
-    ballot = read_csv(data_dir / "ballotbrief-house-candidates.csv")
-    fec = read_csv(data_dir / "fec-house-candidates-flagged.csv")
+    ballot = apply_corrections(read_csv(data_dir / "ballotbrief-house-candidates.csv"),
+                               data_dir / CORRECTIONS_FILE)
+    fec =read_csv(data_dir / "fec-house-candidates-flagged.csv")
     polls = read_csv(polls_path)
     decisions = load_decisions(data_dir / "candidate-identity-decisions.json", ballot, fec)
     ballot_by_district = defaultdict(list)
@@ -157,6 +190,7 @@ def build(data_dir=DATA_DIR, polls_path=POLLS_PATH):
                 in_general_polls=in_polls, source_url=b["source_url"],
                 fec_match_status=result.status, fec_match_reason=result.reason,
                 fec_alternate_ids=";".join(result.alternates),
+                source_correction=b["source_correction"],
             ))
             if result.status in {"unmatched", "ambiguous", "reviewed_unmatched"}:
                 for candidate in result.candidates or [{}]:

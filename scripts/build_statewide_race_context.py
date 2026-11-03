@@ -21,6 +21,10 @@ from district_history import (
     DEFAULT_MANIFEST, RESULTS_DIR, ROOT, STATE_PRESIDENTIAL_COLUMNS, STATE_PVI_COLUMNS,
     normalized_state_sources, publish_csvs, read_records, require_unique,
 )
+from incumbent_roster import (
+    CANDIDATE_COLUMNS as ROSTER_CANDIDATE_COLUMNS, DEFAULT_ROSTER, RACE_COLUMNS as ROSTER_COLUMNS, candidate_flag,
+    load_roster, race_values,
+)
 from election_guide import (
     DEFAULT_GUIDE, SOURCE_ID as GUIDE_SOURCE_ID, STATEWIDE_GUIDE_COLUMNS, load_statewide_guide,
     statewide_name_check,
@@ -37,9 +41,9 @@ STATUS_COLUMNS = ["pres_2020_status", "pres_2024_status", "cook_pvi_status"]
 SOURCE_COLUMNS = ["pres_2020_source_id", "pres_2024_source_id", "cook_pvi_source_id", "cook_pvi_edition"]
 GUIDE_CONTEXT_COLUMNS = STATEWIDE_GUIDE_COLUMNS + ["guide_name_check", "guide_status", "guide_source_id"]
 RACE_COLUMNS = (IDENTITY_COLUMNS + COUNT_COLUMNS + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS
-                + POLL_COLUMNS + GUIDE_CONTEXT_COLUMNS)
+                + POLL_COLUMNS + GUIDE_CONTEXT_COLUMNS + ROSTER_COLUMNS)
 APPENDED_COLUMNS = (["election_cycle"] + METRIC_COLUMNS + STATUS_COLUMNS + SOURCE_COLUMNS
-                    + POLL_COLUMNS + GUIDE_CONTEXT_COLUMNS)
+                    + POLL_COLUMNS + GUIDE_CONTEXT_COLUMNS + ROSTER_CANDIDATE_COLUMNS)
 ISSUE_COLUMNS = ["state", "office", "race_id", "metric", "source_id", "issue", "detail"]
 UNRESOLVED_STATUSES = {"unmatched", "ambiguous", "reviewed_unmatched"}
 MATCH_STATUSES = UNRESOLVED_STATUSES | {"automatic", "reviewed", "not_federal"}
@@ -59,7 +63,7 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
           state_history_path=RESULTS_DIR / "state-presidential-normalized.csv",
           state_pvi_path=RESULTS_DIR / "cook-state-pvi-normalized.csv", poll_paths=None,
           poll_averages_path=DEFAULT_POLL_AVERAGES, matchups_path=DEFAULT_MATCHUPS, guide_path=DEFAULT_GUIDE,
-          output_dir=OUTPUT_DIR, require_complete=False, project_root=ROOT):
+          output_dir=OUTPUT_DIR, require_complete=False, project_root=ROOT, roster_path=DEFAULT_ROSTER):
     sources, expected_history, expected_pvi = normalized_state_sources(manifest_path, project_root,
                                                                       house_candidate_path)
     history = verify_saved(state_history_path, STATE_PRESIDENTIAL_COLUMNS, expected_history,
@@ -80,6 +84,8 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
         if row["fec_match_status"] not in MATCH_STATUSES:
             raise ValueError(f"{candidate_path}: invalid candidate match status for {row['name']}")
         groups[(row["state"], row["office"], row["race_id"])].append(row)
+    roster = load_roster(roster_path, {race_id: (office, rows) for (_, office, race_id), rows in groups.items()},
+                         {"Senate", "Governor"})
     history_by_key = {(r["state"], r["election_year"]): r for r in history}
     pvi_by_state = {r["state"]: r for r in pvi}
     averages_by_race = {r["race_id"]: r for r in averages}
@@ -119,9 +125,12 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
         context.update({column: guide_row[column] if guide_row else "" for column in STATEWIDE_GUIDE_COLUMNS})
         context.update(guide_name_check=statewide_name_check(guide_row, rows) if guide_row else "",
                        guide_status="in_guide" if guide_row else "not_in_guide", guide_source_id=GUIDE_SOURCE_ID)
+        context.update(race_values(roster[race_id]))
         races.append(context)
         for row in rows:
-            enriched.append(dict(row, **{column: context[column] for column in APPENDED_COLUMNS}))
+            enriched.append(dict(row, **{column: context[column] for column in APPENDED_COLUMNS
+                                         if column != "roster_incumbent"},
+                                 roster_incumbent=candidate_flag(roster[race_id], row)))
     issues.sort(key=lambda r: tuple(r[c] for c in ISSUE_COLUMNS))
     enriched.sort(key=lambda r: (r["race_id"], *(r[c] for c in candidate_columns)))
     if require_complete and issues:
@@ -147,6 +156,7 @@ def main():
     parser.add_argument("--poll-averages", type=Path, default=DEFAULT_POLL_AVERAGES)
     parser.add_argument("--matchups", type=Path, default=DEFAULT_MATCHUPS)
     parser.add_argument("--guide", type=Path, default=DEFAULT_GUIDE)
+    parser.add_argument("--roster", type=Path, default=DEFAULT_ROSTER)
     parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
     parser.add_argument("--require-complete", action="store_true")
     args = parser.parse_args()
@@ -154,7 +164,7 @@ def main():
         races, candidates, issues = build(
             args.candidates, args.manifest, args.house_candidates, args.state_history, args.state_pvi,
             {"Senate": args.senate_polls, "Governor": args.governor_polls}, args.poll_averages, args.matchups,
-            args.guide, args.output_dir, args.require_complete)
+            args.guide, args.output_dir, args.require_complete, roster_path=args.roster)
     except (ValueError, KeyError, OSError) as exc:
         sys.exit(f"Statewide build failed: {exc}")
     print(f"Wrote {len(races)} races, {len(candidates)} candidates, {len(issues)} issues", file=sys.stderr)

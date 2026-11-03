@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "matchups": [
+    {
+      "district_id": "AK-AL",
+      "principal_candidate": "Bill Hill",
+      "republican_candidate": "Nick Begich",
+      "evidence": [
+        "https://theballotbrief.com/district/ak-al",
+        "2026/polls/us-house-polls.csv (2026 general-election questions: Begich 44 to 48%, independent Bill Hill 37 to 42%, Democrat Eric Hafner 5 to 6%)",
+        "2026/candidates/house-ballot-corrections.json (AK-AL-hill-mcdermott)"
+      ],
+      "rationale": "Alaska's top-four ballot has one Democrat, Eric Hafner, who polls near 5%. Independent Bill Hill is the candidate polling against Republican incumbent Nick Begich.",
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    }
+  ]
+}

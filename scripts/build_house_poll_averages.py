@@ -8,10 +8,11 @@ See docs/district-data.md for eligibility, weights, schemas, and limitations.
 """
 
 import argparse
+import json
 import math
 import sys
 from collections import defaultdict
-from datetime import datetime
+from datetime import date, datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
@@ -20,6 +21,7 @@ from district_history import ROOT, district_key, publish_csvs, read_records
 
 DEFAULT_POLLS = ROOT / "2026/polls/us-house-polls.csv"
 DEFAULT_CANDIDATES = ROOT / "2026/candidates/house-general-field.csv"
+DEFAULT_MATCHUPS = ROOT / "2026/polls/house-principal-matchups.json"
 OUTPUT_DIR = ROOT / "2026/polls"
 SOURCE_ID = "us-house-polls-2026"
 CYCLE = "2026"
@@ -39,7 +41,9 @@ POLL_COLUMNS = [
     "poll_avg_dem_margin_pp", "poll_count", "poll_pollster_count", "poll_latest_end_date",
     "poll_avg_status", "poll_avg_source_id",
 ]
-AVERAGE_COLUMNS = ["state", "district", "district_id"] + POLL_COLUMNS
+# Appended after POLL_COLUMNS so the context exports keep their earlier column positions.
+MATCHUP_COLUMNS = ["poll_avg_matchup_basis"]
+AVERAGE_COLUMNS = ["state", "district", "district_id"] + POLL_COLUMNS + MATCHUP_COLUMNS
 INPUT_COLUMNS = [
     "poll_id", "question_id", "state", "district", "district_id", "stage", "pollster", "end_date",
     "population", "sample_size", "sample_size_imputed", "partisan", "dem_candidate", "rep_candidate",
@@ -146,18 +150,89 @@ def poll_district(state, seat, at_large):
         return None
 
 
-def nominee_pairs(candidates):
-    """Return field rows by district and the single DEM/REP nominee pair where one exists."""
+def load_matchups(path, field):
+    """Validate reviewed House principal matchups and return {district key: (non-Republican row, Republican row)}."""
+    path = Path(path)
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text())
+    if not isinstance(data, dict) or data.get("schema_version") != 1 or not isinstance(data.get("matchups"), list):
+        raise ValueError(f"{path}: expected schema_version 1 and a matchups list")
+    by_id = {key[2]: key for key in field}
+    overrides = {}
+    for index, entry in enumerate(data["matchups"], 1):
+        label = f"{path} matchup {index}"
+        try:
+            if not isinstance(entry, dict):
+                raise ValueError("must be an object")
+            for name in ("district_id", "principal_candidate", "rationale", "reviewed_by", "reviewed_at"):
+                if not isinstance(entry.get(name), str) or not entry[name].strip():
+                    raise ValueError(f"missing or invalid {name}")
+            label += f" ({entry['district_id']} {entry['principal_candidate']})"
+            date.fromisoformat(entry["reviewed_at"])
+            evidence = entry.get("evidence")
+            if not isinstance(evidence, list) or not evidence or not all(isinstance(e, str) and e for e in evidence):
+                raise ValueError("missing evidence references")
+            key = by_id.get(entry["district_id"])
+            if key is None:
+                raise ValueError("district is not in the House field")
+            if key in overrides:
+                raise ValueError("duplicate district")
+            rows = field[key]
+            principal = [r for r in rows if r["name"] == entry["principal_candidate"]]
+            if len(principal) != 1:
+                raise ValueError("principal candidate is not in the district's field")
+            if principal[0]["party"] == "REP":
+                raise ValueError("principal candidate must not be the Republican")
+            republicans = [r for r in rows if r["party"] == "REP"]
+            if "republican_candidate" in entry:
+                republicans = [r for r in republicans if r["name"] == entry["republican_candidate"]]
+                if len(republicans) != 1:
+                    raise ValueError("republican_candidate is not a Republican in the district's field")
+            elif len(republicans) != 1:
+                raise ValueError("district has several Republicans; name republican_candidate")
+            overrides[key] = (principal[0], republicans[0])
+        except (ValueError, TypeError) as exc:
+            raise ValueError(f"{label}: {exc}") from exc
+    return overrides
+
+
+def nominee_pairs(candidates, matchups_path=DEFAULT_MATCHUPS):
+    """Return field rows by district and each district's principal pair with its basis.
+
+    The pair is the single DEM/REP nominee pair (basis `dem_rep`) unless a reviewed
+    entry names the principals (basis `reviewed`).
+    """
     field = defaultdict(list)
     for row in candidates:
         field[district_key(f"{row['state']}-{row['district']}")].append(row)
+    reviewed = load_matchups(matchups_path, field)
     pairs = {}
     for key, rows in field.items():
+        if key in reviewed:
+            dem_side, republican = reviewed[key]
+            pairs[key] = {"DEM": dem_side, "REP": republican, "basis": "reviewed"}
+            continue
         dems = [r for r in rows if r["party"] == "DEM"]
         reps = [r for r in rows if r["party"] == "REP"]
         if len(dems) == 1 and len(reps) == 1:
-            pairs[key] = {"DEM": dems[0], "REP": reps[0]}
+            pairs[key] = {"DEM": dems[0], "REP": reps[0], "basis": "dem_rep"}
     return field, pairs
+
+
+def reviewed_answers(answers, rows, pair):
+    """Match answers to reviewed principals by name only; the poll's party code is not compared."""
+    sides = {"DEM": [], "REP": []}
+    for answer in answers:
+        hits = poll_candidates(answer["candidate_name"], rows)
+        if len(hits) > 1 and any(h is pair["DEM"] or h is pair["REP"] for h in hits):
+            return "ambiguous_match"
+        for side in sides:
+            if len(hits) == 1 and hits[0] is pair[side]:
+                sides[side].append(answer)
+    if any(len(found) != 1 for found in sides.values()):
+        return "non_nominee"
+    return sides["DEM"][0], sides["REP"][0]
 
 
 def classify(question_id, rows, field, pairs, at_large):
@@ -190,6 +265,14 @@ def classify(question_id, rows, field, pairs, at_large):
         if key not in pairs:
             return "no_dem_rep_field"
         answers = candidate_answers(question_id, rows)
+        if pairs[key]["basis"] == "reviewed":
+            found = reviewed_answers(answers, field[key], pairs[key])
+            if isinstance(found, str):
+                return found
+            matched = sum(len(poll_candidates(a["candidate_name"], field[key])) == 1 for a in answers)
+            mark_eligible(record, question_id, first, *found, pairs[key]["DEM"]["name"],
+                          pairs[key]["REP"]["name"], matched, key)
+            return ""
         dem = [r for r in answers if r["party"] == "DEM"]
         rep = [r for r in answers if r["party"] == "REP"]
         if len(dem) != 1 or len(rep) != 1:
@@ -231,14 +314,14 @@ def weigh(selected):
     return weights
 
 
-def compute(polls_path=DEFAULT_POLLS, candidate_path=DEFAULT_CANDIDATES):
+def compute(polls_path=DEFAULT_POLLS, candidate_path=DEFAULT_CANDIDATES, matchups_path=DEFAULT_MATCHUPS):
     """Return (district averages, question input log) without writing files."""
     columns, polls = read_records(polls_path)
     missing = [c for c in REQUIRED_COLUMNS if c not in columns]
     if missing:
         raise ValueError(f"{polls_path}: missing required columns {missing}")
     _, candidates = read_records(candidate_path)
-    field, pairs = nominee_pairs(candidates)
+    field, pairs = nominee_pairs(candidates, matchups_path)
     at_large = {state for state in {k[0] for k in field}
                 if {k[1] for k in field if k[0] == state} == {"00"}}
     questions = defaultdict(list)
@@ -253,14 +336,16 @@ def compute(polls_path=DEFAULT_POLLS, candidate_path=DEFAULT_CANDIDATES):
     averages = []
     for key in sorted(field):
         state, district, district_id = key
-        row = dict(zip(AVERAGE_COLUMNS, [state, district, district_id] + [""] * len(POLL_COLUMNS)))
+        row = dict.fromkeys(AVERAGE_COLUMNS, "")
+        row.update(state=state, district=district, district_id=district_id)
         row["poll_avg_source_id"] = SOURCE_ID
         polls_in = selected.get(key, [])
         if key not in pairs:
             row["poll_avg_status"] = "no_dem_rep_field"
         elif polls_in:
             row.update(summarize(polls_in), poll_avg_dem_candidate=pairs[key]["DEM"]["name"],
-                       poll_avg_rep_candidate=pairs[key]["REP"]["name"])
+                       poll_avg_rep_candidate=pairs[key]["REP"]["name"],
+                       poll_avg_matchup_basis=pairs[key]["basis"])
         else:
             row["poll_avg_status"] = "no_eligible_polls" if (state, district) in general else "no_polls"
         averages.append(row)
@@ -270,8 +355,9 @@ def compute(polls_path=DEFAULT_POLLS, candidate_path=DEFAULT_CANDIDATES):
     return averages, records
 
 
-def build(polls_path=DEFAULT_POLLS, candidate_path=DEFAULT_CANDIDATES, output_dir=OUTPUT_DIR):
-    averages, records = compute(polls_path, candidate_path)
+def build(polls_path=DEFAULT_POLLS, candidate_path=DEFAULT_CANDIDATES, output_dir=OUTPUT_DIR,
+          matchups_path=DEFAULT_MATCHUPS):
+    averages, records = compute(polls_path, candidate_path, matchups_path)
     publish_csvs(output_dir, [
         ("house-poll-averages.csv", AVERAGE_COLUMNS, averages),
         ("house-poll-average-inputs.csv", INPUT_COLUMNS, records),
@@ -284,9 +370,10 @@ def main():
     parser.add_argument("--polls", type=Path, default=DEFAULT_POLLS)
     parser.add_argument("--candidates", type=Path, default=DEFAULT_CANDIDATES)
     parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
+    parser.add_argument("--matchups", type=Path, default=DEFAULT_MATCHUPS)
     args = parser.parse_args()
     try:
-        averages, records = build(args.polls, args.candidates, args.output_dir)
+        averages, records = build(args.polls, args.candidates, args.output_dir, args.matchups)
     except (ValueError, KeyError, OSError) as exc:
         sys.exit(f"Poll average build failed: {exc}")
     available = sum(r["poll_avg_status"] == "available" for r in averages)

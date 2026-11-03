@@ -1,5 +1,6 @@
 import collections
 import csv
+import json
 import random
 import subprocess
 import sys
@@ -42,8 +43,19 @@ class ContextTests(HistoryFixture):
             if status != "unmatched":
                 row["fec_candidate_id"] = name
             self.candidate_rows.append(row)
+        self.roster = self.root / "roster.json"
+        self.save_roster(self.roster_entry("AK-AL", "Candidate A", "D"), self.roster_entry("AL-01", "Old Member", "R"))
         self.save_candidates()
         self.normalize()
+
+    def roster_entry(self, key, name, party, **extra):
+        entry = dict(race_key=key, office="House", name=name, party=party, vacant=False,
+                     evidence=["https://example.test/roster"], reviewed_by="Fixture reviewer", reviewed_at="2026-11-02")
+        entry.update(extra)
+        return entry
+
+    def save_roster(self, *entries):
+        self.roster.write_text(json.dumps(dict(schema_version=1, entries=list(entries))))
 
     def save_candidates(self):
         write_csv(self.candidate_path, [candidates.FIELD_COLUMNS] +
@@ -58,14 +70,14 @@ class ContextTests(HistoryFixture):
         write_csv(self.polls_path, [polls.REQUIRED_COLUMNS] +
                   [[row.get(c, "") for c in polls.REQUIRED_COLUMNS] for row in self.poll_rows])
         if rebuild:
-            polls.build(self.polls_path, self.candidate_path, self.poll_output)
+            polls.build(self.polls_path, self.candidate_path, self.poll_output, self.root / "matchups.json")
 
     def build(self, strict=False):
         return context.build(self.candidate_path, self.manifest,
                              self.normalized / "presidential-results-normalized.csv",
                              self.normalized / "cook-pvi-normalized.csv", self.output, strict, self.root,
                              self.polls_path, self.poll_output / "house-poll-averages.csv",
-                             self.guide_path, self.guide_markdown)
+                             self.guide_path, self.guide_markdown, self.root / "matchups.json", self.roster)
 
     def output_bytes(self):
         return {p.name: p.read_bytes() for p in self.output.glob("*.csv")}
@@ -89,6 +101,56 @@ class ContextTests(HistoryFixture):
         self.assertEqual(original, actual)
         self.assertNotIn("candidate_count", enriched[0])
         self.assertEqual(next(r for r in enriched if r["name"] == "Candidate B")["fec_candidate_id"], "")
+
+    def test_redrawn_state_keeps_margins_with_prior_boundaries_status(self):
+        self.save_boundary(self.boundary_entry("AK"))
+        self.normalize()
+        districts, enriched, issues = self.build(strict=True)
+        ak, al = districts
+        self.assertEqual((ak["pres_2020_status"], ak["pres_2024_status"], ak["cook_pvi_status"]),
+                         ("prior_boundaries", "prior_boundaries", "available"))
+        self.assertEqual((ak["pres_2024_dem_margin_pp"], ak["pres_2020_dem_margin_pp"]), ("-20.00", "20.00"))
+        self.assertEqual((al["pres_2020_status"], al["pres_2024_status"]), ("available", "available"))
+        self.assertEqual(issues, [])
+        self.assertTrue(all(r["pres_2024_status"] == "prior_boundaries" for r in enriched if r["state"] == "AK"))
+
+    def test_invalid_boundary_registry_preserves_exports(self):
+        self.build()
+        before = self.output_bytes()
+        self.save_boundary(self.boundary_entry("AK", evidence=[]))
+        with self.assertRaisesRegex(ValueError, "evidence"):
+            self.build()
+        self.assertEqual(before, self.output_bytes())
+
+    def test_roster_running_incumbent_and_open_seat(self):
+        districts, enriched, _ = self.build(strict=True)
+        ak, al = districts
+        self.assertEqual([ak[c] for c in ["roster_incumbent_name", "roster_incumbent_party", "roster_vacant",
+                                          "roster_ballot_status", "open_seat"]],
+                         ["Candidate A", "D", "False", "running", "False"])
+        # AL-01's incumbent is not on its ballot, as when a member runs for another office.
+        self.assertEqual((al["roster_ballot_status"], al["open_seat"]), ("not_running", "True"))
+        self.assertEqual({r["name"] for r in enriched if r["roster_incumbent"] == "True"}, {"Candidate A"})
+        self.assertTrue(all(r["incumbent"] == "False" for r in enriched))
+        self.assertEqual(context.DISTRICT_COLUMNS[-len(context.ROSTER_COLUMNS):], context.ROSTER_COLUMNS)
+
+    def test_vacant_seat_and_not_running_override(self):
+        self.save_roster(self.roster_entry("AK-AL", "Candidate A", "D", ballot_status_override="not_running",
+                                           override_rationale="Fixture: a different Candidate A"),
+                         self.roster_entry("AL-01", "", "", vacant=True))
+        districts, enriched, _ = self.build()
+        ak, al = districts
+        self.assertEqual((ak["roster_ballot_status"], ak["open_seat"]), ("not_running", "True"))
+        self.assertEqual((al["roster_vacant"], al["roster_ballot_status"], al["open_seat"]), ("True", "", "True"))
+        self.assertFalse(any(r["roster_incumbent"] == "True" for r in enriched))
+
+    def test_missing_roster_district_preserves_exports(self):
+        self.build()
+        before = self.output_bytes()
+        self.save_roster(self.roster_entry("AK-AL", "Candidate A", "D"))
+        with self.assertRaisesRegex(ValueError, "AL-01"):
+            self.build()
+        self.assertEqual(before, self.output_bytes())
 
     def test_missing_value_row_and_source_only_coverage(self):
         self.pres_rows[2][8] = ""
@@ -165,6 +227,8 @@ class ContextTests(HistoryFixture):
     def test_cli_strict_failure_keeps_prior_exports(self):
         self.candidate_rows[0].update(state="AL", district="99")
         self.save_candidates()
+        self.save_roster(self.roster_entry("AK-AL", "Candidate A", "D"), self.roster_entry("AL-01", "Old Member", "R"),
+                         self.roster_entry("AL-99", "Candidate A", "D"))
         self.build()
         before = self.output_bytes()
         result = subprocess.run([sys.executable, str(ROOT / "scripts/build_house_district_context.py"),
@@ -172,6 +236,7 @@ class ContextTests(HistoryFixture):
                                  "--polls", str(self.polls_path),
                                  "--poll-averages", str(self.poll_output / "house-poll-averages.csv"),
                                  "--guide", str(self.guide_path), "--guide-markdown", str(self.guide_markdown),
+                                 "--matchups", str(self.root / "matchups.json"), "--roster", str(self.roster),
                                  "--require-complete"], cwd=ROOT, capture_output=True, text=True)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("AL-99", result.stderr)
@@ -199,7 +264,9 @@ class ContextTests(HistoryFixture):
             "cook_pvi_label", "cook_pvi_dem_lean_pp", "pres_2020_status", "pres_2024_status",
             "cook_pvi_status", "pres_2020_source_id", "pres_2024_source_id", "cook_pvi_source_id"])
         self.assertEqual(header[16:16 + len(polls.POLL_COLUMNS)], polls.POLL_COLUMNS)
-        self.assertEqual(header[16 + len(polls.POLL_COLUMNS):], context.GUIDE_CONTEXT_COLUMNS)
+        guide_end = 16 + len(polls.POLL_COLUMNS) + len(context.GUIDE_CONTEXT_COLUMNS)
+        self.assertEqual(header[16 + len(polls.POLL_COLUMNS):guide_end], context.GUIDE_CONTEXT_COLUMNS)
+        self.assertEqual(header[guide_end:guide_end + 1], polls.MATCHUP_COLUMNS)
         ak, al = districts
         self.assertEqual((ak["poll_avg_status"], ak["poll_count"], ak["poll_avg_dem_candidate"]),
                          ("available", "2", "Candidate A"))
@@ -207,7 +274,8 @@ class ContextTests(HistoryFixture):
         self.assertEqual(al["poll_avg_dem_margin_pp"], "")
         ak_rows = [r for r in enriched if r["district_id"] == "AK-AL"]
         self.assertEqual(len(ak_rows), 2)
-        self.assertTrue(all(r[c] == ak[c] for r in ak_rows for c in polls.POLL_COLUMNS))
+        self.assertTrue(all(r[c] == ak[c] for r in ak_rows for c in polls.POLL_COLUMNS + polls.MATCHUP_COLUMNS))
+        self.assertEqual((ak["poll_avg_matchup_basis"], al["poll_avg_matchup_basis"]), ("dem_rep", ""))
         self.assertEqual(ak_rows[0]["party_raw"], "Democratic")
         before = self.output_bytes()
         self.poll_rows[0]["pct"] = "50"
@@ -242,18 +310,23 @@ class ContextTests(HistoryFixture):
         districts, enriched, issues = context.build(output_dir=self.output, require_complete=True)
         self.assertEqual(len(districts), 435)
         self.assertEqual(len({r["district_id"] for r in districts}), 435)
-        self.assertEqual(len(enriched), 1159)
+        self.assertEqual(len(enriched), 1160)
         self.assertEqual(issues, [])
         columns, original = history.read_records(context.DEFAULT_CANDIDATES)
         self.assertEqual(collections.Counter(tuple(r[c] for c in columns) for r in original),
                          collections.Counter(tuple(r[c] for c in columns) for r in enriched))
         ca13 = next(r for r in districts if r["district_id"] == "CA-13")
         self.assertEqual(ca13["cook_pvi_label"], "D+2")
-        self.assertTrue(all(r["pres_2020_status"] == r["pres_2024_status"] == r["cook_pvi_status"] == "available" for r in districts))
+        redrawn = {"AL", "CA", "FL", "LA", "NC", "OH", "TN", "TX", "UT"}
+        self.assertTrue(all(r["cook_pvi_status"] == "available" for r in districts))
+        self.assertTrue(all(r["pres_2020_status"] == r["pres_2024_status"] ==
+                            ("prior_boundaries" if r["state"] in redrawn else "available") for r in districts))
         statuses = collections.Counter(r["poll_avg_status"] for r in districts)
         self.assertEqual(statuses["available"], 111)
         me02 = next(r for r in districts if r["district_id"] == "ME-02")
         self.assertEqual(me02["poll_avg_dem_margin_pp"], "3.31")
+        akal = next(r for r in districts if r["district_id"] == "AK-AL")
+        self.assertEqual((akal["poll_avg_dem_candidate"], akal["poll_avg_matchup_basis"]), ("Bill Hill", "reviewed"))
         guide_statuses = collections.Counter(r["guide_status"] for r in districts)
         self.assertEqual(guide_statuses, {"in_guide": 44, "not_in_guide": 391})
         self.assertEqual((me02["guide_slot_et"], me02["guide_rep_candidate"]), ("8:00", "LePage"))

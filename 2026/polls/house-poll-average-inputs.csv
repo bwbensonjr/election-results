@@ -904,39 +904,39 @@ b606d0d2-4431-44ba-a917-409b7f7367ec,2f2a6739-f7c1-487c-bb20-725ceab9d4a3,US,,,g
 cffea967-f365-47a4-ab0b-1017eddd4030,041f66e6-534e-4833-af4f-0ea093ea5464,US,,,general,Big Data Poll,2026-10-30,lv,3214,,,,,,,,False,nationwide,,,,,,
 cffea967-f365-47a4-ab0b-1017eddd4030,e2c8e76d-2eb0-4a69-b656-1ace57556eb2,US,,,general,Big Data Poll,2026-10-30,rv,3418,,,,,,,,False,nationwide,,,,,,
 1cb7cec3-d3fa-4974-9c0d-32629c10d681,39a3244f-4480-42ef-9946-47690c3aa794,AK,00,AK-AL,general,Data for Progress,2025-03-07,lv,1008,,,,,,,,False,non_nominee,,,,,,
-20ef28e6-5dec-48e3-8573-f26aaf7b91c1,b5405480-f234-420a-9fff-18b4e03da53e,AK,00,AK-AL,general,Data for Progress,2025-07-27,lv,678,,,,,,,,False,not_head_to_head,,,,,,
+20ef28e6-5dec-48e3-8573-f26aaf7b91c1,b5405480-f234-420a-9fff-18b4e03da53e,AK,00,AK-AL,general,Data for Progress,2025-07-27,lv,678,,,,,,,,False,non_nominee,,,,,,
 2abdc064-3a16-4478-a841-23467c99f334,5bf2d7ff-4ed5-4d40-808a-e493cd34de04,AK,00,AK-AL,general,Data for Progress,2025-10-23,lv,823,,,,,,,,False,non_nominee,,,,,,
 9cb6e02e-12c1-4147-b7a0-1f4dbd94529e,790c5fb9-9aa6-4c80-870f-a36de662e58d,AK,00,AK-AL,general,Public Policy Polling,2026-02-12,lv,600,,IND,,,,,,False,non_nominee,,,,,,
-9cb6e02e-12c1-4147-b7a0-1f4dbd94529e,cfd70950-b448-414b-b6f7-6fb1c1a9a901,AK,00,AK-AL,general,Public Policy Polling,2026-02-12,lv,600,,IND,,,,,,False,not_head_to_head,,,,,,
-edef3b32-7941-4cf6-9094-3096d38ad838,b7943b01-2d99-422f-b1f8-938878e6bfce,AK,00,AK-AL,general,Change Research,2026-03-20,lv,624,,IND,,,,,,False,not_head_to_head,,,,,,
+9cb6e02e-12c1-4147-b7a0-1f4dbd94529e,cfd70950-b448-414b-b6f7-6fb1c1a9a901,AK,00,AK-AL,general,Public Policy Polling,2026-02-12,lv,600,False,IND,Bill Hill,Nick Begich,37.00,41.00,-4.00,True,,260,0.000187,1.000000,1.000000,0.500000,0.000094
+edef3b32-7941-4cf6-9094-3096d38ad838,b7943b01-2d99-422f-b1f8-938878e6bfce,AK,00,AK-AL,general,Change Research,2026-03-20,lv,624,False,IND,Bill Hill,Nick Begich,12.98,44.78,-31.80,True,,224,0.000615,1.019804,1.000000,0.500000,0.000314
 b613d76c-3e02-43de-aa2a-d6323fbd68fe,fb046050-b1a7-4ffb-b876-ddf52e3c894a,AK,00,AK-AL,primary,Alaska Survey Research,2026-04-19,lv,1923,,,,,,,,False,not_general,,,,,,
 24511bba-225f-4c6f-91fc-a51dcc039b64,5cf95b15-b16c-4165-a9ab-f4a0a99d2cbb,AK,00,AK-AL,primary,Alaska Survey Research,2026-05-17,lv,1401,,,,,,,,False,not_general,,,,,,
-4526fc3d-7f56-4e8f-9b98-5981c216ed79,5362d1ba-458f-4bd7-ba06-9357bd7a997e,AK,00,AK-AL,general,Tavern Research,2026-05-27,lv,452,,IND,,,,,,False,not_head_to_head,,,,,,
+4526fc3d-7f56-4e8f-9b98-5981c216ed79,5362d1ba-458f-4bd7-ba06-9357bd7a997e,AK,00,AK-AL,general,Tavern Research,2026-05-27,lv,452,,IND,,,,,,False,non_nominee,,,,,,
 4526fc3d-7f56-4e8f-9b98-5981c216ed79,9886c42b-6a71-4914-bae2-4cbde16d0597,AK,00,AK-AL,general,Tavern Research,2026-05-27,lv,452,,IND,,,,,,False,non_nominee,,,,,,
-4526fc3d-7f56-4e8f-9b98-5981c216ed79,b0614ddc-1087-47b1-9d0d-d5d23830362a,AK,00,AK-AL,general,Tavern Research,2026-05-27,lv,452,,IND,,,,,,False,not_head_to_head,,,,,,
+4526fc3d-7f56-4e8f-9b98-5981c216ed79,b0614ddc-1087-47b1-9d0d-d5d23830362a,AK,00,AK-AL,general,Tavern Research,2026-05-27,lv,452,False,IND,Bill Hill,Nick Begich,48.00,52.00,-4.00,True,,156,0.005805,0.867948,1.000000,0.500000,0.002519
 8e054071-9b5e-46d0-a921-ecc4f3c1737e,9d3bf4c0-c6e4-40e9-831f-13906c496766,AK,00,AK-AL,general,The New York Times/Siena University,2026-06-29,lv,593,,,,,,,,False,non_nominee,,,,,,
-def7f487-2bd9-410b-b135-c0d6a7de191a,44fd1944-b2bb-4d24-ae87-6ddc67e3644a,AK,00,AK-AL,general,The Bullfinch Group,2026-07-16,lv,546,,IND,,,,,,False,non_nominee,,,,,,
-7ec6f01b-349f-4e8a-b058-78704ccaaace,6989a45e-09de-4143-99e2-8eb8993c0f8c,AK,00,AK-AL,general,Data for Progress,2026-08-04,lv,605,,,,,,,,False,not_head_to_head,,,,,,
-25f3873e-a991-4492-a3a3-aa1c6b9c0d71,7210ea61-d522-4c45-96fc-e43e5d075808,AK,00,AK-AL,general,Alaska Survey Research,2026-08-05,lv,1371,,,,,,,,False,not_head_to_head,,,,,,
-25f3873e-a991-4492-a3a3-aa1c6b9c0d71,b8117df0-b61f-42cd-a523-c6d10640c672,AK,00,AK-AL,general,Alaska Survey Research,2026-08-05,lv,1371,,,,,,,,False,not_head_to_head,,,,,,
-2f3e0cb7-97d9-49ab-b495-f74c7cb5f55f,8740596c-0779-4b9b-9dc7-70b5fe205f1a,AK,00,AK-AL,general,GBAO,2026-08-05,lv,500,,IND,,,,,,False,not_head_to_head,,,,,,
-5644eb93-7595-4afd-bacf-2fd24589ef3b,41475eb0-d6aa-458c-8c34-29e2fe9047f2,AK,00,AK-AL,general,Alaska Survey Research,2026-08-23,lv,1872,,,,,,,,False,not_head_to_head,,,,,,
-0382125c-8525-4d78-bfc6-44f54d037073,2c149de6-669a-4ef9-9b95-499f86620427,AK,00,AK-AL,general,The Bullfinch Group,2026-09-06,lv,820,False,IND,Eric Hafner,Nick Begich,7.40,44.20,-36.80,True,,54,0.168238,1.169045,1.000000,0.500000,0.098339
-0382125c-8525-4d78-bfc6-44f54d037073,fe23cfb0-52ed-4bcc-9ac0-ff2a0d64c66d,AK,00,AK-AL,general,The Bullfinch Group,2026-09-06,lv,820,,IND,,,,,,False,not_head_to_head,,,,,,
-a1d3551f-cc1f-40ee-8d08-c7fdc1872796,380d2ce9-3596-4ac3-a84a-161d3c06e9c3,AK,00,AK-AL,general,Fabrizio Ward/Impact Research,2026-09-11,lv,800,,,,,,,,False,not_head_to_head,,,,,,
-a1d3551f-cc1f-40ee-8d08-c7fdc1872796,8c8707af-d6ef-470e-a7ef-2f7559d7c504,AK,00,AK-AL,general,Fabrizio Ward/Impact Research,2026-09-11,lv,800,,,,,,,,False,not_head_to_head,,,,,,
-a1d3551f-cc1f-40ee-8d08-c7fdc1872796,f081288b-dc74-4113-96a1-4606bbc9badc,AK,00,AK-AL,general,Fabrizio Ward/Impact Research,2026-09-11,lv,800,False,,Eric Hafner,Nick Begich,9.00,45.00,-36.00,True,,49,0.198425,1.154701,1.000000,1.000000,0.229122
-c115983e-1ed7-42e1-bd8c-92692471a053,10f76672-a41f-43bd-b374-c33d41b7c2f5,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-01,lv,504,False,,Eric Hafner,Nick Begich,8.19,46.59,-38.40,True,,29,0.383965,0.916515,0.707107,1.000000,0.248838
-c115983e-1ed7-42e1-bd8c-92692471a053,b15fface-5ca7-4991-b260-7db3774a212c,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-01,lv,487,,,,,,,,False,not_head_to_head,,,,,,
-c115983e-1ed7-42e1-bd8c-92692471a053,ea630427-36f6-43f4-83f6-8570b043002e,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-01,lv,476,,,,,,,,False,not_head_to_head,,,,,,
-e5216fed-b2a6-4670-9dae-7707e2912184,bb141d58-801c-42b9-ba34-607a6bb58a71,AK,00,AK-AL,general,Alaska Survey Research,2026-10-03,lv,1512,,,,,,,,False,not_head_to_head,,,,,,
-e5216fed-b2a6-4670-9dae-7707e2912184,c3d540b9-4726-49d3-8de0-608fa29b16ad,AK,00,AK-AL,general,Alaska Survey Research,2026-10-03,lv,1512,,,,,,,,False,not_head_to_head,,,,,,
-fa49898d-55a4-4393-962f-1cd6cfe135c3,74e74bba-5c5e-4149-a627-55c8f1872a1a,AK,00,AK-AL,general,Data for Progress,2026-10-16,lv,659,,,,,,,,False,not_head_to_head,,,,,,
-fa49898d-55a4-4393-962f-1cd6cfe135c3,843ff988-f9ae-4553-8aa9-3b87af20e024,AK,00,AK-AL,general,Data for Progress,2026-10-16,lv,668,,,,,,,,False,not_head_to_head,,,,,,
-fa49898d-55a4-4393-962f-1cd6cfe135c3,c26d3d74-9449-428e-a81e-65b1376c5a57,AK,00,AK-AL,general,Data for Progress,2026-10-16,lv,694,False,,Eric Hafner,Nick Begich,5.00,48.00,-43.00,True,,14,0.629961,1.075484,1.000000,1.000000,0.677513
-a0d99ae7-a6c2-430d-ad8f-92e91d659b66,15a4224d-bafd-41e2-9954-ae6a323a6fd7,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-30,lv,576,,,,,,,,False,not_head_to_head,,,,,,
-a0d99ae7-a6c2-430d-ad8f-92e91d659b66,521dd9f5-976f-4272-9d61-08322710747e,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-30,lv,562,,,,,,,,False,not_head_to_head,,,,,,
-a0d99ae7-a6c2-430d-ad8f-92e91d659b66,604ee3d1-9988-440c-ba9f-c8d91d0bf6f4,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-30,lv,610,False,,Eric Hafner,Nick Begich,5.60,44.00,-38.40,True,,0,1.000000,1.008299,0.707107,1.000000,0.712975
+def7f487-2bd9-410b-b135-c0d6a7de191a,44fd1944-b2bb-4d24-ae87-6ddc67e3644a,AK,00,AK-AL,general,The Bullfinch Group,2026-07-16,lv,546,False,IND,Bill Hill,Nick Begich,20.00,46.00,-26.00,True,,106,0.030235,0.953939,0.707107,0.500000,0.010197
+7ec6f01b-349f-4e8a-b058-78704ccaaace,6989a45e-09de-4143-99e2-8eb8993c0f8c,AK,00,AK-AL,general,Data for Progress,2026-08-04,lv,605,False,,Bill Hill,Nick Begich,37.00,47.00,-10.00,True,,87,0.056608,1.004158,0.707107,1.000000,0.040194
+25f3873e-a991-4492-a3a3-aa1c6b9c0d71,7210ea61-d522-4c45-96fc-e43e5d075808,AK,00,AK-AL,general,Alaska Survey Research,2026-08-05,lv,1371,,,,,,,,False,non_nominee,,,,,,
+25f3873e-a991-4492-a3a3-aa1c6b9c0d71,b8117df0-b61f-42cd-a523-c6d10640c672,AK,00,AK-AL,general,Alaska Survey Research,2026-08-05,lv,1371,,,,,,,,False,non_nominee,,,,,,
+2f3e0cb7-97d9-49ab-b495-f74c7cb5f55f,8740596c-0779-4b9b-9dc7-70b5fe205f1a,AK,00,AK-AL,general,GBAO,2026-08-05,lv,500,False,IND,Bill Hill,Nick Begich,42.00,46.00,-4.00,True,,86,0.058507,0.912871,1.000000,0.500000,0.026705
+5644eb93-7595-4afd-bacf-2fd24589ef3b,41475eb0-d6aa-458c-8c34-29e2fe9047f2,AK,00,AK-AL,general,Alaska Survey Research,2026-08-23,lv,1872,,,,,,,,False,non_nominee,,,,,,
+0382125c-8525-4d78-bfc6-44f54d037073,2c149de6-669a-4ef9-9b95-499f86620427,AK,00,AK-AL,general,The Bullfinch Group,2026-09-06,lv,820,False,IND,Bill Hill,Nick Begich,36.60,44.20,-7.60,True,,54,0.168238,1.169045,0.707107,0.500000,0.069536
+0382125c-8525-4d78-bfc6-44f54d037073,fe23cfb0-52ed-4bcc-9ac0-ff2a0d64c66d,AK,00,AK-AL,general,The Bullfinch Group,2026-09-06,lv,820,,IND,,,,,,False,non_nominee,,,,,,
+a1d3551f-cc1f-40ee-8d08-c7fdc1872796,380d2ce9-3596-4ac3-a84a-161d3c06e9c3,AK,00,AK-AL,general,Fabrizio Ward/Impact Research,2026-09-11,lv,800,,,,,,,,False,non_nominee,,,,,,
+a1d3551f-cc1f-40ee-8d08-c7fdc1872796,8c8707af-d6ef-470e-a7ef-2f7559d7c504,AK,00,AK-AL,general,Fabrizio Ward/Impact Research,2026-09-11,lv,800,,,,,,,,False,non_nominee,,,,,,
+a1d3551f-cc1f-40ee-8d08-c7fdc1872796,f081288b-dc74-4113-96a1-4606bbc9badc,AK,00,AK-AL,general,Fabrizio Ward/Impact Research,2026-09-11,lv,800,False,,Bill Hill,Nick Begich,31.00,45.00,-14.00,True,,49,0.198425,1.154701,1.000000,1.000000,0.229122
+c115983e-1ed7-42e1-bd8c-92692471a053,10f76672-a41f-43bd-b374-c33d41b7c2f5,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-01,lv,504,False,,Bill Hill,Nick Begich,35.06,46.59,-11.53,True,,29,0.383965,0.916515,0.707107,1.000000,0.248838
+c115983e-1ed7-42e1-bd8c-92692471a053,b15fface-5ca7-4991-b260-7db3774a212c,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-01,lv,487,,,,,,,,False,non_nominee,,,,,,
+c115983e-1ed7-42e1-bd8c-92692471a053,ea630427-36f6-43f4-83f6-8570b043002e,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-01,lv,476,,,,,,,,False,non_nominee,,,,,,
+e5216fed-b2a6-4670-9dae-7707e2912184,bb141d58-801c-42b9-ba34-607a6bb58a71,AK,00,AK-AL,general,Alaska Survey Research,2026-10-03,lv,1512,,,,,,,,False,non_nominee,,,,,,
+e5216fed-b2a6-4670-9dae-7707e2912184,c3d540b9-4726-49d3-8de0-608fa29b16ad,AK,00,AK-AL,general,Alaska Survey Research,2026-10-03,lv,1512,,,,,,,,False,non_nominee,,,,,,
+fa49898d-55a4-4393-962f-1cd6cfe135c3,74e74bba-5c5e-4149-a627-55c8f1872a1a,AK,00,AK-AL,general,Data for Progress,2026-10-16,lv,659,,,,,,,,False,non_nominee,,,,,,
+fa49898d-55a4-4393-962f-1cd6cfe135c3,843ff988-f9ae-4553-8aa9-3b87af20e024,AK,00,AK-AL,general,Data for Progress,2026-10-16,lv,668,,,,,,,,False,non_nominee,,,,,,
+fa49898d-55a4-4393-962f-1cd6cfe135c3,c26d3d74-9449-428e-a81e-65b1376c5a57,AK,00,AK-AL,general,Data for Progress,2026-10-16,lv,694,False,,Bill Hill,Nick Begich,42.00,48.00,-6.00,True,,14,0.629961,1.075484,0.707107,1.000000,0.479074
+a0d99ae7-a6c2-430d-ad8f-92e91d659b66,15a4224d-bafd-41e2-9954-ae6a323a6fd7,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-30,lv,576,,,,,,,,False,non_nominee,,,,,,
+a0d99ae7-a6c2-430d-ad8f-92e91d659b66,521dd9f5-976f-4272-9d61-08322710747e,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-30,lv,562,,,,,,,,False,non_nominee,,,,,,
+a0d99ae7-a6c2-430d-ad8f-92e91d659b66,604ee3d1-9988-440c-ba9f-c8d91d0bf6f4,AK,00,AK-AL,general,The New York Times/Siena University,2026-10-30,lv,610,False,,Bill Hill,Nick Begich,37.20,44.00,-6.80,True,,0,1.000000,1.008299,0.707107,1.000000,0.712975
 7f2ef24d-b30f-4971-93d8-2d90a1131a00,cdb6a730-ea58-455e-9460-f22021af2b84,AL,02,AL-02,special primary,Peak Insights,2026-06-09,lv,400,,,,,,,,False,not_general,,,,,,
 c51b7de5-0b90-464c-8778-459c24d25b3b,47e38a21-e881-4974-924a-a60d1ec24911,AL,02,AL-02,general,Impact Research,2026-06-25,lv,400,False,DEM,Shomari C. Figures,Rhett Marques,44.00,45.00,-1.00,True,,122,0.017830,0.816497,1.000000,0.500000,0.007279
 ea557308-74fd-4024-b845-b5fd1baa6132,c4a2c64f-c96a-47f5-a0ca-9629fb0d232a,AL,02,AL-02,general,DCCC Targeting Team,2026-07-30,lv,421,False,DEM,Shomari C. Figures,Rhett Marques,46.00,46.00,0.00,True,,87,0.056608,0.837655,1.000000,0.500000,0.023709

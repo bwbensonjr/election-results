@@ -93,7 +93,7 @@ uv run scripts/build_statewide_race_context.py
 uv run scripts/build_statewide_race_context.py --require-complete
 ```
 
-All five run offline from saved inputs. `normalize_district_history.py` also rewrites the House district outputs, unchanged. The context build recomputes the state history and the statewide averages in memory and fails if the saved files differ, naming the script to rerun. It validates the guide rows before replacing any export. `--require-complete` fails when any race lacks a presidential margin or PVI; it never requires polling or guide coverage. Options are `--candidates`, `--house-candidates`, `--manifest`, `--state-history`, `--state-pvi`, `--senate-polls`, `--governor-polls`, `--poll-averages`, `--matchups`, `--guide`, `--output-dir`, and `--require-complete`.
+All five run offline from saved inputs. `normalize_district_history.py` also rewrites the House district outputs, unchanged. The context build recomputes the state history and the statewide averages in memory and fails if the saved files differ, naming the script to rerun. It validates the guide rows before replacing any export. `--require-complete` fails when any race lacks a presidential margin or PVI; it never requires polling or guide coverage. It also validates the Senate and governor entries of the [incumbent roster](district-data.md#incumbent-roster). Options are `--candidates`, `--house-candidates`, `--manifest`, `--state-history`, `--state-pvi`, `--senate-polls`, `--governor-polls`, `--poll-averages`, `--matchups`, `--guide`, `--roster`, `--output-dir`, and `--require-complete`.
 
 | File | Grain and purpose |
 | --- | --- |
@@ -114,8 +114,9 @@ The race export's columns, in order:
 | `poll_avg_*`, `poll_count`, `poll_pollster_count`, `poll_latest_end_date` | Copied unchanged from `statewide-poll-averages.csv` |
 | `guide_slot_et` through `guide_notes` | The guide row's columns, `guide_`-prefixed, including `guide_senate_path` |
 | `guide_name_check`, `guide_status`, `guide_source_id` | Name check, `in_guide` or `not_in_guide`, and the guide's source ID |
+| `roster_incumbent_name`, `roster_incumbent_party`, `roster_vacant`, `roster_ballot_status`, `open_seat`, `roster_source_id` | The [incumbent roster](district-data.md#incumbent-roster)'s incumbent, whether they are on this race's ballot, and whether the seat is open. Governors get incumbency here even though their FEC fields are `not_federal` |
 
-The candidate export keeps every field column in its original order and appends the race export's columns from `election_cycle` on. A Senate and a governor race in the same state carry the same presidential and PVI values. Missing values stay blank with `missing` status and an issue row; they never become zero or EVEN. Polling and guide gaps use their own statuses and add no issue rows.
+The candidate export keeps every field column in its original order and appends the race export's columns from `election_cycle` on, plus `roster_incumbent`, `True` only on the running incumbent's row. In the snapshot, 22 Senate and 17 governor incumbents are running; 13 Senate and 19 governor races are open seats. A Senate and a governor race in the same state carry the same presidential and PVI values. Missing values stay blank with `missing` status and an issue row; they never become zero or EVEN. Polling and guide gaps use their own statuses and add no issue rows.
 
 ### Examples
 

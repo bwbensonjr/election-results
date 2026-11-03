@@ -1,436 +1,436 @@
-state,district,district_id,poll_avg_dem_candidate,poll_avg_rep_candidate,poll_avg_dem_pct,poll_avg_rep_pct,poll_avg_dem_margin_pp,poll_count,poll_pollster_count,poll_latest_end_date,poll_avg_status,poll_avg_source_id
-AK,00,AK-AL,Eric Hafner,Nick Begich,6.21,45.83,-39.63,5,4,2026-10-30,available,us-house-polls-2026
-AL,01,AL-01,,,,,,,,,no_polls,us-house-polls-2026
-AL,02,AL-02,Shomari C. Figures,Rhett Marques,46.06,47.87,-1.81,4,4,2026-10-25,available,us-house-polls-2026
-AL,03,AL-03,,,,,,,,,no_polls,us-house-polls-2026
-AL,04,AL-04,,,,,,,,,no_polls,us-house-polls-2026
-AL,05,AL-05,,,,,,,,,no_polls,us-house-polls-2026
-AL,06,AL-06,,,,,,,,,no_polls,us-house-polls-2026
-AL,07,AL-07,,,,,,,,,no_polls,us-house-polls-2026
-AR,01,AR-01,,,,,,,,,no_polls,us-house-polls-2026
-AR,02,AR-02,Chris Jones,French Hill,47.99,50.57,-2.58,3,3,2026-10-14,available,us-house-polls-2026
-AR,03,AR-03,,,,,,,,,no_polls,us-house-polls-2026
-AR,04,AR-04,,,,,,,,,no_polls,us-house-polls-2026
-AZ,01,AZ-01,Amish Shah,Thomas 'Jay' Feely IV,48.06,44.09,3.97,2,2,2026-10-28,available,us-house-polls-2026
-AZ,02,AZ-02,Jonathan Nez,Eli Crane,49.50,47.83,1.67,3,2,2026-10-14,available,us-house-polls-2026
-AZ,03,AZ-03,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-AZ,04,AZ-04,,,,,,,,,no_polls,us-house-polls-2026
-AZ,05,AZ-05,,,,,,,,,no_polls,us-house-polls-2026
-AZ,06,AZ-06,JoAnna Mendoza,Juan Ciscomani,47.00,44.95,2.04,3,3,2026-06-11,available,us-house-polls-2026
-AZ,07,AZ-07,,,,,,,,,no_polls,us-house-polls-2026
-AZ,08,AZ-08,,,,,,,,,no_polls,us-house-polls-2026
-AZ,09,AZ-09,,,,,,,,,no_polls,us-house-polls-2026
-CA,01,CA-01,Mike McGuire,James Gallagher,56.00,41.00,15.00,1,1,2026-10-26,available,us-house-polls-2026
-CA,02,CA-02,,,,,,,,,no_polls,us-house-polls-2026
-CA,03,CA-03,,,,,,,,,no_polls,us-house-polls-2026
-CA,04,CA-04,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-CA,05,CA-05,,,,,,,,,no_polls,us-house-polls-2026
-CA,06,CA-06,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-CA,07,CA-07,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-CA,08,CA-08,,,,,,,,,no_polls,us-house-polls-2026
-CA,09,CA-09,,,,,,,,,no_polls,us-house-polls-2026
-CA,10,CA-10,,,,,,,,,no_polls,us-house-polls-2026
-CA,11,CA-11,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-CA,12,CA-12,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-CA,13,CA-13,,,,,,,,,no_polls,us-house-polls-2026
-CA,14,CA-14,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-CA,15,CA-15,,,,,,,,,no_polls,us-house-polls-2026
-CA,16,CA-16,,,,,,,,,no_polls,us-house-polls-2026
-CA,17,CA-17,,,,,,,,,no_polls,us-house-polls-2026
-CA,18,CA-18,,,,,,,,,no_polls,us-house-polls-2026
-CA,19,CA-19,,,,,,,,,no_polls,us-house-polls-2026
-CA,20,CA-20,,,,,,,,,no_polls,us-house-polls-2026
-CA,21,CA-21,,,,,,,,,no_polls,us-house-polls-2026
-CA,22,CA-22,Randy Villegas,David G. Valadao,53.94,44.00,9.94,2,2,2026-10-28,available,us-house-polls-2026
-CA,23,CA-23,,,,,,,,,no_polls,us-house-polls-2026
-CA,24,CA-24,,,,,,,,,no_polls,us-house-polls-2026
-CA,25,CA-25,,,,,,,,,no_polls,us-house-polls-2026
-CA,26,CA-26,,,,,,,,,no_polls,us-house-polls-2026
-CA,27,CA-27,,,,,,,,,no_polls,us-house-polls-2026
-CA,28,CA-28,,,,,,,,,no_polls,us-house-polls-2026
-CA,29,CA-29,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-CA,30,CA-30,,,,,,,,,no_polls,us-house-polls-2026
-CA,31,CA-31,,,,,,,,,no_polls,us-house-polls-2026
-CA,32,CA-32,,,,,,,,,no_polls,us-house-polls-2026
-CA,33,CA-33,,,,,,,,,no_polls,us-house-polls-2026
-CA,34,CA-34,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-CA,35,CA-35,,,,,,,,,no_polls,us-house-polls-2026
-CA,36,CA-36,,,,,,,,,no_polls,us-house-polls-2026
-CA,37,CA-37,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-CA,38,CA-38,,,,,,,,,no_polls,us-house-polls-2026
-CA,39,CA-39,,,,,,,,,no_polls,us-house-polls-2026
-CA,40,CA-40,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-CA,41,CA-41,,,,,,,,,no_polls,us-house-polls-2026
-CA,42,CA-42,,,,,,,,,no_polls,us-house-polls-2026
-CA,43,CA-43,,,,,,,,,no_polls,us-house-polls-2026
-CA,44,CA-44,,,,,,,,,no_polls,us-house-polls-2026
-CA,45,CA-45,,,,,,,,,no_polls,us-house-polls-2026
-CA,46,CA-46,,,,,,,,,no_polls,us-house-polls-2026
-CA,47,CA-47,,,,,,,,,no_polls,us-house-polls-2026
-CA,48,CA-48,Marni von Wilpert,Jim Desmond,49.54,42.68,6.86,5,4,2026-10-27,available,us-house-polls-2026
-CA,49,CA-49,,,,,,,,,no_polls,us-house-polls-2026
-CA,50,CA-50,,,,,,,,,no_polls,us-house-polls-2026
-CA,51,CA-51,,,,,,,,,no_polls,us-house-polls-2026
-CA,52,CA-52,,,,,,,,,no_polls,us-house-polls-2026
-CO,01,CO-01,,,,,,,,,no_polls,us-house-polls-2026
-CO,02,CO-02,,,,,,,,,no_polls,us-house-polls-2026
-CO,03,CO-03,Dwayne L. Romero,Jeff Hurd,46.89,46.00,0.89,2,2,2026-10-21,available,us-house-polls-2026
-CO,04,CO-04,Eileen Laubacher,Lauren Boebert,40.00,45.00,-5.00,1,1,2026-09-24,available,us-house-polls-2026
-CO,05,CO-05,Jessica Killin,Jeff Crank,45.63,44.00,1.63,4,2,2026-10-20,available,us-house-polls-2026
-CO,06,CO-06,,,,,,,,,no_polls,us-house-polls-2026
-CO,07,CO-07,,,,,,,,,no_polls,us-house-polls-2026
-CO,08,CO-08,Manny Rutinel,Gabe Evans,46.30,48.00,-1.70,1,1,2026-09-17,available,us-house-polls-2026
-CT,01,CT-01,,,,,,,,,no_polls,us-house-polls-2026
-CT,02,CT-02,,,,,,,,,no_polls,us-house-polls-2026
-CT,03,CT-03,,,,,,,,,no_polls,us-house-polls-2026
-CT,04,CT-04,,,,,,,,,no_polls,us-house-polls-2026
-CT,05,CT-05,Jahana Hayes,Chris Shea,51.00,45.00,6.00,1,1,2026-10-01,available,us-house-polls-2026
-DE,00,DE-AL,,,,,,,,,no_polls,us-house-polls-2026
-FL,01,FL-01,,,,,,,,,no_polls,us-house-polls-2026
-FL,02,FL-02,,,,,,,,,no_eligible_polls,us-house-polls-2026
-FL,03,FL-03,,,,,,,,,no_polls,us-house-polls-2026
-FL,04,FL-04,,,,,,,,,no_polls,us-house-polls-2026
-FL,05,FL-05,,,,,,,,,no_polls,us-house-polls-2026
-FL,06,FL-06,,,,,,,,,no_polls,us-house-polls-2026
-FL,07,FL-07,Bale Dalton,Ryan Elijah,45.00,45.00,0.00,1,1,2026-10-19,available,us-house-polls-2026
-FL,08,FL-08,Jennifer Jenkins,Mike Haridopolos,35.00,44.00,-9.00,1,1,2026-07-18,available,us-house-polls-2026
-FL,09,FL-09,Darren Soto,Dan Green,43.54,43.54,0.00,2,1,2026-10-15,available,us-house-polls-2026
-FL,10,FL-10,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-FL,11,FL-11,James Pericola,Joe Strada,41.80,42.10,-0.30,1,1,2026-07-30,available,us-house-polls-2026
-FL,12,FL-12,,,,,,,,,no_polls,us-house-polls-2026
-FL,13,FL-13,Leela Gray,Anna Paulina Luna,45.71,45.73,-0.02,5,4,2026-10-15,available,us-house-polls-2026
-FL,14,FL-14,Kathy Castor,Mike Beltran,47.90,42.69,5.21,2,2,2026-10-14,available,us-house-polls-2026
-FL,15,FL-15,,,,,,,,,no_polls,us-house-polls-2026
-FL,16,FL-16,Kelly Kirschner,Sydney Gruters,39.22,42.12,-2.90,2,2,2026-10-02,available,us-house-polls-2026
-FL,17,FL-17,,,,,,,,,no_polls,us-house-polls-2026
-FL,18,FL-18,,,,,,,,,no_polls,us-house-polls-2026
-FL,19,FL-19,,,,,,,,,no_polls,us-house-polls-2026
-FL,20,FL-20,,,,,,,,,no_polls,us-house-polls-2026
-FL,21,FL-21,James T. Martin,Brian Mast,38.00,49.00,-11.00,1,1,2026-09-25,available,us-house-polls-2026
-FL,22,FL-22,Pia Dandiya,Casey Askar,48.02,47.04,0.99,2,2,2026-08-31,available,us-house-polls-2026
-FL,23,FL-23,,,,,,,,,no_polls,us-house-polls-2026
-FL,24,FL-24,,,,,,,,,no_polls,us-house-polls-2026
-FL,25,FL-25,Jared Moskowitz,Scott Singer,45.48,43.76,1.71,3,2,2026-10-27,available,us-house-polls-2026
-FL,26,FL-26,,,,,,,,,no_polls,us-house-polls-2026
-FL,27,FL-27,Eliott Rodriguez,Maria Elvira Salazar,45.61,46.23,-0.61,2,2,2026-09-13,available,us-house-polls-2026
-FL,28,FL-28,,,,,,,,,no_polls,us-house-polls-2026
-GA,01,GA-01,,,,,,,,,no_polls,us-house-polls-2026
-GA,02,GA-02,,,,,,,,,no_polls,us-house-polls-2026
-GA,03,GA-03,Maura Keller,Brian Jack,45.00,50.00,-5.00,1,1,2026-10-07,available,us-house-polls-2026
-GA,04,GA-04,,,,,,,,,no_polls,us-house-polls-2026
-GA,05,GA-05,,,,,,,,,no_polls,us-house-polls-2026
-GA,06,GA-06,,,,,,,,,no_polls,us-house-polls-2026
-GA,07,GA-07,Tony Kozycki,Rich McCormick,46.25,45.19,1.06,2,1,2026-10-09,available,us-house-polls-2026
-GA,08,GA-08,,,,,,,,,no_polls,us-house-polls-2026
-GA,09,GA-09,,,,,,,,,no_polls,us-house-polls-2026
-GA,10,GA-10,,,,,,,,,no_polls,us-house-polls-2026
-GA,11,GA-11,Chris Harden,John Cowan,42.00,40.00,2.00,1,1,2026-09-11,available,us-house-polls-2026
-GA,12,GA-12,,,,,,,,,no_polls,us-house-polls-2026
-GA,13,GA-13,,,,,,,,,no_polls,us-house-polls-2026
-GA,14,GA-14,,,,,,,,,no_polls,us-house-polls-2026
-HI,01,HI-01,,,,,,,,,no_polls,us-house-polls-2026
-HI,02,HI-02,,,,,,,,,no_polls,us-house-polls-2026
-IA,01,IA-01,Christina Bohannan,Mariannette Miller-Meeks,40.00,35.00,5.00,2,2,2026-07-16,available,us-house-polls-2026
-IA,02,IA-02,Lindsay James,Joe Mitchell,49.83,46.91,2.93,3,3,2026-10-14,available,us-house-polls-2026
-IA,03,IA-03,Sarah Trone Garriott,Zach Nunn,42.00,48.00,-6.00,1,1,2026-03-14,available,us-house-polls-2026
-IA,04,IA-04,,,,,,,,,no_polls,us-house-polls-2026
-ID,01,ID-01,Kaylee Peterson,Russ Fulcher,26.33,51.56,-25.23,3,3,2026-10-22,available,us-house-polls-2026
-ID,02,ID-02,Ellie Gilbreath,Mike Simpson,31.00,46.00,-15.00,1,1,2026-10-22,available,us-house-polls-2026
-IL,01,IL-01,,,,,,,,,no_polls,us-house-polls-2026
-IL,02,IL-02,,,,,,,,,no_polls,us-house-polls-2026
-IL,03,IL-03,,,,,,,,,no_polls,us-house-polls-2026
-IL,04,IL-04,Patty Garcia,Lupe Castillo,34.00,15.00,19.00,1,1,2026-08-03,available,us-house-polls-2026
-IL,05,IL-05,,,,,,,,,no_polls,us-house-polls-2026
-IL,06,IL-06,,,,,,,,,no_polls,us-house-polls-2026
-IL,07,IL-07,,,,,,,,,no_polls,us-house-polls-2026
-IL,08,IL-08,,,,,,,,,no_polls,us-house-polls-2026
-IL,09,IL-09,,,,,,,,,no_polls,us-house-polls-2026
-IL,10,IL-10,,,,,,,,,no_polls,us-house-polls-2026
-IL,11,IL-11,,,,,,,,,no_polls,us-house-polls-2026
-IL,12,IL-12,,,,,,,,,no_polls,us-house-polls-2026
-IL,13,IL-13,,,,,,,,,no_polls,us-house-polls-2026
-IL,14,IL-14,,,,,,,,,no_polls,us-house-polls-2026
-IL,15,IL-15,,,,,,,,,no_polls,us-house-polls-2026
-IL,16,IL-16,,,,,,,,,no_polls,us-house-polls-2026
-IL,17,IL-17,,,,,,,,,no_polls,us-house-polls-2026
-IN,01,IN-01,,,,,,,,,no_polls,us-house-polls-2026
-IN,02,IN-02,,,,,,,,,no_polls,us-house-polls-2026
-IN,03,IN-03,,,,,,,,,no_polls,us-house-polls-2026
-IN,04,IN-04,,,,,,,,,no_polls,us-house-polls-2026
-IN,05,IN-05,J.D. Ford,Victoria Spartz,45.12,47.54,-2.41,3,3,2026-10-22,available,us-house-polls-2026
-IN,06,IN-06,,,,,,,,,no_polls,us-house-polls-2026
-IN,07,IN-07,,,,,,,,,no_polls,us-house-polls-2026
-IN,08,IN-08,,,,,,,,,no_polls,us-house-polls-2026
-IN,09,IN-09,,,,,,,,,no_polls,us-house-polls-2026
-KS,01,KS-01,,,,,,,,,no_polls,us-house-polls-2026
-KS,02,KS-02,Don Coover,Derek Schmidt,46.00,49.00,-3.00,1,1,2026-10-20,available,us-house-polls-2026
-KS,03,KS-03,,,,,,,,,no_polls,us-house-polls-2026
-KS,04,KS-04,,,,,,,,,no_polls,us-house-polls-2026
-KY,01,KY-01,,,,,,,,,no_polls,us-house-polls-2026
-KY,02,KY-02,,,,,,,,,no_polls,us-house-polls-2026
-KY,03,KY-03,,,,,,,,,no_polls,us-house-polls-2026
-KY,04,KY-04,,,,,,,,,no_polls,us-house-polls-2026
-KY,05,KY-05,,,,,,,,,no_polls,us-house-polls-2026
-KY,06,KY-06,Zach Dembo,Ralph Alvarado,45.95,39.76,6.19,9,5,2026-10-20,available,us-house-polls-2026
-LA,01,LA-01,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-LA,02,LA-02,,,,,,,,,no_polls,us-house-polls-2026
-LA,03,LA-03,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-LA,04,LA-04,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-LA,05,LA-05,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-LA,06,LA-06,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-MA,01,MA-01,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-MA,02,MA-02,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-MA,03,MA-03,,,,,,,,,no_polls,us-house-polls-2026
-MA,04,MA-04,,,,,,,,,no_polls,us-house-polls-2026
-MA,05,MA-05,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-MA,06,MA-06,,,,,,,,,no_polls,us-house-polls-2026
-MA,07,MA-07,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-MA,08,MA-08,,,,,,,,,no_polls,us-house-polls-2026
-MA,09,MA-09,,,,,,,,,no_polls,us-house-polls-2026
-MD,01,MD-01,Dan Schwartz,Andy Harris,39.00,52.00,-13.00,1,1,2026-07-27,available,us-house-polls-2026
-MD,02,MD-02,,,,,,,,,no_polls,us-house-polls-2026
-MD,03,MD-03,,,,,,,,,no_polls,us-house-polls-2026
-MD,04,MD-04,,,,,,,,,no_polls,us-house-polls-2026
-MD,05,MD-05,,,,,,,,,no_polls,us-house-polls-2026
-MD,06,MD-06,,,,,,,,,no_polls,us-house-polls-2026
-MD,07,MD-07,,,,,,,,,no_polls,us-house-polls-2026
-MD,08,MD-08,,,,,,,,,no_polls,us-house-polls-2026
-ME,01,ME-01,Chellie Pingree,Ronald C. Russell,57.00,35.00,22.00,1,1,2026-09-21,available,us-house-polls-2026
-ME,02,ME-02,Matthew G. Dunlap,Paul R. LePage,50.01,46.70,3.31,8,5,2026-10-14,available,us-house-polls-2026
-MI,01,MI-01,,,,,,,,,no_polls,us-house-polls-2026
-MI,02,MI-02,,,,,,,,,no_polls,us-house-polls-2026
-MI,03,MI-03,,,,,,,,,no_polls,us-house-polls-2026
-MI,04,MI-04,Sean McCann,Bill Huizenga,47.01,45.98,1.04,4,3,2026-09-16,available,us-house-polls-2026
-MI,05,MI-05,,,,,,,,,no_polls,us-house-polls-2026
-MI,06,MI-06,,,,,,,,,no_polls,us-house-polls-2026
-MI,07,MI-07,William Lawrence,Tom Barrett,52.57,45.18,7.39,3,3,2026-10-14,available,us-house-polls-2026
-MI,08,MI-08,,,,,,,,,no_polls,us-house-polls-2026
-MI,09,MI-09,,,,,,,,,no_polls,us-house-polls-2026
-MI,10,MI-10,Christina Bertrand Hines,Michael Bouchard,45.00,45.00,0.00,2,2,2026-08-13,available,us-house-polls-2026
-MI,11,MI-11,,,,,,,,,no_polls,us-house-polls-2026
-MI,12,MI-12,,,,,,,,,no_polls,us-house-polls-2026
-MI,13,MI-13,Donavan McKinney,T.P. Nykoriak,69.00,19.00,50.00,1,1,2026-10-30,available,us-house-polls-2026
-MN,01,MN-01,Jake Johnson,Brad Finstad,45.42,44.05,1.37,5,4,2026-10-14,available,us-house-polls-2026
-MN,02,MN-02,Matt Little,Eric Pratt,51.62,40.00,11.62,2,2,2026-09-13,available,us-house-polls-2026
-MN,03,MN-03,,,,,,,,,no_polls,us-house-polls-2026
-MN,04,MN-04,,,,,,,,,no_polls,us-house-polls-2026
-MN,05,MN-05,,,,,,,,,no_polls,us-house-polls-2026
-MN,06,MN-06,,,,,,,,,no_polls,us-house-polls-2026
-MN,07,MN-07,,,,,,,,,no_polls,us-house-polls-2026
-MN,08,MN-08,Trina Swanson,Pete Stauber,43.00,49.00,-6.00,1,1,2026-10-26,available,us-house-polls-2026
-MO,01,MO-01,,,,,,,,,no_polls,us-house-polls-2026
-MO,02,MO-02,Fred Wellman,Ann Wagner,47.44,45.04,2.40,3,3,2026-10-20,available,us-house-polls-2026
-MO,03,MO-03,,,,,,,,,no_polls,us-house-polls-2026
-MO,04,MO-04,,,,,,,,,no_polls,us-house-polls-2026
-MO,05,MO-05,,,,,,,,,no_polls,us-house-polls-2026
-MO,06,MO-06,,,,,,,,,no_polls,us-house-polls-2026
-MO,07,MO-07,,,,,,,,,no_polls,us-house-polls-2026
-MO,08,MO-08,,,,,,,,,no_polls,us-house-polls-2026
-MS,01,MS-01,,,,,,,,,no_polls,us-house-polls-2026
-MS,02,MS-02,,,,,,,,,no_polls,us-house-polls-2026
-MS,03,MS-03,,,,,,,,,no_polls,us-house-polls-2026
-MS,04,MS-04,,,,,,,,,no_polls,us-house-polls-2026
-MT,01,MT-01,Sam Forstag,Aaron Flint,47.72,41.09,6.63,8,7,2026-10-21,available,us-house-polls-2026
-MT,02,MT-02,Brian J. Miller,Troy Downing,19.88,33.46,-13.58,2,2,2026-10-21,available,us-house-polls-2026
-NC,01,NC-01,Don Davis,Laurie Buckhout,47.96,41.44,6.52,7,4,2026-10-08,available,us-house-polls-2026
-NC,02,NC-02,,,,,,,,,no_polls,us-house-polls-2026
-NC,03,NC-03,Raymond Smith,Greg Murphy,41.00,44.00,-3.00,1,1,2026-08-02,available,us-house-polls-2026
-NC,04,NC-04,,,,,,,,,no_polls,us-house-polls-2026
-NC,05,NC-05,,,,,,,,,no_polls,us-house-polls-2026
-NC,06,NC-06,,,,,,,,,no_polls,us-house-polls-2026
-NC,07,NC-07,Kimberly Hardy,David Rouzer,39.00,45.00,-6.00,1,1,2026-08-20,available,us-house-polls-2026
-NC,08,NC-08,,,,,,,,,no_polls,us-house-polls-2026
-NC,09,NC-09,Richard N. Ojeda II,Richard Hudson,42.00,46.00,-4.00,2,2,2026-10-20,available,us-house-polls-2026
-NC,10,NC-10,Ashley Bell,Pat Harrigan,37.00,52.00,-15.00,1,1,2026-03-12,available,us-house-polls-2026
-NC,11,NC-11,Jamie Ager,Jennifer Capps Balkcom,56.00,43.00,13.00,1,1,2026-10-14,available,us-house-polls-2026
-NC,12,NC-12,,,,,,,,,no_polls,us-house-polls-2026
-NC,13,NC-13,,,,,,,,,no_polls,us-house-polls-2026
-NC,14,NC-14,Lakesha Womack,Tim Moore,40.00,48.00,-8.00,1,1,2026-03-12,available,us-house-polls-2026
-ND,00,ND-AL,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-NE,01,NE-01,Chris Backemeyer,Mike Flood,45.67,45.82,-0.15,3,3,2026-10-20,available,us-house-polls-2026
-NE,02,NE-02,Denise Powell,Brinker Harding,48.39,39.61,8.78,2,2,2026-10-05,available,us-house-polls-2026
-NE,03,NE-03,,,,,,,,,no_polls,us-house-polls-2026
-NH,01,NH-01,Stefany Shaheen,Anthony DiLorenzo,46.00,42.00,4.00,2,2,2026-10-20,available,us-house-polls-2026
-NH,02,NH-02,Maggie Goodlander,Lily Tang Williams,54.28,36.78,17.50,9,2,2026-10-20,available,us-house-polls-2026
-NJ,01,NJ-01,,,,,,,,,no_polls,us-house-polls-2026
-NJ,02,NJ-02,Zack Mullock,Jeff Van Drew,40.00,50.00,-10.00,1,1,2026-10-10,available,us-house-polls-2026
-NJ,03,NJ-03,,,,,,,,,no_polls,us-house-polls-2026
-NJ,04,NJ-04,,,,,,,,,no_polls,us-house-polls-2026
-NJ,05,NJ-05,,,,,,,,,no_polls,us-house-polls-2026
-NJ,06,NJ-06,,,,,,,,,no_polls,us-house-polls-2026
-NJ,07,NJ-07,Rebecca Bennett,Thomas H. Kean Jr.,47.00,42.01,4.99,2,2,2026-09-12,available,us-house-polls-2026
-NJ,08,NJ-08,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-NJ,09,NJ-09,,,,,,,,,no_polls,us-house-polls-2026
-NJ,10,NJ-10,,,,,,,,,no_polls,us-house-polls-2026
-NJ,11,NJ-11,,,,,,,,,no_polls,us-house-polls-2026
-NJ,12,NJ-12,,,,,,,,,no_polls,us-house-polls-2026
-NM,01,NM-01,Melanie Ann Stansbury,Ndidiamaka Ekwua Charlene Okpareke,53.00,35.00,18.00,1,1,2026-10-09,available,us-house-polls-2026
-NM,02,NM-02,Gabriel Vasquez,Gregory G. Cunningham,47.47,43.73,3.73,3,3,2026-10-09,available,us-house-polls-2026
-NM,03,NM-03,Teresa Leger Fernandez,Martin Zamora,53.00,39.00,14.00,1,1,2026-10-09,available,us-house-polls-2026
-NV,01,NV-01,,,,,,,,,no_polls,us-house-polls-2026
-NV,02,NV-02,Teresa F. Benitez-Thompson,David Flippo,42.73,44.33,-1.60,3,3,2026-10-13,available,us-house-polls-2026
-NV,03,NV-03,,,,,,,,,no_polls,us-house-polls-2026
-NV,04,NV-04,,,,,,,,,no_polls,us-house-polls-2026
-NY,01,NY-01,Christopher J. Gallant,Nicholas J. LaLota,38.00,41.00,-3.00,1,1,2025-12-11,available,us-house-polls-2026
-NY,02,NY-02,,,,,,,,,no_polls,us-house-polls-2026
-NY,03,NY-03,,,,,,,,,no_polls,us-house-polls-2026
-NY,04,NY-04,,,,,,,,,no_eligible_polls,us-house-polls-2026
-NY,05,NY-05,,,,,,,,,no_polls,us-house-polls-2026
-NY,06,NY-06,,,,,,,,,no_polls,us-house-polls-2026
-NY,07,NY-07,,,,,,,,,no_polls,us-house-polls-2026
-NY,08,NY-08,,,,,,,,,no_polls,us-house-polls-2026
-NY,09,NY-09,,,,,,,,,no_polls,us-house-polls-2026
-NY,10,NY-10,,,,,,,,,no_polls,us-house-polls-2026
-NY,11,NY-11,,,,,,,,,no_polls,us-house-polls-2026
-NY,12,NY-12,,,,,,,,,no_polls,us-house-polls-2026
-NY,13,NY-13,,,,,,,,,no_polls,us-house-polls-2026
-NY,14,NY-14,,,,,,,,,no_polls,us-house-polls-2026
-NY,15,NY-15,,,,,,,,,no_polls,us-house-polls-2026
-NY,16,NY-16,,,,,,,,,no_polls,us-house-polls-2026
-NY,17,NY-17,Cait Conley,Mike Lawler,47.37,47.37,0.00,4,4,2026-09-30,available,us-house-polls-2026
-NY,18,NY-18,Pat Ryan,Jackie Mary Auringer,52.10,35.39,16.71,2,2,2026-09-30,available,us-house-polls-2026
-NY,19,NY-19,,,,,,,,,no_polls,us-house-polls-2026
-NY,20,NY-20,,,,,,,,,no_polls,us-house-polls-2026
-NY,21,NY-21,Blake Gendebien,Anthony Constantino,44.50,44.81,-0.32,8,5,2026-10-13,available,us-house-polls-2026
-NY,22,NY-22,,,,,,,,,no_polls,us-house-polls-2026
-NY,23,NY-23,Aaron Gies,Nicholas A. Langworthy,35.00,52.00,-17.00,1,1,2026-09-23,available,us-house-polls-2026
-NY,24,NY-24,,,,,,,,,no_polls,us-house-polls-2026
-NY,25,NY-25,,,,,,,,,no_polls,us-house-polls-2026
-NY,26,NY-26,,,,,,,,,no_polls,us-house-polls-2026
-OH,01,OH-01,Greg Landsman,Eric Conroy,47.24,44.03,3.20,3,2,2026-10-21,available,us-house-polls-2026
-OH,02,OH-02,,,,,,,,,no_polls,us-house-polls-2026
-OH,03,OH-03,,,,,,,,,no_polls,us-house-polls-2026
-OH,04,OH-04,,,,,,,,,no_polls,us-house-polls-2026
-OH,05,OH-05,,,,,,,,,no_polls,us-house-polls-2026
-OH,06,OH-06,,,,,,,,,no_polls,us-house-polls-2026
-OH,07,OH-07,Brian Poindexter,Max Miller,49.07,41.57,7.50,3,3,2026-08-10,available,us-house-polls-2026
-OH,08,OH-08,,,,,,,,,no_polls,us-house-polls-2026
-OH,09,OH-09,Marcy Kaptur,Derek Merrin,47.97,47.99,-0.02,2,2,2026-09-23,available,us-house-polls-2026
-OH,10,OH-10,Kristina Knickerbocker,Mike Turner,46.26,44.24,2.02,3,3,2026-10-13,available,us-house-polls-2026
-OH,11,OH-11,,,,,,,,,no_polls,us-house-polls-2026
-OH,12,OH-12,,,,,,,,,no_polls,us-house-polls-2026
-OH,13,OH-13,,,,,,,,,no_polls,us-house-polls-2026
-OH,14,OH-14,,,,,,,,,no_polls,us-house-polls-2026
-OH,15,OH-15,Don Leonard,Mike Carey,46.58,44.76,1.83,4,1,2026-10-12,available,us-house-polls-2026
-OK,01,OK-01,,,,,,,,,no_polls,us-house-polls-2026
-OK,02,OK-02,,,,,,,,,no_polls,us-house-polls-2026
-OK,03,OK-03,,,,,,,,,no_polls,us-house-polls-2026
-OK,04,OK-04,,,,,,,,,no_polls,us-house-polls-2026
-OK,05,OK-05,Jena Nelson,Stephanie Bice,43.00,48.00,-5.00,1,1,2026-09-20,available,us-house-polls-2026
-OR,01,OR-01,,,,,,,,,no_polls,us-house-polls-2026
-OR,02,OR-02,,,,,,,,,no_polls,us-house-polls-2026
-OR,03,OR-03,,,,,,,,,no_polls,us-house-polls-2026
-OR,04,OR-04,,,,,,,,,no_polls,us-house-polls-2026
-OR,05,OR-05,,,,,,,,,no_polls,us-house-polls-2026
-OR,06,OR-06,,,,,,,,,no_polls,us-house-polls-2026
-PA,01,PA-01,Bob Harvie,Brian Fitzpatrick,47.14,46.51,0.63,7,5,2026-10-22,available,us-house-polls-2026
-PA,02,PA-02,,,,,,,,,no_polls,us-house-polls-2026
-PA,03,PA-03,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-PA,04,PA-04,,,,,,,,,no_polls,us-house-polls-2026
-PA,05,PA-05,,,,,,,,,no_polls,us-house-polls-2026
-PA,06,PA-06,,,,,,,,,no_polls,us-house-polls-2026
-PA,07,PA-07,Bob Brooks,Ryan Mackenzie,48.52,43.08,5.44,4,4,2026-10-22,available,us-house-polls-2026
-PA,08,PA-08,Paige Cognetti,Rob Bresnahan Jr.,51.12,47.12,4.01,5,5,2026-10-22,available,us-house-polls-2026
-PA,09,PA-09,,,,,,,,,no_polls,us-house-polls-2026
-PA,10,PA-10,Janelle Stelson,Scott Perry,47.96,46.70,1.26,6,5,2026-10-22,available,us-house-polls-2026
-PA,11,PA-11,,,,,,,,,no_polls,us-house-polls-2026
-PA,12,PA-12,,,,,,,,,no_polls,us-house-polls-2026
-PA,13,PA-13,,,,,,,,,no_polls,us-house-polls-2026
-PA,14,PA-14,,,,,,,,,no_polls,us-house-polls-2026
-PA,15,PA-15,,,,,,,,,no_polls,us-house-polls-2026
-PA,16,PA-16,,,,,,,,,no_polls,us-house-polls-2026
-PA,17,PA-17,,,,,,,,,no_polls,us-house-polls-2026
-RI,01,RI-01,Gabe Amo,Kellie Keenan,52.91,29.63,23.28,2,2,2026-10-11,available,us-house-polls-2026
-RI,02,RI-02,Seth Magaziner,Vic Mellor,53.51,39.06,14.46,2,2,2026-10-11,available,us-house-polls-2026
-SC,01,SC-01,Nancy Lacore,Jenny Costa Honeycutt,42.57,45.19,-2.62,4,3,2026-10-22,available,us-house-polls-2026
-SC,02,SC-02,,,,,,,,,no_polls,us-house-polls-2026
-SC,03,SC-03,,,,,,,,,no_polls,us-house-polls-2026
-SC,04,SC-04,,,,,,,,,no_polls,us-house-polls-2026
-SC,05,SC-05,,,,,,,,,no_polls,us-house-polls-2026
-SC,06,SC-06,,,,,,,,,no_polls,us-house-polls-2026
-SC,07,SC-07,John Gregory Vincent,Russell Fry,36.70,41.10,-4.40,1,1,2026-07-28,available,us-house-polls-2026
-SD,00,SD-AL,"Nicole ""Nikki"" Gronli",Marty Jackley,32.94,58.32,-25.38,2,2,2026-10-14,available,us-house-polls-2026
-TN,01,TN-01,,,,,,,,,no_polls,us-house-polls-2026
-TN,02,TN-02,,,,,,,,,no_polls,us-house-polls-2026
-TN,03,TN-03,,,,,,,,,no_polls,us-house-polls-2026
-TN,04,TN-04,,,,,,,,,no_polls,us-house-polls-2026
-TN,05,TN-05,Chaz Molder,Charlie Hatcher,40.79,46.43,-5.64,2,1,2026-10-01,available,us-house-polls-2026
-TN,06,TN-06,,,,,,,,,no_polls,us-house-polls-2026
-TN,07,TN-07,,,,,,,,,no_polls,us-house-polls-2026
-TN,08,TN-08,,,,,,,,,no_polls,us-house-polls-2026
-TN,09,TN-09,Justin J. Pearson,Brent Taylor,44.00,48.00,-4.00,1,1,2026-09-03,available,us-house-polls-2026
-TX,01,TX-01,,,,,,,,,no_polls,us-house-polls-2026
-TX,02,TX-02,Shaun Finnie,Steve Toth,37.00,46.00,-9.00,1,1,2026-10-04,available,us-house-polls-2026
-TX,03,TX-03,,,,,,,,,no_polls,us-house-polls-2026
-TX,04,TX-04,,,,,,,,,no_polls,us-house-polls-2026
-TX,05,TX-05,,,,,,,,,no_polls,us-house-polls-2026
-TX,06,TX-06,,,,,,,,,no_polls,us-house-polls-2026
-TX,07,TX-07,,,,,,,,,no_polls,us-house-polls-2026
-TX,08,TX-08,,,,,,,,,no_polls,us-house-polls-2026
-TX,09,TX-09,Leticia Gutierrez,Alex Mealer,43.40,47.61,-4.21,3,3,2026-10-22,available,us-house-polls-2026
-TX,10,TX-10,Caitlin Rourk,Chris Gober,41.00,48.00,-7.00,1,1,2026-09-22,available,us-house-polls-2026
-TX,11,TX-11,,,,,,,,,no_polls,us-house-polls-2026
-TX,12,TX-12,,,,,,,,,no_polls,us-house-polls-2026
-TX,13,TX-13,,,,,,,,,no_polls,us-house-polls-2026
-TX,14,TX-14,,,,,,,,,no_polls,us-house-polls-2026
-TX,15,TX-15,Bobby Pulido,Monica De La Cruz,51.33,43.69,7.65,6,4,2026-10-16,available,us-house-polls-2026
-TX,16,TX-16,,,,,,,,,no_polls,us-house-polls-2026
-TX,17,TX-17,,,,,,,,,no_polls,us-house-polls-2026
-TX,18,TX-18,,,,,,,,,no_polls,us-house-polls-2026
-TX,19,TX-19,,,,,,,,,no_polls,us-house-polls-2026
-TX,20,TX-20,,,,,,,,,no_polls,us-house-polls-2026
-TX,21,TX-21,,,,,,,,,no_polls,us-house-polls-2026
-TX,22,TX-22,,,,,,,,,no_polls,us-house-polls-2026
-TX,23,TX-23,Katy Padilla Stout,Brandon Herrera,45.99,46.00,0.00,2,2,2026-10-07,available,us-house-polls-2026
-TX,24,TX-24,,,,,,,,,no_polls,us-house-polls-2026
-TX,25,TX-25,,,,,,,,,no_polls,us-house-polls-2026
-TX,26,TX-26,,,,,,,,,no_polls,us-house-polls-2026
-TX,27,TX-27,,,,,,,,,no_polls,us-house-polls-2026
-TX,28,TX-28,Henry Cuellar,Tano E. Tijerina,51.31,34.18,17.13,3,3,2026-10-13,available,us-house-polls-2026
-TX,29,TX-29,,,,,,,,,no_polls,us-house-polls-2026
-TX,30,TX-30,,,,,,,,,no_polls,us-house-polls-2026
-TX,31,TX-31,,,,,,,,,no_polls,us-house-polls-2026
-TX,32,TX-32,,,,,,,,,no_polls,us-house-polls-2026
-TX,33,TX-33,,,,,,,,,no_polls,us-house-polls-2026
-TX,34,TX-34,Vicente Gonzalez,Eric Flores,49.26,42.87,6.40,4,4,2026-10-19,available,us-house-polls-2026
-TX,35,TX-35,Johnny C. Garcia,Carlos De La Cruz,48.26,47.81,0.45,4,3,2026-10-19,available,us-house-polls-2026
-TX,36,TX-36,,,,,,,,,no_polls,us-house-polls-2026
-TX,37,TX-37,,,,,,,,,no_polls,us-house-polls-2026
-TX,38,TX-38,,,,,,,,,no_polls,us-house-polls-2026
-UT,01,UT-01,Ben McAdams,Riley Owen,62.70,21.20,41.50,1,1,2026-09-10,available,us-house-polls-2026
-UT,02,UT-02,Peter Crosby,Blake D. Moore,34.00,39.00,-5.00,1,1,2026-09-24,available,us-house-polls-2026
-UT,03,UT-03,Kent S. Udell,Celeste Maloy,26.40,44.50,-18.10,1,1,2026-09-15,available,us-house-polls-2026
-UT,04,UT-04,Jonny Larsen,Mike Kennedy,32.90,41.70,-8.80,1,1,2026-09-17,available,us-house-polls-2026
-VA,01,VA-01,Shannon L. Taylor,"Robert J. ""Rob"" Wittman",48.29,46.36,1.93,6,4,2026-10-25,available,us-house-polls-2026
-VA,02,VA-02,Elaine G. Luria,Jen A. Kiggans,46.03,43.10,2.92,2,2,2026-10-10,available,us-house-polls-2026
-VA,03,VA-03,,,,,,,,,no_polls,us-house-polls-2026
-VA,04,VA-04,,,,,,,,,no_polls,us-house-polls-2026
-VA,05,VA-05,Tom S. P. Perriello,John J. McGuire III,44.96,49.87,-4.91,3,2,2026-09-28,available,us-house-polls-2026
-VA,06,VA-06,Beth A. Macy,Ben L. Cline,29.00,59.00,-30.00,1,1,2026-09-30,available,us-house-polls-2026
-VA,07,VA-07,,,,,,,,,no_polls,us-house-polls-2026
-VA,08,VA-08,,,,,,,,,no_polls,us-house-polls-2026
-VA,09,VA-09,,,,,,,,,no_polls,us-house-polls-2026
-VA,10,VA-10,,,,,,,,,no_polls,us-house-polls-2026
-VA,11,VA-11,,,,,,,,,no_polls,us-house-polls-2026
-VT,00,VT-AL,Becca Balint,Gerald Malloy,54.66,29.83,24.82,4,2,2026-09-21,available,us-house-polls-2026
-WA,01,WA-01,,,,,,,,,no_polls,us-house-polls-2026
-WA,02,WA-02,,,,,,,,,no_polls,us-house-polls-2026
-WA,03,WA-03,Marie Gluesenkamp Perez,John Braun,45.86,45.84,0.02,4,4,2026-10-21,available,us-house-polls-2026
-WA,04,WA-04,,,,,,,,,no_polls,us-house-polls-2026
-WA,05,WA-05,Carmela Conroy,Michael Baumgartner,47.00,53.00,-6.00,1,1,2026-05-25,available,us-house-polls-2026
-WA,06,WA-06,,,,,,,,,no_polls,us-house-polls-2026
-WA,07,WA-07,,,,,,,,,no_polls,us-house-polls-2026
-WA,08,WA-08,,,,,,,,,no_polls,us-house-polls-2026
-WA,09,WA-09,,,,,,,,,no_polls,us-house-polls-2026
-WA,10,WA-10,,,,,,,,,no_polls,us-house-polls-2026
-WI,01,WI-01,Mitchell Berman,Bryan Steil,47.99,47.62,0.37,4,3,2026-10-01,available,us-house-polls-2026
-WI,02,WI-02,,,,,,,,,no_dem_rep_field,us-house-polls-2026
-WI,03,WI-03,Rebecca Cooke,Derrick Van Orden,49.99,46.01,3.98,5,3,2026-06-25,available,us-house-polls-2026
-WI,04,WI-04,,,,,,,,,no_polls,us-house-polls-2026
-WI,05,WI-05,,,,,,,,,no_polls,us-house-polls-2026
-WI,06,WI-06,Brad Smith,Glenn Grothman,39.00,61.00,-22.00,1,1,2026-05-28,available,us-house-polls-2026
-WI,07,WI-07,,,,,,,,,no_polls,us-house-polls-2026
-WI,08,WI-08,,,,,,,,,no_polls,us-house-polls-2026
-WV,01,WV-01,,,,,,,,,no_polls,us-house-polls-2026
-WV,02,WV-02,,,,,,,,,no_polls,us-house-polls-2026
-WY,00,WY-AL,,,,,,,,,no_polls,us-house-polls-2026
+state,district,district_id,poll_avg_dem_candidate,poll_avg_rep_candidate,poll_avg_dem_pct,poll_avg_rep_pct,poll_avg_dem_margin_pp,poll_count,poll_pollster_count,poll_latest_end_date,poll_avg_status,poll_avg_source_id,poll_avg_matchup_basis
+AK,00,AK-AL,Bill Hill,Nick Begich,37.35,45.66,-8.31,11,8,2026-10-30,available,us-house-polls-2026,reviewed
+AL,01,AL-01,,,,,,,,,no_polls,us-house-polls-2026,
+AL,02,AL-02,Shomari C. Figures,Rhett Marques,46.06,47.87,-1.81,4,4,2026-10-25,available,us-house-polls-2026,dem_rep
+AL,03,AL-03,,,,,,,,,no_polls,us-house-polls-2026,
+AL,04,AL-04,,,,,,,,,no_polls,us-house-polls-2026,
+AL,05,AL-05,,,,,,,,,no_polls,us-house-polls-2026,
+AL,06,AL-06,,,,,,,,,no_polls,us-house-polls-2026,
+AL,07,AL-07,,,,,,,,,no_polls,us-house-polls-2026,
+AR,01,AR-01,,,,,,,,,no_polls,us-house-polls-2026,
+AR,02,AR-02,Chris Jones,French Hill,47.99,50.57,-2.58,3,3,2026-10-14,available,us-house-polls-2026,dem_rep
+AR,03,AR-03,,,,,,,,,no_polls,us-house-polls-2026,
+AR,04,AR-04,,,,,,,,,no_polls,us-house-polls-2026,
+AZ,01,AZ-01,Amish Shah,Thomas 'Jay' Feely IV,48.06,44.09,3.97,2,2,2026-10-28,available,us-house-polls-2026,dem_rep
+AZ,02,AZ-02,Jonathan Nez,Eli Crane,49.50,47.83,1.67,3,2,2026-10-14,available,us-house-polls-2026,dem_rep
+AZ,03,AZ-03,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+AZ,04,AZ-04,,,,,,,,,no_polls,us-house-polls-2026,
+AZ,05,AZ-05,,,,,,,,,no_polls,us-house-polls-2026,
+AZ,06,AZ-06,JoAnna Mendoza,Juan Ciscomani,47.00,44.95,2.04,3,3,2026-06-11,available,us-house-polls-2026,dem_rep
+AZ,07,AZ-07,,,,,,,,,no_polls,us-house-polls-2026,
+AZ,08,AZ-08,,,,,,,,,no_polls,us-house-polls-2026,
+AZ,09,AZ-09,,,,,,,,,no_polls,us-house-polls-2026,
+CA,01,CA-01,Mike McGuire,James Gallagher,56.00,41.00,15.00,1,1,2026-10-26,available,us-house-polls-2026,dem_rep
+CA,02,CA-02,,,,,,,,,no_polls,us-house-polls-2026,
+CA,03,CA-03,,,,,,,,,no_polls,us-house-polls-2026,
+CA,04,CA-04,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+CA,05,CA-05,,,,,,,,,no_polls,us-house-polls-2026,
+CA,06,CA-06,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+CA,07,CA-07,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+CA,08,CA-08,,,,,,,,,no_polls,us-house-polls-2026,
+CA,09,CA-09,,,,,,,,,no_polls,us-house-polls-2026,
+CA,10,CA-10,,,,,,,,,no_polls,us-house-polls-2026,
+CA,11,CA-11,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+CA,12,CA-12,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+CA,13,CA-13,,,,,,,,,no_polls,us-house-polls-2026,
+CA,14,CA-14,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+CA,15,CA-15,,,,,,,,,no_polls,us-house-polls-2026,
+CA,16,CA-16,,,,,,,,,no_polls,us-house-polls-2026,
+CA,17,CA-17,,,,,,,,,no_polls,us-house-polls-2026,
+CA,18,CA-18,,,,,,,,,no_polls,us-house-polls-2026,
+CA,19,CA-19,,,,,,,,,no_polls,us-house-polls-2026,
+CA,20,CA-20,,,,,,,,,no_polls,us-house-polls-2026,
+CA,21,CA-21,,,,,,,,,no_polls,us-house-polls-2026,
+CA,22,CA-22,Randy Villegas,David G. Valadao,53.94,44.00,9.94,2,2,2026-10-28,available,us-house-polls-2026,dem_rep
+CA,23,CA-23,,,,,,,,,no_polls,us-house-polls-2026,
+CA,24,CA-24,,,,,,,,,no_polls,us-house-polls-2026,
+CA,25,CA-25,,,,,,,,,no_polls,us-house-polls-2026,
+CA,26,CA-26,,,,,,,,,no_polls,us-house-polls-2026,
+CA,27,CA-27,,,,,,,,,no_polls,us-house-polls-2026,
+CA,28,CA-28,,,,,,,,,no_polls,us-house-polls-2026,
+CA,29,CA-29,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+CA,30,CA-30,,,,,,,,,no_polls,us-house-polls-2026,
+CA,31,CA-31,,,,,,,,,no_polls,us-house-polls-2026,
+CA,32,CA-32,,,,,,,,,no_polls,us-house-polls-2026,
+CA,33,CA-33,,,,,,,,,no_polls,us-house-polls-2026,
+CA,34,CA-34,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+CA,35,CA-35,,,,,,,,,no_polls,us-house-polls-2026,
+CA,36,CA-36,,,,,,,,,no_polls,us-house-polls-2026,
+CA,37,CA-37,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+CA,38,CA-38,,,,,,,,,no_polls,us-house-polls-2026,
+CA,39,CA-39,,,,,,,,,no_polls,us-house-polls-2026,
+CA,40,CA-40,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+CA,41,CA-41,,,,,,,,,no_polls,us-house-polls-2026,
+CA,42,CA-42,,,,,,,,,no_polls,us-house-polls-2026,
+CA,43,CA-43,,,,,,,,,no_polls,us-house-polls-2026,
+CA,44,CA-44,,,,,,,,,no_polls,us-house-polls-2026,
+CA,45,CA-45,,,,,,,,,no_polls,us-house-polls-2026,
+CA,46,CA-46,,,,,,,,,no_polls,us-house-polls-2026,
+CA,47,CA-47,,,,,,,,,no_polls,us-house-polls-2026,
+CA,48,CA-48,Marni von Wilpert,Jim Desmond,49.54,42.68,6.86,5,4,2026-10-27,available,us-house-polls-2026,dem_rep
+CA,49,CA-49,,,,,,,,,no_polls,us-house-polls-2026,
+CA,50,CA-50,,,,,,,,,no_polls,us-house-polls-2026,
+CA,51,CA-51,,,,,,,,,no_polls,us-house-polls-2026,
+CA,52,CA-52,,,,,,,,,no_polls,us-house-polls-2026,
+CO,01,CO-01,,,,,,,,,no_polls,us-house-polls-2026,
+CO,02,CO-02,,,,,,,,,no_polls,us-house-polls-2026,
+CO,03,CO-03,Dwayne L. Romero,Jeff Hurd,46.89,46.00,0.89,2,2,2026-10-21,available,us-house-polls-2026,dem_rep
+CO,04,CO-04,Eileen Laubacher,Lauren Boebert,40.00,45.00,-5.00,1,1,2026-09-24,available,us-house-polls-2026,dem_rep
+CO,05,CO-05,Jessica Killin,Jeff Crank,45.63,44.00,1.63,4,2,2026-10-20,available,us-house-polls-2026,dem_rep
+CO,06,CO-06,,,,,,,,,no_polls,us-house-polls-2026,
+CO,07,CO-07,,,,,,,,,no_polls,us-house-polls-2026,
+CO,08,CO-08,Manny Rutinel,Gabe Evans,46.30,48.00,-1.70,1,1,2026-09-17,available,us-house-polls-2026,dem_rep
+CT,01,CT-01,,,,,,,,,no_polls,us-house-polls-2026,
+CT,02,CT-02,,,,,,,,,no_polls,us-house-polls-2026,
+CT,03,CT-03,,,,,,,,,no_polls,us-house-polls-2026,
+CT,04,CT-04,,,,,,,,,no_polls,us-house-polls-2026,
+CT,05,CT-05,Jahana Hayes,Chris Shea,51.00,45.00,6.00,1,1,2026-10-01,available,us-house-polls-2026,dem_rep
+DE,00,DE-AL,,,,,,,,,no_polls,us-house-polls-2026,
+FL,01,FL-01,,,,,,,,,no_polls,us-house-polls-2026,
+FL,02,FL-02,,,,,,,,,no_eligible_polls,us-house-polls-2026,
+FL,03,FL-03,,,,,,,,,no_polls,us-house-polls-2026,
+FL,04,FL-04,,,,,,,,,no_polls,us-house-polls-2026,
+FL,05,FL-05,,,,,,,,,no_polls,us-house-polls-2026,
+FL,06,FL-06,,,,,,,,,no_polls,us-house-polls-2026,
+FL,07,FL-07,Bale Dalton,Ryan Elijah,45.00,45.00,0.00,1,1,2026-10-19,available,us-house-polls-2026,dem_rep
+FL,08,FL-08,Jennifer Jenkins,Mike Haridopolos,35.00,44.00,-9.00,1,1,2026-07-18,available,us-house-polls-2026,dem_rep
+FL,09,FL-09,Darren Soto,Dan Green,43.54,43.54,0.00,2,1,2026-10-15,available,us-house-polls-2026,dem_rep
+FL,10,FL-10,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+FL,11,FL-11,James Pericola,Joe Strada,41.80,42.10,-0.30,1,1,2026-07-30,available,us-house-polls-2026,dem_rep
+FL,12,FL-12,,,,,,,,,no_polls,us-house-polls-2026,
+FL,13,FL-13,Leela Gray,Anna Paulina Luna,45.71,45.73,-0.02,5,4,2026-10-15,available,us-house-polls-2026,dem_rep
+FL,14,FL-14,Kathy Castor,Mike Beltran,47.90,42.69,5.21,2,2,2026-10-14,available,us-house-polls-2026,dem_rep
+FL,15,FL-15,,,,,,,,,no_polls,us-house-polls-2026,
+FL,16,FL-16,Kelly Kirschner,Sydney Gruters,39.22,42.12,-2.90,2,2,2026-10-02,available,us-house-polls-2026,dem_rep
+FL,17,FL-17,,,,,,,,,no_polls,us-house-polls-2026,
+FL,18,FL-18,,,,,,,,,no_polls,us-house-polls-2026,
+FL,19,FL-19,,,,,,,,,no_polls,us-house-polls-2026,
+FL,20,FL-20,,,,,,,,,no_polls,us-house-polls-2026,
+FL,21,FL-21,James T. Martin,Brian Mast,38.00,49.00,-11.00,1,1,2026-09-25,available,us-house-polls-2026,dem_rep
+FL,22,FL-22,Pia Dandiya,Casey Askar,48.02,47.04,0.99,2,2,2026-08-31,available,us-house-polls-2026,dem_rep
+FL,23,FL-23,,,,,,,,,no_polls,us-house-polls-2026,
+FL,24,FL-24,,,,,,,,,no_polls,us-house-polls-2026,
+FL,25,FL-25,Jared Moskowitz,Scott Singer,45.48,43.76,1.71,3,2,2026-10-27,available,us-house-polls-2026,dem_rep
+FL,26,FL-26,,,,,,,,,no_polls,us-house-polls-2026,
+FL,27,FL-27,Eliott Rodriguez,Maria Elvira Salazar,45.61,46.23,-0.61,2,2,2026-09-13,available,us-house-polls-2026,dem_rep
+FL,28,FL-28,,,,,,,,,no_polls,us-house-polls-2026,
+GA,01,GA-01,,,,,,,,,no_polls,us-house-polls-2026,
+GA,02,GA-02,,,,,,,,,no_polls,us-house-polls-2026,
+GA,03,GA-03,Maura Keller,Brian Jack,45.00,50.00,-5.00,1,1,2026-10-07,available,us-house-polls-2026,dem_rep
+GA,04,GA-04,,,,,,,,,no_polls,us-house-polls-2026,
+GA,05,GA-05,,,,,,,,,no_polls,us-house-polls-2026,
+GA,06,GA-06,,,,,,,,,no_polls,us-house-polls-2026,
+GA,07,GA-07,Tony Kozycki,Rich McCormick,46.25,45.19,1.06,2,1,2026-10-09,available,us-house-polls-2026,dem_rep
+GA,08,GA-08,,,,,,,,,no_polls,us-house-polls-2026,
+GA,09,GA-09,,,,,,,,,no_polls,us-house-polls-2026,
+GA,10,GA-10,,,,,,,,,no_polls,us-house-polls-2026,
+GA,11,GA-11,Chris Harden,John Cowan,42.00,40.00,2.00,1,1,2026-09-11,available,us-house-polls-2026,dem_rep
+GA,12,GA-12,,,,,,,,,no_polls,us-house-polls-2026,
+GA,13,GA-13,,,,,,,,,no_polls,us-house-polls-2026,
+GA,14,GA-14,,,,,,,,,no_polls,us-house-polls-2026,
+HI,01,HI-01,,,,,,,,,no_polls,us-house-polls-2026,
+HI,02,HI-02,,,,,,,,,no_polls,us-house-polls-2026,
+IA,01,IA-01,Christina Bohannan,Mariannette Miller-Meeks,40.00,35.00,5.00,2,2,2026-07-16,available,us-house-polls-2026,dem_rep
+IA,02,IA-02,Lindsay James,Joe Mitchell,49.83,46.91,2.93,3,3,2026-10-14,available,us-house-polls-2026,dem_rep
+IA,03,IA-03,Sarah Trone Garriott,Zach Nunn,42.00,48.00,-6.00,1,1,2026-03-14,available,us-house-polls-2026,dem_rep
+IA,04,IA-04,,,,,,,,,no_polls,us-house-polls-2026,
+ID,01,ID-01,Kaylee Peterson,Russ Fulcher,26.33,51.56,-25.23,3,3,2026-10-22,available,us-house-polls-2026,dem_rep
+ID,02,ID-02,Ellie Gilbreath,Mike Simpson,31.00,46.00,-15.00,1,1,2026-10-22,available,us-house-polls-2026,dem_rep
+IL,01,IL-01,,,,,,,,,no_polls,us-house-polls-2026,
+IL,02,IL-02,,,,,,,,,no_polls,us-house-polls-2026,
+IL,03,IL-03,,,,,,,,,no_polls,us-house-polls-2026,
+IL,04,IL-04,Patty Garcia,Lupe Castillo,34.00,15.00,19.00,1,1,2026-08-03,available,us-house-polls-2026,dem_rep
+IL,05,IL-05,,,,,,,,,no_polls,us-house-polls-2026,
+IL,06,IL-06,,,,,,,,,no_polls,us-house-polls-2026,
+IL,07,IL-07,,,,,,,,,no_polls,us-house-polls-2026,
+IL,08,IL-08,,,,,,,,,no_polls,us-house-polls-2026,
+IL,09,IL-09,,,,,,,,,no_polls,us-house-polls-2026,
+IL,10,IL-10,,,,,,,,,no_polls,us-house-polls-2026,
+IL,11,IL-11,,,,,,,,,no_polls,us-house-polls-2026,
+IL,12,IL-12,,,,,,,,,no_polls,us-house-polls-2026,
+IL,13,IL-13,,,,,,,,,no_polls,us-house-polls-2026,
+IL,14,IL-14,,,,,,,,,no_polls,us-house-polls-2026,
+IL,15,IL-15,,,,,,,,,no_polls,us-house-polls-2026,
+IL,16,IL-16,,,,,,,,,no_polls,us-house-polls-2026,
+IL,17,IL-17,,,,,,,,,no_polls,us-house-polls-2026,
+IN,01,IN-01,,,,,,,,,no_polls,us-house-polls-2026,
+IN,02,IN-02,,,,,,,,,no_polls,us-house-polls-2026,
+IN,03,IN-03,,,,,,,,,no_polls,us-house-polls-2026,
+IN,04,IN-04,,,,,,,,,no_polls,us-house-polls-2026,
+IN,05,IN-05,J.D. Ford,Victoria Spartz,45.12,47.54,-2.41,3,3,2026-10-22,available,us-house-polls-2026,dem_rep
+IN,06,IN-06,,,,,,,,,no_polls,us-house-polls-2026,
+IN,07,IN-07,,,,,,,,,no_polls,us-house-polls-2026,
+IN,08,IN-08,,,,,,,,,no_polls,us-house-polls-2026,
+IN,09,IN-09,,,,,,,,,no_polls,us-house-polls-2026,
+KS,01,KS-01,,,,,,,,,no_polls,us-house-polls-2026,
+KS,02,KS-02,Don Coover,Derek Schmidt,46.00,49.00,-3.00,1,1,2026-10-20,available,us-house-polls-2026,dem_rep
+KS,03,KS-03,,,,,,,,,no_polls,us-house-polls-2026,
+KS,04,KS-04,,,,,,,,,no_polls,us-house-polls-2026,
+KY,01,KY-01,,,,,,,,,no_polls,us-house-polls-2026,
+KY,02,KY-02,,,,,,,,,no_polls,us-house-polls-2026,
+KY,03,KY-03,,,,,,,,,no_polls,us-house-polls-2026,
+KY,04,KY-04,,,,,,,,,no_polls,us-house-polls-2026,
+KY,05,KY-05,,,,,,,,,no_polls,us-house-polls-2026,
+KY,06,KY-06,Zach Dembo,Ralph Alvarado,45.95,39.76,6.19,9,5,2026-10-20,available,us-house-polls-2026,dem_rep
+LA,01,LA-01,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+LA,02,LA-02,,,,,,,,,no_polls,us-house-polls-2026,
+LA,03,LA-03,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+LA,04,LA-04,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+LA,05,LA-05,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+LA,06,LA-06,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+MA,01,MA-01,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+MA,02,MA-02,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+MA,03,MA-03,,,,,,,,,no_polls,us-house-polls-2026,
+MA,04,MA-04,,,,,,,,,no_polls,us-house-polls-2026,
+MA,05,MA-05,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+MA,06,MA-06,,,,,,,,,no_polls,us-house-polls-2026,
+MA,07,MA-07,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+MA,08,MA-08,,,,,,,,,no_polls,us-house-polls-2026,
+MA,09,MA-09,,,,,,,,,no_polls,us-house-polls-2026,
+MD,01,MD-01,Dan Schwartz,Andy Harris,39.00,52.00,-13.00,1,1,2026-07-27,available,us-house-polls-2026,dem_rep
+MD,02,MD-02,,,,,,,,,no_polls,us-house-polls-2026,
+MD,03,MD-03,,,,,,,,,no_polls,us-house-polls-2026,
+MD,04,MD-04,,,,,,,,,no_polls,us-house-polls-2026,
+MD,05,MD-05,,,,,,,,,no_polls,us-house-polls-2026,
+MD,06,MD-06,,,,,,,,,no_polls,us-house-polls-2026,
+MD,07,MD-07,,,,,,,,,no_polls,us-house-polls-2026,
+MD,08,MD-08,,,,,,,,,no_polls,us-house-polls-2026,
+ME,01,ME-01,Chellie Pingree,Ronald C. Russell,57.00,35.00,22.00,1,1,2026-09-21,available,us-house-polls-2026,dem_rep
+ME,02,ME-02,Matthew G. Dunlap,Paul R. LePage,50.01,46.70,3.31,8,5,2026-10-14,available,us-house-polls-2026,dem_rep
+MI,01,MI-01,,,,,,,,,no_polls,us-house-polls-2026,
+MI,02,MI-02,,,,,,,,,no_polls,us-house-polls-2026,
+MI,03,MI-03,,,,,,,,,no_polls,us-house-polls-2026,
+MI,04,MI-04,Sean McCann,Bill Huizenga,47.01,45.98,1.04,4,3,2026-09-16,available,us-house-polls-2026,dem_rep
+MI,05,MI-05,,,,,,,,,no_polls,us-house-polls-2026,
+MI,06,MI-06,,,,,,,,,no_polls,us-house-polls-2026,
+MI,07,MI-07,William Lawrence,Tom Barrett,52.57,45.18,7.39,3,3,2026-10-14,available,us-house-polls-2026,dem_rep
+MI,08,MI-08,,,,,,,,,no_polls,us-house-polls-2026,
+MI,09,MI-09,,,,,,,,,no_polls,us-house-polls-2026,
+MI,10,MI-10,Christina Bertrand Hines,Michael Bouchard,45.00,45.00,0.00,2,2,2026-08-13,available,us-house-polls-2026,dem_rep
+MI,11,MI-11,,,,,,,,,no_polls,us-house-polls-2026,
+MI,12,MI-12,,,,,,,,,no_polls,us-house-polls-2026,
+MI,13,MI-13,Donavan McKinney,T.P. Nykoriak,69.00,19.00,50.00,1,1,2026-10-30,available,us-house-polls-2026,dem_rep
+MN,01,MN-01,Jake Johnson,Brad Finstad,45.42,44.05,1.37,5,4,2026-10-14,available,us-house-polls-2026,dem_rep
+MN,02,MN-02,Matt Little,Eric Pratt,51.62,40.00,11.62,2,2,2026-09-13,available,us-house-polls-2026,dem_rep
+MN,03,MN-03,,,,,,,,,no_polls,us-house-polls-2026,
+MN,04,MN-04,,,,,,,,,no_polls,us-house-polls-2026,
+MN,05,MN-05,,,,,,,,,no_polls,us-house-polls-2026,
+MN,06,MN-06,,,,,,,,,no_polls,us-house-polls-2026,
+MN,07,MN-07,,,,,,,,,no_polls,us-house-polls-2026,
+MN,08,MN-08,Trina Swanson,Pete Stauber,43.00,49.00,-6.00,1,1,2026-10-26,available,us-house-polls-2026,dem_rep
+MO,01,MO-01,,,,,,,,,no_polls,us-house-polls-2026,
+MO,02,MO-02,Fred Wellman,Ann Wagner,47.44,45.04,2.40,3,3,2026-10-20,available,us-house-polls-2026,dem_rep
+MO,03,MO-03,,,,,,,,,no_polls,us-house-polls-2026,
+MO,04,MO-04,,,,,,,,,no_polls,us-house-polls-2026,
+MO,05,MO-05,,,,,,,,,no_polls,us-house-polls-2026,
+MO,06,MO-06,,,,,,,,,no_polls,us-house-polls-2026,
+MO,07,MO-07,,,,,,,,,no_polls,us-house-polls-2026,
+MO,08,MO-08,,,,,,,,,no_polls,us-house-polls-2026,
+MS,01,MS-01,,,,,,,,,no_polls,us-house-polls-2026,
+MS,02,MS-02,,,,,,,,,no_polls,us-house-polls-2026,
+MS,03,MS-03,,,,,,,,,no_polls,us-house-polls-2026,
+MS,04,MS-04,,,,,,,,,no_polls,us-house-polls-2026,
+MT,01,MT-01,Sam Forstag,Aaron Flint,47.72,41.09,6.63,8,7,2026-10-21,available,us-house-polls-2026,dem_rep
+MT,02,MT-02,Brian J. Miller,Troy Downing,19.88,33.46,-13.58,2,2,2026-10-21,available,us-house-polls-2026,dem_rep
+NC,01,NC-01,Don Davis,Laurie Buckhout,47.96,41.44,6.52,7,4,2026-10-08,available,us-house-polls-2026,dem_rep
+NC,02,NC-02,,,,,,,,,no_polls,us-house-polls-2026,
+NC,03,NC-03,Raymond Smith,Greg Murphy,41.00,44.00,-3.00,1,1,2026-08-02,available,us-house-polls-2026,dem_rep
+NC,04,NC-04,,,,,,,,,no_polls,us-house-polls-2026,
+NC,05,NC-05,,,,,,,,,no_polls,us-house-polls-2026,
+NC,06,NC-06,,,,,,,,,no_polls,us-house-polls-2026,
+NC,07,NC-07,Kimberly Hardy,David Rouzer,39.00,45.00,-6.00,1,1,2026-08-20,available,us-house-polls-2026,dem_rep
+NC,08,NC-08,,,,,,,,,no_polls,us-house-polls-2026,
+NC,09,NC-09,Richard N. Ojeda II,Richard Hudson,42.00,46.00,-4.00,2,2,2026-10-20,available,us-house-polls-2026,dem_rep
+NC,10,NC-10,Ashley Bell,Pat Harrigan,37.00,52.00,-15.00,1,1,2026-03-12,available,us-house-polls-2026,dem_rep
+NC,11,NC-11,Jamie Ager,Jennifer Capps Balkcom,56.00,43.00,13.00,1,1,2026-10-14,available,us-house-polls-2026,dem_rep
+NC,12,NC-12,,,,,,,,,no_polls,us-house-polls-2026,
+NC,13,NC-13,,,,,,,,,no_polls,us-house-polls-2026,
+NC,14,NC-14,Lakesha Womack,Tim Moore,40.00,48.00,-8.00,1,1,2026-03-12,available,us-house-polls-2026,dem_rep
+ND,00,ND-AL,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+NE,01,NE-01,Chris Backemeyer,Mike Flood,45.67,45.82,-0.15,3,3,2026-10-20,available,us-house-polls-2026,dem_rep
+NE,02,NE-02,Denise Powell,Brinker Harding,48.39,39.61,8.78,2,2,2026-10-05,available,us-house-polls-2026,dem_rep
+NE,03,NE-03,,,,,,,,,no_polls,us-house-polls-2026,
+NH,01,NH-01,Stefany Shaheen,Anthony DiLorenzo,46.00,42.00,4.00,2,2,2026-10-20,available,us-house-polls-2026,dem_rep
+NH,02,NH-02,Maggie Goodlander,Lily Tang Williams,54.28,36.78,17.50,9,2,2026-10-20,available,us-house-polls-2026,dem_rep
+NJ,01,NJ-01,,,,,,,,,no_polls,us-house-polls-2026,
+NJ,02,NJ-02,Zack Mullock,Jeff Van Drew,40.00,50.00,-10.00,1,1,2026-10-10,available,us-house-polls-2026,dem_rep
+NJ,03,NJ-03,,,,,,,,,no_polls,us-house-polls-2026,
+NJ,04,NJ-04,,,,,,,,,no_polls,us-house-polls-2026,
+NJ,05,NJ-05,,,,,,,,,no_polls,us-house-polls-2026,
+NJ,06,NJ-06,,,,,,,,,no_polls,us-house-polls-2026,
+NJ,07,NJ-07,Rebecca Bennett,Thomas H. Kean Jr.,47.00,42.01,4.99,2,2,2026-09-12,available,us-house-polls-2026,dem_rep
+NJ,08,NJ-08,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+NJ,09,NJ-09,,,,,,,,,no_polls,us-house-polls-2026,
+NJ,10,NJ-10,,,,,,,,,no_polls,us-house-polls-2026,
+NJ,11,NJ-11,,,,,,,,,no_polls,us-house-polls-2026,
+NJ,12,NJ-12,,,,,,,,,no_polls,us-house-polls-2026,
+NM,01,NM-01,Melanie Ann Stansbury,Ndidiamaka Ekwua Charlene Okpareke,53.00,35.00,18.00,1,1,2026-10-09,available,us-house-polls-2026,dem_rep
+NM,02,NM-02,Gabriel Vasquez,Gregory G. Cunningham,47.47,43.73,3.73,3,3,2026-10-09,available,us-house-polls-2026,dem_rep
+NM,03,NM-03,Teresa Leger Fernandez,Martin Zamora,53.00,39.00,14.00,1,1,2026-10-09,available,us-house-polls-2026,dem_rep
+NV,01,NV-01,,,,,,,,,no_polls,us-house-polls-2026,
+NV,02,NV-02,Teresa F. Benitez-Thompson,David Flippo,42.73,44.33,-1.60,3,3,2026-10-13,available,us-house-polls-2026,dem_rep
+NV,03,NV-03,,,,,,,,,no_polls,us-house-polls-2026,
+NV,04,NV-04,,,,,,,,,no_polls,us-house-polls-2026,
+NY,01,NY-01,Christopher J. Gallant,Nicholas J. LaLota,38.00,41.00,-3.00,1,1,2025-12-11,available,us-house-polls-2026,dem_rep
+NY,02,NY-02,,,,,,,,,no_polls,us-house-polls-2026,
+NY,03,NY-03,,,,,,,,,no_polls,us-house-polls-2026,
+NY,04,NY-04,,,,,,,,,no_eligible_polls,us-house-polls-2026,
+NY,05,NY-05,,,,,,,,,no_polls,us-house-polls-2026,
+NY,06,NY-06,,,,,,,,,no_polls,us-house-polls-2026,
+NY,07,NY-07,,,,,,,,,no_polls,us-house-polls-2026,
+NY,08,NY-08,,,,,,,,,no_polls,us-house-polls-2026,
+NY,09,NY-09,,,,,,,,,no_polls,us-house-polls-2026,
+NY,10,NY-10,,,,,,,,,no_polls,us-house-polls-2026,
+NY,11,NY-11,,,,,,,,,no_polls,us-house-polls-2026,
+NY,12,NY-12,,,,,,,,,no_polls,us-house-polls-2026,
+NY,13,NY-13,,,,,,,,,no_polls,us-house-polls-2026,
+NY,14,NY-14,,,,,,,,,no_polls,us-house-polls-2026,
+NY,15,NY-15,,,,,,,,,no_polls,us-house-polls-2026,
+NY,16,NY-16,,,,,,,,,no_polls,us-house-polls-2026,
+NY,17,NY-17,Cait Conley,Mike Lawler,47.37,47.37,0.00,4,4,2026-09-30,available,us-house-polls-2026,dem_rep
+NY,18,NY-18,Pat Ryan,Jackie Mary Auringer,52.10,35.39,16.71,2,2,2026-09-30,available,us-house-polls-2026,dem_rep
+NY,19,NY-19,,,,,,,,,no_polls,us-house-polls-2026,
+NY,20,NY-20,,,,,,,,,no_polls,us-house-polls-2026,
+NY,21,NY-21,Blake Gendebien,Anthony Constantino,44.50,44.81,-0.32,8,5,2026-10-13,available,us-house-polls-2026,dem_rep
+NY,22,NY-22,,,,,,,,,no_polls,us-house-polls-2026,
+NY,23,NY-23,Aaron Gies,Nicholas A. Langworthy,35.00,52.00,-17.00,1,1,2026-09-23,available,us-house-polls-2026,dem_rep
+NY,24,NY-24,,,,,,,,,no_polls,us-house-polls-2026,
+NY,25,NY-25,,,,,,,,,no_polls,us-house-polls-2026,
+NY,26,NY-26,,,,,,,,,no_polls,us-house-polls-2026,
+OH,01,OH-01,Greg Landsman,Eric Conroy,47.24,44.03,3.20,3,2,2026-10-21,available,us-house-polls-2026,dem_rep
+OH,02,OH-02,,,,,,,,,no_polls,us-house-polls-2026,
+OH,03,OH-03,,,,,,,,,no_polls,us-house-polls-2026,
+OH,04,OH-04,,,,,,,,,no_polls,us-house-polls-2026,
+OH,05,OH-05,,,,,,,,,no_polls,us-house-polls-2026,
+OH,06,OH-06,,,,,,,,,no_polls,us-house-polls-2026,
+OH,07,OH-07,Brian Poindexter,Max Miller,49.07,41.57,7.50,3,3,2026-08-10,available,us-house-polls-2026,dem_rep
+OH,08,OH-08,,,,,,,,,no_polls,us-house-polls-2026,
+OH,09,OH-09,Marcy Kaptur,Derek Merrin,47.97,47.99,-0.02,2,2,2026-09-23,available,us-house-polls-2026,dem_rep
+OH,10,OH-10,Kristina Knickerbocker,Mike Turner,46.26,44.24,2.02,3,3,2026-10-13,available,us-house-polls-2026,dem_rep
+OH,11,OH-11,,,,,,,,,no_polls,us-house-polls-2026,
+OH,12,OH-12,,,,,,,,,no_polls,us-house-polls-2026,
+OH,13,OH-13,,,,,,,,,no_polls,us-house-polls-2026,
+OH,14,OH-14,,,,,,,,,no_polls,us-house-polls-2026,
+OH,15,OH-15,Don Leonard,Mike Carey,46.58,44.76,1.83,4,1,2026-10-12,available,us-house-polls-2026,dem_rep
+OK,01,OK-01,,,,,,,,,no_polls,us-house-polls-2026,
+OK,02,OK-02,,,,,,,,,no_polls,us-house-polls-2026,
+OK,03,OK-03,,,,,,,,,no_polls,us-house-polls-2026,
+OK,04,OK-04,,,,,,,,,no_polls,us-house-polls-2026,
+OK,05,OK-05,Jena Nelson,Stephanie Bice,43.00,48.00,-5.00,1,1,2026-09-20,available,us-house-polls-2026,dem_rep
+OR,01,OR-01,,,,,,,,,no_polls,us-house-polls-2026,
+OR,02,OR-02,,,,,,,,,no_polls,us-house-polls-2026,
+OR,03,OR-03,,,,,,,,,no_polls,us-house-polls-2026,
+OR,04,OR-04,,,,,,,,,no_polls,us-house-polls-2026,
+OR,05,OR-05,,,,,,,,,no_polls,us-house-polls-2026,
+OR,06,OR-06,,,,,,,,,no_polls,us-house-polls-2026,
+PA,01,PA-01,Bob Harvie,Brian Fitzpatrick,47.14,46.51,0.63,7,5,2026-10-22,available,us-house-polls-2026,dem_rep
+PA,02,PA-02,,,,,,,,,no_polls,us-house-polls-2026,
+PA,03,PA-03,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+PA,04,PA-04,,,,,,,,,no_polls,us-house-polls-2026,
+PA,05,PA-05,,,,,,,,,no_polls,us-house-polls-2026,
+PA,06,PA-06,,,,,,,,,no_polls,us-house-polls-2026,
+PA,07,PA-07,Bob Brooks,Ryan Mackenzie,48.52,43.08,5.44,4,4,2026-10-22,available,us-house-polls-2026,dem_rep
+PA,08,PA-08,Paige Cognetti,Rob Bresnahan Jr.,51.12,47.12,4.01,5,5,2026-10-22,available,us-house-polls-2026,dem_rep
+PA,09,PA-09,,,,,,,,,no_polls,us-house-polls-2026,
+PA,10,PA-10,Janelle Stelson,Scott Perry,47.96,46.70,1.26,6,5,2026-10-22,available,us-house-polls-2026,dem_rep
+PA,11,PA-11,,,,,,,,,no_polls,us-house-polls-2026,
+PA,12,PA-12,,,,,,,,,no_polls,us-house-polls-2026,
+PA,13,PA-13,,,,,,,,,no_polls,us-house-polls-2026,
+PA,14,PA-14,,,,,,,,,no_polls,us-house-polls-2026,
+PA,15,PA-15,,,,,,,,,no_polls,us-house-polls-2026,
+PA,16,PA-16,,,,,,,,,no_polls,us-house-polls-2026,
+PA,17,PA-17,,,,,,,,,no_polls,us-house-polls-2026,
+RI,01,RI-01,Gabe Amo,Kellie Keenan,52.91,29.63,23.28,2,2,2026-10-11,available,us-house-polls-2026,dem_rep
+RI,02,RI-02,Seth Magaziner,Vic Mellor,53.51,39.06,14.46,2,2,2026-10-11,available,us-house-polls-2026,dem_rep
+SC,01,SC-01,Nancy Lacore,Jenny Costa Honeycutt,42.57,45.19,-2.62,4,3,2026-10-22,available,us-house-polls-2026,dem_rep
+SC,02,SC-02,,,,,,,,,no_polls,us-house-polls-2026,
+SC,03,SC-03,,,,,,,,,no_polls,us-house-polls-2026,
+SC,04,SC-04,,,,,,,,,no_polls,us-house-polls-2026,
+SC,05,SC-05,,,,,,,,,no_polls,us-house-polls-2026,
+SC,06,SC-06,,,,,,,,,no_polls,us-house-polls-2026,
+SC,07,SC-07,John Gregory Vincent,Russell Fry,36.70,41.10,-4.40,1,1,2026-07-28,available,us-house-polls-2026,dem_rep
+SD,00,SD-AL,"Nicole ""Nikki"" Gronli",Marty Jackley,32.94,58.32,-25.38,2,2,2026-10-14,available,us-house-polls-2026,dem_rep
+TN,01,TN-01,,,,,,,,,no_polls,us-house-polls-2026,
+TN,02,TN-02,,,,,,,,,no_polls,us-house-polls-2026,
+TN,03,TN-03,,,,,,,,,no_polls,us-house-polls-2026,
+TN,04,TN-04,,,,,,,,,no_polls,us-house-polls-2026,
+TN,05,TN-05,Chaz Molder,Charlie Hatcher,40.79,46.43,-5.64,2,1,2026-10-01,available,us-house-polls-2026,dem_rep
+TN,06,TN-06,,,,,,,,,no_polls,us-house-polls-2026,
+TN,07,TN-07,,,,,,,,,no_polls,us-house-polls-2026,
+TN,08,TN-08,,,,,,,,,no_polls,us-house-polls-2026,
+TN,09,TN-09,Justin J. Pearson,Brent Taylor,44.00,48.00,-4.00,1,1,2026-09-03,available,us-house-polls-2026,dem_rep
+TX,01,TX-01,,,,,,,,,no_polls,us-house-polls-2026,
+TX,02,TX-02,Shaun Finnie,Steve Toth,37.00,46.00,-9.00,1,1,2026-10-04,available,us-house-polls-2026,dem_rep
+TX,03,TX-03,,,,,,,,,no_polls,us-house-polls-2026,
+TX,04,TX-04,,,,,,,,,no_polls,us-house-polls-2026,
+TX,05,TX-05,,,,,,,,,no_polls,us-house-polls-2026,
+TX,06,TX-06,,,,,,,,,no_polls,us-house-polls-2026,
+TX,07,TX-07,,,,,,,,,no_polls,us-house-polls-2026,
+TX,08,TX-08,,,,,,,,,no_polls,us-house-polls-2026,
+TX,09,TX-09,Leticia Gutierrez,Alex Mealer,43.40,47.61,-4.21,3,3,2026-10-22,available,us-house-polls-2026,dem_rep
+TX,10,TX-10,Caitlin Rourk,Chris Gober,41.00,48.00,-7.00,1,1,2026-09-22,available,us-house-polls-2026,dem_rep
+TX,11,TX-11,,,,,,,,,no_polls,us-house-polls-2026,
+TX,12,TX-12,,,,,,,,,no_polls,us-house-polls-2026,
+TX,13,TX-13,,,,,,,,,no_polls,us-house-polls-2026,
+TX,14,TX-14,,,,,,,,,no_polls,us-house-polls-2026,
+TX,15,TX-15,Bobby Pulido,Monica De La Cruz,51.33,43.69,7.65,6,4,2026-10-16,available,us-house-polls-2026,dem_rep
+TX,16,TX-16,,,,,,,,,no_polls,us-house-polls-2026,
+TX,17,TX-17,,,,,,,,,no_polls,us-house-polls-2026,
+TX,18,TX-18,,,,,,,,,no_polls,us-house-polls-2026,
+TX,19,TX-19,,,,,,,,,no_polls,us-house-polls-2026,
+TX,20,TX-20,,,,,,,,,no_polls,us-house-polls-2026,
+TX,21,TX-21,,,,,,,,,no_polls,us-house-polls-2026,
+TX,22,TX-22,,,,,,,,,no_polls,us-house-polls-2026,
+TX,23,TX-23,Katy Padilla Stout,Brandon Herrera,45.99,46.00,0.00,2,2,2026-10-07,available,us-house-polls-2026,dem_rep
+TX,24,TX-24,,,,,,,,,no_polls,us-house-polls-2026,
+TX,25,TX-25,,,,,,,,,no_polls,us-house-polls-2026,
+TX,26,TX-26,,,,,,,,,no_polls,us-house-polls-2026,
+TX,27,TX-27,,,,,,,,,no_polls,us-house-polls-2026,
+TX,28,TX-28,Henry Cuellar,Tano E. Tijerina,51.31,34.18,17.13,3,3,2026-10-13,available,us-house-polls-2026,dem_rep
+TX,29,TX-29,,,,,,,,,no_polls,us-house-polls-2026,
+TX,30,TX-30,,,,,,,,,no_polls,us-house-polls-2026,
+TX,31,TX-31,,,,,,,,,no_polls,us-house-polls-2026,
+TX,32,TX-32,,,,,,,,,no_polls,us-house-polls-2026,
+TX,33,TX-33,,,,,,,,,no_polls,us-house-polls-2026,
+TX,34,TX-34,Vicente Gonzalez,Eric Flores,49.26,42.87,6.40,4,4,2026-10-19,available,us-house-polls-2026,dem_rep
+TX,35,TX-35,Johnny C. Garcia,Carlos De La Cruz,48.26,47.81,0.45,4,3,2026-10-19,available,us-house-polls-2026,dem_rep
+TX,36,TX-36,,,,,,,,,no_polls,us-house-polls-2026,
+TX,37,TX-37,,,,,,,,,no_polls,us-house-polls-2026,
+TX,38,TX-38,,,,,,,,,no_polls,us-house-polls-2026,
+UT,01,UT-01,Ben McAdams,Riley Owen,62.70,21.20,41.50,1,1,2026-09-10,available,us-house-polls-2026,dem_rep
+UT,02,UT-02,Peter Crosby,Blake D. Moore,34.00,39.00,-5.00,1,1,2026-09-24,available,us-house-polls-2026,dem_rep
+UT,03,UT-03,Kent S. Udell,Celeste Maloy,26.40,44.50,-18.10,1,1,2026-09-15,available,us-house-polls-2026,dem_rep
+UT,04,UT-04,Jonny Larsen,Mike Kennedy,32.90,41.70,-8.80,1,1,2026-09-17,available,us-house-polls-2026,dem_rep
+VA,01,VA-01,Shannon L. Taylor,"Robert J. ""Rob"" Wittman",48.29,46.36,1.93,6,4,2026-10-25,available,us-house-polls-2026,dem_rep
+VA,02,VA-02,Elaine G. Luria,Jen A. Kiggans,46.03,43.10,2.92,2,2,2026-10-10,available,us-house-polls-2026,dem_rep
+VA,03,VA-03,,,,,,,,,no_polls,us-house-polls-2026,
+VA,04,VA-04,,,,,,,,,no_polls,us-house-polls-2026,
+VA,05,VA-05,Tom S. P. Perriello,John J. McGuire III,44.96,49.87,-4.91,3,2,2026-09-28,available,us-house-polls-2026,dem_rep
+VA,06,VA-06,Beth A. Macy,Ben L. Cline,29.00,59.00,-30.00,1,1,2026-09-30,available,us-house-polls-2026,dem_rep
+VA,07,VA-07,,,,,,,,,no_polls,us-house-polls-2026,
+VA,08,VA-08,,,,,,,,,no_polls,us-house-polls-2026,
+VA,09,VA-09,,,,,,,,,no_polls,us-house-polls-2026,
+VA,10,VA-10,,,,,,,,,no_polls,us-house-polls-2026,
+VA,11,VA-11,,,,,,,,,no_polls,us-house-polls-2026,
+VT,00,VT-AL,Becca Balint,Gerald Malloy,54.66,29.83,24.82,4,2,2026-09-21,available,us-house-polls-2026,dem_rep
+WA,01,WA-01,,,,,,,,,no_polls,us-house-polls-2026,
+WA,02,WA-02,,,,,,,,,no_polls,us-house-polls-2026,
+WA,03,WA-03,Marie Gluesenkamp Perez,John Braun,45.86,45.84,0.02,4,4,2026-10-21,available,us-house-polls-2026,dem_rep
+WA,04,WA-04,,,,,,,,,no_polls,us-house-polls-2026,
+WA,05,WA-05,Carmela Conroy,Michael Baumgartner,47.00,53.00,-6.00,1,1,2026-05-25,available,us-house-polls-2026,dem_rep
+WA,06,WA-06,,,,,,,,,no_polls,us-house-polls-2026,
+WA,07,WA-07,,,,,,,,,no_polls,us-house-polls-2026,
+WA,08,WA-08,,,,,,,,,no_polls,us-house-polls-2026,
+WA,09,WA-09,,,,,,,,,no_polls,us-house-polls-2026,
+WA,10,WA-10,,,,,,,,,no_polls,us-house-polls-2026,
+WI,01,WI-01,Mitchell Berman,Bryan Steil,47.99,47.62,0.37,4,3,2026-10-01,available,us-house-polls-2026,dem_rep
+WI,02,WI-02,,,,,,,,,no_dem_rep_field,us-house-polls-2026,
+WI,03,WI-03,Rebecca Cooke,Derrick Van Orden,49.99,46.01,3.98,5,3,2026-06-25,available,us-house-polls-2026,dem_rep
+WI,04,WI-04,,,,,,,,,no_polls,us-house-polls-2026,
+WI,05,WI-05,,,,,,,,,no_polls,us-house-polls-2026,
+WI,06,WI-06,Brad Smith,Glenn Grothman,39.00,61.00,-22.00,1,1,2026-05-28,available,us-house-polls-2026,dem_rep
+WI,07,WI-07,,,,,,,,,no_polls,us-house-polls-2026,
+WI,08,WI-08,,,,,,,,,no_polls,us-house-polls-2026,
+WV,01,WV-01,,,,,,,,,no_polls,us-house-polls-2026,
+WV,02,WV-02,,,,,,,,,no_polls,us-house-polls-2026,
+WY,00,WY-AL,,,,,,,,,no_polls,us-house-polls-2026,

@@ -50,5 +50,38 @@
       "notes": "Cook's latest published state PVI. The 2026 Cook PVI update re-scored only House districts in the ten states that redrew, and published no state list; state scores use the same 2020 and 2024 presidential elections and do not change with redistricting. Secondary transcription: verify against Cook if a subscriber copy becomes available. Includes Washington, D.C.",
       "sha256": "2791760661eb038dd66e2adf9421cf4571a40506ba813548000c5ae837d731bb"
     }
+  },
+  "reviewed_inputs": {
+    "boundary_vintage": {
+      "path": "2026/results/boundary-vintage.json",
+      "notes": "Reviewed registry of states voting on different congressional lines in 2026 than the presidential source. Maintained by review, not downloaded; districts in listed states get presidential status prior_boundaries."
+    },
+    "incumbent_roster": {
+      "path": "2026/roster/incumbent-roster.json",
+      "notes": "Reviewed roster of the incumbent for every 2026 House, Senate, and governor race. Seeded by scripts/build_incumbent_roster.py from the sources below and Cook's 2026 table, then reviewed; maintained by review, not regenerated."
+    }
+  },
+  "roster_sources": {
+    "senators": {
+      "path": "2026/roster/sources/senators.xml",
+      "source_url": "https://www.senate.gov/general/contact_information/senators_cfm.xml",
+      "retrieved_at": "2026-11-02",
+      "sha256": "01459d6977e9b5590e7d27cb333ff062cf9cf0783c934373393512fe2542b5e2",
+      "notes": "U.S. Senate member list with party and class; seeds Senate incumbents."
+    },
+    "nga_governors": {
+      "path": "2026/roster/sources/nga-governors.html",
+      "source_url": "https://www.nga.org/governors/",
+      "retrieved_at": "2026-11-02",
+      "sha256": "c43b83e6a3b0b10cae03c3ee3b3c5d70b26d4a6db66f28907def3d285d9aa319",
+      "notes": "National Governors Association current-governors page; seeds governor names (no party)."
+    },
+    "wikipedia_governors": {
+      "path": "2026/roster/sources/wikipedia-current-governors.wikitext",
+      "source_url": "https://en.wikipedia.org/w/index.php?title=List_of_current_United_States_governors&action=raw",
+      "retrieved_at": "2026-11-02",
+      "sha256": "3dfab0604868878e259406231a7f0af2388ebbe619f9e599ddfdd15ba678cc12",
+      "notes": "Raw wikitext of Wikipedia's current-governors list; supplies governor party and cross-checks NGA names."
+    }
   }
 }

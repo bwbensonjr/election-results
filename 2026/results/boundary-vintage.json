@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "description": "States whose 2026 congressional lines differ from the lines described by the presidential results source (the 2024 map). Districts in listed states get presidential boundary status prior_boundaries.",
+  "states": [
+    {
+      "state": "AL",
+      "plan_2026": "2023 legislative map, restored by the U.S. Supreme Court's June 2, 2026 order lifting the Milligan injunction",
+      "enacted_at": "2026-06-02",
+      "evidence": [
+        "https://www.policymap.com/blog/redistricting-tracker",
+        "https://en.wikipedia.org/wiki/2025%E2%80%932026_United_States_redistricting",
+        "2026/results/boundary-review.csv check: 2026 Cook PVI disagrees with the presidential source's margins in this state"
+      ],
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "state": "CA",
+      "plan_2026": "Proposition 50 map, approved by voters November 4, 2025",
+      "enacted_at": "2025-11-04",
+      "evidence": [
+        "https://www.policymap.com/blog/redistricting-tracker",
+        "https://en.wikipedia.org/wiki/2025%E2%80%932026_United_States_redistricting",
+        "2026/results/boundary-review.csv check: 2026 Cook PVI disagrees with the presidential source's margins in this state"
+      ],
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "state": "FL",
+      "plan_2026": "Legislative map enacted in special session, signed May 4, 2026",
+      "enacted_at": "2026-05-04",
+      "evidence": [
+        "https://www.policymap.com/blog/redistricting-tracker",
+        "https://en.wikipedia.org/wiki/2025%E2%80%932026_United_States_redistricting",
+        "2026/results/boundary-review.csv check: 2026 Cook PVI disagrees with the presidential source's margins in this state"
+      ],
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "state": "LA",
+      "plan_2026": "Legislative map passed May 29, 2026 after Louisiana v. Callais",
+      "enacted_at": "2026-05-29",
+      "evidence": [
+        "https://www.policymap.com/blog/redistricting-tracker",
+        "https://en.wikipedia.org/wiki/2025%E2%80%932026_United_States_redistricting",
+        "2026/results/boundary-review.csv check: 2026 Cook PVI disagrees with the presidential source's margins in this state"
+      ],
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "state": "NC",
+      "plan_2026": "Legislative map enacted October 22, 2025",
+      "enacted_at": "2025-10-22",
+      "evidence": [
+        "https://www.policymap.com/blog/redistricting-tracker",
+        "https://en.wikipedia.org/wiki/2025%E2%80%932026_United_States_redistricting",
+        "2026/results/boundary-review.csv check: 2026 Cook PVI disagrees with the presidential source's margins in this state"
+      ],
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "state": "OH",
+      "plan_2026": "Ohio Redistricting Commission map approved October 31, 2025",
+      "enacted_at": "2025-10-31",
+      "evidence": [
+        "https://www.policymap.com/blog/redistricting-tracker",
+        "https://en.wikipedia.org/wiki/2025%E2%80%932026_United_States_redistricting",
+        "2026/results/boundary-review.csv check: 2026 Cook PVI disagrees with the presidential source's margins in this state"
+      ],
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "state": "TN",
+      "plan_2026": "Legislative map enacted in special session, signed May 7, 2026",
+      "enacted_at": "2026-05-07",
+      "evidence": [
+        "https://www.policymap.com/blog/redistricting-tracker",
+        "https://en.wikipedia.org/wiki/2025%E2%80%932026_United_States_redistricting",
+        "2026/results/boundary-review.csv check: 2026 Cook PVI disagrees with the presidential source's margins in this state"
+      ],
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "state": "TX",
+      "plan_2026": "Legislative map enacted in special session, signed August 29, 2025",
+      "enacted_at": "2025-08-29",
+      "evidence": [
+        "https://www.policymap.com/blog/redistricting-tracker",
+        "https://en.wikipedia.org/wiki/2025%E2%80%932026_United_States_redistricting",
+        "2026/results/boundary-review.csv check: 2026 Cook PVI disagrees with the presidential source's margins in this state"
+      ],
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    },
+    {
+      "state": "UT",
+      "plan_2026": "Court-ordered map (plaintiffs' Map 1) adopted November 10, 2025",
+      "enacted_at": "2025-11-10",
+      "evidence": [
+        "https://www.policymap.com/blog/redistricting-tracker",
+        "https://en.wikipedia.org/wiki/2025%E2%80%932026_United_States_redistricting",
+        "2026/results/boundary-review.csv check: 2026 Cook PVI disagrees with the presidential source's margins in this state"
+      ],
+      "reviewed_by": "Claude Code (automated source review)",
+      "reviewed_at": "2026-11-02"
+    }
+  ],
+  "not_listed": [
+    {
+      "state": "MO",
+      "reason": "The 2025 map is blocked for 2026: the U.S. Supreme Court's September 25, 2026 stay leaves the 2022 map in place for November while Proposition A decides the 2025 map's future.",
+      "evidence": [
+        "https://www.policymap.com/blog/redistricting-tracker",
+        "https://en.wikipedia.org/wiki/2025%E2%80%932026_United_States_redistricting"
+      ]
+    },
+    {
+      "state": "VA",
+      "reason": "The 2026 map depended on a constitutional amendment the Virginia Supreme Court struck down on May 8, 2026; the court-drawn 2021 map remains in use.",
+      "evidence": [
+        "https://www.policymap.com/blog/redistricting-tracker",
+        "https://en.wikipedia.org/wiki/2025%E2%80%932026_United_States_redistricting"
+      ]
+    }
+  ]
+}

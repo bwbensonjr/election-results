@@ -2,7 +2,7 @@
 
 Use pre-election data to prepare for watching election results.
 
-The 2026 House candidate pipeline combines a ballot-source candidate list, FEC candidacy and financial records, and candidate appearances in general-election polls. Its primary output is [`house-general-field.csv`](2026/candidates/house-general-field.csv). The November 2, 2026 snapshot contains 1,159 candidate rows across 435 districts; unresolved identities are explicitly marked and their FEC-derived fields are blank.
+The 2026 House candidate pipeline combines a ballot-source candidate list, FEC candidacy and financial records, and candidate appearances in general-election polls. Its primary output is [`house-general-field.csv`](2026/candidates/house-general-field.csv). The November 2, 2026 snapshot contains 1,160 candidate rows across 435 districts; unresolved identities are explicitly marked and their FEC-derived fields are blank.
 
 Implemented:
 
@@ -18,7 +18,9 @@ The [district context dataset](2026/districts/house-district-context.csv) joins 
 
 The same context is built for the 71 Senate and governor races on the November 3 ballot (35 Senate, including the Ohio and Florida specials, and 36 governor). The [statewide candidate field](2026/candidates/statewide-general-field.csv) has 260 candidates, with FEC identities for Senate candidates and an explicit `not_federal` status for governors. The [race context](2026/statewide/statewide-race-context.csv) and [candidate context](2026/statewide/statewide-candidate-context.csv) exports join state 2020 and 2024 presidential margins (summed from the district vote counts), Cook's latest (2025) state PVI, a weighted polling average of each race's principal matchup, and the guide's Senate and governor rows. In the current snapshot, 60 races have a polling average. See the [statewide reference](docs/statewide-data.md).
 
-Planned: a separate district incumbent roster and an election-night briefing or watchlist.
+A reviewed [incumbent roster](docs/district-data.md#incumbent-roster) names the incumbent for every House, Senate, and governor race on the 2026 ballot and whether each seat is open. Districts in the nine states that redrew for 2026 keep their old-line presidential margins with status `prior_boundaries` (see [redrawn states](docs/district-data.md#redrawn-states)).
+
+Planned: an election-night briefing or watchlist.
 
 ## Rebuild from committed inputs
 
@@ -69,9 +71,15 @@ uv run scripts/build_statewide_poll_averages.py
 uv run scripts/build_statewide_race_context.py --require-complete
 ```
 
+Finally, publish the election-night baseline of all 506 races, keyed for an AP results feed (see the [baseline reference](docs/election-baseline.md)):
+
+```sh
+uv run scripts/build_election_baseline.py
+```
+
 `normalize_district_history.py` also writes the state presidential and Cook state PVI files the statewide context needs. These commands read saved source snapshots and need no API key or live Cook access. District IDs normalize at-large seats to `STATE-AL` and district code `00`. Margins are Democratic minus Republican in percentage points. Cook PVI retains its published 2026 label and a numeric lean, positive for D and negative for R.
 
-The join uses normalized district IDs without boundary approval checks. The supplied historical results' map vintage is undocumented; they are used as supplied, and the [source notes](docs/district-data.md) explain limits on historical comparisons. Missing metrics are reported rather than assigned zero or EVEN. The current strict build has all three metrics for every district. Polling averages are optional: strict mode does not require them, and unpolled districts keep blank polling columns rather than zeroes. See the [polling-average method](docs/district-data.md#house-polling-averages) for eligibility, weights, and limitations. The context build also validates the guide CSV against the guide markdown; after editing the guide, update the affected rows and run `uv run scripts/election_guide.py` (see the [guide conventions](docs/district-data.md#election-night-guide)).
+The join uses normalized district IDs. The supplied presidential results describe the 2024 map; in the nine states listed in the reviewed [boundary registry](docs/district-data.md#redrawn-states) their margins get status `prior_boundaries`, and Cook PVI is the measure on current lines. Missing metrics are reported rather than assigned zero or EVEN. The current strict build has all three metrics for every district. Polling averages are optional: strict mode does not require them, and unpolled districts keep blank polling columns rather than zeroes. See the [polling-average method](docs/district-data.md#house-polling-averages) for eligibility, weights, and limitations. The context build also validates the guide CSV against the guide markdown; after editing the guide, update the affected rows and run `uv run scripts/election_guide.py` (see the [guide conventions](docs/district-data.md#election-night-guide)).
 
 ## Tests
 

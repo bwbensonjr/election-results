@@ -50,6 +50,12 @@ STATE_PRESIDENTIAL_COLUMNS = [
     "source_id", "source_record",
 ]
 STATE_PVI_COLUMNS = ["state", "cook_pvi_label", "cook_pvi_dem_lean_pp", "source_id", "source_record", "pvi_edition"]
+# A district is flagged when its 2026 PVI and the PVI-like lean implied by its presidential
+# margins differ by more than this many points; see docs/district-data.md.
+BOUNDARY_REVIEW_THRESHOLD = Decimal("4")
+BOUNDARY_REVIEW_COLUMNS = [
+    "state", "district", "district_id", "cook_pvi_dem_lean_pp", "implied_dem_lean_pp", "difference_pp",
+]
 
 
 def district_key(label):
@@ -144,6 +150,78 @@ def load_sources(manifest_path=DEFAULT_MANIFEST, project_root=ROOT):
             raise ValueError(f"manifest {kind}: stale SHA-256 for {entry['path']}; update snapshot metadata")
         result[kind] = dict(entry, resolved_path=path)
     return result
+
+
+def load_boundary_vintage(manifest_path=DEFAULT_MANIFEST, project_root=ROOT):
+    """Return {state: entry} for states voting on different lines than the presidential source.
+
+    The registry path comes from the manifest's `reviewed_inputs`; a manifest without one has no
+    redrawn states.
+    """
+    data = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
+    entry = (data.get("reviewed_inputs") or {}).get("boundary_vintage")
+    if entry is None:
+        return {}
+    relative = Path(entry.get("path", ""))
+    path = (Path(project_root) / relative).resolve()
+    if not entry.get("path") or relative.is_absolute() or not path.is_relative_to(Path(project_root).resolve()):
+        raise ValueError("manifest boundary_vintage: path must remain inside project root")
+    registry = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(registry, dict) or registry.get("schema_version") != 1 or not isinstance(registry.get("states"), list):
+        raise ValueError(f"{relative}: expected schema_version 1 and a states list")
+    states = {}
+    for index, item in enumerate(registry["states"], 1):
+        label = f"{relative} state {index}"
+        try:
+            if not isinstance(item, dict):
+                raise ValueError("must be an object")
+            state = item.get("state")
+            label += f" ({state})"
+            if state not in STATES:
+                raise ValueError("unknown state code")
+            if state in states:
+                raise ValueError("duplicate state")
+            for field in ["plan_2026", "reviewed_by", "reviewed_at"]:
+                if not isinstance(item.get(field), str) or not item[field].strip():
+                    raise ValueError(f"missing or invalid {field}")
+            date.fromisoformat(item["reviewed_at"])
+            evidence = item.get("evidence")
+            if not isinstance(evidence, list) or not evidence or not all(isinstance(e, str) and e for e in evidence):
+                raise ValueError("missing evidence references")
+        except (ValueError, TypeError) as exc:
+            raise ValueError(f"{label}: {exc}") from exc
+        states[state] = item
+    return states
+
+
+def boundary_review(history, pvi, registry):
+    """Return districts outside the registry whose PVI and presidential margins disagree.
+
+    Each margin is compared with the national margin summed from the same source, and the two
+    differences are averaged and halved to put them on Cook's lean scale.
+    """
+    by_year = defaultdict(dict)
+    totals = defaultdict(lambda: [Decimal(0), Decimal(0), Decimal(0)])
+    for row in history:
+        by_year[row["election_year"]][(row["state"], row["district"])] = row
+        if "" not in (row["dem_votes"], row["rep_votes"], row["total_votes"]):
+            for i, column in enumerate(["dem_votes", "rep_votes", "total_votes"]):
+                totals[row["election_year"]][i] += Decimal(row[column])
+    national = {year: 100 * (dem - rep) / total for year, (dem, rep, total) in totals.items() if total}
+    rows = []
+    for record in pvi:
+        key = (record["state"], record["district"])
+        margins = [by_year[year].get(key, {}).get("dem_margin_pp", "") for year in ["2020", "2024"]]
+        if record["state"] in registry or record["cook_pvi_dem_lean_pp"] == "" or "" in margins:
+            continue
+        implied = sum(Decimal(m) - national[y] for m, y in zip(margins, ["2020", "2024"])) / 4
+        difference = abs(implied - Decimal(record["cook_pvi_dem_lean_pp"]))
+        if difference > BOUNDARY_REVIEW_THRESHOLD:
+            rows.append(dict(zip(BOUNDARY_REVIEW_COLUMNS, [
+                record["state"], record["district"], record["district_id"], record["cook_pvi_dem_lean_pp"],
+                format(implied.quantize(Decimal("0.1"), rounding=ROUND_HALF_UP), "f"),
+                format(difference.quantize(Decimal("0.1"), rounding=ROUND_HALF_UP), "f")])))
+    return sorted(rows, key=lambda r: (r["state"], r["district"]))
 
 
 def numeric(value, kind, location):
@@ -338,9 +416,11 @@ def normalize(manifest_path=DEFAULT_MANIFEST, output_dir=RESULTS_DIR, project_ro
     snapshot also leaves the district outputs untouched.
     """
     sources, history, pvi = normalized_sources(manifest_path, project_root)
+    review = boundary_review(history, pvi, load_boundary_vintage(manifest_path, project_root))
     outputs = [
         ("presidential-results-normalized.csv", PRESIDENTIAL_COLUMNS, history),
         ("cook-pvi-normalized.csv", PVI_COLUMNS, pvi),
+        ("boundary-review.csv", BOUNDARY_REVIEW_COLUMNS, review),
     ]
     if candidate_path is not None:
         _, states, state_pvi = normalized_state_sources(manifest_path, project_root, candidate_path)
