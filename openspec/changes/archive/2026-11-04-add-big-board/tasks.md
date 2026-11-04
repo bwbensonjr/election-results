@@ -59,8 +59,8 @@
 
 ## 9. Live cutover (before 6pm ET)
 
-- [ ] 9.1 Stop the mock, run the ingestor with `--source live --every 120`, write the records once, republish the fallback file, and start the database loop; verify the test banner is gone and races show `Awaiting Poll Close`
-- [ ] 9.2 After the first calls in Kentucky and Indiana, compare the parsed winners with the raw snapshots and fix call parsing if needed; verify by replaying the saved snapshots through the ingestor
+- [x] 9.1 Stop the mock, run the ingestor with `--source live --every 120`, write the records once, republish the fallback file, and start the database loop; verify the test banner is gone and races show `Awaiting Poll Close`
+- [x] 9.2 After the first calls in Kentucky and Indiana, compare the parsed winners with the raw snapshots and fix call parsing if needed; verify by replaying the saved snapshots through the ingestor
 
 ## Workflow follow-up
 
