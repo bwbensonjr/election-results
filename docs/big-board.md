@@ -48,7 +48,7 @@ The board has four parts, each a script run from the repository root with `uv ru
 | Mock election night | `scripts/mock_election_feed.py` | numbered responses in the AP feed's shape |
 | Board page data | `scripts/build_bigboard_data.py` | the embedded data block in `bigboard/index.html` |
 
-The board uses flat JSON files, not SQLite. The page embeds its static data (district shapes and a slim baseline) and gets live results as five records in the artifact's database, which a Claude session writes when they change; `data/results.json` is published beside the page as a fallback. Everything under `2026/live/` is ignored by git.
+The board uses flat JSON files, not SQLite. The page embeds its static data (district shapes and a slim baseline) and gets live results as five records in the artifact's database, which a Claude session writes when they change; `data/results.json` is published beside the page as a fallback. Everything under `2026/live/` is ignored by git; a [checked-in snapshot](#checked-in-snapshot) of the results is kept in `2026/results/`.
 
 ## Results ingestion
 
@@ -84,6 +84,16 @@ Each race entry carries `ap_race_id`, `race_type` (`General`, `Special General`,
 `db/` holds the same results as five database records for the board: `meta.json` (every field above except `races`, plus the list of race records), `statewide.json` (Senate and governor races), and `house-1.json` to `house-3.json` (House races grouped by state alphabetically). Race records carry `content_hash` and `races`. They are rewritten when results change; `meta.json` is rewritten on every run so its `fetched_at` stays current. A record of 240 KiB or more fails the run (the database limit is 256 KiB; a fully counted mock night peaks near 150 KB).
 
 `status.json` summarizes the last successful run for the publishing step: `changed` (whether `content_hash` differs from the previous file), times, the test flag, and counts. `runs.jsonl` logs every run, including failures.
+
+### Checked-in snapshot
+
+[`2026/results/ap-results.json`](../2026/results/ap-results.json) is a committed copy of `results.json`, indented so each update diffs race by race. It is updated by hand after a live run whose results are worth keeping, never from mock data (check that `test` is `false`):
+
+```sh
+uv run python -m json.tool --indent 1 --no-ensure-ascii 2026/live/results.json 2026/results/ap-results.json
+```
+
+Its `fetched_at` and `ap_last_updated` say how current it is; counting continues for days after the election, so it is not final until states certify their results.
 
 Tests: `uv run python -m unittest tests.test_ingest_results`.
 
