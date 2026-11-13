@@ -12,7 +12,7 @@ import build_house_field as candidates
 import build_house_poll_averages as polls
 import election_guide as guide
 import district_history as history
-from test_district_history import HistoryFixture, ROOT, write_csv
+from test_district_history import HistoryFixture, ROOT, county_results, crosswalk_row, write_csv
 
 
 class ContextTests(HistoryFixture):
@@ -77,7 +77,8 @@ class ContextTests(HistoryFixture):
                              self.normalized / "presidential-results-normalized.csv",
                              self.normalized / "cook-pvi-normalized.csv", self.output, strict, self.root,
                              self.polls_path, self.poll_output / "house-poll-averages.csv",
-                             self.guide_path, self.guide_markdown, self.root / "matchups.json", self.roster)
+                             self.guide_path, self.guide_markdown, self.root / "matchups.json", self.roster,
+                             self.normalized / "presidential-results-interpolated.csv")
 
     def output_bytes(self):
         return {p.name: p.read_bytes() for p in self.output.glob("*.csv")}
@@ -113,6 +114,32 @@ class ContextTests(HistoryFixture):
         self.assertEqual((al["pres_2020_status"], al["pres_2024_status"]), ("available", "available"))
         self.assertEqual(issues, [])
         self.assertTrue(all(r["pres_2024_status"] == "prior_boundaries" for r in enriched if r["state"] == "AK"))
+
+    def test_crosswalk_state_gets_interpolated_margins(self):
+        self.save_boundary(self.boundary_entry("AK"), self.boundary_entry("AL"))
+        self.save_crosswalk([crosswalk_row("AL-01", "01097", "AL-01", 10, 10, "1.00000000")],
+                            county_results(("01097", 5, 5, 10, 10)))
+        self.normalize()
+        districts, enriched, issues = self.build(strict=True)
+        ak, al = districts
+        self.assertEqual((ak["pres_2020_status"], ak["pres_2024_status"]), ("prior_boundaries", "prior_boundaries"))
+        self.assertEqual(ak["pres_2024_source_id"], "test-pres")
+        self.assertEqual((al["pres_2020_status"], al["pres_2024_status"], al["cook_pvi_status"]),
+                         ("interpolated", "interpolated", "available"))
+        self.assertEqual((al["pres_2020_dem_margin_pp"], al["pres_2024_dem_margin_pp"]), ("20.00", "0.00"))
+        self.assertEqual(al["pres_2024_source_id"], history.INTERPOLATED_SOURCE_ID)
+        self.assertEqual(issues, [])
+        self.assertTrue(all(r["pres_2024_status"] == "interpolated" for r in enriched if r["state"] == "AL"))
+
+    def test_stale_interpolation_fails(self):
+        self.save_boundary(self.boundary_entry("AL"))
+        self.save_crosswalk([crosswalk_row("AL-01", "01097", "AL-01", 10, 10, "1.00000000")],
+                            county_results(("01097", 5, 5, 10, 10)))
+        self.normalize()
+        path = self.normalized / "presidential-results-interpolated.csv"
+        path.write_text(path.read_text().replace(",20.00,", ",21.00,"))
+        with self.assertRaisesRegex(ValueError, "stale or inconsistent normalization"):
+            self.build()
 
     def test_invalid_boundary_registry_preserves_exports(self):
         self.build()
@@ -317,10 +344,13 @@ class ContextTests(HistoryFixture):
                          collections.Counter(tuple(r[c] for c in columns) for r in enriched))
         ca13 = next(r for r in districts if r["district_id"] == "CA-13")
         self.assertEqual(ca13["cook_pvi_label"], "D+2")
-        redrawn = {"AL", "CA", "FL", "LA", "NC", "OH", "TN", "TX", "UT"}
+        prior, interpolated = {"AL", "OH", "TN"}, {"CA", "FL", "LA", "NC", "TX", "UT"}
         self.assertTrue(all(r["cook_pvi_status"] == "available" for r in districts))
-        self.assertTrue(all(r["pres_2020_status"] == r["pres_2024_status"] ==
-                            ("prior_boundaries" if r["state"] in redrawn else "available") for r in districts))
+        self.assertTrue(all(r["pres_2020_status"] == r["pres_2024_status"] == (
+            "prior_boundaries" if r["state"] in prior else "interpolated" if r["state"] in interpolated else "available")
+            for r in districts))
+        self.assertEqual(collections.Counter(r["pres_2024_status"] for r in districts),
+                         {"available": 262, "interpolated": 142, "prior_boundaries": 31})
         statuses = collections.Counter(r["poll_avg_status"] for r in districts)
         self.assertEqual(statuses["available"], 111)
         me02 = next(r for r in districts if r["district_id"] == "ME-02")

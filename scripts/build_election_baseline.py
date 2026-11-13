@@ -72,7 +72,8 @@ def race_row(context, office):
     house = office == "House"
     key = context["district_id"] if house else context["race_id"]
     row = {column: context.get(column, "") for column in COPIED}
-    current = context["pres_2024_status"] == "available"
+    # Interpolated margins are estimates on the 2026 lines; prior-boundary margins describe old lines.
+    current = context["pres_2024_status"] in ("available", "interpolated")
     row.update(race_key=key, state_postal=context["state"], office=office,
                district=context["district"] if house else "", ap_office_id=AP_OFFICE[office],
                # AP numbers at-large seats 1; confirm against the AP feed before relying on it.

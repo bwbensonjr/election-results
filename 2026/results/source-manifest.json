@@ -59,6 +59,16 @@
     "incumbent_roster": {
       "path": "2026/roster/incumbent-roster.json",
       "notes": "Reviewed roster of the incumbent for every 2026 House, Senate, and governor race. Seeded by scripts/build_incumbent_roster.py from the sources below and Cook's 2026 table, then reviewed; maintained by review, not regenerated."
+    },
+    "presidential_crosswalk": {
+      "path": "2026/results/presidential-crosswalk.csv",
+      "sha256": "a011a416ab31e56ef189bc009bf43caa57c76a32cf5214663c6f18b3a844106d",
+      "notes": "Crosswalk from 119th Congress districts to enacted 2026 districts, keyed by old district, county, and new district with shared 2020 population; built by scripts/build_presidential_crosswalk.py from the sources in presidential-crosswalk-sources.json. Districts in its states get interpolated presidential margins with status interpolated."
+    },
+    "presidential_county_results": {
+      "path": "2026/results/presidential-county-results.csv",
+      "sha256": "a19b0ba14bf24ebf37ce380b9f179cfcdc1aa4e9bae395dc7810844e324466ed",
+      "notes": "2020 and 2024 county presidential votes and 2020 Census county population for the crosswalk states, written by scripts/build_presidential_crosswalk.py. Used only for relative vote rates within each old district."
     }
   },
   "roster_sources": {

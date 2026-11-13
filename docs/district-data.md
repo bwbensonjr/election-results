@@ -18,9 +18,32 @@ To refresh Cook data, use the integrated Browser on the linked page, open the ta
 
 Nine states vote in 2026 on different congressional lines than the 2024 map the presidential source describes: Alabama, California, Florida, Louisiana, North Carolina, Ohio, Tennessee, Texas, and Utah. [`boundary-vintage.json`](../2026/results/boundary-vintage.json) lists them, each with its 2026 plan, enactment date, evidence, `reviewed_by`, and `reviewed_at`. A `not_listed` array records states that redrew but still use 2024 lines in November: Missouri, whose 2025 map is stayed pending Proposition A, and Virginia, whose 2026 map never took effect. Cook's 2026 PVI is already scored on each state's current lines.
 
-Presidential margins for every district in a listed state keep their source values but get status `prior_boundaries` instead of `available` (173 of 435 districts). Treat them as describing the old district with the same number, not the current one; use Cook PVI instead. `--require-complete` treats them as present. An entry with an unknown or duplicate state, no evidence, or no review metadata fails normalization and the context build without replacing outputs.
+In the six listed states whose enacted 2026 plans are in the [district shape manifest](big-board.md#district-shapes) (California, Florida, Louisiana, North Carolina, Texas, and Utah; 142 districts), presidential margins are estimates on the 2026 lines with status `interpolated` and source ID `presidential-interpolated-cd119-to-2026`. See [Interpolated margins on 2026 lines](#interpolated-margins-on-2026-lines). In the other three (Alabama, Ohio, and Tennessee; 31 districts), margins keep their source values but get status `prior_boundaries` instead of `available`. Treat those as describing the old district with the same number, not the current one, and use Cook PVI instead. `--require-complete` treats both statuses as present. An entry with an unknown or duplicate state, no evidence, or no review metadata fails normalization and the context build without replacing outputs.
 
 Normalization also writes [`boundary-review.csv`](../2026/results/boundary-review.csv), a non-failing check for states the registry may be missing. For each district outside a listed state, it compares the published 2026 PVI lean with the lean implied by the presidential margins: each year's margin minus the national margin summed from the same source, averaged over 2020 and 2024 and halved to put it on Cook's scale. Districts where the two differ by more than four points are listed. With an empty registry, the check flags exactly the nine listed states; with the registry, the report is empty. A new row means a state may have redrawn: confirm with a source and add it, or explain it in `not_listed`.
+
+## Interpolated margins on 2026 lines
+
+The presidential source reports votes by 119th Congress district (the 2024 lines). For redrawn states with an enacted 2026 plan, `scripts/build_presidential_crosswalk.py` moves those votes onto the 2026 districts:
+
+1. **Old lines.** Each 2020 Census block's 119th Congress district comes from the Census Bureau's 119th Congress block equivalency file (`cd119.zip`, `NationalCD119.txt`; its per-state files for AL, GA, LA, NY, and NC match the national file).
+2. **New lines.** Each populated block (`POP20 > 0` in TIGER/Line 2020 `tabblock20`, read without geometry) goes to the 2026 district containing its internal point, using the same plan files the board draws. A block outside every district goes to the nearest one and is counted in the report. The build fails if such blocks hold more than 0.1 percent of a state's population. None do in the current build.
+3. **Crosswalk.** [`presidential-crosswalk.csv`](../2026/results/presidential-crosswalk.csv) has one row per old district, county, and new district, with their shared 2020 population and its share of the old district's population.
+4. **County rates.** [`presidential-county-results.csv`](../2026/results/presidential-county-results.csv) has each county's 2020 and 2024 Democratic, Republican, and total votes and its 2020 population. The votes come from the [tonmcg county results](https://github.com/tonmcg/US_County_Level_Election_Results_08-24), which are compiled from media tallies. For these six states, their state totals agree with the district source within about 0.2 percent.
+5. **Reallocation.** For each year, and for Democratic, Republican, and other votes (total minus both), a crosswalk row's weight is its shared population times its county's votes per resident. Each old district's source votes are split across its rows in proportion to those weights. A new district sums its rows, and its total is the sum of the three parts. Old district and state totals are kept exactly (checked within 1 vote), so the county file sets only relative rates. Votes are published to two decimals, and shares and margins use the source definitions.
+
+Weighting by county rates matters where an old district mixed a city with rural areas. With population weights alone, new UT-01 (mostly Salt Lake City) came out at Trump +22.6. With county rates it is Harris +7.5. Cook's 2026 PVI is D+12, because Salt Lake County itself is split between districts.
+
+`normalize_district_history.py` applies the committed crosswalk using only the standard library, with no network access. It writes [`presidential-results-interpolated.csv`](../2026/results/presidential-results-interpolated.csv), whose `source_record` lists each contributing old district and its population share, and [`presidential-interpolation-review.csv`](../2026/results/presidential-interpolation-review.csv). The review lists interpolated districts whose implied lean differs from Cook's 2026 PVI by more than four points. It weights the two elections the way Cook does: `(0.75 * (m2024 - n2024) + 0.25 * (m2020 - n2020)) / 2`, where `n` is the national margin summed from the source. That way a district that swung between 2020 and 2024 is not flagged for the swing alone. The [boundary review](#redrawn-states) keeps equal weights. The current review lists 13 of 142 districts. The largest gaps (FL-24, FL-25, LA-06, UT-01, TX-09) are in districts carved from one part of a large county, where county rates cannot see the difference. Treat interpolated margins as estimates and prefer Cook PVI where they disagree.
+
+The crosswalk, county table, and their sources are hashed. [`presidential-crosswalk-sources.json`](../2026/results/presidential-crosswalk-sources.json) records each download, and `source-manifest.json` (`reviewed_inputs.presidential_crosswalk` and `presidential_county_results`) records the committed files. The context build recomputes the interpolation and fails if the saved file is stale. To rebuild the crosswalk after a plan or source change (this needs network access and downloads about 2 GB of block files into `2026/geometry/cache/blocks/`), run:
+
+```sh
+uv run scripts/build_presidential_crosswalk.py
+uv run tests/test_build_presidential_crosswalk.py
+```
+
+Then update the two hashes in `source-manifest.json` and rerun normalization. [`presidential-crosswalk-report.csv`](../2026/results/presidential-crosswalk-report.csv) gives each state's block counts and unplaced population, and lists the registry states that were not interpolated.
 
 ## District identifiers
 
@@ -52,7 +75,7 @@ uv run scripts/build_house_district_context.py
 uv run scripts/build_house_district_context.py --require-complete
 ```
 
-The first command refreshes derived candidate data from its committed inputs; it does not download new FEC/ballot/poll data. The remaining commands run entirely on saved inputs without an API key. Rebuild the polling averages after any change to the candidate field or the poll snapshot. Joiner options are `--candidates`, `--manifest`, `--history`, `--pvi`, `--polls`, `--poll-averages`, `--matchups`, `--roster`, `--guide`, `--guide-markdown`, `--output-dir`, and `--require-complete`; paths can select alternate candidate, metadata, normalized, poll, guide, and output files. The joiner validates the guide CSV against its markdown and the candidate field before it replaces any export. Source paths inside the manifest remain relative to the repository root.
+The first command refreshes derived candidate data from its committed inputs; it does not download new FEC/ballot/poll data. The remaining commands run entirely on saved inputs without an API key. Rebuild the polling averages after any change to the candidate field or the poll snapshot. Joiner options are `--candidates`, `--manifest`, `--history`, `--pvi`, `--interpolated`, `--polls`, `--poll-averages`, `--matchups`, `--roster`, `--guide`, `--guide-markdown`, `--output-dir`, and `--require-complete`; paths can select alternate candidate, metadata, normalized, poll, guide, and output files. The joiner validates the guide CSV against its markdown and the candidate field before it replaces any export. Source paths inside the manifest remain relative to the repository root.
 
 ## Files and schemas
 
@@ -105,7 +128,7 @@ The district context columns are:
 | `unresolved_fec_candidate_count` | Rows with unmatched, ambiguous, or reviewed-unmatched FEC identity |
 | `pres_2020_dem_margin_pp`, `pres_2024_dem_margin_pp` | Source D-minus-R margins on all-vote denominator |
 | `cook_pvi_label`, `cook_pvi_dem_lean_pp` | Published Cook label and signed lean |
-| `pres_2020_status`, `pres_2024_status`, `cook_pvi_status` | `available` when the source value exists, otherwise `missing`; presidential statuses are `prior_boundaries` in [redrawn states](#redrawn-states) |
+| `pres_2020_status`, `pres_2024_status`, `cook_pvi_status` | `available` when the source value exists, otherwise `missing`; in [redrawn states](#redrawn-states), presidential statuses are `interpolated` (estimated on 2026 lines) or `prior_boundaries` |
 | `pres_2020_source_id`, `pres_2024_source_id`, `cook_pvi_source_id` | Source attribution; configured source ID is retained even when the metric is missing |
 | `poll_avg_dem_candidate` through `poll_avg_source_id` | The ten polling-average columns, copied from `house-poll-averages.csv` and described under [House polling averages](#house-polling-averages); blank unless `poll_avg_status` is `available` |
 | `guide_slot_et` through `guide_notes` | Seventeen columns copied unchanged from the House rows of the [election-night guide](#election-night-guide) races CSV, each prefixed with `guide_`; blank for districts the guide does not name |
@@ -125,7 +148,7 @@ All generated CSVs are sorted deterministically with UTF-8 encoding and LF line 
 
 ## Missing data and validation
 
-Normal mode keeps every candidate-field district and every candidate row, using blank missing metrics and `missing` statuses. Zero margins and published EVEN are real values, not missing. Redrawn states change presidential status to `prior_boundaries` but add no issue rows. `district-context-issues.csv` has `state`, `district`, `district_id`, `metric`, `source_id`, `issue`, `detail`. Metrics are `pres_2020`, `pres_2024`, or `cook_pvi`.
+Normal mode keeps every candidate-field district and every candidate row, using blank missing metrics and `missing` statuses. Zero margins and published EVEN are real values, not missing. Redrawn states change presidential status to `interpolated` or `prior_boundaries` but add no issue rows. `district-context-issues.csv` has `state`, `district`, `district_id`, `metric`, `source_id`, `issue`, `detail`. Metrics are `pres_2020`, `pres_2024`, or `cook_pvi`.
 
 | Issue | Meaning |
 | --- | --- |
@@ -312,7 +335,7 @@ The polling statuses are 111 `available`, 297 `no_polls`, 25 `no_dem_rep_field`,
 
 44 districts are `in_guide` and 391 are `not_in_guide`. Sorted by poll close and district ID, the example's first guide races close at 18:00 ET: IN-05 (Holy shit tier, poll average -2.41, R+8) and KY-06 (2018-style, 6.19, R+7). They are followed at 19:00 ET by FL-09 (no tier, 0.00, R+8) and FL-14 (Solid, 5.21, R+4).
 
-The build produces 870 presidential year rows, 435 normalized PVI rows, 435 district context rows, and 1,160 candidate context rows. Every target metric has a value: PVI is `available` everywhere, and presidential margins are `available` for 262 districts and `prior_boundaries` for the 173 in redrawn states. The issue report and the boundary review have only their headers, and `--require-complete` passes. Counts apply to these saved inputs; future refreshes can change candidate counts and source coverage. The existing 325 unresolved FEC identities remain unresolved in the enriched export.
+The build produces 870 presidential year rows, 435 normalized PVI rows, 435 district context rows, and 1,160 candidate context rows. Every target metric has a value: PVI is `available` everywhere, and presidential margins are `available` for 262 districts, `interpolated` for 142 in redrawn states with 2026 plans, and `prior_boundaries` for the 31 in Alabama, Ohio, and Tennessee. The issue report and the boundary review have only their headers, and `--require-complete` passes. Counts apply to these saved inputs; future refreshes can change candidate counts and source coverage. The existing 325 unresolved FEC identities remain unresolved in the enriched export.
 
 Run all offline tests with:
 

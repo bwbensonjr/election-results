@@ -39,6 +39,23 @@ class BoardDataTests(unittest.TestCase):
         self.assertIn("AK-AL", data["candidates"])
         self.assertEqual(data["state_names"]["PA"], "Pennsylvania")
 
+    def test_interpolated_margins_reach_the_page(self):
+        board.build(self.page)
+        _, data = self.embedded()
+        races = {r[0]: dict(zip(data["race_columns"], r)) for r in data["races"]}
+        statuses = {}
+        for race in races.values():
+            if race["office"] == "House":
+                statuses[race["pres_2024_status"]] = statuses.get(race["pres_2024_status"], 0) + 1
+        self.assertEqual(statuses, {"available": 262, "interpolated": 142, "prior_boundaries": 31})
+        self.assertEqual((races["UT-01"]["pres_2024_status"], races["UT-01"]["pres_2024_dem_margin_pp"]),
+                         ("interpolated", "7.50"))
+        self.assertEqual((races["TN-05"]["pres_2024_status"], races["TN-05"]["pres_2024_dem_margin_pp"]),
+                         ("prior_boundaries", ""))
+        districts = data["geometry"]["districts"]
+        self.assertTrue(all(districts[k]["vintage"] == "plan_2026" for k, r in races.items()
+                            if r["pres_2024_status"] == "interpolated"))
+
     def test_rest_of_page_untouched_and_rebuild_identical(self):
         board.build(self.page)
         first, _ = self.embedded()

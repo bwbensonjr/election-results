@@ -2,8 +2,8 @@
  "schema_version": 1,
  "election_date": "2026-11-03",
  "input_sha256": {
-  "house_races": "c4749183be93e93bc03e06613889a37c215422a8761e7868bb7313b3bced7884",
-  "house_candidates": "cf745704cdf1ce8793ff0e014ee2eb7ea5d25c2835b6570627bef9e7efc38c14",
+  "house_races": "e964a91eb4e3ff0cb54c93b26cccfc5f780c7485c6db669c1996f20a32fb62b1",
+  "house_candidates": "223a45c067ace7e334aaaf1f1a7daa00eb20b1bafb01fbb9cc82be7d13cb3e2a",
   "statewide_races": "67b2254c854c5809cf9e126016d9892ef8ba09567a7762adbc098a16a8928790",
   "statewide_candidates": "818a87dd243594ceefeb470ba916dfeb674a72a76f4a6d62a78ff7d84df21bc0"
  },
@@ -1189,7 +1189,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+7",
    "cook_pvi_dem_lean_pp": "7",
    "cook_pvi_status": "available",
@@ -1219,7 +1219,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "1",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "12.70"
   },
   {
    "office": "House",
@@ -1229,7 +1229,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+13",
    "cook_pvi_dem_lean_pp": "13",
    "cook_pvi_status": "available",
@@ -1259,7 +1259,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "2",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "23.19"
   },
   {
    "office": "House",
@@ -1269,7 +1269,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+6",
    "cook_pvi_dem_lean_pp": "6",
    "cook_pvi_status": "available",
@@ -1299,7 +1299,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "3",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "8.64"
   },
   {
    "office": "House",
@@ -1309,7 +1309,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+8",
    "cook_pvi_dem_lean_pp": "8",
    "cook_pvi_status": "available",
@@ -1339,7 +1339,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "4",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "15.36"
   },
   {
    "office": "House",
@@ -1349,7 +1349,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+10",
    "cook_pvi_dem_lean_pp": "-10",
    "cook_pvi_status": "available",
@@ -1379,7 +1379,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "5",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-17.52"
   },
   {
    "office": "House",
@@ -1389,7 +1389,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+5",
    "cook_pvi_dem_lean_pp": "5",
    "cook_pvi_status": "available",
@@ -1419,7 +1419,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "6",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "7.27"
   },
   {
    "office": "House",
@@ -1429,7 +1429,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+7",
    "cook_pvi_dem_lean_pp": "7",
    "cook_pvi_status": "available",
@@ -1459,7 +1459,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "7",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "14.64"
   },
   {
    "office": "House",
@@ -1469,7 +1469,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+19",
    "cook_pvi_dem_lean_pp": "19",
    "cook_pvi_status": "available",
@@ -1499,7 +1499,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "8",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "36.05"
   },
   {
    "office": "House",
@@ -1509,7 +1509,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+8",
    "cook_pvi_dem_lean_pp": "8",
    "cook_pvi_status": "available",
@@ -1539,7 +1539,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "9",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "12.14"
   },
   {
    "office": "House",
@@ -1549,7 +1549,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+18",
    "cook_pvi_dem_lean_pp": "18",
    "cook_pvi_status": "available",
@@ -1579,7 +1579,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "10",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "33.56"
   },
   {
    "office": "House",
@@ -1589,7 +1589,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+36",
    "cook_pvi_dem_lean_pp": "36",
    "cook_pvi_status": "available",
@@ -1619,7 +1619,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "11",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "67.72"
   },
   {
    "office": "House",
@@ -1629,7 +1629,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+39",
    "cook_pvi_dem_lean_pp": "39",
    "cook_pvi_status": "available",
@@ -1659,7 +1659,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "12",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "73.90"
   },
   {
    "office": "House",
@@ -1669,7 +1669,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+2",
    "cook_pvi_dem_lean_pp": "2",
    "cook_pvi_status": "available",
@@ -1699,7 +1699,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "13",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-5.19"
   },
   {
    "office": "House",
@@ -1709,7 +1709,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+19",
    "cook_pvi_dem_lean_pp": "19",
    "cook_pvi_status": "available",
@@ -1739,7 +1739,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "14",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "37.02"
   },
   {
    "office": "House",
@@ -1749,7 +1749,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+26",
    "cook_pvi_dem_lean_pp": "26",
    "cook_pvi_status": "available",
@@ -1779,7 +1779,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "15",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "47.89"
   },
   {
    "office": "House",
@@ -1789,7 +1789,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+25",
    "cook_pvi_dem_lean_pp": "25",
    "cook_pvi_status": "available",
@@ -1819,7 +1819,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "16",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "48.35"
   },
   {
    "office": "House",
@@ -1829,7 +1829,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+21",
    "cook_pvi_dem_lean_pp": "21",
    "cook_pvi_status": "available",
@@ -1859,7 +1859,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "17",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "37.38"
   },
   {
    "office": "House",
@@ -1869,7 +1869,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+16",
    "cook_pvi_dem_lean_pp": "16",
    "cook_pvi_status": "available",
@@ -1899,7 +1899,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "18",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "28.70"
   },
   {
    "office": "House",
@@ -1909,7 +1909,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+18",
    "cook_pvi_dem_lean_pp": "18",
    "cook_pvi_status": "available",
@@ -1939,7 +1939,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "19",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "34.39"
   },
   {
    "office": "House",
@@ -1949,7 +1949,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+16",
    "cook_pvi_dem_lean_pp": "-16",
    "cook_pvi_status": "available",
@@ -1979,7 +1979,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "20",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-30.08"
   },
   {
    "office": "House",
@@ -1989,7 +1989,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+5",
    "cook_pvi_dem_lean_pp": "5",
    "cook_pvi_status": "available",
@@ -2019,7 +2019,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "21",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "0.71"
   },
   {
    "office": "House",
@@ -2029,7 +2029,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+1",
    "cook_pvi_dem_lean_pp": "1",
    "cook_pvi_status": "available",
@@ -2059,7 +2059,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "22",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-4.95"
   },
   {
    "office": "House",
@@ -2069,7 +2069,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+9",
    "cook_pvi_dem_lean_pp": "-9",
    "cook_pvi_status": "available",
@@ -2099,7 +2099,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "23",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-15.19"
   },
   {
    "office": "House",
@@ -2109,7 +2109,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+13",
    "cook_pvi_dem_lean_pp": "13",
    "cook_pvi_status": "available",
@@ -2139,7 +2139,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "24",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "25.00"
   },
   {
    "office": "House",
@@ -2149,7 +2149,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+4",
    "cook_pvi_dem_lean_pp": "4",
    "cook_pvi_status": "available",
@@ -2179,7 +2179,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "25",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "0.07"
   },
   {
    "office": "House",
@@ -2189,7 +2189,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+9",
    "cook_pvi_dem_lean_pp": "9",
    "cook_pvi_status": "available",
@@ -2219,7 +2219,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "26",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "14.61"
   },
   {
    "office": "House",
@@ -2229,7 +2229,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+6",
    "cook_pvi_dem_lean_pp": "6",
    "cook_pvi_status": "available",
@@ -2259,7 +2259,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "27",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "7.78"
   },
   {
    "office": "House",
@@ -2269,7 +2269,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+14",
    "cook_pvi_dem_lean_pp": "14",
    "cook_pvi_status": "available",
@@ -2299,7 +2299,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "28",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "25.84"
   },
   {
    "office": "House",
@@ -2309,7 +2309,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+19",
    "cook_pvi_dem_lean_pp": "19",
    "cook_pvi_status": "available",
@@ -2339,7 +2339,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "29",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "34.82"
   },
   {
    "office": "House",
@@ -2349,7 +2349,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+21",
    "cook_pvi_dem_lean_pp": "21",
    "cook_pvi_status": "available",
@@ -2379,7 +2379,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "30",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "40.10"
   },
   {
    "office": "House",
@@ -2389,7 +2389,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+8",
    "cook_pvi_dem_lean_pp": "8",
    "cook_pvi_status": "available",
@@ -2419,7 +2419,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "31",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "17.17"
   },
   {
    "office": "House",
@@ -2429,7 +2429,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+14",
    "cook_pvi_dem_lean_pp": "14",
    "cook_pvi_status": "available",
@@ -2459,7 +2459,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "32",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "27.03"
   },
   {
    "office": "House",
@@ -2469,7 +2469,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+7",
    "cook_pvi_dem_lean_pp": "7",
    "cook_pvi_status": "available",
@@ -2499,7 +2499,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "33",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "6.94"
   },
   {
    "office": "House",
@@ -2509,7 +2509,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+28",
    "cook_pvi_dem_lean_pp": "28",
    "cook_pvi_status": "available",
@@ -2539,7 +2539,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "34",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "50.64"
   },
   {
    "office": "House",
@@ -2549,7 +2549,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+6",
    "cook_pvi_dem_lean_pp": "6",
    "cook_pvi_status": "available",
@@ -2579,7 +2579,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "35",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "5.51"
   },
   {
    "office": "House",
@@ -2589,7 +2589,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+21",
    "cook_pvi_dem_lean_pp": "21",
    "cook_pvi_status": "available",
@@ -2619,7 +2619,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "36",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "39.11"
   },
   {
    "office": "House",
@@ -2629,7 +2629,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+33",
    "cook_pvi_dem_lean_pp": "33",
    "cook_pvi_status": "available",
@@ -2659,7 +2659,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "37",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "60.39"
   },
   {
    "office": "House",
@@ -2669,7 +2669,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+8",
    "cook_pvi_dem_lean_pp": "8",
    "cook_pvi_status": "available",
@@ -2699,7 +2699,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "38",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "15.32"
   },
   {
    "office": "House",
@@ -2709,7 +2709,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+7",
    "cook_pvi_dem_lean_pp": "7",
    "cook_pvi_status": "available",
@@ -2739,7 +2739,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "39",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "9.34"
   },
   {
    "office": "House",
@@ -2749,7 +2749,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+6",
    "cook_pvi_dem_lean_pp": "-6",
    "cook_pvi_status": "available",
@@ -2779,7 +2779,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "40",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-7.61"
   },
   {
    "office": "House",
@@ -2789,7 +2789,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+9",
    "cook_pvi_dem_lean_pp": "9",
    "cook_pvi_status": "available",
@@ -2819,7 +2819,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "41",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "18.45"
   },
   {
    "office": "House",
@@ -2829,7 +2829,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+8",
    "cook_pvi_dem_lean_pp": "8",
    "cook_pvi_status": "available",
@@ -2859,7 +2859,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "42",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "14.78"
   },
   {
    "office": "House",
@@ -2869,7 +2869,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+27",
    "cook_pvi_dem_lean_pp": "27",
    "cook_pvi_status": "available",
@@ -2899,7 +2899,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "43",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "48.96"
   },
   {
    "office": "House",
@@ -2909,7 +2909,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+20",
    "cook_pvi_dem_lean_pp": "20",
    "cook_pvi_status": "available",
@@ -2939,7 +2939,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "44",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "33.58"
   },
   {
    "office": "House",
@@ -2949,7 +2949,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+3",
    "cook_pvi_dem_lean_pp": "3",
    "cook_pvi_status": "available",
@@ -2979,7 +2979,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "45",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "4.38"
   },
   {
    "office": "House",
@@ -2989,7 +2989,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+10",
    "cook_pvi_dem_lean_pp": "10",
    "cook_pvi_status": "available",
@@ -3019,7 +3019,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "46",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "14.73"
   },
   {
    "office": "House",
@@ -3029,7 +3029,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+6",
    "cook_pvi_dem_lean_pp": "6",
    "cook_pvi_status": "available",
@@ -3059,7 +3059,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "47",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "0.80"
   },
   {
    "office": "House",
@@ -3069,7 +3069,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+2",
    "cook_pvi_dem_lean_pp": "2",
    "cook_pvi_status": "available",
@@ -3099,7 +3099,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "48",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "1.59"
   },
   {
    "office": "House",
@@ -3109,7 +3109,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+7",
    "cook_pvi_dem_lean_pp": "7",
    "cook_pvi_status": "available",
@@ -3139,7 +3139,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "49",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "12.57"
   },
   {
    "office": "House",
@@ -3149,7 +3149,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+10",
    "cook_pvi_dem_lean_pp": "10",
    "cook_pvi_status": "available",
@@ -3179,7 +3179,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "50",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "18.90"
   },
   {
    "office": "House",
@@ -3189,7 +3189,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+10",
    "cook_pvi_dem_lean_pp": "10",
    "cook_pvi_status": "available",
@@ -3219,7 +3219,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "51",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "16.29"
   },
   {
    "office": "House",
@@ -3229,7 +3229,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+11",
    "cook_pvi_dem_lean_pp": "11",
    "cook_pvi_status": "available",
@@ -3259,7 +3259,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "52",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "19.73"
   },
   {
    "office": "Governor",
@@ -4029,7 +4029,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+18",
    "cook_pvi_dem_lean_pp": "-18",
    "cook_pvi_status": "available",
@@ -4059,7 +4059,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "1",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-37.20"
   },
   {
    "office": "House",
@@ -4069,7 +4069,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+8",
    "cook_pvi_dem_lean_pp": "-8",
    "cook_pvi_status": "available",
@@ -4099,7 +4099,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "2",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-18.00"
   },
   {
    "office": "House",
@@ -4109,7 +4109,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+10",
    "cook_pvi_dem_lean_pp": "-10",
    "cook_pvi_status": "available",
@@ -4139,7 +4139,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "3",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-21.12"
   },
   {
    "office": "House",
@@ -4149,7 +4149,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+5",
    "cook_pvi_dem_lean_pp": "-5",
    "cook_pvi_status": "available",
@@ -4179,7 +4179,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "4",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-11.84"
   },
   {
    "office": "House",
@@ -4189,7 +4189,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+10",
    "cook_pvi_dem_lean_pp": "-10",
    "cook_pvi_status": "available",
@@ -4219,7 +4219,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "5",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-21.43"
   },
   {
    "office": "House",
@@ -4229,7 +4229,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+14",
    "cook_pvi_dem_lean_pp": "-14",
    "cook_pvi_status": "available",
@@ -4259,7 +4259,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "6",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-30.09"
   },
   {
    "office": "House",
@@ -4269,7 +4269,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+5",
    "cook_pvi_dem_lean_pp": "-5",
    "cook_pvi_status": "available",
@@ -4299,7 +4299,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "7",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-12.48"
   },
   {
    "office": "House",
@@ -4309,7 +4309,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+8",
    "cook_pvi_dem_lean_pp": "-8",
    "cook_pvi_status": "available",
@@ -4339,7 +4339,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "8",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-14.50"
   },
   {
    "office": "House",
@@ -4349,7 +4349,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+8",
    "cook_pvi_dem_lean_pp": "-8",
    "cook_pvi_status": "available",
@@ -4379,7 +4379,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "9",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-15.27"
   },
   {
    "office": "House",
@@ -4389,7 +4389,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+13",
    "cook_pvi_dem_lean_pp": "13",
    "cook_pvi_status": "available",
@@ -4419,7 +4419,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "10",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "20.32"
   },
   {
    "office": "House",
@@ -4429,7 +4429,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+7",
    "cook_pvi_dem_lean_pp": "-7",
    "cook_pvi_status": "available",
@@ -4459,7 +4459,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "11",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-14.79"
   },
   {
    "office": "House",
@@ -4469,7 +4469,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+7",
    "cook_pvi_dem_lean_pp": "-7",
    "cook_pvi_status": "available",
@@ -4499,7 +4499,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "12",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-12.40"
   },
   {
    "office": "House",
@@ -4509,7 +4509,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+6",
    "cook_pvi_dem_lean_pp": "-6",
    "cook_pvi_status": "available",
@@ -4539,7 +4539,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "13",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-10.89"
   },
   {
    "office": "House",
@@ -4549,7 +4549,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+4",
    "cook_pvi_dem_lean_pp": "-4",
    "cook_pvi_status": "available",
@@ -4579,7 +4579,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "14",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-0.12"
   },
   {
    "office": "House",
@@ -4589,7 +4589,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+9",
    "cook_pvi_dem_lean_pp": "-9",
    "cook_pvi_status": "available",
@@ -4619,7 +4619,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "15",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-26.77"
   },
   {
    "office": "House",
@@ -4629,7 +4629,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+6",
    "cook_pvi_dem_lean_pp": "-6",
    "cook_pvi_status": "available",
@@ -4659,7 +4659,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "16",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-19.19"
   },
   {
    "office": "House",
@@ -4669,7 +4669,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+10",
    "cook_pvi_dem_lean_pp": "-10",
    "cook_pvi_status": "available",
@@ -4699,7 +4699,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "17",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-24.51"
   },
   {
    "office": "House",
@@ -4709,7 +4709,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+8",
    "cook_pvi_dem_lean_pp": "-8",
    "cook_pvi_status": "available",
@@ -4739,7 +4739,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "18",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-20.18"
   },
   {
    "office": "House",
@@ -4749,7 +4749,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+14",
    "cook_pvi_dem_lean_pp": "-14",
    "cook_pvi_status": "available",
@@ -4779,7 +4779,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "19",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-31.00"
   },
   {
    "office": "House",
@@ -4789,7 +4789,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+20",
    "cook_pvi_dem_lean_pp": "20",
    "cook_pvi_status": "available",
@@ -4819,7 +4819,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "20",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "29.25"
   },
   {
    "office": "House",
@@ -4829,7 +4829,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+7",
    "cook_pvi_dem_lean_pp": "-7",
    "cook_pvi_status": "available",
@@ -4859,7 +4859,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "21",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-15.58"
   },
   {
    "office": "House",
@@ -4869,7 +4869,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+4",
    "cook_pvi_dem_lean_pp": "-4",
    "cook_pvi_status": "available",
@@ -4899,7 +4899,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "22",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-6.61"
   },
   {
    "office": "House",
@@ -4909,7 +4909,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+9",
    "cook_pvi_dem_lean_pp": "9",
    "cook_pvi_status": "available",
@@ -4939,7 +4939,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "23",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "8.79"
   },
   {
    "office": "House",
@@ -4949,7 +4949,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+22",
    "cook_pvi_dem_lean_pp": "22",
    "cook_pvi_status": "available",
@@ -4979,7 +4979,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "24",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "19.65"
   },
   {
    "office": "House",
@@ -4989,7 +4989,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+3",
    "cook_pvi_dem_lean_pp": "-3",
    "cook_pvi_status": "available",
@@ -5019,7 +5019,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "25",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "6.95"
   },
   {
    "office": "House",
@@ -5029,7 +5029,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+7",
    "cook_pvi_dem_lean_pp": "-7",
    "cook_pvi_status": "available",
@@ -5059,7 +5059,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "26",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-13.15"
   },
   {
    "office": "House",
@@ -5069,7 +5069,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+6",
    "cook_pvi_dem_lean_pp": "-6",
    "cook_pvi_status": "available",
@@ -5099,7 +5099,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "27",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-14.81"
   },
   {
    "office": "House",
@@ -5109,7 +5109,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+10",
    "cook_pvi_dem_lean_pp": "-10",
    "cook_pvi_status": "available",
@@ -5139,7 +5139,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "28",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-25.24"
   },
   {
    "office": "Senate",
@@ -8029,7 +8029,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+20",
    "cook_pvi_dem_lean_pp": "-20",
    "cook_pvi_status": "available",
@@ -8059,7 +8059,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "1",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-38.20"
   },
   {
    "office": "House",
@@ -8069,7 +8069,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+25",
    "cook_pvi_dem_lean_pp": "25",
    "cook_pvi_status": "available",
@@ -8099,7 +8099,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "2",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "38.25"
   },
   {
    "office": "House",
@@ -8109,7 +8109,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+18",
    "cook_pvi_dem_lean_pp": "-18",
    "cook_pvi_status": "available",
@@ -8139,7 +8139,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "3",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-36.79"
   },
   {
    "office": "House",
@@ -8149,7 +8149,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+17",
    "cook_pvi_dem_lean_pp": "-17",
    "cook_pvi_status": "available",
@@ -8179,7 +8179,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "4",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-37.26"
   },
   {
    "office": "House",
@@ -8189,7 +8189,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+17",
    "cook_pvi_dem_lean_pp": "-17",
    "cook_pvi_status": "available",
@@ -8219,7 +8219,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "5",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-38.88"
   },
   {
    "office": "House",
@@ -8229,7 +8229,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+16",
    "cook_pvi_dem_lean_pp": "-16",
    "cook_pvi_status": "available",
@@ -8259,7 +8259,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "6",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-15.92"
   },
   {
    "office": "Senate",
@@ -10909,7 +10909,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+5",
    "cook_pvi_dem_lean_pp": "-5",
    "cook_pvi_status": "available",
@@ -10939,7 +10939,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "1",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-11.36"
   },
   {
    "office": "House",
@@ -10949,7 +10949,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+17",
    "cook_pvi_dem_lean_pp": "17",
    "cook_pvi_status": "available",
@@ -10979,7 +10979,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "2",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "33.85"
   },
   {
    "office": "House",
@@ -10989,7 +10989,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+6",
    "cook_pvi_dem_lean_pp": "-6",
    "cook_pvi_status": "available",
@@ -11019,7 +11019,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "3",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-13.85"
   },
   {
    "office": "House",
@@ -11029,7 +11029,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+23",
    "cook_pvi_dem_lean_pp": "23",
    "cook_pvi_status": "available",
@@ -11059,7 +11059,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "4",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "45.30"
   },
   {
    "office": "House",
@@ -11069,7 +11069,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+9",
    "cook_pvi_dem_lean_pp": "-9",
    "cook_pvi_status": "available",
@@ -11099,7 +11099,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "5",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-17.78"
   },
   {
    "office": "House",
@@ -11109,7 +11109,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+9",
    "cook_pvi_dem_lean_pp": "-9",
    "cook_pvi_status": "available",
@@ -11139,7 +11139,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "6",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-17.16"
   },
   {
    "office": "House",
@@ -11149,7 +11149,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+7",
    "cook_pvi_dem_lean_pp": "-7",
    "cook_pvi_status": "available",
@@ -11179,7 +11179,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "7",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-13.82"
   },
   {
    "office": "House",
@@ -11189,7 +11189,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+10",
    "cook_pvi_dem_lean_pp": "-10",
    "cook_pvi_status": "available",
@@ -11219,7 +11219,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "8",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-19.38"
   },
   {
    "office": "House",
@@ -11229,7 +11229,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+8",
    "cook_pvi_dem_lean_pp": "-8",
    "cook_pvi_status": "available",
@@ -11259,7 +11259,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "9",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-15.84"
   },
   {
    "office": "House",
@@ -11269,7 +11269,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+9",
    "cook_pvi_dem_lean_pp": "-9",
    "cook_pvi_status": "available",
@@ -11299,7 +11299,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "10",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-17.73"
   },
   {
    "office": "House",
@@ -11309,7 +11309,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+5",
    "cook_pvi_dem_lean_pp": "-5",
    "cook_pvi_status": "available",
@@ -11339,7 +11339,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "11",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-9.50"
   },
   {
    "office": "House",
@@ -11349,7 +11349,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+24",
    "cook_pvi_dem_lean_pp": "24",
    "cook_pvi_status": "available",
@@ -11379,7 +11379,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "12",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "46.20"
   },
   {
    "office": "House",
@@ -11389,7 +11389,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+8",
    "cook_pvi_dem_lean_pp": "-8",
    "cook_pvi_status": "available",
@@ -11419,7 +11419,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "13",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-16.47"
   },
   {
    "office": "House",
@@ -11429,7 +11429,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+8",
    "cook_pvi_dem_lean_pp": "-8",
    "cook_pvi_status": "available",
@@ -11459,7 +11459,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "14",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-15.08"
   },
   {
    "office": "Senate",
@@ -16989,7 +16989,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+24",
    "cook_pvi_dem_lean_pp": "-24",
    "cook_pvi_status": "available",
@@ -17019,7 +17019,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "1",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-49.85"
   },
   {
    "office": "House",
@@ -17029,7 +17029,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+11",
    "cook_pvi_dem_lean_pp": "-11",
    "cook_pvi_status": "available",
@@ -17059,7 +17059,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "2",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-24.28"
   },
   {
    "office": "House",
@@ -17069,7 +17069,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+11",
    "cook_pvi_dem_lean_pp": "-11",
    "cook_pvi_status": "available",
@@ -17099,7 +17099,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "3",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-23.11"
   },
   {
    "office": "House",
@@ -17109,7 +17109,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+12",
    "cook_pvi_dem_lean_pp": "-12",
    "cook_pvi_status": "available",
@@ -17139,7 +17139,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "4",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-25.97"
   },
   {
    "office": "House",
@@ -17149,7 +17149,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+10",
    "cook_pvi_dem_lean_pp": "-10",
    "cook_pvi_status": "available",
@@ -17179,7 +17179,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "5",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-22.62"
   },
   {
    "office": "House",
@@ -17189,7 +17189,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+11",
    "cook_pvi_dem_lean_pp": "-11",
    "cook_pvi_status": "available",
@@ -17219,7 +17219,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "6",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-17.37"
   },
   {
    "office": "House",
@@ -17229,7 +17229,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+13",
    "cook_pvi_dem_lean_pp": "13",
    "cook_pvi_status": "available",
@@ -17259,7 +17259,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "7",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "24.38"
   },
   {
    "office": "House",
@@ -17269,7 +17269,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+13",
    "cook_pvi_dem_lean_pp": "-13",
    "cook_pvi_status": "available",
@@ -17299,7 +17299,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "8",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-27.15"
   },
   {
    "office": "House",
@@ -17309,7 +17309,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+9",
    "cook_pvi_dem_lean_pp": "-9",
    "cook_pvi_status": "available",
@@ -17339,7 +17339,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "9",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-4.95"
   },
   {
    "office": "House",
@@ -17349,7 +17349,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+10",
    "cook_pvi_dem_lean_pp": "-10",
    "cook_pvi_status": "available",
@@ -17379,7 +17379,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "10",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-16.12"
   },
   {
    "office": "House",
@@ -17389,7 +17389,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+17",
    "cook_pvi_dem_lean_pp": "-17",
    "cook_pvi_status": "available",
@@ -17419,7 +17419,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "11",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-28.98"
   },
   {
    "office": "House",
@@ -17429,7 +17429,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+11",
    "cook_pvi_dem_lean_pp": "-11",
    "cook_pvi_status": "available",
@@ -17459,7 +17459,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "12",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-20.53"
   },
   {
    "office": "House",
@@ -17469,7 +17469,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+23",
    "cook_pvi_dem_lean_pp": "-23",
    "cook_pvi_status": "available",
@@ -17499,7 +17499,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "13",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-46.69"
   },
   {
    "office": "House",
@@ -17509,7 +17509,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+12",
    "cook_pvi_dem_lean_pp": "-12",
    "cook_pvi_status": "available",
@@ -17539,7 +17539,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "14",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-30.98"
   },
   {
    "office": "House",
@@ -17549,7 +17549,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+7",
    "cook_pvi_dem_lean_pp": "-7",
    "cook_pvi_status": "available",
@@ -17579,7 +17579,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "15",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-19.54"
   },
   {
    "office": "House",
@@ -17589,7 +17589,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+11",
    "cook_pvi_dem_lean_pp": "11",
    "cook_pvi_status": "available",
@@ -17619,7 +17619,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "16",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "15.62"
   },
   {
    "office": "House",
@@ -17629,7 +17629,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+10",
    "cook_pvi_dem_lean_pp": "-10",
    "cook_pvi_status": "available",
@@ -17659,7 +17659,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "17",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-25.52"
   },
   {
    "office": "House",
@@ -17669,7 +17669,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+29",
    "cook_pvi_dem_lean_pp": "29",
    "cook_pvi_status": "available",
@@ -17699,7 +17699,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "18",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "42.60"
   },
   {
    "office": "House",
@@ -17709,7 +17709,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+25",
    "cook_pvi_dem_lean_pp": "-25",
    "cook_pvi_status": "available",
@@ -17739,7 +17739,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "19",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-51.69"
   },
   {
    "office": "House",
@@ -17749,7 +17749,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+16",
    "cook_pvi_dem_lean_pp": "16",
    "cook_pvi_status": "available",
@@ -17779,7 +17779,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "20",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "20.98"
   },
   {
    "office": "House",
@@ -17789,7 +17789,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+10",
    "cook_pvi_dem_lean_pp": "-10",
    "cook_pvi_status": "available",
@@ -17819,7 +17819,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "21",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-24.88"
   },
   {
    "office": "House",
@@ -17829,7 +17829,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+11",
    "cook_pvi_dem_lean_pp": "-11",
    "cook_pvi_status": "available",
@@ -17859,7 +17859,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "22",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-12.85"
   },
   {
    "office": "House",
@@ -17869,7 +17869,7 @@
    "roster_vacant": "True",
    "roster_ballot_status": "",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+7",
    "cook_pvi_dem_lean_pp": "-7",
    "cook_pvi_status": "available",
@@ -17899,7 +17899,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "23",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-13.13"
   },
   {
    "office": "House",
@@ -17909,7 +17909,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+8",
    "cook_pvi_dem_lean_pp": "-8",
    "cook_pvi_status": "available",
@@ -17939,7 +17939,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "24",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-14.98"
   },
   {
    "office": "House",
@@ -17949,7 +17949,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+11",
    "cook_pvi_dem_lean_pp": "-11",
    "cook_pvi_status": "available",
@@ -17979,7 +17979,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "25",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-32.65"
   },
   {
    "office": "House",
@@ -17989,7 +17989,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+11",
    "cook_pvi_dem_lean_pp": "-11",
    "cook_pvi_status": "available",
@@ -18019,7 +18019,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "26",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-23.81"
   },
   {
    "office": "House",
@@ -18029,7 +18029,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+10",
    "cook_pvi_dem_lean_pp": "-10",
    "cook_pvi_status": "available",
@@ -18059,7 +18059,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "27",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-22.85"
   },
   {
    "office": "House",
@@ -18069,7 +18069,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+3",
    "cook_pvi_dem_lean_pp": "-3",
    "cook_pvi_status": "available",
@@ -18099,7 +18099,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "28",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-11.01"
   },
   {
    "office": "House",
@@ -18109,7 +18109,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+17",
    "cook_pvi_dem_lean_pp": "17",
    "cook_pvi_status": "available",
@@ -18139,7 +18139,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "29",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "31.80"
   },
   {
    "office": "House",
@@ -18149,7 +18149,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+25",
    "cook_pvi_dem_lean_pp": "25",
    "cook_pvi_status": "available",
@@ -18179,7 +18179,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "30",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "32.58"
   },
   {
    "office": "House",
@@ -18189,7 +18189,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+11",
    "cook_pvi_dem_lean_pp": "-11",
    "cook_pvi_status": "available",
@@ -18219,7 +18219,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "31",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-22.98"
   },
   {
    "office": "House",
@@ -18229,7 +18229,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+8",
    "cook_pvi_dem_lean_pp": "-8",
    "cook_pvi_status": "available",
@@ -18259,7 +18259,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "32",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-13.76"
   },
   {
    "office": "House",
@@ -18269,7 +18269,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+18",
    "cook_pvi_dem_lean_pp": "18",
    "cook_pvi_status": "available",
@@ -18299,7 +18299,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "33",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "40.46"
   },
   {
    "office": "House",
@@ -18309,7 +18309,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+3",
    "cook_pvi_dem_lean_pp": "-3",
    "cook_pvi_status": "available",
@@ -18339,7 +18339,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "34",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-8.25"
   },
   {
    "office": "House",
@@ -18349,7 +18349,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+4",
    "cook_pvi_dem_lean_pp": "-4",
    "cook_pvi_status": "available",
@@ -18379,7 +18379,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "35",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-6.36"
   },
   {
    "office": "House",
@@ -18389,7 +18389,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+12",
    "cook_pvi_dem_lean_pp": "-12",
    "cook_pvi_status": "available",
@@ -18419,7 +18419,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "36",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-32.20"
   },
   {
    "office": "House",
@@ -18429,7 +18429,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+30",
    "cook_pvi_dem_lean_pp": "30",
    "cook_pvi_status": "available",
@@ -18459,7 +18459,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "37",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "52.44"
   },
   {
    "office": "House",
@@ -18469,7 +18469,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+10",
    "cook_pvi_dem_lean_pp": "-10",
    "cook_pvi_status": "available",
@@ -18499,7 +18499,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "38",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-16.96"
   },
   {
    "office": "Senate",
@@ -18589,7 +18589,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "not_running",
    "open_seat": "True",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "D+12",
    "cook_pvi_dem_lean_pp": "12",
    "cook_pvi_status": "available",
@@ -18619,7 +18619,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "1",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "7.50"
   },
   {
    "office": "House",
@@ -18629,7 +18629,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+15",
    "cook_pvi_dem_lean_pp": "-15",
    "cook_pvi_status": "available",
@@ -18659,7 +18659,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "2",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-24.63"
   },
   {
    "office": "House",
@@ -18669,7 +18669,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+21",
    "cook_pvi_dem_lean_pp": "-21",
    "cook_pvi_status": "available",
@@ -18699,7 +18699,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "3",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-40.08"
   },
   {
    "office": "House",
@@ -18709,7 +18709,7 @@
    "roster_vacant": "False",
    "roster_ballot_status": "running",
    "open_seat": "False",
-   "pres_2024_status": "prior_boundaries",
+   "pres_2024_status": "interpolated",
    "cook_pvi_label": "R+17",
    "cook_pvi_dem_lean_pp": "-17",
    "cook_pvi_status": "available",
@@ -18739,7 +18739,7 @@
    "ap_office_id": "H",
    "ap_seat_num": "4",
    "ap_race_id": "",
-   "pres_2024_dem_margin_pp": ""
+   "pres_2024_dem_margin_pp": "-26.16"
   },
   {
    "office": "House",

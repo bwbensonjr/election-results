@@ -20,8 +20,9 @@ from election_guide import (
     DEFAULT_GUIDE, DEFAULT_MARKDOWN, GUIDE_COLUMNS, SOURCE_ID as GUIDE_SOURCE_ID, load_guide, name_check,
 )
 from district_history import (
-    DEFAULT_MANIFEST, ROOT, RESULTS_DIR, PRESIDENTIAL_COLUMNS, PVI_COLUMNS,
-    district_key, load_boundary_vintage, normalized_sources, publish_csvs, read_records, require_unique,
+    DEFAULT_MANIFEST, INTERPOLATED_SOURCE_ID, ROOT, RESULTS_DIR, PRESIDENTIAL_COLUMNS, PVI_COLUMNS,
+    district_key, interpolate_presidential, load_boundary_vintage, load_crosswalk, normalized_sources, publish_csvs,
+    read_records, require_unique,
 )
 
 DEFAULT_CANDIDATES = ROOT / "2026/candidates/house-general-field.csv"
@@ -65,13 +66,19 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
           pvi_path=RESULTS_DIR / "cook-pvi-normalized.csv", output_dir=OUTPUT_DIR,
           require_complete=False, project_root=ROOT, polls_path=DEFAULT_POLLS,
           poll_averages_path=DEFAULT_POLL_AVERAGES, guide_path=DEFAULT_GUIDE,
-          guide_markdown_path=DEFAULT_MARKDOWN, matchups_path=DEFAULT_MATCHUPS, roster_path=DEFAULT_ROSTER):
+          guide_markdown_path=DEFAULT_MARKDOWN, matchups_path=DEFAULT_MATCHUPS, roster_path=DEFAULT_ROSTER,
+          interpolated_path=RESULTS_DIR / "presidential-results-interpolated.csv"):
     sources, expected_history, expected_pvi = normalized_sources(manifest_path, project_root)
     redrawn = load_boundary_vintage(manifest_path, project_root)
     history = verify_normalized(history_path, PRESIDENTIAL_COLUMNS, expected_history,
                                 lambda r: (r["state"], r["district"], r["election_year"]))
     pvi = verify_normalized(pvi_path, PVI_COLUMNS, expected_pvi,
                            lambda r: (r["state"], r["district"]))
+    crosswalk, counties = load_crosswalk(manifest_path, project_root)
+    interpolated = verify_normalized(interpolated_path, PRESIDENTIAL_COLUMNS,
+                                     interpolate_presidential(expected_history, crosswalk, counties),
+                                     lambda r: (r["state"], r["district"], r["election_year"])) if crosswalk else []
+    interpolated_states = {r["state"] for r in interpolated}
     candidate_columns, candidates = read_records(candidate_path)
     poll_averages = verify_poll_averages(poll_averages_path, polls_path, candidate_path, matchups_path)
     guide = load_guide(guide_path, guide_markdown_path, candidate_path)
@@ -87,6 +94,7 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
         groups[key].append(row)
     roster = load_roster(roster_path, {key[2]: ("House", rows) for key, rows in groups.items()}, {"House"})
     history_by_key = {(r["state"], r["district"], r["election_year"]): r for r in history}
+    interpolated_by_key = {(r["state"], r["district"], r["election_year"]): r for r in interpolated}
     pvi_by_key = {(r["state"], r["district"]): r for r in pvi}
     districts, enriched, issues = [], [], []
 
@@ -100,11 +108,16 @@ def build(candidate_path=DEFAULT_CANDIDATES, manifest_path=DEFAULT_MANIFEST,
             sum(row["fec_match_status"] in UNRESOLVED_STATUSES for row in rows)))
         for year in ["2020", "2024"]:
             metric = f"pres_{year}"
-            source_id = sources["presidential"]["source_id"]
-            record = history_by_key.get((state, district, year))
+            if state in interpolated_states:
+                source_id = INTERPOLATED_SOURCE_ID
+                record = interpolated_by_key.get((state, district, year))
+            else:
+                source_id = sources["presidential"]["source_id"]
+                record = history_by_key.get((state, district, year))
             value = record["dem_margin_pp"] if record else ""
             context[f"{metric}_dem_margin_pp"] = value
             context[f"{metric}_status"] = ("missing" if value == "" else
+                                           "interpolated" if state in interpolated_states else
                                            "prior_boundaries" if state in redrawn else "available")
             context[f"{metric}_source_id"] = source_id
             if value == "":
@@ -160,6 +173,7 @@ def main():
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--history", type=Path, default=RESULTS_DIR / "presidential-results-normalized.csv")
     parser.add_argument("--pvi", type=Path, default=RESULTS_DIR / "cook-pvi-normalized.csv")
+    parser.add_argument("--interpolated", type=Path, default=RESULTS_DIR / "presidential-results-interpolated.csv")
     parser.add_argument("--polls", type=Path, default=DEFAULT_POLLS)
     parser.add_argument("--poll-averages", type=Path, default=DEFAULT_POLL_AVERAGES)
     parser.add_argument("--matchups", type=Path, default=DEFAULT_MATCHUPS)
@@ -172,6 +186,7 @@ def main():
     try:
         districts, candidates, issues = build(args.candidates, args.manifest, args.history,
                                              args.pvi, args.output_dir, args.require_complete,
+                                             interpolated_path=args.interpolated,
                                              polls_path=args.polls, poll_averages_path=args.poll_averages,
                                              guide_path=args.guide, guide_markdown_path=args.guide_markdown,
                                              matchups_path=args.matchups, roster_path=args.roster)

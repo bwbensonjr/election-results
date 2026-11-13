@@ -5,6 +5,7 @@ import json
 import sys
 import tempfile
 import unittest
+from decimal import ROUND_HALF_UP, Decimal
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -66,6 +67,19 @@ class HistoryFixture(unittest.TestCase):
         data["reviewed_inputs"] = {"boundary_vintage": dict(path="boundary.json", notes="Fixture registry")}
         self.manifest.write_text(json.dumps(data))
 
+    def save_crosswalk(self, rows, counties, sha256=None):
+        data = json.loads(self.manifest.read_text())
+        for key, name, columns, table in [
+                ("presidential_crosswalk", "crosswalk.csv", history.CROSSWALK_COLUMNS, rows),
+                ("presidential_county_results", "counties.csv", history.COUNTY_COLUMNS,
+                 [dict(state="AL", county_fips=fips, election_year=year, **{k: str(v) for k, v in values.items()})
+                  for (fips, year), values in sorted(counties.items())])]:
+            path = self.root / name
+            write_csv(path, [columns] + [[r[c] for c in columns] for r in table])
+            digest = sha256 if sha256 and key == "presidential_crosswalk" else hashlib.sha256(path.read_bytes()).hexdigest()
+            data["reviewed_inputs"][key] = dict(path=name, sha256=digest, notes="Fixture")
+        self.manifest.write_text(json.dumps(data))
+
 
 class BoundaryVintageTests(HistoryFixture):
     def review(self):
@@ -109,6 +123,124 @@ class BoundaryVintageTests(HistoryFixture):
         flagged = {r["state"] for r in history.boundary_review(rows, pvi, {})}
         self.assertEqual(flagged, set(registry))
         self.assertEqual(history.boundary_review(rows, pvi, registry), [])
+
+
+def pres_row(district_id, year, dem, rep, total, margin=""):
+    state, district, _ = history.district_key(district_id)
+    row = dict.fromkeys(history.PRESIDENTIAL_COLUMNS, "")
+    row.update(state=state, district=district, district_id=district_id, election_year=year,
+               dem_votes=dem, rep_votes=rep, total_votes=total, dem_margin_pp=margin, source_id="test-pres")
+    return row
+
+
+def crosswalk_row(old, county, new, shared, old_pop, share):
+    return dict(zip(history.CROSSWALK_COLUMNS, [old[:2], old, county, new, str(shared), str(old_pop), share]))
+
+
+def county_results(*counties):
+    """(fips, dem, rep, total, pop) per county, the same in both years."""
+    return {(fips, year): dict(dem_votes=dem, rep_votes=rep, total_votes=total, pop_2020=pop)
+            for fips, dem, rep, total, pop in counties for year in ["2020", "2024"]}
+
+
+class InterpolationTests(HistoryFixture):
+    # Old UT-01 splits evenly between new UT-01 and UT-02; old UT-02 lies wholly in new UT-02.
+    # One county with uniform rates makes the split a pure population split.
+    CROSSWALK = [crosswalk_row("UT-01", "49035", "UT-01", 50, 100, "0.50000000"),
+                 crosswalk_row("UT-01", "49035", "UT-02", 50, 100, "0.50000000"),
+                 crosswalk_row("UT-02", "49035", "UT-02", 300, 300, "1.00000000")]
+    COUNTIES = county_results(("49035", 30, 40, 80, 100))
+
+    def source(self):
+        return [pres_row("UT-01", year, "200000", "240000", "450000") for year in ["2020", "2024"]] + [
+            pres_row("UT-02", year, "100001", "50000", "160000") for year in ["2020", "2024"]]
+
+    def test_reallocated_votes_and_margin(self):
+        rows = history.interpolate_presidential(self.source(), self.CROSSWALK, self.COUNTIES)
+        by_key = {(r["district_id"], r["election_year"]): r for r in rows}
+        ut01 = by_key[("UT-01", "2024")]
+        self.assertEqual((ut01["dem_votes"], ut01["rep_votes"], ut01["total_votes"]),
+                         ("100000.00", "120000.00", "225000.00"))
+        self.assertEqual((ut01["dem_share_pct"], ut01["rep_share_pct"], ut01["dem_margin_pp"]),
+                         ("44.44", "53.33", "-8.89"))
+        ut02 = by_key[("UT-02", "2024")]
+        self.assertEqual((ut02["dem_votes"], ut02["total_votes"]), ("200001.00", "385000.00"))
+        self.assertEqual(ut02["source_id"], history.INTERPOLATED_SOURCE_ID)
+        self.assertEqual(ut02["source_record"], "District=UT-02;year=2024;from=UT-01:0.50000000,UT-02:1.00000000")
+        self.assertEqual(len(rows), 4)
+
+    def test_county_rates_shift_votes_within_old_district(self):
+        # Old UT-01: 100 residents of county A (0.3 Democratic votes each) in new UT-01, and 100 of
+        # county B (0.1 each) in new UT-02. Republican and total rates are equal across counties.
+        crosswalk = [crosswalk_row("UT-01", "49001", "UT-01", 100, 200, "0.50000000"),
+                     crosswalk_row("UT-01", "49003", "UT-02", 100, 200, "0.50000000"),
+                     crosswalk_row("UT-02", "49003", "UT-02", 300, 300, "1.00000000")]
+        counties = county_results(("49001", 30000, 20000, 60000, 100000), ("49003", 10000, 20000, 60000, 100000))
+        rows = history.interpolate_presidential(self.source(), crosswalk, counties)
+        by_key = {(r["district_id"], r["election_year"]): r for r in rows}
+        self.assertEqual(by_key[("UT-01", "2024")]["dem_votes"], "150000.00")
+        self.assertEqual(by_key[("UT-02", "2024")]["dem_votes"], "150001.00")
+        self.assertEqual(by_key[("UT-01", "2024")]["rep_votes"], "120000.00")
+
+    def test_fractional_votes_round_to_cents(self):
+        crosswalk = [crosswalk_row("UT-01", "49035", "UT-01", 1, 3, "0.33333333"),
+                     crosswalk_row("UT-01", "49035", "UT-02", 2, 3, "0.66666667"),
+                     crosswalk_row("UT-02", "49035", "UT-02", 300, 300, "1.00000000")]
+        rows = history.interpolate_presidential(self.source(), crosswalk, self.COUNTIES)
+        self.assertEqual(next(r["dem_votes"] for r in rows if r["district_id"] == "UT-01"), "66666.67")
+
+    def test_missing_source_count_leaves_new_district_blank(self):
+        source = self.source()
+        source[1]["dem_votes"] = ""
+        rows = history.interpolate_presidential(source, self.CROSSWALK, self.COUNTIES)
+        blank = [(r["district_id"], r["election_year"]) for r in rows if r["dem_margin_pp"] == ""]
+        self.assertEqual(blank, [("UT-01", "2024"), ("UT-02", "2024")])
+
+    def test_conservation_failure_names_state_and_year(self):
+        rows = history.interpolate_presidential(self.source(), self.CROSSWALK, self.COUNTIES)
+        rows[0]["dem_votes"] = str(Decimal(rows[0]["dem_votes"]) + 5)
+        with self.assertRaisesRegex(ValueError, "UT 2020: dem_votes sums to"):
+            history.check_conservation(self.source(), rows)
+
+    def test_normalize_writes_interpolated_and_review(self):
+        # Fixture source has AK-AL and AL-01; AL-01 is renumbered to AL-02 on the "new" lines.
+        self.save_boundary(self.boundary_entry(state="AL"))
+        self.save_crosswalk([crosswalk_row("AL-01", "01097", "AL-02", 10, 10, "1.00000000")],
+                            county_results(("01097", 5, 5, 10, 10)))
+        self.normalize()
+        with (self.normalized / "presidential-results-interpolated.csv").open(newline="") as stream:
+            rows = list(csv.DictReader(stream))
+        self.assertEqual([(r["district_id"], r["election_year"], r["dem_margin_pp"]) for r in rows],
+                         [("AL-02", "2020", "20.00"), ("AL-02", "2024", "0.00")])
+        # AL-02 has no Cook row in the fixture, so the review is empty but written.
+        self.assertTrue((self.normalized / "presidential-interpolation-review.csv").exists())
+
+    def test_no_crosswalk_writes_no_interpolation(self):
+        self.normalize()
+        self.assertFalse((self.normalized / "presidential-results-interpolated.csv").exists())
+
+    def test_crosswalk_validation(self):
+        self.save_boundary(self.boundary_entry(state="AL"))
+        counties = county_results(("01097", 5, 5, 10, 10))
+        for rows, sha, message in [
+                ([crosswalk_row("AL-01", "01097", "AL-02", 10, 10, "1")], "0" * 64, "stale SHA-256"),
+                ([crosswalk_row("AL-01", "01097", "AL-02", 9, 10, "0.9")], None, "sum to 9, not 10"),
+                ([crosswalk_row("AK-AL", "02020", "AK-AL", 10, 10, "1")], None, "not in the boundary vintage registry"),
+                ([crosswalk_row("AL-01", "01003", "AL-02", 10, 10, "1")], None, "county 01003 has no results"),
+                ([crosswalk_row("AL-01", "01097", "AL-02", 0, 10, "0")], None, "positive integers")]:
+            self.save_crosswalk(rows, counties, sha)
+            with self.subTest(message=message), self.assertRaisesRegex(ValueError, message):
+                history.load_crosswalk(self.manifest, self.root)
+
+    def test_review_uses_cook_year_weights(self):
+        # National margins are 0 in both years, so the district is 10 points above it in 2020
+        # and 2 points above it in 2024: (0.25 * 10 + 0.75 * 2) / 2 = 2.0, not (10 + 2) / 4 = 3.0.
+        source = [pres_row("AK-AL", year, "500", "500", "1000") for year in ["2020", "2024"]]
+        interpolated = [pres_row("UT-01", "2020", "", "", "", "10.00"), pres_row("UT-01", "2024", "", "", "", "2.00")]
+        pvi = [dict(state="UT", district="01", district_id="UT-01", cook_pvi_dem_lean_pp="-10")]
+        review = history.interpolation_review(interpolated, source, pvi)
+        self.assertEqual([(r["district_id"], r["implied_dem_lean_pp"], r["difference_pp"]) for r in review],
+                         [("UT-01", "2.0", "12.0")])
 
 
 class DistrictHistoryTests(HistoryFixture):

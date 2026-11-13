@@ -31,7 +31,9 @@ class BaselineTests(unittest.TestCase):
         self.assertEqual([by_key["GA-SEN"][c] for c in ["state_postal", "ap_office_id", "ap_seat_num", "ap_race_id"]],
                          ["GA", "S", "", ""])
         self.assertEqual((by_key["UT-01"]["pres_2024_dem_margin_pp"], by_key["UT-01"]["pres_2024_status"],
-                          by_key["UT-01"]["cook_pvi_label"]), ("", "prior_boundaries", "D+12"))
+                          by_key["UT-01"]["cook_pvi_label"]), ("7.50", "interpolated", "D+12"))
+        self.assertEqual((by_key["TN-05"]["pres_2024_dem_margin_pp"], by_key["TN-05"]["pres_2024_status"],
+                          by_key["TN-05"]["cook_pvi_label"]), ("", "prior_boundaries", "R+10"))
         self.assertEqual((by_key["MA-04"]["pres_2024_dem_margin_pp"], by_key["MA-04"]["pres_2024_status"]),
                          ("19.72", "available"))
         self.assertNotIn("pres_2020_dem_margin_pp", baseline.RACE_COLUMNS)

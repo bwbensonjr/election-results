@@ -1,0 +1,10 @@
+state,status,plan_id,blocks,population,old_districts,new_districts,unplaced_blocks,unplaced_population,unplaced_pct
+CA,interpolated,ca_ab604,377591,39538223,52,52,0,0,0.0000
+FL,interpolated,fl_eogpcrp2026,289652,21538187,28,28,0,0,0.0000
+LA,interpolated,la_act2_2026rs,92180,4657757,6,6,0,0,0.0000
+NC,interpolated,nc_sl2025_95,174988,10439388,14,14,0,0,0.0000
+TX,interpolated,tx_planc2333,449085,29145505,38,38,0,0,0.0000
+UT,interpolated,ut_map1a,46792,3271616,4,4,0,0,0.0000
+AL,not_interpolated,,,,,,,,
+OH,not_interpolated,,,,,,,,
+TN,not_interpolated,,,,,,,,

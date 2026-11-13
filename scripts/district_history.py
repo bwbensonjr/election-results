@@ -56,6 +56,16 @@ BOUNDARY_REVIEW_THRESHOLD = Decimal("4")
 BOUNDARY_REVIEW_COLUMNS = [
     "state", "district", "district_id", "cook_pvi_dem_lean_pp", "implied_dem_lean_pp", "difference_pp",
 ]
+CROSSWALK_COLUMNS = ["state", "old_district_id", "county_fips", "new_district_id", "shared_pop", "old_district_pop",
+                     "share"]
+COUNTY_COLUMNS = ["state", "county_fips", "election_year", "dem_votes", "rep_votes", "total_votes", "pop_2020"]
+INTERPOLATED_SOURCE_ID = "presidential-interpolated-cd119-to-2026"
+# Year weights for the lean implied by presidential margins. Cook's PVI weights the most recent
+# election 75 percent; the boundary review predates that refinement and keeps equal weights.
+EQUAL_WEIGHTS = {"2020": Decimal("0.5"), "2024": Decimal("0.5")}
+COOK_WEIGHTS = {"2020": Decimal("0.25"), "2024": Decimal("0.75")}
+# Reallocated state totals must match the source district totals within this many votes.
+CONSERVATION_TOLERANCE = Decimal("1")
 
 
 def district_key(label):
@@ -194,27 +204,209 @@ def load_boundary_vintage(manifest_path=DEFAULT_MANIFEST, project_root=ROOT):
     return states
 
 
+def reviewed_file(manifest_path, key, project_root):
+    """Return the path of a hashed reviewed input named in the manifest, or None when absent."""
+    data = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
+    entry = (data.get("reviewed_inputs") or {}).get(key)
+    if entry is None:
+        return None
+    relative = Path(entry.get("path", ""))
+    path = (Path(project_root) / relative).resolve()
+    if not entry.get("path") or relative.is_absolute() or not path.is_relative_to(Path(project_root).resolve()):
+        raise ValueError(f"manifest {key}: path must remain inside project root")
+    if not re.fullmatch(r"[a-f0-9]{64}", str(entry.get("sha256", ""))):
+        raise ValueError(f"manifest {key}: invalid SHA-256")
+    if hashlib.sha256(path.read_bytes()).hexdigest() != entry["sha256"]:
+        raise ValueError(f"manifest {key}: stale SHA-256 for {entry['path']}; "
+                         "update the manifest after rebuilding the crosswalk")
+    return path
+
+
+def load_crosswalk(manifest_path=DEFAULT_MANIFEST, project_root=ROOT):
+    """Return validated (crosswalk rows, county results), or ([], {}) when the manifest names no crosswalk.
+
+    Both files are built by scripts/build_presidential_crosswalk.py; their paths and SHA-256 come
+    from the manifest's `reviewed_inputs.presidential_crosswalk` and `presidential_county_results`.
+    County results are keyed by (county FIPS, year).
+    """
+    path = reviewed_file(manifest_path, "presidential_crosswalk", project_root)
+    if path is None:
+        return [], {}
+    county_path = reviewed_file(manifest_path, "presidential_county_results", project_root)
+    if county_path is None:
+        raise ValueError("manifest: presidential_crosswalk requires presidential_county_results")
+    counties = {}
+    for line, row in enumerate(read_records(county_path, COUNTY_COLUMNS)[1], 2):
+        location = f"{county_path.name} row {line}"
+        values = [row[c] for c in ["dem_votes", "rep_votes", "total_votes", "pop_2020"]]
+        if (not all(v.isdigit() for v in values) or int(values[2]) <= 0 or int(values[3]) <= 0
+                or int(values[0]) + int(values[1]) > int(values[2])):
+            raise ValueError(f"{location}: votes and population must be integers, with positive total and population, "
+                             "and party votes within the total")
+        key = (row["county_fips"], row["election_year"])
+        if key in counties or row["election_year"] not in ("2020", "2024"):
+            raise ValueError(f"{location}: duplicate or unexpected county year {key}")
+        counties[key] = dict(zip(["dem_votes", "rep_votes", "total_votes", "pop_2020"], map(int, values)))
+    _, rows = read_records(path, CROSSWALK_COLUMNS)
+    registry = load_boundary_vintage(manifest_path, project_root)
+    shared_by_old, old_pop = defaultdict(int), {}
+    seen = set()
+    for line, row in enumerate(rows, 2):
+        location = f"{path.name} row {line}"
+        old_state, _, old_id = district_key(row["old_district_id"])
+        new_state, _, new_id = district_key(row["new_district_id"])
+        if not row["state"] == old_state == new_state:
+            raise ValueError(f"{location}: state does not match both district IDs")
+        if row["state"] not in registry:
+            raise ValueError(f"{location}: {row['state']} is not in the boundary vintage registry")
+        if any((row["county_fips"], year) not in counties for year in ["2020", "2024"]):
+            raise ValueError(f"{location}: county {row['county_fips']} has no results for both years")
+        if (old_id, row["county_fips"], new_id) in seen:
+            raise ValueError(f"{location}: duplicate row {old_id}, {row['county_fips']}, {new_id}")
+        seen.add((old_id, row["county_fips"], new_id))
+        if not (row["shared_pop"].isdigit() and row["old_district_pop"].isdigit()) or int(row["shared_pop"]) <= 0:
+            raise ValueError(f"{location}: populations must be positive integers")
+        if old_pop.setdefault(old_id, int(row["old_district_pop"])) != int(row["old_district_pop"]):
+            raise ValueError(f"{location}: inconsistent population for {old_id}")
+        shared_by_old[old_id] += int(row["shared_pop"])
+    for old_id, total in shared_by_old.items():
+        if total != old_pop[old_id]:
+            raise ValueError(f"{path.name}: shared populations for {old_id} sum to {total}, not {old_pop[old_id]}")
+    return rows, counties
+
+
+def interpolate_presidential(history, crosswalk, counties):
+    """Reallocate source votes from old districts to new ones, weighted by county vote rates.
+
+    For each year and for Democratic, Republican, and other votes (total minus both), each
+    crosswalk row (old district, county, new district) is weighted by shared_pop * county votes /
+    county 2020 population. Each old district's source votes are split across its rows in
+    proportion to those weights, so old district and state totals are kept exactly, and a new
+    district's total is the sum of its three parts. Votes are published to two decimals; shares and margins are computed
+    from the unrounded sums, with the source definitions. A new district any of whose old
+    districts lacks a count is left blank for that year.
+    """
+    columns = ["dem_votes", "rep_votes", "total_votes"]
+    parts = ["dem_votes", "rep_votes", "other_votes"]
+
+    def split(values):
+        return dict(dem_votes=Decimal(values["dem_votes"]), rep_votes=Decimal(values["rep_votes"]),
+                    other_votes=Decimal(values["total_votes"]) - Decimal(values["dem_votes"])
+                    - Decimal(values["rep_votes"]))
+
+    source = {(r["district_id"], r["election_year"]): r for r in history}
+    by_old = defaultdict(list)
+    for row in crosswalk:
+        by_old[row["old_district_id"]].append(row)
+    votes = defaultdict(lambda: dict.fromkeys(parts, Decimal(0)))
+    blank = set()
+    for old_id, pieces in by_old.items():
+        for year in ["2020", "2024"]:
+            old = source.get((old_id, year))
+            if old is None or "" in (old[c] for c in columns):
+                blank.update((p["new_district_id"], year) for p in pieces)
+                continue
+            old_parts = split(old)
+            for column in parts:
+                weights = [int(p["shared_pop"]) * split(counties[(p["county_fips"], year)])[column]
+                           / counties[(p["county_fips"], year)]["pop_2020"] for p in pieces]
+                total_weight = sum(weights, Decimal(0))
+                for piece, weight in zip(pieces, weights):
+                    share = weight / total_weight if total_weight else Decimal(int(piece["shared_pop"])) / int(
+                        piece["old_district_pop"])
+                    votes[(piece["new_district_id"], year)][column] += old_parts[column] * share
+    population_share = defaultdict(lambda: defaultdict(Decimal))
+    for row in crosswalk:
+        population_share[row["new_district_id"]][row["old_district_id"]] += (
+            Decimal(int(row["shared_pop"])) / int(row["old_district_pop"]))
+    rows = []
+    for new_id in sorted(population_share, key=lambda k: district_key(k)[:2]):
+        state, district, district_id = district_key(new_id)
+        record = ",".join(f"{old}:{share.quantize(Decimal('0.00000001'), rounding=ROUND_HALF_UP)}"
+                          for old, share in sorted(population_share[new_id].items()))
+        for year in ["2020", "2024"]:
+            row = dict.fromkeys(PRESIDENTIAL_COLUMNS, "")
+            row.update(state=state, district=district, district_id=district_id, election_year=year,
+                       source_id=INTERPOLATED_SOURCE_ID, source_record=f"District={district_id};year={year};from={record}")
+            if (new_id, year) not in blank:
+                dem, rep, other = (votes[(new_id, year)][c] for c in parts)
+                total = dem + rep + other
+                row.update({c: format(v.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP), "f")
+                            for c, v in zip(columns, [dem, rep, total])})
+                row.update(dem_share_pct=percent(dem, total), rep_share_pct=percent(rep, total),
+                           dem_margin_pp=percent(dem - rep, total))
+            rows.append(row)
+    check_conservation(history, rows)
+    return rows
+
+
+def check_conservation(history, interpolated):
+    """Fail unless each interpolated state's published votes sum to its source district totals.
+
+    A state and year with any blank count, on either side, has no complete total to compare.
+    """
+    columns = ["dem_votes", "rep_votes", "total_votes"]
+    states = {row["state"] for row in interpolated}
+    sums = defaultdict(lambda: defaultdict(Decimal))
+    incomplete = set()
+    for label, rows in [("source", history), ("interpolated", interpolated)]:
+        for row in rows:
+            if row["state"] not in states:
+                continue
+            if "" in (row[c] for c in columns):
+                incomplete.add((row["state"], row["election_year"]))
+                continue
+            for c in columns:
+                sums[(row["state"], row["election_year"], c)][label] += Decimal(row[c])
+    for (state, year, column), totals in sorted(sums.items()):
+        if (state, year) in incomplete:
+            continue
+        if abs(totals["source"] - totals["interpolated"]) > CONSERVATION_TOLERANCE:
+            raise ValueError(f"interpolation for {state} {year}: {column} sums to {totals['interpolated']}, "
+                             f"not the source total {totals['source']}")
+
+
+def national_margins(history):
+    """Return {year: national Democratic margin} summed from the source district rows."""
+    totals = defaultdict(lambda: [Decimal(0), Decimal(0), Decimal(0)])
+    for row in history:
+        if "" not in (row["dem_votes"], row["rep_votes"], row["total_votes"]):
+            for i, column in enumerate(["dem_votes", "rep_votes", "total_votes"]):
+                totals[row["election_year"]][i] += Decimal(row[column])
+    return {year: 100 * (dem - rep) / total for year, (dem, rep, total) in totals.items() if total}
+
+
 def boundary_review(history, pvi, registry):
     """Return districts outside the registry whose PVI and presidential margins disagree.
 
     Each margin is compared with the national margin summed from the same source, and the two
     differences are averaged and halved to put them on Cook's lean scale.
     """
+    return lean_review(history, national_margins(history), pvi, lambda state: state not in registry, EQUAL_WEIGHTS)
+
+
+def interpolation_review(interpolated, history, pvi):
+    """Return interpolated districts whose PVI and estimated margins disagree.
+
+    The implied lean weights the years as Cook's PVI does, so a district that swung between
+    2020 and 2024 is not flagged for the swing alone.
+    """
+    states = {row["state"] for row in interpolated}
+    return lean_review(interpolated, national_margins(history), pvi, lambda state: state in states, COOK_WEIGHTS)
+
+
+def lean_review(history, national, pvi, include, weights):
+    """Return PVI rows whose lean differs from the implied lean, sum(weight * (margin - national)) / 2."""
     by_year = defaultdict(dict)
-    totals = defaultdict(lambda: [Decimal(0), Decimal(0), Decimal(0)])
     for row in history:
         by_year[row["election_year"]][(row["state"], row["district"])] = row
-        if "" not in (row["dem_votes"], row["rep_votes"], row["total_votes"]):
-            for i, column in enumerate(["dem_votes", "rep_votes", "total_votes"]):
-                totals[row["election_year"]][i] += Decimal(row[column])
-    national = {year: 100 * (dem - rep) / total for year, (dem, rep, total) in totals.items() if total}
     rows = []
     for record in pvi:
         key = (record["state"], record["district"])
         margins = [by_year[year].get(key, {}).get("dem_margin_pp", "") for year in ["2020", "2024"]]
-        if record["state"] in registry or record["cook_pvi_dem_lean_pp"] == "" or "" in margins:
+        if not include(record["state"]) or record["cook_pvi_dem_lean_pp"] == "" or "" in margins:
             continue
-        implied = sum(Decimal(m) - national[y] for m, y in zip(margins, ["2020", "2024"])) / 4
+        implied = sum(weights[y] * (Decimal(m) - national[y]) for m, y in zip(margins, ["2020", "2024"])) / 2
         difference = abs(implied - Decimal(record["cook_pvi_dem_lean_pp"]))
         if difference > BOUNDARY_REVIEW_THRESHOLD:
             rows.append(dict(zip(BOUNDARY_REVIEW_COLUMNS, [
@@ -422,6 +614,14 @@ def normalize(manifest_path=DEFAULT_MANIFEST, output_dir=RESULTS_DIR, project_ro
         ("cook-pvi-normalized.csv", PVI_COLUMNS, pvi),
         ("boundary-review.csv", BOUNDARY_REVIEW_COLUMNS, review),
     ]
+    crosswalk, counties = load_crosswalk(manifest_path, project_root)
+    if crosswalk:
+        interpolated = interpolate_presidential(history, crosswalk, counties)
+        outputs += [
+            ("presidential-results-interpolated.csv", PRESIDENTIAL_COLUMNS, interpolated),
+            ("presidential-interpolation-review.csv", BOUNDARY_REVIEW_COLUMNS,
+             interpolation_review(interpolated, history, pvi)),
+        ]
     if candidate_path is not None:
         _, states, state_pvi = normalized_state_sources(manifest_path, project_root, candidate_path)
         outputs += [
