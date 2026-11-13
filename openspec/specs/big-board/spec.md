@@ -86,6 +86,22 @@ When a race is selected under the Results vs. Polls metric, the detail SHALL sho
 - **WHEN** the selected race is uncalled
 - **THEN** the detail notes that the difference uses a partial count and shows the percent of expected vote
 
+### Requirement: Office polling summary when no race is selected
+
+When no race is selected, the detail view SHALL summarize results versus polls for the selected office instead of an empty prompt: a scatter of polling average margin against result margin for every compared race, with a line where the result equals the polls, and a table of race count, share where the Democratic side beat its polls, and median difference by number of polls in the average, plus all races.
+
+#### Scenario: Senate summary
+- **WHEN** the viewer is in Senate mode with no race selected
+- **THEN** the detail shows a dot for each of the 29 compared Senate races and a table whose all-races row reads 29 races, 72% D beat polls, median D +4.0
+
+#### Scenario: Select from the summary
+- **WHEN** the viewer clicks the IL-04 dot in the House summary
+- **THEN** IL-04 is selected and its race detail replaces the summary
+
+#### Scenario: Uncalled races in the summary
+- **WHEN** a compared race is not yet called
+- **THEN** its dot is drawn open and the summary notes the number of uncalled races
+
 ### Requirement: Prior-line districts are marked
 
 In House mode, districts whose shapes have boundary vintage `prior_boundaries` SHALL be visibly marked on the map and labeled in their detail as drawn on 2024 lines, so an outdated shape is never presented as the current district.

@@ -134,6 +134,20 @@ dl.rvp { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 5px 12p
 dl.rvp dt { color: var(--muted); }
 dl.rvp dd { margin: 0; font-variant-numeric: tabular-nums; }
 dl.rvp .D { color: var(--dem-ink); font-weight: 700; } dl.rvp .R { color: var(--rep-ink); font-weight: 700; }
+.summary-plot { display: block; width: 100%; height: auto; margin: 6px 0 2px; overflow: visible; }
+.summary-plot .ax { stroke: var(--line); stroke-width: 1; }
+.summary-plot .diag { stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 4 3; }
+.summary-plot text { fill: var(--muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.summary-plot .dot { cursor: pointer; stroke: var(--surface); stroke-width: 1; }
+.summary-plot .dot.D { fill: var(--dem-3); } .summary-plot .dot.R { fill: var(--rep-3); }
+.summary-plot .dot.open { fill: var(--surface); stroke-width: 1.5; }
+.summary-plot .dot.open.D { stroke: var(--dem-3); } .summary-plot .dot.open.R { stroke: var(--rep-3); }
+table.misses { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 8px; }
+table.misses th { color: var(--muted); font-weight: 600; text-align: right; padding: 4px 0 4px 8px; border-bottom: 1px solid var(--line); }
+table.misses th:first-child, table.misses td:first-child { text-align: left; padding-left: 0; }
+table.misses td { text-align: right; padding: 4px 0 4px 8px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+table.misses tr.all td { font-weight: 700; }
+table.misses .D { color: var(--dem-ink); } table.misses .R { color: var(--rep-ink); }
 .polls-head { font-family: var(--font-display); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); margin: 12px 0 4px; }
 .polls-wrap { max-height: 280px; overflow-y: auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 table.polls { width: 100%; border-collapse: collapse; font-size: 12px; }
@@ -529,11 +543,57 @@ footer.fine { color: var(--muted); font-size: 11px; margin-top: 14px; }
       + `<div class="polls-wrap"><table class="polls"><thead><tr><th>Ends</th><th>Pollster</th><th class="v">D–R</th><th class="v">Margin</th></tr></thead><tbody>${polls}</tbody></table></div>`;
   }
 
+  // With no race selected: how the polls did in the selected office, from the same comparison as the
+  // Results vs. Polls metric. A scatter of poll margin against result margin, and the miss by poll count.
+  const POLL_BUCKETS = [[1, 1, "1 poll"], [2, 4, "2–4 polls"], [5, 9, "5–9 polls"], [10, 29, "10–29 polls"], [30, Infinity, "30+ polls"]];
+  function officeSummary() {
+    const hint = `<p class="empty">Click a ${view.office === "House" ? "district" : "state"} or a dot, or search by race (PA-07, GA-SEN), state, or candidate.</p>`;
+    const head = `<div class="eyebrow">${view.office} · results vs. polls</div><h2>How the polls did</h2>`;
+    const items = Object.values(races).filter((b) => b.office === view.office)
+      .map((b) => ({ base: b, c: rvpFor(b.race_key) })).filter((d) => d.c.status === "compared");
+    if (!items.length) return head + `<p class="empty">No ${view.office === "House" ? "district" : "race"} with a polling average has votes yet.</p>` + hint;
+    const W = 300, H = 270, L = 34, B = 26, T = 6, R = 6;
+    const vals = items.flatMap((d) => [num(d.base.poll_avg_dem_margin_pp), d.c.margin]);
+    const domain = d3.extent([...vals, 0]);
+    const x = d3.scaleLinear(domain, [L, W - R]).nice();
+    const y = d3.scaleLinear(x.domain(), [H - B, T]);
+    const [lo, hi] = x.domain();
+    const tick = (v) => v === 0 ? "0" : `${v > 0 ? "D" : "R"}+${Math.abs(v)}`;
+    const ticks = x.ticks(4);
+    const dots = items.sort((a, b) => Math.abs(a.c.diff) - Math.abs(b.c.diff)).map(({ base: b, c }) => {
+      const side = c.diff >= 0 ? "D" : "R";
+      const px = x(num(b.poll_avg_dem_margin_pp)), py = y(c.margin);
+      return `<circle class="dot ${side}${c.called ? "" : " open"}" data-key="${esc(b.race_key)}" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${view.office === "House" ? 3.2 : 4.2}">`
+        + `<title>${esc(raceTitle(b))}: polls ${signed(num(b.poll_avg_dem_margin_pp))}, result ${signed(c.margin)}, ${side} beat polls by ${Math.abs(c.diff).toFixed(1)} (${b.poll_count} poll${b.poll_count === "1" ? "" : "s"})</title></circle>`;
+    }).join("");
+    const svg = `<svg class="summary-plot" viewBox="0 0 ${W} ${H}" role="img" aria-label="Polling average margin against result margin for ${items.length} ${view.office} races; points above the diagonal beat their polls toward Democrats.">`
+      + ticks.map((t) => `<line class="ax" x1="${x(t)}" x2="${x(t)}" y1="${T}" y2="${H - B}" opacity=".5"/><text x="${x(t)}" y="${H - B + 12}" text-anchor="middle">${tick(t)}</text>`).join("")
+      + ticks.map((t) => `<line class="ax" x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}" opacity=".5"/><text x="${L - 4}" y="${y(t) + 3}" text-anchor="end">${tick(t)}</text>`).join("")
+      + `<line class="diag" x1="${x(lo)}" y1="${y(lo)}" x2="${x(hi)}" y2="${y(hi)}"/>`
+      + `<text x="${(L + W - R) / 2}" y="${H - 2}" text-anchor="middle">Polling average margin</text>`
+      + `<text x="${L + 4}" y="${T + 10}">Result margin ↑</text><text x="${W - R}" y="${y(lo) - 6}" text-anchor="end">Above the line: D beat polls</text>`
+      + dots + `</svg>`;
+    const row = (label, list, cls = "") => {
+      if (!list.length) return "";
+      const diffs = list.map((d) => d.c.diff);
+      const med = d3.median(diffs), dShare = diffs.filter((v) => v > 0).length / diffs.length;
+      const side = med >= 0 ? "D" : "R";
+      return `<tr class="${cls}"><td>${label}</td><td>${list.length}</td><td>${Math.round(100 * dShare)}%</td><td class="${side}">${side} +${Math.abs(med).toFixed(1)}</td></tr>`;
+    };
+    const table = `<table class="misses"><thead><tr><th>Polls in average</th><th>Races</th><th>D beat polls</th><th>Median miss</th></tr></thead><tbody>`
+      + POLL_BUCKETS.map(([a, b, label]) => row(label, items.filter((d) => +d.base.poll_count >= a && +d.base.poll_count <= b))).join("")
+      + row("All", items, "all") + `</tbody></table>`;
+    const uncalled = items.filter((d) => !d.c.called).length;
+    const note = `<p class="note">Miss is the result margin minus the polling average margin for the average's two candidates. ${uncalled ? `Open dots are ${uncalled} uncalled race${uncalled === 1 ? "" : "s"} with partial counts. ` : ""}Races without a polling average are left out.</p>`;
+    return head + svg + table + note + hint;
+  }
+
   function card() {
     const el = document.getElementById("card");
     const base = races[view.selected];
     if (!base) {
-      el.innerHTML = `<div class="eyebrow">Race detail</div><h2>Select a race</h2><p class="empty">Click a ${view.office === "House" ? "district" : "state"} on the map or search by race (PA-07, GA-SEN), state, or candidate.</p>`;
+      el.innerHTML = officeSummary();
+      el.querySelectorAll(".summary-plot .dot").forEach((dot) => dot.addEventListener("click", () => select(dot.dataset.key)));
       return;
     }
     const r = results?.races?.[base.race_key];
