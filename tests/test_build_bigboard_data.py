@@ -56,6 +56,20 @@ class BoardDataTests(unittest.TestCase):
         self.assertTrue(all(districts[k]["vintage"] == "plan_2026" for k, r in races.items()
                             if r["pres_2024_status"] == "interpolated"))
 
+    def test_poll_lists_newest_first(self):
+        board.build(self.page)
+        _, data = self.embedded()
+        self.assertEqual(data["poll_columns"][:2], ["end_date", "pollster"])
+        races = {r[0]: dict(zip(data["race_columns"], r)) for r in data["races"]}
+        polls = data["polls"]["AK-SEN"]
+        self.assertEqual(len(polls), int(races["AK-SEN"]["poll_count"]))
+        self.assertTrue(all(len(p) == len(data["poll_columns"]) for p in polls))
+        dates = [p[0] for p in polls]
+        self.assertEqual(dates, sorted(dates, reverse=True))
+        self.assertEqual(dates[0], "2026-11-01")
+        self.assertNotIn("AL-01", data["polls"])
+        self.assertEqual(sum(len(v) for v in data["polls"].values()), 1458)
+
     def test_rest_of_page_untouched_and_rebuild_identical(self):
         board.build(self.page)
         first, _ = self.embedded()

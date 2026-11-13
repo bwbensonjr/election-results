@@ -7,8 +7,8 @@
   "files": {
     "data/results.json": "2026/live/results.json"
   },
-  "published_version": "1794579064-e2f4",
-  "published_at": "2026-11-13T14:11:14Z",
+  "published_version": "1794582440-a026",
+  "published_at": "2026-11-13T15:07:30Z",
   "notes": "Live results are written to the artifact database (collection live) with ArtifactData from the files in 2026/live/db; see the runbook in docs/big-board.md. Republish the page only for page fixes or to refresh the fallback file: file_path bigboard/index.html, root bigboard, files mapping data/results.json to 2026/live/results.json (absolute path), and omit capabilities to keep the database declaration. From another conversation pass this url so the same link is updated.",
   "capabilities": {
     "db": {

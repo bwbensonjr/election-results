@@ -1,0 +1,507 @@
+race_key,state,office,district,poll_avg_status,poll_dem_candidate,poll_rep_candidate,poll_dem_pct,poll_rep_pct,poll_dem_margin_pp,poll_count,poll_latest_end_date,result_dem_pct,result_rep_pct,result_dem_margin_pp,diff_pp,called,winner_party_group,eevp,total_votes,status,results_fetched_at
+AK-AL,AK,House,00,available,Bill Hill,Nick Begich,40.62,45.96,-5.33,12,2026-11-01,41.21,48.62,-7.41,-2.08,False,,88.09,253459,compared,2026-11-13T12:37:41Z
+AK-GOV,AK,Governor,,no_principal_matchup,,,,,,,,,,,,False,,87.89,251425,no_polls,2026-11-13T12:37:41Z
+AK-SEN,AK,Senate,,available,Mary Peltola,Dan Sullivan,48.03,45.53,2.50,21,2026-11-01,49.24,46.95,2.28,-0.22,False,,88.17,254203,compared,2026-11-13T12:37:41Z
+AL-01,AL,House,01,no_polls,,,,,,,,,,,,True,REP,99,231965,no_polls,2026-11-13T12:37:41Z
+AL-02,AL,House,02,available,Shomari C. Figures,Rhett Marques,46.06,47.87,-1.81,4,2026-10-25,53.75,46.25,7.51,9.32,True,DEM,98.95,231471,compared,2026-11-13T12:37:41Z
+AL-03,AL,House,03,no_polls,,,,,,,,,,,,True,REP,99,221726,no_polls,2026-11-13T12:37:41Z
+AL-04,AL,House,04,no_polls,,,,,,,,,,,,True,REP,98.91,213641,no_polls,2026-11-13T12:37:41Z
+AL-05,AL,House,05,no_polls,,,,,,,,,,,,True,REP,99,266843,no_polls,2026-11-13T12:37:41Z
+AL-06,AL,House,06,no_polls,,,,,,,,,,,,True,REP,98.31,260878,no_polls,2026-11-13T12:37:41Z
+AL-07,AL,House,07,no_polls,,,,,,,,,,,,True,DEM,98.95,251908,no_polls,2026-11-13T12:37:41Z
+AL-GOV,AL,Governor,,available,Doug Jones,Tommy Tuberville,41.48,49.65,-8.17,6,2026-10-24,48.00,52.00,-3.99,4.18,True,REP,98.9,1679602,compared,2026-11-13T12:37:41Z
+AL-SEN,AL,Senate,,available,Everett Wess,Barry Moore,36.53,51.02,-14.50,5,2026-10-24,45.29,54.71,-9.42,5.08,True,REP,98.96,1676659,compared,2026-11-13T12:37:41Z
+AR-01,AR,House,01,no_polls,,,,,,,,,,,,True,REP,99,194194,no_polls,2026-11-13T12:37:41Z
+AR-02,AR,House,02,available,Chris Jones,French Hill,47.99,50.57,-2.58,3,2026-10-14,49.13,50.87,-1.74,0.84,True,REP,99,250548,compared,2026-11-13T12:37:41Z
+AR-03,AR,House,03,no_polls,,,,,,,,,,,,True,REP,99,231928,no_polls,2026-11-13T12:37:41Z
+AR-04,AR,House,04,no_polls,,,,,,,,,,,,True,REP,99,200496,no_polls,2026-11-13T12:37:41Z
+AR-GOV,AR,Governor,,available,Fredrick Love,Sarah Huckabee Sanders,33.16,50.13,-16.97,2,2026-10-13,38.58,53.87,-15.29,1.68,True,REP,99,886059,compared,2026-11-13T12:37:41Z
+AR-SEN,AR,Senate,,available,Hallie Shoffner,Tom Cotton,40.16,50.82,-10.66,7,2026-10-28,42.41,54.26,-11.85,-1.19,True,REP,99,886121,compared,2026-11-13T12:37:41Z
+AZ-01,AZ,House,01,available,Amish Shah,Thomas 'Jay' Feely IV,48.06,44.09,3.97,2,2026-10-28,52.39,45.43,6.96,2.99,True,DEM,99,354660,compared,2026-11-13T12:37:41Z
+AZ-02,AZ,House,02,available,Jonathan Nez,Eli Crane,49.50,47.83,1.67,3,2026-10-14,48.56,49.61,-1.05,-2.72,True,REP,99,329656,compared,2026-11-13T12:37:41Z
+AZ-03,AZ,House,03,no_dem_rep_field,,,,,,,,,,,,True,DEM,99,149586,no_polls,2026-11-13T12:37:41Z
+AZ-04,AZ,House,04,no_polls,,,,,,,,,,,,True,DEM,99,255118,no_polls,2026-11-13T12:37:41Z
+AZ-05,AZ,House,05,no_polls,,,,,,,,,,,,True,REP,99,325005,no_polls,2026-11-13T12:37:41Z
+AZ-06,AZ,House,06,available,JoAnna Mendoza,Juan Ciscomani,47.00,44.95,2.04,3,2026-06-11,52.96,44.85,8.10,6.06,True,DEM,99,358882,compared,2026-11-13T12:37:41Z
+AZ-07,AZ,House,07,no_polls,,,,,,,,,,,,True,DEM,99,204944,no_polls,2026-11-13T12:37:41Z
+AZ-08,AZ,House,08,no_polls,,,,,,,,,,,,True,REP,99,287226,no_polls,2026-11-13T12:37:41Z
+AZ-09,AZ,House,09,no_polls,,,,,,,,,,,,True,REP,99,288773,no_polls,2026-11-13T12:37:41Z
+AZ-GOV,AZ,Governor,,available,Katie Hobbs,Andy Biggs,49.31,40.21,9.10,29,2026-10-29,55.67,42.46,13.21,4.11,True,DEM,99,2575544,compared,2026-11-13T12:37:41Z
+CA-01,CA,House,01,available,Mike McGuire,James Gallagher,56.00,41.00,15.00,1,2026-10-26,57.74,42.26,15.47,0.47,True,DEM,86.21,256103,compared,2026-11-13T12:37:41Z
+CA-02,CA,House,02,no_polls,,,,,,,,,,,,True,DEM,83.37,281248,no_polls,2026-11-13T12:37:41Z
+CA-03,CA,House,03,no_polls,,,,,,,,,,,,True,DEM,83.69,270270,no_polls,2026-11-13T12:37:41Z
+CA-04,CA,House,04,no_dem_rep_field,,,,,,,,,,,,False,,82.87,212928,no_polls,2026-11-13T12:37:41Z
+CA-05,CA,House,05,no_polls,,,,,,,,,,,,True,REP,94.52,281032,no_polls,2026-11-13T12:37:41Z
+CA-06,CA,House,06,no_dem_rep_field,,,,,,,,,,,,True,DEM,82.26,241015,no_polls,2026-11-13T12:37:41Z
+CA-07,CA,House,07,no_dem_rep_field,,,,,,,,,,,,True,DEM,87.8,233256,no_polls,2026-11-13T12:37:41Z
+CA-08,CA,House,08,no_polls,,,,,,,,,,,,True,DEM,98.15,255975,no_polls,2026-11-13T12:37:41Z
+CA-09,CA,House,09,no_polls,,,,,,,,,,,,True,DEM,97.19,209919,no_polls,2026-11-13T12:37:41Z
+CA-10,CA,House,10,no_polls,,,,,,,,,,,,True,DEM,97.08,302520,no_polls,2026-11-13T12:37:41Z
+CA-11,CA,House,11,no_dem_rep_field,,,,,,,,,,,,True,DEM,99,300795,no_polls,2026-11-13T12:37:41Z
+CA-12,CA,House,12,no_dem_rep_field,,,,,,,,,,,,True,DEM,97.98,250333,no_polls,2026-11-13T12:37:41Z
+CA-13,CA,House,13,no_polls,,,,,,,,,,,,True,DEM,96.43,167834,no_polls,2026-11-13T12:37:41Z
+CA-14,CA,House,14,no_dem_rep_field,,,,,,,,,,,,True,DEM,90.68,208521,no_polls,2026-11-13T12:37:41Z
+CA-15,CA,House,15,no_polls,,,,,,,,,,,,True,DEM,98.63,244619,no_polls,2026-11-13T12:37:41Z
+CA-16,CA,House,16,no_polls,,,,,,,,,,,,True,DEM,98.1,278087,no_polls,2026-11-13T12:37:41Z
+CA-17,CA,House,17,no_polls,,,,,,,,,,,,True,DEM,97.03,209241,no_polls,2026-11-13T12:37:41Z
+CA-18,CA,House,18,no_polls,,,,,,,,,,,,True,DEM,94.07,189655,no_polls,2026-11-13T12:37:41Z
+CA-19,CA,House,19,no_polls,,,,,,,,,,,,True,DEM,93.16,301316,no_polls,2026-11-13T12:37:41Z
+CA-20,CA,House,20,no_polls,,,,,,,,,,,,True,REP,84.76,238760,no_polls,2026-11-13T12:37:41Z
+CA-21,CA,House,21,no_polls,,,,,,,,,,,,True,DEM,82.66,139898,no_polls,2026-11-13T12:37:41Z
+CA-22,CA,House,22,available,Randy Villegas,David G. Valadao,53.94,44.00,9.94,2,2026-10-28,67.88,32.12,35.76,25.82,True,DEM,85.96,141175,compared,2026-11-13T12:37:41Z
+CA-23,CA,House,23,no_polls,,,,,,,,,,,,False,,96.65,211808,no_polls,2026-11-13T12:37:41Z
+CA-24,CA,House,24,no_polls,,,,,,,,,,,,True,DEM,90.48,273496,no_polls,2026-11-13T12:37:41Z
+CA-25,CA,House,25,no_polls,,,,,,,,,,,,True,DEM,78.72,192974,no_polls,2026-11-13T12:37:41Z
+CA-26,CA,House,26,no_polls,,,,,,,,,,,,True,DEM,90.74,261049,no_polls,2026-11-13T12:37:41Z
+CA-27,CA,House,27,no_polls,,,,,,,,,,,,True,DEM,98.36,230765,no_polls,2026-11-13T12:37:41Z
+CA-28,CA,House,28,no_polls,,,,,,,,,,,,True,DEM,98.29,259538,no_polls,2026-11-13T12:37:41Z
+CA-29,CA,House,29,no_dem_rep_field,,,,,,,,,,,,True,DEM,98.36,173457,no_polls,2026-11-13T12:37:41Z
+CA-30,CA,House,30,no_polls,,,,,,,,,,,,True,DEM,98.36,257794,no_polls,2026-11-13T12:37:41Z
+CA-31,CA,House,31,no_polls,,,,,,,,,,,,True,DEM,98.31,236937,no_polls,2026-11-13T12:37:41Z
+CA-32,CA,House,32,no_polls,,,,,,,,,,,,True,DEM,96.3,269858,no_polls,2026-11-13T12:37:41Z
+CA-33,CA,House,33,no_polls,,,,,,,,,,,,True,DEM,97.64,201880,no_polls,2026-11-13T12:37:41Z
+CA-34,CA,House,34,no_dem_rep_field,,,,,,,,,,,,True,DEM,98.36,172752,no_polls,2026-11-13T12:37:41Z
+CA-35,CA,House,35,no_polls,,,,,,,,,,,,True,DEM,93.67,203065,no_polls,2026-11-13T12:37:41Z
+CA-36,CA,House,36,no_polls,,,,,,,,,,,,True,DEM,98.36,304160,no_polls,2026-11-13T12:37:41Z
+CA-37,CA,House,37,no_dem_rep_field,,,,,,,,,,,,True,DEM,98.36,181518,no_polls,2026-11-13T12:37:41Z
+CA-38,CA,House,38,no_polls,,,,,,,,,,,,True,DEM,98.06,214487,no_polls,2026-11-13T12:37:41Z
+CA-39,CA,House,39,no_polls,,,,,,,,,,,,True,DEM,79.65,164935,no_polls,2026-11-13T12:37:41Z
+CA-40,CA,House,40,no_dem_rep_field,,,,,,,,,,,,True,REP,85.84,229649,no_polls,2026-11-13T12:37:41Z
+CA-41,CA,House,41,no_polls,,,,,,,,,,,,True,DEM,98.12,251724,no_polls,2026-11-13T12:37:41Z
+CA-42,CA,House,42,no_polls,,,,,,,,,,,,True,DEM,97.65,281310,no_polls,2026-11-13T12:37:41Z
+CA-43,CA,House,43,no_polls,,,,,,,,,,,,True,DEM,98.36,186571,no_polls,2026-11-13T12:37:41Z
+CA-44,CA,House,44,no_polls,,,,,,,,,,,,True,DEM,98.36,180571,no_polls,2026-11-13T12:37:41Z
+CA-45,CA,House,45,no_polls,,,,,,,,,,,,True,DEM,97.44,247343,no_polls,2026-11-13T12:37:41Z
+CA-46,CA,House,46,no_polls,,,,,,,,,,,,True,DEM,97.2,194072,no_polls,2026-11-13T12:37:41Z
+CA-47,CA,House,47,no_polls,,,,,,,,,,,,True,DEM,97.2,283843,no_polls,2026-11-13T12:37:41Z
+CA-48,CA,House,48,available,Marni von Wilpert,Jim Desmond,49.54,42.68,6.86,5,2026-10-27,59.74,40.26,19.47,12.61,True,DEM,87.13,260394,compared,2026-11-13T12:37:41Z
+CA-49,CA,House,49,no_polls,,,,,,,,,,,,True,DEM,95.62,313814,no_polls,2026-11-13T12:37:41Z
+CA-50,CA,House,50,no_polls,,,,,,,,,,,,True,DEM,95.27,300114,no_polls,2026-11-13T12:37:41Z
+CA-51,CA,House,51,no_polls,,,,,,,,,,,,True,DEM,95.27,280280,no_polls,2026-11-13T12:37:41Z
+CA-52,CA,House,52,no_polls,,,,,,,,,,,,True,DEM,95.27,212959,no_polls,2026-11-13T12:37:41Z
+CA-GOV,CA,Governor,,available,Xavier Becerra,Steve Hilton,57.94,36.24,21.70,19,2026-10-31,65.61,34.39,31.23,9.53,True,DEM,93.52,12668445,compared,2026-11-13T12:37:41Z
+CO-01,CO,House,01,no_polls,,,,,,,,,,,,True,DEM,98.87,303955,no_polls,2026-11-13T12:37:41Z
+CO-02,CO,House,02,no_polls,,,,,,,,,,,,True,DEM,96.74,366801,no_polls,2026-11-13T12:37:41Z
+CO-03,CO,House,03,available,Dwayne L. Romero,Jeff Hurd,46.89,46.00,0.89,2,2026-10-21,47.42,49.31,-1.89,-2.78,True,REP,95.84,332913,compared,2026-11-13T12:37:41Z
+CO-04,CO,House,04,available,Eileen Laubacher,Lauren Boebert,40.00,45.00,-5.00,1,2026-09-24,48.79,47.91,0.88,5.88,False,,98.08,381689,compared,2026-11-13T12:37:41Z
+CO-05,CO,House,05,available,Jessica Killin,Jeff Crank,45.63,44.00,1.63,4,2026-10-20,50.52,45.80,4.72,3.09,True,DEM,94.88,307995,compared,2026-11-13T12:37:41Z
+CO-06,CO,House,06,no_polls,,,,,,,,,,,,True,DEM,98.61,296036,no_polls,2026-11-13T12:37:41Z
+CO-07,CO,House,07,no_polls,,,,,,,,,,,,True,DEM,96.15,376024,no_polls,2026-11-13T12:37:41Z
+CO-08,CO,House,08,available,Manny Rutinel,Gabe Evans,46.30,48.00,-1.70,1,2026-09-17,55.42,40.70,14.72,16.42,True,DEM,97.12,286502,compared,2026-11-13T12:37:41Z
+CO-GOV,CO,Governor,,available,Phil Weiser,Victor Marx,54.43,37.40,17.03,3,2026-11-02,61.09,33.26,27.83,10.80,True,DEM,98.08,2657152,compared,2026-11-13T12:37:41Z
+CO-SEN,CO,Senate,,available,John Hickenlooper,Mark Baisley,56.52,36.92,19.60,3,2026-11-02,60.45,35.03,25.42,5.82,True,DEM,98.1,2669331,compared,2026-11-13T12:37:41Z
+CT-01,CT,House,01,no_polls,,,,,,,,,,,,True,DEM,98.47,253371,no_polls,2026-11-13T12:37:41Z
+CT-02,CT,House,02,no_polls,,,,,,,,,,,,True,DEM,98.33,292034,no_polls,2026-11-13T12:37:41Z
+CT-03,CT,House,03,no_polls,,,,,,,,,,,,True,DEM,97.89,246468,no_polls,2026-11-13T12:37:41Z
+CT-04,CT,House,04,no_polls,,,,,,,,,,,,True,DEM,98.44,240138,no_polls,2026-11-13T12:37:41Z
+CT-05,CT,House,05,available,Jahana Hayes,Chris Shea,51.00,45.00,6.00,1,2026-10-01,57.84,42.16,15.68,9.68,True,DEM,98.39,253020,compared,2026-11-13T12:37:41Z
+CT-GOV,CT,Governor,,available,Ned Lamont,Ryan Fazio,54.74,37.76,16.97,12,2026-10-31,59.58,40.42,19.16,2.19,True,DEM,98.4,1298048,compared,2026-11-13T12:37:41Z
+DE-AL,DE,House,00,no_polls,,,,,,,,,,,,True,DEM,99,378703,no_polls,2026-11-13T12:37:41Z
+DE-SEN,DE,Senate,,no_polls,,,,,,,,,,,,True,DEM,99,378424,no_polls,2026-11-13T12:37:41Z
+FL-01,FL,House,01,no_polls,,,,,,,,,,,,True,REP,99,291010,no_polls,2026-11-13T12:37:41Z
+FL-02,FL,House,02,no_eligible_polls,,,,,,,,,,,,True,REP,99,309441,no_polls,2026-11-13T12:37:41Z
+FL-03,FL,House,03,no_polls,,,,,,,,,,,,True,REP,99,300422,no_polls,2026-11-13T12:37:41Z
+FL-04,FL,House,04,no_polls,,,,,,,,,,,,True,REP,99,301127,no_polls,2026-11-13T12:37:41Z
+FL-05,FL,House,05,no_polls,,,,,,,,,,,,True,REP,99,333358,no_polls,2026-11-13T12:37:41Z
+FL-06,FL,House,06,no_polls,,,,,,,,,,,,True,REP,99,331484,no_polls,2026-11-13T12:37:41Z
+FL-07,FL,House,07,available,Bale Dalton,Ryan Elijah,45.00,45.00,0.00,1,2026-10-19,49.21,49.71,-0.50,-0.50,True,REP,99,324454,compared,2026-11-13T12:37:41Z
+FL-08,FL,House,08,available,Jennifer Jenkins,Mike Haridopolos,35.00,44.00,-9.00,1,2026-07-18,46.83,53.17,-6.34,2.66,True,REP,99,319595,compared,2026-11-13T12:37:41Z
+FL-09,FL,House,09,available,Darren Soto,Dan Green,43.54,43.54,0.00,2,2026-10-15,50.26,49.74,0.53,0.53,True,DEM,99,285122,compared,2026-11-13T12:37:41Z
+FL-10,FL,House,10,no_dem_rep_field,,,,,,,,,,,,True,DEM,0,0,no_polls,2026-11-13T12:37:41Z
+FL-11,FL,House,11,available,James Pericola,Joe Strada,41.80,42.10,-0.30,1,2026-07-30,45.99,52.93,-6.94,-6.64,True,REP,99,365755,compared,2026-11-13T12:37:41Z
+FL-12,FL,House,12,no_polls,,,,,,,,,,,,True,REP,99,286094,no_polls,2026-11-13T12:37:41Z
+FL-13,FL,House,13,available,Leela Gray,Anna Paulina Luna,45.71,45.73,-0.02,5,2026-10-15,48.68,49.48,-0.79,-0.77,True,REP,98.61,313669,compared,2026-11-13T12:37:41Z
+FL-14,FL,House,14,available,Kathy Castor,Mike Beltran,47.90,42.69,5.21,2,2026-10-14,51.22,45.87,5.36,0.15,True,DEM,98.74,300233,compared,2026-11-13T12:37:41Z
+FL-15,FL,House,15,no_polls,,,,,,,,,,,,True,REP,99,300907,no_polls,2026-11-13T12:37:41Z
+FL-16,FL,House,16,available,Kelly Kirschner,Sydney Gruters,39.22,42.12,-2.90,2,2026-10-02,46.97,51.20,-4.24,-1.34,True,REP,99,343045,compared,2026-11-13T12:37:41Z
+FL-17,FL,House,17,no_polls,,,,,,,,,,,,True,REP,99,357875,no_polls,2026-11-13T12:37:41Z
+FL-18,FL,House,18,no_polls,,,,,,,,,,,,True,REP,99,273579,no_polls,2026-11-13T12:37:41Z
+FL-19,FL,House,19,no_polls,,,,,,,,,,,,True,REP,99,325188,no_polls,2026-11-13T12:37:41Z
+FL-20,FL,House,20,no_polls,,,,,,,,,,,,True,DEM,99,245706,no_polls,2026-11-13T12:37:41Z
+FL-21,FL,House,21,available,James T. Martin,Brian Mast,38.00,49.00,-11.00,1,2026-09-25,44.80,53.89,-9.09,1.91,True,REP,99,342040,compared,2026-11-13T12:37:41Z
+FL-22,FL,House,22,available,Pia Dandiya,Casey Askar,48.02,47.04,0.99,2,2026-08-31,51.90,48.10,3.81,2.82,True,DEM,99,295116,compared,2026-11-13T12:37:41Z
+FL-23,FL,House,23,no_polls,,,,,,,,,,,,True,DEM,99,258967,no_polls,2026-11-13T12:37:41Z
+FL-24,FL,House,24,no_polls,,,,,,,,,,,,True,DEM,99,204435,no_polls,2026-11-13T12:37:41Z
+FL-25,FL,House,25,available,Jared Moskowitz,Scott Singer,45.48,43.76,1.71,3,2026-10-27,51.27,46.63,4.65,2.94,True,DEM,99,280681,compared,2026-11-13T12:37:41Z
+FL-26,FL,House,26,no_polls,,,,,,,,,,,,True,REP,99,229804,no_polls,2026-11-13T12:37:41Z
+FL-27,FL,House,27,available,Eliott Rodriguez,Maria Elvira Salazar,45.61,46.23,-0.61,2,2026-09-13,49.78,50.22,-0.44,0.17,True,REP,99,247952,compared,2026-11-13T12:37:41Z
+FL-28,FL,House,28,no_polls,,,,,,,,,,,,True,REP,99,236376,no_polls,2026-11-13T12:37:41Z
+FL-GOV,FL,Governor,,available,David Jolly,Byron Donalds,43.82,48.07,-4.26,45,2026-11-02,48.72,50.01,-1.28,2.98,True,REP,99,8270102,compared,2026-11-13T12:37:41Z
+FL-SEN,FL,Senate,,available,Angie Nixon,Ashley Moody,43.23,49.47,-6.25,30,2026-11-02,48.00,50.86,-2.87,3.38,True,REP,99,8280269,compared,2026-11-13T12:37:41Z
+GA-01,GA,House,01,no_polls,,,,,,,,,,,,True,REP,99,272875,no_polls,2026-11-13T12:37:41Z
+GA-02,GA,House,02,no_polls,,,,,,,,,,,,True,DEM,99,244056,no_polls,2026-11-13T12:37:41Z
+GA-03,GA,House,03,available,Maura Keller,Brian Jack,45.00,50.00,-5.00,1,2026-10-07,41.40,58.60,-17.21,-12.21,True,REP,99,321867,compared,2026-11-13T12:37:41Z
+GA-04,GA,House,04,no_polls,,,,,,,,,,,,True,DEM,99,262984,no_polls,2026-11-13T12:37:41Z
+GA-05,GA,House,05,no_polls,,,,,,,,,,,,True,DEM,99,304784,no_polls,2026-11-13T12:37:41Z
+GA-06,GA,House,06,no_polls,,,,,,,,,,,,True,DEM,99,326403,no_polls,2026-11-13T12:37:41Z
+GA-07,GA,House,07,available,Tony Kozycki,Rich McCormick,46.25,45.19,1.06,2,2026-10-09,43.82,56.18,-12.36,-13.42,True,REP,99,341081,compared,2026-11-13T12:37:41Z
+GA-08,GA,House,08,no_polls,,,,,,,,,,,,True,REP,99,265175,no_polls,2026-11-13T12:37:41Z
+GA-09,GA,House,09,no_polls,,,,,,,,,,,,True,REP,99,308639,no_polls,2026-11-13T12:37:41Z
+GA-10,GA,House,10,no_polls,,,,,,,,,,,,True,REP,99,325951,no_polls,2026-11-13T12:37:41Z
+GA-11,GA,House,11,available,Chris Harden,John Cowan,42.00,40.00,2.00,1,2026-09-11,44.64,55.36,-10.71,-12.71,True,REP,99,329197,compared,2026-11-13T12:37:41Z
+GA-12,GA,House,12,no_polls,,,,,,,,,,,,True,REP,99,270517,no_polls,2026-11-13T12:37:41Z
+GA-13,GA,House,13,no_polls,,,,,,,,,,,,True,DEM,99,310742,no_polls,2026-11-13T12:37:41Z
+GA-14,GA,House,14,no_polls,,,,,,,,,,,,True,REP,99,287276,no_polls,2026-11-13T12:37:41Z
+GA-GOV,GA,Governor,,available,Keisha Lance Bottoms,Rick Jackson,47.49,47.70,-0.21,19,2026-11-02,54.34,45.66,8.67,8.88,True,DEM,99,4184771,compared,2026-11-13T12:37:41Z
+GA-SEN,GA,Senate,,available,Jon Ossoff,Mike Collins,52.03,43.18,8.85,23,2026-11-02,59.03,40.97,18.06,9.21,True,DEM,99,4182642,compared,2026-11-13T12:37:41Z
+HI-01,HI,House,01,no_polls,,,,,,,,,,,,True,DEM,99,176004,no_polls,2026-11-13T12:37:41Z
+HI-02,HI,House,02,no_polls,,,,,,,,,,,,True,DEM,99,195372,no_polls,2026-11-13T12:37:41Z
+HI-GOV,HI,Governor,,no_polls,,,,,,,,,,,,True,DEM,99,384703,no_polls,2026-11-13T12:37:41Z
+IA-01,IA,House,01,available,Christina Bohannan,Mariannette Miller-Meeks,40.00,35.00,5.00,2,2026-07-16,52.96,43.40,9.55,4.55,True,DEM,99,347706,compared,2026-11-13T12:37:41Z
+IA-02,IA,House,02,available,Lindsay James,Joe Mitchell,49.83,46.91,2.93,3,2026-10-14,49.54,45.55,3.99,1.06,True,DEM,99,346356,compared,2026-11-13T12:37:41Z
+IA-03,IA,House,03,available,Sarah Trone Garriott,Zach Nunn,42.00,48.00,-6.00,1,2026-03-14,53.65,46.35,7.29,13.29,True,DEM,98.88,353122,compared,2026-11-13T12:37:41Z
+IA-04,IA,House,04,no_polls,,,,,,,,,,,,True,REP,98.75,302948,no_polls,2026-11-13T12:37:41Z
+IA-GOV,IA,Governor,,available,Rob Sand,Zach Lahn,51.69,44.10,7.59,26,2026-11-01,55.53,44.47,11.07,3.48,True,DEM,99,1367769,compared,2026-11-13T12:37:41Z
+IA-SEN,IA,Senate,,available,Josh Turek,Ashley Hinson,46.86,46.39,0.47,38,2026-11-01,50.55,46.36,4.20,3.73,True,DEM,99,1362168,compared,2026-11-13T12:37:41Z
+ID-01,ID,House,01,available,Kaylee Peterson,Russ Fulcher,26.33,51.56,-25.23,3,2026-10-22,28.87,64.17,-35.30,-10.07,True,REP,99,381356,compared,2026-11-13T12:37:41Z
+ID-02,ID,House,02,available,Ellie Gilbreath,Mike Simpson,31.00,46.00,-15.00,1,2026-10-22,40.27,51.67,-11.40,3.60,True,REP,99,330667,compared,2026-11-13T12:37:41Z
+ID-GOV,ID,Governor,,available,Terri Pickens,Brad Little,29.77,48.92,-19.15,2,2026-10-22,32.32,57.03,-24.71,-5.56,True,REP,99,716113,compared,2026-11-13T12:37:41Z
+ID-SEN,ID,Senate,,available,Todd Achilles,Jim Risch,35.61,49.36,-13.75,9,2026-10-22,33.57,56.50,-22.93,-9.18,True,REP,99,713281,compared,2026-11-13T12:37:41Z
+IL-01,IL,House,01,no_polls,,,,,,,,,,,,True,DEM,97.45,239375,no_polls,2026-11-13T12:37:41Z
+IL-02,IL,House,02,no_polls,,,,,,,,,,,,True,DEM,97,223133,no_polls,2026-11-13T12:37:41Z
+IL-03,IL,House,03,no_polls,,,,,,,,,,,,True,DEM,98.95,202029,no_polls,2026-11-13T12:37:41Z
+IL-04,IL,House,04,available,Patty Garcia,Lupe Castillo,34.00,15.00,19.00,1,2026-08-03,71.22,15.94,55.28,36.28,True,DEM,98.22,161189,compared,2026-11-13T12:37:41Z
+IL-05,IL,House,05,no_polls,,,,,,,,,,,,True,DEM,98.18,275402,no_polls,2026-11-13T12:37:41Z
+IL-06,IL,House,06,no_polls,,,,,,,,,,,,True,DEM,98.41,267342,no_polls,2026-11-13T12:37:41Z
+IL-07,IL,House,07,no_polls,,,,,,,,,,,,True,DEM,99,205453,no_polls,2026-11-13T12:37:41Z
+IL-08,IL,House,08,no_polls,,,,,,,,,,,,True,DEM,97.69,215532,no_polls,2026-11-13T12:37:41Z
+IL-09,IL,House,09,no_polls,,,,,,,,,,,,True,DEM,97.9,261276,no_polls,2026-11-13T12:37:41Z
+IL-10,IL,House,10,no_polls,,,,,,,,,,,,True,DEM,97.83,240122,no_polls,2026-11-13T12:37:41Z
+IL-11,IL,House,11,no_polls,,,,,,,,,,,,True,DEM,96.52,266231,no_polls,2026-11-13T12:37:41Z
+IL-12,IL,House,12,no_polls,,,,,,,,,,,,True,REP,99,281656,no_polls,2026-11-13T12:37:41Z
+IL-13,IL,House,13,no_polls,,,,,,,,,,,,True,DEM,98.43,252045,no_polls,2026-11-13T12:37:41Z
+IL-14,IL,House,14,no_polls,,,,,,,,,,,,True,DEM,96.93,245166,no_polls,2026-11-13T12:37:41Z
+IL-15,IL,House,15,no_polls,,,,,,,,,,,,True,REP,98.76,288061,no_polls,2026-11-13T12:37:41Z
+IL-16,IL,House,16,no_polls,,,,,,,,,,,,True,REP,96.75,294899,no_polls,2026-11-13T12:37:41Z
+IL-17,IL,House,17,no_polls,,,,,,,,,,,,True,DEM,95.08,236083,no_polls,2026-11-13T12:37:41Z
+IL-GOV,IL,Governor,,available,JB Pritzker,Darren Bailey,57.35,37.93,19.41,5,2026-11-02,60.63,36.02,24.60,5.19,True,DEM,97.95,4190958,compared,2026-11-13T12:37:41Z
+IL-SEN,IL,Senate,,available,Juliana Stratton,Don Tracy,53.99,41.13,12.86,4,2026-11-02,61.87,36.55,25.32,12.46,True,DEM,97.98,4176303,compared,2026-11-13T12:37:41Z
+IN-01,IN,House,01,no_polls,,,,,,,,,,,,True,DEM,99,225681,no_polls,2026-11-13T12:37:41Z
+IN-02,IN,House,02,no_polls,,,,,,,,,,,,True,REP,99,193229,no_polls,2026-11-13T12:37:41Z
+IN-03,IN,House,03,no_polls,,,,,,,,,,,,True,REP,99,199872,no_polls,2026-11-13T12:37:41Z
+IN-04,IN,House,04,no_polls,,,,,,,,,,,,True,REP,99,212156,no_polls,2026-11-13T12:37:41Z
+IN-05,IN,House,05,available,J.D. Ford,Victoria Spartz,45.12,47.54,-2.41,3,2026-10-22,51.66,48.34,3.31,5.72,True,DEM,99,260327,compared,2026-11-13T12:37:41Z
+IN-06,IN,House,06,no_polls,,,,,,,,,,,,True,REP,99,201692,no_polls,2026-11-13T12:37:41Z
+IN-07,IN,House,07,no_polls,,,,,,,,,,,,True,DEM,99,206871,no_polls,2026-11-13T12:37:41Z
+IN-08,IN,House,08,no_polls,,,,,,,,,,,,True,REP,99,212984,no_polls,2026-11-13T12:37:41Z
+IN-09,IN,House,09,no_polls,,,,,,,,,,,,True,REP,99,226336,no_polls,2026-11-13T12:37:41Z
+KS-01,KS,House,01,no_polls,,,,,,,,,,,,True,REP,98.59,254213,no_polls,2026-11-13T12:37:41Z
+KS-02,KS,House,02,available,Don Coover,Derek Schmidt,46.00,49.00,-3.00,1,2026-10-20,45.03,51.22,-6.20,-3.20,True,REP,98.74,246108,compared,2026-11-13T12:37:41Z
+KS-03,KS,House,03,no_polls,,,,,,,,,,,,True,DEM,98.51,337509,no_polls,2026-11-13T12:37:41Z
+KS-04,KS,House,04,no_polls,,,,,,,,,,,,True,REP,98.9,260577,no_polls,2026-11-13T12:37:41Z
+KS-GOV,KS,Governor,,available,Cindy Holscher,Ty Masterson,48.02,48.06,-0.04,14,2026-11-01,50.33,49.67,0.66,0.70,True,DEM,98.14,1096867,compared,2026-11-13T12:37:41Z
+KS-SEN,KS,Senate,,available,Adam Hamilton,Roger Marshall,49.28,45.29,3.99,20,2026-11-01,51.00,45.98,5.03,1.04,True,DEM,98.67,1101877,compared,2026-11-13T12:37:41Z
+KY-01,KY,House,01,no_polls,,,,,,,,,,,,True,REP,99,229170,no_polls,2026-11-13T12:37:41Z
+KY-02,KY,House,02,no_polls,,,,,,,,,,,,True,REP,99,231058,no_polls,2026-11-13T12:37:41Z
+KY-03,KY,House,03,no_polls,,,,,,,,,,,,True,DEM,99,248500,no_polls,2026-11-13T12:37:41Z
+KY-04,KY,House,04,no_polls,,,,,,,,,,,,True,REP,99,253820,no_polls,2026-11-13T12:37:41Z
+KY-05,KY,House,05,no_polls,,,,,,,,,,,,True,REP,99,196468,no_polls,2026-11-13T12:37:41Z
+KY-06,KY,House,06,available,Zach Dembo,Ralph Alvarado,45.95,39.76,6.19,9,2026-10-20,52.70,43.30,9.40,3.21,True,DEM,99,263353,compared,2026-11-13T12:37:41Z
+KY-SEN,KY,Senate,,available,Charles Booker,Andy Barr,40.00,49.00,-9.00,2,2026-08-27,42.91,55.00,-12.09,-3.09,True,REP,99,1427118,compared,2026-11-13T12:37:41Z
+LA-01,LA,House,01,no_dem_rep_field,,,,,,,,,,,,True,REP,99,263391,no_polls,2026-11-13T12:37:41Z
+LA-02,LA,House,02,no_polls,,,,,,,,,,,,True,DEM,99,240616,no_polls,2026-11-13T12:37:41Z
+LA-03,LA,House,03,no_dem_rep_field,,,,,,,,,,,,True,REP,99,234995,no_polls,2026-11-13T12:37:41Z
+LA-04,LA,House,04,no_dem_rep_field,,,,,,,,,,,,True,REP,99,230359,no_polls,2026-11-13T12:37:41Z
+LA-05,LA,House,05,no_dem_rep_field,,,,,,,,,,,,False,,99,227988,no_polls,2026-11-13T12:37:41Z
+LA-06,LA,House,06,no_dem_rep_field,,,,,,,,,,,,False,,99,261963,no_polls,2026-11-13T12:37:41Z
+LA-SEN,LA,Senate,,available,Jamie Davis,Julia Letlow,45.87,46.31,-0.43,4,2026-10-31,49.12,50.88,-1.76,-1.33,True,REP,99,1466246,compared,2026-11-13T12:37:41Z
+MA-01,MA,House,01,no_dem_rep_field,,,,,,,,,,,,True,DEM,98.99,271347,no_polls,2026-11-13T12:37:41Z
+MA-02,MA,House,02,no_dem_rep_field,,,,,,,,,,,,True,DEM,63.16,198782,no_polls,2026-11-13T12:37:41Z
+MA-03,MA,House,03,no_polls,,,,,,,,,,,,True,DEM,99,260190,no_polls,2026-11-13T12:37:41Z
+MA-04,MA,House,04,no_polls,,,,,,,,,,,,True,DEM,99,290389,no_polls,2026-11-13T12:37:41Z
+MA-05,MA,House,05,no_dem_rep_field,,,,,,,,,,,,True,DEM,89.21,206925,no_polls,2026-11-13T12:37:41Z
+MA-06,MA,House,06,no_polls,,,,,,,,,,,,True,DEM,99,325452,no_polls,2026-11-13T12:37:41Z
+MA-07,MA,House,07,no_dem_rep_field,,,,,,,,,,,,True,DEM,61.82,158384,no_polls,2026-11-13T12:37:41Z
+MA-08,MA,House,08,no_polls,,,,,,,,,,,,True,DEM,99,281804,no_polls,2026-11-13T12:37:41Z
+MA-09,MA,House,09,no_polls,,,,,,,,,,,,True,DEM,99,350869,no_polls,2026-11-13T12:37:41Z
+MA-GOV,MA,Governor,,available,Maura Healey,Michael Minogue,56.23,32.74,23.50,14,2026-10-31,61.99,34.72,27.27,3.77,True,DEM,99,2627180,compared,2026-11-13T12:37:41Z
+MA-SEN,MA,Senate,,available,Ed Markey,John Deaton,55.02,29.02,26.00,15,2026-10-31,63.40,32.13,31.27,5.27,True,DEM,99,2608451,compared,2026-11-13T12:37:41Z
+MD-01,MD,House,01,available,Dan Schwartz,Andy Harris,39.00,52.00,-13.00,1,2026-07-27,47.20,52.80,-5.60,7.40,True,REP,94.52,307815,compared,2026-11-13T12:37:41Z
+MD-02,MD,House,02,no_polls,,,,,,,,,,,,True,DEM,92.64,281523,no_polls,2026-11-13T12:37:41Z
+MD-03,MD,House,03,no_polls,,,,,,,,,,,,True,DEM,92.17,299709,no_polls,2026-11-13T12:37:41Z
+MD-04,MD,House,04,no_polls,,,,,,,,,,,,True,DEM,87.54,190256,no_polls,2026-11-13T12:37:41Z
+MD-05,MD,House,05,no_polls,,,,,,,,,,,,True,DEM,93.51,307888,no_polls,2026-11-13T12:37:41Z
+MD-06,MD,House,06,no_polls,,,,,,,,,,,,True,DEM,90.94,263250,no_polls,2026-11-13T12:37:41Z
+MD-07,MD,House,07,no_polls,,,,,,,,,,,,True,DEM,88.43,202735,no_polls,2026-11-13T12:37:41Z
+MD-08,MD,House,08,no_polls,,,,,,,,,,,,True,DEM,80.86,259462,no_polls,2026-11-13T12:37:41Z
+MD-GOV,MD,Governor,,available,Wes Moore,Dan Cox,51.53,24.53,27.00,2,2026-09-27,64.55,31.38,33.17,6.17,True,DEM,90.1,2119399,compared,2026-11-13T12:37:41Z
+ME-01,ME,House,01,available,Chellie Pingree,Ronald C. Russell,63.47,32.57,30.90,2,2026-10-31,65.90,34.10,31.79,0.89,True,DEM,99,380069,compared,2026-11-13T12:37:41Z
+ME-02,ME,House,02,available,Matthew G. Dunlap,Paul R. LePage,48.32,49.67,-1.35,9,2026-10-31,48.31,49.89,-1.59,-0.24,True,REP,97.83,341256,compared,2026-11-13T12:37:41Z
+ME-GOV,ME,Governor,,available,Hannah Pingree,Bobby Charles,50.19,39.98,10.21,26,2026-11-01,54.44,37.44,17.00,6.79,True,DEM,97.4,714017,compared,2026-11-13T12:37:41Z
+ME-SEN,ME,Senate,,available,Troy Jackson,Susan Collins,49.98,46.44,3.54,33,2026-11-01,53.07,46.87,6.20,2.66,True,DEM,97.38,710361,compared,2026-11-13T12:37:41Z
+MI-01,MI,House,01,no_polls,,,,,,,,,,,,True,REP,97.65,404877,no_polls,2026-11-13T12:37:41Z
+MI-02,MI,House,02,no_polls,,,,,,,,,,,,True,REP,95.32,358461,no_polls,2026-11-13T12:37:41Z
+MI-03,MI,House,03,no_polls,,,,,,,,,,,,True,DEM,99,369388,no_polls,2026-11-13T12:37:41Z
+MI-04,MI,House,04,available,Sean McCann,Bill Huizenga,47.01,45.98,1.04,4,2026-09-16,50.14,48.33,1.81,0.77,True,DEM,97.39,371374,compared,2026-11-13T12:37:41Z
+MI-05,MI,House,05,no_polls,,,,,,,,,,,,True,REP,94.55,337427,no_polls,2026-11-13T12:37:41Z
+MI-06,MI,House,06,no_polls,,,,,,,,,,,,True,DEM,99,407161,no_polls,2026-11-13T12:37:41Z
+MI-07,MI,House,07,available,William Lawrence,Tom Barrett,52.57,45.18,7.39,3,2026-10-14,51.03,47.71,3.32,-4.07,True,DEM,97.93,397118,compared,2026-11-13T12:37:41Z
+MI-08,MI,House,08,no_polls,,,,,,,,,,,,True,DEM,98.16,352770,no_polls,2026-11-13T12:37:41Z
+MI-09,MI,House,09,no_polls,,,,,,,,,,,,True,REP,99,395591,no_polls,2026-11-13T12:37:41Z
+MI-10,MI,House,10,available,Christina Bertrand Hines,Michael Bouchard,45.00,45.00,0.00,2,2026-08-13,52.44,45.26,7.17,7.17,True,DEM,99,358665,compared,2026-11-13T12:37:41Z
+MI-11,MI,House,11,no_polls,,,,,,,,,,,,True,DEM,99,392301,no_polls,2026-11-13T12:37:41Z
+MI-12,MI,House,12,no_polls,,,,,,,,,,,,True,DEM,98.46,325322,no_polls,2026-11-13T12:37:41Z
+MI-13,MI,House,13,available,Donavan McKinney,T.P. Nykoriak,69.00,19.00,50.00,1,2026-10-30,76.51,19.86,56.65,6.65,True,DEM,69.44,274324,compared,2026-11-13T12:37:41Z
+MI-GOV,MI,Governor,,available,Jocelyn Benson,John James,51.28,42.68,8.59,51,2026-11-01,54.56,43.73,10.83,2.24,True,DEM,98.27,4791774,compared,2026-11-13T12:37:41Z
+MI-SEN,MI,Senate,,available,Abdul El-Sayed,Mike Rogers,49.56,45.06,4.50,65,2026-11-02,52.54,45.46,7.08,2.58,True,DEM,98.26,4798074,compared,2026-11-13T12:37:41Z
+MN-01,MN,House,01,available,Jake Johnson,Brad Finstad,45.42,44.05,1.37,5,2026-10-14,49.99,49.89,0.10,-1.27,False,,98.79,326178,compared,2026-11-13T12:37:41Z
+MN-02,MN,House,02,available,Matt Little,Eric Pratt,51.62,40.00,11.62,2,2026-09-13,57.10,42.81,14.29,2.67,True,DEM,98.93,375225,compared,2026-11-13T12:37:41Z
+MN-03,MN,House,03,no_polls,,,,,,,,,,,,True,DEM,98.68,377997,no_polls,2026-11-13T12:37:41Z
+MN-04,MN,House,04,no_polls,,,,,,,,,,,,True,DEM,98.63,336243,no_polls,2026-11-13T12:37:41Z
+MN-05,MN,House,05,no_polls,,,,,,,,,,,,True,DEM,98.97,343508,no_polls,2026-11-13T12:37:41Z
+MN-06,MN,House,06,no_polls,,,,,,,,,,,,True,REP,99,367346,no_polls,2026-11-13T12:37:41Z
+MN-07,MN,House,07,no_polls,,,,,,,,,,,,True,REP,98.8,330820,no_polls,2026-11-13T12:37:41Z
+MN-08,MN,House,08,available,Trina Swanson,Pete Stauber,43.00,49.00,-6.00,1,2026-10-26,46.86,53.04,-6.19,-0.19,True,REP,98.81,359455,compared,2026-11-13T12:37:41Z
+MN-GOV,MN,Governor,,available,Amy Klobuchar,Lisa Demuth,51.80,41.00,10.80,16,2026-11-01,55.46,42.63,12.83,2.03,True,DEM,98.84,2830159,compared,2026-11-13T12:37:41Z
+MN-SEN,MN,Senate,,available,Peggy Flanagan,Michele Tafoya,48.67,43.44,5.23,22,2026-11-01,53.71,43.56,10.15,4.92,True,DEM,98.85,2831786,compared,2026-11-13T12:37:41Z
+MO-01,MO,House,01,no_polls,,,,,,,,,,,,True,DEM,99,232150,no_polls,2026-11-13T12:37:41Z
+MO-02,MO,House,02,available,Fred Wellman,Ann Wagner,47.95,46.44,1.52,4,2026-11-01,51.14,46.21,4.93,3.41,True,DEM,99,331391,compared,2026-11-13T12:37:41Z
+MO-03,MO,House,03,no_polls,,,,,,,,,,,,True,REP,99,282254,no_polls,2026-11-13T12:37:41Z
+MO-04,MO,House,04,no_polls,,,,,,,,,,,,True,REP,99,250742,no_polls,2026-11-13T12:37:41Z
+MO-05,MO,House,05,no_polls,,,,,,,,,,,,True,DEM,99,257956,no_polls,2026-11-13T12:37:41Z
+MO-06,MO,House,06,no_polls,,,,,,,,,,,,True,REP,99,257865,no_polls,2026-11-13T12:37:41Z
+MO-07,MO,House,07,no_polls,,,,,,,,,,,,True,REP,99,254740,no_polls,2026-11-13T12:37:41Z
+MO-08,MO,House,08,no_polls,,,,,,,,,,,,True,REP,99,223985,no_polls,2026-11-13T12:37:41Z
+MS-01,MS,House,01,no_polls,,,,,,,,,,,,True,REP,99,242804,no_polls,2026-11-13T12:37:41Z
+MS-02,MS,House,02,no_polls,,,,,,,,,,,,True,DEM,99,246136,no_polls,2026-11-13T12:37:41Z
+MS-03,MS,House,03,no_polls,,,,,,,,,,,,True,REP,99,255617,no_polls,2026-11-13T12:37:41Z
+MS-04,MS,House,04,no_polls,,,,,,,,,,,,True,REP,99,218764,no_polls,2026-11-13T12:37:41Z
+MS-SEN,MS,Senate,,available,Scott Colom,Cindy Hyde-Smith,39.79,43.10,-3.31,3,2026-10-22,49.27,48.63,0.64,3.95,True,DEM,99,967818,compared,2026-11-13T12:37:41Z
+MT-01,MT,House,01,available,Sam Forstag,Aaron Flint,47.86,42.68,5.18,9,2026-11-01,50.49,46.62,3.87,-1.31,True,DEM,99,267562,compared,2026-11-13T12:37:41Z
+MT-02,MT,House,02,available,Brian J. Miller,Troy Downing,19.88,33.46,-13.58,2,2026-10-21,32.27,58.10,-25.83,-12.25,True,REP,98.37,220559,compared,2026-11-13T12:37:41Z
+MT-SEN,MT,Senate,,available,Seth Bodnar,Kurt Alme,28.93,38.94,-10.01,18,2026-10-23,37.74,48.16,-10.43,-0.42,True,REP,99,489063,compared,2026-11-13T12:37:41Z
+NC-01,NC,House,01,available,Don Davis,Laurie Buckhout,47.96,41.44,6.52,7,2026-10-08,50.14,46.70,3.44,-3.08,True,DEM,99,314158,compared,2026-11-13T12:37:41Z
+NC-02,NC,House,02,no_polls,,,,,,,,,,,,True,DEM,99,328289,no_polls,2026-11-13T12:37:41Z
+NC-03,NC,House,03,available,Raymond Smith,Greg Murphy,41.00,44.00,-3.00,1,2026-08-02,49.43,49.31,0.12,3.12,False,,99,239690,compared,2026-11-13T12:37:41Z
+NC-04,NC,House,04,no_polls,,,,,,,,,,,,True,DEM,99,359659,no_polls,2026-11-13T12:37:41Z
+NC-05,NC,House,05,no_polls,,,,,,,,,,,,False,,99,286820,no_polls,2026-11-13T12:37:41Z
+NC-06,NC,House,06,no_polls,,,,,,,,,,,,True,DEM,99,274835,no_polls,2026-11-13T12:37:41Z
+NC-07,NC,House,07,available,Kimberly Hardy,David Rouzer,39.00,45.00,-6.00,1,2026-08-20,49.16,49.86,-0.70,5.30,False,,99,322315,compared,2026-11-13T12:37:41Z
+NC-08,NC,House,08,no_polls,,,,,,,,,,,,True,REP,99,293268,no_polls,2026-11-13T12:37:41Z
+NC-09,NC,House,09,available,Richard N. Ojeda II,Richard Hudson,42.00,46.00,-4.00,2,2026-10-20,51.15,48.85,2.31,6.31,True,DEM,99,272682,compared,2026-11-13T12:37:41Z
+NC-10,NC,House,10,available,Ashley Bell,Pat Harrigan,37.00,52.00,-15.00,1,2026-03-12,48.78,49.62,-0.84,14.16,False,,99,295414,compared,2026-11-13T12:37:41Z
+NC-11,NC,House,11,available,Jamie Ager,Jennifer Capps Balkcom,56.00,43.00,13.00,1,2026-10-14,57.14,41.30,15.83,2.83,True,DEM,99,343555,compared,2026-11-13T12:37:41Z
+NC-12,NC,House,12,no_polls,,,,,,,,,,,,True,DEM,99,271812,no_polls,2026-11-13T12:37:41Z
+NC-13,NC,House,13,no_polls,,,,,,,,,,,,True,DEM,99,318261,no_polls,2026-11-13T12:37:41Z
+NC-14,NC,House,14,available,Lakesha Womack,Tim Moore,40.00,48.00,-8.00,1,2026-03-12,51.14,48.86,2.27,10.27,True,DEM,99,289290,compared,2026-11-13T12:37:41Z
+NC-SEN,NC,Senate,,available,Roy Cooper,Michael Whatley,53.21,41.93,11.28,51,2026-11-01,58.75,39.05,19.70,8.42,True,DEM,99,4222829,compared,2026-11-13T12:37:41Z
+ND-AL,ND,House,00,no_dem_rep_field,,,,,,,,,,,,True,REP,99,234255,no_polls,2026-11-13T12:37:41Z
+NE-01,NE,House,01,available,Chris Backemeyer,Mike Flood,45.67,45.82,-0.15,3,2026-10-20,46.47,49.99,-3.53,-3.38,True,REP,96.84,254312,compared,2026-11-13T12:37:41Z
+NE-02,NE,House,02,available,Denise Powell,Brinker Harding,48.39,39.61,8.78,2,2026-10-05,56.67,40.73,15.94,7.16,True,DEM,97.39,256577,compared,2026-11-13T12:37:41Z
+NE-03,NE,House,03,no_polls,,,,,,,,,,,,True,REP,98.96,245429,no_polls,2026-11-13T12:37:41Z
+NE-GOV,NE,Governor,,available,Lynne Walz,Jim Pillen,41.35,46.62,-5.28,14,2026-10-29,42.53,50.40,-7.88,-2.60,True,REP,97.8,759170,compared,2026-11-13T12:37:41Z
+NE-SEN,NE,Senate,,available,Dan Osborn,Pete Ricketts,45.59,47.41,-1.82,20,2026-11-01,43.94,50.09,-6.15,-4.33,True,REP,97.69,757696,compared,2026-11-13T12:37:41Z
+NH-01,NH,House,01,available,Stefany Shaheen,Anthony DiLorenzo,50.71,42.47,8.24,3,2026-10-31,57.04,42.96,14.09,5.85,True,DEM,99,316878,compared,2026-11-13T12:37:41Z
+NH-02,NH,House,02,available,Maggie Goodlander,Lily Tang Williams,55.20,39.15,16.05,10,2026-10-31,58.82,38.81,20.02,3.97,True,DEM,99,316023,compared,2026-11-13T12:37:41Z
+NH-GOV,NH,Governor,,available,Cinde Warmington,Kelly Ayotte,42.54,49.85,-7.31,17,2026-11-01,47.10,51.38,-4.29,3.02,True,REP,99,632398,compared,2026-11-13T12:37:41Z
+NH-SEN,NH,Senate,,available,Chris Pappas,John Sununu,50.34,42.91,7.43,32,2026-11-01,55.93,42.17,13.76,6.33,True,DEM,99,637218,compared,2026-11-13T12:37:41Z
+NJ-01,NJ,House,01,no_polls,,,,,,,,,,,,True,DEM,97.74,258299,no_polls,2026-11-13T12:37:41Z
+NJ-02,NJ,House,02,available,Zack Mullock,Jeff Van Drew,40.00,50.00,-10.00,1,2026-10-10,51.07,47.88,3.20,13.20,True,DEM,98.9,275176,compared,2026-11-13T12:37:41Z
+NJ-03,NJ,House,03,no_polls,,,,,,,,,,,,True,DEM,97.37,276714,no_polls,2026-11-13T12:37:41Z
+NJ-04,NJ,House,04,no_polls,,,,,,,,,,,,True,REP,98.89,267407,no_polls,2026-11-13T12:37:41Z
+NJ-05,NJ,House,05,no_polls,,,,,,,,,,,,True,DEM,98.35,272437,no_polls,2026-11-13T12:37:41Z
+NJ-06,NJ,House,06,no_polls,,,,,,,,,,,,True,DEM,96.94,213402,no_polls,2026-11-13T12:37:41Z
+NJ-07,NJ,House,07,available,Rebecca Bennett,Thomas H. Kean Jr.,47.00,42.01,4.99,2,2026-09-12,57.47,40.98,16.49,11.50,True,DEM,97.56,334686,compared,2026-11-13T12:37:41Z
+NJ-08,NJ,House,08,no_dem_rep_field,,,,,,,,,,,,True,DEM,97.52,126543,no_polls,2026-11-13T12:37:41Z
+NJ-09,NJ,House,09,no_polls,,,,,,,,,,,,True,DEM,96.43,185402,no_polls,2026-11-13T12:37:41Z
+NJ-10,NJ,House,10,no_polls,,,,,,,,,,,,True,DEM,97.15,182306,no_polls,2026-11-13T12:37:41Z
+NJ-11,NJ,House,11,no_polls,,,,,,,,,,,,True,DEM,95.77,280380,no_polls,2026-11-13T12:37:41Z
+NJ-12,NJ,House,12,no_polls,,,,,,,,,,,,True,DEM,97.64,238186,no_polls,2026-11-13T12:37:41Z
+NJ-SEN,NJ,Senate,,no_polls,,,,,,,,,,,,True,DEM,97.69,2948075,no_polls,2026-11-13T12:37:41Z
+NM-01,NM,House,01,available,Melanie Ann Stansbury,Ndidiamaka Ekwua Charlene Okpareke,53.00,35.00,18.00,1,2026-10-09,63.63,36.37,27.27,9.27,True,DEM,98.69,282547,compared,2026-11-13T12:37:41Z
+NM-02,NM,House,02,available,Gabriel Vasquez,Gregory G. Cunningham,47.47,43.73,3.73,3,2026-10-09,58.75,41.25,17.51,13.78,True,DEM,98.39,210600,compared,2026-11-13T12:37:41Z
+NM-03,NM,House,03,available,Teresa Leger Fernandez,Martin Zamora,53.00,39.00,14.00,1,2026-10-09,61.65,38.35,23.30,9.30,True,DEM,98.27,229247,compared,2026-11-13T12:37:41Z
+NM-GOV,NM,Governor,,available,Deb Haaland,Gregg Hull,49.29,42.19,7.11,6,2026-11-02,57.36,42.64,14.71,7.60,True,DEM,98.47,725612,compared,2026-11-13T12:37:41Z
+NM-SEN,NM,Senate,,available,Ben Ray Luján,Larry Marker,54.71,36.85,17.86,4,2026-11-02,63.26,36.74,26.52,8.66,True,DEM,98.47,725190,compared,2026-11-13T12:37:41Z
+NV-01,NV,House,01,no_polls,,,,,,,,,,,,True,DEM,98.63,238045,no_polls,2026-11-13T12:37:41Z
+NV-02,NV,House,02,available,Teresa F. Benitez-Thompson,David Flippo,42.73,44.33,-1.60,3,2026-10-13,50.21,44.32,5.88,7.48,True,DEM,97.75,321170,compared,2026-11-13T12:37:41Z
+NV-03,NV,House,03,no_polls,,,,,,,,,,,,True,DEM,98.63,270960,no_polls,2026-11-13T12:37:41Z
+NV-04,NV,House,04,no_polls,,,,,,,,,,,,True,DEM,98.71,252189,no_polls,2026-11-13T12:37:41Z
+NV-GOV,NV,Governor,,available,Aaron Ford,Joe Lombardo,45.81,44.91,0.89,14,2026-10-28,51.60,44.02,7.58,6.69,True,DEM,98.39,1090700,compared,2026-11-13T12:37:41Z
+NY-01,NY,House,01,available,Christopher J. Gallant,Nicholas J. LaLota,38.00,41.00,-3.00,1,2025-12-11,48.85,51.09,-2.24,0.76,True,REP,97,298585,compared,2026-11-13T12:37:41Z
+NY-02,NY,House,02,no_polls,,,,,,,,,,,,True,REP,96.95,248707,no_polls,2026-11-13T12:37:41Z
+NY-03,NY,House,03,no_polls,,,,,,,,,,,,True,DEM,95.21,273252,no_polls,2026-11-13T12:37:41Z
+NY-04,NY,House,04,no_eligible_polls,,,,,,,,,,,,True,DEM,96.71,289041,no_polls,2026-11-13T12:37:41Z
+NY-05,NY,House,05,no_polls,,,,,,,,,,,,True,DEM,90.73,161418,no_polls,2026-11-13T12:37:41Z
+NY-06,NY,House,06,no_polls,,,,,,,,,,,,True,DEM,88.22,134749,no_polls,2026-11-13T12:37:41Z
+NY-07,NY,House,07,no_polls,,,,,,,,,,,,True,DEM,88.15,162218,no_polls,2026-11-13T12:37:41Z
+NY-08,NY,House,08,no_polls,,,,,,,,,,,,True,DEM,87.04,162404,no_polls,2026-11-13T12:37:41Z
+NY-09,NY,House,09,no_polls,,,,,,,,,,,,True,DEM,87.14,178465,no_polls,2026-11-13T12:37:41Z
+NY-10,NY,House,10,no_polls,,,,,,,,,,,,True,DEM,88.45,201120,no_polls,2026-11-13T12:37:41Z
+NY-11,NY,House,11,no_polls,,,,,,,,,,,,True,REP,91.08,181316,no_polls,2026-11-13T12:37:41Z
+NY-12,NY,House,12,no_polls,,,,,,,,,,,,True,DEM,85.9,250781,no_polls,2026-11-13T12:37:41Z
+NY-13,NY,House,13,no_polls,,,,,,,,,,,,True,DEM,89.54,161117,no_polls,2026-11-13T12:37:41Z
+NY-14,NY,House,14,no_polls,,,,,,,,,,,,True,DEM,91.5,136956,no_polls,2026-11-13T12:37:41Z
+NY-15,NY,House,15,no_polls,,,,,,,,,,,,True,DEM,90.1,122169,no_polls,2026-11-13T12:37:41Z
+NY-16,NY,House,16,no_polls,,,,,,,,,,,,True,DEM,96.64,229382,no_polls,2026-11-13T12:37:41Z
+NY-17,NY,House,17,available,Cait Conley,Mike Lawler,47.37,47.37,0.00,4,2026-09-30,52.97,46.92,6.05,6.05,True,DEM,98.22,316115,compared,2026-11-13T12:37:41Z
+NY-18,NY,House,18,available,Pat Ryan,Jackie Mary Auringer,52.10,35.39,16.71,2,2026-09-30,62.87,37.06,25.81,9.10,True,DEM,96.33,268816,compared,2026-11-13T12:37:41Z
+NY-19,NY,House,19,no_polls,,,,,,,,,,,,True,DEM,98.05,294671,no_polls,2026-11-13T12:37:41Z
+NY-20,NY,House,20,no_polls,,,,,,,,,,,,True,DEM,96.58,288426,no_polls,2026-11-13T12:37:41Z
+NY-21,NY,House,21,available,Blake Gendebien,Anthony Constantino,44.50,44.81,-0.32,8,2026-10-13,49.01,50.76,-1.75,-1.43,True,REP,97.22,277758,compared,2026-11-13T12:37:41Z
+NY-22,NY,House,22,no_polls,,,,,,,,,,,,True,DEM,98.76,276137,no_polls,2026-11-13T12:37:41Z
+NY-23,NY,House,23,available,Aaron Gies,Nicholas A. Langworthy,35.00,52.00,-17.00,1,2026-09-23,39.79,60.16,-20.37,-3.37,True,REP,98.31,303249,compared,2026-11-13T12:37:41Z
+NY-24,NY,House,24,no_polls,,,,,,,,,,,,True,REP,95.76,283863,no_polls,2026-11-13T12:37:41Z
+NY-25,NY,House,25,no_polls,,,,,,,,,,,,True,DEM,98.05,280606,no_polls,2026-11-13T12:37:41Z
+NY-26,NY,House,26,no_polls,,,,,,,,,,,,True,DEM,99,250268,no_polls,2026-11-13T12:37:41Z
+NY-GOV,NY,Governor,,available,Kathy Hochul,Bruce Blakeman,53.32,41.07,12.25,31,2026-11-01,59.74,40.05,19.70,7.45,True,DEM,95.31,6115019,compared,2026-11-13T12:37:41Z
+OH-01,OH,House,01,available,Greg Landsman,Eric Conroy,47.24,44.03,3.20,3,2026-10-21,54.38,42.94,11.44,8.24,True,DEM,97.65,324471,compared,2026-11-13T12:37:41Z
+OH-02,OH,House,02,no_polls,,,,,,,,,,,,True,REP,97.74,273203,no_polls,2026-11-13T12:37:41Z
+OH-03,OH,House,03,no_polls,,,,,,,,,,,,True,DEM,96.55,300332,no_polls,2026-11-13T12:37:41Z
+OH-04,OH,House,04,no_polls,,,,,,,,,,,,True,REP,98.19,305868,no_polls,2026-11-13T12:37:41Z
+OH-05,OH,House,05,no_polls,,,,,,,,,,,,True,REP,98.15,301101,no_polls,2026-11-13T12:37:41Z
+OH-06,OH,House,06,no_polls,,,,,,,,,,,,True,REP,98.16,270985,no_polls,2026-11-13T12:37:41Z
+OH-07,OH,House,07,available,Brian Poindexter,Max Miller,49.07,41.57,7.50,3,2026-08-10,54.93,45.07,9.87,2.37,True,DEM,97.85,328791,compared,2026-11-13T12:37:41Z
+OH-08,OH,House,08,no_polls,,,,,,,,,,,,True,REP,97.67,323517,no_polls,2026-11-13T12:37:41Z
+OH-09,OH,House,09,available,Marcy Kaptur,Derek Merrin,47.97,47.99,-0.02,2,2026-09-23,52.71,47.29,5.43,5.45,True,DEM,98.28,302347,compared,2026-11-13T12:37:41Z
+OH-10,OH,House,10,available,Kristina Knickerbocker,Mike Turner,46.26,44.24,2.02,3,2026-10-13,49.34,47.71,1.64,-0.38,True,DEM,97.65,302016,compared,2026-11-13T12:37:41Z
+OH-11,OH,House,11,no_polls,,,,,,,,,,,,True,DEM,97.76,263344,no_polls,2026-11-13T12:37:41Z
+OH-12,OH,House,12,no_polls,,,,,,,,,,,,True,REP,98.11,324366,no_polls,2026-11-13T12:37:41Z
+OH-13,OH,House,13,no_polls,,,,,,,,,,,,True,DEM,98.15,317775,no_polls,2026-11-13T12:37:41Z
+OH-14,OH,House,14,no_polls,,,,,,,,,,,,True,REP,98.08,326118,no_polls,2026-11-13T12:37:41Z
+OH-15,OH,House,15,available,Don Leonard,Mike Carey,46.58,44.76,1.83,4,2026-10-12,51.90,45.27,6.63,4.80,True,DEM,96.94,287647,compared,2026-11-13T12:37:41Z
+OH-GOV,OH,Governor,,available,Amy Acton,Vivek Ramaswamy,49.21,44.98,4.23,44,2026-11-01,52.31,44.38,7.93,3.70,True,DEM,97.79,4597693,compared,2026-11-13T12:37:41Z
+OH-SEN,OH,Senate,,available,Sherrod Brown,Jon Husted,48.35,45.07,3.28,49,2026-11-01,50.00,45.15,4.85,1.57,True,DEM,97.8,4603488,compared,2026-11-13T12:37:41Z
+OK-01,OK,House,01,no_polls,,,,,,,,,,,,True,REP,99,231781,no_polls,2026-11-13T12:37:41Z
+OK-02,OK,House,02,no_polls,,,,,,,,,,,,True,REP,99,211874,no_polls,2026-11-13T12:37:41Z
+OK-03,OK,House,03,no_polls,,,,,,,,,,,,True,REP,99,190925,no_polls,2026-11-13T12:37:41Z
+OK-04,OK,House,04,no_polls,,,,,,,,,,,,True,REP,99,218008,no_polls,2026-11-13T12:37:41Z
+OK-05,OK,House,05,available,Jena Nelson,Stephanie Bice,43.00,48.00,-5.00,1,2026-09-20,48.22,49.49,-1.27,3.73,True,REP,99,264647,compared,2026-11-13T12:37:41Z
+OK-GOV,OK,Governor,,available,Cyndi Munson,Mike Mazzei,45.00,49.00,-4.00,1,2026-10-13,45.92,51.93,-6.01,-2.01,True,REP,99,1120139,compared,2026-11-13T12:37:41Z
+OK-SEN,OK,Senate,,available,N'Kiyla Jasmine Thomas,Kevin Hern,25.00,49.00,-24.00,1,2026-08-06,39.28,57.20,-17.93,6.07,True,REP,99,1117932,compared,2026-11-13T12:37:41Z
+OR-01,OR,House,01,no_polls,,,,,,,,,,,,True,DEM,92.23,306927,no_polls,2026-11-13T12:37:41Z
+OR-02,OR,House,02,no_polls,,,,,,,,,,,,True,REP,94.94,303369,no_polls,2026-11-13T12:37:41Z
+OR-03,OR,House,03,no_polls,,,,,,,,,,,,True,DEM,96.22,302568,no_polls,2026-11-13T12:37:41Z
+OR-04,OR,House,04,no_polls,,,,,,,,,,,,True,DEM,96.19,334424,no_polls,2026-11-13T12:37:41Z
+OR-05,OR,House,05,no_polls,,,,,,,,,,,,True,DEM,95.07,351983,no_polls,2026-11-13T12:37:41Z
+OR-06,OR,House,06,no_polls,,,,,,,,,,,,True,DEM,89.01,279197,no_polls,2026-11-13T12:37:41Z
+OR-GOV,OR,Governor,,available,Tina Kotek,Christine Drazan,45.58,44.45,1.13,7,2026-10-04,53.23,43.77,9.46,8.33,True,DEM,94,1907001,compared,2026-11-13T12:37:41Z
+OR-SEN,OR,Senate,,no_polls,,,,,,,,,,,,True,DEM,94.01,1893153,no_polls,2026-11-13T12:37:41Z
+PA-01,PA,House,01,available,Bob Harvie,Brian Fitzpatrick,47.14,46.51,0.63,7,2026-10-22,52.74,47.26,5.48,4.85,True,DEM,99,356633,compared,2026-11-13T12:37:41Z
+PA-02,PA,House,02,no_polls,,,,,,,,,,,,True,DEM,99,184401,no_polls,2026-11-13T12:37:41Z
+PA-03,PA,House,03,no_dem_rep_field,,,,,,,,,,,,True,DEM,99,272529,no_polls,2026-11-13T12:37:41Z
+PA-04,PA,House,04,no_polls,,,,,,,,,,,,True,DEM,99,345205,no_polls,2026-11-13T12:37:41Z
+PA-05,PA,House,05,no_polls,,,,,,,,,,,,True,DEM,99,298215,no_polls,2026-11-13T12:37:41Z
+PA-06,PA,House,06,no_polls,,,,,,,,,,,,True,DEM,99,312074,no_polls,2026-11-13T12:37:41Z
+PA-07,PA,House,07,available,Bob Brooks,Ryan Mackenzie,48.52,43.08,5.44,4,2026-10-22,56.19,43.81,12.37,6.93,True,DEM,99,294489,compared,2026-11-13T12:37:41Z
+PA-08,PA,House,08,available,Paige Cognetti,Rob Bresnahan Jr.,51.12,47.12,4.01,5,2026-10-22,54.48,45.52,8.95,4.94,True,DEM,99,282799,compared,2026-11-13T12:37:41Z
+PA-09,PA,House,09,no_polls,,,,,,,,,,,,True,REP,99,269982,no_polls,2026-11-13T12:37:41Z
+PA-10,PA,House,10,available,Janelle Stelson,Scott Perry,47.96,46.70,1.26,6,2026-10-22,55.19,44.81,10.37,9.11,True,DEM,99,317427,compared,2026-11-13T12:37:41Z
+PA-11,PA,House,11,no_polls,,,,,,,,,,,,True,REP,99,303119,no_polls,2026-11-13T12:37:41Z
+PA-12,PA,House,12,no_polls,,,,,,,,,,,,True,DEM,99,298366,no_polls,2026-11-13T12:37:41Z
+PA-13,PA,House,13,no_polls,,,,,,,,,,,,True,REP,99,281645,no_polls,2026-11-13T12:37:41Z
+PA-14,PA,House,14,no_polls,,,,,,,,,,,,True,REP,99,276917,no_polls,2026-11-13T12:37:41Z
+PA-15,PA,House,15,no_polls,,,,,,,,,,,,True,REP,99,268326,no_polls,2026-11-13T12:37:41Z
+PA-16,PA,House,16,no_polls,,,,,,,,,,,,True,REP,99,287378,no_polls,2026-11-13T12:37:41Z
+PA-17,PA,House,17,no_polls,,,,,,,,,,,,True,DEM,99,331659,no_polls,2026-11-13T12:37:41Z
+PA-GOV,PA,Governor,,available,Josh Shapiro,Stacy Garrity,57.98,34.21,23.77,23,2026-11-01,60.47,38.23,22.24,-1.53,True,DEM,99,5001251,compared,2026-11-13T12:37:41Z
+RI-01,RI,House,01,available,Gabe Amo,Kellie Keenan,52.91,29.63,23.28,2,2026-10-11,68.59,27.47,41.12,17.84,True,DEM,99,163448,compared,2026-11-13T12:37:41Z
+RI-02,RI,House,02,available,Seth Magaziner,Vic Mellor,53.51,39.06,14.46,2,2026-10-11,61.92,37.82,24.11,9.65,True,DEM,99,195436,compared,2026-11-13T12:37:41Z
+RI-GOV,RI,Governor,,available,Helena Foulkes,Aaron Guckian,46.74,12.91,33.83,7,2026-10-31,57.71,13.18,44.53,10.70,True,DEM,99,359691,compared,2026-11-13T12:37:41Z
+RI-SEN,RI,Senate,,available,Jack Reed,Ray McKay,56.45,29.15,27.29,6,2026-10-11,66.78,29.26,37.52,10.23,True,DEM,99,360406,compared,2026-11-13T12:37:41Z
+SC-01,SC,House,01,available,Nancy Lacore,Jenny Costa Honeycutt,42.57,45.19,-2.62,4,2026-10-22,49.66,48.63,1.03,3.65,True,DEM,99,326423,compared,2026-11-13T12:37:41Z
+SC-02,SC,House,02,no_polls,,,,,,,,,,,,True,REP,99,296737,no_polls,2026-11-13T12:37:41Z
+SC-03,SC,House,03,no_polls,,,,,,,,,,,,True,REP,99,273192,no_polls,2026-11-13T12:37:41Z
+SC-04,SC,House,04,no_polls,,,,,,,,,,,,True,REP,99,284193,no_polls,2026-11-13T12:37:41Z
+SC-05,SC,House,05,no_polls,,,,,,,,,,,,True,REP,99,286858,no_polls,2026-11-13T12:37:41Z
+SC-06,SC,House,06,no_polls,,,,,,,,,,,,True,DEM,99,261334,no_polls,2026-11-13T12:37:41Z
+SC-07,SC,House,07,available,John Gregory Vincent,Russell Fry,36.70,41.10,-4.40,1,2026-07-28,43.23,56.71,-13.48,-9.08,True,REP,99,304088,compared,2026-11-13T12:37:41Z
+SC-GOV,SC,Governor,,available,Jermaine Johnson,Alan Wilson,38.70,49.23,-10.53,8,2026-11-01,47.13,51.58,-4.45,6.08,True,REP,99,2038254,compared,2026-11-13T12:37:41Z
+SC-SEN,SC,Senate,,available,Annie Andrews,Darline Graham,45.02,46.65,-1.63,16,2026-11-01,51.14,46.64,4.50,6.13,True,DEM,99,2041520,compared,2026-11-13T12:37:41Z
+SD-AL,SD,House,00,available,"Nicole ""Nikki"" Gronli",Marty Jackley,32.94,58.32,-25.38,2,2026-10-14,35.99,64.01,-28.01,-2.63,True,REP,99,305580,compared,2026-11-13T12:37:41Z
+SD-GOV,SD,Governor,,available,Dan Ahlers,Larry Rhoden,38.80,55.76,-16.96,5,2026-10-26,36.51,63.49,-26.99,-10.03,True,REP,99,304490,compared,2026-11-13T12:37:41Z
+SD-SEN,SD,Senate,,available,Brian Bengs,Mike Rounds,41.43,53.45,-12.03,15,2026-10-26,39.50,60.50,-21.00,-8.97,True,REP,99,305098,compared,2026-11-13T12:37:41Z
+TN-01,TN,House,01,no_polls,,,,,,,,,,,,True,REP,99,209355,no_polls,2026-11-13T12:37:41Z
+TN-02,TN,House,02,no_polls,,,,,,,,,,,,True,REP,99,250980,no_polls,2026-11-13T12:37:41Z
+TN-03,TN,House,03,no_polls,,,,,,,,,,,,True,REP,98.25,236358,no_polls,2026-11-13T12:37:41Z
+TN-04,TN,House,04,no_polls,,,,,,,,,,,,False,,99,195576,no_polls,2026-11-13T12:37:41Z
+TN-05,TN,House,05,available,Chaz Molder,Charlie Hatcher,40.79,46.43,-5.64,2,2026-10-01,46.72,51.66,-4.94,0.70,True,REP,99,213705,compared,2026-11-13T12:37:41Z
+TN-06,TN,House,06,no_polls,,,,,,,,,,,,True,REP,99,238224,no_polls,2026-11-13T12:37:41Z
+TN-07,TN,House,07,no_polls,,,,,,,,,,,,True,REP,99,240886,no_polls,2026-11-13T12:37:41Z
+TN-08,TN,House,08,no_polls,,,,,,,,,,,,True,REP,99,220906,no_polls,2026-11-13T12:37:41Z
+TN-09,TN,House,09,available,Justin J. Pearson,Brent Taylor,44.00,48.00,-4.00,1,2026-09-03,48.50,49.63,-1.13,2.87,True,REP,99,225614,compared,2026-11-13T12:37:41Z
+TN-GOV,TN,Governor,,available,Jerri Green,Marsha Blackburn,33.73,48.95,-15.22,6,2026-11-02,42.98,45.49,-2.51,12.71,True,REP,98.91,2099975,compared,2026-11-13T12:37:41Z
+TN-SEN,TN,Senate,,available,Marquita Bradshaw,Bill Hagerty,36.64,57.09,-20.44,2,2026-11-02,42.91,55.08,-12.17,8.27,True,REP,99,2066890,compared,2026-11-13T12:37:41Z
+TX-01,TX,House,01,no_polls,,,,,,,,,,,,True,REP,99,263585,no_polls,2026-11-13T12:37:41Z
+TX-02,TX,House,02,available,Shaun Finnie,Steve Toth,37.00,46.00,-9.00,1,2026-10-04,49.02,50.98,-1.97,7.03,True,REP,99,283915,compared,2026-11-13T12:37:41Z
+TX-03,TX,House,03,no_polls,,,,,,,,,,,,True,REP,99,320910,no_polls,2026-11-13T12:37:41Z
+TX-04,TX,House,04,no_polls,,,,,,,,,,,,True,REP,99,306394,no_polls,2026-11-13T12:37:41Z
+TX-05,TX,House,05,no_polls,,,,,,,,,,,,True,REP,99,253133,no_polls,2026-11-13T12:37:41Z
+TX-06,TX,House,06,no_polls,,,,,,,,,,,,True,REP,99,268408,no_polls,2026-11-13T12:37:41Z
+TX-07,TX,House,07,no_polls,,,,,,,,,,,,True,DEM,99,226493,no_polls,2026-11-13T12:37:41Z
+TX-08,TX,House,08,no_polls,,,,,,,,,,,,True,REP,99,266466,no_polls,2026-11-13T12:37:41Z
+TX-09,TX,House,09,available,Leticia Gutierrez,Alex Mealer,43.40,47.61,-4.21,3,2026-10-22,57.55,42.45,15.10,19.31,True,DEM,99,170419,compared,2026-11-13T12:37:41Z
+TX-10,TX,House,10,available,Caitlin Rourk,Chris Gober,41.00,48.00,-7.00,1,2026-09-22,46.24,53.76,-7.52,-0.52,True,REP,99,300257,compared,2026-11-13T12:37:41Z
+TX-11,TX,House,11,no_polls,,,,,,,,,,,,True,REP,99,232980,no_polls,2026-11-13T12:37:41Z
+TX-12,TX,House,12,no_polls,,,,,,,,,,,,True,REP,99,271894,no_polls,2026-11-13T12:37:41Z
+TX-13,TX,House,13,no_polls,,,,,,,,,,,,True,REP,98.96,242521,no_polls,2026-11-13T12:37:41Z
+TX-14,TX,House,14,no_polls,,,,,,,,,,,,True,REP,99,282553,no_polls,2026-11-13T12:37:41Z
+TX-15,TX,House,15,available,Bobby Pulido,Monica De La Cruz,51.33,43.69,7.65,6,2026-10-16,62.32,37.68,24.64,16.99,True,DEM,99,202509,compared,2026-11-13T12:37:41Z
+TX-16,TX,House,16,no_polls,,,,,,,,,,,,True,DEM,99,197117,no_polls,2026-11-13T12:37:41Z
+TX-17,TX,House,17,no_polls,,,,,,,,,,,,True,REP,99,268003,no_polls,2026-11-13T12:37:41Z
+TX-18,TX,House,18,no_polls,,,,,,,,,,,,True,DEM,97.66,224483,no_polls,2026-11-13T12:37:41Z
+TX-19,TX,House,19,no_polls,,,,,,,,,,,,True,REP,99,221753,no_polls,2026-11-13T12:37:41Z
+TX-20,TX,House,20,no_polls,,,,,,,,,,,,True,DEM,99,192494,no_polls,2026-11-13T12:37:41Z
+TX-21,TX,House,21,no_polls,,,,,,,,,,,,True,REP,99,356513,no_polls,2026-11-13T12:37:41Z
+TX-22,TX,House,22,no_polls,,,,,,,,,,,,True,REP,99,289777,no_polls,2026-11-13T12:37:41Z
+TX-23,TX,House,23,available,Katy Padilla Stout,Brandon Herrera,45.99,46.00,0.00,2,2026-10-07,52.14,43.96,8.18,8.18,True,DEM,99,272553,compared,2026-11-13T12:37:41Z
+TX-24,TX,House,24,no_polls,,,,,,,,,,,,True,REP,99,321448,no_polls,2026-11-13T12:37:41Z
+TX-25,TX,House,25,no_polls,,,,,,,,,,,,True,REP,99,265575,no_polls,2026-11-13T12:37:41Z
+TX-26,TX,House,26,no_polls,,,,,,,,,,,,True,REP,99,335798,no_polls,2026-11-13T12:37:41Z
+TX-27,TX,House,27,no_polls,,,,,,,,,,,,True,REP,99,282399,no_polls,2026-11-13T12:37:41Z
+TX-28,TX,House,28,available,Henry Cuellar,Tano E. Tijerina,51.31,34.18,17.13,3,2026-10-13,65.76,29.64,36.13,19.00,True,DEM,99,172312,compared,2026-11-13T12:37:41Z
+TX-29,TX,House,29,no_polls,,,,,,,,,,,,True,DEM,99,167608,no_polls,2026-11-13T12:37:41Z
+TX-30,TX,House,30,no_polls,,,,,,,,,,,,True,DEM,99,226118,no_polls,2026-11-13T12:37:41Z
+TX-31,TX,House,31,no_polls,,,,,,,,,,,,True,REP,99,304973,no_polls,2026-11-13T12:37:41Z
+TX-32,TX,House,32,no_polls,,,,,,,,,,,,True,REP,99,277669,no_polls,2026-11-13T12:37:41Z
+TX-33,TX,House,33,no_polls,,,,,,,,,,,,True,DEM,99,192048,no_polls,2026-11-13T12:37:41Z
+TX-34,TX,House,34,available,Vicente Gonzalez,Eric Flores,49.26,42.87,6.40,4,2026-10-19,55.60,39.76,15.84,9.44,True,DEM,99,202645,compared,2026-11-13T12:37:41Z
+TX-35,TX,House,35,available,Johnny C. Garcia,Carlos De La Cruz,48.26,47.81,0.45,4,2026-10-19,55.43,44.57,10.85,10.40,True,DEM,99,252558,compared,2026-11-13T12:37:41Z
+TX-36,TX,House,36,no_polls,,,,,,,,,,,,True,REP,99,257689,no_polls,2026-11-13T12:37:41Z
+TX-37,TX,House,37,no_polls,,,,,,,,,,,,True,DEM,99,304426,no_polls,2026-11-13T12:37:41Z
+TX-38,TX,House,38,no_polls,,,,,,,,,,,,True,REP,99,305101,no_polls,2026-11-13T12:37:41Z
+TX-GOV,TX,Governor,,available,Gina Hinojosa,Greg Abbott,46.93,48.65,-1.73,63,2026-11-02,52.82,45.69,7.13,8.86,True,DEM,99,9906820,compared,2026-11-13T12:37:41Z
+TX-SEN,TX,Senate,,available,James Talarico,Ken Paxton,48.96,45.74,3.22,75,2026-11-02,55.09,42.99,12.10,8.88,True,DEM,99,9888109,compared,2026-11-13T12:37:41Z
+UT-01,UT,House,01,available,Ben McAdams,Riley Owen,62.70,21.20,41.50,1,2026-09-10,70.06,26.17,43.89,2.39,True,DEM,96.2,249058,compared,2026-11-13T12:37:41Z
+UT-02,UT,House,02,available,Peter Crosby,Blake D. Moore,34.00,39.00,-5.00,1,2026-09-24,42.49,49.84,-7.35,-2.35,True,REP,98.25,256405,compared,2026-11-13T12:37:41Z
+UT-03,UT,House,03,available,Kent S. Udell,Celeste Maloy,26.40,44.50,-18.10,1,2026-09-15,35.62,56.65,-21.03,-2.93,True,REP,97.7,257362,compared,2026-11-13T12:37:41Z
+UT-04,UT,House,04,available,Jonny Larsen,Mike Kennedy,32.90,41.70,-8.80,1,2026-09-17,38.96,53.48,-14.52,-5.72,True,REP,97.03,266668,compared,2026-11-13T12:37:41Z
+VA-01,VA,House,01,available,Shannon L. Taylor,"Robert J. ""Rob"" Wittman",48.29,46.36,1.93,6,2026-10-25,51.31,48.44,2.87,0.94,True,DEM,99,412607,compared,2026-11-13T12:37:41Z
+VA-02,VA,House,02,available,Elaine G. Luria,Jen A. Kiggans,46.03,43.10,2.92,2,2026-10-10,53.22,44.31,8.91,5.99,True,DEM,99,342932,compared,2026-11-13T12:37:41Z
+VA-03,VA,House,03,no_polls,,,,,,,,,,,,True,DEM,98.37,249418,no_polls,2026-11-13T12:37:41Z
+VA-04,VA,House,04,no_polls,,,,,,,,,,,,True,DEM,99,314940,no_polls,2026-11-13T12:37:41Z
+VA-05,VA,House,05,available,Tom S. P. Perriello,John J. McGuire III,44.96,49.87,-4.91,3,2026-09-28,48.31,49.87,-1.56,3.35,True,REP,99,369275,compared,2026-11-13T12:37:41Z
+VA-06,VA,House,06,available,Beth A. Macy,Ben L. Cline,29.00,59.00,-30.00,1,2026-09-30,44.78,55.03,-10.25,19.75,True,REP,99,321828,compared,2026-11-13T12:37:41Z
+VA-07,VA,House,07,no_polls,,,,,,,,,,,,True,DEM,99,326824,no_polls,2026-11-13T12:37:41Z
+VA-08,VA,House,08,no_polls,,,,,,,,,,,,True,DEM,98.93,322346,no_polls,2026-11-13T12:37:41Z
+VA-09,VA,House,09,no_polls,,,,,,,,,,,,True,REP,99,299005,no_polls,2026-11-13T12:37:41Z
+VA-10,VA,House,10,no_polls,,,,,,,,,,,,True,DEM,99,336028,no_polls,2026-11-13T12:37:41Z
+VA-11,VA,House,11,no_polls,,,,,,,,,,,,True,DEM,98.6,339981,no_polls,2026-11-13T12:37:41Z
+VA-SEN,VA,Senate,,no_eligible_polls,,,,,,,,,,,,True,DEM,99,3635671,no_polls,2026-11-13T12:37:41Z
+VT-AL,VT,House,00,available,Becca Balint,Gerald Malloy,54.66,29.83,24.82,4,2026-09-21,65.24,30.88,34.36,9.54,True,DEM,99,304675,compared,2026-11-13T12:37:41Z
+VT-GOV,VT,Governor,,available,Amanda Janoo,Phil Scott,45.60,45.78,-0.17,7,2026-10-31,45.83,52.43,-6.61,-6.44,True,REP,99,309055,compared,2026-11-13T12:37:41Z
+WA-01,WA,House,01,no_polls,,,,,,,,,,,,True,DEM,98.26,292593,no_polls,2026-11-13T12:37:41Z
+WA-02,WA,House,02,no_polls,,,,,,,,,,,,True,DEM,98.22,345689,no_polls,2026-11-13T12:37:41Z
+WA-03,WA,House,03,available,Marie Gluesenkamp Perez,John Braun,45.86,45.84,0.02,4,2026-10-21,53.67,45.40,8.26,8.24,True,DEM,98.57,353237,compared,2026-11-13T12:37:41Z
+WA-04,WA,House,04,no_polls,,,,,,,,,,,,True,REP,97.29,241338,no_polls,2026-11-13T12:37:41Z
+WA-05,WA,House,05,available,Carmela Conroy,Michael Baumgartner,47.00,53.00,-6.00,1,2026-05-25,47.61,52.03,-4.42,1.58,True,REP,94.19,314256,compared,2026-11-13T12:37:41Z
+WA-06,WA,House,06,no_polls,,,,,,,,,,,,True,DEM,97.12,354209,no_polls,2026-11-13T12:37:41Z
+WA-07,WA,House,07,no_polls,,,,,,,,,,,,True,DEM,97.53,366871,no_polls,2026-11-13T12:37:41Z
+WA-08,WA,House,08,no_polls,,,,,,,,,,,,True,DEM,97.32,338280,no_polls,2026-11-13T12:37:41Z
+WA-09,WA,House,09,no_polls,,,,,,,,,,,,True,DEM,97.55,247878,no_polls,2026-11-13T12:37:41Z
+WA-10,WA,House,10,no_polls,,,,,,,,,,,,True,DEM,96.78,271767,no_polls,2026-11-13T12:37:41Z
+WI-01,WI,House,01,available,Mitchell Berman,Bryan Steil,47.99,47.62,0.37,4,2026-10-01,51.96,48.04,3.91,3.54,True,DEM,99,305724,compared,2026-11-13T12:37:41Z
+WI-02,WI,House,02,no_dem_rep_field,,,,,,,,,,,,True,DEM,99,317125,no_polls,2026-11-13T12:37:41Z
+WI-03,WI,House,03,available,Rebecca Cooke,Derrick Van Orden,49.99,46.01,3.98,5,2026-06-25,52.44,45.79,6.64,2.66,True,DEM,99,329464,compared,2026-11-13T12:37:41Z
+WI-04,WI,House,04,no_polls,,,,,,,,,,,,True,DEM,99,264932,no_polls,2026-11-13T12:37:41Z
+WI-05,WI,House,05,no_polls,,,,,,,,,,,,True,REP,99,374269,no_polls,2026-11-13T12:37:41Z
+WI-06,WI,House,06,available,Brad Smith,Glenn Grothman,39.00,61.00,-22.00,1,2026-05-28,43.34,52.78,-9.44,12.56,True,REP,99,326136,compared,2026-11-13T12:37:41Z
+WI-07,WI,House,07,no_polls,,,,,,,,,,,,True,REP,99,339994,no_polls,2026-11-13T12:37:41Z
+WI-08,WI,House,08,no_polls,,,,,,,,,,,,True,REP,99,328729,no_polls,2026-11-13T12:37:41Z
+WI-GOV,WI,Governor,,available,David Crowley,Tom Tiffany,49.17,44.57,4.60,12,2026-11-01,54.00,46.00,7.99,3.39,True,DEM,99,2668670,compared,2026-11-13T12:37:41Z
+WV-01,WV,House,01,no_polls,,,,,,,,,,,,True,REP,99,208713,no_polls,2026-11-13T12:37:41Z
+WV-02,WV,House,02,no_polls,,,,,,,,,,,,True,REP,99,242724,no_polls,2026-11-13T12:37:41Z
+WV-SEN,WV,Senate,,no_polls,,,,,,,,,,,,True,REP,99,457611,no_polls,2026-11-13T12:37:41Z
+WY-AL,WY,House,00,no_polls,,,,,,,,,,,,True,REP,99,183200,no_polls,2026-11-13T12:37:41Z
+WY-GOV,WY,Governor,,no_polls,,,,,,,,,,,,True,REP,99,187387,no_polls,2026-11-13T12:37:41Z
+WY-SEN,WY,Senate,,no_polls,,,,,,,,,,,,True,REP,99,187254,no_polls,2026-11-13T12:37:41Z

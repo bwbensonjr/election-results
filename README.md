@@ -77,6 +77,13 @@ Finally, publish the election-night baseline of all 506 races, keyed for an AP r
 uv run scripts/build_election_baseline.py
 ```
 
+After results come in, compare each race's result with its polling average (see [results vs. polls](docs/big-board.md#results-vs-polls-dataset)); it reads the checked-in results snapshot by default, and the Big Board's page data embeds the poll list it writes:
+
+```sh
+uv run scripts/build_results_vs_polls.py
+uv run scripts/build_bigboard_data.py
+```
+
 `normalize_district_history.py` also writes the state presidential and Cook state PVI files the statewide context needs. These commands read saved source snapshots and need no API key or live Cook access. District IDs normalize at-large seats to `STATE-AL` and district code `00`. Margins are Democratic minus Republican in percentage points. Cook PVI retains its published 2026 label and a numeric lean, positive for D and negative for R.
 
 The join uses normalized district IDs. The supplied presidential results describe the 2024 map; in the nine states listed in the reviewed [boundary registry](docs/district-data.md#redrawn-states), margins are reallocated to the 2026 lines with the committed crosswalk (status `interpolated`) where an enacted plan is available, and otherwise get status `prior_boundaries`. Cook PVI is the measure on current lines. Rebuilding the crosswalk needs network access (`uv run scripts/build_presidential_crosswalk.py`; see [interpolated margins](docs/district-data.md#interpolated-margins-on-2026-lines)); normalization only reads the committed copy. Missing metrics are reported rather than assigned zero or EVEN. The current strict build has all three metrics for every district. Polling averages are optional: strict mode does not require them, and unpolled districts keep blank polling columns rather than zeroes. See the [polling-average method](docs/district-data.md#house-polling-averages) for eligibility, weights, and limitations. The context build also validates the guide CSV against the guide markdown; after editing the guide, update the affected rows and run `uv run scripts/election_guide.py` (see the [guide conventions](docs/district-data.md#election-night-guide)).

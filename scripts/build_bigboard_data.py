@@ -1,13 +1,14 @@
 # /// script
 # requires-python = ">=3.11"
 # ///
-"""Embed the Big Board's static data (district shapes and a slim race baseline) into bigboard/index.html.
+"""Embed the Big Board's static data (district shapes, a slim race baseline, and poll lists) into bigboard/index.html.
 
-Run from the repository root after the baseline and shape builds: uv run scripts/build_bigboard_data.py
+Run from the repository root after the baseline, shape, and results-vs-polls builds: uv run scripts/build_bigboard_data.py
 Only the block between the board-data markers is replaced; the rest of the page is hand-written.
 """
 
 import argparse
+import csv
 import json
 import os
 import sys
@@ -17,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = ROOT / "2026/baseline/election-baseline.json"
 GEOMETRY = ROOT / "2026/geometry/us-house-2026.json"
+POLLS = ROOT / "2026/results/results-vs-polls-polls.csv"
 PAGE = ROOT / "bigboard/index.html"
 BEGIN = "<!-- board-data:begin -->"
 END = "<!-- board-data:end -->"
@@ -27,6 +29,7 @@ RACE_COLUMNS = [
     "poll_avg_dem_candidate", "poll_avg_rep_candidate", "poll_avg_dem_pct", "poll_avg_rep_pct",
     "poll_avg_dem_margin_pp", "poll_count", "poll_avg_status", "guide_rating", "guide_card", "guide_notes",
 ]
+POLL_COLUMNS = ["end_date", "pollster", "population", "sample_size", "partisan", "dem_pct", "rep_pct", "dem_margin_pp"]
 STATE_NAMES = {
     "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California", "CO": "Colorado",
     "CT": "Connecticut", "DE": "Delaware", "DC": "District of Columbia", "FL": "Florida", "GA": "Georgia",
@@ -45,7 +48,19 @@ class BuildError(Exception):
     pass
 
 
-def board_data(baseline_path=BASELINE, geometry_path=GEOMETRY):
+def poll_lists(polls_path=POLLS):
+    """Each race's polls in its average, newest first, as compact rows of POLL_COLUMNS."""
+    polls = {}
+    with open(polls_path, newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            polls.setdefault(row["race_key"], []).append([row[c] for c in POLL_COLUMNS])
+    for rows in polls.values():
+        rows.sort(key=lambda r: (r[0], r[1]))
+        rows.sort(key=lambda r: r[0], reverse=True)
+    return dict(sorted(polls.items()))
+
+
+def board_data(baseline_path=BASELINE, geometry_path=GEOMETRY, polls_path=POLLS):
     baseline = json.loads(Path(baseline_path).read_text())
     geometry = json.loads(Path(geometry_path).read_text())
     candidates = {}
@@ -59,6 +74,8 @@ def board_data(baseline_path=BASELINE, geometry_path=GEOMETRY):
         "race_columns": RACE_COLUMNS,
         "races": [[r[c] for c in RACE_COLUMNS] for r in baseline["races"]],
         "candidates": dict(sorted(candidates.items())),
+        "poll_columns": POLL_COLUMNS,
+        "polls": poll_lists(polls_path),
     }
 
 
@@ -72,9 +89,9 @@ def embed(page_text, data):
     return head + block + tail
 
 
-def build(page=PAGE, baseline_path=BASELINE, geometry_path=GEOMETRY):
+def build(page=PAGE, baseline_path=BASELINE, geometry_path=GEOMETRY, polls_path=POLLS):
     page = Path(page)
-    text = embed(page.read_text(), board_data(baseline_path, geometry_path))
+    text = embed(page.read_text(), board_data(baseline_path, geometry_path, polls_path))
     fd, tmp = tempfile.mkstemp(dir=page.parent, prefix=".tmp-")
     with os.fdopen(fd, "w") as f:
         f.write(text)

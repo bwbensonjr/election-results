@@ -16,7 +16,7 @@ The board SHALL offer Governor, Senate, and House modes. Governor and Senate mod
 
 ### Requirement: Color metrics
 
-The map SHALL be colored by one selectable metric: election-night results, polling average margin, 2024 Harris/Trump margin (labeled President), Cook PVI lean, or incumbent party. Democratic values SHALL use blue shades, Republican values red shades, scaled by margin, and missing or unknown values grey. Under the President metric, margins with status `available` or `interpolated` SHALL be colored the same way.
+The map SHALL be colored by one selectable metric: election-night results, polling average margin, results versus polls (labeled Results vs. Polls), 2024 Harris/Trump margin (labeled President), Cook PVI lean, or incumbent party. Democratic values SHALL use blue shades, Republican values red shades, scaled by margin, and missing or unknown values grey. Under the President metric, margins with status `available` or `interpolated` SHALL be colored the same way.
 
 #### Scenario: Margin unavailable
 - **WHEN** the metric is 2024 margin and a district's margin status is `prior_boundaries`
@@ -34,6 +34,10 @@ The map SHALL be colored by one selectable metric: election-night results, polli
 - **WHEN** the metric is results and a race has no votes
 - **THEN** the race is grey
 
+#### Scenario: Results vs. Polls button
+- **WHEN** the viewer looks at the metric controls in any office mode
+- **THEN** a Results vs. Polls button appears beside Results, Polls, President, PVI, and Incumbent
+
 ### Requirement: Results coloring distinguishes calls
 
 Under the results metric, a called race SHALL be colored solid by the winner's party and an uncalled race with votes SHALL be colored by the leader's party in a visibly lighter or hatched style. A winner outside the two parties SHALL use a distinct third color.
@@ -41,6 +45,46 @@ Under the results metric, a called race SHALL be colored solid by the winner's p
 #### Scenario: Leading but not called
 - **WHEN** a Republican leads an uncalled race at 40% expected vote
 - **THEN** the race is shown as a Republican lead, not a Republican win
+
+### Requirement: Results vs. Polls coloring
+
+Under the Results vs. Polls metric, each race with polls and votes SHALL be colored by its difference (result margin minus polling average margin for the poll principals, as defined by the results-vs-polls capability), computed from the board's current results: blue when the Democratic side beat its polls, red when the Republican did, in four steps of under 2, 2 to 5, 5 to 10, and 10 or more points. A called race SHALL be solid and an uncalled race hatched.
+
+#### Scenario: Large Republican over-performance
+- **WHEN** a called Senate race polled at D+2.5 and the result is R+6.0
+- **THEN** the state is drawn solid in the third red step (5 to 10 points), for a difference of 8.5 points toward the Republican
+
+#### Scenario: Uncalled race
+- **WHEN** an uncalled House race with partial votes shows Democratic over-performance of 3 points
+- **THEN** the district is hatched in the second blue step
+
+#### Scenario: Updates with new results
+- **WHEN** new results change a race's margin while the Results vs. Polls metric is selected
+- **THEN** the race's color and difference update without a reload
+
+### Requirement: Races without polling are neutral
+
+Under the Results vs. Polls metric, a race without an available polling average SHALL be drawn in the board's neutral no-data grey, without any result coloring, and a polled race with no votes or a missing principal SHALL also be grey. The legend SHALL label the grey as no polling average or no votes yet.
+
+#### Scenario: Unpolled district with a winner
+- **WHEN** AL-01 has no polling average and a called Republican winner
+- **THEN** AL-01 is grey under Results vs. Polls, not red
+
+### Requirement: Results vs. Polls race detail
+
+When a race is selected under the Results vs. Polls metric, the detail SHALL show the result shares and margin for the two poll principals, the polling average shares and margin with its poll count, the signed difference labeled by which side over-performed, and the polls in the average with pollster, end date, population, sample size, shares, and margin, sorted by end date with the most recent first. The rest of the race detail SHALL remain available.
+
+#### Scenario: Selected polled race
+- **WHEN** the viewer selects AK-SEN under Results vs. Polls
+- **THEN** the detail shows Peltola's and Sullivan's result shares and margin, their polling average of 48.0% to 45.5% (D+2.5, 21 polls), the difference, and 21 polls with the poll ending latest at the top
+
+#### Scenario: Selected race without polling
+- **WHEN** the viewer selects a race with no polling average under Results vs. Polls
+- **THEN** the detail says the race has no polling average and lists no polls, and still shows the result
+
+#### Scenario: Partial count
+- **WHEN** the selected race is uncalled
+- **THEN** the detail notes that the difference uses a partial count and shows the percent of expected vote
 
 ### Requirement: Prior-line districts are marked
 

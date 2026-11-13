@@ -16,6 +16,7 @@ Basic specification of a Big Board application artifact to follow results on ele
     - Harris/Trump margin (the President button)
     - Cook PVI
     - Polling average
+    - Results vs. polls (result margin minus polling average margin)
     - Election night results
 - When a district is selected it should show the full details for the
   district and the current election night results if any.
@@ -97,6 +98,34 @@ Its `fetched_at` and `ap_last_updated` say how current it is; counting continues
 
 Tests: `uv run python -m unittest tests.test_ingest_results`.
 
+## Results vs. polls dataset
+
+```sh
+uv run scripts/build_results_vs_polls.py                                # from the checked-in snapshot
+uv run scripts/build_results_vs_polls.py --results 2026/live/results.json
+uv run python -m unittest tests.test_build_results_vs_polls
+```
+
+The build compares each race's result with its pre-election polling average, for all 506 Governor, Senate, and House races, and needs no network access. It writes two files to `2026/results/` and prints the count of each status; a second run on the same inputs writes identical files. It fails, keeping the previous files, when the results file lacks a baseline race or when a race's list of polls disagrees with its average's poll count.
+
+**Sign and basis.** Margins are the two polling principals' shares of the total vote, Democratic side minus Republican, in points. The Democratic side is the reviewed non-Republican principal where the average names one (AK-AL's Bill Hill, AK-SEN's Mary Peltola, ID-SEN's Todd Achilles). Principals are found among the result candidates by baseline name, so the race's top-Democrat margin is not used: AK-AL compares Hill with Begich (R+7.41), not Hafner with Begich. The difference is the result margin minus the poll margin. Positive means the Democratic side beat its polls; negative means the Republican did. Both margins include third parties and, for the polls, undecided voters, the usual measure of polling error. Ranked-choice races compare first-round results with first-choice poll answers.
+
+`results-vs-polls.csv`, one row per race:
+
+| Column | Meaning |
+| --- | --- |
+| `race_key`, `state`, `office`, `district` | The baseline race |
+| `poll_avg_status` | The polling average's status (`available`, `no_polls`, `no_dem_rep_field`, ...) |
+| `poll_dem_candidate`, `poll_rep_candidate` | The two principals |
+| `poll_dem_pct`, `poll_rep_pct`, `poll_dem_margin_pp`, `poll_count`, `poll_latest_end_date` | The polling average |
+| `result_dem_pct`, `result_rep_pct`, `result_dem_margin_pp` | The principals' shares of the total vote and the margin |
+| `diff_pp` | Result margin minus poll margin, only when `status` is `compared` |
+| `called`, `winner_party_group`, `eevp`, `total_votes` | From the results, for every race |
+| `status` | `compared`, `no_polls` (no available average), `no_votes`, or `principal_missing` (a principal has no result candidate) |
+| `results_fetched_at` | The results file's fetch time |
+
+`results-vs-polls-polls.csv` lists every poll question included in an average, from the House and statewide input logs, newest first within each race: `race_key`, `office`, `poll_id`, `question_id`, `pollster`, `end_date`, `population`, `sample_size`, `sample_size_imputed`, `partisan`, the two principals and their shares, `dem_margin_pp`, and the poll's `weight` in the average.
+
 ## District shapes
 
 ```sh
@@ -169,11 +198,11 @@ uv run scripts/build_bigboard_data.py       # after any baseline or shape rebuil
 uv run python -m unittest tests.test_build_bigboard_data
 ```
 
-[`bigboard/index.html`](../bigboard/index.html) is a hand-written page; the build script replaces only the block between the `board-data` markers with the slim baseline (the race columns the board shows, plus candidate names) and the district shapes, about 330 KB in all. The page loads d3 from cdnjs for zoom and draws the pre-projected paths. Live results come from the artifact's database: the page subscribes once to the `live` collection and redraws only when all five records share one `content_hash`. A database write makes no new artifact version, so open boards update in place with no reload. If the database is unavailable or silent for 10 seconds, the page reads the published `data/results.json` instead and checks it every 60 seconds. The footer says when the board was loaded and which source it is using. Mode, metric, zoom, and selection are kept in `localStorage`; on load the page applies the saved zoom before drawing and holds the map until results arrive, so a reload shows no grey map or zoom jump.
+[`bigboard/index.html`](../bigboard/index.html) is a hand-written page; the build script replaces only the block between the `board-data` markers with the slim baseline (the race columns the board shows, plus candidate names), the polls in each average, and the district shapes, about 475 KB in all. The page loads d3 from cdnjs for zoom and draws the pre-projected paths. Live results come from the artifact's database: the page subscribes once to the `live` collection and redraws only when all five records share one `content_hash`. A database write makes no new artifact version, so open boards update in place with no reload. If the database is unavailable or silent for 10 seconds, the page reads the published `data/results.json` instead and checks it every 60 seconds. The footer says when the board was loaded and which source it is using. Mode, metric, zoom, and selection are kept in `localStorage`; on load the page applies the saved zoom before drawing and holds the map until results arrive, so a reload shows no grey map or zoom jump.
 
 The database is declared at publish with one access rule, `{path: "live", read: "view", write: "owner"}`: everyone the board is shared with reads the results, and only the owner writes them.
 
-Metrics: **Results**, **Polls** (polling average margin), **President** (2024 Harris–Trump margin. In the nine redrawn states, all drawn on 2026 shapes, it is an estimate on the new lines, colored like any other margin and labeled "est. on 2026 lines" in the race detail with a note on the method; see [interpolated margins](district-data.md#interpolated-margins-on-2026-lines). A district still on 2024 lines would be grey), **PVI** (Cook PVI lean), and **Incumbent** (party). Colors: Democratic blue and Republican red in four margin steps (under 5, 5 to 10, 10 to 20, and 20 or more points; PVI uses half those steps, since a PVI lean is about half a two-party margin), validated as ordinal ramps in both themes; violet for any other party; mid grey for no data; a pale fill for states or districts with no race. Under the results metric a called race is solid and an uncalled lead is hatched. Districts drawn on 2024 lines have a dashed outline. A test-data banner appears whenever results come from the mock, and a warning appears during the night when published results are more than 15 minutes old.
+Metrics: **Results**, **Polls** (polling average margin), **Results vs. Polls** (the result margin minus the polling average margin for the average's two principals, computed in the page from the current results with the same rule as the [results vs. polls dataset](#results-vs-polls-dataset)), **President** (2024 Harris–Trump margin. In the nine redrawn states, all drawn on 2026 shapes, it is an estimate on the new lines, colored like any other margin and labeled "est. on 2026 lines" in the race detail with a note on the method; see [interpolated margins](district-data.md#interpolated-margins-on-2026-lines). A district still on 2024 lines would be grey), **PVI** (Cook PVI lean), and **Incumbent** (party). Colors: Democratic blue and Republican red in four margin steps (under 5, 5 to 10, 10 to 20, and 20 or more points; PVI uses half those steps, since a PVI lean is about half a two-party margin), validated as ordinal ramps in both themes; violet for any other party; mid grey for no data; a pale fill for states or districts with no race. Under the results metric a called race is solid and an uncalled lead is hatched. Results vs. Polls uses the same ramps with steps for polling error (under 2, 2 to 5, 5 to 10, and 10 or more points): blue where the Democratic side beat its polls, red where the Republican did, solid when called and hatched when not. Races without a polling average are grey even when they have a winner, as are polled races with no votes yet. Selecting a race under this metric adds the principals' result, the polling average, the signed difference, a partial-count note for uncalled races, and the polls in the average (end date, pollster, sample and population, shares, margin) newest first, above the usual detail. The page embeds those polls from `2026/results/results-vs-polls-polls.csv`, so rerun `scripts/build_results_vs_polls.py` before `scripts/build_bigboard_data.py` when the averages change. On phones the metric buttons form a three-by-two grid. Districts drawn on 2024 lines have a dashed outline. A test-data banner appears whenever results come from the mock, and a warning appears during the night when published results are more than 15 minutes old.
 
 The published board: <https://claude.ai/artifact/PYJrwsZ2CfhnGuu8SV6FnN> (shared with the organization from its Share menu; sharing carries across versions). [`bigboard/artifact.json`](../bigboard/artifact.json) records the link and publish settings, so any Claude session can republish to the same link.
 
