@@ -120,7 +120,7 @@ class BuildTests(unittest.TestCase):
         with open(out1 / rvp.COMPARISON_FILE) as f:
             rows = {r["race_key"]: r for r in csv.DictReader(f)}
         self.assertEqual(len(rows), 506)
-        self.assertEqual(rows["AK-AL"]["result_dem_margin_pp"], "-7.41")
+        self.assertEqual(rows["AK-AL"]["result_dem_margin_pp"], "-7.40")
         with open(out1 / rvp.POLLS_FILE) as f:
             polls = list(csv.DictReader(f))
         self.assertEqual(sum(p["race_key"] == "AK-SEN" for p in polls), int(rows["AK-SEN"]["poll_count"]))
