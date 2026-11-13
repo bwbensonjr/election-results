@@ -206,6 +206,19 @@ Metrics: **Results**, **Polls** (polling average margin), **Results vs. Polls** 
 
 The published board: <https://claude.ai/artifact/PYJrwsZ2CfhnGuu8SV6FnN> (shared with the organization from its Share menu; sharing carries across versions). [`bigboard/artifact.json`](../bigboard/artifact.json) records the link and publish settings, so any Claude session can republish to the same link.
 
+### GitHub Pages copy
+
+A public copy of the board is published to GitHub Pages at <https://bwbensonjr.github.io/election-results/>. It shows the latest checked-in results: its `data/results.json` is the committed snapshot [`2026/results/ap-results.json`](../2026/results/ap-results.json), not the live database. Outside an artifact the page has no database, so it reads that file at once and checks it again every 60 seconds; the footer says "results from published file".
+
+The workflow [`.github/workflows/pages.yml`](../.github/workflows/pages.yml) deploys on every push to `main` that changes `bigboard/index.html`, the snapshot, the build script, or the workflow, and can also be run by hand from the Actions tab. It runs `scripts/build_pages_site.py`, which writes `_site/` (ignored by git): the page wrapped in a full HTML document with a viewport tag, and the snapshot as `data/results.json`. The build fails if the page has no board data or the snapshot is test data. To build and view it locally:
+
+```sh
+uv run scripts/build_pages_site.py
+python3 -m http.server 8768 --directory _site
+```
+
+To refresh the Pages copy after a new AP pull, update the checked-in snapshot (see [Checked-in snapshot](#checked-in-snapshot)), rebuild the results-vs-polls files, and push.
+
 ## Election-night runbook
 
 Times are Eastern. Keep the Mac awake and plugged in for the night.

@@ -6,3 +6,4 @@ __pycache__/
 !2026/live/.gitkeep
 2026/geometry/cache/
 bigboard/data/
+_site/

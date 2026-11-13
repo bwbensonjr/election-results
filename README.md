@@ -20,7 +20,7 @@ The same context is built for the 71 Senate and governor races on the November 3
 
 A reviewed [incumbent roster](docs/district-data.md#incumbent-roster) names the incumbent for every House, Senate, and governor race on the 2026 ballot and whether each seat is open. In the nine states that redrew for 2026, presidential margins are estimated on the new lines from a block- and county-level crosswalk, with status `interpolated` (see [redrawn states](docs/district-data.md#redrawn-states)).
 
-An election-night [Big Board](docs/big-board.md) maps every House, Senate, and governor race and follows live results: `scripts/ingest_results.py` reads the AP-backed Globe elections feed into `2026/live/results.json` (`uv run scripts/ingest_results.py --every 120`), `scripts/mock_election_feed.py` generates a simulated night for rehearsal, and the board is a published Claude Artifact built from `bigboard/`.
+An election-night [Big Board](docs/big-board.md) maps every House, Senate, and governor race and follows live results: `scripts/ingest_results.py` reads the AP-backed Globe elections feed into `2026/live/results.json` (`uv run scripts/ingest_results.py --every 120`), `scripts/mock_election_feed.py` generates a simulated night for rehearsal, and the board is a published Claude Artifact built from `bigboard/`. A copy showing the latest checked-in results is on [GitHub Pages](https://bwbensonjr.github.io/election-results/).
 
 ## Rebuild from committed inputs
 
