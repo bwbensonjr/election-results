@@ -47,11 +47,11 @@ class BoardDataTests(unittest.TestCase):
         for race in races.values():
             if race["office"] == "House":
                 statuses[race["pres_2024_status"]] = statuses.get(race["pres_2024_status"], 0) + 1
-        self.assertEqual(statuses, {"available": 262, "interpolated": 142, "prior_boundaries": 31})
+        self.assertEqual(statuses, {"available": 262, "interpolated": 173})
         self.assertEqual((races["UT-01"]["pres_2024_status"], races["UT-01"]["pres_2024_dem_margin_pp"]),
                          ("interpolated", "7.50"))
         self.assertEqual((races["TN-05"]["pres_2024_status"], races["TN-05"]["pres_2024_dem_margin_pp"]),
-                         ("prior_boundaries", ""))
+                         ("interpolated", "-27.50"))
         districts = data["geometry"]["districts"]
         self.assertTrue(all(districts[k]["vintage"] == "plan_2026" for k, r in races.items()
                             if r["pres_2024_status"] == "interpolated"))

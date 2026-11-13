@@ -33,7 +33,8 @@ class BaselineTests(unittest.TestCase):
         self.assertEqual((by_key["UT-01"]["pres_2024_dem_margin_pp"], by_key["UT-01"]["pres_2024_status"],
                           by_key["UT-01"]["cook_pvi_label"]), ("7.50", "interpolated", "D+12"))
         self.assertEqual((by_key["TN-05"]["pres_2024_dem_margin_pp"], by_key["TN-05"]["pres_2024_status"],
-                          by_key["TN-05"]["cook_pvi_label"]), ("", "prior_boundaries", "R+10"))
+                          by_key["TN-05"]["cook_pvi_label"]), ("-27.50", "interpolated", "R+10"))
+        self.assertNotIn("prior_boundaries", {r["pres_2024_status"] for r in races})
         self.assertEqual((by_key["MA-04"]["pres_2024_dem_margin_pp"], by_key["MA-04"]["pres_2024_status"]),
                          ("19.72", "available"))
         self.assertNotIn("pres_2020_dem_margin_pp", baseline.RACE_COLUMNS)

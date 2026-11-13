@@ -6,7 +6,8 @@
 
 Run from the repository root: uv run scripts/build_presidential_crosswalk.py
 Each 2020 Census block is assigned to its 119th Congress district by the Census block equivalency
-file, to its county, and to the 2026 district containing its internal point. County presidential results
+file, to its county, and to the 2026 district containing its internal point, which is checked against
+the Census 120th Congress block equivalency file. County presidential results
 for the same states are written beside the crosswalk to weight the split. See docs/district-data.md.
 """
 
@@ -44,11 +45,14 @@ COUNTY_COLUMNS = ["state", "county_fips", "election_year", "dem_votes", "rep_vot
 COUNTY_SOURCE_COLUMNS = ["state_name", "county_fips", "county_name", "votes_gop", "votes_dem", "total_votes"]
 ELECTION_YEARS = ["2020", "2024"]
 REPORT_COLUMNS = ["state", "status", "plan_id", "blocks", "population", "old_districts", "new_districts",
-                  "unplaced_blocks", "unplaced_population", "unplaced_pct"]
+                  "unplaced_blocks", "unplaced_population", "unplaced_pct", "census_agreement_pct"]
 FIPS_STATE = {v: k for k, v in STATE_FIPS.items()}
 # A populated block whose internal point lies outside every 2026 district goes to the nearest one;
 # the build fails if such blocks hold more than this share of a state's population.
 MAX_UNPLACED_SHARE = 0.001
+# Each plan file's block placement must match the Census 120th Congress block equivalency file
+# for at least this share of a state's population; a wrong or outdated plan moves far more.
+MIN_CENSUS_AGREEMENT = 0.999
 EQUAL_AREA = "EPSG:5070"
 
 
@@ -73,7 +77,7 @@ def load_sources(path):
         raise BuildError(f"{path}: expected schema_version 1 and a blocks list")
     if sorted(e.get("election_year") for e in data.get("county_results") or []) != ELECTION_YEARS:
         raise BuildError(f"{path}: county_results needs one entry for each of {ELECTION_YEARS}")
-    for entry in [data.get("bef"), *data["blocks"], *data["county_results"]]:
+    for entry in [data.get("bef"), data.get("bef_2026"), *data["blocks"], *data["county_results"]]:
         if not isinstance(entry, dict) or not all(entry.get(k) for k in ("url", "file", "retrieved", "sha256")):
             raise BuildError(f"{path}: every source needs url, file, retrieved, and sha256")
     states = [e.get("state") for e in data["blocks"]]
@@ -83,12 +87,18 @@ def load_sources(path):
 
 
 def read_bef(path, member, fips):
-    """Return {block GEOID: 119th Congress district number} for the given state FIPS codes."""
+    """Return {block GEOID: district number} from a Census block equivalency file for the given state FIPS codes.
+
+    The 119th Congress file has GEOID,CDFP columns and the 120th adds geography columns; both are
+    read by column name.
+    """
     with zipfile.ZipFile(path) as archive, archive.open(member) as raw:
         reader = csv.reader(io.TextIOWrapper(raw, encoding="utf-8", newline=""))
-        if [h.strip() for h in next(reader)] != ["GEOID", "CDFP"]:
-            raise BuildError(f"{path.name}!{member}: expected GEOID,CDFP header")
-        return {geoid: cd.strip() for geoid, cd in reader if geoid[:2] in fips}
+        header = [h.strip() for h in next(reader)]
+        if "GEOID" not in header or "CDFP" not in header:
+            raise BuildError(f"{path.name}!{member}: expected GEOID and CDFP columns, got {header}")
+        geoid_at, cd_at = header.index("GEOID"), header.index("CDFP")
+        return {row[geoid_at]: row[cd_at].strip() for row in reader if row[geoid_at][:2] in fips}
 
 
 def read_county_results(path, fips):
@@ -151,7 +161,7 @@ def place_blocks(blocks, plan):
     return dict(zip(joined["GEOID20"], joined["race_key"])), set(joined.loc[unplaced, "GEOID20"])
 
 
-def crosswalk_state(state, blocks, bef, plan):
+def crosswalk_state(state, blocks, bef, plan, bef_2026):
     new_of, unplaced = place_blocks(blocks, plan)
     shared = defaultdict(int)
     old_pop = defaultdict(int)
@@ -173,13 +183,20 @@ def crosswalk_state(state, blocks, bef, plan):
     if unplaced_pop > MAX_UNPLACED_SHARE * population:
         raise BuildError(f"{state}: {unplaced_pop} people in blocks outside every 2026 district "
                          f"exceeds {MAX_UNPLACED_SHARE:.1%} of {population}")
+    agreeing = sum(int(pop) for geoid, pop in zip(blocks["GEOID20"], blocks["POP20"])
+                   if bef_2026.get(geoid, "").isdigit() and district_key(state, bef_2026[geoid]) == new_of[geoid])
+    if agreeing < MIN_CENSUS_AGREEMENT * population:
+        raise BuildError(f"{state}: the 2026 plan places only {100 * agreeing / population:.2f}% of the population "
+                         f"in the same district as the Census 120th Congress block file "
+                         f"(minimum {100 * MIN_CENSUS_AGREEMENT:.1f}%)")
     rows = [dict(zip(CROSSWALK_COLUMNS, [state, old, county, new, str(pop), str(old_pop[old]),
                                          f"{pop / old_pop[old]:.8f}"]))
             for (old, county, new), pop in sorted(shared.items())]
     report = dict(state=state, status="interpolated", blocks=str(len(blocks)), population=str(population),
                   old_districts=str(len(old_pop)), new_districts=str(len(set(plan["race_key"]))),
                   unplaced_blocks=str(len(unplaced)), unplaced_population=str(unplaced_pop),
-                  unplaced_pct=f"{100 * unplaced_pop / population:.4f}")
+                  unplaced_pct=f"{100 * unplaced_pop / population:.4f}",
+                  census_agreement_pct=f"{100 * agreeing / population:.4f}")
     return rows, report
 
 
@@ -209,18 +226,20 @@ def build(sources_path=SOURCES, geometry_manifest=GEOMETRY_MANIFEST, registry_pa
         raise BuildError(f"{sources_path}: no block source for {', '.join(absent)}")
     fips = {FIPS_STATE[s] for s in states}
     bef = read_bef(fetch(sources["bef"], block_cache), sources["bef"]["member"], fips)
+    bef_2026 = read_bef(fetch(sources["bef_2026"], block_cache), sources["bef_2026"]["member"], fips)
     results = {e["election_year"]: read_county_results(fetch(e, block_cache), fips) for e in sources["county_results"]}
     rows, report, counties = [], [], []
     for state in states:
         log(f"{state}: reading blocks and placing them in the 2026 plan")
         blocks = read_blocks(fetch(blocks_by_state[state], block_cache))
         plan = read_override(plans[state], fetch_plan(plans[state], Path(cache_dir)))
-        state_rows, state_report = crosswalk_state(state, blocks, bef, plan)
+        state_rows, state_report = crosswalk_state(state, blocks, bef, plan, bef_2026)
         counties += county_rows(state, blocks, results)
         rows += state_rows
         report.append(dict(state_report, plan_id=plans[state]["id"]))
         log(f"{state}: {state_report['blocks']} blocks, {state_report['unplaced_blocks']} unplaced "
-            f"({state_report['unplaced_pct']}% of population), {len(state_rows)} crosswalk rows")
+            f"({state_report['unplaced_pct']}% of population), {state_report['census_agreement_pct']}% agree "
+            f"with the Census 2026 block file, {len(state_rows)} crosswalk rows")
     for state in sorted(registry - set(plans)):
         report.append(dict.fromkeys(REPORT_COLUMNS, "") | {"state": state, "status": "not_interpolated"})
         log(f"{state}: no enacted 2026 plan in the geometry manifest; not interpolated")

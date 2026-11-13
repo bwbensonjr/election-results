@@ -344,13 +344,12 @@ class ContextTests(HistoryFixture):
                          collections.Counter(tuple(r[c] for c in columns) for r in enriched))
         ca13 = next(r for r in districts if r["district_id"] == "CA-13")
         self.assertEqual(ca13["cook_pvi_label"], "D+2")
-        prior, interpolated = {"AL", "OH", "TN"}, {"CA", "FL", "LA", "NC", "TX", "UT"}
+        interpolated = {"AL", "CA", "FL", "LA", "NC", "OH", "TN", "TX", "UT"}
         self.assertTrue(all(r["cook_pvi_status"] == "available" for r in districts))
         self.assertTrue(all(r["pres_2020_status"] == r["pres_2024_status"] == (
-            "prior_boundaries" if r["state"] in prior else "interpolated" if r["state"] in interpolated else "available")
-            for r in districts))
+            "interpolated" if r["state"] in interpolated else "available") for r in districts))
         self.assertEqual(collections.Counter(r["pres_2024_status"] for r in districts),
-                         {"available": 262, "interpolated": 142, "prior_boundaries": 31})
+                         {"available": 262, "interpolated": 173})
         statuses = collections.Counter(r["poll_avg_status"] for r in districts)
         self.assertEqual(statuses["available"], 111)
         me02 = next(r for r in districts if r["district_id"] == "ME-02")

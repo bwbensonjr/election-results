@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "description": "Census block sources for the crosswalk from 119th Congress districts (the lines of the presidential results source) to enacted 2026 districts. The 2026 plans themselves are the overrides in 2026/geometry/sources.json. County presidential results supply vote rates that weight the split within each old district. Files are cached under 2026/geometry/cache/blocks/.",
+  "description": "Census block sources for the crosswalk from 119th Congress districts (the lines of the presidential results source) to enacted 2026 districts. The 2026 plans themselves are the overrides in 2026/geometry/sources.json. The Census 120th Congress block equivalency file checks each 2026 plan file. County presidential results supply vote rates that weight the split within each old district. Files are cached under 2026/geometry/cache/blocks/.",
   "bef": {
     "id": "census_cd119_bef",
     "url": "https://www2.census.gov/programs-surveys/decennial/rdo/mapping-files/2025/119-congressional-district-befs/cd119.zip",
@@ -10,7 +10,23 @@
     "retrieved": "2026-11-13",
     "sha256": "1433feb5178dc7b4188ee30f5f7f715851f4400740b8fe1ce606a876c6294bd6"
   },
+  "bef_2026": {
+    "id": "census_cd120_bef",
+    "url": "https://www2.census.gov/programs-surveys/decennial/rdo/mapping-files/2027/120-congressional-district-befs/cd120.zip",
+    "file": "cd120.zip",
+    "member": "NationalCD120.txt",
+    "plan": "U.S. Census Bureau 120th Congressional District block equivalency file (2020 blocks), national file regenerated 2026-10-05. Used only to check each 2026 plan file's point-in-polygon assignment.",
+    "retrieved": "2026-11-13",
+    "sha256": "bc9a4fc543b8b279ce3663642a5cc4e19e32a8ef84f12371e26f754e5b8cc8a5"
+  },
   "blocks": [
+    {
+      "state": "AL",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/tl_2020_01_tabblock20.zip",
+      "file": "tl_2020_01_tabblock20.zip",
+      "retrieved": "2026-11-13",
+      "sha256": "5d228872ccc680374631c1c71db6b7c362dc98e782ee3c4db111aa651df48468"
+    },
     {
       "state": "CA",
       "url": "https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/tl_2020_06_tabblock20.zip",
@@ -38,6 +54,20 @@
       "file": "tl_2020_37_tabblock20.zip",
       "retrieved": "2026-11-13",
       "sha256": "a9b5398902ddcb68906d39c1a5354134eb81c86fd0a5e2f425c7f4da7eec6893"
+    },
+    {
+      "state": "OH",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/tl_2020_39_tabblock20.zip",
+      "file": "tl_2020_39_tabblock20.zip",
+      "retrieved": "2026-11-13",
+      "sha256": "8075876e141b74dbaa93f42e56ef471e4070d2ad6ae1fef333e1edfaff47515e"
+    },
+    {
+      "state": "TN",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/tl_2020_47_tabblock20.zip",
+      "file": "tl_2020_47_tabblock20.zip",
+      "retrieved": "2026-11-13",
+      "sha256": "26e1045a27944d21c759a61f5022c0acf41a724bb8d89a41ffb1ff377de69118"
     },
     {
       "state": "TX",

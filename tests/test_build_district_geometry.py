@@ -90,9 +90,11 @@ class DistrictGeometryTests(unittest.TestCase):
         if not all(f.exists() for f in files):
             self.skipTest("enacted plan files are not in 2026/geometry/cache")
         document, size = geometry.build(cache_dir=geometry.CACHE_DIR, output=self.root / "committed.json")
-        self.assertEqual(document["prior_line_states"], ["AL", "OH", "TN"])
+        self.assertEqual(document["prior_line_states"], [])
         self.assertEqual(document["districts"]["TX-38"]["vintage"], "plan_2026")
-        self.assertEqual(document["districts"]["OH-09"]["vintage"], "prior_boundaries")
+        self.assertEqual(document["districts"]["OH-09"]["vintage"], "plan_2026")
+        self.assertEqual(document["districts"]["TN-09"]["vintage"], "plan_2026")
+        self.assertNotIn("prior_boundaries", {d["vintage"] for d in document["districts"].values()})
         self.assertEqual(len(document["districts"]), 435)
         self.assertLessEqual(size, geometry.MAX_BYTES)
 

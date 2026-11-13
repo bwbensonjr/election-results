@@ -10,6 +10,16 @@
   },
   "overrides": [
     {
+      "id": "tiger2026_al_cd120",
+      "state": "AL",
+      "file": "tl_2026_01_cd120.zip",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2026/CD/tl_2026_01_cd120.zip",
+      "plan": "Livingston Congressional Plan 3-2023, restored by the U.S. Supreme Court's June 2, 2026 order; U.S. Census Bureau TIGER/Line 2026 120th Congressional Districts (built 2026-09-27), checked against the Census 120th Congress block equivalency file",
+      "retrieved": "2026-11-13",
+      "sha256": "0fff80891184520f63889f24d2dbee39ae3489358399702d8c3470d55ae9a508",
+      "district_field": "CD120FP"
+    },
+    {
       "id": "ca_ab604",
       "state": "CA",
       "file": "ca-ab604.zip",
@@ -52,6 +62,26 @@
       "sha256": "c21e18d29a0f6dd52636c866ca3b05295a0757c6d6d98ee42ffa0b2eee795897",
       "district_field": "DISTRICT",
       "layer_path": "SL 2025-95.shp"
+    },
+    {
+      "id": "tiger2026_oh_cd120",
+      "state": "OH",
+      "file": "tl_2026_39_cd120.zip",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2026/CD/tl_2026_39_cd120.zip",
+      "plan": "Ohio Redistricting Commission plan adopted October 31, 2025; U.S. Census Bureau TIGER/Line 2026 120th Congressional Districts (built 2026-09-27), checked against the Census 120th Congress block equivalency file",
+      "retrieved": "2026-11-13",
+      "sha256": "4c18b9422c82639e078dacc4df32cdfa61689b1e2f92ec5b232b4ba3a2b3421b",
+      "district_field": "CD120FP"
+    },
+    {
+      "id": "tiger2026_tn_cd120",
+      "state": "TN",
+      "file": "tl_2026_47_cd120.zip",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2026/CD/tl_2026_47_cd120.zip",
+      "plan": "HB 7003, enacted in special session and signed May 7, 2026; U.S. Census Bureau TIGER/Line 2026 120th Congressional Districts (built 2026-09-27), checked against the Census 120th Congress block equivalency file",
+      "retrieved": "2026-11-13",
+      "sha256": "a1f017ae34e3a335492ded7572ec69f3d7e193ffbc144a9269fb7e1b8803d0fe",
+      "district_field": "CD120FP"
     },
     {
       "id": "tx_planc2333",

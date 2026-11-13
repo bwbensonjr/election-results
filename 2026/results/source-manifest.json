@@ -62,12 +62,12 @@
     },
     "presidential_crosswalk": {
       "path": "2026/results/presidential-crosswalk.csv",
-      "sha256": "a011a416ab31e56ef189bc009bf43caa57c76a32cf5214663c6f18b3a844106d",
+      "sha256": "b93693cf4e7f761975caccb11e7530b0852add250b1746552adaf84b1bf390f5",
       "notes": "Crosswalk from 119th Congress districts to enacted 2026 districts, keyed by old district, county, and new district with shared 2020 population; built by scripts/build_presidential_crosswalk.py from the sources in presidential-crosswalk-sources.json. Districts in its states get interpolated presidential margins with status interpolated."
     },
     "presidential_county_results": {
       "path": "2026/results/presidential-county-results.csv",
-      "sha256": "a19b0ba14bf24ebf37ce380b9f179cfcdc1aa4e9bae395dc7810844e324466ed",
+      "sha256": "a47478b7c8179fc98119c02073723f57f5f9f329d5849967938bf0cefea404aa",
       "notes": "2020 and 2024 county presidential votes and 2020 Census county population for the crosswalk states, written by scripts/build_presidential_crosswalk.py. Used only for relative vote rates within each old district."
     }
   },

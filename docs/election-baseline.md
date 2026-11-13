@@ -33,7 +33,7 @@ JSON values are the same strings as the CSV cells, including `True`/`False` and 
 | `ap_race_id` | Blank; the results-feed change fills it from AP |
 | `candidate_count` | Ballot rows in the race |
 | `roster_incumbent_name`, `roster_incumbent_party`, `roster_vacant`, `roster_ballot_status`, `open_seat` | From the [incumbent roster](district-data.md#incumbent-roster) |
-| `pres_2024_dem_margin_pp`, `pres_2024_status` | 2024 presidential D-minus-R margin when its status is `available`, or `interpolated` (an estimate on the 2026 lines in six [redrawn states](district-data.md#redrawn-states)). Blank with status `prior_boundaries` in Alabama, Ohio, and Tennessee. Statewide races carry the state margin |
+| `pres_2024_dem_margin_pp`, `pres_2024_status` | 2024 presidential D-minus-R margin when its status is `available`, or `interpolated` (an estimate on the 2026 lines in the nine [redrawn states](district-data.md#redrawn-states)). Blank with status `prior_boundaries` for a redrawn state without a 2026 plan (none currently). Statewide races carry the state margin |
 | `cook_pvi_label`, `cook_pvi_dem_lean_pp`, `cook_pvi_status` | Cook 2026 district PVI, or the 2025 state PVI for statewide races |
 | `poll_avg_dem_candidate`, `poll_avg_rep_candidate`, `poll_avg_matchup_basis` | Polling principals and basis (`dem_rep` or `reviewed`); the `dem` side is the non-Republican principal, an independent where reviewed |
 | `poll_avg_dem_pct`, `poll_avg_rep_pct`, `poll_avg_dem_margin_pp`, `poll_count`, `poll_latest_end_date`, `poll_avg_status` | The polling average, blank unless `available` |

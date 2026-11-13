@@ -114,22 +114,25 @@ The build reads [`2026/geometry/sources.json`](../2026/geometry/sources.json), d
 
 The 1 px tolerance keeps more detail than the prototype's 12% setting so that small urban districts stay recognizable when zoomed to a state; the file is still well under the size limit.
 
-Enacted 2026 plans, found November 3, 2026 (see the manifest for URLs and hashes):
+Enacted 2026 plans, found November 3, 2026, plus three added November 13 from the Census Bureau's TIGER/Line 2026 120th Congress files (see the manifest for URLs and hashes):
 
 | State | Plan | Source |
 | --- | --- | --- |
+| AL | Livingston Congressional Plan 3-2023, restored June 2, 2026 | Census TIGER/Line 2026 `cd120` |
 | CA | AB 604, put in effect by Proposition 50 | Senate Elections and Constitutional Amendments Committee |
 | FL | EOGPCRP2026 (HB 1-D, Chapter 2026-229) | Florida Senate |
 | LA | Act 2, 2026 Regular Session (SB 121) | Louisiana Legislature |
 | NC | Session Law 2025-95 (S249) | North Carolina General Assembly |
+| OH | Ohio Redistricting Commission plan adopted October 31, 2025 | Census TIGER/Line 2026 `cd120` |
+| TN | HB 7003, signed May 7, 2026 | Census TIGER/Line 2026 `cd120` |
 | TX | PLANC2333 | Texas Legislative Council |
 | UT | Court-adopted Map 1 (Map 1A) | Utah Geospatial Resource Center |
 
-**Still on 2024 lines:** Alabama, Ohio, and Tennessee (31 districts). No official 2026 shapefile was published for them: Alabama and Tennessee offer only PDF maps, and Ohio's commission published a block assignment file, which would need joining to 2020 Census blocks. The board marks these districts with a dashed outline and says so in their detail. To add a state later, put its zip in the cache, add an `overrides` entry (`file`, `url`, `plan`, `sha256`, `district_field`, and `layer_path` when the shapefile is in a subfolder), rebuild, and rerun `scripts/build_bigboard_data.py`.
+**Every redrawn state is on its 2026 lines.** On November 3, Alabama, Ohio, and Tennessee had no usable 2026 shapefile, so they were drawn on 2024 lines. The TIGER/Line 2026 files later filled that gap. The [crosswalk build](district-data.md#interpolated-margins-on-2026-lines) checks every plan file, state-supplied or Census, against the Census 120th Congress block equivalency file. A registry state without an override would still be drawn on its 2024 lines, marked with a dashed outline, and noted in its detail. To add a state later, put its zip in the cache, add an `overrides` entry (`file`, `url`, `plan`, `sha256`, `district_field`, and `layer_path` when the shapefile is in a subfolder), rebuild, and rerun `scripts/build_bigboard_data.py`.
 
 Utah's portal regenerates its zip on every download, so a fresh download will not match the recorded hash; keep the cached copy or re-verify and update the hash.
 
-Checked by rendering: state and district borders coincide, Alaska and Hawaii sit below the lower 48, Texas shows its 38-district 2025 plan, and the remaining prior-line states are the three listed above.
+Checked by rendering: state and district borders coincide, Alaska and Hawaii sit below the lower 48, Texas shows its 38-district 2025 plan, and no prior-line states remain.
 
 ## Mock election night
 
@@ -170,7 +173,7 @@ uv run python -m unittest tests.test_build_bigboard_data
 
 The database is declared at publish with one access rule, `{path: "live", read: "view", write: "owner"}`: everyone the board is shared with reads the results, and only the owner writes them.
 
-Metrics: **Results**, **Polls** (polling average margin), **President** (2024 Harris–Trump margin. In the six redrawn states drawn on 2026 shapes, it is an estimate on the new lines, colored like any other margin and labeled "est. on 2026 lines" in the race detail with a note on the method; see [interpolated margins](district-data.md#interpolated-margins-on-2026-lines). Alabama, Ohio, and Tennessee, still drawn on 2024 lines, are grey), **PVI** (Cook PVI lean), and **Incumbent** (party). Colors: Democratic blue and Republican red in four margin steps (under 5, 5 to 10, 10 to 20, and 20 or more points; PVI uses half those steps, since a PVI lean is about half a two-party margin), validated as ordinal ramps in both themes; violet for any other party; mid grey for no data; a pale fill for states or districts with no race. Under the results metric a called race is solid and an uncalled lead is hatched. Districts drawn on 2024 lines have a dashed outline. A test-data banner appears whenever results come from the mock, and a warning appears during the night when published results are more than 15 minutes old.
+Metrics: **Results**, **Polls** (polling average margin), **President** (2024 Harris–Trump margin. In the nine redrawn states, all drawn on 2026 shapes, it is an estimate on the new lines, colored like any other margin and labeled "est. on 2026 lines" in the race detail with a note on the method; see [interpolated margins](district-data.md#interpolated-margins-on-2026-lines). A district still on 2024 lines would be grey), **PVI** (Cook PVI lean), and **Incumbent** (party). Colors: Democratic blue and Republican red in four margin steps (under 5, 5 to 10, 10 to 20, and 20 or more points; PVI uses half those steps, since a PVI lean is about half a two-party margin), validated as ordinal ramps in both themes; violet for any other party; mid grey for no data; a pale fill for states or districts with no race. Under the results metric a called race is solid and an uncalled lead is hatched. Districts drawn on 2024 lines have a dashed outline. A test-data banner appears whenever results come from the mock, and a warning appears during the night when published results are more than 15 minutes old.
 
 The published board: <https://claude.ai/artifact/PYJrwsZ2CfhnGuu8SV6FnN> (shared with the organization from its Share menu; sharing carries across versions). [`bigboard/artifact.json`](../bigboard/artifact.json) records the link and publish settings, so any Claude session can republish to the same link.
 

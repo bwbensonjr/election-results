@@ -74,7 +74,9 @@ class CrosswalkTests(unittest.TestCase):
                             "retrieved": "2026-11-13", "sha256": geometry.sha256(path)})
         return entries
 
-    def write_inputs(self, rows, plan_frame=None, registry=("UT",), bad_hash=False, county_years=("2020", "2024")):
+    def write_inputs(self, rows, plan_frame=None, registry=("UT",), bad_hash=False, county_years=("2020", "2024"),
+                     census_2026=None):
+        """census_2026 maps block GEOID to its 2026 CDFP; by default, the plan district containing (or nearest) it."""
         frame = gpd.GeoDataFrame({
             "GEOID20": [r[0] for r in rows], "POP20": [r[1] for r in rows],
             "INTPTLAT20": [f"{r[3]:+.7f}" for r in rows], "INTPTLON20": [f"{r[2]:+.7f}" for r in rows],
@@ -88,9 +90,22 @@ class CrosswalkTests(unittest.TestCase):
             plan_frame["DISTRICT"] = [5 - int(k[-2:]) for k in plan_frame["race_key"]]
             plan_frame = plan_frame[["DISTRICT", "geometry"]]
         plan = self.zip_shapefile(plan_frame, "ut_plan")
+        if census_2026 is None:
+            census_2026 = {}
+            for geoid, _, x, y, _ in rows:
+                point = gpd.points_from_xy([x], [y])[0]
+                inside = [d for d, g in zip(plan_frame["DISTRICT"], plan_frame.geometry) if g.contains(point)]
+                nearest = min(zip(plan_frame["DISTRICT"], plan_frame.geometry), key=lambda dg: dg[1].distance(point))[0]
+                census_2026[geoid] = f"{int(inside[0] if inside else nearest):02d}"
+        bef_2026 = self.blocks_dir / "cd120.zip"
+        with zipfile.ZipFile(bef_2026, "w") as z:
+            z.writestr("NationalCD120.txt", "GEOID,STATEFP,COUNTYFP,TRACTCE,BLOCKCE,CDFP\n" + "".join(
+                f"{g},{g[:2]},{g[2:5]},{g[5:11]},{g[11:]},{cd}\n" for g, cd in sorted(census_2026.items())))
         sources = {"schema_version": 1, "bef": {
             "url": "https://example.test/cd119.zip", "file": "cd119.zip", "member": "NationalCD119.txt",
-            "retrieved": "2026-11-13", "sha256": geometry.sha256(bef)}, "blocks": [{
+            "retrieved": "2026-11-13", "sha256": geometry.sha256(bef)}, "bef_2026": {
+            "url": "https://example.test/cd120.zip", "file": "cd120.zip", "member": "NationalCD120.txt",
+            "retrieved": "2026-11-13", "sha256": geometry.sha256(bef_2026)}, "blocks": [{
             "state": "UT", "url": "https://example.test/ut.zip", "file": blocks.name, "retrieved": "2026-11-13",
             "sha256": "0" * 64 if bad_hash else geometry.sha256(blocks)}],
             "county_results": self.write_counties(rows, county_years)}
@@ -119,6 +134,22 @@ class CrosswalkTests(unittest.TestCase):
         self.assertEqual([(r["county_fips"], r["election_year"], r["dem_votes"], r["total_votes"], r["pop_2020"])
                           for r in self.read(crosswalk.COUNTIES)],
                          [("49000", "2020", "300", "1000", "1000"), ("49000", "2024", "300", "1000", "1000")])
+
+    def test_census_2026_agreement_is_reported(self):
+        self.write_inputs(self.fixture_blocks())
+        self.build()
+        self.assertEqual(self.read(crosswalk.REPORT)[0]["census_agreement_pct"], "100.0000")
+
+    def test_plan_disagreeing_with_census_2026_fails_and_keeps_outputs(self):
+        self.write_inputs(self.fixture_blocks())
+        self.build()
+        before = (self.out / crosswalk.CROSSWALK).read_bytes()
+        # The Census file keeps the old numbering, so the renumbered fixture plan agrees for nobody.
+        rows = self.fixture_blocks()
+        self.write_inputs(rows, census_2026={r[0]: r[4] for r in rows})
+        with self.assertRaisesRegex(geometry.BuildError, r"UT: the 2026 plan places only 0.00% of the population"):
+            self.build()
+        self.assertEqual((self.out / crosswalk.CROSSWALK).read_bytes(), before)
 
     def test_split_old_district_shares(self):
         # A second UT-01 block of 300 people sits inside old UT-02, which is new UT-03.
